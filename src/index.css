@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-100 text-slate-900 dark:bg-[#0b0f19] dark:text-slate-100 font-sans antialiased transition-colors duration-150;
+  }
+}
+
+/* カスタムスクロールバー（洗練されたスリム形状） */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-slate-100/60 dark:bg-slate-900/60;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300/80 hover:bg-slate-400 dark:bg-slate-700/80 dark:hover:bg-slate-600 rounded-full;
+}
+
+/* 微細なパルスアニメーション */
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.9; transform: scale(1.02); }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* スクロール非表示 */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

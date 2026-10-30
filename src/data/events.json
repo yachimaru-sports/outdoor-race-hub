@@ -1,0 +1,5595 @@
+[
+  {
+    "id": "toretore-ueyama-2026",
+    "category": "adventure",
+    "subCategory": "アドベンチャーゲーム",
+    "elements": [
+      "読図",
+      "MTB",
+      "トレック",
+      "オリエンテーリング",
+      "日帰り"
+    ],
+    "title": "上山棚田アドベンチャーゲーム2026（とれとればいく・AR関西）",
+    "date": "2026-03-07",
+    "month": 3,
+    "region": "中国",
+    "prefecture": "岡山県",
+    "distance_km": 38,
+    "elevation_m": 1200,
+    "entry_status": "closed",
+    "entry_deadline": "2026-02-25",
+    "links": {
+      "official": "http://toretore.web.fc2.com/ueyama/2026/UMAG2026.htm",
+      "entry": "http://toretore.web.fc2.com/",
+      "review": "https://runnet.jp/",
+      "sns": "https://www.facebook.com/advkansai/"
+    },
+    "review": {
+      "rating": 4.8,
+      "count": 36
+    },
+    "mandatory_gear": [
+      {
+        "name": "マウンテンバイク（MTB）＆JCF公認ヘルメット",
+        "category": "ギア"
+      },
+      {
+        "name": "シルバコンパス（方位磁石/プレート式）",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "国土地理院2万5千分の1地図用防水マップケース",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "MTBパンク修理キット＆携帯マルチツール",
+        "category": "リペア"
+      },
+      {
+        "name": "ファーストエイドキット＆エマージェンシーシート",
+        "category": "エイド"
+      },
+      {
+        "name": "行動食・水分1.5L以上",
+        "category": "補給"
+      }
+    ]
+  },
+  {
+    "id": "toretore-hozukyou-2026",
+    "category": "adventure",
+    "subCategory": "アドベンチャーゲーム",
+    "elements": [
+      "読図",
+      "MTB",
+      "パドル",
+      "トレック",
+      "日帰り"
+    ],
+    "title": "保津峡ミニアドベンチャーゲーム2026（とれとればいく・AR関西）",
+    "date": "2026-06-06",
+    "month": 6,
+    "region": "近畿",
+    "prefecture": "京都府",
+    "distance_km": 35,
+    "elevation_m": 1100,
+    "entry_status": "open",
+    "entry_deadline": "2026-05-20",
+    "links": {
+      "official": "http://toretore.web.fc2.com/hozukyou/HMAG2026.htm",
+      "entry": "http://toretore.web.fc2.com/",
+      "review": "https://runnet.jp/",
+      "sns": "https://www.facebook.com/advkansai/"
+    },
+    "review": {
+      "rating": 4.9,
+      "count": 42
+    },
+    "mandatory_gear": [
+      {
+        "name": "パックラフトまたは指定カヤック＆パドル・PFD（ライフジャケット）",
+        "category": "ギア"
+      },
+      {
+        "name": "MTB＋高輝度防水ヘッドランプ（夜間行動対応）",
+        "category": "ライト"
+      },
+      {
+        "name": "読図用ベースプレートコンパス＆防水マップボード",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "完全防水ドライバッグ（20L以上）",
+        "category": "ギア"
+      },
+      {
+        "name": "SOLエスケープヴィヴィ・保温シート＆ホイッスル",
+        "category": "エイド"
+      }
+    ]
+  },
+  {
+    "id": "toretore-narayoshi-2026",
+    "category": "adventure",
+    "subCategory": "アドベンチャーゲーム",
+    "elements": [
+      "読図",
+      "MTB",
+      "パドル",
+      "夜間"
+    ],
+    "title": "奈良吉野川アドベンチャーゲーム2026（とれとればいく・AR関西）",
+    "date": "2026-10-17",
+    "month": 10,
+    "region": "近畿",
+    "prefecture": "奈良県",
+    "distance_km": 55,
+    "elevation_m": 1650,
+    "entry_status": "open",
+    "entry_deadline": "2026-10-07",
+    "links": {
+      "official": "http://toretore.web.fc2.com/narayoshi/NYAG2026.html",
+      "entry": "http://toretore.web.fc2.com/",
+      "review": "https://runnet.jp/",
+      "sns": "https://www.facebook.com/advkansai/"
+    },
+    "review": {
+      "rating": 4.9,
+      "count": 58
+    },
+    "mandatory_gear": [
+      {
+        "name": "パックラフトまたは指定カヤック＆パドル・PFD（ライフジャケット）",
+        "category": "ギア"
+      },
+      {
+        "name": "MTB＋高輝度防水ヘッドランプ（夜間行動対応）",
+        "category": "ライト"
+      },
+      {
+        "name": "読図用ベースプレートコンパス＆防水マップボード",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "完全防水ドライバッグ（20L以上）",
+        "category": "ギア"
+      },
+      {
+        "name": "SOLエスケープヴィヴィ・保温シート＆ホイッスル",
+        "category": "エイド"
+      }
+    ]
+  },
+  {
+    "id": "toretore-tomisu-2026",
+    "category": "adventure",
+    "subCategory": "アドベンチャーゲーム",
+    "elements": [
+      "読図",
+      "MTB",
+      "トレック",
+      "オリエンテーリング",
+      "日帰り"
+    ],
+    "title": "富栖ミニアドベンチャーゲーム2026（とれとればいく・AR関西）",
+    "date": "2026-12-06",
+    "month": 12,
+    "region": "近畿",
+    "prefecture": "兵庫県",
+    "distance_km": 32,
+    "elevation_m": 980,
+    "entry_status": "open",
+    "entry_deadline": "2026-11-26",
+    "links": {
+      "official": "http://toretore.web.fc2.com/tomisu/TMAG2026.htm",
+      "entry": "http://toretore.web.fc2.com/",
+      "review": "https://runnet.jp/",
+      "sns": "https://www.facebook.com/advkansai/"
+    },
+    "review": {
+      "rating": 4.7,
+      "count": 31
+    },
+    "mandatory_gear": [
+      {
+        "name": "マウンテンバイク（MTB）＆JCF公認ヘルメット",
+        "category": "ギア"
+      },
+      {
+        "name": "シルバコンパス（方位磁石/プレート式）",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "国土地理院2万5千分の1地図用防水マップケース",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "MTBパンク修理キット＆携帯マルチツール",
+        "category": "リペア"
+      },
+      {
+        "name": "ファーストエイドキット＆エマージェンシーシート",
+        "category": "エイド"
+      },
+      {
+        "name": "行動食・水分1.5L以上",
+        "category": "補給"
+      }
+    ]
+  },
+  {
+    "id": "toretore-obsidian-2026",
+    "category": "adventure",
+    "subCategory": "MTB＆読図ラリー",
+    "elements": [
+      "読図",
+      "MTB",
+      "トレック",
+      "日帰り"
+    ],
+    "title": "レイドオブシディアン2026（アドベンチャーゲーム東海シリーズ）",
+    "date": "2026-03-01",
+    "month": 3,
+    "region": "中部",
+    "prefecture": "岐阜県",
+    "distance_km": 45,
+    "elevation_m": 1400,
+    "entry_status": "closed",
+    "entry_deadline": "2026-02-15",
+    "links": {
+      "official": "http://toretore.web.fc2.com/",
+      "entry": "http://toretore.web.fc2.com/",
+      "review": "https://moshicom.com/",
+      "sns": "https://www.facebook.com/advkansai/"
+    },
+    "review": {
+      "rating": 4.7,
+      "count": 24
+    },
+    "mandatory_gear": [
+      {
+        "name": "マウンテンバイク（MTB）＆JCF公認ヘルメット",
+        "category": "ギア"
+      },
+      {
+        "name": "シルバコンパス（方位磁石/プレート式）",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "国土地理院2万5千分の1地図用防水マップケース",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "MTBパンク修理キット＆携帯マルチツール",
+        "category": "リペア"
+      },
+      {
+        "name": "ファーストエイドキット＆エマージェンシーシート",
+        "category": "エイド"
+      },
+      {
+        "name": "行動食・水分1.5L以上",
+        "category": "補給"
+      }
+    ]
+  },
+  {
+    "id": "toretore-iwamura-2026",
+    "category": "adventure",
+    "subCategory": "MTB＆読図ラリー",
+    "elements": [
+      "読図",
+      "MTB",
+      "オリエンテーリング",
+      "日帰り"
+    ],
+    "title": "岩村ラリー2026（アドベンチャーゲーム東海シリーズ）",
+    "date": "2026-05-05",
+    "month": 5,
+    "region": "中部",
+    "prefecture": "岐阜県",
+    "distance_km": 40,
+    "elevation_m": 1250,
+    "entry_status": "closing_soon",
+    "entry_deadline": "2026-04-20",
+    "links": {
+      "official": "http://toretore.web.fc2.com/",
+      "entry": "http://toretore.web.fc2.com/",
+      "review": "https://moshicom.com/",
+      "sns": "https://www.facebook.com/advkansai/"
+    },
+    "review": {
+      "rating": 4.6,
+      "count": 29
+    },
+    "mandatory_gear": [
+      {
+        "name": "マウンテンバイク（MTB）＆JCF公認ヘルメット",
+        "category": "ギア"
+      },
+      {
+        "name": "シルバコンパス（方位磁石/プレート式）",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "国土地理院2万5千分の1地図用防水マップケース",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "MTBパンク修理キット＆携帯マルチツール",
+        "category": "リペア"
+      },
+      {
+        "name": "ファーストエイドキット＆エマージェンシーシート",
+        "category": "エイド"
+      },
+      {
+        "name": "行動食・水分1.5L以上",
+        "category": "補給"
+      }
+    ]
+  },
+  {
+    "id": "kannabe-rogaining-2026",
+    "category": "adventure",
+    "subCategory": "ロゲイニング・読図",
+    "elements": [
+      "読図",
+      "ロゲイニング",
+      "トレック",
+      "日帰り"
+    ],
+    "title": "神鍋高原ロゲイニング大会 2026（AR関西・とれとれ連動）",
+    "date": "2026-05-30",
+    "month": 5,
+    "region": "近畿",
+    "prefecture": "兵庫県",
+    "distance_km": 25,
+    "elevation_m": 850,
+    "entry_status": "open",
+    "entry_deadline": "2026-05-15",
+    "links": {
+      "official": "http://toretore.web.fc2.com/",
+      "entry": "https://www.sportsentry.ne.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://www.facebook.com/advkansai/"
+    },
+    "review": {
+      "rating": 4.7,
+      "count": 39
+    },
+    "mandatory_gear": [
+      {
+        "name": "プレートコンパス（シルバコンパス等・方位磁石）",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "デジタルカメラまたはスマートフォン（CP撮影・集計用）",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "ゴアテックス等 防水透湿レインジャケット",
+        "category": "ウェア"
+      },
+      {
+        "name": "ファーストエイドキット（絆創膏・テーピング・消毒薬）",
+        "category": "エイド"
+      },
+      {
+        "name": "行動食（エナジージェル等）＆水分1.0L以上",
+        "category": "補給"
+      }
+    ]
+  },
+  {
+    "id": "mannou-rogaining-2026",
+    "category": "adventure",
+    "subCategory": "ロゲイニング・読図",
+    "elements": [
+      "読図",
+      "ロゲイニング",
+      "オリエンテーリング",
+      "日帰り"
+    ],
+    "title": "国営讃岐まんのう公園ロゲイニング 2026（とれとれカレンダー掲載）",
+    "date": "2026-11-29",
+    "month": 11,
+    "region": "四国",
+    "prefecture": "香川県",
+    "distance_km": 22,
+    "elevation_m": 600,
+    "entry_status": "open",
+    "entry_deadline": "2026-11-15",
+    "links": {
+      "official": "http://toretore.web.fc2.com/",
+      "entry": "https://www.sportsentry.ne.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://www.facebook.com/advkansai/"
+    },
+    "review": {
+      "rating": 4.8,
+      "count": 34
+    },
+    "mandatory_gear": [
+      {
+        "name": "プレートコンパス（シルバコンパス等・方位磁石）",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "デジタルカメラまたはスマートフォン（CP撮影・集計用）",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "ゴアテックス等 防水透湿レインジャケット",
+        "category": "ウェア"
+      },
+      {
+        "name": "ファーストエイドキット（絆創膏・テーピング・消毒薬）",
+        "category": "エイド"
+      },
+      {
+        "name": "行動食（エナジージェル等）＆水分1.0L以上",
+        "category": "補給"
+      }
+    ]
+  },
+  {
+    "id": "omm-japan-2026",
+    "category": "adventure",
+    "subCategory": "山岳ナビゲーション・OMM",
+    "elements": [
+      "読図",
+      "ロゲイニング",
+      "オリエンテーリング",
+      "夜間"
+    ],
+    "title": "OMM JAPAN 2026 (Original Mountain Marathon 2日間山岳読図)",
+    "date": "2026-11-14",
+    "month": 11,
+    "region": "甲信越",
+    "prefecture": "長野県",
+    "distance_km": 50,
+    "elevation_m": 2800,
+    "entry_status": "open",
+    "entry_deadline": "2026-09-30",
+    "links": {
+      "official": "https://theomm.jp/",
+      "entry": "https://theomm.jp/",
+      "review": "https://theomm.jp/",
+      "sns": "https://www.facebook.com/theommjapan"
+    },
+    "review": {
+      "rating": 4.9,
+      "count": 178
+    },
+    "mandatory_gear": [
+      {
+        "name": "ツエルトまたは軽量山岳テント（耐水フライ付）",
+        "category": "ギア"
+      },
+      {
+        "name": "シュラフ（寝袋）＆エマージェンシービバークヴィヴィ",
+        "category": "エイド"
+      },
+      {
+        "name": "シルバコンパス＆防水マップケース",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "ストーブ（バーナー）・クッカー＆2日分の非常食・行動食",
+        "category": "補給"
+      },
+      {
+        "name": "シーム処理済み完全防水レイン上下＆防寒ダウン",
+        "category": "ウェア"
+      }
+    ]
+  },
+  {
+    "id": "omm-lite-bike-hakuba-2026",
+    "category": "adventure",
+    "subCategory": "OMM LITE / BIKE",
+    "elements": [
+      "読図",
+      "MTB",
+      "ロゲイニング",
+      "オリエンテーリング"
+    ],
+    "title": "OMM LITE / BIKE HAKUBA OTARI 2026（ラン＆MTBナビゲーション）",
+    "date": "2026-07-18",
+    "month": 7,
+    "region": "甲信越",
+    "prefecture": "長野県",
+    "distance_km": 45,
+    "elevation_m": 1600,
+    "entry_status": "open",
+    "entry_deadline": "2026-06-20",
+    "links": {
+      "official": "https://theomm.jp/",
+      "entry": "https://theomm.jp/",
+      "review": "https://theomm.jp/",
+      "sns": "https://www.facebook.com/theommjapan"
+    },
+    "review": {
+      "rating": 4.9,
+      "count": 132
+    },
+    "mandatory_gear": [
+      {
+        "name": "マウンテンバイク（MTB）＆JCF公認ヘルメット",
+        "category": "ギア"
+      },
+      {
+        "name": "シルバコンパス（方位磁石/プレート式）",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "国土地理院2万5千分の1地図用防水マップケース",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "MTBパンク修理キット＆携帯マルチツール",
+        "category": "リペア"
+      },
+      {
+        "name": "ファーストエイドキット＆エマージェンシーシート",
+        "category": "エイド"
+      },
+      {
+        "name": "行動食・水分1.5L以上",
+        "category": "補給"
+      }
+    ]
+  },
+  {
+    "id": "niseko-expedition-2026",
+    "category": "adventure",
+    "subCategory": "エクスペディションAR",
+    "elements": [
+      "読図",
+      "MTB",
+      "パドル",
+      "夜間",
+      "トレック"
+    ],
+    "title": "NISEKO EXPEDITION 2026（ニセコエクスペディション 36時間耐久）",
+    "date": "2026-06-19",
+    "month": 6,
+    "region": "北海道",
+    "prefecture": "北海道",
+    "distance_km": 150,
+    "elevation_m": 4200,
+    "entry_status": "open",
+    "entry_deadline": "2026-05-15",
+    "links": {
+      "official": "https://nisekoexpedition.jp/",
+      "entry": "https://nisekoexpedition.jp/",
+      "review": "https://nisekoexpedition.jp/",
+      "sns": "https://www.facebook.com/"
+    },
+    "review": {
+      "rating": 4.9,
+      "count": 64
+    },
+    "mandatory_gear": [
+      {
+        "name": "パックラフトまたは指定カヤック＆パドル・PFD（ライフジャケット）",
+        "category": "ギア"
+      },
+      {
+        "name": "MTB＋高輝度防水ヘッドランプ（夜間行動対応）",
+        "category": "ライト"
+      },
+      {
+        "name": "読図用ベースプレートコンパス＆防水マップボード",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "完全防水ドライバッグ（20L以上）",
+        "category": "ギア"
+      },
+      {
+        "name": "SOLエスケープヴィヴィ・保温シート＆ホイッスル",
+        "category": "エイド"
+      }
+    ]
+  },
+  {
+    "id": "echigo-adventure-2026",
+    "category": "adventure",
+    "subCategory": "アドベンチャーレース",
+    "elements": [
+      "読図",
+      "MTB",
+      "パドル",
+      "トレック",
+      "日帰り"
+    ],
+    "title": "越後カントリートレイル＆アドベンチャーレース 2026",
+    "date": "2026-09-19",
+    "month": 9,
+    "region": "甲信越",
+    "prefecture": "新潟県",
+    "distance_km": 52,
+    "elevation_m": 1800,
+    "entry_status": "open",
+    "entry_deadline": "2026-08-25",
+    "links": {
+      "official": "https://www.sportsentry.ne.jp/",
+      "entry": "https://www.sportsentry.ne.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.6,
+      "count": 41
+    },
+    "mandatory_gear": [
+      {
+        "name": "パックラフトまたは指定カヤック＆パドル・PFD（ライフジャケット）",
+        "category": "ギア"
+      },
+      {
+        "name": "MTB＋高輝度防水ヘッドランプ（夜間行動対応）",
+        "category": "ライト"
+      },
+      {
+        "name": "読図用ベースプレートコンパス＆防水マップボード",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "完全防水ドライバッグ（20L以上）",
+        "category": "ギア"
+      },
+      {
+        "name": "SOLエスケープヴィヴィ・保温シート＆ホイッスル",
+        "category": "エイド"
+      }
+    ]
+  },
+  {
+    "id": "izumo-kunibiki-rogaining-2026",
+    "category": "adventure",
+    "subCategory": "ロゲイニング・読図",
+    "elements": [
+      "読図",
+      "ロゲイニング",
+      "日帰り"
+    ],
+    "title": "出雲くにびきロゲイニング大会 2026（島根・出雲大社周辺）",
+    "date": "2026-11-08",
+    "month": 11,
+    "region": "中国",
+    "prefecture": "島根県",
+    "distance_km": 24,
+    "elevation_m": 550,
+    "entry_status": "open",
+    "entry_deadline": "2026-10-20",
+    "links": {
+      "official": "https://moshicom.com/",
+      "entry": "https://moshicom.com/",
+      "review": "https://moshicom.com/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.7,
+      "count": 33
+    },
+    "mandatory_gear": [
+      {
+        "name": "プレートコンパス（シルバコンパス等・方位磁石）",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "デジタルカメラまたはスマートフォン（CP撮影・集計用）",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "ゴアテックス等 防水透湿レインジャケット",
+        "category": "ウェア"
+      },
+      {
+        "name": "ファーストエイドキット（絆創膏・テーピング・消毒薬）",
+        "category": "エイド"
+      },
+      {
+        "name": "行動食（エナジージェル等）＆水分1.0L以上",
+        "category": "補給"
+      }
+    ]
+  },
+  {
+    "id": "hiroshima-miyajima-rogaining-2026",
+    "category": "adventure",
+    "subCategory": "ロゲイニング・読図",
+    "elements": [
+      "読図",
+      "ロゲイニング",
+      "トレック",
+      "日帰り"
+    ],
+    "title": "宮島・瀬戸内アイランドロゲイニング in 広島 2026",
+    "date": "2026-10-25",
+    "month": 10,
+    "region": "中国",
+    "prefecture": "広島県",
+    "distance_km": 22,
+    "elevation_m": 800,
+    "entry_status": "open",
+    "entry_deadline": "2026-10-10",
+    "links": {
+      "official": "https://moshicom.com/",
+      "entry": "https://moshicom.com/",
+      "review": "https://moshicom.com/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.8,
+      "count": 48
+    },
+    "mandatory_gear": [
+      {
+        "name": "プレートコンパス（シルバコンパス等・方位磁石）",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "デジタルカメラまたはスマートフォン（CP撮影・集計用）",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "ゴアテックス等 防水透湿レインジャケット",
+        "category": "ウェア"
+      },
+      {
+        "name": "ファーストエイドキット（絆創膏・テーピング・消毒薬）",
+        "category": "エイド"
+      },
+      {
+        "name": "行動食（エナジージェル等）＆水分1.0L以上",
+        "category": "補給"
+      }
+    ]
+  },
+  {
+    "id": "setouchi-island-adventure-2026",
+    "category": "adventure",
+    "subCategory": "シーカヤック＆読図AR",
+    "elements": [
+      "読図",
+      "MTB",
+      "パドル",
+      "トレック"
+    ],
+    "title": "瀬戸内アイランド・アドベンチャーレース in 小豆島 2026",
+    "date": "2026-10-03",
+    "month": 10,
+    "region": "四国",
+    "prefecture": "香川県",
+    "distance_km": 48,
+    "elevation_m": 1450,
+    "entry_status": "open",
+    "entry_deadline": "2026-09-10",
+    "links": {
+      "official": "https://www.sportsentry.ne.jp/",
+      "entry": "https://www.sportsentry.ne.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.8,
+      "count": 37
+    },
+    "mandatory_gear": [
+      {
+        "name": "パックラフトまたは指定カヤック＆パドル・PFD（ライフジャケット）",
+        "category": "ギア"
+      },
+      {
+        "name": "MTB＋高輝度防水ヘッドランプ（夜間行動対応）",
+        "category": "ライト"
+      },
+      {
+        "name": "読図用ベースプレートコンパス＆防水マップボード",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "完全防水ドライバッグ（20L以上）",
+        "category": "ギア"
+      },
+      {
+        "name": "SOLエスケープヴィヴィ・保温シート＆ホイッスル",
+        "category": "エイド"
+      }
+    ]
+  },
+  {
+    "id": "mt-fuji-100-2027",
+    "category": "trail",
+    "subCategory": "100マイル (World Trail Majors)",
+    "elements": [
+      "100マイル",
+      "トレック",
+      "夜間"
+    ],
+    "title": "Mt.FUJI 100 2027 (FUJI 100mi / 旧UTMF 富士山麓166km)",
+    "date": "2027-04-23",
+    "month": 4,
+    "region": "甲信越",
+    "prefecture": "山梨県",
+    "distance_km": 166,
+    "elevation_m": 7039,
+    "entry_status": "upcoming",
+    "entry_deadline": "2026-11-15",
+    "links": {
+      "official": "https://mtfuji100.com/",
+      "entry": "https://runnet.jp/",
+      "review": "https://runnet.jp/runtes/raceDetail/top/n319194.html",
+      "sns": "https://x.com/MtFUJI100"
+    },
+    "review": {
+      "rating": 4.9,
+      "count": 645
+    },
+    "mandatory_gear": [
+      {
+        "name": "ゴアテックス等 シームテープ加工防水透湿レイン上下",
+        "category": "ウェア"
+      },
+      {
+        "name": "高光量ヘッドライト2灯（メイン300lm以上＋予備ライト・予備電池）",
+        "category": "ライト"
+      },
+      {
+        "name": "GPXトラック収録GPSウォッチ（SUUNTO/GARMIN等）",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "エマージェンシーサバイバルシート（130×200cm以上）＆ホイッスル",
+        "category": "エイド"
+      },
+      {
+        "name": "保温ベースレイヤー（ドライナミック等）・防寒長袖・グローブ",
+        "category": "ウェア"
+      },
+      {
+        "name": "水分1.5L以上携行可能なトレランザック（10L〜12L）＆補給食",
+        "category": "補給"
+      }
+    ]
+  },
+  {
+    "id": "hiroshima-utmb-2027",
+    "category": "trail",
+    "subCategory": "UTMB World Series (100M/100K)",
+    "elements": [
+      "100マイル",
+      "トレック",
+      "夜間"
+    ],
+    "title": "Hiroshima Ultra-Trail by UTMB® 2027（広島・安芸太田〜廿日市）",
+    "date": "2027-04-16",
+    "month": 4,
+    "region": "中国",
+    "prefecture": "広島県",
+    "distance_km": 160,
+    "elevation_m": 8200,
+    "entry_status": "upcoming",
+    "entry_deadline": "2026-11-30",
+    "links": {
+      "official": "https://utmb.world/",
+      "entry": "https://utmb.world/",
+      "review": "https://dogsorcaravan.com/",
+      "sns": "https://x.com/UTMBWorldSeries"
+    },
+    "review": {
+      "rating": 4.9,
+      "count": 288
+    },
+    "mandatory_gear": [
+      {
+        "name": "ゴアテックス等 シームテープ加工防水透湿レイン上下",
+        "category": "ウェア"
+      },
+      {
+        "name": "高光量ヘッドライト2灯（メイン300lm以上＋予備ライト・予備電池）",
+        "category": "ライト"
+      },
+      {
+        "name": "GPXトラック収録GPSウォッチ（SUUNTO/GARMIN等）",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "エマージェンシーサバイバルシート（130×200cm以上）＆ホイッスル",
+        "category": "エイド"
+      },
+      {
+        "name": "保温ベースレイヤー（ドライナミック等）・防寒長袖・グローブ",
+        "category": "ウェア"
+      },
+      {
+        "name": "水分1.5L以上携行可能なトレランザック（10L〜12L）＆補給食",
+        "category": "補給"
+      }
+    ]
+  },
+  {
+    "id": "shinetsu-five-mountains-100mile-2026",
+    "category": "trail",
+    "subCategory": "100マイル トレイル",
+    "elements": [
+      "100マイル",
+      "トレック",
+      "夜間"
+    ],
+    "title": "信越五岳トレイルランニングレース 2026 (PAAK 100mile)",
+    "date": "2026-09-19",
+    "month": 9,
+    "region": "甲信越",
+    "prefecture": "長野県",
+    "distance_km": 160,
+    "elevation_m": 6500,
+    "entry_status": "closed",
+    "entry_deadline": "2026-05-15",
+    "links": {
+      "official": "https://sfmt100.com/",
+      "entry": "https://runnet.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://www.facebook.com/sfmt100/"
+    },
+    "review": {
+      "rating": 5,
+      "count": 520
+    },
+    "mandatory_gear": [
+      {
+        "name": "ゴアテックス等 シームテープ加工防水透湿レイン上下",
+        "category": "ウェア"
+      },
+      {
+        "name": "高光量ヘッドライト2灯（メイン300lm以上＋予備ライト・予備電池）",
+        "category": "ライト"
+      },
+      {
+        "name": "GPXトラック収録GPSウォッチ（SUUNTO/GARMIN等）",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "エマージェンシーサバイバルシート（130×200cm以上）＆ホイッスル",
+        "category": "エイド"
+      },
+      {
+        "name": "保温ベースレイヤー（ドライナミック等）・防寒長袖・グローブ",
+        "category": "ウェア"
+      },
+      {
+        "name": "水分1.5L以上携行可能なトレランザック（10L〜12L）＆補給食",
+        "category": "補給"
+      }
+    ]
+  },
+  {
+    "id": "ggr-ishikiriba-100-2026",
+    "category": "trail",
+    "subCategory": "100マイル トレイル",
+    "elements": [
+      "100マイル",
+      "トレック",
+      "夜間"
+    ],
+    "title": "GGR 石切場100 (GGR ISHIKIRIBA 100mile) 2026（岡山・笠岡）",
+    "date": "2026-11-21",
+    "month": 11,
+    "region": "中国",
+    "prefecture": "岡山県",
+    "distance_km": 161,
+    "elevation_m": 8800,
+    "entry_status": "open",
+    "entry_deadline": "2026-09-30",
+    "links": {
+      "official": "https://ggr-ishikiriba100.com/",
+      "entry": "https://moshicom.com/",
+      "review": "https://moshicom.com/",
+      "sns": "https://www.facebook.com/"
+    },
+    "review": {
+      "rating": 4.7,
+      "count": 74
+    },
+    "mandatory_gear": [
+      {
+        "name": "ゴアテックス等 シームテープ加工防水透湿レイン上下",
+        "category": "ウェア"
+      },
+      {
+        "name": "高光量ヘッドライト2灯（メイン300lm以上＋予備ライト・予備電池）",
+        "category": "ライト"
+      },
+      {
+        "name": "GPXトラック収録GPSウォッチ（SUUNTO/GARMIN等）",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "エマージェンシーサバイバルシート（130×200cm以上）＆ホイッスル",
+        "category": "エイド"
+      },
+      {
+        "name": "保温ベースレイヤー（ドライナミック等）・防寒長袖・グローブ",
+        "category": "ウェア"
+      },
+      {
+        "name": "水分1.5L以上携行可能なトレランザック（10L〜12L）＆補給食",
+        "category": "補給"
+      }
+    ]
+  },
+  {
+    "id": "lake-biwa-100-2026",
+    "category": "trail",
+    "subCategory": "100マイル 山岳トレイル",
+    "elements": [
+      "100マイル",
+      "読図",
+      "トレック",
+      "夜間"
+    ],
+    "title": "Lake Biwa 100 (びわ湖100マイル トレイルラン 2026)",
+    "date": "2026-10-02",
+    "month": 10,
+    "region": "近畿",
+    "prefecture": "滋賀県",
+    "distance_km": 169,
+    "elevation_m": 10500,
+    "entry_status": "closed",
+    "entry_deadline": "2026-05-31",
+    "links": {
+      "official": "https://lakebiwa100.com/",
+      "entry": "https://moshicom.com/",
+      "review": "https://dogsorcaravan.com/",
+      "sns": "https://www.facebook.com/"
+    },
+    "review": {
+      "rating": 4.9,
+      "count": 145
+    },
+    "mandatory_gear": [
+      {
+        "name": "ゴアテックス等 シームテープ加工防水透湿レイン上下",
+        "category": "ウェア"
+      },
+      {
+        "name": "高光量ヘッドライト2灯（メイン300lm以上＋予備ライト・予備電池）",
+        "category": "ライト"
+      },
+      {
+        "name": "GPXトラック収録GPSウォッチ（SUUNTO/GARMIN等）",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "エマージェンシーサバイバルシート（130×200cm以上）＆ホイッスル",
+        "category": "エイド"
+      },
+      {
+        "name": "保温ベースレイヤー（ドライナミック等）・防寒長袖・グローブ",
+        "category": "ウェア"
+      },
+      {
+        "name": "水分1.5L以上携行可能なトレランザック（10L〜12L）＆補給食",
+        "category": "補給"
+      }
+    ]
+  },
+  {
+    "id": "koumi-100-2026",
+    "category": "trail",
+    "subCategory": "100マイル 周回耐久",
+    "elements": [
+      "100マイル",
+      "トレック",
+      "夜間"
+    ],
+    "title": "KOUMI 100 (小海100マイル トレイルランニング 2026)",
+    "date": "2026-10-09",
+    "month": 10,
+    "region": "甲信越",
+    "prefecture": "長野県",
+    "distance_km": 175,
+    "elevation_m": 7900,
+    "entry_status": "open",
+    "entry_deadline": "2026-08-31",
+    "links": {
+      "official": "https://koumi100.com/",
+      "entry": "https://runnet.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://www.facebook.com/"
+    },
+    "review": {
+      "rating": 4.8,
+      "count": 198
+    },
+    "mandatory_gear": [
+      {
+        "name": "ゴアテックス等 シームテープ加工防水透湿レイン上下",
+        "category": "ウェア"
+      },
+      {
+        "name": "高光量ヘッドライト2灯（メイン300lm以上＋予備ライト・予備電池）",
+        "category": "ライト"
+      },
+      {
+        "name": "GPXトラック収録GPSウォッチ（SUUNTO/GARMIN等）",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "エマージェンシーサバイバルシート（130×200cm以上）＆ホイッスル",
+        "category": "エイド"
+      },
+      {
+        "name": "保温ベースレイヤー（ドライナミック等）・防寒長袖・グローブ",
+        "category": "ウェア"
+      },
+      {
+        "name": "水分1.5L以上携行可能なトレランザック（10L〜12L）＆補給食",
+        "category": "補給"
+      }
+    ]
+  },
+  {
+    "id": "sainokuni-100mile-2026",
+    "category": "trail",
+    "subCategory": "100マイル トレイル",
+    "elements": [
+      "100マイル",
+      "トレック",
+      "夜間"
+    ],
+    "title": "トレニックワールド 100mile & 100km in 彩の国 2026",
+    "date": "2026-05-16",
+    "month": 5,
+    "region": "関東",
+    "prefecture": "埼玉県",
+    "distance_km": 162,
+    "elevation_m": 10500,
+    "entry_status": "closed",
+    "entry_deadline": "2026-02-28",
+    "links": {
+      "official": "https://trainic-world.org/sainokuni/",
+      "entry": "https://runnet.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://www.facebook.com/"
+    },
+    "review": {
+      "rating": 4.8,
+      "count": 215
+    },
+    "mandatory_gear": [
+      {
+        "name": "ゴアテックス等 シームテープ加工防水透湿レイン上下",
+        "category": "ウェア"
+      },
+      {
+        "name": "高光量ヘッドライト2灯（メイン300lm以上＋予備ライト・予備電池）",
+        "category": "ライト"
+      },
+      {
+        "name": "GPXトラック収録GPSウォッチ（SUUNTO/GARMIN等）",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "エマージェンシーサバイバルシート（130×200cm以上）＆ホイッスル",
+        "category": "エイド"
+      },
+      {
+        "name": "保温ベースレイヤー（ドライナミック等）・防寒長袖・グローブ",
+        "category": "ウェア"
+      },
+      {
+        "name": "水分1.5L以上携行可能なトレランザック（10L〜12L）＆補給食",
+        "category": "補給"
+      }
+    ]
+  },
+  {
+    "id": "ftr-chichibu-okumusashi-100mile-2026",
+    "category": "trail",
+    "subCategory": "100マイル トレイル",
+    "elements": [
+      "100マイル",
+      "トレック",
+      "夜間"
+    ],
+    "title": "FunTrails Round 秩父＆奥武蔵 100mile (FTR100) 2026",
+    "date": "2026-11-21",
+    "month": 11,
+    "region": "関東",
+    "prefecture": "埼玉県",
+    "distance_km": 163,
+    "elevation_m": 9800,
+    "entry_status": "open",
+    "entry_deadline": "2026-09-30",
+    "links": {
+      "official": "https://fun-trails.com/",
+      "entry": "https://runnet.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://www.facebook.com/"
+    },
+    "review": {
+      "rating": 4.8,
+      "count": 260
+    },
+    "mandatory_gear": [
+      {
+        "name": "ゴアテックス等 シームテープ加工防水透湿レイン上下",
+        "category": "ウェア"
+      },
+      {
+        "name": "高光量ヘッドライト2灯（メイン300lm以上＋予備ライト・予備電池）",
+        "category": "ライト"
+      },
+      {
+        "name": "GPXトラック収録GPSウォッチ（SUUNTO/GARMIN等）",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "エマージェンシーサバイバルシート（130×200cm以上）＆ホイッスル",
+        "category": "エイド"
+      },
+      {
+        "name": "保温ベースレイヤー（ドライナミック等）・防寒長袖・グローブ",
+        "category": "ウェア"
+      },
+      {
+        "name": "水分1.5L以上携行可能なトレランザック（10L〜12L）＆補給食",
+        "category": "補給"
+      }
+    ]
+  },
+  {
+    "id": "osj-ontake-100mile-2026",
+    "category": "trail",
+    "subCategory": "100マイル ガレ場林道",
+    "elements": [
+      "100マイル",
+      "トレック",
+      "夜間"
+    ],
+    "title": "OSJ ONTAKE 100 (御嶽100マイル・100km) 2026",
+    "date": "2026-07-18",
+    "month": 7,
+    "region": "甲信越",
+    "prefecture": "長野県",
+    "distance_km": 160,
+    "elevation_m": 5600,
+    "entry_status": "closing_soon",
+    "entry_deadline": "2026-06-15",
+    "links": {
+      "official": "https://www.powersports.co.jp/osjtrail/26_ontake100/",
+      "entry": "https://www.sportsentry.ne.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://www.facebook.com/"
+    },
+    "review": {
+      "rating": 4.8,
+      "count": 340
+    },
+    "mandatory_gear": [
+      {
+        "name": "ゴアテックス等 シームテープ加工防水透湿レイン上下",
+        "category": "ウェア"
+      },
+      {
+        "name": "高光量ヘッドライト2灯（メイン300lm以上＋予備ライト・予備電池）",
+        "category": "ライト"
+      },
+      {
+        "name": "GPXトラック収録GPSウォッチ（SUUNTO/GARMIN等）",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "エマージェンシーサバイバルシート（130×200cm以上）＆ホイッスル",
+        "category": "エイド"
+      },
+      {
+        "name": "保温ベースレイヤー（ドライナミック等）・防寒長袖・グローブ",
+        "category": "ウェア"
+      },
+      {
+        "name": "水分1.5L以上携行可能なトレランザック（10L〜12L）＆補給食",
+        "category": "補給"
+      }
+    ]
+  },
+  {
+    "id": "deep-japan-ultra-100-2026",
+    "category": "trail",
+    "subCategory": "100マイル 山岳エクストリーム",
+    "elements": [
+      "100マイル",
+      "読図",
+      "トレック",
+      "夜間"
+    ],
+    "title": "DEEP JAPAN ULTRA 100 (ディープジャパン166km 新潟・群馬) 2026",
+    "date": "2026-06-26",
+    "month": 6,
+    "region": "甲信越",
+    "prefecture": "新潟県",
+    "distance_km": 166,
+    "elevation_m": 9700,
+    "entry_status": "closed",
+    "entry_deadline": "2026-04-30",
+    "links": {
+      "official": "https://www.deepjapanultra.com/",
+      "entry": "https://moshicom.com/",
+      "review": "https://dogsorcaravan.com/",
+      "sns": "https://www.facebook.com/"
+    },
+    "review": {
+      "rating": 4.9,
+      "count": 118
+    },
+    "mandatory_gear": [
+      {
+        "name": "ゴアテックス等 シームテープ加工防水透湿レイン上下",
+        "category": "ウェア"
+      },
+      {
+        "name": "高光量ヘッドライト2灯（メイン300lm以上＋予備ライト・予備電池）",
+        "category": "ライト"
+      },
+      {
+        "name": "GPXトラック収録GPSウォッチ（SUUNTO/GARMIN等）",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "エマージェンシーサバイバルシート（130×200cm以上）＆ホイッスル",
+        "category": "エイド"
+      },
+      {
+        "name": "保温ベースレイヤー（ドライナミック等）・防寒長袖・グローブ",
+        "category": "ウェア"
+      },
+      {
+        "name": "水分1.5L以上携行可能なトレランザック（10L〜12L）＆補給食",
+        "category": "補給"
+      }
+    ]
+  },
+  {
+    "id": "kumagawa-revival-trail-100mile-2026",
+    "category": "trail",
+    "subCategory": "100マイル 九州脊梁",
+    "elements": [
+      "100マイル",
+      "トレック",
+      "夜間"
+    ],
+    "title": "球磨川リバイバルトレイル 100マイル (KRT 167km) 2026",
+    "date": "2026-11-13",
+    "month": 11,
+    "region": "九州",
+    "prefecture": "熊本県",
+    "distance_km": 167,
+    "elevation_m": 9400,
+    "entry_status": "open",
+    "entry_deadline": "2026-09-25",
+    "links": {
+      "official": "https://www.kumagawa-revival-trail.com/",
+      "entry": "https://universal-field.com/",
+      "review": "https://dogsorcaravan.com/",
+      "sns": "https://www.facebook.com/"
+    },
+    "review": {
+      "rating": 4.9,
+      "count": 134
+    },
+    "mandatory_gear": [
+      {
+        "name": "ゴアテックス等 シームテープ加工防水透湿レイン上下",
+        "category": "ウェア"
+      },
+      {
+        "name": "高光量ヘッドライト2灯（メイン300lm以上＋予備ライト・予備電池）",
+        "category": "ライト"
+      },
+      {
+        "name": "GPXトラック収録GPSウォッチ（SUUNTO/GARMIN等）",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "エマージェンシーサバイバルシート（130×200cm以上）＆ホイッスル",
+        "category": "エイド"
+      },
+      {
+        "name": "保温ベースレイヤー（ドライナミック等）・防寒長袖・グローブ",
+        "category": "ウェア"
+      },
+      {
+        "name": "水分1.5L以上携行可能なトレランザック（10L〜12L）＆補給食",
+        "category": "補給"
+      }
+    ]
+  },
+  {
+    "id": "osj-koushu-alps-100mile-2026",
+    "category": "trail",
+    "subCategory": "100マイル トレイル",
+    "elements": [
+      "100マイル",
+      "トレック",
+      "夜間"
+    ],
+    "title": "OSJ KOUSHU ALPS 100 (甲州アルプスオートルート 100mile) 2026",
+    "date": "2026-10-24",
+    "month": 10,
+    "region": "甲信越",
+    "prefecture": "山梨県",
+    "distance_km": 160,
+    "elevation_m": 9200,
+    "entry_status": "open",
+    "entry_deadline": "2026-09-10",
+    "links": {
+      "official": "https://www.powersports.co.jp/osjtrail/",
+      "entry": "https://www.sportsentry.ne.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://www.facebook.com/"
+    },
+    "review": {
+      "rating": 4.7,
+      "count": 95
+    },
+    "mandatory_gear": [
+      {
+        "name": "ゴアテックス等 シームテープ加工防水透湿レイン上下",
+        "category": "ウェア"
+      },
+      {
+        "name": "高光量ヘッドライト2灯（メイン300lm以上＋予備ライト・予備電池）",
+        "category": "ライト"
+      },
+      {
+        "name": "GPXトラック収録GPSウォッチ（SUUNTO/GARMIN等）",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "エマージェンシーサバイバルシート（130×200cm以上）＆ホイッスル",
+        "category": "エイド"
+      },
+      {
+        "name": "保温ベースレイヤー（ドライナミック等）・防寒長袖・グローブ",
+        "category": "ウェア"
+      },
+      {
+        "name": "水分1.5L以上携行可能なトレランザック（10L〜12L）＆補給食",
+        "category": "補給"
+      }
+    ]
+  },
+  {
+    "id": "tambasasayama-100mile-2026",
+    "category": "trail",
+    "subCategory": "100マイル トレイル",
+    "elements": [
+      "100マイル",
+      "トレック",
+      "夜間"
+    ],
+    "title": "TAMBA 100 アドベンチャートレイル (丹波100マイル) 2026",
+    "date": "2026-06-05",
+    "month": 6,
+    "region": "近畿",
+    "prefecture": "兵庫県",
+    "distance_km": 170,
+    "elevation_m": 12800,
+    "entry_status": "closed",
+    "entry_deadline": "2026-04-20",
+    "links": {
+      "official": "https://trailrun-tamba.com/",
+      "entry": "https://moshicom.com/",
+      "review": "https://dogsorcaravan.com/",
+      "sns": "https://www.facebook.com/"
+    },
+    "review": {
+      "rating": 4.9,
+      "count": 110
+    },
+    "mandatory_gear": [
+      {
+        "name": "ゴアテックス等 シームテープ加工防水透湿レイン上下",
+        "category": "ウェア"
+      },
+      {
+        "name": "高光量ヘッドライト2灯（メイン300lm以上＋予備ライト・予備電池）",
+        "category": "ライト"
+      },
+      {
+        "name": "GPXトラック収録GPSウォッチ（SUUNTO/GARMIN等）",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "エマージェンシーサバイバルシート（130×200cm以上）＆ホイッスル",
+        "category": "エイド"
+      },
+      {
+        "name": "保温ベースレイヤー（ドライナミック等）・防寒長袖・グローブ",
+        "category": "ウェア"
+      },
+      {
+        "name": "水分1.5L以上携行可能なトレランザック（10L〜12L）＆補給食",
+        "category": "補給"
+      }
+    ]
+  },
+  {
+    "id": "michinoku-coastal-trail-100mile-2026",
+    "category": "trail",
+    "subCategory": "100マイル コーストトレイル",
+    "elements": [
+      "100マイル",
+      "トレック",
+      "夜間"
+    ],
+    "title": "みちのく潮風トレイル 100マイル ジャーニーラン 2026",
+    "date": "2026-10-10",
+    "month": 10,
+    "region": "東北",
+    "prefecture": "岩手県",
+    "distance_km": 160,
+    "elevation_m": 4800,
+    "entry_status": "open",
+    "entry_deadline": "2026-08-31",
+    "links": {
+      "official": "https://moshicom.com/",
+      "entry": "https://moshicom.com/",
+      "review": "https://moshicom.com/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.8,
+      "count": 76
+    },
+    "mandatory_gear": [
+      {
+        "name": "ゴアテックス等 シームテープ加工防水透湿レイン上下",
+        "category": "ウェア"
+      },
+      {
+        "name": "高光量ヘッドライト2灯（メイン300lm以上＋予備ライト・予備電池）",
+        "category": "ライト"
+      },
+      {
+        "name": "GPXトラック収録GPSウォッチ（SUUNTO/GARMIN等）",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "エマージェンシーサバイバルシート（130×200cm以上）＆ホイッスル",
+        "category": "エイド"
+      },
+      {
+        "name": "保温ベースレイヤー（ドライナミック等）・防寒長袖・グローブ",
+        "category": "ウェア"
+      },
+      {
+        "name": "水分1.5L以上携行可能なトレランザック（10L〜12L）＆補給食",
+        "category": "補給"
+      }
+    ]
+  },
+  {
+    "id": "ibuki-hyakkei-100mile-2026",
+    "category": "trail",
+    "subCategory": "100マイル トレイル",
+    "elements": [
+      "100マイル",
+      "トレック",
+      "夜間"
+    ],
+    "title": "伊吹山・関ケ原100マイルトレイル 2026",
+    "date": "2026-09-26",
+    "month": 9,
+    "region": "中部",
+    "prefecture": "岐阜県",
+    "distance_km": 160,
+    "elevation_m": 7800,
+    "entry_status": "open",
+    "entry_deadline": "2026-08-15",
+    "links": {
+      "official": "https://moshicom.com/",
+      "entry": "https://moshicom.com/",
+      "review": "https://moshicom.com/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.7,
+      "count": 68
+    },
+    "mandatory_gear": [
+      {
+        "name": "ゴアテックス等 シームテープ加工防水透湿レイン上下",
+        "category": "ウェア"
+      },
+      {
+        "name": "高光量ヘッドライト2灯（メイン300lm以上＋予備ライト・予備電池）",
+        "category": "ライト"
+      },
+      {
+        "name": "GPXトラック収録GPSウォッチ（SUUNTO/GARMIN等）",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "エマージェンシーサバイバルシート（130×200cm以上）＆ホイッスル",
+        "category": "エイド"
+      },
+      {
+        "name": "保温ベースレイヤー（ドライナミック等）・防寒長袖・グローブ",
+        "category": "ウェア"
+      },
+      {
+        "name": "水分1.5L以上携行可能なトレランザック（10L〜12L）＆補給食",
+        "category": "補給"
+      }
+    ]
+  },
+  {
+    "id": "backyard-ultra-hiroshima-2026",
+    "category": "trail",
+    "subCategory": "バックヤード・ラストマン耐久",
+    "elements": [
+      "100マイル",
+      "夜間",
+      "トレック"
+    ],
+    "title": "Backyard Ultra Last Samurai Standing 広島・瀬戸内大会 2026",
+    "date": "2026-11-07",
+    "month": 11,
+    "region": "中国",
+    "prefecture": "広島県",
+    "distance_km": 161,
+    "elevation_m": 3200,
+    "entry_status": "open",
+    "entry_deadline": "2026-10-10",
+    "links": {
+      "official": "https://moshicom.com/",
+      "entry": "https://moshicom.com/",
+      "review": "https://moshicom.com/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.8,
+      "count": 82
+    },
+    "mandatory_gear": [
+      {
+        "name": "ゴアテックス等 シームテープ加工防水透湿レイン上下",
+        "category": "ウェア"
+      },
+      {
+        "name": "高光量ヘッドライト2灯（メイン300lm以上＋予備ライト・予備電池）",
+        "category": "ライト"
+      },
+      {
+        "name": "GPXトラック収録GPSウォッチ（SUUNTO/GARMIN等）",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "エマージェンシーサバイバルシート（130×200cm以上）＆ホイッスル",
+        "category": "エイド"
+      },
+      {
+        "name": "保温ベースレイヤー（ドライナミック等）・防寒長袖・グローブ",
+        "category": "ウェア"
+      },
+      {
+        "name": "水分1.5L以上携行可能なトレランザック（10L〜12L）＆補給食",
+        "category": "補給"
+      }
+    ]
+  },
+  {
+    "id": "mihara-hakuryuko-trail-2026",
+    "category": "trail",
+    "subCategory": "ミドル・ショートトレイル",
+    "elements": [
+      "トレック",
+      "日帰り"
+    ],
+    "title": "三原・白竜湖トレイルランレース 2026（広島・三原市）",
+    "date": "2026-02-22",
+    "month": 2,
+    "region": "中国",
+    "prefecture": "広島県",
+    "distance_km": 36,
+    "elevation_m": 1580,
+    "entry_status": "closed",
+    "entry_deadline": "2026-01-19",
+    "links": {
+      "official": "https://mihara-trail.com/",
+      "entry": "https://runnet.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://www.facebook.com/miharatrail"
+    },
+    "review": {
+      "rating": 4.6,
+      "count": 114
+    },
+    "mandatory_gear": [
+      {
+        "name": "レインジャケットまたは防風シェル",
+        "category": "ウェア"
+      },
+      {
+        "name": "エマージェンシーシート・ホイッスル・保険証コピー",
+        "category": "エイド"
+      },
+      {
+        "name": "水分500ml〜1.0L以上・行動食・マイカップ",
+        "category": "補給"
+      },
+      {
+        "name": "トレイルランニングシューズ＆トレランザック",
+        "category": "ギア"
+      }
+    ]
+  },
+  {
+    "id": "megahira-extreme-500-2026",
+    "category": "trail",
+    "subCategory": "バーティカル・スキー場激坂",
+    "elements": [
+      "トレック",
+      "日帰り"
+    ],
+    "title": "女鹿平温泉・めがひらエクストリーム 500 2026（広島・廿日市）",
+    "date": "2026-04-26",
+    "month": 4,
+    "region": "中国",
+    "prefecture": "広島県",
+    "distance_km": 12,
+    "elevation_m": 1650,
+    "entry_status": "closing_soon",
+    "entry_deadline": "2026-04-12",
+    "links": {
+      "official": "https://moshicom.com/139981/",
+      "entry": "https://moshicom.com/139981/",
+      "review": "https://moshicom.com/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.7,
+      "count": 45
+    },
+    "mandatory_gear": [
+      {
+        "name": "レインジャケットまたは防風シェル",
+        "category": "ウェア"
+      },
+      {
+        "name": "エマージェンシーシート・ホイッスル・保険証コピー",
+        "category": "エイド"
+      },
+      {
+        "name": "水分500ml〜1.0L以上・行動食・マイカップ",
+        "category": "補給"
+      },
+      {
+        "name": "トレイルランニングシューズ＆トレランザック",
+        "category": "ギア"
+      }
+    ]
+  },
+  {
+    "id": "hiroshima-bay-night-trail-2026",
+    "category": "trail",
+    "subCategory": "ナイト＆ロングトレイル",
+    "elements": [
+      "トレック",
+      "夜間"
+    ],
+    "title": "HIROSHIMA BAY トレイルラン 2026（広島湾岸トレイル 60km）",
+    "date": "2026-05-03",
+    "month": 5,
+    "region": "中国",
+    "prefecture": "広島県",
+    "distance_km": 60,
+    "elevation_m": 3400,
+    "entry_status": "closed",
+    "entry_deadline": "2026-04-05",
+    "links": {
+      "official": "https://moshicom.com/",
+      "entry": "https://moshicom.com/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.7,
+      "count": 94
+    },
+    "mandatory_gear": [
+      {
+        "name": "防水透湿レインジャケット（フード付き・シーム処理済）",
+        "category": "ウェア"
+      },
+      {
+        "name": "ヘッドランプ（予備バッテリー含む）",
+        "category": "ライト"
+      },
+      {
+        "name": "サバイバルブランケット・ファーストエイドキット・熊鈴",
+        "category": "エイド"
+      },
+      {
+        "name": "コースマップまたはGPSナビゲーション時計",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "ソフトフラスク水分1.0L以上＆マグネシウム系エナジージェル",
+        "category": "補給"
+      }
+    ]
+  },
+  {
+    "id": "hibayama-skyrun-2026",
+    "category": "trail",
+    "subCategory": "国定公園トレイル",
+    "elements": [
+      "トレック",
+      "日帰り"
+    ],
+    "title": "西日本豪雨復興支援 ひばやま国際スカイラン（広島・庄原比婆山）2026",
+    "date": "2026-05-31",
+    "month": 5,
+    "region": "中国",
+    "prefecture": "広島県",
+    "distance_km": 32,
+    "elevation_m": 1850,
+    "entry_status": "open",
+    "entry_deadline": "2026-05-05",
+    "links": {
+      "official": "https://runnet.jp/",
+      "entry": "https://runnet.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.8,
+      "count": 128
+    },
+    "mandatory_gear": [
+      {
+        "name": "レインジャケットまたは防風シェル",
+        "category": "ウェア"
+      },
+      {
+        "name": "エマージェンシーシート・ホイッスル・保険証コピー",
+        "category": "エイド"
+      },
+      {
+        "name": "水分500ml〜1.0L以上・行動食・マイカップ",
+        "category": "補給"
+      },
+      {
+        "name": "トレイルランニングシューズ＆トレランザック",
+        "category": "ギア"
+      }
+    ]
+  },
+  {
+    "id": "shinjo-forest-trail-2026",
+    "category": "trail",
+    "subCategory": "ブナ原生林トレイル",
+    "elements": [
+      "トレック",
+      "日帰り"
+    ],
+    "title": "ひろしま恐羅漢・新庄フォレストトレイル 2026（広島・北広島町）",
+    "date": "2026-06-21",
+    "month": 6,
+    "region": "中国",
+    "prefecture": "広島県",
+    "distance_km": 28,
+    "elevation_m": 1500,
+    "entry_status": "open",
+    "entry_deadline": "2026-05-25",
+    "links": {
+      "official": "https://moshicom.com/",
+      "entry": "https://moshicom.com/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.7,
+      "count": 79
+    },
+    "mandatory_gear": [
+      {
+        "name": "レインジャケットまたは防風シェル",
+        "category": "ウェア"
+      },
+      {
+        "name": "エマージェンシーシート・ホイッスル・保険証コピー",
+        "category": "エイド"
+      },
+      {
+        "name": "水分500ml〜1.0L以上・行動食・マイカップ",
+        "category": "補給"
+      },
+      {
+        "name": "トレイルランニングシューズ＆トレランザック",
+        "category": "ギア"
+      }
+    ]
+  },
+  {
+    "id": "osorakan-ekiden-trail-2026",
+    "category": "trail",
+    "subCategory": "中国最高峰ロングトレイル",
+    "elements": [
+      "トレック",
+      "日帰り"
+    ],
+    "title": "恐羅漢トレイル in 安芸太田 2026（エキスパート65km・広島最高峰）",
+    "date": "2026-08-23",
+    "month": 8,
+    "region": "中国",
+    "prefecture": "広島県",
+    "distance_km": 65,
+    "elevation_m": 3600,
+    "entry_status": "open",
+    "entry_deadline": "2026-07-20",
+    "links": {
+      "official": "https://osorakan-trail.com/",
+      "entry": "https://runnet.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://www.facebook.com/"
+    },
+    "review": {
+      "rating": 4.9,
+      "count": 186
+    },
+    "mandatory_gear": [
+      {
+        "name": "防水透湿レインジャケット（フード付き・シーム処理済）",
+        "category": "ウェア"
+      },
+      {
+        "name": "ヘッドランプ（予備バッテリー含む）",
+        "category": "ライト"
+      },
+      {
+        "name": "サバイバルブランケット・ファーストエイドキット・熊鈴",
+        "category": "エイド"
+      },
+      {
+        "name": "コースマップまたはGPSナビゲーション時計",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "ソフトフラスク水分1.0L以上＆マグネシウム系エナジージェル",
+        "category": "補給"
+      }
+    ]
+  },
+  {
+    "id": "momiji-trail-hatsukaichi-2026",
+    "category": "trail",
+    "subCategory": "宮島対岸マウンテントレイル",
+    "elements": [
+      "トレック",
+      "日帰り"
+    ],
+    "title": "廿日市もみじトレイルラン 2026（広島・大野権現山〜経小屋山）",
+    "date": "2026-10-18",
+    "month": 10,
+    "region": "中国",
+    "prefecture": "広島県",
+    "distance_km": 30,
+    "elevation_m": 1750,
+    "entry_status": "open",
+    "entry_deadline": "2026-09-20",
+    "links": {
+      "official": "https://moshicom.com/",
+      "entry": "https://moshicom.com/",
+      "review": "https://moshicom.com/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.7,
+      "count": 92
+    },
+    "mandatory_gear": [
+      {
+        "name": "レインジャケットまたは防風シェル",
+        "category": "ウェア"
+      },
+      {
+        "name": "エマージェンシーシート・ホイッスル・保険証コピー",
+        "category": "エイド"
+      },
+      {
+        "name": "水分500ml〜1.0L以上・行動食・マイカップ",
+        "category": "補給"
+      },
+      {
+        "name": "トレイルランニングシューズ＆トレランザック",
+        "category": "ギア"
+      }
+    ]
+  },
+  {
+    "id": "kure-tobishima-ultra-2026",
+    "category": "marathon",
+    "subCategory": "瀬戸内ウルトラマラニック",
+    "elements": [
+      "ロード",
+      "日帰り"
+    ],
+    "title": "呉・とびしま海道ウルトラマラニック 100km 2026（広島・呉市）",
+    "date": "2026-10-11",
+    "month": 10,
+    "region": "中国",
+    "prefecture": "広島県",
+    "distance_km": 100,
+    "elevation_m": 950,
+    "entry_status": "open",
+    "entry_deadline": "2026-08-31",
+    "links": {
+      "official": "https://www.sportsentry.ne.jp/",
+      "entry": "https://www.sportsentry.ne.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.8,
+      "count": 112
+    },
+    "mandatory_gear": [
+      {
+        "name": "早朝・夜間走行用ヘッドライト＆背面点滅赤色ライト",
+        "category": "ライト"
+      },
+      {
+        "name": "マイカップ（エイド給水用）＆ソフトフラスク",
+        "category": "ギア"
+      },
+      {
+        "name": "足攣り防止マグネシウムジェル（Mag-on等）・塩分タブレット",
+        "category": "補給"
+      },
+      {
+        "name": "撥水ウインドシェル＆ワセリン・テーピング",
+        "category": "ウェア"
+      }
+    ]
+  },
+  {
+    "id": "hiroshima-peace-marathon-2026",
+    "category": "marathon",
+    "subCategory": "都市型マラソン",
+    "elements": [
+      "ロード",
+      "日帰り"
+    ],
+    "title": "ひろしま国際平和マラソン＆リバーサイドラン 2026",
+    "date": "2026-11-03",
+    "month": 11,
+    "region": "中国",
+    "prefecture": "広島県",
+    "distance_km": 21,
+    "elevation_m": 120,
+    "entry_status": "open",
+    "entry_deadline": "2026-09-20",
+    "links": {
+      "official": "https://runnet.jp/",
+      "entry": "https://runnet.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.5,
+      "count": 240
+    },
+    "mandatory_gear": [
+      {
+        "name": "高機能ランニングウェア・吸汗速乾インナー",
+        "category": "ウェア"
+      },
+      {
+        "name": "エナジージェル（10km毎補給用 3〜4個）＆BCAA",
+        "category": "補給"
+      },
+      {
+        "name": "GPSランニングウォッチ",
+        "category": "ナビゲーション"
+      }
+    ]
+  },
+  {
+    "id": "akiota-shinkansen-cycle-2026",
+    "category": "cycling",
+    "subCategory": "中国山地グランフォンド",
+    "elements": [
+      "ロード",
+      "日帰り"
+    ],
+    "title": "安芸太田グランフォンド＆ヒルクライム in 広島 2026",
+    "date": "2026-09-13",
+    "month": 9,
+    "region": "中国",
+    "prefecture": "広島県",
+    "distance_km": 120,
+    "elevation_m": 2200,
+    "entry_status": "open",
+    "entry_deadline": "2026-08-15",
+    "links": {
+      "official": "https://www.sportsentry.ne.jp/",
+      "entry": "https://www.sportsentry.ne.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.7,
+      "count": 68
+    },
+    "mandatory_gear": [
+      {
+        "name": "JCF公認サイクルヘルメット＆グローブ",
+        "category": "ギア"
+      },
+      {
+        "name": "高輝度フロントライト＆リアレッドライト（トンネル通過必須）",
+        "category": "ライト"
+      },
+      {
+        "name": "携帯マルチツール・予備チューブ2本・タイヤレバー・携帯ポンプ",
+        "category": "リペア"
+      },
+      {
+        "name": "サイクルボトル水分＆高カロリー補給食",
+        "category": "補給"
+      },
+      {
+        "name": "ウインドブレーカー・レインジレ",
+        "category": "ウェア"
+      }
+    ]
+  },
+  {
+    "id": "nagi-peaks-tough-trail-2026",
+    "category": "trail",
+    "subCategory": "山岳ロングトレイル",
+    "elements": [
+      "トレック",
+      "日帰り"
+    ],
+    "title": "NAGI PEAKS TOUGH TRAIL CHALLENGE 2026（岡山・奈義町那岐山）",
+    "date": "2026-05-24",
+    "month": 5,
+    "region": "中国",
+    "prefecture": "岡山県",
+    "distance_km": 56,
+    "elevation_m": 3500,
+    "entry_status": "open",
+    "entry_deadline": "2026-04-25",
+    "links": {
+      "official": "https://nagipeaks.com/",
+      "entry": "https://moshicom.com/",
+      "review": "https://dogsorcaravan.com/",
+      "sns": "https://www.facebook.com/"
+    },
+    "review": {
+      "rating": 4.9,
+      "count": 136
+    },
+    "mandatory_gear": [
+      {
+        "name": "防水透湿レインジャケット（フード付き・シーム処理済）",
+        "category": "ウェア"
+      },
+      {
+        "name": "ヘッドランプ（予備バッテリー含む）",
+        "category": "ライト"
+      },
+      {
+        "name": "サバイバルブランケット・ファーストエイドキット・熊鈴",
+        "category": "エイド"
+      },
+      {
+        "name": "コースマップまたはGPSナビゲーション時計",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "ソフトフラスク水分1.0L以上＆マグネシウム系エナジージェル",
+        "category": "補給"
+      }
+    ]
+  },
+  {
+    "id": "hiruzen-kougen-marathon-trail-2026",
+    "category": "trail",
+    "subCategory": "高原クロスカントリー＆トレイル",
+    "elements": [
+      "トレック",
+      "日帰り"
+    ],
+    "title": "蒜山高原クロスカントリー＆トレイルラン 2026（岡山・真庭市）",
+    "date": "2026-07-12",
+    "month": 7,
+    "region": "中国",
+    "prefecture": "岡山県",
+    "distance_km": 30,
+    "elevation_m": 1300,
+    "entry_status": "open",
+    "entry_deadline": "2026-06-15",
+    "links": {
+      "official": "https://runnet.jp/",
+      "entry": "https://runnet.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.7,
+      "count": 88
+    },
+    "mandatory_gear": [
+      {
+        "name": "レインジャケットまたは防風シェル",
+        "category": "ウェア"
+      },
+      {
+        "name": "エマージェンシーシート・ホイッスル・保険証コピー",
+        "category": "エイド"
+      },
+      {
+        "name": "水分500ml〜1.0L以上・行動食・マイカップ",
+        "category": "補給"
+      },
+      {
+        "name": "トレイルランニングシューズ＆トレランザック",
+        "category": "ギア"
+      }
+    ]
+  },
+  {
+    "id": "okayama-marathon-2026",
+    "category": "marathon",
+    "subCategory": "日本陸連公認フルマラソン",
+    "elements": [
+      "ロード",
+      "日帰り"
+    ],
+    "title": "おかやまマラソン 2026（岡山・岡山市 フルマラソン）",
+    "date": "2026-11-08",
+    "month": 11,
+    "region": "中国",
+    "prefecture": "岡山県",
+    "distance_km": 42.195,
+    "elevation_m": 140,
+    "entry_status": "closed",
+    "entry_deadline": "2026-05-20",
+    "links": {
+      "official": "https://www.okayamamarathon.jp/",
+      "entry": "https://runnet.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.9,
+      "count": 890
+    },
+    "mandatory_gear": [
+      {
+        "name": "高機能ランニングウェア・吸汗速乾インナー",
+        "category": "ウェア"
+      },
+      {
+        "name": "エナジージェル（10km毎補給用 3〜4個）＆BCAA",
+        "category": "補給"
+      },
+      {
+        "name": "GPSランニングウォッチ",
+        "category": "ナビゲーション"
+      }
+    ]
+  },
+  {
+    "id": "soja-kibiji-marathon-2027",
+    "category": "marathon",
+    "subCategory": "歴史街道フルマラソン",
+    "elements": [
+      "ロード",
+      "日帰り"
+    ],
+    "title": "そうじゃ吉備路マラソン 2027（岡山・総社市 フル＆ハーフ）",
+    "date": "2027-02-28",
+    "month": 2,
+    "region": "中国",
+    "prefecture": "岡山県",
+    "distance_km": 42.195,
+    "elevation_m": 190,
+    "entry_status": "open",
+    "entry_deadline": "2026-12-15",
+    "links": {
+      "official": "https://www.city.soja.okayama.jp/",
+      "entry": "https://runnet.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.6,
+      "count": 410
+    },
+    "mandatory_gear": [
+      {
+        "name": "高機能ランニングウェア・吸汗速乾インナー",
+        "category": "ウェア"
+      },
+      {
+        "name": "エナジージェル（10km毎補給用 3〜4個）＆BCAA",
+        "category": "補給"
+      },
+      {
+        "name": "GPSランニングウォッチ",
+        "category": "ナビゲーション"
+      }
+    ]
+  },
+  {
+    "id": "kagamino-forest-trail-2026",
+    "category": "trail",
+    "subCategory": "源流トレイル",
+    "elements": [
+      "トレック",
+      "日帰り"
+    ],
+    "title": "鏡野・奥津渓マウンテントレイル 2026（岡山・鏡野町）",
+    "date": "2026-10-04",
+    "month": 10,
+    "region": "中国",
+    "prefecture": "岡山県",
+    "distance_km": 35,
+    "elevation_m": 1900,
+    "entry_status": "open",
+    "entry_deadline": "2026-09-05",
+    "links": {
+      "official": "https://moshicom.com/",
+      "entry": "https://moshicom.com/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.7,
+      "count": 63
+    },
+    "mandatory_gear": [
+      {
+        "name": "レインジャケットまたは防風シェル",
+        "category": "ウェア"
+      },
+      {
+        "name": "エマージェンシーシート・ホイッスル・保険証コピー",
+        "category": "エイド"
+      },
+      {
+        "name": "水分500ml〜1.0L以上・行動食・マイカップ",
+        "category": "補給"
+      },
+      {
+        "name": "トレイルランニングシューズ＆トレランザック",
+        "category": "ギア"
+      }
+    ]
+  },
+  {
+    "id": "harima-okayama-ride-2026",
+    "category": "cycling",
+    "subCategory": "広域ロングライド",
+    "elements": [
+      "ロード",
+      "日帰り"
+    ],
+    "title": "岡山・吉備路＆瀬戸内ブルーライン センチュリーライド 2026",
+    "date": "2026-10-25",
+    "month": 10,
+    "region": "中国",
+    "prefecture": "岡山県",
+    "distance_km": 160,
+    "elevation_m": 1450,
+    "entry_status": "open",
+    "entry_deadline": "2026-09-25",
+    "links": {
+      "official": "https://www.sportsentry.ne.jp/",
+      "entry": "https://www.sportsentry.ne.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.7,
+      "count": 94
+    },
+    "mandatory_gear": [
+      {
+        "name": "JCF公認サイクルヘルメット＆グローブ",
+        "category": "ギア"
+      },
+      {
+        "name": "高輝度フロントライト＆リアレッドライト（トンネル通過必須）",
+        "category": "ライト"
+      },
+      {
+        "name": "携帯マルチツール・予備チューブ2本・タイヤレバー・携帯ポンプ",
+        "category": "リペア"
+      },
+      {
+        "name": "サイクルボトル水分＆高カロリー補給食",
+        "category": "補給"
+      },
+      {
+        "name": "ウインドブレーカー・レインジレ",
+        "category": "ウェア"
+      }
+    ]
+  },
+  {
+    "id": "akiyoshidai-karst-trail-2026",
+    "category": "trail",
+    "subCategory": "日本最大カルスト台地トレイル",
+    "elements": [
+      "トレック",
+      "日帰り"
+    ],
+    "title": "秋吉台カルストTRAIL RUN 2026（山口・美祢市 エクストリーム60km）",
+    "date": "2026-10-18",
+    "month": 10,
+    "region": "中国",
+    "prefecture": "山口県",
+    "distance_km": 60,
+    "elevation_m": 2600,
+    "entry_status": "open",
+    "entry_deadline": "2026-09-15",
+    "links": {
+      "official": "https://akiyoshidai-trail.com/",
+      "entry": "https://moshicom.com/",
+      "review": "https://runnet.jp/",
+      "sns": "https://www.facebook.com/"
+    },
+    "review": {
+      "rating": 4.9,
+      "count": 245
+    },
+    "mandatory_gear": [
+      {
+        "name": "防水透湿レインジャケット（フード付き・シーム処理済）",
+        "category": "ウェア"
+      },
+      {
+        "name": "ヘッドランプ（予備バッテリー含む）",
+        "category": "ライト"
+      },
+      {
+        "name": "サバイバルブランケット・ファーストエイドキット・熊鈴",
+        "category": "エイド"
+      },
+      {
+        "name": "コースマップまたはGPSナビゲーション時計",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "ソフトフラスク水分1.0L以上＆マグネシウム系エナジージェル",
+        "category": "補給"
+      }
+    ]
+  },
+  {
+    "id": "くだまつ笠戸島アイランドトレイル-2027",
+    "category": "trail",
+    "subCategory": "瀬戸内多島美オーシャントレイル",
+    "elements": [
+      "トレック",
+      "日帰り"
+    ],
+    "title": "くだまつ笠戸島アイランドトレイル 2027（山口・下松市）",
+    "date": "2027-02-14",
+    "month": 2,
+    "region": "中国",
+    "prefecture": "山口県",
+    "distance_km": 32,
+    "elevation_m": 1750,
+    "entry_status": "open",
+    "entry_deadline": "2026-12-10",
+    "links": {
+      "official": "https://kasadojima-trail.com/",
+      "entry": "https://runnet.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://www.facebook.com/"
+    },
+    "review": {
+      "rating": 4.9,
+      "count": 210
+    },
+    "mandatory_gear": [
+      {
+        "name": "レインジャケットまたは防風シェル",
+        "category": "ウェア"
+      },
+      {
+        "name": "エマージェンシーシート・ホイッスル・保険証コピー",
+        "category": "エイド"
+      },
+      {
+        "name": "水分500ml〜1.0L以上・行動食・マイカップ",
+        "category": "補給"
+      },
+      {
+        "name": "トレイルランニングシューズ＆トレランザック",
+        "category": "ギア"
+      }
+    ]
+  },
+  {
+    "id": "shimonoseki-kaikyo-marathon-2026",
+    "category": "marathon",
+    "subCategory": "海峡景観フルマラソン",
+    "elements": [
+      "ロード",
+      "日帰り"
+    ],
+    "title": "下関海響マラソン 2026（山口・下関市 関門海峡コース）",
+    "date": "2026-11-01",
+    "month": 11,
+    "region": "中国",
+    "prefecture": "山口県",
+    "distance_km": 42.195,
+    "elevation_m": 290,
+    "entry_status": "closed",
+    "entry_deadline": "2026-06-30",
+    "links": {
+      "official": "https://kaikyomarathon.jp/",
+      "entry": "https://runnet.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.8,
+      "count": 760
+    },
+    "mandatory_gear": [
+      {
+        "name": "高機能ランニングウェア・吸汗速乾インナー",
+        "category": "ウェア"
+      },
+      {
+        "name": "エナジージェル（10km毎補給用 3〜4個）＆BCAA",
+        "category": "補給"
+      },
+      {
+        "name": "GPSランニングウォッチ",
+        "category": "ナビゲーション"
+      }
+    ]
+  },
+  {
+    "id": "mukatsuku-double-marathon-2026",
+    "category": "marathon",
+    "subCategory": "棚田＆日本海ウルトラ",
+    "elements": [
+      "ロード",
+      "日帰り"
+    ],
+    "title": "向津具（むかつく）ダブルマラソン 2026（山口・長門市 84.39km）",
+    "date": "2026-06-14",
+    "month": 6,
+    "region": "中国",
+    "prefecture": "山口県",
+    "distance_km": 84.4,
+    "elevation_m": 1650,
+    "entry_status": "open",
+    "entry_deadline": "2026-04-30",
+    "links": {
+      "official": "https://www.mukatsuku-w-marathon.com/",
+      "entry": "https://runnet.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.9,
+      "count": 315
+    },
+    "mandatory_gear": [
+      {
+        "name": "早朝・夜間走行用ヘッドライト＆背面点滅赤色ライト",
+        "category": "ライト"
+      },
+      {
+        "name": "マイカップ（エイド給水用）＆ソフトフラスク",
+        "category": "ギア"
+      },
+      {
+        "name": "足攣り防止マグネシウムジェル（Mag-on等）・塩分タブレット",
+        "category": "補給"
+      },
+      {
+        "name": "撥水ウインドシェル＆ワセリン・テーピング",
+        "category": "ウェア"
+      }
+    ]
+  },
+  {
+    "id": "suo-oshima-マラニック-2026",
+    "category": "marathon",
+    "subCategory": "瀬戸内のハワイ100km",
+    "elements": [
+      "100km+",
+      "ロード",
+      "夜間"
+    ],
+    "title": "周防大島マラニック 100km 2026（山口・周防大島一周）",
+    "date": "2026-04-19",
+    "month": 4,
+    "region": "中国",
+    "prefecture": "山口県",
+    "distance_km": 100,
+    "elevation_m": 1200,
+    "entry_status": "closed",
+    "entry_deadline": "2026-03-10",
+    "links": {
+      "official": "https://www.sportsentry.ne.jp/",
+      "entry": "https://www.sportsentry.ne.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.7,
+      "count": 118
+    },
+    "mandatory_gear": [
+      {
+        "name": "早朝・夜間走行用ヘッドライト＆背面点滅赤色ライト",
+        "category": "ライト"
+      },
+      {
+        "name": "マイカップ（エイド給水用）＆ソフトフラスク",
+        "category": "ギア"
+      },
+      {
+        "name": "足攣り防止マグネシウムジェル（Mag-on等）・塩分タブレット",
+        "category": "補給"
+      },
+      {
+        "name": "撥水ウインドシェル＆ワセリン・テーピング",
+        "category": "ウェア"
+      }
+    ]
+  },
+  {
+    "id": "mine-akiyoshidai-cycle-2026",
+    "category": "cycling",
+    "subCategory": "カルストロード＆ロングライド",
+    "elements": [
+      "ロード",
+      "日帰り"
+    ],
+    "title": "ツール・ド・しものせき ＆ 秋吉台カルストライド 2026",
+    "date": "2026-05-24",
+    "month": 5,
+    "region": "中国",
+    "prefecture": "山口県",
+    "distance_km": 130,
+    "elevation_m": 1600,
+    "entry_status": "open",
+    "entry_deadline": "2026-04-20",
+    "links": {
+      "official": "https://www.sportsentry.ne.jp/",
+      "entry": "https://www.sportsentry.ne.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.8,
+      "count": 175
+    },
+    "mandatory_gear": [
+      {
+        "name": "JCF公認サイクルヘルメット＆グローブ",
+        "category": "ギア"
+      },
+      {
+        "name": "高輝度フロントライト＆リアレッドライト（トンネル通過必須）",
+        "category": "ライト"
+      },
+      {
+        "name": "携帯マルチツール・予備チューブ2本・タイヤレバー・携帯ポンプ",
+        "category": "リペア"
+      },
+      {
+        "name": "サイクルボトル水分＆高カロリー補給食",
+        "category": "補給"
+      },
+      {
+        "name": "ウインドブレーカー・レインジレ",
+        "category": "ウェア"
+      }
+    ]
+  },
+  {
+    "id": "marishiten-trail-2026",
+    "category": "trail",
+    "subCategory": "世界遺産・石見銀山ロング",
+    "elements": [
+      "100km+",
+      "トレック",
+      "夜間"
+    ],
+    "title": "世界遺産・石見銀山 摩利支天トレイルラン 2026（島根・大田市 100km）",
+    "date": "2026-09-20",
+    "month": 9,
+    "region": "中国",
+    "prefecture": "島根県",
+    "distance_km": 100,
+    "elevation_m": 5600,
+    "entry_status": "open",
+    "entry_deadline": "2026-08-10",
+    "links": {
+      "official": "https://moshicom.com/",
+      "entry": "https://moshicom.com/",
+      "review": "https://dogsorcaravan.com/",
+      "sns": "https://www.facebook.com/"
+    },
+    "review": {
+      "rating": 4.8,
+      "count": 106
+    },
+    "mandatory_gear": [
+      {
+        "name": "防水透湿レインジャケット（フード付き・シーム処理済）",
+        "category": "ウェア"
+      },
+      {
+        "name": "ヘッドランプ（予備バッテリー含む）",
+        "category": "ライト"
+      },
+      {
+        "name": "サバイバルブランケット・ファーストエイドキット・熊鈴",
+        "category": "エイド"
+      },
+      {
+        "name": "コースマップまたはGPSナビゲーション時計",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "ソフトフラスク水分1.0L以上＆マグネシウム系エナジージェル",
+        "category": "補給"
+      }
+    ]
+  },
+  {
+    "id": "okinosima-ultra-2026",
+    "category": "marathon",
+    "subCategory": "離島100kmウルトラマラソン",
+    "elements": [
+      "100km+",
+      "ロード",
+      "日帰り"
+    ],
+    "title": "隠岐の島ウルトラマラソン 2026（島根・隠岐の島町 100km）",
+    "date": "2026-06-21",
+    "month": 6,
+    "region": "中国",
+    "prefecture": "島根県",
+    "distance_km": 100,
+    "elevation_m": 1680,
+    "entry_status": "open",
+    "entry_deadline": "2026-04-20",
+    "links": {
+      "official": "https://www.town.okinoshima.shimane.jp/",
+      "entry": "https://runnet.jp/",
+      "review": "https://runnet.jp/runtes/raceDetail/top/n314512.html",
+      "sns": "https://www.facebook.com/okinoshimaultra"
+    },
+    "review": {
+      "rating": 4.9,
+      "count": 320
+    },
+    "mandatory_gear": [
+      {
+        "name": "早朝・夜間走行用ヘッドライト＆背面点滅赤色ライト",
+        "category": "ライト"
+      },
+      {
+        "name": "マイカップ（エイド給水用）＆ソフトフラスク",
+        "category": "ギア"
+      },
+      {
+        "name": "足攣り防止マグネシウムジェル（Mag-on等）・塩分タブレット",
+        "category": "補給"
+      },
+      {
+        "name": "撥水ウインドシェル＆ワセリン・テーピング",
+        "category": "ウェア"
+      }
+    ]
+  },
+  {
+    "id": "sanbe-mountain-trail-2026",
+    "category": "trail",
+    "subCategory": "国立公園・三瓶山縦走",
+    "elements": [
+      "トレック",
+      "日帰り"
+    ],
+    "title": "国立公園 三瓶山（さんべさん）山岳トレイルラン 2026（島根・大田市）",
+    "date": "2026-10-11",
+    "month": 10,
+    "region": "中国",
+    "prefecture": "島根県",
+    "distance_km": 34,
+    "elevation_m": 2100,
+    "entry_status": "open",
+    "entry_deadline": "2026-09-10",
+    "links": {
+      "official": "https://moshicom.com/",
+      "entry": "https://moshicom.com/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.7,
+      "count": 74
+    },
+    "mandatory_gear": [
+      {
+        "name": "レインジャケットまたは防風シェル",
+        "category": "ウェア"
+      },
+      {
+        "name": "エマージェンシーシート・ホイッスル・保険証コピー",
+        "category": "エイド"
+      },
+      {
+        "name": "水分500ml〜1.0L以上・行動食・マイカップ",
+        "category": "補給"
+      },
+      {
+        "name": "トレイルランニングシューズ＆トレランザック",
+        "category": "ギア"
+      }
+    ]
+  },
+  {
+    "id": "matsue-kokuhou-marathon-2026",
+    "category": "marathon",
+    "subCategory": "国宝松江城・宍道湖フル",
+    "elements": [
+      "ロード",
+      "日帰り"
+    ],
+    "title": "国宝松江城マラソン 2026（島根・松江市 フルマラソン）",
+    "date": "2026-12-06",
+    "month": 12,
+    "region": "中国",
+    "prefecture": "島根県",
+    "distance_km": 42.195,
+    "elevation_m": 130,
+    "entry_status": "open",
+    "entry_deadline": "2026-09-15",
+    "links": {
+      "official": "https://www.matsue-marathon.jp/",
+      "entry": "https://runnet.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.8,
+      "count": 430
+    },
+    "mandatory_gear": [
+      {
+        "name": "高機能ランニングウェア・吸汗速乾インナー",
+        "category": "ウェア"
+      },
+      {
+        "name": "エナジージェル（10km毎補給用 3〜4個）＆BCAA",
+        "category": "補給"
+      },
+      {
+        "name": "GPSランニングウォッチ",
+        "category": "ナビゲーション"
+      }
+    ]
+  },
+  {
+    "id": "shimanami-yamanami-cycle-2026",
+    "category": "cycling",
+    "subCategory": "やまなみ街道ロングライド",
+    "elements": [
+      "ロード",
+      "日帰り"
+    ],
+    "title": "グランフォンド出雲・松江 やまなみ街道サイクル 2026",
+    "date": "2026-07-05",
+    "month": 7,
+    "region": "中国",
+    "prefecture": "島根県",
+    "distance_km": 140,
+    "elevation_m": 1850,
+    "entry_status": "open",
+    "entry_deadline": "2026-06-05",
+    "links": {
+      "official": "https://www.sportsentry.ne.jp/",
+      "entry": "https://www.sportsentry.ne.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.7,
+      "count": 89
+    },
+    "mandatory_gear": [
+      {
+        "name": "JCF公認サイクルヘルメット＆グローブ",
+        "category": "ギア"
+      },
+      {
+        "name": "高輝度フロントライト＆リアレッドライト（トンネル通過必須）",
+        "category": "ライト"
+      },
+      {
+        "name": "携帯マルチツール・予備チューブ2本・タイヤレバー・携帯ポンプ",
+        "category": "リペア"
+      },
+      {
+        "name": "サイクルボトル水分＆高カロリー補給食",
+        "category": "補給"
+      },
+      {
+        "name": "ウインドブレーカー・レインジレ",
+        "category": "ウェア"
+      }
+    ]
+  },
+  {
+    "id": "daisen-mountain-trail-2026",
+    "category": "trail",
+    "subCategory": "名峰大山（伯耆富士）トレイル",
+    "elements": [
+      "トレック",
+      "日帰り"
+    ],
+    "title": "鳥取・大山（だいせん）マウンテントレイル＆スカイラン 2026",
+    "date": "2026-08-30",
+    "month": 8,
+    "region": "中国",
+    "prefecture": "鳥取県",
+    "distance_km": 40,
+    "elevation_m": 2450,
+    "entry_status": "open",
+    "entry_deadline": "2026-07-25",
+    "links": {
+      "official": "https://moshicom.com/",
+      "entry": "https://moshicom.com/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.8,
+      "count": 122
+    },
+    "mandatory_gear": [
+      {
+        "name": "防水透湿レインジャケット（フード付き・シーム処理済）",
+        "category": "ウェア"
+      },
+      {
+        "name": "ヘッドランプ（予備バッテリー含む）",
+        "category": "ライト"
+      },
+      {
+        "name": "サバイバルブランケット・ファーストエイドキット・熊鈴",
+        "category": "エイド"
+      },
+      {
+        "name": "コースマップまたはGPSナビゲーション時計",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "ソフトフラスク水分1.0L以上＆マグネシウム系エナジージェル",
+        "category": "補給"
+      }
+    ]
+  },
+  {
+    "id": "hyonosen-trail-tottori-2026",
+    "category": "trail",
+    "subCategory": "中国山地縦走トレイル",
+    "elements": [
+      "トレック",
+      "日帰り"
+    ],
+    "title": "氷ノ山・鉢伏山ワイルドトレイル in わかさ 2026（鳥取・若桜町）",
+    "date": "2026-09-27",
+    "month": 9,
+    "region": "中国",
+    "prefecture": "鳥取県",
+    "distance_km": 46,
+    "elevation_m": 2650,
+    "entry_status": "open",
+    "entry_deadline": "2026-08-25",
+    "links": {
+      "official": "https://moshicom.com/",
+      "entry": "https://moshicom.com/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.7,
+      "count": 85
+    },
+    "mandatory_gear": [
+      {
+        "name": "防水透湿レインジャケット（フード付き・シーム処理済）",
+        "category": "ウェア"
+      },
+      {
+        "name": "ヘッドランプ（予備バッテリー含む）",
+        "category": "ライト"
+      },
+      {
+        "name": "サバイバルブランケット・ファーストエイドキット・熊鈴",
+        "category": "エイド"
+      },
+      {
+        "name": "コースマップまたはGPSナビゲーション時計",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "ソフトフラスク水分1.0L以上＆マグネシウム系エナジージェル",
+        "category": "補給"
+      }
+    ]
+  },
+  {
+    "id": "tottori-marathon-2027",
+    "category": "marathon",
+    "subCategory": "鳥取砂丘スタート公認フル",
+    "elements": [
+      "ロード",
+      "日帰り"
+    ],
+    "title": "鳥取マラソン 2027（鳥取砂丘〜鳥取城跡 ワンウェイ公認フル）",
+    "date": "2027-03-14",
+    "month": 3,
+    "region": "中国",
+    "prefecture": "鳥取県",
+    "distance_km": 42.195,
+    "elevation_m": 195,
+    "entry_status": "open",
+    "entry_deadline": "2026-12-20",
+    "links": {
+      "official": "https://www.nnn.co.jp/event/marathon/",
+      "entry": "https://runnet.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.7,
+      "count": 460
+    },
+    "mandatory_gear": [
+      {
+        "name": "高機能ランニングウェア・吸汗速乾インナー",
+        "category": "ウェア"
+      },
+      {
+        "name": "エナジージェル（10km毎補給用 3〜4個）＆BCAA",
+        "category": "補給"
+      },
+      {
+        "name": "GPSランニングウォッチ",
+        "category": "ナビゲーション"
+      }
+    ]
+  },
+  {
+    "id": "tour-de-daisen-2026",
+    "category": "cycling",
+    "subCategory": "大山一周山岳グランフォンド",
+    "elements": [
+      "ロード",
+      "日帰り"
+    ],
+    "title": "ツール・ド・大山（鳥取・名峰大山一周ヒルクライム＆ロングライド）2026",
+    "date": "2026-05-17",
+    "month": 5,
+    "region": "中国",
+    "prefecture": "鳥取県",
+    "distance_km": 112,
+    "elevation_m": 2350,
+    "entry_status": "open",
+    "entry_deadline": "2026-04-15",
+    "links": {
+      "official": "https://www.sportsentry.ne.jp/",
+      "entry": "https://www.sportsentry.ne.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.8,
+      "count": 145
+    },
+    "mandatory_gear": [
+      {
+        "name": "JCF公認サイクルヘルメット＆グローブ",
+        "category": "ギア"
+      },
+      {
+        "name": "高輝度フロントライト＆リアレッドライト（トンネル通過必須）",
+        "category": "ライト"
+      },
+      {
+        "name": "携帯マルチツール・予備チューブ2本・タイヤレバー・携帯ポンプ",
+        "category": "リペア"
+      },
+      {
+        "name": "サイクルボトル水分＆高カロリー補給食",
+        "category": "補給"
+      },
+      {
+        "name": "ウインドブレーカー・レインジレ",
+        "category": "ウェア"
+      }
+    ]
+  },
+  {
+    "id": "cycling-shimanami-2026",
+    "category": "cycling",
+    "subCategory": "国際サイクリング（高速道路通行止）",
+    "elements": [
+      "ロード",
+      "日帰り"
+    ],
+    "title": "瀬戸内しまなみ海道・国際サイクリング大会 サイクリングしまなみ 2026",
+    "date": "2026-10-25",
+    "month": 10,
+    "region": "四国",
+    "prefecture": "愛媛県",
+    "distance_km": 140,
+    "elevation_m": 1150,
+    "entry_status": "closing_soon",
+    "entry_deadline": "2026-06-30",
+    "links": {
+      "official": "https://cycling-shimanami.jp/",
+      "entry": "https://cycling-shimanami.jp/",
+      "review": "https://www.sportsentry.ne.jp/",
+      "sns": "https://x.com/cshimanami"
+    },
+    "review": {
+      "rating": 4.9,
+      "count": 680
+    },
+    "mandatory_gear": [
+      {
+        "name": "JCF公認サイクルヘルメット＆グローブ",
+        "category": "ギア"
+      },
+      {
+        "name": "高輝度フロントライト＆リアレッドライト（トンネル通過必須）",
+        "category": "ライト"
+      },
+      {
+        "name": "携帯マルチツール・予備チューブ2本・タイヤレバー・携帯ポンプ",
+        "category": "リペア"
+      },
+      {
+        "name": "サイクルボトル水分＆高カロリー補給食",
+        "category": "補給"
+      },
+      {
+        "name": "ウインドブレーカー・レインジレ",
+        "category": "ウェア"
+      }
+    ]
+  },
+  {
+    "id": "ishizuchi-skyrun-trail-2026",
+    "category": "trail",
+    "subCategory": "西日本最高峰・石鎚山系",
+    "elements": [
+      "トレック",
+      "日帰り"
+    ],
+    "title": "石鎚山（いしづちさん）スカイレース＆四国カルストトレイル 2026",
+    "date": "2026-09-06",
+    "month": 9,
+    "region": "四国",
+    "prefecture": "愛媛県",
+    "distance_km": 38,
+    "elevation_m": 2500,
+    "entry_status": "open",
+    "entry_deadline": "2026-08-05",
+    "links": {
+      "official": "https://moshicom.com/",
+      "entry": "https://moshicom.com/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.8,
+      "count": 142
+    },
+    "mandatory_gear": [
+      {
+        "name": "防水透湿レインジャケット（フード付き・シーム処理済）",
+        "category": "ウェア"
+      },
+      {
+        "name": "ヘッドランプ（予備バッテリー含む）",
+        "category": "ライト"
+      },
+      {
+        "name": "サバイバルブランケット・ファーストエイドキット・熊鈴",
+        "category": "エイド"
+      },
+      {
+        "name": "コースマップまたはGPSナビゲーション時計",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "ソフトフラスク水分1.0L以上＆マグネシウム系エナジージェル",
+        "category": "補給"
+      }
+    ]
+  },
+  {
+    "id": "kumakogen-four-seasons-trail-2026",
+    "category": "trail",
+    "subCategory": "四国山岳トレイル",
+    "elements": [
+      "トレック",
+      "日帰り"
+    ],
+    "title": "久万高原・皿ヶ嶺マウンテントレイル 2026（愛媛・久万高原町）",
+    "date": "2026-06-28",
+    "month": 6,
+    "region": "四国",
+    "prefecture": "愛媛県",
+    "distance_km": 35,
+    "elevation_m": 1950,
+    "entry_status": "open",
+    "entry_deadline": "2026-05-30",
+    "links": {
+      "official": "https://moshicom.com/",
+      "entry": "https://moshicom.com/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.7,
+      "count": 76
+    },
+    "mandatory_gear": [
+      {
+        "name": "レインジャケットまたは防風シェル",
+        "category": "ウェア"
+      },
+      {
+        "name": "エマージェンシーシート・ホイッスル・保険証コピー",
+        "category": "エイド"
+      },
+      {
+        "name": "水分500ml〜1.0L以上・行動食・マイカップ",
+        "category": "補給"
+      },
+      {
+        "name": "トレイルランニングシューズ＆トレランザック",
+        "category": "ギア"
+      }
+    ]
+  },
+  {
+    "id": "ehime-marathon-2027",
+    "category": "marathon",
+    "subCategory": "四国最大級公認フル",
+    "elements": [
+      "ロード",
+      "日帰り"
+    ],
+    "title": "第64回 愛媛マラソン 2027（愛媛・松山市 坊っちゃんスタジアム）",
+    "date": "2027-02-07",
+    "month": 2,
+    "region": "四国",
+    "prefecture": "愛媛県",
+    "distance_km": 42.195,
+    "elevation_m": 160,
+    "entry_status": "closed",
+    "entry_deadline": "2026-08-31",
+    "links": {
+      "official": "https://ehimemarathon.jp/",
+      "entry": "https://runnet.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.9,
+      "count": 1120
+    },
+    "mandatory_gear": [
+      {
+        "name": "高機能ランニングウェア・吸汗速乾インナー",
+        "category": "ウェア"
+      },
+      {
+        "name": "エナジージェル（10km毎補給用 3〜4個）＆BCAA",
+        "category": "補給"
+      },
+      {
+        "name": "GPSランニングウォッチ",
+        "category": "ナビゲーション"
+      }
+    ]
+  },
+  {
+    "id": "shimanami-jukan-ultra-100-2026",
+    "category": "marathon",
+    "subCategory": "海峡横断100kmウルトラ",
+    "elements": [
+      "100km+",
+      "ロード",
+      "夜間"
+    ],
+    "title": "しまなみ海道縦断ウルトラマラニック 100km 2026（今治〜尾道）",
+    "date": "2026-05-30",
+    "month": 5,
+    "region": "四国",
+    "prefecture": "愛媛県",
+    "distance_km": 100,
+    "elevation_m": 1050,
+    "entry_status": "open",
+    "entry_deadline": "2026-04-15",
+    "links": {
+      "official": "https://www.sportsentry.ne.jp/",
+      "entry": "https://www.sportsentry.ne.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.8,
+      "count": 210
+    },
+    "mandatory_gear": [
+      {
+        "name": "早朝・夜間走行用ヘッドライト＆背面点滅赤色ライト",
+        "category": "ライト"
+      },
+      {
+        "name": "マイカップ（エイド給水用）＆ソフトフラスク",
+        "category": "ギア"
+      },
+      {
+        "name": "足攣り防止マグネシウムジェル（Mag-on等）・塩分タブレット",
+        "category": "補給"
+      },
+      {
+        "name": "撥水ウインドシェル＆ワセリン・テーピング",
+        "category": "ウェア"
+      }
+    ]
+  },
+  {
+    "id": "ufo-line-hillclimb-2026",
+    "category": "cycling",
+    "subCategory": "天空の稜線ヒルクライム",
+    "elements": [
+      "ロード",
+      "日帰り"
+    ],
+    "title": "石鎚山ヒルクライム＆瓶ヶ森UFOライン スカイライド 2026",
+    "date": "2026-08-30",
+    "month": 8,
+    "region": "四国",
+    "prefecture": "愛媛県",
+    "distance_km": 45,
+    "elevation_m": 1600,
+    "entry_status": "open",
+    "entry_deadline": "2026-07-20",
+    "links": {
+      "official": "https://www.sportsentry.ne.jp/",
+      "entry": "https://www.sportsentry.ne.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.9,
+      "count": 195
+    },
+    "mandatory_gear": [
+      {
+        "name": "JCF公認サイクルヘルメット＆グローブ",
+        "category": "ギア"
+      },
+      {
+        "name": "高輝度フロントライト＆リアレッドライト（トンネル通過必須）",
+        "category": "ライト"
+      },
+      {
+        "name": "携帯マルチツール・予備チューブ2本・タイヤレバー・携帯ポンプ",
+        "category": "リペア"
+      },
+      {
+        "name": "サイクルボトル水分＆高カロリー補給食",
+        "category": "補給"
+      },
+      {
+        "name": "ウインドブレーカー・レインジレ",
+        "category": "ウェア"
+      }
+    ]
+  },
+  {
+    "id": "shodoshima-olive-trail-2026",
+    "category": "trail",
+    "subCategory": "寒霞渓・瀬戸内アイランド",
+    "elements": [
+      "トレック",
+      "日帰り"
+    ],
+    "title": "小豆島オリーブ・寒霞渓（かんかけい）アイランドトレイル 2026",
+    "date": "2026-11-15",
+    "month": 11,
+    "region": "四国",
+    "prefecture": "香川県",
+    "distance_km": 36,
+    "elevation_m": 1850,
+    "entry_status": "open",
+    "entry_deadline": "2026-10-15",
+    "links": {
+      "official": "https://moshicom.com/",
+      "entry": "https://moshicom.com/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.8,
+      "count": 108
+    },
+    "mandatory_gear": [
+      {
+        "name": "レインジャケットまたは防風シェル",
+        "category": "ウェア"
+      },
+      {
+        "name": "エマージェンシーシート・ホイッスル・保険証コピー",
+        "category": "エイド"
+      },
+      {
+        "name": "水分500ml〜1.0L以上・行動食・マイカップ",
+        "category": "補給"
+      },
+      {
+        "name": "トレイルランニングシューズ＆トレランザック",
+        "category": "ギア"
+      }
+    ]
+  },
+  {
+    "id": "sanuki-mountains-skytrail-2026",
+    "category": "trail",
+    "subCategory": "讃岐山脈縦走トレイル",
+    "elements": [
+      "トレック",
+      "日帰り"
+    ],
+    "title": "讃岐山脈・竜王山縦走トレイルラン 2026（香川・高松〜まんのう）",
+    "date": "2026-04-12",
+    "month": 4,
+    "region": "四国",
+    "prefecture": "香川県",
+    "distance_km": 42,
+    "elevation_m": 2200,
+    "entry_status": "closed",
+    "entry_deadline": "2026-03-15",
+    "links": {
+      "official": "https://moshicom.com/",
+      "entry": "https://moshicom.com/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.6,
+      "count": 84
+    },
+    "mandatory_gear": [
+      {
+        "name": "防水透湿レインジャケット（フード付き・シーム処理済）",
+        "category": "ウェア"
+      },
+      {
+        "name": "ヘッドランプ（予備バッテリー含む）",
+        "category": "ライト"
+      },
+      {
+        "name": "サバイバルブランケット・ファーストエイドキット・熊鈴",
+        "category": "エイド"
+      },
+      {
+        "name": "コースマップまたはGPSナビゲーション時計",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "ソフトフラスク水分1.0L以上＆マグネシウム系エナジージェル",
+        "category": "補給"
+      }
+    ]
+  },
+  {
+    "id": "kagawa-marugame-half-2027",
+    "category": "marathon",
+    "subCategory": "国際ハーフ＆市民ラン",
+    "elements": [
+      "ロード",
+      "日帰り"
+    ],
+    "title": "香川丸亀国際ハーフマラソン 2027（日本屈指の高速コース）",
+    "date": "2027-02-07",
+    "month": 2,
+    "region": "四国",
+    "prefecture": "香川県",
+    "distance_km": 21.0975,
+    "elevation_m": 45,
+    "entry_status": "open",
+    "entry_deadline": "2026-11-15",
+    "links": {
+      "official": "https://www.km-half.com/",
+      "entry": "https://runnet.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.8,
+      "count": 610
+    },
+    "mandatory_gear": [
+      {
+        "name": "高機能ランニングウェア・吸汗速乾インナー",
+        "category": "ウェア"
+      },
+      {
+        "name": "エナジージェル（10km毎補給用 3〜4個）＆BCAA",
+        "category": "補給"
+      },
+      {
+        "name": "GPSランニングウォッチ",
+        "category": "ナビゲーション"
+      }
+    ]
+  },
+  {
+    "id": "tour-de-sanuki-udon-2026",
+    "category": "cycling",
+    "subCategory": "讃岐うどんエイド・ロングライド",
+    "elements": [
+      "ロード",
+      "日帰り"
+    ],
+    "title": "ツール・ド・さぬき（讃岐うどん巡り＆瀬戸内ロングライド 120km）2026",
+    "date": "2026-05-10",
+    "month": 5,
+    "region": "四国",
+    "prefecture": "香川県",
+    "distance_km": 120,
+    "elevation_m": 1250,
+    "entry_status": "open",
+    "entry_deadline": "2026-04-10",
+    "links": {
+      "official": "https://www.sportsentry.ne.jp/",
+      "entry": "https://www.sportsentry.ne.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.8,
+      "count": 230
+    },
+    "mandatory_gear": [
+      {
+        "name": "JCF公認サイクルヘルメット＆グローブ",
+        "category": "ギア"
+      },
+      {
+        "name": "高輝度フロントライト＆リアレッドライト（トンネル通過必須）",
+        "category": "ライト"
+      },
+      {
+        "name": "携帯マルチツール・予備チューブ2本・タイヤレバー・携帯ポンプ",
+        "category": "リペア"
+      },
+      {
+        "name": "サイクルボトル水分＆高カロリー補給食",
+        "category": "補給"
+      },
+      {
+        "name": "ウインドブレーカー・レインジレ",
+        "category": "ウェア"
+      }
+    ]
+  },
+  {
+    "id": "mameichi-shodoshima-cycle-2026",
+    "category": "cycling",
+    "subCategory": "マメイチ（小豆島一周ライド）",
+    "elements": [
+      "ロード",
+      "日帰り"
+    ],
+    "title": "小豆島一周サイクリング「マメイチ」センチュリーライド 2026",
+    "date": "2026-10-18",
+    "month": 10,
+    "region": "四国",
+    "prefecture": "香川県",
+    "distance_km": 110,
+    "elevation_m": 1380,
+    "entry_status": "open",
+    "entry_deadline": "2026-09-20",
+    "links": {
+      "official": "https://www.sportsentry.ne.jp/",
+      "entry": "https://www.sportsentry.ne.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.8,
+      "count": 165
+    },
+    "mandatory_gear": [
+      {
+        "name": "JCF公認サイクルヘルメット＆グローブ",
+        "category": "ギア"
+      },
+      {
+        "name": "高輝度フロントライト＆リアレッドライト（トンネル通過必須）",
+        "category": "ライト"
+      },
+      {
+        "name": "携帯マルチツール・予備チューブ2本・タイヤレバー・携帯ポンプ",
+        "category": "リペア"
+      },
+      {
+        "name": "サイクルボトル水分＆高カロリー補給食",
+        "category": "補給"
+      },
+      {
+        "name": "ウインドブレーカー・レインジレ",
+        "category": "ウェア"
+      }
+    ]
+  },
+  {
+    "id": "tsurugisan-super-rin-do-trail-2026",
+    "category": "trail",
+    "subCategory": "日本百名山・剣山系山岳",
+    "elements": [
+      "トレック",
+      "夜間"
+    ],
+    "title": "阿波・剣山（つるぎさん）スーパー林道マウンテントレイル 2026",
+    "date": "2026-08-02",
+    "month": 8,
+    "region": "四国",
+    "prefecture": "徳島県",
+    "distance_km": 62,
+    "elevation_m": 3400,
+    "entry_status": "open",
+    "entry_deadline": "2026-06-30",
+    "links": {
+      "official": "https://moshicom.com/",
+      "entry": "https://moshicom.com/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.8,
+      "count": 134
+    },
+    "mandatory_gear": [
+      {
+        "name": "防水透湿レインジャケット（フード付き・シーム処理済）",
+        "category": "ウェア"
+      },
+      {
+        "name": "ヘッドランプ（予備バッテリー含む）",
+        "category": "ライト"
+      },
+      {
+        "name": "サバイバルブランケット・ファーストエイドキット・熊鈴",
+        "category": "エイド"
+      },
+      {
+        "name": "コースマップまたはGPSナビゲーション時計",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "ソフトフラスク水分1.0L以上＆マグネシウム系エナジージェル",
+        "category": "補給"
+      }
+    ]
+  },
+  {
+    "id": "senba-sea-cliff-trail-2027",
+    "category": "trail",
+    "subCategory": "太平洋断崖コースタルトレイル",
+    "elements": [
+      "トレック",
+      "日帰り"
+    ],
+    "title": "千羽海崖（せんばかいがい）トレイルランニングレース 2027（徳島・美波町）",
+    "date": "2027-01-24",
+    "month": 1,
+    "region": "四国",
+    "prefecture": "徳島県",
+    "distance_km": 36,
+    "elevation_m": 2250,
+    "entry_status": "open",
+    "entry_deadline": "2026-12-05",
+    "links": {
+      "official": "https://senba-trail.com/",
+      "entry": "https://moshicom.com/",
+      "review": "https://dogsorcaravan.com/",
+      "sns": "https://www.facebook.com/"
+    },
+    "review": {
+      "rating": 4.9,
+      "count": 192
+    },
+    "mandatory_gear": [
+      {
+        "name": "レインジャケットまたは防風シェル",
+        "category": "ウェア"
+      },
+      {
+        "name": "エマージェンシーシート・ホイッスル・保険証コピー",
+        "category": "エイド"
+      },
+      {
+        "name": "水分500ml〜1.0L以上・行動食・マイカップ",
+        "category": "補給"
+      },
+      {
+        "name": "トレイルランニングシューズ＆トレランザック",
+        "category": "ギア"
+      }
+    ]
+  },
+  {
+    "id": "iya-valley-adventure-trail-2026",
+    "category": "trail",
+    "subCategory": "秘境・祖谷渓マウンテントレイル",
+    "elements": [
+      "トレック",
+      "日帰り"
+    ],
+    "title": "秘境・東祖谷（ひがしいや）三嶺・かずら橋マウンテントレイル 2026",
+    "date": "2026-10-11",
+    "month": 10,
+    "region": "四国",
+    "prefecture": "徳島県",
+    "distance_km": 45,
+    "elevation_m": 2900,
+    "entry_status": "open",
+    "entry_deadline": "2026-09-10",
+    "links": {
+      "official": "https://moshicom.com/",
+      "entry": "https://moshicom.com/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.8,
+      "count": 96
+    },
+    "mandatory_gear": [
+      {
+        "name": "防水透湿レインジャケット（フード付き・シーム処理済）",
+        "category": "ウェア"
+      },
+      {
+        "name": "ヘッドランプ（予備バッテリー含む）",
+        "category": "ライト"
+      },
+      {
+        "name": "サバイバルブランケット・ファーストエイドキット・熊鈴",
+        "category": "エイド"
+      },
+      {
+        "name": "コースマップまたはGPSナビゲーション時計",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "ソフトフラスク水分1.0L以上＆マグネシウム系エナジージェル",
+        "category": "補給"
+      }
+    ]
+  },
+  {
+    "id": "tokushima-marathon-2027",
+    "category": "marathon",
+    "subCategory": "吉野川沿い公認フル",
+    "elements": [
+      "ロード",
+      "日帰り"
+    ],
+    "title": "とくしまマラソン 2027（徳島・吉野川ブルーライン公認コース）",
+    "date": "2027-03-21",
+    "month": 3,
+    "region": "四国",
+    "prefecture": "徳島県",
+    "distance_km": 42.195,
+    "elevation_m": 110,
+    "entry_status": "open",
+    "entry_deadline": "2026-12-25",
+    "links": {
+      "official": "https://www.tokushima-marathon.jp/",
+      "entry": "https://runnet.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.8,
+      "count": 720
+    },
+    "mandatory_gear": [
+      {
+        "name": "高機能ランニングウェア・吸汗速乾インナー",
+        "category": "ウェア"
+      },
+      {
+        "name": "エナジージェル（10km毎補給用 3〜4個）＆BCAA",
+        "category": "補給"
+      },
+      {
+        "name": "GPSランニングウォッチ",
+        "category": "ナビゲーション"
+      }
+    ]
+  },
+  {
+    "id": "tour-de-nishi-awa-2026",
+    "category": "cycling",
+    "subCategory": "世界農業遺産・山岳グランフォンド",
+    "elements": [
+      "ロード",
+      "日帰り"
+    ],
+    "title": "ツール・ド・にし阿波（剣山・祖谷 過酷山岳グランフォンド 160km）2026",
+    "date": "2026-05-10",
+    "month": 5,
+    "region": "四国",
+    "prefecture": "徳島県",
+    "distance_km": 160,
+    "elevation_m": 3500,
+    "entry_status": "closed",
+    "entry_deadline": "2026-03-31",
+    "links": {
+      "official": "https://tour-de-nishiawa.com/",
+      "entry": "https://www.sportsentry.ne.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://www.facebook.com/"
+    },
+    "review": {
+      "rating": 4.9,
+      "count": 310
+    },
+    "mandatory_gear": [
+      {
+        "name": "JCF公認サイクルヘルメット＆グローブ",
+        "category": "ギア"
+      },
+      {
+        "name": "高輝度フロントライト＆リアレッドライト（トンネル通過必須）",
+        "category": "ライト"
+      },
+      {
+        "name": "携帯マルチツール・予備チューブ2本・タイヤレバー・携帯ポンプ",
+        "category": "リペア"
+      },
+      {
+        "name": "サイクルボトル水分＆高カロリー補給食",
+        "category": "補給"
+      },
+      {
+        "name": "ウインドブレーカー・レインジレ",
+        "category": "ウェア"
+      }
+    ]
+  },
+  {
+    "id": "oku-shimanto-trail-2026",
+    "category": "trail",
+    "subCategory": "四万十川源流トレイル",
+    "elements": [
+      "トレック",
+      "日帰り"
+    ],
+    "title": "奥四万十トレイルレース in 松葉川 2026（高知・四万十町）",
+    "date": "2026-11-08",
+    "month": 11,
+    "region": "四国",
+    "prefecture": "高知県",
+    "distance_km": 35,
+    "elevation_m": 2100,
+    "entry_status": "open",
+    "entry_deadline": "2026-10-05",
+    "links": {
+      "official": "https://moshicom.com/",
+      "entry": "https://moshicom.com/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.8,
+      "count": 126
+    },
+    "mandatory_gear": [
+      {
+        "name": "レインジャケットまたは防風シェル",
+        "category": "ウェア"
+      },
+      {
+        "name": "エマージェンシーシート・ホイッスル・保険証コピー",
+        "category": "エイド"
+      },
+      {
+        "name": "水分500ml〜1.0L以上・行動食・マイカップ",
+        "category": "補給"
+      },
+      {
+        "name": "トレイルランニングシューズ＆トレランザック",
+        "category": "ギア"
+      }
+    ]
+  },
+  {
+    "id": "reihoku-shikoku-mountain-trail-2026",
+    "category": "trail",
+    "subCategory": "四国脊梁トレイル",
+    "elements": [
+      "トレック",
+      "日帰り"
+    ],
+    "title": "土佐れいほく・四国カルスト天狗高原トレイル 2026（高知・本山〜津野）",
+    "date": "2026-09-20",
+    "month": 9,
+    "region": "四国",
+    "prefecture": "高知県",
+    "distance_km": 44,
+    "elevation_m": 2400,
+    "entry_status": "open",
+    "entry_deadline": "2026-08-20",
+    "links": {
+      "official": "https://moshicom.com/",
+      "entry": "https://moshicom.com/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.7,
+      "count": 88
+    },
+    "mandatory_gear": [
+      {
+        "name": "防水透湿レインジャケット（フード付き・シーム処理済）",
+        "category": "ウェア"
+      },
+      {
+        "name": "ヘッドランプ（予備バッテリー含む）",
+        "category": "ライト"
+      },
+      {
+        "name": "サバイバルブランケット・ファーストエイドキット・熊鈴",
+        "category": "エイド"
+      },
+      {
+        "name": "コースマップまたはGPSナビゲーション時計",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "ソフトフラスク水分1.0L以上＆マグネシウム系エナジージェル",
+        "category": "補給"
+      }
+    ]
+  },
+  {
+    "id": "shimantogawa-ultra-2026",
+    "category": "marathon",
+    "subCategory": "日本三大100kmウルトラマラソン",
+    "elements": [
+      "100km+",
+      "ロード",
+      "日帰り"
+    ],
+    "title": "第32回 四万十川ウルトラマラソン 100km 2026（高知・四万十市）",
+    "date": "2026-10-18",
+    "month": 10,
+    "region": "四国",
+    "prefecture": "高知県",
+    "distance_km": 100,
+    "elevation_m": 1250,
+    "entry_status": "closed",
+    "entry_deadline": "2026-06-15",
+    "links": {
+      "official": "https://shimanto-ultra.jp/",
+      "entry": "https://runnet.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://www.facebook.com/"
+    },
+    "review": {
+      "rating": 4.9,
+      "count": 840
+    },
+    "mandatory_gear": [
+      {
+        "name": "早朝・夜間走行用ヘッドライト＆背面点滅赤色ライト",
+        "category": "ライト"
+      },
+      {
+        "name": "マイカップ（エイド給水用）＆ソフトフラスク",
+        "category": "ギア"
+      },
+      {
+        "name": "足攣り防止マグネシウムジェル（Mag-on等）・塩分タブレット",
+        "category": "補給"
+      },
+      {
+        "name": "撥水ウインドシェル＆ワセリン・テーピング",
+        "category": "ウェア"
+      }
+    ]
+  },
+  {
+    "id": "kochi-ryoma-marathon-2027",
+    "category": "marathon",
+    "subCategory": "太平洋絶景フルマラソン",
+    "elements": [
+      "ロード",
+      "日帰り"
+    ],
+    "title": "高知龍馬マラソン 2027（高知・桂浜〜仁淀川河口大橋）",
+    "date": "2027-02-14",
+    "month": 2,
+    "region": "四国",
+    "prefecture": "高知県",
+    "distance_km": 42.195,
+    "elevation_m": 190,
+    "entry_status": "open",
+    "entry_deadline": "2026-11-10",
+    "links": {
+      "official": "https://ryoma-marathon.jp/",
+      "entry": "https://runnet.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.9,
+      "count": 780
+    },
+    "mandatory_gear": [
+      {
+        "name": "高機能ランニングウェア・吸汗速乾インナー",
+        "category": "ウェア"
+      },
+      {
+        "name": "エナジージェル（10km毎補給用 3〜4個）＆BCAA",
+        "category": "補給"
+      },
+      {
+        "name": "GPSランニングウォッチ",
+        "category": "ナビゲーション"
+      }
+    ]
+  },
+  {
+    "id": "shimanto-dragon-ride-2026",
+    "category": "cycling",
+    "subCategory": "清流四万十川ロングライド",
+    "elements": [
+      "ロード",
+      "日帰り"
+    ],
+    "title": "四万十ドラゴンライド（清流四万十川＆足摺岬 ロングライド 135km）2026",
+    "date": "2026-11-22",
+    "month": 11,
+    "region": "四国",
+    "prefecture": "高知県",
+    "distance_km": 135,
+    "elevation_m": 1650,
+    "entry_status": "open",
+    "entry_deadline": "2026-10-15",
+    "links": {
+      "official": "https://www.sportsentry.ne.jp/",
+      "entry": "https://www.sportsentry.ne.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.8,
+      "count": 220
+    },
+    "mandatory_gear": [
+      {
+        "name": "JCF公認サイクルヘルメット＆グローブ",
+        "category": "ギア"
+      },
+      {
+        "name": "高輝度フロントライト＆リアレッドライト（トンネル通過必須）",
+        "category": "ライト"
+      },
+      {
+        "name": "携帯マルチツール・予備チューブ2本・タイヤレバー・携帯ポンプ",
+        "category": "リペア"
+      },
+      {
+        "name": "サイクルボトル水分＆高カロリー補給食",
+        "category": "補給"
+      },
+      {
+        "name": "ウインドブレーカー・レインジレ",
+        "category": "ウェア"
+      }
+    ]
+  },
+  {
+    "id": "niyodogawa-blue-ride-2026",
+    "category": "cycling",
+    "subCategory": "仁淀ブルー清流サイクリング",
+    "elements": [
+      "ロード",
+      "日帰り"
+    ],
+    "title": "仁淀ブルー・清流ロングライド in いの・越知 2026（高知）",
+    "date": "2026-09-27",
+    "month": 9,
+    "region": "四国",
+    "prefecture": "高知県",
+    "distance_km": 110,
+    "elevation_m": 1300,
+    "entry_status": "open",
+    "entry_deadline": "2026-08-25",
+    "links": {
+      "official": "https://www.sportsentry.ne.jp/",
+      "entry": "https://www.sportsentry.ne.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.8,
+      "count": 138
+    },
+    "mandatory_gear": [
+      {
+        "name": "JCF公認サイクルヘルメット＆グローブ",
+        "category": "ギア"
+      },
+      {
+        "name": "高輝度フロントライト＆リアレッドライト（トンネル通過必須）",
+        "category": "ライト"
+      },
+      {
+        "name": "携帯マルチツール・予備チューブ2本・タイヤレバー・携帯ポンプ",
+        "category": "リペア"
+      },
+      {
+        "name": "サイクルボトル水分＆高カロリー補給食",
+        "category": "補給"
+      },
+      {
+        "name": "ウインドブレーカー・レインジレ",
+        "category": "ウェア"
+      }
+    ]
+  },
+  {
+    "id": "hasetsune-cup-2026",
+    "category": "trail",
+    "subCategory": "山岳耐久（無補給・夜間）",
+    "elements": [
+      "読図",
+      "トレック",
+      "夜間"
+    ],
+    "title": "日本山岳耐久レース（24時間以内）〜長谷川恒男CUP（ハセツネ 71.5km）2026",
+    "date": "2026-10-11",
+    "month": 10,
+    "region": "関東",
+    "prefecture": "東京都",
+    "distance_km": 71.5,
+    "elevation_m": 4582,
+    "entry_status": "closing_soon",
+    "entry_deadline": "2026-06-01",
+    "links": {
+      "official": "https://www.hasetsune.com/",
+      "entry": "https://runnet.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/hasetsune_cup"
+    },
+    "review": {
+      "rating": 4.7,
+      "count": 540
+    },
+    "mandatory_gear": [
+      {
+        "name": "防水透湿レインジャケット（フード付き・シーム処理済）",
+        "category": "ウェア"
+      },
+      {
+        "name": "ヘッドランプ（予備バッテリー含む）",
+        "category": "ライト"
+      },
+      {
+        "name": "サバイバルブランケット・ファーストエイドキット・熊鈴",
+        "category": "エイド"
+      },
+      {
+        "name": "コースマップまたはGPSナビゲーション時計",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "ソフトフラスク水分1.0L以上＆マグネシウム系エナジージェル",
+        "category": "補給"
+      }
+    ]
+  },
+  {
+    "id": "izu-trail-journey-2026",
+    "category": "trail",
+    "subCategory": "伊豆半島縦断トレイル",
+    "elements": [
+      "トレック",
+      "夜間"
+    ],
+    "title": "IZU TRAIL Journey 2026 (ITJ 70km 松崎〜修善寺)",
+    "date": "2026-12-13",
+    "month": 12,
+    "region": "中部",
+    "prefecture": "静岡県",
+    "distance_km": 70,
+    "elevation_m": 3200,
+    "entry_status": "open",
+    "entry_deadline": "2026-08-31",
+    "links": {
+      "official": "https://www.izutrailjourney.com/",
+      "entry": "https://runnet.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/izutrailjourney"
+    },
+    "review": {
+      "rating": 4.9,
+      "count": 430
+    },
+    "mandatory_gear": [
+      {
+        "name": "防水透湿レインジャケット（フード付き・シーム処理済）",
+        "category": "ウェア"
+      },
+      {
+        "name": "ヘッドランプ（予備バッテリー含む）",
+        "category": "ライト"
+      },
+      {
+        "name": "サバイバルブランケット・ファーストエイドキット・熊鈴",
+        "category": "エイド"
+      },
+      {
+        "name": "コースマップまたはGPSナビゲーション時計",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "ソフトフラスク水分1.0L以上＆マグネシウム系エナジージェル",
+        "category": "補給"
+      }
+    ]
+  },
+  {
+    "id": "kaga-spa-trail-utmb-2026",
+    "category": "trail",
+    "subCategory": "UTMB World Series Japan",
+    "elements": [
+      "100km+",
+      "トレック",
+      "夜間"
+    ],
+    "title": "Kaga Spa Trail Endurance 100 by UTMB® 2026（石川・加賀温泉郷 100km）",
+    "date": "2026-06-20",
+    "month": 6,
+    "region": "中部",
+    "prefecture": "石川県",
+    "distance_km": 100,
+    "elevation_m": 6100,
+    "entry_status": "closed",
+    "entry_deadline": "2026-03-31",
+    "links": {
+      "official": "https://kagaspa.utmb.world/",
+      "entry": "https://kagaspa.utmb.world/",
+      "review": "https://dogsorcaravan.com/",
+      "sns": "https://x.com/UTMBWorldSeries"
+    },
+    "review": {
+      "rating": 4.8,
+      "count": 295
+    },
+    "mandatory_gear": [
+      {
+        "name": "ゴアテックス等 シームテープ加工防水透湿レイン上下",
+        "category": "ウェア"
+      },
+      {
+        "name": "高光量ヘッドライト2灯（メイン300lm以上＋予備ライト・予備電池）",
+        "category": "ライト"
+      },
+      {
+        "name": "GPXトラック収録GPSウォッチ（SUUNTO/GARMIN等）",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "エマージェンシーサバイバルシート（130×200cm以上）＆ホイッスル",
+        "category": "エイド"
+      },
+      {
+        "name": "保温ベースレイヤー（ドライナミック等）・防寒長袖・グローブ",
+        "category": "ウェア"
+      },
+      {
+        "name": "水分1.5L以上携行可能なトレランザック（10L〜12L）＆補給食",
+        "category": "補給"
+      }
+    ]
+  },
+  {
+    "id": "utsukushigahara-trail-2026",
+    "category": "trail",
+    "subCategory": "2000m級高原稜線トレイル",
+    "elements": [
+      "トレック",
+      "夜間"
+    ],
+    "title": "美ヶ原トレイルラン 2026（長野・長和町 90kmロング）",
+    "date": "2026-07-25",
+    "month": 7,
+    "region": "甲信越",
+    "prefecture": "長野県",
+    "distance_km": 90,
+    "elevation_m": 4500,
+    "entry_status": "open",
+    "entry_deadline": "2026-06-15",
+    "links": {
+      "official": "https://utsukushigahara-trail.jp/",
+      "entry": "https://runnet.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://www.facebook.com/"
+    },
+    "review": {
+      "rating": 4.8,
+      "count": 260
+    },
+    "mandatory_gear": [
+      {
+        "name": "防水透湿レインジャケット（フード付き・シーム処理済）",
+        "category": "ウェア"
+      },
+      {
+        "name": "ヘッドランプ（予備バッテリー含む）",
+        "category": "ライト"
+      },
+      {
+        "name": "サバイバルブランケット・ファーストエイドキット・熊鈴",
+        "category": "エイド"
+      },
+      {
+        "name": "コースマップまたはGPSナビゲーション時計",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "ソフトフラスク水分1.0L以上＆マグネシウム系エナジージェル",
+        "category": "補給"
+      }
+    ]
+  },
+  {
+    "id": "aso-volcano-trail-2026",
+    "category": "trail",
+    "subCategory": "阿蘇カルデラ100km",
+    "elements": [
+      "100km+",
+      "トレック",
+      "夜間"
+    ],
+    "title": "ASO VOLCANO TRAIL (阿蘇ボルケーノトレイル 112km) 2026",
+    "date": "2026-05-09",
+    "month": 5,
+    "region": "九州",
+    "prefecture": "熊本県",
+    "distance_km": 112,
+    "elevation_m": 5600,
+    "entry_status": "closed",
+    "entry_deadline": "2026-03-20",
+    "links": {
+      "official": "https://universal-field.com/",
+      "entry": "https://universal-field.com/",
+      "review": "https://dogsorcaravan.com/",
+      "sns": "https://www.facebook.com/"
+    },
+    "review": {
+      "rating": 4.9,
+      "count": 210
+    },
+    "mandatory_gear": [
+      {
+        "name": "ゴアテックス等 シームテープ加工防水透湿レイン上下",
+        "category": "ウェア"
+      },
+      {
+        "name": "高光量ヘッドライト2灯（メイン300lm以上＋予備ライト・予備電池）",
+        "category": "ライト"
+      },
+      {
+        "name": "GPXトラック収録GPSウォッチ（SUUNTO/GARMIN等）",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "エマージェンシーサバイバルシート（130×200cm以上）＆ホイッスル",
+        "category": "エイド"
+      },
+      {
+        "name": "保温ベースレイヤー（ドライナミック等）・防寒長袖・グローブ",
+        "category": "ウェア"
+      },
+      {
+        "name": "水分1.5L以上携行可能なトレランザック（10L〜12L）＆補給食",
+        "category": "補給"
+      }
+    ]
+  },
+  {
+    "id": "hiraodai-trail-2026",
+    "category": "trail",
+    "subCategory": "九州カルスト台地トレイル",
+    "elements": [
+      "トレック",
+      "日帰り"
+    ],
+    "title": "平尾台トレイルランニングレース 2026（福岡・北九州市 40km）",
+    "date": "2026-04-19",
+    "month": 4,
+    "region": "九州",
+    "prefecture": "福岡県",
+    "distance_km": 40,
+    "elevation_m": 2150,
+    "entry_status": "closed",
+    "entry_deadline": "2026-03-05",
+    "links": {
+      "official": "https://hiraodai-trail.com/",
+      "entry": "https://runnet.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://www.facebook.com/"
+    },
+    "review": {
+      "rating": 4.8,
+      "count": 195
+    },
+    "mandatory_gear": [
+      {
+        "name": "レインジャケットまたは防風シェル",
+        "category": "ウェア"
+      },
+      {
+        "name": "エマージェンシーシート・ホイッスル・保険証コピー",
+        "category": "エイド"
+      },
+      {
+        "name": "水分500ml〜1.0L以上・行動食・マイカップ",
+        "category": "補給"
+      },
+      {
+        "name": "トレイルランニングシューズ＆トレランザック",
+        "category": "ギア"
+      }
+    ]
+  },
+  {
+    "id": "kirishima-ebino-extremetrail-2026",
+    "category": "trail",
+    "subCategory": "霧島連山火山トレイル",
+    "elements": [
+      "トレック",
+      "日帰り"
+    ],
+    "title": "霧島・えびの高原エクストリームトレイル 2026（鹿児島・宮崎 63km）",
+    "date": "2026-07-19",
+    "month": 7,
+    "region": "九州",
+    "prefecture": "鹿児島県",
+    "distance_km": 63,
+    "elevation_m": 3450,
+    "entry_status": "open",
+    "entry_deadline": "2026-06-15",
+    "links": {
+      "official": "https://universal-field.com/",
+      "entry": "https://universal-field.com/",
+      "review": "https://runnet.jp/",
+      "sns": "https://www.facebook.com/"
+    },
+    "review": {
+      "rating": 4.8,
+      "count": 180
+    },
+    "mandatory_gear": [
+      {
+        "name": "防水透湿レインジャケット（フード付き・シーム処理済）",
+        "category": "ウェア"
+      },
+      {
+        "name": "ヘッドランプ（予備バッテリー含む）",
+        "category": "ライト"
+      },
+      {
+        "name": "サバイバルブランケット・ファーストエイドキット・熊鈴",
+        "category": "エイド"
+      },
+      {
+        "name": "コースマップまたはGPSナビゲーション時計",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "ソフトフラスク水分1.0L以上＆マグネシウム系エナジージェル",
+        "category": "補給"
+      }
+    ]
+  },
+  {
+    "id": "kyoto-grand-traverse-2026",
+    "category": "trail",
+    "subCategory": "京都一周トレイル",
+    "elements": [
+      "トレック",
+      "日帰り"
+    ],
+    "title": "京都グランドトラバース（東山・北山 60km）2026",
+    "date": "2026-03-28",
+    "month": 3,
+    "region": "近畿",
+    "prefecture": "京都府",
+    "distance_km": 60,
+    "elevation_m": 2800,
+    "entry_status": "closed",
+    "entry_deadline": "2026-02-15",
+    "links": {
+      "official": "https://www.sportsentry.ne.jp/",
+      "entry": "https://www.sportsentry.ne.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.7,
+      "count": 230
+    },
+    "mandatory_gear": [
+      {
+        "name": "防水透湿レインジャケット（フード付き・シーム処理済）",
+        "category": "ウェア"
+      },
+      {
+        "name": "ヘッドランプ（予備バッテリー含む）",
+        "category": "ライト"
+      },
+      {
+        "name": "サバイバルブランケット・ファーストエイドキット・熊鈴",
+        "category": "エイド"
+      },
+      {
+        "name": "コースマップまたはGPSナビゲーション時計",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "ソフトフラスク水分1.0L以上＆マグネシウム系エナジージェル",
+        "category": "補給"
+      }
+    ]
+  },
+  {
+    "id": "kumano-old-trail-2026",
+    "category": "trail",
+    "subCategory": "世界遺産・熊野古道トレイル",
+    "elements": [
+      "トレック",
+      "日帰り"
+    ],
+    "title": "KUMANO OLD TRAIL (世界遺産・熊野古道トレイルラン 50km) 2026",
+    "date": "2026-12-06",
+    "month": 12,
+    "region": "近畿",
+    "prefecture": "三重県",
+    "distance_km": 50,
+    "elevation_m": 3100,
+    "entry_status": "open",
+    "entry_deadline": "2026-10-20",
+    "links": {
+      "official": "https://kumanooldtrail.com/",
+      "entry": "https://runnet.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://www.facebook.com/"
+    },
+    "review": {
+      "rating": 4.9,
+      "count": 175
+    },
+    "mandatory_gear": [
+      {
+        "name": "防水透湿レインジャケット（フード付き・シーム処理済）",
+        "category": "ウェア"
+      },
+      {
+        "name": "ヘッドランプ（予備バッテリー含む）",
+        "category": "ライト"
+      },
+      {
+        "name": "サバイバルブランケット・ファーストエイドキット・熊鈴",
+        "category": "エイド"
+      },
+      {
+        "name": "コースマップまたはGPSナビゲーション時計",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "ソフトフラスク水分1.0L以上＆マグネシウム系エナジージェル",
+        "category": "補給"
+      }
+    ]
+  },
+  {
+    "id": "ikko-diamond-trail-2026",
+    "category": "trail",
+    "subCategory": "金剛葛城縦走（ダイトレ）",
+    "elements": [
+      "トレック",
+      "日帰り"
+    ],
+    "title": "大阪府チャレンジ登山大会（ダイヤモンドトレール縦走 36km）2026",
+    "date": "2026-04-12",
+    "month": 4,
+    "region": "近畿",
+    "prefecture": "大阪府",
+    "distance_km": 36,
+    "elevation_m": 2200,
+    "entry_status": "closed",
+    "entry_deadline": "2026-03-10",
+    "links": {
+      "official": "https://www.mountain-osaka.jp/",
+      "entry": "https://runnet.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.7,
+      "count": 340
+    },
+    "mandatory_gear": [
+      {
+        "name": "レインジャケットまたは防風シェル",
+        "category": "ウェア"
+      },
+      {
+        "name": "エマージェンシーシート・ホイッスル・保険証コピー",
+        "category": "エイド"
+      },
+      {
+        "name": "水分500ml〜1.0L以上・行動食・マイカップ",
+        "category": "補給"
+      },
+      {
+        "name": "トレイルランニングシューズ＆トレランザック",
+        "category": "ギア"
+      }
+    ]
+  },
+  {
+    "id": "wakasa-michinoku-100km-trail-2026",
+    "category": "trail",
+    "subCategory": "福井・若狭湾山岳100km",
+    "elements": [
+      "100km+",
+      "トレック",
+      "夜間"
+    ],
+    "title": "おおい町・若狭路トレイルラン 100km 2026（福井）",
+    "date": "2026-10-24",
+    "month": 10,
+    "region": "中部",
+    "prefecture": "福井県",
+    "distance_km": 100,
+    "elevation_m": 5800,
+    "entry_status": "open",
+    "entry_deadline": "2026-09-15",
+    "links": {
+      "official": "https://moshicom.com/",
+      "entry": "https://moshicom.com/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.7,
+      "count": 115
+    },
+    "mandatory_gear": [
+      {
+        "name": "防水透湿レインジャケット（フード付き・シーム処理済）",
+        "category": "ウェア"
+      },
+      {
+        "name": "ヘッドランプ（予備バッテリー含む）",
+        "category": "ライト"
+      },
+      {
+        "name": "サバイバルブランケット・ファーストエイドキット・熊鈴",
+        "category": "エイド"
+      },
+      {
+        "name": "コースマップまたはGPSナビゲーション時計",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "ソフトフラスク水分1.0L以上＆マグネシウム系エナジージェル",
+        "category": "補給"
+      }
+    ]
+  },
+  {
+    "id": "zao-skyrun-vertical-2026",
+    "category": "trail",
+    "subCategory": "蔵王スカイラン＆バーティカル",
+    "elements": [
+      "トレック",
+      "日帰り"
+    ],
+    "title": "蔵王スカイレース（ZAO SKYRUN お釜・熊野岳）2026",
+    "date": "2026-09-05",
+    "month": 9,
+    "region": "東北",
+    "prefecture": "山形県",
+    "distance_km": 28,
+    "elevation_m": 2200,
+    "entry_status": "open",
+    "entry_deadline": "2026-08-05",
+    "links": {
+      "official": "https://moshicom.com/",
+      "entry": "https://moshicom.com/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.8,
+      "count": 130
+    },
+    "mandatory_gear": [
+      {
+        "name": "レインジャケットまたは防風シェル",
+        "category": "ウェア"
+      },
+      {
+        "name": "エマージェンシーシート・ホイッスル・保険証コピー",
+        "category": "エイド"
+      },
+      {
+        "name": "水分500ml〜1.0L以上・行動食・マイカップ",
+        "category": "補給"
+      },
+      {
+        "name": "トレイルランニングシューズ＆トレランザック",
+        "category": "ギア"
+      }
+    ]
+  },
+  {
+    "id": "savas-fuji-mountain-race-2026",
+    "category": "trail",
+    "subCategory": "日本最高峰・富士登山競走",
+    "elements": [
+      "トレック",
+      "日帰り"
+    ],
+    "title": "第79回 富士登山競走（市役所〜富士山頂 21km D+3000m）2026",
+    "date": "2026-07-24",
+    "month": 7,
+    "region": "甲信越",
+    "prefecture": "山梨県",
+    "distance_km": 21,
+    "elevation_m": 3000,
+    "entry_status": "closed",
+    "entry_deadline": "2026-03-31",
+    "links": {
+      "official": "https://fujimountainrace.city.fujiyoshida.yamanashi.jp/",
+      "entry": "https://runnet.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.9,
+      "count": 980
+    },
+    "mandatory_gear": [
+      {
+        "name": "レインジャケットまたは防風シェル",
+        "category": "ウェア"
+      },
+      {
+        "name": "エマージェンシーシート・ホイッスル・保険証コピー",
+        "category": "エイド"
+      },
+      {
+        "name": "水分500ml〜1.0L以上・行動食・マイカップ",
+        "category": "補給"
+      },
+      {
+        "name": "トレイルランニングシューズ＆トレランザック",
+        "category": "ギア"
+      }
+    ]
+  },
+  {
+    "id": "saroma-lake-100km-ultra-2026",
+    "category": "marathon",
+    "subCategory": "世界陸上公認100kmウルトラ",
+    "elements": [
+      "100km+",
+      "ロード",
+      "日帰り"
+    ],
+    "title": "サロマ湖100kmウルトラマラソン 2026（北海道・湧別〜北見〜佐呂間）",
+    "date": "2026-06-28",
+    "month": 6,
+    "region": "北海道",
+    "prefecture": "北海道",
+    "distance_km": 100,
+    "elevation_m": 350,
+    "entry_status": "closed",
+    "entry_deadline": "2026-02-15",
+    "links": {
+      "official": "https://saromanblue.jp/",
+      "entry": "https://runnet.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://www.facebook.com/"
+    },
+    "review": {
+      "rating": 4.9,
+      "count": 1250
+    },
+    "mandatory_gear": [
+      {
+        "name": "早朝・夜間走行用ヘッドライト＆背面点滅赤色ライト",
+        "category": "ライト"
+      },
+      {
+        "name": "マイカップ（エイド給水用）＆ソフトフラスク",
+        "category": "ギア"
+      },
+      {
+        "name": "足攣り防止マグネシウムジェル（Mag-on等）・塩分タブレット",
+        "category": "補給"
+      },
+      {
+        "name": "撥水ウインドシェル＆ワセリン・テーピング",
+        "category": "ウェア"
+      }
+    ]
+  },
+  {
+    "id": "challenger-fuji-5lakes-ultra-2027",
+    "category": "marathon",
+    "subCategory": "富士五湖118km・100km",
+    "elements": [
+      "100km+",
+      "ロード",
+      "日帰り"
+    ],
+    "title": "チャレンジ富士五湖ウルトラマラソン 2027（FUJI 5LAKES 118km/100km）",
+    "date": "2027-04-18",
+    "month": 4,
+    "region": "甲信越",
+    "prefecture": "山梨県",
+    "distance_km": 118,
+    "elevation_m": 1250,
+    "entry_status": "open",
+    "entry_deadline": "2027-01-31",
+    "links": {
+      "official": "https://www.r-wellness.com/fuji5/",
+      "entry": "https://runnet.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.8,
+      "count": 940
+    },
+    "mandatory_gear": [
+      {
+        "name": "早朝・夜間走行用ヘッドライト＆背面点滅赤色ライト",
+        "category": "ライト"
+      },
+      {
+        "name": "マイカップ（エイド給水用）＆ソフトフラスク",
+        "category": "ギア"
+      },
+      {
+        "name": "足攣り防止マグネシウムジェル（Mag-on等）・塩分タブレット",
+        "category": "補給"
+      },
+      {
+        "name": "撥水ウインドシェル＆ワセリン・テーピング",
+        "category": "ウェア"
+      }
+    ]
+  },
+  {
+    "id": "hidatakayama-ultra-100-2026",
+    "category": "marathon",
+    "subCategory": "飛騨高山山岳100kmウルトラ",
+    "elements": [
+      "100km+",
+      "ロード",
+      "日帰り"
+    ],
+    "title": "飛騨高山ウルトラマラソン 100km 2026（岐阜・高山市 D+2500m）",
+    "date": "2026-06-14",
+    "month": 6,
+    "region": "中部",
+    "prefecture": "岐阜県",
+    "distance_km": 100,
+    "elevation_m": 2500,
+    "entry_status": "closed",
+    "entry_deadline": "2026-03-31",
+    "links": {
+      "official": "https://www.r-wellness.com/takayama/",
+      "entry": "https://runnet.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.9,
+      "count": 780
+    },
+    "mandatory_gear": [
+      {
+        "name": "早朝・夜間走行用ヘッドライト＆背面点滅赤色ライト",
+        "category": "ライト"
+      },
+      {
+        "name": "マイカップ（エイド給水用）＆ソフトフラスク",
+        "category": "ギア"
+      },
+      {
+        "name": "足攣り防止マグネシウムジェル（Mag-on等）・塩分タブレット",
+        "category": "補給"
+      },
+      {
+        "name": "撥水ウインドシェル＆ワセリン・テーピング",
+        "category": "ウェア"
+      }
+    ]
+  },
+  {
+    "id": "yatsugatake-nobeyama-ultra-2026",
+    "category": "marathon",
+    "subCategory": "標高1900m高原100kmウルトラ",
+    "elements": [
+      "100km+",
+      "ロード",
+      "日帰り"
+    ],
+    "title": "星の郷八ヶ岳野辺山高原100kmウルトラマラソン 2026（長野）",
+    "date": "2026-05-17",
+    "month": 5,
+    "region": "甲信越",
+    "prefecture": "長野県",
+    "distance_km": 100,
+    "elevation_m": 2100,
+    "entry_status": "closed",
+    "entry_deadline": "2026-03-15",
+    "links": {
+      "official": "https://www.r-wellness.com/nobeyama/",
+      "entry": "https://runnet.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.9,
+      "count": 890
+    },
+    "mandatory_gear": [
+      {
+        "name": "早朝・夜間走行用ヘッドライト＆背面点滅赤色ライト",
+        "category": "ライト"
+      },
+      {
+        "name": "マイカップ（エイド給水用）＆ソフトフラスク",
+        "category": "ギア"
+      },
+      {
+        "name": "足攣り防止マグネシウムジェル（Mag-on等）・塩分タブレット",
+        "category": "補給"
+      },
+      {
+        "name": "撥水ウインドシェル＆ワセリン・テーピング",
+        "category": "ウェア"
+      }
+    ]
+  },
+  {
+    "id": "tango-100km-ultra-2026",
+    "category": "marathon",
+    "subCategory": "丹後半島100kmウルトラ",
+    "elements": [
+      "100km+",
+      "ロード",
+      "日帰り"
+    ],
+    "title": "歴史街道丹後100kmウルトラマラソン 2026（京都・京丹後市）",
+    "date": "2026-09-20",
+    "month": 9,
+    "region": "近畿",
+    "prefecture": "京都府",
+    "distance_km": 100,
+    "elevation_m": 1450,
+    "entry_status": "open",
+    "entry_deadline": "2026-06-30",
+    "links": {
+      "official": "https://www.r-wellness.com/tango/",
+      "entry": "https://runnet.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.8,
+      "count": 720
+    },
+    "mandatory_gear": [
+      {
+        "name": "早朝・夜間走行用ヘッドライト＆背面点滅赤色ライト",
+        "category": "ライト"
+      },
+      {
+        "name": "マイカップ（エイド給水用）＆ソフトフラスク",
+        "category": "ギア"
+      },
+      {
+        "name": "足攣り防止マグネシウムジェル（Mag-on等）・塩分タブレット",
+        "category": "補給"
+      },
+      {
+        "name": "撥水ウインドシェル＆ワセリン・テーピング",
+        "category": "ウェア"
+      }
+    ]
+  },
+  {
+    "id": "akita-naisairiku-100km-ultra-2026",
+    "category": "marathon",
+    "subCategory": "東北100kmウルトラ",
+    "elements": [
+      "100km+",
+      "ロード",
+      "日帰り"
+    ],
+    "title": "秋田内陸リゾートカップ 100キロチャレンジマラソン 2026",
+    "date": "2026-09-27",
+    "month": 9,
+    "region": "東北",
+    "prefecture": "秋田県",
+    "distance_km": 100,
+    "elevation_m": 1300,
+    "entry_status": "open",
+    "entry_deadline": "2026-07-15",
+    "links": {
+      "official": "https://www.100km.jp/",
+      "entry": "https://runnet.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.8,
+      "count": 490
+    },
+    "mandatory_gear": [
+      {
+        "name": "早朝・夜間走行用ヘッドライト＆背面点滅赤色ライト",
+        "category": "ライト"
+      },
+      {
+        "name": "マイカップ（エイド給水用）＆ソフトフラスク",
+        "category": "ギア"
+      },
+      {
+        "name": "足攣り防止マグネシウムジェル（Mag-on等）・塩分タブレット",
+        "category": "補給"
+      },
+      {
+        "name": "撥水ウインドシェル＆ワセリン・テーピング",
+        "category": "ウェア"
+      }
+    ]
+  },
+  {
+    "id": "tour-de-okinawa-2026",
+    "category": "cycling",
+    "subCategory": "市民ロード最高峰200km",
+    "elements": [
+      "ロード",
+      "日帰り"
+    ],
+    "title": "ツール・ド・おきなわ 2026（沖縄・名護市 市民レース200km）",
+    "date": "2026-11-08",
+    "month": 11,
+    "region": "九州",
+    "prefecture": "沖縄県",
+    "distance_km": 200,
+    "elevation_m": 2600,
+    "entry_status": "open",
+    "entry_deadline": "2026-09-30",
+    "links": {
+      "official": "https://www.tour-de-okinawa.jp/",
+      "entry": "https://www.sportsentry.ne.jp/",
+      "review": "https://www.sportsentry.ne.jp/",
+      "sns": "https://www.facebook.com/tourdeokinawa"
+    },
+    "review": {
+      "rating": 4.9,
+      "count": 520
+    },
+    "mandatory_gear": [
+      {
+        "name": "JCF公認サイクルヘルメット＆グローブ",
+        "category": "ギア"
+      },
+      {
+        "name": "高輝度フロントライト＆リアレッドライト（トンネル通過必須）",
+        "category": "ライト"
+      },
+      {
+        "name": "携帯マルチツール・予備チューブ2本・タイヤレバー・携帯ポンプ",
+        "category": "リペア"
+      },
+      {
+        "name": "サイクルボトル水分＆高カロリー補給食",
+        "category": "補給"
+      },
+      {
+        "name": "ウインドブレーカー・レインジレ",
+        "category": "ウェア"
+      }
+    ]
+  },
+  {
+    "id": "mt-fuji-hillclimb-2026",
+    "category": "cycling",
+    "subCategory": "日本最大ヒルクライム（富士ヒル）",
+    "elements": [
+      "ロード",
+      "日帰り"
+    ],
+    "title": "Mt.富士ヒルクライム（富士スバルライン 24km D+1255m）2026",
+    "date": "2026-06-07",
+    "month": 6,
+    "region": "甲信越",
+    "prefecture": "山梨県",
+    "distance_km": 24,
+    "elevation_m": 1255,
+    "entry_status": "closed",
+    "entry_deadline": "2026-03-15",
+    "links": {
+      "official": "https://www.fujihc.jp/",
+      "entry": "https://runnet.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.9,
+      "count": 1450
+    },
+    "mandatory_gear": [
+      {
+        "name": "JCF公認サイクルヘルメット＆グローブ",
+        "category": "ギア"
+      },
+      {
+        "name": "高輝度フロントライト＆リアレッドライト（トンネル通過必須）",
+        "category": "ライト"
+      },
+      {
+        "name": "携帯マルチツール・予備チューブ2本・タイヤレバー・携帯ポンプ",
+        "category": "リペア"
+      },
+      {
+        "name": "サイクルボトル水分＆高カロリー補給食",
+        "category": "補給"
+      },
+      {
+        "name": "ウインドブレーカー・レインジレ",
+        "category": "ウェア"
+      }
+    ]
+  },
+  {
+    "id": "sado-long-ride-210-2026",
+    "category": "cycling",
+    "subCategory": "佐渡島一周210kmロングライド",
+    "elements": [
+      "ロード",
+      "日帰り"
+    ],
+    "title": "佐渡ロングライド 210（新潟・佐渡島一周 210km）2026",
+    "date": "2026-05-17",
+    "month": 5,
+    "region": "甲信越",
+    "prefecture": "新潟県",
+    "distance_km": 210,
+    "elevation_m": 1850,
+    "entry_status": "closed",
+    "entry_deadline": "2026-04-10",
+    "links": {
+      "official": "https://www.sado-longride.com/",
+      "entry": "https://www.sportsentry.ne.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.8,
+      "count": 620
+    },
+    "mandatory_gear": [
+      {
+        "name": "JCF公認サイクルヘルメット＆グローブ",
+        "category": "ギア"
+      },
+      {
+        "name": "高輝度フロントライト＆リアレッドライト（トンネル通過必須）",
+        "category": "ライト"
+      },
+      {
+        "name": "携帯マルチツール・予備チューブ2本・タイヤレバー・携帯ポンプ",
+        "category": "リペア"
+      },
+      {
+        "name": "サイクルボトル水分＆高カロリー補給食",
+        "category": "補給"
+      },
+      {
+        "name": "ウインドブレーカー・レインジレ",
+        "category": "ウェア"
+      }
+    ]
+  },
+  {
+    "id": "niseko-classic-150km-2026",
+    "category": "cycling",
+    "subCategory": "UCIグランフォンド・ワールドシリーズ",
+    "elements": [
+      "ロード",
+      "日帰り"
+    ],
+    "title": "NISEKO CLASSIC 2026（ニセコクラシック 150km / UCI GFWS）",
+    "date": "2026-06-14",
+    "month": 6,
+    "region": "北海道",
+    "prefecture": "北海道",
+    "distance_km": 150,
+    "elevation_m": 2480,
+    "entry_status": "open",
+    "entry_deadline": "2026-05-10",
+    "links": {
+      "official": "https://nisekoclassic.com/",
+      "entry": "https://www.sportsentry.ne.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.9,
+      "count": 410
+    },
+    "mandatory_gear": [
+      {
+        "name": "JCF公認サイクルヘルメット＆グローブ",
+        "category": "ギア"
+      },
+      {
+        "name": "高輝度フロントライト＆リアレッドライト（トンネル通過必須）",
+        "category": "ライト"
+      },
+      {
+        "name": "携帯マルチツール・予備チューブ2本・タイヤレバー・携帯ポンプ",
+        "category": "リペア"
+      },
+      {
+        "name": "サイクルボトル水分＆高カロリー補給食",
+        "category": "補給"
+      },
+      {
+        "name": "ウインドブレーカー・レインジレ",
+        "category": "ウェア"
+      }
+    ]
+  },
+  {
+    "id": "biwaichi-cycling-160-2026",
+    "category": "cycling",
+    "subCategory": "ビワイチ（琵琶湖一周160km）",
+    "elements": [
+      "ロード",
+      "日帰り"
+    ],
+    "title": "びわ湖一周ロングライド（ビワイチ 160km センチュリー）2026",
+    "date": "2026-10-04",
+    "month": 10,
+    "region": "近畿",
+    "prefecture": "滋賀県",
+    "distance_km": 160,
+    "elevation_m": 450,
+    "entry_status": "open",
+    "entry_deadline": "2026-08-31",
+    "links": {
+      "official": "https://www.sportsentry.ne.jp/",
+      "entry": "https://www.sportsentry.ne.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.8,
+      "count": 380
+    },
+    "mandatory_gear": [
+      {
+        "name": "JCF公認サイクルヘルメット＆グローブ",
+        "category": "ギア"
+      },
+      {
+        "name": "高輝度フロントライト＆リアレッドライト（トンネル通過必須）",
+        "category": "ライト"
+      },
+      {
+        "name": "携帯マルチツール・予備チューブ2本・タイヤレバー・携帯ポンプ",
+        "category": "リペア"
+      },
+      {
+        "name": "サイクルボトル水分＆高カロリー補給食",
+        "category": "補給"
+      },
+      {
+        "name": "ウインドブレーカー・レインジレ",
+        "category": "ウェア"
+      }
+    ]
+  },
+  {
+    "id": "onomichi-shimanami-coastal-trail-2026",
+    "category": "trail",
+    "subCategory": "瀬戸内アルプス・しまなみトレイル",
+    "elements": [
+      "トレック",
+      "日帰り"
+    ],
+    "title": "尾道・因島・瀬戸田 しまなみアイランドトレイル 2026（広島・尾道市）",
+    "date": "2026-11-29",
+    "month": 11,
+    "region": "中国",
+    "prefecture": "広島県",
+    "distance_km": 38,
+    "elevation_m": 1950,
+    "entry_status": "open",
+    "entry_deadline": "2026-10-25",
+    "links": {
+      "official": "https://moshicom.com/",
+      "entry": "https://moshicom.com/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.8,
+      "count": 92
+    },
+    "mandatory_gear": [
+      {
+        "name": "レインジャケットまたは防風シェル",
+        "category": "ウェア"
+      },
+      {
+        "name": "エマージェンシーシート・ホイッスル・保険証コピー",
+        "category": "エイド"
+      },
+      {
+        "name": "水分500ml〜1.0L以上・行動食・マイカップ",
+        "category": "補給"
+      },
+      {
+        "name": "トレイルランニングシューズ＆トレランザック",
+        "category": "ギア"
+      }
+    ]
+  },
+  {
+    "id": "bizen-oni-trail-okayama-2026",
+    "category": "trail",
+    "subCategory": "鬼ノ城・吉備高原トレイル",
+    "elements": [
+      "トレック",
+      "日帰り"
+    ],
+    "title": "備前・総社 鬼ノ城（きのじょう）古代山城トレイルラン 2026（岡山）",
+    "date": "2026-12-13",
+    "month": 12,
+    "region": "中国",
+    "prefecture": "岡山県",
+    "distance_km": 34,
+    "elevation_m": 1800,
+    "entry_status": "open",
+    "entry_deadline": "2026-11-15",
+    "links": {
+      "official": "https://moshicom.com/",
+      "entry": "https://moshicom.com/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.7,
+      "count": 78
+    },
+    "mandatory_gear": [
+      {
+        "name": "レインジャケットまたは防風シェル",
+        "category": "ウェア"
+      },
+      {
+        "name": "エマージェンシーシート・ホイッスル・保険証コピー",
+        "category": "エイド"
+      },
+      {
+        "name": "水分500ml〜1.0L以上・行動食・マイカップ",
+        "category": "補給"
+      },
+      {
+        "name": "トレイルランニングシューズ＆トレランザック",
+        "category": "ギア"
+      }
+    ]
+  },
+  {
+    "id": "nagato-tawarayama-trail-2026",
+    "category": "trail",
+    "subCategory": "長門湯本・俵山温泉トレイル",
+    "elements": [
+      "トレック",
+      "日帰り"
+    ],
+    "title": "長門・俵山温泉マウンテントレイル 2026（山口・長門市）",
+    "date": "2026-11-15",
+    "month": 11,
+    "region": "中国",
+    "prefecture": "山口県",
+    "distance_km": 30,
+    "elevation_m": 1650,
+    "entry_status": "open",
+    "entry_deadline": "2026-10-15",
+    "links": {
+      "official": "https://moshicom.com/",
+      "entry": "https://moshicom.com/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.7,
+      "count": 66
+    },
+    "mandatory_gear": [
+      {
+        "name": "レインジャケットまたは防風シェル",
+        "category": "ウェア"
+      },
+      {
+        "name": "エマージェンシーシート・ホイッスル・保険証コピー",
+        "category": "エイド"
+      },
+      {
+        "name": "水分500ml〜1.0L以上・行動食・マイカップ",
+        "category": "補給"
+      },
+      {
+        "name": "トレイルランニングシューズ＆トレランザック",
+        "category": "ギア"
+      }
+    ]
+  },
+  {
+    "id": "ashizuri-cape-ocean-trail-2027",
+    "category": "trail",
+    "subCategory": "足摺宇和海国立公園トレイル",
+    "elements": [
+      "トレック",
+      "日帰り"
+    ],
+    "title": "足摺岬・竜串オーシャンクリフトレイル 2027（高知・土佐清水市）",
+    "date": "2027-01-31",
+    "month": 1,
+    "region": "四国",
+    "prefecture": "高知県",
+    "distance_km": 35,
+    "elevation_m": 1750,
+    "entry_status": "open",
+    "entry_deadline": "2026-12-20",
+    "links": {
+      "official": "https://moshicom.com/",
+      "entry": "https://moshicom.com/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.8,
+      "count": 84
+    },
+    "mandatory_gear": [
+      {
+        "name": "レインジャケットまたは防風シェル",
+        "category": "ウェア"
+      },
+      {
+        "name": "エマージェンシーシート・ホイッスル・保険証コピー",
+        "category": "エイド"
+      },
+      {
+        "name": "水分500ml〜1.0L以上・行動食・マイカップ",
+        "category": "補給"
+      },
+      {
+        "name": "トレイルランニングシューズ＆トレランザック",
+        "category": "ギア"
+      }
+    ]
+  },
+  {
+    "id": "sanuki-kotohira-konpira-trail-2026",
+    "category": "trail",
+    "subCategory": "金刀比羅・象頭山トレイル",
+    "elements": [
+      "トレック",
+      "日帰り"
+    ],
+    "title": "さぬき・こんぴら山岳トレイル＆石段クライム 2026（香川・琴平町）",
+    "date": "2026-12-20",
+    "month": 12,
+    "region": "四国",
+    "prefecture": "香川県",
+    "distance_km": 28,
+    "elevation_m": 1600,
+    "entry_status": "open",
+    "entry_deadline": "2026-11-20",
+    "links": {
+      "official": "https://moshicom.com/",
+      "entry": "https://moshicom.com/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.7,
+      "count": 72
+    },
+    "mandatory_gear": [
+      {
+        "name": "レインジャケットまたは防風シェル",
+        "category": "ウェア"
+      },
+      {
+        "name": "エマージェンシーシート・ホイッスル・保険証コピー",
+        "category": "エイド"
+      },
+      {
+        "name": "水分500ml〜1.0L以上・行動食・マイカップ",
+        "category": "補給"
+      },
+      {
+        "name": "トレイルランニングシューズ＆トレランザック",
+        "category": "ギア"
+      }
+    ]
+  }
+]
