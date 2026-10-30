@@ -74,7 +74,7 @@
     "prefecture": "京都府",
     "distance_km": 35,
     "elevation_m": 1100,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-05-20",
     "links": {
       "official": "http://toretore.web.fc2.com/hozukyou/HMAG2026.htm",
@@ -126,7 +126,7 @@
     "prefecture": "奈良県",
     "distance_km": 55,
     "elevation_m": 1650,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-10-07",
     "links": {
       "official": "http://toretore.web.fc2.com/narayoshi/NYAG2026.html",
@@ -291,7 +291,7 @@
     "prefecture": "岐阜県",
     "distance_km": 40,
     "elevation_m": 1250,
-    "entry_status": "closing_soon",
+    "entry_status": "closed",
     "entry_deadline": "2026-04-20",
     "links": {
       "official": "http://toretore.web.fc2.com/",
@@ -347,7 +347,7 @@
     "prefecture": "兵庫県",
     "distance_km": 25,
     "elevation_m": 850,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-05-15",
     "links": {
       "official": "http://toretore.web.fc2.com/",
@@ -399,7 +399,7 @@
     "prefecture": "香川県",
     "distance_km": 22,
     "elevation_m": 600,
-    "entry_status": "open",
+    "entry_status": "closing_soon",
     "entry_deadline": "2026-11-15",
     "links": {
       "official": "http://toretore.web.fc2.com/",
@@ -451,7 +451,7 @@
     "prefecture": "長野県",
     "distance_km": 50,
     "elevation_m": 2800,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-09-30",
     "links": {
       "official": "https://theomm.jp/",
@@ -503,7 +503,7 @@
     "prefecture": "長野県",
     "distance_km": 45,
     "elevation_m": 1600,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-06-20",
     "links": {
       "official": "https://theomm.jp/",
@@ -560,7 +560,7 @@
     "prefecture": "北海道",
     "distance_km": 150,
     "elevation_m": 4200,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-05-15",
     "links": {
       "official": "https://nisekoexpedition.jp/",
@@ -613,7 +613,7 @@
     "prefecture": "新潟県",
     "distance_km": 52,
     "elevation_m": 1800,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-08-25",
     "links": {
       "official": "https://www.sportsentry.ne.jp/",
@@ -664,7 +664,7 @@
     "prefecture": "島根県",
     "distance_km": 24,
     "elevation_m": 550,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-10-20",
     "links": {
       "official": "https://moshicom.com/",
@@ -716,7 +716,7 @@
     "prefecture": "広島県",
     "distance_km": 22,
     "elevation_m": 800,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-10-10",
     "links": {
       "official": "https://moshicom.com/",
@@ -768,7 +768,7 @@
     "prefecture": "香川県",
     "distance_km": 48,
     "elevation_m": 1450,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-09-10",
     "links": {
       "official": "https://www.sportsentry.ne.jp/",
@@ -984,7 +984,7 @@
     "prefecture": "岡山県",
     "distance_km": 161,
     "elevation_m": 8800,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-09-30",
     "links": {
       "official": "https://ggr-ishikiriba100.com/",
@@ -1095,7 +1095,7 @@
     "prefecture": "長野県",
     "distance_km": 175,
     "elevation_m": 7900,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-08-31",
     "links": {
       "official": "https://koumi100.com/",
@@ -1205,7 +1205,7 @@
     "prefecture": "埼玉県",
     "distance_km": 163,
     "elevation_m": 9800,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-09-30",
     "links": {
       "official": "https://fun-trails.com/",
@@ -1260,7 +1260,7 @@
     "prefecture": "長野県",
     "distance_km": 160,
     "elevation_m": 5600,
-    "entry_status": "closing_soon",
+    "entry_status": "closed",
     "entry_deadline": "2026-06-15",
     "links": {
       "official": "https://www.powersports.co.jp/osjtrail/26_ontake100/",
@@ -1371,7 +1371,7 @@
     "prefecture": "熊本県",
     "distance_km": 167,
     "elevation_m": 9400,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-09-25",
     "links": {
       "official": "https://www.kumagawa-revival-trail.com/",
@@ -1426,7 +1426,7 @@
     "prefecture": "山梨県",
     "distance_km": 160,
     "elevation_m": 9200,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-09-10",
     "links": {
       "official": "https://www.powersports.co.jp/osjtrail/",
@@ -1536,7 +1536,7 @@
     "prefecture": "岩手県",
     "distance_km": 160,
     "elevation_m": 4800,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-08-31",
     "links": {
       "official": "https://moshicom.com/",
@@ -1591,7 +1591,7 @@
     "prefecture": "岐阜県",
     "distance_km": 160,
     "elevation_m": 7800,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-08-15",
     "links": {
       "official": "https://moshicom.com/",
@@ -1646,7 +1646,7 @@
     "prefecture": "広島県",
     "distance_km": 161,
     "elevation_m": 3200,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-10-10",
     "links": {
       "official": "https://moshicom.com/",
@@ -1746,7 +1746,7 @@
     "prefecture": "広島県",
     "distance_km": 12,
     "elevation_m": 1650,
-    "entry_status": "closing_soon",
+    "entry_status": "closed",
     "entry_deadline": "2026-04-12",
     "links": {
       "official": "https://moshicom.com/139981/",
@@ -1842,7 +1842,7 @@
     "prefecture": "広島県",
     "distance_km": 32,
     "elevation_m": 1850,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-05-05",
     "links": {
       "official": "https://runnet.jp/",
@@ -1888,7 +1888,7 @@
     "prefecture": "広島県",
     "distance_km": 28,
     "elevation_m": 1500,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-05-25",
     "links": {
       "official": "https://moshicom.com/",
@@ -1934,7 +1934,7 @@
     "prefecture": "広島県",
     "distance_km": 65,
     "elevation_m": 3600,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-07-20",
     "links": {
       "official": "https://osorakan-trail.com/",
@@ -1984,7 +1984,7 @@
     "prefecture": "広島県",
     "distance_km": 30,
     "elevation_m": 1750,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-09-20",
     "links": {
       "official": "https://moshicom.com/",
@@ -2030,7 +2030,7 @@
     "prefecture": "広島県",
     "distance_km": 100,
     "elevation_m": 950,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-08-31",
     "links": {
       "official": "https://www.sportsentry.ne.jp/",
@@ -2076,7 +2076,7 @@
     "prefecture": "広島県",
     "distance_km": 21,
     "elevation_m": 120,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-09-20",
     "links": {
       "official": "https://runnet.jp/",
@@ -2118,7 +2118,7 @@
     "prefecture": "広島県",
     "distance_km": 120,
     "elevation_m": 2200,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-08-15",
     "links": {
       "official": "https://www.sportsentry.ne.jp/",
@@ -2168,7 +2168,7 @@
     "prefecture": "岡山県",
     "distance_km": 56,
     "elevation_m": 3500,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-04-25",
     "links": {
       "official": "https://nagipeaks.com/",
@@ -2218,7 +2218,7 @@
     "prefecture": "岡山県",
     "distance_km": 30,
     "elevation_m": 1300,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-06-15",
     "links": {
       "official": "https://runnet.jp/",
@@ -2348,7 +2348,7 @@
     "prefecture": "岡山県",
     "distance_km": 35,
     "elevation_m": 1900,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-09-05",
     "links": {
       "official": "https://moshicom.com/",
@@ -2394,7 +2394,7 @@
     "prefecture": "岡山県",
     "distance_km": 160,
     "elevation_m": 1450,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-09-25",
     "links": {
       "official": "https://www.sportsentry.ne.jp/",
@@ -2444,7 +2444,7 @@
     "prefecture": "山口県",
     "distance_km": 60,
     "elevation_m": 2600,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-09-15",
     "links": {
       "official": "https://akiyoshidai-trail.com/",
@@ -2582,7 +2582,7 @@
     "prefecture": "山口県",
     "distance_km": 84.4,
     "elevation_m": 1650,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-04-30",
     "links": {
       "official": "https://www.mukatsuku-w-marathon.com/",
@@ -2675,7 +2675,7 @@
     "prefecture": "山口県",
     "distance_km": 130,
     "elevation_m": 1600,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-04-20",
     "links": {
       "official": "https://www.sportsentry.ne.jp/",
@@ -2726,7 +2726,7 @@
     "prefecture": "島根県",
     "distance_km": 100,
     "elevation_m": 5600,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-08-10",
     "links": {
       "official": "https://moshicom.com/",
@@ -2777,7 +2777,7 @@
     "prefecture": "島根県",
     "distance_km": 100,
     "elevation_m": 1680,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-04-20",
     "links": {
       "official": "https://www.town.okinoshima.shimane.jp/",
@@ -2823,7 +2823,7 @@
     "prefecture": "島根県",
     "distance_km": 34,
     "elevation_m": 2100,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-09-10",
     "links": {
       "official": "https://moshicom.com/",
@@ -2869,7 +2869,7 @@
     "prefecture": "島根県",
     "distance_km": 42.195,
     "elevation_m": 130,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-09-15",
     "links": {
       "official": "https://www.matsue-marathon.jp/",
@@ -2911,7 +2911,7 @@
     "prefecture": "島根県",
     "distance_km": 140,
     "elevation_m": 1850,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-06-05",
     "links": {
       "official": "https://www.sportsentry.ne.jp/",
@@ -2961,7 +2961,7 @@
     "prefecture": "鳥取県",
     "distance_km": 40,
     "elevation_m": 2450,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-07-25",
     "links": {
       "official": "https://moshicom.com/",
@@ -3011,7 +3011,7 @@
     "prefecture": "鳥取県",
     "distance_km": 46,
     "elevation_m": 2650,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-08-25",
     "links": {
       "official": "https://moshicom.com/",
@@ -3103,7 +3103,7 @@
     "prefecture": "鳥取県",
     "distance_km": 112,
     "elevation_m": 2350,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-04-15",
     "links": {
       "official": "https://www.sportsentry.ne.jp/",
@@ -3153,7 +3153,7 @@
     "prefecture": "愛媛県",
     "distance_km": 140,
     "elevation_m": 1150,
-    "entry_status": "closing_soon",
+    "entry_status": "closed",
     "entry_deadline": "2026-06-30",
     "links": {
       "official": "https://cycling-shimanami.jp/",
@@ -3203,7 +3203,7 @@
     "prefecture": "愛媛県",
     "distance_km": 38,
     "elevation_m": 2500,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-08-05",
     "links": {
       "official": "https://moshicom.com/",
@@ -3253,7 +3253,7 @@
     "prefecture": "愛媛県",
     "distance_km": 35,
     "elevation_m": 1950,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-05-30",
     "links": {
       "official": "https://moshicom.com/",
@@ -3342,7 +3342,7 @@
     "prefecture": "愛媛県",
     "distance_km": 100,
     "elevation_m": 1050,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-04-15",
     "links": {
       "official": "https://www.sportsentry.ne.jp/",
@@ -3388,7 +3388,7 @@
     "prefecture": "愛媛県",
     "distance_km": 45,
     "elevation_m": 1600,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-07-20",
     "links": {
       "official": "https://www.sportsentry.ne.jp/",
@@ -3438,7 +3438,7 @@
     "prefecture": "香川県",
     "distance_km": 36,
     "elevation_m": 1850,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-10-15",
     "links": {
       "official": "https://moshicom.com/",
@@ -3534,7 +3534,7 @@
     "prefecture": "香川県",
     "distance_km": 21.0975,
     "elevation_m": 45,
-    "entry_status": "open",
+    "entry_status": "closing_soon",
     "entry_deadline": "2026-11-15",
     "links": {
       "official": "https://www.km-half.com/",
@@ -3576,7 +3576,7 @@
     "prefecture": "香川県",
     "distance_km": 120,
     "elevation_m": 1250,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-04-10",
     "links": {
       "official": "https://www.sportsentry.ne.jp/",
@@ -3626,7 +3626,7 @@
     "prefecture": "香川県",
     "distance_km": 110,
     "elevation_m": 1380,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-09-20",
     "links": {
       "official": "https://www.sportsentry.ne.jp/",
@@ -3676,7 +3676,7 @@
     "prefecture": "徳島県",
     "distance_km": 62,
     "elevation_m": 3400,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-06-30",
     "links": {
       "official": "https://moshicom.com/",
@@ -3772,7 +3772,7 @@
     "prefecture": "徳島県",
     "distance_km": 45,
     "elevation_m": 2900,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-09-10",
     "links": {
       "official": "https://moshicom.com/",
@@ -3914,7 +3914,7 @@
     "prefecture": "高知県",
     "distance_km": 35,
     "elevation_m": 2100,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-10-05",
     "links": {
       "official": "https://moshicom.com/",
@@ -3960,7 +3960,7 @@
     "prefecture": "高知県",
     "distance_km": 44,
     "elevation_m": 2400,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-08-20",
     "links": {
       "official": "https://moshicom.com/",
@@ -4057,7 +4057,7 @@
     "prefecture": "高知県",
     "distance_km": 42.195,
     "elevation_m": 190,
-    "entry_status": "open",
+    "entry_status": "closing_soon",
     "entry_deadline": "2026-11-10",
     "links": {
       "official": "https://ryoma-marathon.jp/",
@@ -4099,7 +4099,7 @@
     "prefecture": "高知県",
     "distance_km": 135,
     "elevation_m": 1650,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-10-15",
     "links": {
       "official": "https://www.sportsentry.ne.jp/",
@@ -4149,7 +4149,7 @@
     "prefecture": "高知県",
     "distance_km": 110,
     "elevation_m": 1300,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-08-25",
     "links": {
       "official": "https://www.sportsentry.ne.jp/",
@@ -4200,7 +4200,7 @@
     "prefecture": "東京都",
     "distance_km": 71.5,
     "elevation_m": 4582,
-    "entry_status": "closing_soon",
+    "entry_status": "closed",
     "entry_deadline": "2026-06-01",
     "links": {
       "official": "https://www.hasetsune.com/",
@@ -4250,7 +4250,7 @@
     "prefecture": "静岡県",
     "distance_km": 70,
     "elevation_m": 3200,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-08-31",
     "links": {
       "official": "https://www.izutrailjourney.com/",
@@ -4355,7 +4355,7 @@
     "prefecture": "長野県",
     "distance_km": 90,
     "elevation_m": 4500,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-06-15",
     "links": {
       "official": "https://utsukushigahara-trail.jp/",
@@ -4506,7 +4506,7 @@
     "prefecture": "鹿児島県",
     "distance_km": 63,
     "elevation_m": 3450,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-06-15",
     "links": {
       "official": "https://universal-field.com/",
@@ -4606,7 +4606,7 @@
     "prefecture": "三重県",
     "distance_km": 50,
     "elevation_m": 3100,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-10-20",
     "links": {
       "official": "https://kumanooldtrail.com/",
@@ -4703,7 +4703,7 @@
     "prefecture": "福井県",
     "distance_km": 100,
     "elevation_m": 5800,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-09-15",
     "links": {
       "official": "https://moshicom.com/",
@@ -4753,7 +4753,7 @@
     "prefecture": "山形県",
     "distance_km": 28,
     "elevation_m": 2200,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-08-05",
     "links": {
       "official": "https://moshicom.com/",
@@ -5034,7 +5034,7 @@
     "prefecture": "京都府",
     "distance_km": 100,
     "elevation_m": 1450,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-06-30",
     "links": {
       "official": "https://www.r-wellness.com/tango/",
@@ -5081,7 +5081,7 @@
     "prefecture": "秋田県",
     "distance_km": 100,
     "elevation_m": 1300,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-07-15",
     "links": {
       "official": "https://www.100km.jp/",
@@ -5127,7 +5127,7 @@
     "prefecture": "沖縄県",
     "distance_km": 200,
     "elevation_m": 2600,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-09-30",
     "links": {
       "official": "https://www.tour-de-okinawa.jp/",
@@ -5277,7 +5277,7 @@
     "prefecture": "北海道",
     "distance_km": 150,
     "elevation_m": 2480,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-05-10",
     "links": {
       "official": "https://nisekoclassic.com/",
@@ -5327,7 +5327,7 @@
     "prefecture": "滋賀県",
     "distance_km": 160,
     "elevation_m": 450,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-08-31",
     "links": {
       "official": "https://www.sportsentry.ne.jp/",
@@ -5377,7 +5377,7 @@
     "prefecture": "広島県",
     "distance_km": 38,
     "elevation_m": 1950,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-10-25",
     "links": {
       "official": "https://moshicom.com/",
@@ -5423,7 +5423,7 @@
     "prefecture": "岡山県",
     "distance_km": 34,
     "elevation_m": 1800,
-    "entry_status": "open",
+    "entry_status": "closing_soon",
     "entry_deadline": "2026-11-15",
     "links": {
       "official": "https://moshicom.com/",
@@ -5469,7 +5469,7 @@
     "prefecture": "山口県",
     "distance_km": 30,
     "elevation_m": 1650,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-10-15",
     "links": {
       "official": "https://moshicom.com/",
@@ -5561,7 +5561,7 @@
     "prefecture": "香川県",
     "distance_km": 28,
     "elevation_m": 1600,
-    "entry_status": "open",
+    "entry_status": "closing_soon",
     "entry_deadline": "2026-11-20",
     "links": {
       "official": "https://moshicom.com/",
@@ -5589,6 +5589,503 @@
       {
         "name": "トレイルランニングシューズ＆トレランザック",
         "category": "ギア"
+      }
+    ]
+  },
+  {
+    "id": "toretore-ueyama-2027",
+    "category": "adventure",
+    "subCategory": "アドベンチャーゲーム",
+    "elements": [
+      "読図",
+      "MTB",
+      "トレック",
+      "オリエンテーリング",
+      "日帰り"
+    ],
+    "title": "上山棚田アドベンチャーゲーム2027（とれとればいく・AR関西）",
+    "date": "2027-03-06",
+    "month": 3,
+    "region": "中国",
+    "prefecture": "岡山県",
+    "distance_km": 38,
+    "elevation_m": 1200,
+    "entry_status": "upcoming",
+    "entry_deadline": "2027-02-20",
+    "links": {
+      "official": "http://toretore.web.fc2.com/",
+      "entry": "http://toretore.web.fc2.com/",
+      "review": "https://runnet.jp/",
+      "sns": "https://www.facebook.com/advkansai/"
+    },
+    "review": {
+      "rating": 4.8,
+      "count": 36
+    },
+    "mandatory_gear": [
+      {
+        "name": "マウンテンバイク（MTB）＆JCF公認ヘルメット",
+        "category": "ギア"
+      },
+      {
+        "name": "シルバコンパス（方位磁石/プレート式）",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "国土地理院2万5千分の1地図用防水マップケース",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "MTBパンク修理キット＆携帯マルチツール",
+        "category": "リペア"
+      },
+      {
+        "name": "ファーストエイドキット＆エマージェンシーシート",
+        "category": "エイド"
+      },
+      {
+        "name": "行動食・水分1.5L以上",
+        "category": "補給"
+      }
+    ]
+  },
+  {
+    "id": "mihara-hakuryuko-trail-2027",
+    "category": "trail",
+    "subCategory": "ミドル・ショートトレイル",
+    "elements": [
+      "トレック",
+      "日帰り"
+    ],
+    "title": "三原・白竜湖トレイルランレース 2027（広島・三原市）",
+    "date": "2027-02-21",
+    "month": 2,
+    "region": "中国",
+    "prefecture": "広島県",
+    "distance_km": 36,
+    "elevation_m": 1580,
+    "entry_status": "open",
+    "entry_deadline": "2027-01-18",
+    "links": {
+      "official": "https://mihara-trail.com/",
+      "entry": "https://runnet.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://www.facebook.com/miharatrail"
+    },
+    "review": {
+      "rating": 4.6,
+      "count": 114
+    },
+    "mandatory_gear": [
+      {
+        "name": "レインジャケットまたは防風シェル",
+        "category": "ウェア"
+      },
+      {
+        "name": "エマージェンシーシート・ホイッスル・保険証コピー",
+        "category": "エイド"
+      },
+      {
+        "name": "水分500ml〜1.0L以上・行動食・マイカップ",
+        "category": "補給"
+      },
+      {
+        "name": "トレイルランニングシューズ＆トレランザック",
+        "category": "ギア"
+      }
+    ]
+  },
+  {
+    "id": "iwakuni-shirohebi-trail-2027",
+    "category": "trail",
+    "subCategory": "城山・錦帯橋トレイル",
+    "elements": [
+      "トレック",
+      "日帰り"
+    ],
+    "title": "岩国・錦帯橋＆城山マウンテントレイル 2027（山口・岩国市）",
+    "date": "2027-01-17",
+    "month": 1,
+    "region": "中国",
+    "prefecture": "山口県",
+    "distance_km": 28,
+    "elevation_m": 1450,
+    "entry_status": "open",
+    "entry_deadline": "2026-12-15",
+    "links": {
+      "official": "https://moshicom.com/",
+      "entry": "https://moshicom.com/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.7,
+      "count": 64
+    },
+    "mandatory_gear": [
+      {
+        "name": "レインジャケットまたは防風シェル",
+        "category": "ウェア"
+      },
+      {
+        "name": "エマージェンシーシート・ホイッスル・保険証コピー",
+        "category": "エイド"
+      },
+      {
+        "name": "水分500ml〜1.0L以上・行動食・マイカップ",
+        "category": "補給"
+      },
+      {
+        "name": "トレイルランニングシューズ＆トレランザック",
+        "category": "ギア"
+      }
+    ]
+  },
+  {
+    "id": "kurashiki-washuzan- coastal-trail-2027",
+    "category": "trail",
+    "subCategory": "瀬戸内オーシャントレイル",
+    "elements": [
+      "トレック",
+      "日帰り"
+    ],
+    "title": "倉敷・鷲羽山＆王子ヶ岳 瀬戸内オーシャントレイル 2027（岡山）",
+    "date": "2027-02-07",
+    "month": 2,
+    "region": "中国",
+    "prefecture": "岡山県",
+    "distance_km": 30,
+    "elevation_m": 1500,
+    "entry_status": "open",
+    "entry_deadline": "2027-01-10",
+    "links": {
+      "official": "https://moshicom.com/",
+      "entry": "https://moshicom.com/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.8,
+      "count": 82
+    },
+    "mandatory_gear": [
+      {
+        "name": "レインジャケットまたは防風シェル",
+        "category": "ウェア"
+      },
+      {
+        "name": "エマージェンシーシート・ホイッスル・保険証コピー",
+        "category": "エイド"
+      },
+      {
+        "name": "水分500ml〜1.0L以上・行動食・マイカップ",
+        "category": "補給"
+      },
+      {
+        "name": "トレイルランニングシューズ＆トレランザック",
+        "category": "ギア"
+      }
+    ]
+  },
+  {
+    "id": "kochi-navigms-winter-2026",
+    "category": "adventure",
+    "subCategory": "ナビゲーションゲーム・読図",
+    "elements": [
+      "読図",
+      "ロゲイニング",
+      "オリエンテーリング",
+      "日帰り"
+    ],
+    "title": "高知ナビゲーションゲームズ 2026-2027 ウィンターシリーズ（高知）",
+    "date": "2026-12-13",
+    "month": 12,
+    "region": "四国",
+    "prefecture": "高知県",
+    "distance_km": 20,
+    "elevation_m": 650,
+    "entry_status": "open",
+    "entry_deadline": "2026-11-30",
+    "links": {
+      "official": "https://kochi-navigms.com/",
+      "entry": "https://kochi-navigms.com/",
+      "review": "https://kochi-navigms.com/",
+      "sns": "https://kochi-navigms.com/"
+    },
+    "review": {
+      "rating": 4.9,
+      "count": 45
+    },
+    "mandatory_gear": [
+      {
+        "name": "プレートコンパス（シルバコンパス等・方位磁石）",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "デジタルカメラまたはスマートフォン（CP撮影・集計用）",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "ゴアテックス等 防水透湿レインジャケット",
+        "category": "ウェア"
+      },
+      {
+        "name": "ファーストエイドキット（絆創膏・テーピング・消毒薬）",
+        "category": "エイド"
+      },
+      {
+        "name": "行動食（エナジージェル等）＆水分1.0L以上",
+        "category": "補給"
+      }
+    ]
+  },
+  {
+    "id": "sanuki-mountains-skytrail-2027",
+    "category": "trail",
+    "subCategory": "讃岐山脈縦走トレイル",
+    "elements": [
+      "トレック",
+      "日帰り"
+    ],
+    "title": "讃岐山脈・竜王山縦走トレイルラン 2027（香川・高松〜まんのう）",
+    "date": "2027-04-11",
+    "month": 4,
+    "region": "四国",
+    "prefecture": "香川県",
+    "distance_km": 42,
+    "elevation_m": 2200,
+    "entry_status": "open",
+    "entry_deadline": "2027-03-10",
+    "links": {
+      "official": "https://moshicom.com/",
+      "entry": "https://moshicom.com/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.6,
+      "count": 84
+    },
+    "mandatory_gear": [
+      {
+        "name": "レインジャケットまたは防風シェル",
+        "category": "ウェア"
+      },
+      {
+        "name": "エマージェンシーシート・ホイッスル・保険証コピー",
+        "category": "エイド"
+      },
+      {
+        "name": "水分500ml〜1.0L以上・行動食・マイカップ",
+        "category": "補給"
+      },
+      {
+        "name": "トレイルランニングシューズ＆トレランザック",
+        "category": "ギア"
+      }
+    ]
+  },
+  {
+    "id": "suo-oshima-maranic-2027",
+    "category": "marathon",
+    "subCategory": "瀬戸内のハワイ100km",
+    "elements": [
+      "100km+",
+      "ロード",
+      "夜間"
+    ],
+    "title": "周防大島マラニック 100km 2027（山口・周防大島一周）",
+    "date": "2027-04-18",
+    "month": 4,
+    "region": "中国",
+    "prefecture": "山口県",
+    "distance_km": 100,
+    "elevation_m": 1200,
+    "entry_status": "open",
+    "entry_deadline": "2027-03-10",
+    "links": {
+      "official": "https://www.sportsentry.ne.jp/",
+      "entry": "https://www.sportsentry.ne.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.7,
+      "count": 118
+    },
+    "mandatory_gear": [
+      {
+        "name": "早朝・夜間走行用ヘッドライト＆背面点滅赤色ライト",
+        "category": "ライト"
+      },
+      {
+        "name": "マイカップ（エイド給水用）＆ソフトフラスク",
+        "category": "ギア"
+      },
+      {
+        "name": "足攣り防止マグネシウムジェル（Mag-on等）・塩分タブレット",
+        "category": "補給"
+      },
+      {
+        "name": "撥水ウインドシェル＆ワセリン・テーピング",
+        "category": "ウェア"
+      }
+    ]
+  },
+  {
+    "id": "sainokuni-100mile-2027",
+    "category": "trail",
+    "subCategory": "100マイル トレイル",
+    "elements": [
+      "100マイル",
+      "トレック",
+      "夜間"
+    ],
+    "title": "トレニックワールド 100mile & 100km in 彩の国 2027",
+    "date": "2027-05-15",
+    "month": 5,
+    "region": "関東",
+    "prefecture": "埼玉県",
+    "distance_km": 162,
+    "elevation_m": 10500,
+    "entry_status": "open",
+    "entry_deadline": "2027-01-31",
+    "links": {
+      "official": "https://trainic-world.org/sainokuni/",
+      "entry": "https://runnet.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://www.facebook.com/"
+    },
+    "review": {
+      "rating": 4.8,
+      "count": 215
+    },
+    "mandatory_gear": [
+      {
+        "name": "ゴアテックス等 シームテープ加工防水透湿レイン上下",
+        "category": "ウェア"
+      },
+      {
+        "name": "高光量ヘッドライト2灯（メイン300lm以上＋予備ライト・予備電池）",
+        "category": "ライト"
+      },
+      {
+        "name": "GPXトラック収録GPSウォッチ（SUUNTO/GARMIN等）",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "エマージェンシーサバイバルシート（130×200cm以上）＆ホイッスル",
+        "category": "エイド"
+      },
+      {
+        "name": "保温ベースレイヤー（ドライナミック等）・防寒長袖・グローブ",
+        "category": "ウェア"
+      },
+      {
+        "name": "水分1.5L以上携行可能なトレランザック（10L〜12L）＆補給食",
+        "category": "補給"
+      }
+    ]
+  },
+  {
+    "id": "aso-volcano-trail-2027",
+    "category": "trail",
+    "subCategory": "阿蘇カルデラ100km",
+    "elements": [
+      "100km+",
+      "トレック",
+      "夜間"
+    ],
+    "title": "ASO VOLCANO TRAIL (阿蘇ボルケーノトレイル 112km) 2027",
+    "date": "2027-05-08",
+    "month": 5,
+    "region": "九州",
+    "prefecture": "熊本県",
+    "distance_km": 112,
+    "elevation_m": 5600,
+    "entry_status": "open",
+    "entry_deadline": "2027-02-28",
+    "links": {
+      "official": "https://universal-field.com/",
+      "entry": "https://universal-field.com/",
+      "review": "https://dogsorcaravan.com/",
+      "sns": "https://www.facebook.com/"
+    },
+    "review": {
+      "rating": 4.9,
+      "count": 210
+    },
+    "mandatory_gear": [
+      {
+        "name": "ゴアテックス等 シームテープ加工防水透湿レイン上下",
+        "category": "ウェア"
+      },
+      {
+        "name": "高光量ヘッドライト2灯（メイン300lm以上＋予備ライト・予備電池）",
+        "category": "ライト"
+      },
+      {
+        "name": "GPXトラック収録GPSウォッチ（SUUNTO/GARMIN等）",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "エマージェンシーサバイバルシート（130×200cm以上）＆ホイッスル",
+        "category": "エイド"
+      },
+      {
+        "name": "保温ベースレイヤー（ドライナミック等）・防寒長袖・グローブ",
+        "category": "ウェア"
+      },
+      {
+        "name": "水分1.5L以上携行可能なトレランザック（10L〜12L）＆補給食",
+        "category": "補給"
+      }
+    ]
+  },
+  {
+    "id": "yatsugatake-nobeyama-ultra-2027",
+    "category": "marathon",
+    "subCategory": "標高1900m高原100kmウルトラ",
+    "elements": [
+      "100km+",
+      "ロード",
+      "日帰り"
+    ],
+    "title": "星の郷八ヶ岳野辺山高原100kmウルトラマラソン 2027（長野）",
+    "date": "2027-05-16",
+    "month": 5,
+    "region": "甲信越",
+    "prefecture": "長野県",
+    "distance_km": 100,
+    "elevation_m": 2100,
+    "entry_status": "open",
+    "entry_deadline": "2027-02-28",
+    "links": {
+      "official": "https://www.r-wellness.com/nobeyama/",
+      "entry": "https://runnet.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://x.com/"
+    },
+    "review": {
+      "rating": 4.9,
+      "count": 890
+    },
+    "mandatory_gear": [
+      {
+        "name": "早朝・夜間走行用ヘッドライト＆背面点滅赤色ライト",
+        "category": "ライト"
+      },
+      {
+        "name": "マイカップ（エイド給水用）＆ソフトフラスク",
+        "category": "ギア"
+      },
+      {
+        "name": "足攣り防止マグネシウムジェル（Mag-on等）・塩分タブレット",
+        "category": "補給"
+      },
+      {
+        "name": "撥水ウインドシェル＆ワセリン・テーピング",
+        "category": "ウェア"
       }
     ]
   }

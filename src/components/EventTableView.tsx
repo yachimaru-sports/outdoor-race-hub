@@ -73,11 +73,15 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
           <tbody className="divide-y divide-slate-200 dark:divide-slate-800">
             {events.map((event) => {
               const cat = CATEGORY_LABELS[event.category];
+              const now = new Date();
+              const todayStr = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+              const isPastRace = event.date < todayStr;
               const status = ENTRY_STATUS_CONFIG[event.entry_status];
+              const statusLabel = isPastRace ? '開催終了' : status.label;
               const isFav = favoriteIds.includes(event.id);
               const checkedGearCount = getGearProgress(event);
               const totalGearCount = event.mandatory_gear.length;
-              const canEntry = !!event.links.entry && event.entry_status !== 'closed';
+              const canEntry = !!event.links.entry && event.entry_status !== 'closed' && !isPastRace;
 
               return (
                 <tr
@@ -212,7 +216,7 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
                       } ${status.pulse ? 'animate-pulse' : ''}`}
                     >
                       <span className={`w-2 h-2 rounded-full shrink-0 ${status.dot}`} />
-                      <span>{status.label}</span>
+                      <span>{statusLabel}</span>
                     </span>
                   </td>
 

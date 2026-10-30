@@ -15,7 +15,37 @@ import { EventDetailModal } from './components/EventDetailModal';
 import { Footer } from './components/Footer';
 
 export const App: React.FC = () => {
-  const events = eventsData as RaceEvent[];
+  // 現在日付を基準に、開催日や申込締切日が過ぎている大会は自動的に「closed（終了）」へリアルタイム補正
+  const events = useMemo(() => {
+    const now = new Date();
+    const yyyy = now.getFullYear();
+    const mm = String(now.getMonth() + 1).padStart(2, '0');
+    const dd = String(now.getDate()).padStart(2, '0');
+    const todayStr = `${yyyy}-${mm}-${dd}`;
+
+    // 21日後の日付文字列（締切間近の自動判定用）
+    const soonDate = new Date(now.getTime() + 21 * 24 * 60 * 60 * 1000);
+    const soonStr = `${soonDate.getFullYear()}-${String(soonDate.getMonth() + 1).padStart(2, '0')}-${String(soonDate.getDate()).padStart(2, '0')}`;
+
+    return (eventsData as RaceEvent[]).map((ev) => {
+      if (ev.date < todayStr) {
+        return { ...ev, entry_status: 'closed' as const };
+      }
+      if (ev.entry_deadline && ev.entry_deadline < todayStr) {
+        return { ...ev, entry_status: 'closed' as const };
+      }
+      if (
+        ev.entry_status === 'open' &&
+        ev.entry_deadline &&
+        ev.entry_deadline >= todayStr &&
+        ev.entry_deadline <= soonStr
+      ) {
+        return { ...ev, entry_status: 'closing_soon' as const };
+      }
+      return ev;
+    });
+  }, []);
+
   const deals = dealsData as DealItem[];
 
   // テーマ管理（デフォルト: 'light'）
@@ -316,8 +346,15 @@ export const App: React.FC = () => {
       })
       .sort((a, b) => {
         switch (filters.sortBy) {
-          case 'date-asc':
+          case 'date-asc': {
+            // 開催日が近い順のとき、これから開催される大会（または受付中・告知中）を上に、すでに終了した大会を下に並べる
+            const aFinished = a.entry_status === 'closed';
+            const bFinished = b.entry_status === 'closed';
+            if (aFinished !== bFinished) {
+              return aFinished ? 1 : -1;
+            }
             return new Date(a.date).getTime() - new Date(b.date).getTime();
+          }
           case 'date-desc':
             return new Date(b.date).getTime() - new Date(a.date).getTime();
           case 'distance-asc':

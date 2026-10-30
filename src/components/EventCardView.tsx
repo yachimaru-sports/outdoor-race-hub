@@ -56,11 +56,15 @@ export const EventCardView: React.FC<EventCardViewProps> = ({
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
       {events.map((event) => {
         const cat = CATEGORY_LABELS[event.category];
+        const now = new Date();
+        const todayStr = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+        const isPastRace = event.date < todayStr;
         const status = ENTRY_STATUS_CONFIG[event.entry_status];
+        const statusLabel = isPastRace ? '開催終了' : status.label;
         const isFav = favoriteIds.includes(event.id);
         const checkedGearCount = getGearProgress(event);
         const totalGearCount = event.mandatory_gear.length;
-        const canEntry = !!event.links.entry && event.entry_status !== 'closed';
+        const canEntry = !!event.links.entry && event.entry_status !== 'closed' && !isPastRace;
 
         return (
           <div
@@ -98,7 +102,7 @@ export const EventCardView: React.FC<EventCardViewProps> = ({
                     } ${status.pulse ? 'animate-pulse' : ''}`}
                   >
                     <span className={`w-2 h-2 rounded-full ${status.dot}`} />
-                    {status.label}
+                    {statusLabel}
                   </span>
 
                   {/* 参戦予定ブックマーク */}
