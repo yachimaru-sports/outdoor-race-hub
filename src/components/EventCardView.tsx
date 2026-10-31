@@ -1,6 +1,7 @@
 import React from 'react';
 import { RaceEvent } from '../types';
 import { CATEGORY_LABELS, ELEMENT_BADGES, ENTRY_STATUS_CONFIG, formatDate } from '../utils/helpers';
+import { LinkButton } from './LinkButton';
 import {
   Calendar,
   Clock,
@@ -270,79 +271,25 @@ export const EventCardView: React.FC<EventCardViewProps> = ({
               )}
             </div>
 
-            {/* フッターリンクボタン群（4スロット固定整列） */}
+            {/* フッターリンクボタン群（申込 ＆ 公式 ホバー直リンクポップアップ対応） */}
             <div
               className="pt-3 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between gap-2"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="grid grid-cols-[76px_60px_34px_34px] items-center gap-1.5">
-                {/* スロット1: 申込ボタン */}
-                {canEntry ? (
-                  <a
-                    href={event.links.entry!}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-[76px] py-1.5 rounded-lg bg-teal-700 hover:bg-teal-800 text-white text-xs font-bold flex items-center justify-center gap-1 transition-colors shadow-2xs"
-                  >
-                    <FileEdit className="w-3.5 h-3.5" />
-                    <span>申込</span>
-                  </a>
-                ) : (
-                  <div className="w-[76px] py-1.5 rounded-lg bg-slate-150 dark:bg-slate-800/50 text-slate-500 text-xs font-bold text-center border border-slate-250 dark:border-slate-800 select-none cursor-not-allowed">
-                    受付終了
-                  </div>
-                )}
-
-                {/* スロット2: 公式サイト */}
-                {event.links.official ? (
-                  <a
-                    href={event.links.official}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-[60px] py-1.5 rounded-lg bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 text-xs font-bold flex items-center justify-center gap-1 transition-colors shadow-2xs"
-                  >
-                    <Globe className="w-3.5 h-3.5 text-teal-700 dark:text-teal-400" />
-                    <span>公式</span>
-                  </a>
-                ) : (
-                  <div className="w-[60px] py-1.5 rounded-lg bg-slate-100 dark:bg-slate-850 text-slate-400 text-xs font-bold text-center border border-slate-200 dark:border-slate-800">
-                    —
-                  </div>
-                )}
-
-                {/* スロット3: 大会レポ */}
-                {event.links.review ? (
-                  <a
-                    href={event.links.review}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-[34px] h-[29px] rounded-lg bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 flex items-center justify-center transition-colors shadow-2xs"
-                    title="大会レポートを見る"
-                  >
-                    <MessageSquare className="w-3.5 h-3.5 text-amber-600" />
-                  </a>
-                ) : (
-                  <div className="w-[34px] h-[29px] rounded-lg bg-slate-100 dark:bg-slate-850 text-slate-400 text-xs font-bold flex items-center justify-center border border-slate-200 dark:border-slate-800">
-                    —
-                  </div>
-                )}
-
-                {/* スロット4: 公式SNS */}
-                {event.links.sns ? (
-                  <a
-                    href={event.links.sns}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-[34px] h-[29px] rounded-lg bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 flex items-center justify-center transition-colors shadow-2xs"
-                    title="公式SNSを見る"
-                  >
-                    <Share2 className="w-3.5 h-3.5 text-sky-600" />
-                  </a>
-                ) : (
-                  <div className="w-[34px] h-[29px] rounded-lg bg-slate-100 dark:bg-slate-850 text-slate-400 text-xs font-bold flex items-center justify-center border border-slate-200 dark:border-slate-800">
-                    —
-                  </div>
-                )}
+              <div className="flex items-center gap-2">
+                <LinkButton
+                  type="entry"
+                  url={event.links.entry}
+                  canEntry={canEntry}
+                  isBroken={false}
+                  eventTitle={event.title}
+                />
+                <LinkButton
+                  type="official"
+                  url={event.links.official}
+                  isBroken={false}
+                  eventTitle={event.title}
+                />
               </div>
             </div>
           </div>

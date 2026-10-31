@@ -361,31 +361,41 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
               </span>
             </div>
 
-            {/* ユーザー指定の5つの距離ボタン */}
+            {/* ユーザー指定の5つの距離ボタン（2度押しで全距離に戻るトグル対応＆km表記） */}
             {[
               { label: '全距離', min: 0, max: 999 },
-              { label: '0-30まで', min: 0, max: 30 },
-              { label: '30-70まで', min: 30, max: 70 },
-              { label: '70-100まで', min: 70, max: 100 },
-              { label: '100以上', min: 100, max: 999 },
+              { label: '0-30km', min: 0, max: 30 },
+              { label: '30-70km', min: 30, max: 70 },
+              { label: '70-100km', min: 70, max: 100 },
+              { label: '100km以上', min: 100, max: 999 },
             ].map((p) => {
               const isActive = filters.minDistance === p.min && filters.maxDistance === p.max;
               return (
                 <button
                   key={p.label}
                   type="button"
-                  onClick={() =>
-                    onFilterChange({
-                      ...filters,
-                      minDistance: p.min,
-                      maxDistance: p.max,
-                    })
-                  }
+                  onClick={() => {
+                    // すでに選択されているボタンをもう一度押したら全距離（リセット）に戻す
+                    if (isActive && !(p.min === 0 && p.max === 999)) {
+                      onFilterChange({
+                        ...filters,
+                        minDistance: 0,
+                        maxDistance: 999,
+                      });
+                    } else {
+                      onFilterChange({
+                        ...filters,
+                        minDistance: p.min,
+                        maxDistance: p.max,
+                      });
+                    }
+                  }}
                   className={`text-xs px-3 py-1.5 rounded-lg font-black border transition-all cursor-pointer ${
                     isActive
                       ? 'bg-teal-700 text-white border-teal-700 shadow-2xs'
                       : 'bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 border-slate-300 dark:border-slate-700 hover:bg-slate-200'
                   }`}
+                  title={isActive ? 'クリックで全距離に戻す' : `${p.label}で絞り込み`}
                 >
                   {p.label}
                 </button>

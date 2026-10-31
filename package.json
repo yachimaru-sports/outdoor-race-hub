@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "auto-update": "node scripts/auto_update.mjs"
+    "auto-update": "node scripts/auto_update.mjs",
+    "check:links": "node scripts/verify-links.mjs",
+    "heal:links": "node scripts/heal-links.mjs"
   },
   "dependencies": {
     "lucide-react": "^1.16.0",

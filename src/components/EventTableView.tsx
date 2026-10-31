@@ -7,6 +7,7 @@ import {
   buildRakutenSearchAffiliateUrl,
   formatPrice,
 } from '../utils/helpers';
+import { LinkButton } from './LinkButton';
 import {
   Globe,
   FileEdit,
@@ -402,47 +403,22 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
                       </span>
                     </td>
 
-                    {/* 9. 申込・公式（レポ・SNS削除でスッキリ整理） */}
+                    {/* 9. 申込・公式（ホバーで直リンクURLポップアップ＆リンク切れ取り消し線対応） */}
                     <td className="py-2.5 px-2.5 align-middle whitespace-nowrap">
                       <div className="flex items-center justify-center gap-1.5">
-                        {/* 申込ボタン */}
-                        {canEntry ? (
-                          <a
-                            href={event.links.entry!}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="w-[68px] py-1 rounded-lg bg-teal-700 hover:bg-teal-800 text-white text-xs font-bold flex items-center justify-center gap-1 transition-colors shadow-2xs cursor-pointer select-none"
-                            title="エントリー申込ページを開く"
-                          >
-                            <FileEdit className="w-3 h-3 shrink-0" />
-                            <span>申込</span>
-                          </a>
-                        ) : (
-                          <div
-                            className="w-[68px] py-1 rounded-lg bg-slate-150 dark:bg-slate-800/50 text-slate-500 dark:text-slate-500 text-xs font-bold text-center border border-slate-250 dark:border-slate-800 select-none cursor-not-allowed"
-                            title="現在エントリーは受け付けていません"
-                          >
-                            受付無
-                          </div>
-                        )}
-
-                        {/* 公式サイト */}
-                        {event.links.official ? (
-                          <a
-                            href={event.links.official}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="w-[58px] py-1 rounded-lg bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 text-xs font-bold flex items-center justify-center gap-1 transition-colors shadow-2xs cursor-pointer select-none"
-                            title="大会公式サイトを開く"
-                          >
-                            <Globe className="w-3 h-3 text-teal-700 dark:text-teal-400 shrink-0" />
-                            <span>公式</span>
-                          </a>
-                        ) : (
-                          <div className="w-[58px] py-1 rounded-lg bg-slate-100 dark:bg-slate-850 text-slate-400 dark:text-slate-600 text-xs font-bold text-center border border-slate-200 dark:border-slate-800 select-none">
-                            —
-                          </div>
-                        )}
+                        <LinkButton
+                          type="entry"
+                          url={event.links.entry}
+                          canEntry={canEntry}
+                          isBroken={false}
+                          eventTitle={event.title}
+                        />
+                        <LinkButton
+                          type="official"
+                          url={event.links.official}
+                          isBroken={false}
+                          eventTitle={event.title}
+                        />
                       </div>
                     </td>
                   </tr>
