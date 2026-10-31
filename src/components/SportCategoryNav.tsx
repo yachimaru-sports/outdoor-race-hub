@@ -15,14 +15,35 @@ export const SportCategoryNav: React.FC<SportCategoryNavProps> = ({
   favoriteIds,
   onSelectNav,
 }) => {
+  const isOpen = (e: RaceEvent) => e.entry_status === 'open' || e.entry_status === 'closing_soon';
+
   const totalCount = events.length;
-  const advCount = events.filter(
+  const totalOpen = events.filter(isOpen).length;
+
+  const advEvents = events.filter(
     (e) => e.category === 'adventure' && !e.elements?.includes('ロゲイニング')
-  ).length;
-  const rogainingCount = events.filter((e) => e.elements?.includes('ロゲイニング')).length;
-  const trailCount = events.filter((e) => e.category === 'trail').length;
-  const cyclingCount = events.filter((e) => e.category === 'cycling').length;
-  const marathonCount = events.filter((e) => e.category === 'marathon').length;
+  );
+  const advCount = advEvents.length;
+  const advOpen = advEvents.filter(isOpen).length;
+
+  const rogEvents = events.filter((e) => e.elements?.includes('ロゲイニング'));
+  const rogainingCount = rogEvents.length;
+  const rogainingOpen = rogEvents.filter(isOpen).length;
+
+  const trailEvents = events.filter((e) => e.category === 'trail');
+  const trailCount = trailEvents.length;
+  const trailOpen = trailEvents.filter(isOpen).length;
+
+  const cyclingEvents = events.filter((e) => e.category === 'cycling');
+  const cyclingCount = cyclingEvents.length;
+  const cyclingOpen = cyclingEvents.filter(isOpen).length;
+
+  const marathonEvents = events.filter((e) => e.category === 'marathon');
+  const marathonCount = marathonEvents.length;
+  const marathonOpen = marathonEvents.filter(isOpen).length;
+
+  const favoriteEvents = events.filter((e) => favoriteIds.includes(e.id));
+  const favoriteOpen = favoriteEvents.filter(isOpen).length;
 
   const navItems = [
     {
@@ -30,6 +51,7 @@ export const SportCategoryNav: React.FC<SportCategoryNavProps> = ({
       label: 'すべての大会',
       sub: '全国・中国・四国 網羅',
       count: totalCount,
+      openCount: totalOpen,
       icon: Layers,
       activeColor:
         'border-teal-700 bg-teal-50 dark:bg-teal-950/50 text-teal-950 dark:text-teal-200',
@@ -46,6 +68,7 @@ export const SportCategoryNav: React.FC<SportCategoryNavProps> = ({
       label: 'アドベンチャー・MTB読図',
       sub: 'とれとれ・AR関西・複合',
       count: advCount,
+      openCount: advOpen,
       icon: Compass,
       badgeText: '注目',
       activeColor:
@@ -63,6 +86,7 @@ export const SportCategoryNav: React.FC<SportCategoryNavProps> = ({
       label: 'ロゲイニング・OMM',
       sub: '地図読み・ナビゲーション',
       count: rogainingCount,
+      openCount: rogainingOpen,
       icon: Map,
       activeColor:
         'border-emerald-700 bg-emerald-50 dark:bg-emerald-950/50 text-emerald-950 dark:text-emerald-200',
@@ -76,6 +100,7 @@ export const SportCategoryNav: React.FC<SportCategoryNavProps> = ({
       label: 'トレイルラン・100マイル',
       sub: 'ショート〜100mile網羅',
       count: trailCount,
+      openCount: trailOpen,
       icon: Mountain,
       activeColor:
         'border-teal-700 bg-teal-50 dark:bg-teal-950/50 text-teal-950 dark:text-teal-200',
@@ -89,9 +114,10 @@ export const SportCategoryNav: React.FC<SportCategoryNavProps> = ({
     },
     {
       id: 'cycling',
-      label: 'サイクリング・自転車',
+      label: 'サイクリング',
       sub: 'しまなみ・ロングライド',
       count: cyclingCount,
+      openCount: cyclingOpen,
       icon: Bike,
       activeColor:
         'border-sky-700 bg-sky-50 dark:bg-sky-950/50 text-sky-950 dark:text-sky-200',
@@ -105,6 +131,7 @@ export const SportCategoryNav: React.FC<SportCategoryNavProps> = ({
       label: 'マラソン・ウルトラ',
       sub: '100kmウルトラ・フル',
       count: marathonCount,
+      openCount: marathonOpen,
       icon: Footprints,
       activeColor:
         'border-indigo-700 bg-indigo-50 dark:bg-indigo-950/50 text-indigo-950 dark:text-indigo-200',
@@ -118,6 +145,7 @@ export const SportCategoryNav: React.FC<SportCategoryNavProps> = ({
       label: 'マイ参戦予定リスト',
       sub: '保存大会＆必携品管理',
       count: favoriteIds.length,
+      openCount: favoriteOpen,
       icon: BookmarkCheck,
       activeColor:
         'border-rose-600 bg-rose-50 dark:bg-rose-950/50 text-rose-950 dark:text-rose-200',
@@ -154,16 +182,22 @@ export const SportCategoryNav: React.FC<SportCategoryNavProps> = ({
                 }`}
                 title={item.isSelected && item.id !== 'all' ? 'もう一度クリックすると解除（すべて表示）' : undefined}
               >
-                {/* 右上件数ピル */}
-                <span
-                  className={`absolute top-2 right-2 text-xs font-mono font-black px-2 py-0.5 rounded-full ${
-                    item.isSelected
-                      ? 'bg-slate-900 text-white dark:bg-white dark:text-slate-900'
-                      : 'bg-slate-150 text-slate-800 dark:bg-slate-700 dark:text-slate-200'
-                  }`}
-                >
-                  {item.count}
-                </span>
+                {/* 右上件数ピル（全大会数 ＆ 申込可能件数を両方明記） */}
+                <div className="absolute top-2 right-2">
+                  <span
+                    className={`text-[11px] font-mono font-black px-2 py-0.5 rounded-full leading-none flex items-center gap-1 shadow-2xs ${
+                      item.isSelected
+                        ? 'bg-slate-900 text-white dark:bg-white dark:text-slate-900'
+                        : 'bg-slate-150 text-slate-800 dark:bg-slate-700 dark:text-slate-200'
+                    }`}
+                    title={`全${item.count}大会中、${item.openCount}大会がエントリー受付中・申込可能`}
+                  >
+                    <span>{item.count}</span>
+                    <span className="text-emerald-600 dark:text-emerald-400 font-extrabold text-[10px]">
+                      (受付{item.openCount})
+                    </span>
+                  </span>
+                </div>
 
                 {/* 注目バッジ */}
                 {item.badgeText && (

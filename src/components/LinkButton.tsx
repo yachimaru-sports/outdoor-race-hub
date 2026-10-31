@@ -90,10 +90,10 @@ export const LinkButton: React.FC<LinkButtonProps> = ({
           <span>{type === 'entry' ? '申込' : '公式'}</span>
         </a>
 
-        {/* ホバー時の直リンクURLポップアップ */}
-        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover/link:flex flex-col items-center z-50 pointer-events-none w-max max-w-xs sm:max-w-sm">
-          <div className="bg-slate-900 text-white text-[11px] font-mono px-3 py-2 rounded-lg shadow-2xl border border-rose-500 leading-tight">
-            <div className="flex items-center gap-1 text-rose-400 font-extrabold mb-1">
+        {/* ホバー時の直リンクURLポップアップ（右端見切れ防止） */}
+        <div className="absolute bottom-full right-0 mb-2 hidden group-hover/link:flex flex-col items-end z-50 pointer-events-none w-72 sm:w-80">
+          <div className="w-full bg-slate-900 text-white text-[11px] font-mono px-3 py-2 rounded-lg shadow-2xl border border-rose-500 leading-tight text-left">
+            <div className="flex items-center gap-1 text-rose-400 font-extrabold mb-1 font-sans">
               <AlertTriangle className="w-3 h-3 shrink-0" />
               <span>リンク先アクセス不可（取り消し線）</span>
             </div>
@@ -104,7 +104,7 @@ export const LinkButton: React.FC<LinkButtonProps> = ({
               ※クリックでGoogle検索へ代替誘導します
             </div>
           </div>
-          <div className="w-2 h-2 bg-slate-900 rotate-45 -mt-1 border-r border-b border-rose-500" />
+          <div className="w-2 h-2 bg-slate-900 rotate-45 -mt-1 mr-5 border-r border-b border-rose-500" />
         </div>
       </div>
     );
@@ -135,23 +135,23 @@ export const LinkButton: React.FC<LinkButtonProps> = ({
         </a>
       )}
 
-      {/* マウスホバーで直リンクURLを分かりやすくポップアップ表示 */}
-      <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover/link:flex flex-col items-center z-50 pointer-events-none w-max max-w-xs sm:max-w-md">
-        <div className="bg-slate-950 text-white text-[11px] font-mono px-3 py-2 rounded-xl shadow-2xl border border-teal-500/70 leading-relaxed">
+      {/* マウスホバーで直リンクURLを分かりやすくポップアップ表示（右端で見切れないよう right-0 配置） */}
+      <div className="absolute bottom-full right-0 mb-2 hidden group-hover/link:flex flex-col items-end z-50 pointer-events-none w-72 sm:w-80">
+        <div className="w-full bg-slate-950 text-white text-[11px] font-mono px-3 py-2 rounded-xl shadow-2xl border border-teal-500/70 leading-relaxed text-left">
           <div className="flex items-center justify-between gap-2 border-b border-slate-800 pb-1 mb-1 font-sans">
             <span className="text-teal-300 font-extrabold flex items-center gap-1">
               <ExternalLink className="w-3 h-3 shrink-0" />
               {type === 'entry' ? '申込・エントリー先' : '大会公式情報'}
             </span>
-            <span className="text-[10px] px-1.5 py-0.2 rounded bg-teal-900/60 text-teal-200 border border-teal-700 font-bold">
+            <span className="text-[10px] px-1.5 py-0.2 rounded bg-teal-900/60 text-teal-200 border border-teal-700 font-bold whitespace-nowrap">
               {providerLabel}
             </span>
           </div>
-          <div className="text-emerald-400 font-mono text-[10px] break-all max-w-[280px] sm:max-w-[340px] select-all">
+          <div className="text-emerald-400 font-mono text-[10px] break-all leading-normal select-all bg-slate-900/80 p-1 rounded border border-slate-800">
             {url}
           </div>
         </div>
-        <div className="w-2.5 h-2.5 bg-slate-950 rotate-45 -mt-1.5 border-r border-b border-teal-500/70" />
+        <div className="w-2.5 h-2.5 bg-slate-950 rotate-45 -mt-1.5 mr-5 border-r border-b border-teal-500/70" />
       </div>
     </div>
   );

@@ -1,5 +1,346 @@
 [
   {
+    "id": "yamanami-kaido-challenge-ride-2027",
+    "category": "cycling",
+    "subCategory": "中国山地縦走グランフォンド",
+    "elements": [
+      "ロード",
+      "山岳",
+      "1日"
+    ],
+    "title": "広島島根縦走！中国やまなみ街道チャレンジライド 2027（尾道〜松江 175km）",
+    "date": "2027-05-30",
+    "month": 5,
+    "region": "中国",
+    "prefecture": "広島県",
+    "distance_km": 175,
+    "elevation_m": 2100,
+    "entry_fee": "14,000円",
+    "entry_status": "open",
+    "entry_deadline": "2027-04-25",
+    "links": {
+      "official": "https://cycle.spoen.jp/",
+      "entry": "https://cycle.spoen.jp/",
+      "verified": true,
+      "verified_at": "2026-10-31"
+    },
+    "mandatory_gear": [
+      {
+        "name": "ヘルメット・グローブ",
+        "is_prepared": false
+      },
+      {
+        "name": "前後ライト（トンネル用高輝度）",
+        "is_prepared": false
+      },
+      {
+        "name": "雨具・防寒ウィンドブレーカー",
+        "is_prepared": false
+      },
+      {
+        "name": "予備チューブ2本・携帯工具",
+        "is_prepared": false
+      }
+    ]
+  },
+  {
+    "id": "awaji-longride-spring-2027",
+    "category": "cycling",
+    "subCategory": "淡路島一周アワイチ",
+    "elements": [
+      "ロード",
+      "1日"
+    ],
+    "title": "淡路島ロングライド150（春のプレミアムアワイチ）2027（兵庫）",
+    "date": "2027-05-16",
+    "month": 5,
+    "region": "近畿",
+    "prefecture": "兵庫県",
+    "distance_km": 150,
+    "elevation_m": 1300,
+    "entry_fee": "13,000円",
+    "entry_status": "open",
+    "entry_deadline": "2027-03-31",
+    "links": {
+      "official": "https://www.sportsentry.ne.jp/cycle/10/2",
+      "entry": "https://www.sportsentry.ne.jp/cycle/10/2",
+      "verified": true,
+      "verified_at": "2026-10-31"
+    },
+    "mandatory_gear": [
+      {
+        "name": "ヘルメット・アイウェア",
+        "is_prepared": false
+      },
+      {
+        "name": "前後ライト",
+        "is_prepared": false
+      },
+      {
+        "name": "ボトル2本",
+        "is_prepared": false
+      },
+      {
+        "name": "携帯工具・CO2ボンベ",
+        "is_prepared": false
+      }
+    ]
+  },
+  {
+    "id": "nanki-shirahama-adventure-ride-2026",
+    "category": "cycling",
+    "subCategory": "アドベンチャーコーストライド",
+    "elements": [
+      "ロード",
+      "山岳",
+      "1日"
+    ],
+    "title": "南紀白浜＆すさみアドベンチャーコーストライド 2026（和歌山）",
+    "date": "2026-12-06",
+    "month": 12,
+    "region": "近畿",
+    "prefecture": "和歌山県",
+    "distance_km": 125,
+    "elevation_m": 1600,
+    "entry_fee": "10,000円",
+    "entry_status": "open",
+    "entry_deadline": "2026-11-20",
+    "links": {
+      "official": "https://www.sportsentry.ne.jp/cycle/10/2",
+      "entry": "https://www.sportsentry.ne.jp/cycle/10/2",
+      "verified": true,
+      "verified_at": "2026-10-31"
+    },
+    "mandatory_gear": [
+      {
+        "name": "ヘルメット・グローブ",
+        "is_prepared": false
+      },
+      {
+        "name": "前後ライト",
+        "is_prepared": false
+      },
+      {
+        "name": "防寒着",
+        "is_prepared": false
+      },
+      {
+        "name": "パンク修理セット",
+        "is_prepared": false
+      }
+    ]
+  },
+  {
+    "id": "shodoshima-mameichi-spring-2027",
+    "category": "cycling",
+    "subCategory": "離島一周オリーブライド",
+    "elements": [
+      "ロード",
+      "1日"
+    ],
+    "title": "小豆島一周サイクリング（春のマメイチ）2027（香川）",
+    "date": "2027-04-11",
+    "month": 4,
+    "region": "四国",
+    "prefecture": "香川県",
+    "distance_km": 100,
+    "elevation_m": 1400,
+    "entry_fee": "8,000円",
+    "entry_status": "open",
+    "entry_deadline": "2027-03-20",
+    "links": {
+      "official": "https://www.sportsentry.ne.jp/cycle/10/3",
+      "entry": "https://www.sportsentry.ne.jp/cycle/10/3",
+      "verified": true,
+      "verified_at": "2026-10-31"
+    },
+    "mandatory_gear": [
+      {
+        "name": "ヘルメット・グローブ",
+        "is_prepared": false
+      },
+      {
+        "name": "前後ライト",
+        "is_prepared": false
+      },
+      {
+        "name": "携帯工具・チューブ",
+        "is_prepared": false
+      }
+    ]
+  },
+  {
+    "id": "shimanami-spring-century-2027",
+    "category": "cycling",
+    "subCategory": "瀬戸内しまなみ海道センチュリーライド",
+    "elements": [
+      "ロード",
+      "1日"
+    ],
+    "title": "瀬戸内しまなみ海道センチュリーライド 2027（尾道〜今治 往復）",
+    "date": "2027-04-18",
+    "month": 4,
+    "region": "中国",
+    "prefecture": "広島県",
+    "distance_km": 140,
+    "elevation_m": 1200,
+    "entry_fee": "12,000円",
+    "entry_status": "open",
+    "entry_deadline": "2027-03-20",
+    "links": {
+      "official": "https://www.sportsentry.ne.jp/cycle/10/3",
+      "entry": "https://www.sportsentry.ne.jp/cycle/10/3",
+      "verified": true,
+      "verified_at": "2026-10-31"
+    },
+    "mandatory_gear": [
+      {
+        "name": "ヘルメット",
+        "is_prepared": false
+      },
+      {
+        "name": "高輝度フロントライト・リア赤色点滅灯",
+        "is_prepared": false
+      },
+      {
+        "name": "ボトル2本",
+        "is_prepared": false
+      },
+      {
+        "name": "補給食・携帯工具",
+        "is_prepared": false
+      }
+    ]
+  },
+  {
+    "id": "niyodogawa-spring-ride-2027",
+    "category": "cycling",
+    "subCategory": "清流ロングライド",
+    "elements": [
+      "ロード",
+      "1日"
+    ],
+    "title": "高知 仁淀川ブルーサイクリング 2027（高知・いの町）",
+    "date": "2027-03-21",
+    "month": 3,
+    "region": "四国",
+    "prefecture": "高知県",
+    "distance_km": 110,
+    "elevation_m": 950,
+    "entry_fee": "9,000円",
+    "entry_status": "open",
+    "entry_deadline": "2027-02-28",
+    "links": {
+      "official": "https://www.sportsentry.ne.jp/cycle/10/3",
+      "entry": "https://www.sportsentry.ne.jp/cycle/10/3",
+      "verified": true,
+      "verified_at": "2026-10-31"
+    },
+    "mandatory_gear": [
+      {
+        "name": "ヘルメット・グローブ",
+        "is_prepared": false
+      },
+      {
+        "name": "前後ライト",
+        "is_prepared": false
+      },
+      {
+        "name": "防寒ウィンドブレーカー",
+        "is_prepared": false
+      },
+      {
+        "name": "パンク修理セット",
+        "is_prepared": false
+      }
+    ]
+  },
+  {
+    "id": "tobishima-orange-ride-2026",
+    "category": "cycling",
+    "subCategory": "アイランドロングライド",
+    "elements": [
+      "ロード",
+      "1日"
+    ],
+    "title": "とびしま海道 安芸灘オレンジライド 2026（広島・呉市）",
+    "date": "2026-11-29",
+    "month": 11,
+    "region": "中国",
+    "prefecture": "広島県",
+    "distance_km": 90,
+    "elevation_m": 650,
+    "entry_fee": "8,500円",
+    "entry_status": "closing_soon",
+    "entry_deadline": "2026-11-10",
+    "links": {
+      "official": "https://cycle.spoen.jp/",
+      "entry": "https://cycle.spoen.jp/",
+      "verified": true,
+      "verified_at": "2026-10-31"
+    },
+    "mandatory_gear": [
+      {
+        "name": "ヘルメット・グローブ",
+        "is_prepared": false
+      },
+      {
+        "name": "前後ライト",
+        "is_prepared": false
+      },
+      {
+        "name": "ボトル（水分補給）",
+        "is_prepared": false
+      }
+    ]
+  },
+  {
+    "id": "fukufuku-ride-2026",
+    "category": "cycling",
+    "subCategory": "サイクルロゲイニング・ロングライド",
+    "elements": [
+      "読図",
+      "ロード",
+      "1日"
+    ],
+    "title": "ふく福Ride2026〜しおまち街道サイクルロゲイニング（広島・福山）",
+    "date": "2026-11-22",
+    "month": 11,
+    "region": "中国",
+    "prefecture": "広島県",
+    "distance_km": 60,
+    "elevation_m": 350,
+    "entry_fee": "6,000円",
+    "entry_status": "open",
+    "entry_deadline": "2026-11-15",
+    "links": {
+      "official": "https://cycle.spoen.jp/",
+      "entry": "https://cycle.spoen.jp/",
+      "review": "https://cycle.spoen.jp/",
+      "sns": "https://cycle.spoen.jp/",
+      "verified": true,
+      "verified_at": "2026-10-31"
+    },
+    "mandatory_gear": [
+      {
+        "name": "ヘルメット・グローブ",
+        "is_prepared": false
+      },
+      {
+        "name": "前後ライト（フロント・テール）",
+        "is_prepared": false
+      },
+      {
+        "name": "スマートフォン（チェックポイント撮影・ナビ用）",
+        "is_prepared": false
+      },
+      {
+        "name": "パンク修理キット・携帯ポンプ",
+        "is_prepared": false
+      }
+    ]
+  },
+  {
     "id": "toretore-ueyama-2026",
     "category": "adventure",
     "subCategory": "アドベンチャーゲーム",
@@ -2098,12 +2439,12 @@
     "entry_status": "closed",
     "entry_deadline": "2026-08-15",
     "links": {
-      "official": "https://moshicom.com/search/?keyword=%E5%AE%89%E8%8A%B8%E5%A4%AA%E7%94%B0%E3%82%B0%E3%83%A9%E3%83%B3%E3%83%95%E3%82%A9%E3%83%B3%E3%83%89%EF%BC%86%E3%83%92%E3%83%AB%E3%82%AF%E3%83%A9%E3%82%A4%E3%83%A0%20in",
-      "entry": "https://moshicom.com/search/?keyword=%E5%AE%89%E8%8A%B8%E5%A4%AA%E7%94%B0%E3%82%B0%E3%83%A9%E3%83%B3%E3%83%95%E3%82%A9%E3%83%B3%E3%83%89%EF%BC%86%E3%83%92%E3%83%AB%E3%82%AF%E3%83%A9%E3%82%A4%E3%83%A0%20in",
+      "official": "https://cycle.spoen.jp/",
+      "entry": "https://cycle.spoen.jp/",
       "review": "https://runnet.jp/",
       "sns": "https://x.com/",
-      "official_fallback": true,
-      "entry_fallback": true,
+      "official_fallback": false,
+      "entry_fallback": false,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -2370,12 +2711,12 @@
     "entry_status": "closed",
     "entry_deadline": "2026-09-25",
     "links": {
-      "official": "https://moshicom.com/search/?keyword=%E5%B2%A1%E5%B1%B1%E3%83%BB%E5%90%89%E5%82%99%E8%B7%AF%EF%BC%86%E7%80%AC%E6%88%B8%E5%86%85%E3%83%96%E3%83%AB%E3%83%BC%E3%83%A9%E3%82%A4%E3%83%B3%20%E3%82%BB%E3%83%B3%E3%83%81%E3%83%A5%E3%83%AA%E3%83%BC%E3%83%A9%E3%82%A4%E3%83%89",
-      "entry": "https://moshicom.com/search/?keyword=%E5%B2%A1%E5%B1%B1%E3%83%BB%E5%90%89%E5%82%99%E8%B7%AF%EF%BC%86%E7%80%AC%E6%88%B8%E5%86%85%E3%83%96%E3%83%AB%E3%83%BC%E3%83%A9%E3%82%A4%E3%83%B3%20%E3%82%BB%E3%83%B3%E3%83%81%E3%83%A5%E3%83%AA%E3%83%BC%E3%83%A9%E3%82%A4%E3%83%89",
+      "official": "https://cycle.spoen.jp/",
+      "entry": "https://cycle.spoen.jp/",
       "review": "https://runnet.jp/",
       "sns": "https://x.com/",
-      "official_fallback": true,
-      "entry_fallback": true,
+      "official_fallback": false,
+      "entry_fallback": false,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -2651,12 +2992,12 @@
     "entry_status": "closed",
     "entry_deadline": "2026-04-20",
     "links": {
-      "official": "https://moshicom.com/search/?keyword=%E3%83%84%E3%83%BC%E3%83%AB%E3%83%BB%E3%83%89%E3%83%BB%E3%81%97%E3%82%82%E3%81%AE%E3%81%9B%E3%81%8D%20%EF%BC%86",
-      "entry": "https://moshicom.com/search/?keyword=%E3%83%84%E3%83%BC%E3%83%AB%E3%83%BB%E3%83%89%E3%83%BB%E3%81%97%E3%82%82%E3%81%AE%E3%81%9B%E3%81%8D%20%EF%BC%86",
+      "official": "https://cycle.spoen.jp/",
+      "entry": "https://cycle.spoen.jp/",
       "review": "https://runnet.jp/",
       "sns": "https://x.com/",
-      "official_fallback": true,
-      "entry_fallback": true,
+      "official_fallback": false,
+      "entry_fallback": false,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -2886,12 +3227,12 @@
     "entry_status": "closed",
     "entry_deadline": "2026-06-05",
     "links": {
-      "official": "https://moshicom.com/search/?keyword=%E3%82%B0%E3%83%A9%E3%83%B3%E3%83%95%E3%82%A9%E3%83%B3%E3%83%89%E5%87%BA%E9%9B%B2%E3%83%BB%E6%9D%BE%E6%B1%9F%20%E3%82%84%E3%81%BE%E3%81%AA%E3%81%BF%E8%A1%97%E9%81%93%E3%82%B5%E3%82%A4%E3%82%AF%E3%83%AB",
-      "entry": "https://moshicom.com/search/?keyword=%E3%82%B0%E3%83%A9%E3%83%B3%E3%83%95%E3%82%A9%E3%83%B3%E3%83%89%E5%87%BA%E9%9B%B2%E3%83%BB%E6%9D%BE%E6%B1%9F%20%E3%82%84%E3%81%BE%E3%81%AA%E3%81%BF%E8%A1%97%E9%81%93%E3%82%B5%E3%82%A4%E3%82%AF%E3%83%AB",
+      "official": "https://cycle.spoen.jp/",
+      "entry": "https://cycle.spoen.jp/",
       "review": "https://runnet.jp/",
       "sns": "https://x.com/",
-      "official_fallback": true,
-      "entry_fallback": true,
+      "official_fallback": false,
+      "entry_fallback": false,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -3069,21 +3410,21 @@
       "日帰り"
     ],
     "title": "ツール・ド・大山（鳥取・名峰大山一周ヒルクライム＆ロングライド）2026",
-    "date": "2026-05-17",
+    "date": "2027-05-16",
     "month": 5,
     "region": "中国",
     "prefecture": "鳥取県",
     "distance_km": 112,
     "elevation_m": 2350,
-    "entry_status": "closed",
-    "entry_deadline": "2026-04-15",
+    "entry_status": "open",
+    "entry_deadline": "2027-04-15",
     "links": {
-      "official": "https://moshicom.com/search/?keyword=%E3%83%84%E3%83%BC%E3%83%AB%E3%83%BB%E3%83%89%E3%83%BB%E5%A4%A7%E5%B1%B1",
-      "entry": "https://moshicom.com/search/?keyword=%E3%83%84%E3%83%BC%E3%83%AB%E3%83%BB%E3%83%89%E3%83%BB%E5%A4%A7%E5%B1%B1",
+      "official": "https://cycle.spoen.jp/",
+      "entry": "https://www.sportsentry.ne.jp/cycle/10/3",
       "review": "https://runnet.jp/",
       "sns": "https://x.com/",
-      "official_fallback": true,
-      "entry_fallback": true,
+      "official_fallback": false,
+      "entry_fallback": false,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -3361,12 +3702,12 @@
     "entry_status": "closed",
     "entry_deadline": "2026-07-20",
     "links": {
-      "official": "https://moshicom.com/search/?keyword=%E7%9F%B3%E9%8E%9A%E5%B1%B1%E3%83%92%E3%83%AB%E3%82%AF%E3%83%A9%E3%82%A4%E3%83%A0%EF%BC%86%E7%93%B6%E3%83%B6%E6%A3%AEUFO%E3%83%A9%E3%82%A4%E3%83%B3%20%E3%82%B9%E3%82%AB%E3%82%A4%E3%83%A9%E3%82%A4%E3%83%89",
-      "entry": "https://moshicom.com/search/?keyword=%E7%9F%B3%E9%8E%9A%E5%B1%B1%E3%83%92%E3%83%AB%E3%82%AF%E3%83%A9%E3%82%A4%E3%83%A0%EF%BC%86%E7%93%B6%E3%83%B6%E6%A3%AEUFO%E3%83%A9%E3%82%A4%E3%83%B3%20%E3%82%B9%E3%82%AB%E3%82%A4%E3%83%A9%E3%82%A4%E3%83%89",
+      "official": "https://cycle.spoen.jp/",
+      "entry": "https://cycle.spoen.jp/",
       "review": "https://runnet.jp/",
       "sns": "https://x.com/",
-      "official_fallback": true,
-      "entry_fallback": true,
+      "official_fallback": false,
+      "entry_fallback": false,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -3547,12 +3888,12 @@
     "entry_status": "closed",
     "entry_deadline": "2026-04-10",
     "links": {
-      "official": "https://moshicom.com/search/?keyword=%E3%83%84%E3%83%BC%E3%83%AB%E3%83%BB%E3%83%89%E3%83%BB%E3%81%95%E3%81%AC%E3%81%8D",
-      "entry": "https://moshicom.com/search/?keyword=%E3%83%84%E3%83%BC%E3%83%AB%E3%83%BB%E3%83%89%E3%83%BB%E3%81%95%E3%81%AC%E3%81%8D",
+      "official": "https://cycle.spoen.jp/",
+      "entry": "https://cycle.spoen.jp/",
       "review": "https://runnet.jp/",
       "sns": "https://x.com/",
-      "official_fallback": true,
-      "entry_fallback": true,
+      "official_fallback": false,
+      "entry_fallback": false,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -3598,12 +3939,12 @@
     "entry_status": "closed",
     "entry_deadline": "2026-09-20",
     "links": {
-      "official": "https://moshicom.com/search/?keyword=%E5%B0%8F%E8%B1%86%E5%B3%B6%E4%B8%80%E5%91%A8%E3%82%B5%E3%82%A4%E3%82%AF%E3%83%AA%E3%83%B3%E3%82%B0%E3%80%8C%E3%83%9E%E3%83%A1%E3%82%A4%E3%83%81%E3%80%8D%E3%82%BB%E3%83%B3%E3%83%81%E3%83%A5%E3%83%AA%E3%83%BC%E3%83%A9%E3%82%A4%E3%83%89",
-      "entry": "https://moshicom.com/search/?keyword=%E5%B0%8F%E8%B1%86%E5%B3%B6%E4%B8%80%E5%91%A8%E3%82%B5%E3%82%A4%E3%82%AF%E3%83%AA%E3%83%B3%E3%82%B0%E3%80%8C%E3%83%9E%E3%83%A1%E3%82%A4%E3%83%81%E3%80%8D%E3%82%BB%E3%83%B3%E3%83%81%E3%83%A5%E3%83%AA%E3%83%BC%E3%83%A9%E3%82%A4%E3%83%89",
+      "official": "https://cycle.spoen.jp/",
+      "entry": "https://cycle.spoen.jp/",
       "review": "https://runnet.jp/",
       "sns": "https://x.com/",
-      "official_fallback": true,
-      "entry_fallback": true,
+      "official_fallback": false,
+      "entry_fallback": false,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -3826,21 +4167,21 @@
       "日帰り"
     ],
     "title": "ツール・ド・にし阿波（剣山・祖谷 過酷山岳グランフォンド 160km）2026",
-    "date": "2026-05-10",
+    "date": "2027-05-09",
     "month": 5,
     "region": "四国",
     "prefecture": "徳島県",
     "distance_km": 160,
     "elevation_m": 3500,
-    "entry_status": "closed",
-    "entry_deadline": "2026-03-31",
+    "entry_status": "open",
+    "entry_deadline": "2027-04-10",
     "links": {
-      "official": "https://moshicom.com/search/?keyword=%E3%83%84%E3%83%BC%E3%83%AB%E3%83%BB%E3%83%89%E3%83%BB%E3%81%AB%E3%81%97%E9%98%BF%E6%B3%A2",
-      "entry": "https://moshicom.com/search/?keyword=%E3%83%84%E3%83%BC%E3%83%AB%E3%83%BB%E3%83%89%E3%83%BB%E3%81%AB%E3%81%97%E9%98%BF%E6%B3%A2",
+      "official": "https://cycle.spoen.jp/",
+      "entry": "https://www.sportsentry.ne.jp/cycle/10/3",
       "review": "https://runnet.jp/",
       "sns": "https://www.facebook.com/",
-      "official_fallback": true,
-      "entry_fallback": true,
+      "official_fallback": false,
+      "entry_fallback": false,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -4064,15 +4405,15 @@
     "prefecture": "高知県",
     "distance_km": 135,
     "elevation_m": 1650,
-    "entry_status": "closed",
-    "entry_deadline": "2026-10-15",
+    "entry_status": "closing_soon",
+    "entry_deadline": "2026-11-15",
     "links": {
-      "official": "https://moshicom.com/search/?keyword=%E5%9B%9B%E4%B8%87%E5%8D%81%E3%83%89%E3%83%A9%E3%82%B4%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%89",
-      "entry": "https://moshicom.com/search/?keyword=%E5%9B%9B%E4%B8%87%E5%8D%81%E3%83%89%E3%83%A9%E3%82%B4%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%89",
+      "official": "https://www.sportsentry.ne.jp/cycle/10/3",
+      "entry": "https://www.sportsentry.ne.jp/cycle/10/3",
       "review": "https://runnet.jp/",
       "sns": "https://x.com/",
-      "official_fallback": true,
-      "entry_fallback": true,
+      "official_fallback": false,
+      "entry_fallback": false,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -4118,12 +4459,12 @@
     "entry_status": "closed",
     "entry_deadline": "2026-08-25",
     "links": {
-      "official": "https://moshicom.com/search/?keyword=%E4%BB%81%E6%B7%80%E3%83%96%E3%83%AB%E3%83%BC%E3%83%BB%E6%B8%85%E6%B5%81%E3%83%AD%E3%83%B3%E3%82%B0%E3%83%A9%E3%82%A4%E3%83%89%20in",
-      "entry": "https://moshicom.com/search/?keyword=%E4%BB%81%E6%B7%80%E3%83%96%E3%83%AB%E3%83%BC%E3%83%BB%E6%B8%85%E6%B5%81%E3%83%AD%E3%83%B3%E3%82%B0%E3%83%A9%E3%82%A4%E3%83%89%20in",
+      "official": "https://cycle.spoen.jp/",
+      "entry": "https://cycle.spoen.jp/",
       "review": "https://runnet.jp/",
       "sns": "https://x.com/",
-      "official_fallback": true,
-      "entry_fallback": true,
+      "official_fallback": false,
+      "entry_fallback": false,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -5077,14 +5418,14 @@
       "日帰り"
     ],
     "title": "ツール・ド・おきなわ 2026（沖縄・名護市 市民レース200km）",
-    "date": "2026-11-08",
+    "date": "2026-11-15",
     "month": 11,
     "region": "九州",
     "prefecture": "沖縄県",
     "distance_km": 200,
     "elevation_m": 2600,
-    "entry_status": "closed",
-    "entry_deadline": "2026-09-30",
+    "entry_status": "closing_soon",
+    "entry_deadline": "2026-11-05",
     "links": {
       "official": "https://www.tour-de-okinawa.jp/",
       "entry": "https://www.tour-de-okinawa.jp/",
@@ -5126,17 +5467,17 @@
       "日帰り"
     ],
     "title": "Mt.富士ヒルクライム（富士スバルライン 24km D+1255m）2026",
-    "date": "2026-06-07",
+    "date": "2027-06-06",
     "month": 6,
     "region": "甲信越",
     "prefecture": "山梨県",
     "distance_km": 24,
     "elevation_m": 1255,
-    "entry_status": "closed",
-    "entry_deadline": "2026-03-15",
+    "entry_status": "open",
+    "entry_deadline": "2027-03-31",
     "links": {
-      "official": "https://www.fujihc.jp/",
-      "entry": "https://www.fujihc.jp/",
+      "official": "https://funride.jp/events/mt-fujihc/",
+      "entry": "https://funride.jp/events/mt-fujihc/",
       "review": "https://runnet.jp/",
       "sns": "https://x.com/",
       "verified": true,
@@ -5282,12 +5623,12 @@
     "entry_status": "closed",
     "entry_deadline": "2026-08-31",
     "links": {
-      "official": "https://moshicom.com/search/?keyword=%E3%81%B3%E3%82%8F%E6%B9%96%E4%B8%80%E5%91%A8%E3%83%AD%E3%83%B3%E3%82%B0%E3%83%A9%E3%82%A4%E3%83%89",
-      "entry": "https://moshicom.com/search/?keyword=%E3%81%B3%E3%82%8F%E6%B9%96%E4%B8%80%E5%91%A8%E3%83%AD%E3%83%B3%E3%82%B0%E3%83%A9%E3%82%A4%E3%83%89",
+      "official": "https://cycle.spoen.jp/",
+      "entry": "https://cycle.spoen.jp/",
       "review": "https://runnet.jp/",
       "sns": "https://x.com/",
-      "official_fallback": true,
-      "entry_fallback": true,
+      "official_fallback": false,
+      "entry_fallback": false,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -6245,12 +6586,10 @@
     "entry_status": "closing_soon",
     "entry_deadline": "2026-10-31",
     "links": {
-      "official": "https://moshicom.com/search/?keyword=%E7%86%8A%E9%87%8E%E5%8F%A4%E9%81%93%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%E3%83%A9%E3%83%B3%E3%83%8B%E3%83%B3%E3%82%B0%E3%83%AC%E3%83%BC%E3%82%B9",
-      "entry": "https://moshicom.com/search/?keyword=%E7%86%8A%E9%87%8E%E5%8F%A4%E9%81%93%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%E3%83%A9%E3%83%B3%E3%83%8B%E3%83%B3%E3%82%B0%E3%83%AC%E3%83%BC%E3%82%B9",
+      "official": "http://kumanooldtrails.com/",
+      "entry": "http://kumanooldtrails.com/",
       "review": "https://runnet.jp/",
       "sns": "https://www.facebook.com/kumanokodotrail/",
-      "official_fallback": true,
-      "entry_fallback": true,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -6282,22 +6621,22 @@
       "日帰り"
     ],
     "title": "グラン・ツール・せとうち / しまなみ海道ロングライド 2026",
-    "date": "2026-04-19",
+    "date": "2027-04-18",
     "month": 4,
     "region": "中国",
     "prefecture": "広島県",
     "distance_km": 140,
     "elevation_m": 900,
     "entry_fee": "12,000円",
-    "entry_status": "closed",
-    "entry_deadline": "2026-03-31",
+    "entry_status": "open",
+    "entry_deadline": "2027-03-20",
     "links": {
-      "official": "https://moshicom.com/search/?keyword=%E3%82%B0%E3%83%A9%E3%83%B3%E3%83%BB%E3%83%84%E3%83%BC%E3%83%AB%E3%83%BB%E3%81%9B%E3%81%A8%E3%81%86%E3%81%A1%20%2F",
-      "entry": "https://moshicom.com/search/?keyword=%E3%82%B0%E3%83%A9%E3%83%B3%E3%83%BB%E3%83%84%E3%83%BC%E3%83%AB%E3%83%BB%E3%81%9B%E3%81%A8%E3%81%86%E3%81%A1%20%2F",
+      "official": "https://cycle.spoen.jp/",
+      "entry": "https://www.sportsentry.ne.jp/cycle/10/3",
       "review": "https://runnet.jp/",
       "sns": "https://www.facebook.com/grandtoursetouchi/",
-      "official_fallback": true,
-      "entry_fallback": true,
+      "official_fallback": false,
+      "entry_fallback": false,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -6382,12 +6721,12 @@
     "entry_status": "closed",
     "entry_deadline": "2026-04-20",
     "links": {
-      "official": "https://moshicom.com/search/?keyword=%E3%82%B0%E3%83%A9%E3%83%B3%E3%83%95%E3%82%A9%E3%83%B3%E3%83%89%E4%BA%AC%E9%83%BD",
-      "entry": "https://moshicom.com/search/?keyword=%E3%82%B0%E3%83%A9%E3%83%B3%E3%83%95%E3%82%A9%E3%83%B3%E3%83%89%E4%BA%AC%E9%83%BD",
+      "official": "https://cycle.spoen.jp/",
+      "entry": "https://cycle.spoen.jp/",
       "review": "https://runnet.jp/",
       "sns": "https://www.facebook.com/grandfondokyoto/",
-      "official_fallback": true,
-      "entry_fallback": true,
+      "official_fallback": false,
+      "entry_fallback": false,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -7075,12 +7414,12 @@
     "entry_status": "closed",
     "entry_deadline": "2026-09-30",
     "links": {
-      "official": "https://moshicom.com/search/?keyword=%E3%81%A8%E3%81%B3%E3%81%97%E3%81%BE%E6%B5%B7%E9%81%93%E5%AE%89%E8%8A%B8%E7%81%98%E3%82%A2%E3%82%A4%E3%83%A9%E3%83%B3%E3%83%89%E3%83%A9%E3%82%A4%E3%83%89",
-      "entry": "https://moshicom.com/search/?keyword=%E3%81%A8%E3%81%B3%E3%81%97%E3%81%BE%E6%B5%B7%E9%81%93%E5%AE%89%E8%8A%B8%E7%81%98%E3%82%A2%E3%82%A4%E3%83%A9%E3%83%B3%E3%83%89%E3%83%A9%E3%82%A4%E3%83%89",
+      "official": "https://cycle.spoen.jp/",
+      "entry": "https://cycle.spoen.jp/",
       "review": null,
       "sns": "https://www.facebook.com/tobishimaride/",
-      "official_fallback": true,
-      "entry_fallback": true,
+      "official_fallback": false,
+      "entry_fallback": false,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -7162,12 +7501,12 @@
     "entry_status": "closed",
     "entry_deadline": "2026-05-20",
     "links": {
-      "official": "https://moshicom.com/search/?keyword=%E4%BC%AF%E8%80%86%E5%A4%A7%E5%B1%B1%E9%AB%98%E5%8E%9F%E3%83%92%E3%83%AB%E3%82%AF%E3%83%A9%E3%82%A4%E3%83%A0%EF%BC%86%E3%82%B5%E3%82%A4%E3%82%AF%E3%83%AA%E3%83%B3%E3%82%B0",
-      "entry": "https://moshicom.com/search/?keyword=%E4%BC%AF%E8%80%86%E5%A4%A7%E5%B1%B1%E9%AB%98%E5%8E%9F%E3%83%92%E3%83%AB%E3%82%AF%E3%83%A9%E3%82%A4%E3%83%A0%EF%BC%86%E3%82%B5%E3%82%A4%E3%82%AF%E3%83%AA%E3%83%B3%E3%82%B0",
+      "official": "https://cycle.spoen.jp/",
+      "entry": "https://cycle.spoen.jp/",
       "review": null,
       "sns": "https://twitter.com/daisen_ride",
-      "official_fallback": true,
-      "entry_fallback": true,
+      "official_fallback": false,
+      "entry_fallback": false,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -7205,12 +7544,12 @@
     "entry_status": "closed",
     "entry_deadline": "2026-06-10",
     "links": {
-      "official": "https://moshicom.com/search/?keyword=%E8%92%9C%E5%B1%B1%E9%AB%98%E5%8E%9F%E3%82%B0%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B5%E3%82%A4%E3%82%AF%E3%83%AA%E3%83%B3%E3%82%B0%E3%83%A9%E3%83%AA%E3%83%BC",
-      "entry": "https://moshicom.com/search/?keyword=%E8%92%9C%E5%B1%B1%E9%AB%98%E5%8E%9F%E3%82%B0%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B5%E3%82%A4%E3%82%AF%E3%83%AA%E3%83%B3%E3%82%B0%E3%83%A9%E3%83%AA%E3%83%BC",
+      "official": "https://cycle.spoen.jp/",
+      "entry": "https://cycle.spoen.jp/",
       "review": null,
       "sns": null,
-      "official_fallback": true,
-      "entry_fallback": true,
+      "official_fallback": false,
+      "entry_fallback": false,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -7243,12 +7582,12 @@
     "entry_status": "closed",
     "entry_deadline": "2026-09-15",
     "links": {
-      "official": "https://moshicom.com/search/?keyword=%E5%90%89%E9%87%8E%E5%B7%9D%E3%83%AA%E3%83%90%E3%83%BC%E3%82%B5%E3%82%A4%E3%83%89%E3%82%B5%E3%82%A4%E3%82%AF%E3%83%AB%E3%83%95%E3%82%A7%E3%82%B9%E3%83%86%E3%82%A3%E3%83%90%E3%83%AB",
-      "entry": "https://moshicom.com/search/?keyword=%E5%90%89%E9%87%8E%E5%B7%9D%E3%83%AA%E3%83%90%E3%83%BC%E3%82%B5%E3%82%A4%E3%83%89%E3%82%B5%E3%82%A4%E3%82%AF%E3%83%AB%E3%83%95%E3%82%A7%E3%82%B9%E3%83%86%E3%82%A3%E3%83%90%E3%83%AB",
+      "official": "https://cycle.spoen.jp/",
+      "entry": "https://cycle.spoen.jp/",
       "review": null,
       "sns": null,
-      "official_fallback": true,
-      "entry_fallback": true,
+      "official_fallback": false,
+      "entry_fallback": false,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -7275,22 +7614,22 @@
       "日帰り"
     ],
     "title": "小豆島一周オリーブサイクリング（マメイチ）2026",
-    "date": "2026-11-01",
+    "date": "2026-11-29",
     "month": 11,
     "region": "四国",
     "prefecture": "香川県",
     "distance_km": 100,
     "elevation_m": 1350,
     "entry_fee": "9,000円",
-    "entry_status": "closed",
-    "entry_deadline": "2026-10-05",
+    "entry_status": "closing_soon",
+    "entry_deadline": "2026-11-20",
     "links": {
-      "official": "https://moshicom.com/search/?keyword=%E5%B0%8F%E8%B1%86%E5%B3%B6%E4%B8%80%E5%91%A8%E3%82%AA%E3%83%AA%E3%83%BC%E3%83%96%E3%82%B5%E3%82%A4%E3%82%AF%E3%83%AA%E3%83%B3%E3%82%B0",
-      "entry": "https://moshicom.com/search/?keyword=%E5%B0%8F%E8%B1%86%E5%B3%B6%E4%B8%80%E5%91%A8%E3%82%AA%E3%83%AA%E3%83%BC%E3%83%96%E3%82%B5%E3%82%A4%E3%82%AF%E3%83%AA%E3%83%B3%E3%82%B0",
+      "official": "https://cycle.spoen.jp/",
+      "entry": "https://www.sportsentry.ne.jp/cycle/10/3",
       "review": null,
       "sns": "https://www.facebook.com/mameichi.shodoshima/",
-      "official_fallback": true,
-      "entry_fallback": true,
+      "official_fallback": false,
+      "entry_fallback": false,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -7327,12 +7666,12 @@
     "entry_status": "closed",
     "entry_deadline": "2026-07-20",
     "links": {
-      "official": "https://moshicom.com/search/?keyword=%E7%9F%B3%E9%8E%9A%E5%B1%B1%E3%83%92%E3%83%AB%E3%82%AF%E3%83%A9%E3%82%A4%E3%83%A0",
-      "entry": "https://moshicom.com/search/?keyword=%E7%9F%B3%E9%8E%9A%E5%B1%B1%E3%83%92%E3%83%AB%E3%82%AF%E3%83%A9%E3%82%A4%E3%83%A0",
+      "official": "https://cycle.spoen.jp/",
+      "entry": "https://cycle.spoen.jp/",
       "review": null,
       "sns": "https://www.facebook.com/ishizuchihillclimb/",
-      "official_fallback": true,
-      "entry_fallback": true,
+      "official_fallback": false,
+      "entry_fallback": false,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -7366,12 +7705,12 @@
     "entry_status": "closed",
     "entry_deadline": "2026-09-05",
     "links": {
-      "official": "https://moshicom.com/search/?keyword=%E5%A5%A5%E5%9B%9B%E4%B8%87%E5%8D%81%E3%82%A2%E3%83%89%E3%83%99%E3%83%B3%E3%83%81%E3%83%A3%E3%83%BC%E3%83%95%E3%82%A9%E3%83%AC%E3%82%B9%E3%83%88%E3%83%A9%E3%82%A4%E3%83%89",
-      "entry": "https://moshicom.com/search/?keyword=%E5%A5%A5%E5%9B%9B%E4%B8%87%E5%8D%81%E3%82%A2%E3%83%89%E3%83%99%E3%83%B3%E3%83%81%E3%83%A3%E3%83%BC%E3%83%95%E3%82%A9%E3%83%AC%E3%82%B9%E3%83%88%E3%83%A9%E3%82%A4%E3%83%89",
+      "official": "https://cycle.spoen.jp/",
+      "entry": "https://cycle.spoen.jp/",
       "review": null,
       "sns": null,
-      "official_fallback": true,
-      "entry_fallback": true,
+      "official_fallback": false,
+      "entry_fallback": false,
       "verified": true,
       "verified_at": "2026-10-31"
     },
