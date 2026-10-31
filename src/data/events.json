@@ -1450,28 +1450,30 @@
     }
   },
   {
-    "id": "ggr-ishikiriba-100-2026",
+    "id": "ggr-ishikiriba-100-2027",
     "category": "trail",
-    "subCategory": "100マイル トレイル",
+    "subCategory": "周回ウルトラトレイル・GRIPDROP",
     "elements": [
-      "100マイル",
-      "トレック",
-      "夜間"
+      "トレラン",
+      "100km+",
+      "夜間",
+      "山岳トレック"
     ],
-    "title": "GGR 石切場100 (GGR ISHIKIRIBA 100mile) 2026（岡山・笠岡）",
-    "date": "2026-11-21",
-    "month": 11,
+    "title": "2027 GGR石切場100 (周回トレイル100kmレース)",
+    "date": "2027-02-21",
+    "end_date": "2027-02-22",
+    "month": 2,
     "region": "中国",
-    "prefecture": "岡山県",
-    "distance_km": 161,
-    "elevation_m": 8800,
-    "entry_status": "closed",
-    "entry_deadline": "2026-09-30",
+    "prefecture": "広島県",
+    "distance_km": 100,
+    "elevation_m": 5200,
+    "entry_status": "open",
+    "entry_deadline": "2027-02-01",
     "links": {
-      "official": "https://moshicom.com/search/?keyword=GGR%20%E7%9F%B3%E5%88%87%E5%A0%B4100",
-      "entry": "https://moshicom.com/search/?keyword=GGR%20%E7%9F%B3%E5%88%87%E5%A0%B4100",
+      "official": "https://moshicom.com/search?keyword=GGR%E7%9F%B3%E5%88%87%E5%A0%B4100",
+      "entry": "https://moshicom.com/search?keyword=GGR%E7%9F%B3%E5%88%87%E5%A0%B4100",
       "review": "https://moshicom.com/",
-      "sns": "https://www.facebook.com/",
+      "sns": "https://www.instagram.com/gripdrop/",
       "official_fallback": true,
       "entry_fallback": true,
       "verified": true,
@@ -1503,14 +1505,15 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "38,000円",
+    "entry_fee": "19,800円",
     "source": {
       "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search/?keyword=GGR%20%E7%9F%B3%E5%88%87%E5%A0%B4100"
+      "portalUrl": "https://moshicom.com/search?keyword=GGR%E7%9F%B3%E5%88%87%E5%A0%B4100"
     },
     "venue": {
-      "name": "GGR ISHIKIRIBA 100mile",
-      "mapQuery": "岡山県 GGR ISHIKIRIBA 100mile"
+      "name": "広島県呉市倉橋町（ホシアカリ山びこ / 桂浜西側採石場跡）",
+      "address": "広島県呉市倉橋町",
+      "mapQuery": "広島県呉市倉橋町 桂浜"
     }
   },
   {
@@ -8963,7 +8966,7 @@
       "50km+",
       "山岳トレック"
     ],
-    "title": "SAIOTO COLORS 2026（広島・北広島町才乙）",
+    "title": "SAIOTO COLORS 2026（31km,52km,ハイキング28Km）",
     "date": "2026-11-08",
     "month": 11,
     "region": "中国",
@@ -8971,7 +8974,7 @@
     "distance_km": 52,
     "elevation_m": 3100,
     "entry_fee": "15,400円",
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2026-10-15",
     "links": {
       "official": "https://saiotocolors.themedia.jp/",
