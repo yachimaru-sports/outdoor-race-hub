@@ -91,47 +91,47 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
   }
 
   return (
-    <div className="bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm flex flex-col">
-      {/* テーブル本体コンテナ：ヘッダー固定 ＆ 大会情報リストのみがスムーズにスライドスクロール */}
-      <div className="overflow-x-auto overflow-y-auto max-h-[calc(100vh-220px)] min-h-[450px] relative">
-        <table className="w-full text-left border-collapse table-fixed min-w-[1080px]">
-          <thead className="sticky top-0 z-20 bg-slate-100 dark:bg-slate-850 shadow-sm">
+    <div className="bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm">
+      {/* テーブルコンテナ：二重スクロールを排除し、ページ全体と自然に連動 */}
+      <div className="overflow-x-auto">
+        <table className="w-full text-left border-collapse table-fixed min-w-[1100px]">
+          <thead className="bg-slate-100 dark:bg-slate-850">
             <tr className="text-slate-800 dark:text-slate-200 border-b-2 border-slate-300 dark:border-slate-700 text-xs font-extrabold tracking-wide">
               {/* 1. 保存 */}
-              <th className="py-2.5 pl-3 pr-1 w-[46px] text-center" title="参戦予定ブックマーク">
+              <th className="py-3 pl-3 pr-1 w-[46px] text-center" title="参戦予定ブックマーク">
                 保存
               </th>
               {/* 2. 開催日 / 締切 */}
-              <th className="py-2.5 px-3 w-[145px]">
+              <th className="py-3 px-3 w-[145px]">
                 <div className="flex items-center gap-1 text-teal-800 dark:text-teal-300">
                   <Calendar className="w-3.5 h-3.5" />
                   <span>開催日 / 締切</span>
                 </div>
               </th>
               {/* 3. 種別 */}
-              <th className="py-2.5 px-2.5 w-[130px]">種別</th>
+              <th className="py-3 px-2.5 w-[130px]">種別</th>
               {/* 4. 大会名 / エリア / 競技特徴 */}
-              <th className="py-2.5 px-3">大会名 / エリア / 競技特徴</th>
-              {/* 5. 必携品（★大会名の次に配置） */}
-              <th className="py-2.5 px-2 w-[88px] text-center">
-                <div className="flex items-center justify-center gap-1 text-amber-800 dark:text-amber-300">
+              <th className="py-3 px-3">大会名 / エリア / 競技特徴</th>
+              {/* 5. 主な必携品（★赤色で目立たせる） */}
+              <th className="py-3 px-2 w-[105px] text-center">
+                <div className="flex items-center justify-center gap-1 text-red-700 dark:text-red-400 font-black">
                   <Backpack className="w-3.5 h-3.5" />
-                  <span>必携品</span>
+                  <span>主な必携品</span>
                 </div>
               </th>
               {/* 6. 距離 / 標高 */}
-              <th className="py-2.5 px-2.5 w-[120px] text-right">距離 / 標高</th>
+              <th className="py-3 px-2.5 w-[120px] text-right">距離 / 標高</th>
               {/* 7. 参加費 */}
-              <th className="py-2.5 px-2.5 w-[95px] text-right">
+              <th className="py-3 px-2.5 w-[95px] text-right">
                 <div className="flex items-center justify-end gap-1 text-amber-800 dark:text-amber-300">
                   <Coins className="w-3.5 h-3.5" />
                   <span>参加費</span>
                 </div>
               </th>
               {/* 8. 受付状況 */}
-              <th className="py-2.5 px-2.5 w-[115px] text-center">受付状況</th>
-              {/* 9. 申込・公式（レポ・SNS削除でスッキリ2ボタン） */}
-              <th className="py-2.5 px-2.5 w-[140px] text-center">申込・公式</th>
+              <th className="py-3 px-2.5 w-[115px] text-center">受付状況</th>
+              {/* 9. 申込・公式 */}
+              <th className="py-3 px-2.5 w-[140px] text-center">申込・公式</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-200 dark:divide-slate-800 text-xs sm:text-sm">
@@ -288,7 +288,7 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
                       </div>
                     </td>
 
-                    {/* 5. 必携装備ボタン（★大会名の次に配置！「4点」「5点」など点数を明記） */}
+                    {/* 5. 主な必携品ボタン（★赤色でしっかり目立たせる＆「主な○点」表記） */}
                     <td className="py-2.5 px-2 text-center align-middle whitespace-nowrap">
                       {totalGearCount > 0 ? (
                         <button
@@ -296,17 +296,15 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
                           onClick={() =>
                             setExpandedGearEventId(isGearExpanded ? null : event.id)
                           }
-                          className={`inline-flex items-center justify-center gap-1 w-[72px] py-1 rounded-lg border text-xs font-black transition-all cursor-pointer shadow-2xs ${
+                          className={`inline-flex items-center justify-center gap-1 w-[82px] py-1.5 rounded-lg text-xs font-black transition-all cursor-pointer shadow-xs select-none ${
                             isGearExpanded
-                              ? 'bg-teal-700 text-white border-teal-700 ring-2 ring-teal-500/40 shadow-xs'
-                              : checkedGearCount > 0
-                              ? 'bg-emerald-100 text-emerald-950 border-emerald-400 dark:bg-emerald-950/60 dark:text-emerald-200 hover:bg-emerald-200'
-                              : 'bg-amber-100 text-amber-950 border-amber-300 dark:bg-amber-950/60 dark:text-amber-200 hover:bg-amber-200'
+                              ? 'bg-red-800 text-white ring-2 ring-red-400'
+                              : 'bg-red-600 hover:bg-red-700 text-white hover:scale-105'
                           }`}
-                          title="クリックで必携品リストと楽天購入リンクを開閉"
+                          title="クリックで主な必携品リストと楽天購入リンクを開閉"
                         >
                           <Backpack className="w-3.5 h-3.5 shrink-0" />
-                          <span>{totalGearCount}点</span>
+                          <span>主な{totalGearCount}点</span>
                           {isGearExpanded ? (
                             <ChevronUp className="w-3 h-3" />
                           ) : (
@@ -408,18 +406,18 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
                           {/* ヘッダー情報バー */}
                           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-teal-200 dark:border-slate-700 pb-3">
                             <div className="flex items-center gap-2">
-                              <div className="p-1.5 rounded-lg bg-teal-700 text-white">
+                              <div className="p-1.5 rounded-lg bg-red-600 text-white">
                                 <Backpack className="w-4 h-4" />
                               </div>
                               <div>
                                 <h4 className="font-black text-slate-950 dark:text-white text-sm sm:text-base flex items-center gap-2">
-                                  <span>【{event.title}】の大会必携装備リスト</span>
-                                  <span className="text-xs font-bold text-teal-800 dark:text-teal-300 bg-teal-100 dark:bg-teal-950/70 px-2 py-0.5 rounded-full border border-teal-300 dark:border-teal-700">
-                                    全{totalGearCount}点
+                                  <span>【{event.title}】の主な必携装備リスト（参考）</span>
+                                  <span className="text-xs font-bold text-red-700 dark:text-red-300 bg-red-100 dark:bg-red-950/70 px-2 py-0.5 rounded-full border border-red-300 dark:border-red-700">
+                                    主要{totalGearCount}点抜粋
                                   </span>
                                 </h4>
-                                <p className="text-xs text-slate-600 dark:text-slate-400 font-medium mt-0.5">
-                                  ※ 装備不足は出走不可・ペナルティ対象となります。各アイテム横のボタンから楽天市場の最安・特価商品を即座に検索できます。
+                                <p className="text-xs text-red-700 dark:text-red-400 font-bold mt-0.5">
+                                  ※ 大会の必携装備ルールは天候や年度・主催者の指示により変更される場合があります。エントリーおよび出走前には必ず各大会公式サイトの最新レギュレーションをご確認ください。
                                 </p>
                               </div>
                             </div>
