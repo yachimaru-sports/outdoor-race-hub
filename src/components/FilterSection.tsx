@@ -14,6 +14,8 @@ import {
   Square,
   RotateCcw,
   Tag,
+  Bike,
+  ExternalLink,
 } from 'lucide-react';
 
 interface FilterSectionProps {
@@ -297,6 +299,75 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
               </option>
             ))}
           </select>
+        </div>
+      </div>
+
+      {/* 外部ポータル直通検索バー（スポエンCYCLE・スポーツエントリー・RUNNET・モシコム） */}
+      <div className="flex flex-wrap items-center justify-between gap-2 pt-1 text-xs border-t border-slate-200 dark:border-slate-800">
+        <div className="flex items-center gap-1.5 text-slate-600 dark:text-slate-400 font-extrabold">
+          <ExternalLink className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400" />
+          <span>各ポータルサイトで直通検索:</span>
+        </div>
+        <div className="flex flex-wrap items-center gap-2">
+          {/* スポエンCYCLE（サイクルイベント専門） */}
+          <a
+            href={
+              filters.searchKeyword.trim()
+                ? `https://cycle.spoen.jp/search/?keyword=${encodeURIComponent(filters.searchKeyword.trim())}`
+                : 'https://cycle.spoen.jp/'
+            }
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-sky-50 dark:bg-sky-950/50 hover:bg-sky-100 text-sky-900 dark:text-sky-200 border border-sky-300 dark:border-sky-700 font-black shadow-2xs transition-all hover:scale-105 cursor-pointer"
+            title="スポエンCYCLEでサイクルイベントを直接検索"
+          >
+            <Bike className="w-3.5 h-3.5 text-sky-600 dark:text-sky-400 shrink-0" />
+            <span>スポエンCYCLEで検索</span>
+            <ExternalLink className="w-2.5 h-2.5 text-slate-400" />
+          </a>
+
+          {/* スポーツエントリー */}
+          <a
+            href="https://www.sportsentry.ne.jp/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-orange-50 dark:bg-orange-950/50 hover:bg-orange-100 text-orange-900 dark:text-orange-200 border border-orange-300 dark:border-orange-700 font-bold shadow-2xs transition-all hover:scale-105 cursor-pointer"
+            title="スポーツエントリーで大会を検索"
+          >
+            <span className="w-2 h-2 rounded-full bg-orange-500 shrink-0" />
+            <span>スポーツエントリー</span>
+            <ExternalLink className="w-2.5 h-2.5 text-slate-400" />
+          </a>
+
+          {/* RUNNET */}
+          <a
+            href="https://runnet.jp/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-blue-50 dark:bg-blue-950/50 hover:bg-blue-100 text-blue-900 dark:text-blue-200 border border-blue-300 dark:border-blue-700 font-bold shadow-2xs transition-all hover:scale-105 cursor-pointer"
+            title="RUNNETで大会を検索"
+          >
+            <span className="w-2 h-2 rounded-full bg-blue-500 shrink-0" />
+            <span>RUNNET</span>
+            <ExternalLink className="w-2.5 h-2.5 text-slate-400" />
+          </a>
+
+          {/* モシコム */}
+          <a
+            href={
+              filters.searchKeyword.trim()
+                ? `https://moshicom.com/search/?keyword=${encodeURIComponent(filters.searchKeyword.trim())}`
+                : 'https://moshicom.com/'
+            }
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-emerald-50 dark:bg-emerald-950/50 hover:bg-emerald-100 text-emerald-900 dark:text-emerald-200 border border-emerald-300 dark:border-emerald-700 font-bold shadow-2xs transition-all hover:scale-105 cursor-pointer"
+            title="e-moshicomで検索"
+          >
+            <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" />
+            <span>モシコム</span>
+            <ExternalLink className="w-2.5 h-2.5 text-slate-400" />
+          </a>
         </div>
       </div>
 

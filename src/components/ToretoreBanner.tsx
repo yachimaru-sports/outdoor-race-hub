@@ -66,6 +66,18 @@ export const ToretoreBanner: React.FC<ToretoreBannerProps> = ({
           </a>
 
           <a
+            href="https://cycle.spoen.jp/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-xs font-black text-sky-900 dark:text-sky-200 hover:underline bg-sky-50 dark:bg-sky-950/60 px-3 py-1.5 rounded-full border border-sky-300 dark:border-sky-700 shadow-2xs transition-all hover:bg-sky-100 dark:hover:bg-sky-900/60"
+            title="日本最大のサイクルイベント専門エントリーサイト スポエンCYCLE"
+          >
+            <Bike className="w-3.5 h-3.5 text-sky-600 dark:text-sky-400" />
+            <span>スポエンCYCLE</span>
+            <ExternalLink className="w-3 h-3" />
+          </a>
+
+          <a
             href="http://toretore.web.fc2.com/"
             target="_blank"
             rel="noopener noreferrer"

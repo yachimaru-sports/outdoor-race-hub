@@ -879,14 +879,25 @@ async function verifyAndHealEventLinks() {
       .slice(0, 2)
       .join(' ');
 
-    if (!ev.links.official || ev.links.official.includes('undefined') || ev.links.official === '#') {
-      ev.links.official = `https://moshicom.com/search/?keyword=${encodeURIComponent(cleanKw)}`;
-      fixedCount++;
-    }
-
-    if (!ev.links.entry || ev.links.entry.includes('undefined') || ev.links.entry === '#') {
-      ev.links.entry = `https://moshicom.com/search/?keyword=${encodeURIComponent(cleanKw)}`;
-      fixedCount++;
+    // サイクリング競技の場合は、スポエンCYCLEを最優先ポータルとして適用
+    if (ev.category === 'cycling') {
+      if (!ev.links.official || ev.links.official.includes('moshicom.com') || ev.links.official.includes('undefined') || ev.links.official === '#') {
+        ev.links.official = `https://cycle.spoen.jp/`;
+        fixedCount++;
+      }
+      if (!ev.links.entry || ev.links.entry.includes('moshicom.com') || ev.links.entry.includes('undefined') || ev.links.entry === '#') {
+        ev.links.entry = `https://cycle.spoen.jp/`;
+        fixedCount++;
+      }
+    } else {
+      if (!ev.links.official || ev.links.official.includes('undefined') || ev.links.official === '#') {
+        ev.links.official = `https://moshicom.com/search/?keyword=${encodeURIComponent(cleanKw)}`;
+        fixedCount++;
+      }
+      if (!ev.links.entry || ev.links.entry.includes('undefined') || ev.links.entry === '#') {
+        ev.links.entry = `https://moshicom.com/search/?keyword=${encodeURIComponent(cleanKw)}`;
+        fixedCount++;
+      }
     }
   }
 
