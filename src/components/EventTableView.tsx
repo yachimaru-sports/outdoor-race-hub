@@ -91,11 +91,12 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
   }
 
   return (
-    <div className="bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm">
-      <div className="overflow-x-auto">
+    <div className="bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm flex flex-col">
+      {/* テーブル本体コンテナ：ヘッダー固定 ＆ 大会情報リストのみがスムーズにスライドスクロール */}
+      <div className="overflow-x-auto overflow-y-auto max-h-[calc(100vh-220px)] min-h-[450px] relative">
         <table className="w-full text-left border-collapse table-fixed min-w-[1080px]">
-          <thead>
-            <tr className="bg-slate-100 dark:bg-slate-850 text-slate-800 dark:text-slate-200 border-b-2 border-slate-300 dark:border-slate-700 text-xs font-extrabold tracking-wide">
+          <thead className="sticky top-0 z-20 bg-slate-100 dark:bg-slate-850 shadow-sm">
+            <tr className="text-slate-800 dark:text-slate-200 border-b-2 border-slate-300 dark:border-slate-700 text-xs font-extrabold tracking-wide">
               {/* 1. 保存 */}
               <th className="py-2.5 pl-3 pr-1 w-[46px] text-center" title="参戦予定ブックマーク">
                 保存

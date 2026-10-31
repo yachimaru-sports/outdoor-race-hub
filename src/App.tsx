@@ -4,7 +4,6 @@ import dealsData from './data/deals.json';
 import { RaceEvent, DealItem, FilterState, Preset, ViewMode } from './types';
 import { INITIAL_FILTERS, DEFAULT_PRESETS } from './utils/presets';
 import { DealsTicker } from './components/DealsTicker';
-import { Header } from './components/Header';
 import { SportCategoryNav } from './components/SportCategoryNav';
 import { PresetBar } from './components/PresetBar';
 import { ToretoreBanner } from './components/ToretoreBanner';
@@ -363,21 +362,18 @@ export const App: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-slate-100 dark:bg-[#0b0f19] text-slate-900 dark:text-slate-100 transition-colors duration-150">
-      {/* 1. 特価速報カルーセルティッカー（引き締めダーク帯） */}
+      {/* 1. サイトメインヘッダー：楽天特価セールギア ＆ ブランドロゴ ＆ テーマ切り替え */}
       <div id="deals-carousel">
-        <DealsTicker deals={deals} />
+        <DealsTicker
+          deals={deals}
+          totalEvents={totalEvents}
+          openCount={openCount}
+          theme={theme}
+          onToggleTheme={toggleTheme}
+        />
       </div>
 
-      {/* 2. メインヘッダー */}
-      <Header
-        totalEvents={totalEvents}
-        openCount={openCount}
-        dealsCount={dealsCount}
-        theme={theme}
-        onToggleTheme={toggleTheme}
-      />
-
-      {/* 2.5 アップデート情報スライドバー（クリックで該当機能・箇所へスムーズジャンプ） */}
+      {/* 2. アップデート情報スライドバー（クリックで該当機能・箇所へスムーズジャンプ） */}
       <UpdateTicker />
 
       {/* 3. e-moshicom風の大型ビジュアル・スポーツ種目ナビゲーションバー */}
