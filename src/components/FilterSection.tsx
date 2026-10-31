@@ -409,8 +409,8 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
           </div>
         </div>
 
-        {/* 5大ジャンルのリッチカード（★登録件数・受付件数を一回り大きく拡大！） */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+        {/* 5大ジャンルのリッチカード（★1行表示＆コンパクトに約1行サイズ縮小！） */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5">
           {genreDefinitions.map((genre) => {
             const isChecked = selectedGenres.includes(genre.id);
             const Icon = genre.icon;
@@ -419,7 +419,7 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
                 key={genre.id}
                 type="button"
                 onClick={() => handleToggleGenre(genre.id)}
-                className={`group relative flex flex-col items-center text-center p-3 sm:p-3.5 rounded-2xl border-2 transition-all cursor-pointer select-none ${
+                className={`group relative flex flex-col items-center text-center py-2 px-1.5 sm:py-2.5 sm:px-2 rounded-xl border-2 transition-all cursor-pointer select-none ${
                   isChecked
                     ? `${genre.activeColor} shadow-xs scale-[1.01]`
                     : 'border-slate-250 dark:border-slate-800 bg-slate-100/60 dark:bg-slate-900/60 opacity-50 hover:opacity-75'
@@ -427,31 +427,31 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
                 title={isChecked ? 'クリックしてこの競技を除外' : 'クリックしてこの競技を含める'}
               >
                 {/* 左上：チェックボックス（ON / OFF） */}
-                <div className="absolute top-2.5 left-2.5">
+                <div className="absolute top-2 left-2">
                   {isChecked ? (
-                    <div className="flex items-center gap-1 bg-teal-600 text-white px-2 py-0.5 rounded-md shadow-2xs text-xs font-black leading-none">
-                      <CheckSquare className="w-3.5 h-3.5 fill-white text-teal-600" />
+                    <div className="flex items-center gap-0.5 bg-teal-600 text-white px-1.5 py-0.2 rounded shadow-2xs text-[11px] font-black leading-none">
+                      <CheckSquare className="w-3 h-3 fill-white text-teal-600" />
                       <span>ON</span>
                     </div>
                   ) : (
-                    <div className="flex items-center gap-1 bg-slate-300 dark:bg-slate-700 text-slate-600 dark:text-slate-400 px-2 py-0.5 rounded-md text-xs font-black leading-none">
-                      <Square className="w-3.5 h-3.5" />
+                    <div className="flex items-center gap-0.5 bg-slate-300 dark:bg-slate-700 text-slate-600 dark:text-slate-400 px-1.5 py-0.2 rounded text-[11px] font-black leading-none">
+                      <Square className="w-3 h-3" />
                       <span>OFF</span>
                     </div>
                   )}
                 </div>
 
-                {/* 右上：登録件数 ＆ 受付中件数バッジ（★一回り大きく拡大して視認性UP！） */}
-                <div className="absolute top-2.5 right-2.5">
+                {/* 右上：登録件数 ＆ 受付中件数バッジ */}
+                <div className="absolute top-2 right-2">
                   <span
-                    className={`text-xs sm:text-[13px] font-mono font-black px-2.5 py-1 rounded-full leading-none flex items-center gap-1 shadow-2xs ${
+                    className={`text-[11px] sm:text-xs font-mono font-black px-2 py-0.5 rounded-full leading-none flex items-center gap-1 shadow-2xs ${
                       isChecked
                         ? 'bg-slate-950 text-white dark:bg-white dark:text-slate-950'
                         : 'bg-slate-200 text-slate-400 dark:bg-slate-800 dark:text-slate-500 line-through'
                     }`}
                   >
-                    <span className="text-sm font-black">{genre.count}</span>
-                    <span className="text-emerald-500 dark:text-emerald-400 font-black text-xs">
+                    <span className="text-xs sm:text-[13px] font-black">{genre.count}</span>
+                    <span className="text-emerald-500 dark:text-emerald-400 font-black text-[10px]">
                       (受付{genre.openCount})
                     </span>
                   </span>
@@ -459,23 +459,23 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
 
                 {/* 注目バッジ（アドベンチャーなど） */}
                 {genre.badgeText && isChecked && (
-                  <span className="absolute top-8 left-2.5 text-xs font-black px-1.5 py-0.5 rounded bg-amber-500 text-slate-950 shadow-2xs">
+                  <span className="absolute top-6 left-2 text-[10px] font-black px-1.5 py-0.2 rounded bg-amber-500 text-slate-950 shadow-2xs">
                     {genre.badgeText}
                   </span>
                 )}
 
-                {/* 中央：アイコンサークル */}
+                {/* 中央：アイコンサークル（高さを約1行分コンパクトに） */}
                 <div
-                  className={`w-11 h-11 rounded-2xl flex items-center justify-center mt-5 mb-2 transition-transform group-hover:scale-105 shadow-2xs ${
+                  className={`w-9 h-9 rounded-xl flex items-center justify-center mt-3.5 mb-1.5 transition-transform group-hover:scale-105 shadow-2xs ${
                     isChecked ? genre.activeIconBg : genre.iconBg
                   }`}
                 >
-                  <Icon className="w-5.5 h-5.5 stroke-[2.2]" />
+                  <Icon className="w-4.5 h-4.5 stroke-[2.2]" />
                 </div>
 
-                {/* 競技名（文字サイズ一回り拡大＆全体表示） */}
+                {/* 競技名（★絶対に改行せず1行で美しく収まるように調整） */}
                 <div
-                  className={`font-black text-sm sm:text-base leading-snug break-words px-1 ${
+                  className={`font-black text-xs sm:text-sm lg:text-[13px] leading-tight whitespace-nowrap tracking-tight px-0.5 ${
                     isChecked
                       ? 'text-slate-950 dark:text-white'
                       : 'text-slate-400 dark:text-slate-500 line-through'
@@ -486,7 +486,7 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
 
                 {/* サブ説明 */}
                 <div
-                  className={`text-xs mt-1 font-bold break-words px-0.5 ${
+                  className={`text-[11px] mt-0.5 font-bold whitespace-nowrap px-0.5 ${
                     isChecked
                       ? 'text-slate-600 dark:text-slate-300'
                       : 'text-slate-400 dark:text-slate-500'

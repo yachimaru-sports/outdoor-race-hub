@@ -8895,5 +8895,122 @@
       "portalName": "モシコム",
       "portalUrl": "https://moshicom.com/search/?keyword=%E9%8F%A1%E9%87%8E%E7%94%BA%E5%A5%A5%E6%B4%A5%E6%B8%A9%E6%B3%89%E6%B8%93%E8%B0%B7%E3%83%8F%E3%82%A4%E3%82%AF%EF%BC%86%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB"
     }
+  },
+  {
+    "id": "saioto-colors-green-2026",
+    "category": "trail",
+    "subCategory": "山岳稜線トレイル・SJS公式戦",
+    "elements": [
+      "トレラン",
+      "山岳トレック"
+    ],
+    "title": "SAIOTO COLORS ～Green Ver.～ 2026（広島・北広島町）",
+    "date": "2026-05-17",
+    "month": 5,
+    "region": "中国",
+    "prefecture": "広島県",
+    "distance_km": 40,
+    "elevation_m": 2439,
+    "entry_fee": "12,500円",
+    "entry_status": "closed",
+    "entry_deadline": "2026-04-20",
+    "links": {
+      "official": "https://saiotocolors.themedia.jp/",
+      "entry": "https://moshicom.com/search?keyword=SAIOTO+COLORS",
+      "review": "https://runnet.jp/",
+      "sns": "https://www.instagram.com/saiotocolors/",
+      "verified": true,
+      "verified_at": "2026-10-31"
+    },
+    "mandatory_gear": [
+      {
+        "name": "透湿防水レインジャケット（フード付き・シームテープ加工済）",
+        "category": "ウェア"
+      },
+      {
+        "name": "水分1.0L以上（ボトルまたはハイドレーション）",
+        "category": "補給"
+      },
+      {
+        "name": "コースマップ・GPX保持スマートフォン（またはGPSウォッチ）",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "ファーストエイドキット・エマージェンシーブランケット・熊鈴",
+        "category": "エイド"
+      },
+      {
+        "name": "マイカップ（エイド給水用）",
+        "category": "ギア"
+      }
+    ],
+    "venue": {
+      "name": "ユートピアサイオト",
+      "address": "広島県山県郡北広島町才乙144",
+      "mapQuery": "ユートピアサイオト"
+    },
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://saiotocolors.themedia.jp/"
+    }
+  },
+  {
+    "id": "saioto-colors-autumn-2026",
+    "category": "trail",
+    "subCategory": "紅葉山岳トレイル・JSA公認",
+    "elements": [
+      "トレラン",
+      "50km+",
+      "山岳トレック"
+    ],
+    "title": "SAIOTO COLORS 2026（広島・北広島町才乙）",
+    "date": "2026-11-08",
+    "month": 11,
+    "region": "中国",
+    "prefecture": "広島県",
+    "distance_km": 52,
+    "elevation_m": 3100,
+    "entry_fee": "15,400円",
+    "entry_status": "open",
+    "entry_deadline": "2026-10-15",
+    "links": {
+      "official": "https://saiotocolors.themedia.jp/",
+      "entry": "https://moshicom.com/search?keyword=SAIOTO+COLORS",
+      "review": "https://runnet.jp/",
+      "sns": "https://www.instagram.com/saiotocolors/",
+      "verified": true,
+      "verified_at": "2026-10-31"
+    },
+    "mandatory_gear": [
+      {
+        "name": "透湿防水レインウェア上下（フード付き・シーム処理済）",
+        "category": "ウェア"
+      },
+      {
+        "name": "高輝度ヘッドランプ（300ルーメン以上＋予備電池）",
+        "category": "ライト"
+      },
+      {
+        "name": "水分1.0L以上＆非常食・エナジージェル",
+        "category": "補給"
+      },
+      {
+        "name": "サバイバルブランケット・ポイズンリムーバー・熊鈴",
+        "category": "エイド"
+      },
+      {
+        "name": "マイカップ（エイド給水用）",
+        "category": "ギア"
+      }
+    ],
+    "venue": {
+      "name": "ユートピアサイオト",
+      "address": "広島県山県郡北広島町才乙144",
+      "mapQuery": "ユートピアサイオト"
+    },
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://saiotocolors.themedia.jp/"
+    }
   }
 ]
