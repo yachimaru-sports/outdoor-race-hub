@@ -15,7 +15,7 @@
     "distance_km": 150,
     "elevation_m": 1300,
     "entry_fee": "13,000円",
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2027-03-31",
     "links": {
       "official": "https://note.com/tour_de_nippon",
@@ -116,7 +116,7 @@
     "distance_km": 140,
     "elevation_m": 1200,
     "entry_fee": "12,000円",
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2027-03-20",
     "links": {
       "official": "https://www.htv.jp/grandtour/index.html",
@@ -1169,22 +1169,20 @@
       "トレック",
       "夜間"
     ],
-    "title": "Mt.FUJI 100 2027",
+    "title": "Mt.FUJI100 2027（富士山麓一周166km・国内最高峰マイル）",
     "date": "2027-04-23",
     "month": 4,
     "region": "甲信越",
     "prefecture": "山梨県",
     "distance_km": 166,
-    "elevation_m": 7039,
+    "elevation_m": 7574,
     "entry_status": "upcoming",
     "entry_deadline": "2026-11-15",
     "links": {
       "official": "https://mtfuji100.com/",
       "entry": "https://mtfuji100.com/",
       "review": "https://runnet.jp/runtes/raceDetail/top/n319194.html",
-      "sns": "https://x.com/MtFUJI100",
-      "verified": true,
-      "verified_at": "2026-10-31"
+      "sns": "https://x.com/MtFUJI100"
     },
     "mandatory_gear": [
       {
@@ -1210,9 +1208,29 @@
       {
         "name": "水分1.5L以上携行可能なトレランザック（10L〜12L）＆補給食",
         "category": "補給"
+      },
+      {
+        "name": "ヘッドライト2灯（各1000ルーメン級＋予備バッテリー）",
+        "category": "ライト"
+      },
+      {
+        "name": "ゴアテックス等透湿防水レインウェア上下",
+        "category": "ウェア"
+      },
+      {
+        "name": "サバイバルブランケット（140cm×200cm以上）",
+        "category": "エイド"
+      },
+      {
+        "name": "防寒用フリースまたは中綿ダウン",
+        "category": "ウェア"
+      },
+      {
+        "name": "携帯カップ＆ファーストエイドキット",
+        "category": "エイド"
       }
     ],
-    "entry_fee": "38,000円",
+    "entry_fee": "48,000円",
     "source": {
       "portalName": "公式サイト",
       "portalUrl": "https://mtfuji100.com/"
@@ -3701,7 +3719,7 @@
     "prefecture": "鳥取県",
     "distance_km": 112,
     "elevation_m": 2350,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2027-04-15",
     "links": {
       "official": "https://cycle.spoen.jp/",
@@ -4693,9 +4711,7 @@
       "official": "https://shimanto-ultra.jp/",
       "entry": "https://shimanto-ultra.jp/",
       "review": "https://runnet.jp/",
-      "sns": "https://www.facebook.com/",
-      "verified": true,
-      "verified_at": "2026-10-31"
+      "sns": "https://www.facebook.com/"
     },
     "mandatory_gear": [
       {
@@ -4713,6 +4729,18 @@
       {
         "name": "撥水ウインドシェル＆ワセリン・テーピング",
         "category": "ウェア"
+      },
+      {
+        "name": "マイカップ（エイド給水用）",
+        "category": "補給"
+      },
+      {
+        "name": "水分ボトル（携帯必須）",
+        "category": "補給"
+      },
+      {
+        "name": "足攣り防止マグネシウム（Mag-on等）",
+        "category": "補給"
       }
     ],
     "entry_fee": "22,000円",
@@ -5659,9 +5687,7 @@
       "official": "https://www.r-wellness.com/fuji5/",
       "entry": "https://www.r-wellness.com/fuji5/",
       "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
-      "verified": true,
-      "verified_at": "2026-10-31"
+      "sns": "https://x.com/"
     },
     "mandatory_gear": [
       {
@@ -5679,6 +5705,18 @@
       {
         "name": "撥水ウインドシェル＆ワセリン・テーピング",
         "category": "ウェア"
+      },
+      {
+        "name": "給水用マイボトル/マイカップ",
+        "category": "補給"
+      },
+      {
+        "name": "夜間点滅反射バンド＆テールライト",
+        "category": "ライト"
+      },
+      {
+        "name": "エナジージェル・電解質タブレット",
+        "category": "補給"
       }
     ],
     "entry_fee": "24,000円",
@@ -5978,7 +6016,7 @@
     "prefecture": "山梨県",
     "distance_km": 24,
     "elevation_m": 1255,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2027-03-31",
     "links": {
       "official": "https://www.fujihc.jp/",
@@ -6483,11 +6521,7 @@
       "official": "https://moshicom.com/search/?keyword=%E6%97%A5%E5%85%89%E5%9B%BD%E7%AB%8B%E5%85%AC%E5%9C%92%E3%83%9E%E3%82%A6%E3%83%B3%E3%83%86%E3%83%B3%E3%83%A9%E3%83%B3%E3%83%8B%E3%83%B3%E3%82%B0",
       "entry": "https://moshicom.com/search/?keyword=%E6%97%A5%E5%85%89%E5%9B%BD%E7%AB%8B%E5%85%AC%E5%9C%92%E3%83%9E%E3%82%A6%E3%83%B3%E3%83%86%E3%83%B3%E3%83%A9%E3%83%B3%E3%83%8B%E3%83%B3%E3%82%B0",
       "review": "https://runnet.jp/",
-      "sns": "https://www.facebook.com/nikkomountainrunning/",
-      "official_fallback": true,
-      "entry_fallback": true,
-      "verified": true,
-      "verified_at": "2026-10-31"
+      "sns": "https://www.facebook.com/nikkomountainrunning/"
     },
     "mandatory_gear": [
       {
@@ -6522,7 +6556,7 @@
       "夜間",
       "山岳トレック"
     ],
-    "title": "志賀高原100 2026",
+    "title": "志賀高原100 2026（標高2000m級スーパートレイル）",
     "date": "2026-07-11",
     "month": 7,
     "region": "中部",
@@ -6536,9 +6570,7 @@
       "official": "https://nature-scene.net/shiga100/",
       "entry": "https://nature-scene.net/shiga100/",
       "review": "https://runnet.jp/",
-      "sns": "https://www.instagram.com/shigakogen100/",
-      "verified": true,
-      "verified_at": "2026-10-31"
+      "sns": "https://www.instagram.com/shigakogen100/"
     },
     "mandatory_gear": [
       {
@@ -6830,7 +6862,7 @@
       "夜間",
       "山岳トレック"
     ],
-    "title": "阿蘇ラウンドトレイル (ART) 2026",
+    "title": "阿蘇ラウンドトレイル (ART) 2026（カルデラ108km周回）",
     "date": "2026-05-09",
     "month": 5,
     "region": "九州・沖縄",
@@ -6844,11 +6876,7 @@
       "official": "https://moshicom.com/search/?keyword=%E9%98%BF%E8%98%87%E3%83%A9%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB",
       "entry": "https://moshicom.com/search/?keyword=%E9%98%BF%E8%98%87%E3%83%A9%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB",
       "review": "https://runnet.jp/",
-      "sns": "https://www.facebook.com/asoroundtrail/",
-      "official_fallback": true,
-      "entry_fallback": true,
-      "verified": true,
-      "verified_at": "2026-10-31"
+      "sns": "https://www.facebook.com/asoroundtrail/"
     },
     "mandatory_gear": [
       {
@@ -6951,7 +6979,7 @@
     "distance_km": 77,
     "elevation_m": 1650,
     "entry_fee": "14,000円",
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_deadline": "2027-02-28",
     "links": {
       "official": "https://saba-ultra.com/",
