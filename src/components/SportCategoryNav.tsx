@@ -150,7 +150,7 @@ export const SportCategoryNav: React.FC<SportCategoryNavProps> = ({
                 className={`group relative flex flex-col items-center text-center p-3 rounded-xl border-2 transition-all cursor-pointer ${
                   item.isSelected
                     ? `${item.activeColor} shadow-xs scale-[1.01]`
-                    : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-850/50 hover:border-slate-400 dark:hover:border-slate-600 hover:bg-slate-50'
+                    : 'border-slate-250 dark:border-slate-700 bg-white dark:bg-slate-800 hover:border-slate-400 dark:hover:border-slate-500 hover:bg-slate-50 dark:hover:bg-slate-750'
                 }`}
                 title={item.isSelected && item.id !== 'all' ? 'もう一度クリックすると解除（すべて表示）' : undefined}
               >
@@ -159,7 +159,7 @@ export const SportCategoryNav: React.FC<SportCategoryNavProps> = ({
                   className={`absolute top-2 right-2 text-xs font-mono font-black px-2 py-0.5 rounded-full ${
                     item.isSelected
                       ? 'bg-slate-900 text-white dark:bg-white dark:text-slate-900'
-                      : 'bg-slate-200 text-slate-800 dark:bg-slate-800 dark:text-slate-200'
+                      : 'bg-slate-150 text-slate-800 dark:bg-slate-700 dark:text-slate-200'
                   }`}
                 >
                   {item.count}
@@ -181,13 +181,25 @@ export const SportCategoryNav: React.FC<SportCategoryNavProps> = ({
                   <Icon className="w-5.5 h-5.5 stroke-[2.2]" />
                 </div>
 
-                {/* スポーツ種目名 */}
-                <div className="font-extrabold text-[13px] sm:text-sm text-slate-950 dark:text-white leading-tight">
+                {/* スポーツ種目名（ライト: 濃い黒 / ダーク: 白文字で確実に視認） */}
+                <div
+                  className={`font-black text-[13px] sm:text-sm leading-tight ${
+                    item.isSelected
+                      ? 'text-inherit'
+                      : 'text-slate-900 dark:text-white'
+                  }`}
+                >
                   {item.label}
                 </div>
 
-                {/* サブ説明 */}
-                <div className="text-xs text-slate-700 dark:text-slate-300 mt-1 line-clamp-1 font-bold">
+                {/* サブ説明（ライト: 濃灰 / ダーク: 明るいスレートで確実に視認） */}
+                <div
+                  className={`text-xs mt-1 line-clamp-1 font-bold ${
+                    item.isSelected
+                      ? 'text-inherit opacity-90'
+                      : 'text-slate-600 dark:text-slate-300'
+                  }`}
+                >
                   {item.sub}
                 </div>
               </button>

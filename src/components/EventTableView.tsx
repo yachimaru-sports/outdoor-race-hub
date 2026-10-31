@@ -101,7 +101,7 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
       {/* テーブルコンテナ：二重スクロールを排除し、ページ全体と自然に連動 */}
       <div className="overflow-x-auto">
         <table className="w-full text-left border-collapse table-fixed min-w-[1100px]">
-          <thead className="bg-slate-100 dark:bg-slate-850">
+          <thead className="bg-slate-100 dark:bg-slate-800">
             <tr className="text-slate-800 dark:text-slate-200 border-b-2 border-slate-300 dark:border-slate-700 text-xs font-extrabold tracking-wide">
               {/* 1. 保存 */}
               <th className="py-3 pl-3 pr-1 w-[46px] text-center" title="参戦予定ブックマーク">
@@ -213,7 +213,7 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
                       isFav
                         ? 'bg-rose-50/40 dark:bg-rose-950/20'
                         : isGearExpanded
-                        ? 'bg-teal-50/50 dark:bg-slate-850'
+                        ? 'bg-teal-50/50 dark:bg-slate-800'
                         : 'bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800/60'
                     }`}
                   >

@@ -114,39 +114,42 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({
     >
       <div className="max-w-7xl mx-auto px-3 sm:px-4 py-2">
         <div className="flex items-center justify-between gap-2.5">
-          {/* 左端：サイトブランドロゴ＆掲載大会数カウンター */}
-          <div className="flex items-center gap-2.5 shrink-0">
+          {/* 左端：サイトブランドロゴ（上段に大きく配置） ＆ その下に大会数・楽天特価バッジ */}
+          <div className="flex flex-col justify-center shrink-0 pr-1">
+            {/* 上段：HP名称を大きく堂々と目立たせる */}
             <a
               href="#"
               className="flex items-center gap-2 group cursor-pointer"
               title="OUTDOOR RACE HUB トップへ"
             >
-              <div className="w-8 h-8 rounded-lg bg-teal-700 text-white flex items-center justify-center shadow-xs shrink-0 group-hover:bg-teal-600 transition-colors">
-                <Mountain className="w-4.5 h-4.5 stroke-[2.2]" />
+              <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-teal-600 text-white flex items-center justify-center shadow-md shrink-0 group-hover:bg-teal-500 transition-colors">
+                <Mountain className="w-5 h-5 stroke-[2.4]" />
               </div>
-              <div className="hidden md:block leading-none">
-                <div className="text-sm font-black tracking-tight text-white flex items-center gap-1">
+              <div className="leading-none">
+                <div className="text-base sm:text-lg font-black tracking-tight text-white flex items-center gap-1 drop-shadow-xs">
                   <span>OUTDOOR</span>
                   <span className="text-teal-400">RACE HUB</span>
                 </div>
-                <span className="text-[10px] text-slate-400 font-bold">2026-2027 全国＆中四国</span>
+                <span className="text-[10px] text-slate-400 font-bold tracking-wide mt-0.5 inline-block">
+                  2026-2027 全国＆中四国
+                </span>
               </div>
             </a>
 
-            {/* 縦に並べて1列（1カラム）に集約：掲載大会数 ＆ 楽天特価ラベル */}
-            <div className="flex flex-col gap-1 shrink-0 justify-center">
-              {/* 上段：掲載大会数（受付中） */}
+            {/* 下段：ロゴの真下に大会数バッジ ＆ 楽天特価ラベルを横並びで配置 */}
+            <div className="flex items-center gap-1.5 mt-1.5">
+              {/* 掲載大会数（受付中） */}
               <div className="flex items-center gap-1 px-1.5 py-0.5 rounded bg-slate-900 border border-slate-800 text-[10px] font-bold text-slate-300 leading-none whitespace-nowrap">
                 <Calendar className="w-2.5 h-2.5 text-teal-400 shrink-0" />
                 <span>全{totalEvents}大会</span>
                 <span className="text-emerald-400 font-black">(受付中{openCount})</span>
               </div>
 
-              {/* 下段：楽天特価ラベル */}
-              <div className="flex items-center justify-center gap-1 px-1.5 py-0.5 bg-gradient-to-r from-red-600 to-amber-600 text-white rounded shrink-0 shadow-xs border border-amber-300/40 text-[10px] font-black leading-none whitespace-nowrap">
+              {/* 楽天特価ラベル */}
+              <div className="flex items-center gap-0.5 px-1.5 py-0.5 bg-gradient-to-r from-red-600 to-amber-600 text-white rounded shrink-0 shadow-xs border border-amber-300/40 text-[10px] font-black leading-none whitespace-nowrap">
                 <Zap className="w-2.5 h-2.5 fill-yellow-300 text-yellow-300 shrink-0" />
                 <span>楽天特価</span>
-                <span className="text-[9px] text-yellow-200 font-extrabold">20〜53%OFF</span>
+                <span className="text-[9px] text-yellow-200 font-extrabold ml-0.5">20〜53%OFF</span>
               </div>
             </div>
           </div>
