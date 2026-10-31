@@ -46,7 +46,11 @@ export const App: React.FC = () => {
     });
   }, []);
 
-  const deals = dealsData as DealItem[];
+  // 割引率15%以上の実在特価商品のみを厳選して表示（15%未満の低割引商品は除外）
+  const deals = useMemo(
+    () => (dealsData as DealItem[]).filter((d) => d.discount_rate >= 15),
+    []
+  );
 
   // テーマ管理（デフォルト: 'light'）
   const [theme, setTheme] = useState<'light' | 'dark'>(() => {

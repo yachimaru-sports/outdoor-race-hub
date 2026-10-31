@@ -327,7 +327,7 @@ export const EventDetailModal: React.FC<EventDetailModalProps> = ({ event, deals
                 </div>
               </div>
               <span className="text-xs font-extrabold px-2.5 py-1 rounded-md bg-red-600 text-white hidden sm:inline">
-                最大30%OFF
+                15%〜50%OFF厳選
               </span>
             </div>
 

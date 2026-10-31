@@ -29,7 +29,7 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({ deals }) => {
               <span>楽天特価</span>
             </div>
             <span className="text-[10px] font-extrabold text-yellow-200 mt-1 whitespace-nowrap">
-              最大30%OFF
+              20〜50%OFF
             </span>
           </div>
 
