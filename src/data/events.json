@@ -41,7 +41,15 @@
         "name": "予備チューブ2本・携帯工具",
         "is_prepared": false
       }
-    ]
+    ],
+    "source": {
+      "portalName": "スポエンCYCLE",
+      "portalUrl": "https://cycle.spoen.jp/"
+    },
+    "venue": {
+      "name": "尾道〜松江 175km",
+      "mapQuery": "広島県 尾道〜松江 175km"
+    }
   },
   {
     "id": "awaji-longride-spring-2027",
@@ -84,7 +92,15 @@
         "name": "携帯工具・CO2ボンベ",
         "is_prepared": false
       }
-    ]
+    ],
+    "source": {
+      "portalName": "スポーツエントリー",
+      "portalUrl": "https://www.sportsentry.ne.jp/cycle/10/2"
+    },
+    "venue": {
+      "name": "春のプレミアムアワイチ",
+      "mapQuery": "兵庫県 春のプレミアムアワイチ"
+    }
   },
   {
     "id": "nanki-shirahama-adventure-ride-2026",
@@ -128,7 +144,11 @@
         "name": "パンク修理セット",
         "is_prepared": false
       }
-    ]
+    ],
+    "source": {
+      "portalName": "スポーツエントリー",
+      "portalUrl": "https://www.sportsentry.ne.jp/cycle/10/2"
+    }
   },
   {
     "id": "shodoshima-mameichi-spring-2027",
@@ -167,7 +187,15 @@
         "name": "携帯工具・チューブ",
         "is_prepared": false
       }
-    ]
+    ],
+    "source": {
+      "portalName": "スポーツエントリー",
+      "portalUrl": "https://www.sportsentry.ne.jp/cycle/10/3"
+    },
+    "venue": {
+      "name": "春のマメイチ",
+      "mapQuery": "香川県 春のマメイチ"
+    }
   },
   {
     "id": "shimanami-spring-century-2027",
@@ -210,7 +238,15 @@
         "name": "補給食・携帯工具",
         "is_prepared": false
       }
-    ]
+    ],
+    "source": {
+      "portalName": "スポーツエントリー",
+      "portalUrl": "https://www.sportsentry.ne.jp/cycle/10/3"
+    },
+    "venue": {
+      "name": "尾道〜今治 往復",
+      "mapQuery": "広島県 尾道〜今治 往復"
+    }
   },
   {
     "id": "niyodogawa-spring-ride-2027",
@@ -253,7 +289,15 @@
         "name": "パンク修理セット",
         "is_prepared": false
       }
-    ]
+    ],
+    "source": {
+      "portalName": "スポーツエントリー",
+      "portalUrl": "https://www.sportsentry.ne.jp/cycle/10/3"
+    },
+    "venue": {
+      "name": "いの町",
+      "mapQuery": "高知県 いの町"
+    }
   },
   {
     "id": "tobishima-orange-ride-2026",
@@ -292,7 +336,15 @@
         "name": "ボトル（水分補給）",
         "is_prepared": false
       }
-    ]
+    ],
+    "source": {
+      "portalName": "スポエンCYCLE",
+      "portalUrl": "https://cycle.spoen.jp/"
+    },
+    "venue": {
+      "name": "呉市",
+      "mapQuery": "広島県 呉市"
+    }
   },
   {
     "id": "fukufuku-ride-2026",
@@ -338,7 +390,15 @@
         "name": "パンク修理キット・携帯ポンプ",
         "is_prepared": false
       }
-    ]
+    ],
+    "source": {
+      "portalName": "スポエンCYCLE",
+      "portalUrl": "https://cycle.spoen.jp/"
+    },
+    "venue": {
+      "name": "福山",
+      "mapQuery": "広島県 福山"
+    }
   },
   {
     "id": "toretore-ueyama-2026",
@@ -393,7 +453,11 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "7,000円"
+    "entry_fee": "7,000円",
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "http://toretore.web.fc2.com/ueyama/2026/UMAG2026.htm"
+    }
   },
   {
     "id": "toretore-hozukyou-2026",
@@ -444,7 +508,11 @@
         "category": "エイド"
       }
     ],
-    "entry_fee": "7,000円"
+    "entry_fee": "7,000円",
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "http://toretore.web.fc2.com/hozukyou/HMAG2026.htm"
+    }
   },
   {
     "id": "toretore-narayoshi-2026",
@@ -495,7 +563,11 @@
         "category": "エイド"
       }
     ],
-    "entry_fee": "8,500円"
+    "entry_fee": "8,500円",
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "http://toretore.web.fc2.com/narayoshi/NYAG2026.html"
+    }
   },
   {
     "id": "toretore-tomisu-2026",
@@ -550,7 +622,11 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "7,000円"
+    "entry_fee": "7,000円",
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "http://toretore.web.fc2.com/"
+    }
   },
   {
     "id": "toretore-obsidian-2026",
@@ -604,7 +680,11 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "7,000円"
+    "entry_fee": "7,000円",
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "http://toretore.web.fc2.com/"
+    }
   },
   {
     "id": "toretore-iwamura-2026",
@@ -658,7 +738,11 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "7,000円"
+    "entry_fee": "7,000円",
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "http://toretore.web.fc2.com/"
+    }
   },
   {
     "id": "kannabe-rogaining-2026",
@@ -710,7 +794,15 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "4,500円"
+    "entry_fee": "4,500円",
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search/?keyword=%E7%A5%9E%E9%8D%8B%E9%AB%98%E5%8E%9F%E3%83%AD%E3%82%B2%E3%82%A4%E3%83%8B%E3%83%B3%E3%82%B0"
+    },
+    "venue": {
+      "name": "日高神鍋観光",
+      "mapQuery": "兵庫県 日高神鍋観光"
+    }
   },
   {
     "id": "mannou-rogaining-2026",
@@ -760,7 +852,16 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "4,500円"
+    "entry_fee": "4,500円",
+    "venue": {
+      "name": "道の駅ことなみ（エナガ荘前広場）",
+      "address": "香川県仲多度郡まんのう町造田4130",
+      "mapQuery": "道の駅ことなみ"
+    },
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "https://www.outdoor-sports.info/mannou-rogaining"
+    }
   },
   {
     "id": "omm-japan-2026",
@@ -811,7 +912,11 @@
         "category": "ウェア"
       }
     ],
-    "entry_fee": "6,500円"
+    "entry_fee": "6,500円",
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "https://theomm.jp/"
+    }
   },
   {
     "id": "omm-lite-bike-hakuba-2026",
@@ -866,7 +971,11 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "6,500円"
+    "entry_fee": "6,500円",
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "https://theomm.jp/"
+    }
   },
   {
     "id": "niseko-expedition-2026",
@@ -918,7 +1027,11 @@
         "category": "エイド"
       }
     ],
-    "entry_fee": "28,000円"
+    "entry_fee": "28,000円",
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "https://nisekoexpedition.jp/"
+    }
   },
   {
     "id": "echigo-adventure-2026",
@@ -971,7 +1084,11 @@
         "category": "エイド"
       }
     ],
-    "entry_fee": "12,000円"
+    "entry_fee": "12,000円",
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search/?keyword=%E8%B6%8A%E5%BE%8C%E3%82%AB%E3%83%B3%E3%83%88%E3%83%AA%E3%83%BC%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%EF%BC%86%E3%82%A2%E3%83%89%E3%83%99%E3%83%B3%E3%83%81%E3%83%A3%E3%83%BC%E3%83%AC%E3%83%BC%E3%82%B9"
+    }
   },
   {
     "id": "izumo-kunibiki-rogaining-2026",
@@ -1020,7 +1137,11 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "4,500円"
+    "entry_fee": "4,500円",
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search?keyword=%E5%87%BA%E9%9B%B2%E3%81%8F%E3%81%AB%E3%81%B3%E3%81%8D%E3%83%AD%E3%82%B2%E3%82%A4%E3%83%8B%E3%83%B3%E3%82%B0"
+    }
   },
   {
     "id": "hiroshima-miyajima-rogaining-2026",
@@ -1070,7 +1191,11 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "4,500円"
+    "entry_fee": "4,500円",
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search?keyword=%E5%AE%AE%E5%B3%B6"
+    }
   },
   {
     "id": "setouchi-island-adventure-2026",
@@ -1123,7 +1248,11 @@
         "category": "エイド"
       }
     ],
-    "entry_fee": "8,000円"
+    "entry_fee": "8,000円",
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search/?keyword=%E7%80%AC%E6%88%B8%E5%86%85%E3%82%A2%E3%82%A4%E3%83%A9%E3%83%B3%E3%83%89%E3%83%BB%E3%82%A2%E3%83%89%E3%83%99%E3%83%B3%E3%83%81%E3%83%A3%E3%83%BC%E3%83%AC%E3%83%BC%E3%82%B9%20in"
+    }
   },
   {
     "id": "mt-fuji-100-2027",
@@ -1177,7 +1306,11 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "38,000円"
+    "entry_fee": "38,000円",
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "https://mtfuji100.com/"
+    }
   },
   {
     "id": "hiroshima-utmb-2027",
@@ -1231,7 +1364,11 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "38,000円"
+    "entry_fee": "38,000円",
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "https://utmb.world/"
+    }
   },
   {
     "id": "shinetsu-five-mountains-100mile-2026",
@@ -1285,7 +1422,11 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "44,000円"
+    "entry_fee": "44,000円",
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "https://sfmt100.com/"
+    }
   },
   {
     "id": "ggr-ishikiriba-100-2026",
@@ -1341,7 +1482,15 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "38,000円"
+    "entry_fee": "38,000円",
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search/?keyword=GGR%20%E7%9F%B3%E5%88%87%E5%A0%B4100"
+    },
+    "venue": {
+      "name": "GGR ISHIKIRIBA 100mile",
+      "mapQuery": "岡山県 GGR ISHIKIRIBA 100mile"
+    }
   },
   {
     "id": "lake-biwa-100-2026",
@@ -1396,7 +1545,15 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "38,000円"
+    "entry_fee": "38,000円",
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "https://lakebiwa100.com/"
+    },
+    "venue": {
+      "name": "びわ湖100マイル トレイルラン 2026",
+      "mapQuery": "滋賀県 びわ湖100マイル トレイルラン 2026"
+    }
   },
   {
     "id": "koumi-100-2026",
@@ -1450,7 +1607,15 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "38,000円"
+    "entry_fee": "38,000円",
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "https://www.outdoorsportsjapan.com/trail/koumi100/"
+    },
+    "venue": {
+      "name": "小海100マイル トレイルランニング 2026",
+      "mapQuery": "長野県 小海100マイル トレイルランニング 2026"
+    }
   },
   {
     "id": "sainokuni-100mile-2026",
@@ -1504,7 +1669,11 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "38,000円"
+    "entry_fee": "38,000円",
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "https://trainic-world.org/sainokuni/"
+    }
   },
   {
     "id": "ftr-chichibu-okumusashi-100mile-2026",
@@ -1558,7 +1727,15 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "38,000円"
+    "entry_fee": "38,000円",
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "https://fun-trails.com/"
+    },
+    "venue": {
+      "name": "FTR100",
+      "mapQuery": "埼玉県 FTR100"
+    }
   },
   {
     "id": "osj-ontake-100mile-2026",
@@ -1612,7 +1789,15 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "38,000円"
+    "entry_fee": "38,000円",
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "https://www.outdoorsportsjapan.com/trail/ontake100/"
+    },
+    "venue": {
+      "name": "御嶽100マイル 100km",
+      "mapQuery": "長野県 御嶽100マイル 100km"
+    }
   },
   {
     "id": "deep-japan-ultra-100-2026",
@@ -1667,7 +1852,15 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "45,000円"
+    "entry_fee": "45,000円",
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "https://deepjapanultra.com/"
+    },
+    "venue": {
+      "name": "ディープジャパン166km 新潟 群馬",
+      "mapQuery": "新潟県 ディープジャパン166km 新潟 群馬"
+    }
   },
   {
     "id": "kumagawa-revival-trail-100mile-2026",
@@ -1722,7 +1915,15 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "39,000円"
+    "entry_fee": "39,000円",
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "https://moshicom.com/search/?keyword=%E7%90%83%E7%A3%A8%E5%B7%9D%E3%83%AA%E3%83%90%E3%82%A4%E3%83%90%E3%83%AB%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%20100%E3%83%9E%E3%82%A4%E3%83%AB"
+    },
+    "venue": {
+      "name": "KRT 167km",
+      "mapQuery": "熊本県 KRT 167km"
+    }
   },
   {
     "id": "osj-koushu-alps-100mile-2026",
@@ -1778,7 +1979,15 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "38,000円"
+    "entry_fee": "38,000円",
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search/?keyword=OSJ%20KOUSHU"
+    },
+    "venue": {
+      "name": "甲州アルプスオートルート 100mile",
+      "mapQuery": "山梨県 甲州アルプスオートルート 100mile"
+    }
   },
   {
     "id": "tambasasayama-100mile-2026",
@@ -1832,7 +2041,15 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "38,000円"
+    "entry_fee": "38,000円",
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "https://trailrun-tamba.com/"
+    },
+    "venue": {
+      "name": "丹波100マイル",
+      "mapQuery": "兵庫県 丹波100マイル"
+    }
   },
   {
     "id": "michinoku-coastal-trail-100mile-2026",
@@ -1886,7 +2103,11 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "38,000円"
+    "entry_fee": "38,000円",
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search?keyword=%E3%81%BF%E3%81%A1%E3%81%AE%E3%81%8F%E6%BD%AE%E9%A2%A8%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%20100%E3%83%9E%E3%82%A4%E3%83%AB%20%E3%82%B8%E3%83%A3%E3%83%BC%E3%83%8B%E3%83%BC%E3%83%A9%E3%83%B3"
+    }
   },
   {
     "id": "ibuki-hyakkei-100mile-2026",
@@ -1940,7 +2161,11 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "38,000円"
+    "entry_fee": "38,000円",
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search?keyword=%E4%BC%8A%E5%90%B9%E5%B1%B1"
+    }
   },
   {
     "id": "backyard-ultra-hiroshima-2026",
@@ -1994,7 +2219,11 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "38,000円"
+    "entry_fee": "38,000円",
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search?keyword=Backyard%20Ultra%20Last%20Samurai%20Standing%20%E5%BA%83%E5%B3%B6"
+    }
   },
   {
     "id": "mihara-hakuryuko-trail-2026",
@@ -2040,7 +2269,15 @@
         "category": "ギア"
       }
     ],
-    "entry_fee": "11,000円"
+    "entry_fee": "11,000円",
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search/?keyword=%E4%B8%89%E5%8E%9F%E3%83%BB%E7%99%BD%E7%AB%9C%E6%B9%96%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%E3%83%A9%E3%83%B3%E3%83%AC%E3%83%BC%E3%82%B9"
+    },
+    "venue": {
+      "name": "三原市",
+      "mapQuery": "広島県 三原市"
+    }
   },
   {
     "id": "megahira-extreme-500-2026",
@@ -2084,7 +2321,15 @@
         "category": "ギア"
       }
     ],
-    "entry_fee": "6,500円"
+    "entry_fee": "6,500円",
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/139981/"
+    },
+    "venue": {
+      "name": "廿日市",
+      "mapQuery": "広島県 廿日市"
+    }
   },
   {
     "id": "hiroshima-bay-night-trail-2026",
@@ -2133,7 +2378,15 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "24,000円"
+    "entry_fee": "24,000円",
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search?keyword=HIROSHIMA%20BAY%20%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%E3%83%A9%E3%83%B3"
+    },
+    "venue": {
+      "name": "広島湾岸トレイル 60km",
+      "mapQuery": "広島県 広島湾岸トレイル 60km"
+    }
   },
   {
     "id": "hibayama-skyrun-2026",
@@ -2177,7 +2430,15 @@
         "category": "ギア"
       }
     ],
-    "entry_fee": "11,000円"
+    "entry_fee": "11,000円",
+    "source": {
+      "portalName": "RUNNET",
+      "portalUrl": "https://runnet.jp/parts/2026/races/search.php?keyword=%E8%A5%BF%E6%97%A5%E6%9C%AC%E8%B1%AA%E9%9B%A8%E5%BE%A9%E8%88%88%E6%94%AF%E6%8F%B4%20%E3%81%B2%E3%81%B0%E3%82%84%E3%81%BE%E5%9B%BD%E9%9A%9B%E3%82%B9%E3%82%AB%E3%82%A4%E3%83%A9%E3%83%B3"
+    },
+    "venue": {
+      "name": "庄原比婆山",
+      "mapQuery": "広島県 庄原比婆山"
+    }
   },
   {
     "id": "shinjo-forest-trail-2026",
@@ -2221,7 +2482,15 @@
         "category": "ギア"
       }
     ],
-    "entry_fee": "6,500円"
+    "entry_fee": "6,500円",
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search?keyword=%E3%81%B2%E3%82%8D%E3%81%97%E3%81%BE%E6%81%90%E7%BE%85%E6%BC%A2"
+    },
+    "venue": {
+      "name": "北広島町",
+      "mapQuery": "広島県 北広島町"
+    }
   },
   {
     "id": "osorakan-ekiden-trail-2026",
@@ -2271,7 +2540,15 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "16,000円"
+    "entry_fee": "16,000円",
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search/?keyword=%E6%81%90%E7%BE%85%E6%BC%A2%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%20in"
+    },
+    "venue": {
+      "name": "エキスパート65km 広島最高峰",
+      "mapQuery": "広島県 エキスパート65km 広島最高峰"
+    }
   },
   {
     "id": "momiji-trail-hatsukaichi-2026",
@@ -2315,7 +2592,15 @@
         "category": "ギア"
       }
     ],
-    "entry_fee": "11,000円"
+    "entry_fee": "11,000円",
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search?keyword=%E5%BB%BF%E6%97%A5%E5%B8%82%E3%82%82%E3%81%BF%E3%81%98%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%E3%83%A9%E3%83%B3"
+    },
+    "venue": {
+      "name": "大野権現山〜経小屋山",
+      "mapQuery": "広島県 大野権現山〜経小屋山"
+    }
   },
   {
     "id": "kure-tobishima-ultra-2026",
@@ -2361,7 +2646,15 @@
         "category": "ウェア"
       }
     ],
-    "entry_fee": "22,000円"
+    "entry_fee": "22,000円",
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search/?keyword=%E5%91%89%E3%83%BB%E3%81%A8%E3%81%B3%E3%81%97%E3%81%BE%E6%B5%B7%E9%81%93%E3%82%A6%E3%83%AB%E3%83%88%E3%83%A9%E3%83%9E%E3%83%A9%E3%83%8B%E3%83%83%E3%82%AF%20100km"
+    },
+    "venue": {
+      "name": "呉市",
+      "mapQuery": "広島県 呉市"
+    }
   },
   {
     "id": "hiroshima-peace-marathon-2026",
@@ -2401,7 +2694,11 @@
         "category": "ナビゲーション"
       }
     ],
-    "entry_fee": "7,500円"
+    "entry_fee": "7,500円",
+    "source": {
+      "portalName": "RUNNET",
+      "portalUrl": "https://runnet.jp/parts/2026/races/search.php?keyword=%E3%81%B2%E3%82%8D%E3%81%97%E3%81%BE%E5%9B%BD%E9%9A%9B%E5%B9%B3%E5%92%8C%E3%83%9E%E3%83%A9%E3%82%BD%E3%83%B3%EF%BC%86%E3%83%AA%E3%83%90%E3%83%BC%E3%82%B5%E3%82%A4%E3%83%89%E3%83%A9%E3%83%B3"
+    }
   },
   {
     "id": "akiota-shinkansen-cycle-2026",
@@ -2451,7 +2748,11 @@
         "category": "ウェア"
       }
     ],
-    "entry_fee": "10,000円"
+    "entry_fee": "10,000円",
+    "source": {
+      "portalName": "スポエンCYCLE",
+      "portalUrl": "https://cycle.spoen.jp/"
+    }
   },
   {
     "id": "nagi-peaks-tough-trail-2026",
@@ -2499,7 +2800,15 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "11,000円"
+    "entry_fee": "11,000円",
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "https://nagipeaks.com/"
+    },
+    "venue": {
+      "name": "奈義町那岐山",
+      "mapQuery": "岡山県 奈義町那岐山"
+    }
   },
   {
     "id": "hiruzen-kougen-marathon-trail-2026",
@@ -2543,7 +2852,15 @@
         "category": "ギア"
       }
     ],
-    "entry_fee": "11,000円"
+    "entry_fee": "11,000円",
+    "source": {
+      "portalName": "RUNNET",
+      "portalUrl": "https://runnet.jp/parts/2026/races/search.php?keyword=%E8%92%9C%E5%B1%B1%E9%AB%98%E5%8E%9F%E3%82%AF%E3%83%AD%E3%82%B9%E3%82%AB%E3%83%B3%E3%83%88%E3%83%AA%E3%83%BC%EF%BC%86%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%E3%83%A9%E3%83%B3"
+    },
+    "venue": {
+      "name": "真庭市",
+      "mapQuery": "岡山県 真庭市"
+    }
   },
   {
     "id": "okayama-marathon-2026",
@@ -2583,7 +2900,15 @@
         "category": "ナビゲーション"
       }
     ],
-    "entry_fee": "15,000円"
+    "entry_fee": "15,000円",
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "https://www.okayamamarathon.jp/"
+    },
+    "venue": {
+      "name": "岡山市 フルマラソン",
+      "mapQuery": "岡山県 岡山市 フルマラソン"
+    }
   },
   {
     "id": "soja-kibiji-marathon-2027",
@@ -2623,7 +2948,15 @@
         "category": "ナビゲーション"
       }
     ],
-    "entry_fee": "15,000円"
+    "entry_fee": "15,000円",
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "https://www.city.soja.okayama.jp/"
+    },
+    "venue": {
+      "name": "総社市 フル＆ハーフ",
+      "mapQuery": "岡山県 総社市 フル＆ハーフ"
+    }
   },
   {
     "id": "kagamino-forest-trail-2026",
@@ -2667,7 +3000,15 @@
         "category": "ギア"
       }
     ],
-    "entry_fee": "11,000円"
+    "entry_fee": "11,000円",
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search?keyword=%E9%8F%A1%E9%87%8E"
+    },
+    "venue": {
+      "name": "鏡野町",
+      "mapQuery": "岡山県 鏡野町"
+    }
   },
   {
     "id": "harima-okayama-ride-2026",
@@ -2717,7 +3058,11 @@
         "category": "ウェア"
       }
     ],
-    "entry_fee": "13,000円"
+    "entry_fee": "13,000円",
+    "source": {
+      "portalName": "スポエンCYCLE",
+      "portalUrl": "https://cycle.spoen.jp/"
+    }
   },
   {
     "id": "akiyoshidai-karst-trail-2026",
@@ -2765,7 +3110,15 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "16,000円"
+    "entry_fee": "16,000円",
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "https://akiyoshidai-trail.com/"
+    },
+    "venue": {
+      "name": "美祢市 エクストリーム60km",
+      "mapQuery": "山口県 美祢市 エクストリーム60km"
+    }
   },
   {
     "id": "くだまつ笠戸島アイランドトレイル-2027",
@@ -2811,7 +3164,15 @@
         "category": "ギア"
       }
     ],
-    "entry_fee": "11,000円"
+    "entry_fee": "11,000円",
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search/?keyword=%E3%81%8F%E3%81%A0%E3%81%BE%E3%81%A4%E7%AC%A0%E6%88%B8%E5%B3%B6%E3%82%A2%E3%82%A4%E3%83%A9%E3%83%B3%E3%83%89%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB"
+    },
+    "venue": {
+      "name": "下松市",
+      "mapQuery": "山口県 下松市"
+    }
   },
   {
     "id": "shimonoseki-kaikyo-marathon-2026",
@@ -2851,7 +3212,15 @@
         "category": "ナビゲーション"
       }
     ],
-    "entry_fee": "15,000円"
+    "entry_fee": "15,000円",
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "https://kaikyomarathon.jp/"
+    },
+    "venue": {
+      "name": "下関市 関門海峡コース",
+      "mapQuery": "山口県 下関市 関門海峡コース"
+    }
   },
   {
     "id": "mukatsuku-double-marathon-2026",
@@ -2895,7 +3264,15 @@
         "category": "ウェア"
       }
     ],
-    "entry_fee": "15,000円"
+    "entry_fee": "15,000円",
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "https://www.mukatsuku-w-marathon.com/"
+    },
+    "venue": {
+      "name": "むかつく",
+      "mapQuery": "山口県 むかつく"
+    }
   },
   {
     "id": "suo-oshima-マラニック-2026",
@@ -2943,7 +3320,15 @@
         "category": "ウェア"
       }
     ],
-    "entry_fee": "22,000円"
+    "entry_fee": "22,000円",
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search/?keyword=%E5%91%A8%E9%98%B2%E5%A4%A7%E5%B3%B6%E3%83%9E%E3%83%A9%E3%83%8B%E3%83%83%E3%82%AF%20100km"
+    },
+    "venue": {
+      "name": "周防大島一周",
+      "mapQuery": "山口県 周防大島一周"
+    }
   },
   {
     "id": "mine-akiyoshidai-cycle-2026",
@@ -2993,7 +3378,11 @@
         "category": "ウェア"
       }
     ],
-    "entry_fee": "10,000円"
+    "entry_fee": "10,000円",
+    "source": {
+      "portalName": "スポエンCYCLE",
+      "portalUrl": "https://cycle.spoen.jp/"
+    }
   },
   {
     "id": "marishiten-trail-2026",
@@ -3043,7 +3432,15 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "24,000円"
+    "entry_fee": "24,000円",
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search?keyword=%E4%B8%96%E7%95%8C%E9%81%BA%E7%94%A3"
+    },
+    "venue": {
+      "name": "大田市 100km",
+      "mapQuery": "島根県 大田市 100km"
+    }
   },
   {
     "id": "okinosima-ultra-2026",
@@ -3088,7 +3485,15 @@
         "category": "ウェア"
       }
     ],
-    "entry_fee": "22,000円"
+    "entry_fee": "22,000円",
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "https://www.town.okinoshima.shimane.jp/"
+    },
+    "venue": {
+      "name": "隠岐の島町 100km",
+      "mapQuery": "島根県 隠岐の島町 100km"
+    }
   },
   {
     "id": "sanbe-mountain-trail-2026",
@@ -3132,7 +3537,15 @@
         "category": "ギア"
       }
     ],
-    "entry_fee": "11,000円"
+    "entry_fee": "11,000円",
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search?keyword=%E5%9B%BD%E7%AB%8B%E5%85%AC%E5%9C%92%20%E4%B8%89%E7%93%B6%E5%B1%B1%E5%B1%B1%E5%B2%B3%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%E3%83%A9%E3%83%B3"
+    },
+    "venue": {
+      "name": "さんべさん",
+      "mapQuery": "島根県 さんべさん"
+    }
   },
   {
     "id": "matsue-kokuhou-marathon-2026",
@@ -3174,7 +3587,15 @@
         "category": "ナビゲーション"
       }
     ],
-    "entry_fee": "15,000円"
+    "entry_fee": "15,000円",
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search/?keyword=%E5%9B%BD%E5%AE%9D%E6%9D%BE%E6%B1%9F%E5%9F%8E%E3%83%9E%E3%83%A9%E3%82%BD%E3%83%B3"
+    },
+    "venue": {
+      "name": "松江市 フルマラソン",
+      "mapQuery": "島根県 松江市 フルマラソン"
+    }
   },
   {
     "id": "shimanami-yamanami-cycle-2026",
@@ -3224,7 +3645,11 @@
         "category": "ウェア"
       }
     ],
-    "entry_fee": "10,000円"
+    "entry_fee": "10,000円",
+    "source": {
+      "portalName": "スポエンCYCLE",
+      "portalUrl": "https://cycle.spoen.jp/"
+    }
   },
   {
     "id": "daisen-mountain-trail-2026",
@@ -3272,7 +3697,15 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "11,000円"
+    "entry_fee": "11,000円",
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search?keyword=%E9%B3%A5%E5%8F%96"
+    },
+    "venue": {
+      "name": "だいせん",
+      "mapQuery": "鳥取県 だいせん"
+    }
   },
   {
     "id": "hyonosen-trail-tottori-2026",
@@ -3320,7 +3753,15 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "11,000円"
+    "entry_fee": "11,000円",
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search?keyword=%E6%B0%B7%E3%83%8E%E5%B1%B1"
+    },
+    "venue": {
+      "name": "若桜町",
+      "mapQuery": "鳥取県 若桜町"
+    }
   },
   {
     "id": "tottori-marathon-2027",
@@ -3362,7 +3803,15 @@
         "category": "ナビゲーション"
       }
     ],
-    "entry_fee": "15,000円"
+    "entry_fee": "15,000円",
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search/?keyword=%E9%B3%A5%E5%8F%96%E3%83%9E%E3%83%A9%E3%82%BD%E3%83%B3"
+    },
+    "venue": {
+      "name": "鳥取砂丘〜鳥取城跡 ワンウェイ公認フル",
+      "mapQuery": "鳥取県 鳥取砂丘〜鳥取城跡 ワンウェイ公認フル"
+    }
   },
   {
     "id": "tour-de-daisen-2026",
@@ -3412,7 +3861,15 @@
         "category": "ウェア"
       }
     ],
-    "entry_fee": "10,000円"
+    "entry_fee": "10,000円",
+    "source": {
+      "portalName": "スポーツエントリー",
+      "portalUrl": "https://www.sportsentry.ne.jp/cycle/10/3"
+    },
+    "venue": {
+      "name": "名峰大山一周ヒルクライム＆ロングライド",
+      "mapQuery": "鳥取県 名峰大山一周ヒルクライム＆ロングライド"
+    }
   },
   {
     "id": "cycling-shimanami-2026",
@@ -3460,7 +3917,11 @@
         "category": "ウェア"
       }
     ],
-    "entry_fee": "10,000円"
+    "entry_fee": "10,000円",
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "https://cycling-shimanami.jp/"
+    }
   },
   {
     "id": "ishizuchi-skyrun-trail-2026",
@@ -3508,7 +3969,15 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "11,000円"
+    "entry_fee": "11,000円",
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search?keyword=%E7%9F%B3%E9%8E%9A%E5%B1%B1%E3%82%B9%E3%82%AB%E3%82%A4%E3%83%AC%E3%83%BC%E3%82%B9"
+    },
+    "venue": {
+      "name": "いしづちさん",
+      "mapQuery": "愛媛県 いしづちさん"
+    }
   },
   {
     "id": "kumakogen-four-seasons-trail-2026",
@@ -3552,7 +4021,15 @@
         "category": "ギア"
       }
     ],
-    "entry_fee": "11,000円"
+    "entry_fee": "11,000円",
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search?keyword=%E4%B9%85%E4%B8%87%E9%AB%98%E5%8E%9F"
+    },
+    "venue": {
+      "name": "久万高原町",
+      "mapQuery": "愛媛県 久万高原町"
+    }
   },
   {
     "id": "ehime-marathon-2027",
@@ -3592,7 +4069,15 @@
         "category": "ナビゲーション"
       }
     ],
-    "entry_fee": "15,000円"
+    "entry_fee": "15,000円",
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "https://ehimemarathon.jp/"
+    },
+    "venue": {
+      "name": "松山市 坊っちゃんスタジアム",
+      "mapQuery": "愛媛県 松山市 坊っちゃんスタジアム"
+    }
   },
   {
     "id": "shimanami-jukan-ultra-100-2026",
@@ -3640,7 +4125,15 @@
         "category": "ウェア"
       }
     ],
-    "entry_fee": "22,000円"
+    "entry_fee": "22,000円",
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search/?keyword=%E3%81%97%E3%81%BE%E3%81%AA%E3%81%BF%E6%B5%B7%E9%81%93%E7%B8%A6%E6%96%AD%E3%82%A6%E3%83%AB%E3%83%88%E3%83%A9%E3%83%9E%E3%83%A9%E3%83%8B%E3%83%83%E3%82%AF%20100km"
+    },
+    "venue": {
+      "name": "今治〜尾道",
+      "mapQuery": "愛媛県 今治〜尾道"
+    }
   },
   {
     "id": "ufo-line-hillclimb-2026",
@@ -3690,7 +4183,11 @@
         "category": "ウェア"
       }
     ],
-    "entry_fee": "7,000円"
+    "entry_fee": "7,000円",
+    "source": {
+      "portalName": "スポエンCYCLE",
+      "portalUrl": "https://cycle.spoen.jp/"
+    }
   },
   {
     "id": "shodoshima-olive-trail-2026",
@@ -3734,7 +4231,15 @@
         "category": "ギア"
       }
     ],
-    "entry_fee": "11,000円"
+    "entry_fee": "11,000円",
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search?keyword=%E5%B0%8F%E8%B1%86%E5%B3%B6%E3%82%AA%E3%83%AA%E3%83%BC%E3%83%96"
+    },
+    "venue": {
+      "name": "かんかけい",
+      "mapQuery": "香川県 かんかけい"
+    }
   },
   {
     "id": "sanuki-mountains-skytrail-2026",
@@ -3782,7 +4287,15 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "11,000円"
+    "entry_fee": "11,000円",
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search?keyword=%E8%AE%83%E5%B2%90%E5%B1%B1%E8%84%88"
+    },
+    "venue": {
+      "name": "高松〜まんのう",
+      "mapQuery": "香川県 高松〜まんのう"
+    }
   },
   {
     "id": "kagawa-marugame-half-2027",
@@ -3822,7 +4335,15 @@
         "category": "ナビゲーション"
       }
     ],
-    "entry_fee": "7,500円"
+    "entry_fee": "7,500円",
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "https://www.km-half.com/"
+    },
+    "venue": {
+      "name": "日本屈指の高速コース",
+      "mapQuery": "香川県 日本屈指の高速コース"
+    }
   },
   {
     "id": "tour-de-sanuki-udon-2026",
@@ -3872,7 +4393,15 @@
         "category": "ウェア"
       }
     ],
-    "entry_fee": "10,000円"
+    "entry_fee": "10,000円",
+    "source": {
+      "portalName": "スポエンCYCLE",
+      "portalUrl": "https://cycle.spoen.jp/"
+    },
+    "venue": {
+      "name": "讃岐うどん巡り＆瀬戸内ロングライド 120km",
+      "mapQuery": "香川県 讃岐うどん巡り＆瀬戸内ロングライド 120km"
+    }
   },
   {
     "id": "mameichi-shodoshima-cycle-2026",
@@ -3922,7 +4451,11 @@
         "category": "ウェア"
       }
     ],
-    "entry_fee": "10,000円"
+    "entry_fee": "10,000円",
+    "source": {
+      "portalName": "スポエンCYCLE",
+      "portalUrl": "https://cycle.spoen.jp/"
+    }
   },
   {
     "id": "tsurugisan-super-rin-do-trail-2026",
@@ -3971,7 +4504,15 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "16,000円"
+    "entry_fee": "16,000円",
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search?keyword=%E9%98%BF%E6%B3%A2"
+    },
+    "venue": {
+      "name": "つるぎさん",
+      "mapQuery": "徳島県 つるぎさん"
+    }
   },
   {
     "id": "senba-sea-cliff-trail-2027",
@@ -4017,7 +4558,15 @@
         "category": "ギア"
       }
     ],
-    "entry_fee": "11,000円"
+    "entry_fee": "11,000円",
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search/?keyword=%E5%8D%83%E7%BE%BD%E6%B5%B7%E5%B4%96%20%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%E3%83%A9%E3%83%B3%E3%83%8B%E3%83%B3%E3%82%B0%E3%83%AC%E3%83%BC%E3%82%B9"
+    },
+    "venue": {
+      "name": "せんばかいがい",
+      "mapQuery": "徳島県 せんばかいがい"
+    }
   },
   {
     "id": "iya-valley-adventure-trail-2026",
@@ -4065,7 +4614,15 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "11,000円"
+    "entry_fee": "11,000円",
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search?keyword=%E7%A7%98%E5%A2%83"
+    },
+    "venue": {
+      "name": "ひがしいや",
+      "mapQuery": "徳島県 ひがしいや"
+    }
   },
   {
     "id": "tokushima-marathon-2027",
@@ -4105,7 +4662,15 @@
         "category": "ナビゲーション"
       }
     ],
-    "entry_fee": "15,000円"
+    "entry_fee": "15,000円",
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "https://www.tokushima-marathon.jp/"
+    },
+    "venue": {
+      "name": "吉野川ブルーライン公認コース",
+      "mapQuery": "徳島県 吉野川ブルーライン公認コース"
+    }
   },
   {
     "id": "tour-de-nishi-awa-2026",
@@ -4155,7 +4720,15 @@
         "category": "ウェア"
       }
     ],
-    "entry_fee": "13,000円"
+    "entry_fee": "13,000円",
+    "source": {
+      "portalName": "スポーツエントリー",
+      "portalUrl": "https://www.sportsentry.ne.jp/cycle/10/3"
+    },
+    "venue": {
+      "name": "剣山 祖谷 過酷山岳グランフォンド 160km",
+      "mapQuery": "徳島県 剣山 祖谷 過酷山岳グランフォンド 160km"
+    }
   },
   {
     "id": "oku-shimanto-trail-2026",
@@ -4199,7 +4772,15 @@
         "category": "ギア"
       }
     ],
-    "entry_fee": "11,000円"
+    "entry_fee": "11,000円",
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search?keyword=%E5%A5%A5%E5%9B%9B%E4%B8%87%E5%8D%81%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%E3%83%AC%E3%83%BC%E3%82%B9"
+    },
+    "venue": {
+      "name": "四万十町",
+      "mapQuery": "高知県 四万十町"
+    }
   },
   {
     "id": "reihoku-shikoku-mountain-trail-2026",
@@ -4247,7 +4828,15 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "11,000円"
+    "entry_fee": "11,000円",
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search?keyword=%E5%9C%9F%E4%BD%90%E3%82%8C%E3%81%84%E3%81%BB%E3%81%8F"
+    },
+    "venue": {
+      "name": "本山〜津野",
+      "mapQuery": "高知県 本山〜津野"
+    }
   },
   {
     "id": "shimantogawa-ultra-2026",
@@ -4292,7 +4881,15 @@
         "category": "ウェア"
       }
     ],
-    "entry_fee": "22,000円"
+    "entry_fee": "22,000円",
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "https://shimanto-ultra.jp/"
+    },
+    "venue": {
+      "name": "四万十市",
+      "mapQuery": "高知県 四万十市"
+    }
   },
   {
     "id": "kochi-ryoma-marathon-2027",
@@ -4332,7 +4929,15 @@
         "category": "ナビゲーション"
       }
     ],
-    "entry_fee": "15,000円"
+    "entry_fee": "15,000円",
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "https://ryoma-marathon.jp/"
+    },
+    "venue": {
+      "name": "桂浜〜仁淀川河口大橋",
+      "mapQuery": "高知県 桂浜〜仁淀川河口大橋"
+    }
   },
   {
     "id": "shimanto-dragon-ride-2026",
@@ -4382,7 +4987,15 @@
         "category": "ウェア"
       }
     ],
-    "entry_fee": "10,000円"
+    "entry_fee": "10,000円",
+    "source": {
+      "portalName": "スポーツエントリー",
+      "portalUrl": "https://www.sportsentry.ne.jp/cycle/10/3"
+    },
+    "venue": {
+      "name": "清流四万十川＆足摺岬 ロングライド 135km",
+      "mapQuery": "高知県 清流四万十川＆足摺岬 ロングライド 135km"
+    }
   },
   {
     "id": "niyodogawa-blue-ride-2026",
@@ -4432,7 +5045,11 @@
         "category": "ウェア"
       }
     ],
-    "entry_fee": "10,000円"
+    "entry_fee": "10,000円",
+    "source": {
+      "portalName": "スポエンCYCLE",
+      "portalUrl": "https://cycle.spoen.jp/"
+    }
   },
   {
     "id": "hasetsune-cup-2026",
@@ -4482,7 +5099,15 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "18,000円"
+    "entry_fee": "18,000円",
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "https://www.hasetsune.org/"
+    },
+    "venue": {
+      "name": "24時間以内",
+      "mapQuery": "東京都 24時間以内"
+    }
   },
   {
     "id": "izu-trail-journey-2026",
@@ -4531,7 +5156,15 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "16,000円"
+    "entry_fee": "16,000円",
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "https://www.izutrailjourney.com/"
+    },
+    "venue": {
+      "name": "ITJ 70km 松崎〜修善寺",
+      "mapQuery": "静岡県 ITJ 70km 松崎〜修善寺"
+    }
   },
   {
     "id": "kaga-spa-trail-utmb-2026",
@@ -4585,7 +5218,15 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "24,000円"
+    "entry_fee": "24,000円",
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "https://kagaspa.utmb.world/"
+    },
+    "venue": {
+      "name": "石川 加賀温泉郷 100km",
+      "mapQuery": "石川県 石川 加賀温泉郷 100km"
+    }
   },
   {
     "id": "utsukushigahara-trail-2026",
@@ -4634,7 +5275,15 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "16,000円"
+    "entry_fee": "16,000円",
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "https://utsukushigahara-trail.jp/"
+    },
+    "venue": {
+      "name": "長野 長和町 90kmロング",
+      "mapQuery": "長野県 長野 長和町 90kmロング"
+    }
   },
   {
     "id": "aso-volcano-trail-2026",
@@ -4688,7 +5337,15 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "24,000円"
+    "entry_fee": "24,000円",
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "https://universal-field.com/"
+    },
+    "venue": {
+      "name": "阿蘇ボルケーノトレイル 112km",
+      "mapQuery": "熊本県 阿蘇ボルケーノトレイル 112km"
+    }
   },
   {
     "id": "hiraodai-trail-2026",
@@ -4732,7 +5389,15 @@
         "category": "ギア"
       }
     ],
-    "entry_fee": "11,000円"
+    "entry_fee": "11,000円",
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "https://hiraodai-trail.com/"
+    },
+    "venue": {
+      "name": "福岡 北九州市 40km",
+      "mapQuery": "福岡県 福岡 北九州市 40km"
+    }
   },
   {
     "id": "kirishima-ebino-extremetrail-2026",
@@ -4780,7 +5445,15 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "16,000円"
+    "entry_fee": "16,000円",
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "https://universal-field.com/"
+    },
+    "venue": {
+      "name": "鹿児島 宮崎 63km",
+      "mapQuery": "鹿児島県 鹿児島 宮崎 63km"
+    }
   },
   {
     "id": "kyoto-grand-traverse-2026",
@@ -4830,7 +5503,15 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "16,000円"
+    "entry_fee": "16,000円",
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search/?keyword=%E4%BA%AC%E9%83%BD%E3%82%B0%E3%83%A9%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%90%E3%83%BC%E3%82%B9"
+    },
+    "venue": {
+      "name": "東山 北山 60km",
+      "mapQuery": "京都府 東山 北山 60km"
+    }
   },
   {
     "id": "kumano-old-trail-2026",
@@ -4880,7 +5561,15 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "11,000円"
+    "entry_fee": "11,000円",
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search/?keyword=KUMANO%20OLD"
+    },
+    "venue": {
+      "name": "世界遺産 熊野古道トレイルラン 50km",
+      "mapQuery": "三重県 世界遺産 熊野古道トレイルラン 50km"
+    }
   },
   {
     "id": "ikko-diamond-trail-2026",
@@ -4926,7 +5615,15 @@
         "category": "ギア"
       }
     ],
-    "entry_fee": "11,000円"
+    "entry_fee": "11,000円",
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search/?keyword=%E5%A4%A7%E9%98%AA%E5%BA%9C%E3%83%81%E3%83%A3%E3%83%AC%E3%83%B3%E3%82%B8%E7%99%BB%E5%B1%B1%E5%A4%A7%E4%BC%9A"
+    },
+    "venue": {
+      "name": "ダイヤモンドトレール縦走 36km",
+      "mapQuery": "大阪府 ダイヤモンドトレール縦走 36km"
+    }
   },
   {
     "id": "wakasa-michinoku-100km-trail-2026",
@@ -4976,7 +5673,15 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "24,000円"
+    "entry_fee": "24,000円",
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search?keyword=%E3%81%8A%E3%81%8A%E3%81%84%E7%94%BA"
+    },
+    "venue": {
+      "name": "福井",
+      "mapQuery": "福井県 福井"
+    }
   },
   {
     "id": "zao-skyrun-vertical-2026",
@@ -5020,7 +5725,15 @@
         "category": "ギア"
       }
     ],
-    "entry_fee": "6,500円"
+    "entry_fee": "6,500円",
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search?keyword=%E8%94%B5%E7%8E%8B%E3%82%B9%E3%82%AB%E3%82%A4"
+    },
+    "venue": {
+      "name": "ZAO SKYRUN お釜 熊野岳",
+      "mapQuery": "山形県 ZAO SKYRUN お釜 熊野岳"
+    }
   },
   {
     "id": "savas-fuji-mountain-race-2026",
@@ -5064,7 +5777,15 @@
         "category": "ギア"
       }
     ],
-    "entry_fee": "6,500円"
+    "entry_fee": "6,500円",
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "https://fujimountainrace.city.fujiyoshida.yamanashi.jp/"
+    },
+    "venue": {
+      "name": "市役所〜富士山頂 21km D+3000m",
+      "mapQuery": "山梨県 市役所〜富士山頂 21km D+3000m"
+    }
   },
   {
     "id": "saroma-lake-100km-ultra-2026",
@@ -5109,7 +5830,15 @@
         "category": "ウェア"
       }
     ],
-    "entry_fee": "22,000円"
+    "entry_fee": "22,000円",
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "https://saromanblue.jp/"
+    },
+    "venue": {
+      "name": "北海道 湧別〜北見〜佐呂間",
+      "mapQuery": "北海道 北海道 湧別〜北見〜佐呂間"
+    }
   },
   {
     "id": "challenger-fuji-5lakes-ultra-2027",
@@ -5154,7 +5883,15 @@
         "category": "ウェア"
       }
     ],
-    "entry_fee": "22,000円"
+    "entry_fee": "22,000円",
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "https://www.r-wellness.com/fuji5/"
+    },
+    "venue": {
+      "name": "FUJI 5LAKES 118km/100km",
+      "mapQuery": "山梨県 FUJI 5LAKES 118km/100km"
+    }
   },
   {
     "id": "hidatakayama-ultra-100-2026",
@@ -5199,7 +5936,15 @@
         "category": "ウェア"
       }
     ],
-    "entry_fee": "22,000円"
+    "entry_fee": "22,000円",
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "https://www.r-wellness.com/takayama/"
+    },
+    "venue": {
+      "name": "岐阜 高山市 D+2500m",
+      "mapQuery": "岐阜県 岐阜 高山市 D+2500m"
+    }
   },
   {
     "id": "yatsugatake-nobeyama-ultra-2026",
@@ -5244,7 +5989,15 @@
         "category": "ウェア"
       }
     ],
-    "entry_fee": "22,000円"
+    "entry_fee": "22,000円",
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "https://www.r-wellness.com/nobeyama/"
+    },
+    "venue": {
+      "name": "長野",
+      "mapQuery": "長野県 長野"
+    }
   },
   {
     "id": "tango-100km-ultra-2026",
@@ -5289,7 +6042,15 @@
         "category": "ウェア"
       }
     ],
-    "entry_fee": "22,000円"
+    "entry_fee": "22,000円",
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "https://www.r-wellness.com/tango/"
+    },
+    "venue": {
+      "name": "京丹後市",
+      "mapQuery": "京都府 京丹後市"
+    }
   },
   {
     "id": "akita-naisairiku-100km-ultra-2026",
@@ -5336,7 +6097,11 @@
         "category": "ウェア"
       }
     ],
-    "entry_fee": "22,000円"
+    "entry_fee": "22,000円",
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search/?keyword=%E7%A7%8B%E7%94%B0%E5%86%85%E9%99%B8%E3%83%AA%E3%82%BE%E3%83%BC%E3%83%88%E3%82%AB%E3%83%83%E3%83%97%20100%E3%82%AD%E3%83%AD%E3%83%81%E3%83%A3%E3%83%AC%E3%83%B3%E3%82%B8%E3%83%9E%E3%83%A9%E3%82%BD%E3%83%B3"
+    }
   },
   {
     "id": "tour-de-okinawa-2026",
@@ -5384,7 +6149,15 @@
         "category": "ウェア"
       }
     ],
-    "entry_fee": "13,000円"
+    "entry_fee": "13,000円",
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "https://www.tour-de-okinawa.jp/"
+    },
+    "venue": {
+      "name": "沖縄 名護市 市民レース200km",
+      "mapQuery": "沖縄県 沖縄 名護市 市民レース200km"
+    }
   },
   {
     "id": "mt-fuji-hillclimb-2026",
@@ -5432,7 +6205,15 @@
         "category": "ウェア"
       }
     ],
-    "entry_fee": "7,000円"
+    "entry_fee": "7,000円",
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "https://funride.jp/events/mt-fujihc/"
+    },
+    "venue": {
+      "name": "富士スバルライン 24km D+1255m",
+      "mapQuery": "山梨県 富士スバルライン 24km D+1255m"
+    }
   },
   {
     "id": "sado-long-ride-210-2026",
@@ -5480,7 +6261,15 @@
         "category": "ウェア"
       }
     ],
-    "entry_fee": "13,000円"
+    "entry_fee": "13,000円",
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "https://www.sado-longride.com/"
+    },
+    "venue": {
+      "name": "新潟 佐渡島一周 210km",
+      "mapQuery": "新潟県 新潟 佐渡島一周 210km"
+    }
   },
   {
     "id": "niseko-classic-150km-2026",
@@ -5528,7 +6317,15 @@
         "category": "ウェア"
       }
     ],
-    "entry_fee": "13,000円"
+    "entry_fee": "13,000円",
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "https://nisekoclassic.com/"
+    },
+    "venue": {
+      "name": "ニセコクラシック 150km / UCI GFWS",
+      "mapQuery": "北海道 ニセコクラシック 150km / UCI GFWS"
+    }
   },
   {
     "id": "biwaichi-cycling-160-2026",
@@ -5578,7 +6375,15 @@
         "category": "ウェア"
       }
     ],
-    "entry_fee": "13,000円"
+    "entry_fee": "13,000円",
+    "source": {
+      "portalName": "スポエンCYCLE",
+      "portalUrl": "https://cycle.spoen.jp/"
+    },
+    "venue": {
+      "name": "ビワイチ 160km センチュリー",
+      "mapQuery": "滋賀県 ビワイチ 160km センチュリー"
+    }
   },
   {
     "id": "onomichi-shimanami-coastal-trail-2026",
@@ -5622,7 +6427,15 @@
         "category": "ギア"
       }
     ],
-    "entry_fee": "11,000円"
+    "entry_fee": "11,000円",
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search?keyword=%E5%B0%BE%E9%81%93"
+    },
+    "venue": {
+      "name": "尾道市",
+      "mapQuery": "広島県 尾道市"
+    }
   },
   {
     "id": "bizen-oni-trail-okayama-2026",
@@ -5666,7 +6479,15 @@
         "category": "ギア"
       }
     ],
-    "entry_fee": "11,000円"
+    "entry_fee": "11,000円",
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search?keyword=%E5%82%99%E5%89%8D"
+    },
+    "venue": {
+      "name": "きのじょう",
+      "mapQuery": "岡山県 きのじょう"
+    }
   },
   {
     "id": "nagato-tawarayama-trail-2026",
@@ -5710,7 +6531,15 @@
         "category": "ギア"
       }
     ],
-    "entry_fee": "11,000円"
+    "entry_fee": "11,000円",
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search?keyword=%E9%95%B7%E9%96%80"
+    },
+    "venue": {
+      "name": "長門市",
+      "mapQuery": "山口県 長門市"
+    }
   },
   {
     "id": "ashizuri-cape-ocean-trail-2027",
@@ -5754,7 +6583,15 @@
         "category": "ギア"
       }
     ],
-    "entry_fee": "11,000円"
+    "entry_fee": "11,000円",
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search?keyword=%E8%B6%B3%E6%91%BA%E5%B2%AC"
+    },
+    "venue": {
+      "name": "土佐清水市",
+      "mapQuery": "高知県 土佐清水市"
+    }
   },
   {
     "id": "sanuki-kotohira-konpira-trail-2026",
@@ -5798,7 +6635,15 @@
         "category": "ギア"
       }
     ],
-    "entry_fee": "6,500円"
+    "entry_fee": "6,500円",
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search?keyword=%E3%81%95%E3%81%AC%E3%81%8D"
+    },
+    "venue": {
+      "name": "琴平町",
+      "mapQuery": "香川県 琴平町"
+    }
   },
   {
     "id": "toretore-ueyama-2027",
@@ -5853,7 +6698,11 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "7,000円"
+    "entry_fee": "7,000円",
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "http://toretore.web.fc2.com/"
+    }
   },
   {
     "id": "mihara-hakuryuko-trail-2027",
@@ -5899,7 +6748,15 @@
         "category": "ギア"
       }
     ],
-    "entry_fee": "11,000円"
+    "entry_fee": "11,000円",
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search/?keyword=%E4%B8%89%E5%8E%9F%E3%83%BB%E7%99%BD%E7%AB%9C%E6%B9%96%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%E3%83%A9%E3%83%B3%E3%83%AC%E3%83%BC%E3%82%B9"
+    },
+    "venue": {
+      "name": "三原市",
+      "mapQuery": "広島県 三原市"
+    }
   },
   {
     "id": "iwakuni-shirohebi-trail-2027",
@@ -5943,7 +6800,15 @@
         "category": "ギア"
       }
     ],
-    "entry_fee": "6,500円"
+    "entry_fee": "6,500円",
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search?keyword=%E5%B2%A9%E5%9B%BD"
+    },
+    "venue": {
+      "name": "岩国市",
+      "mapQuery": "山口県 岩国市"
+    }
   },
   {
     "id": "kurashiki-washuzan- coastal-trail-2027",
@@ -5988,7 +6853,11 @@
         "category": "ギア"
       }
     ],
-    "entry_fee": "11,000円"
+    "entry_fee": "11,000円",
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search/?keyword=%E5%80%89%E6%95%B7%E3%83%BB%E9%B7%B2%E7%BE%BD%E5%B1%B1%EF%BC%86%E7%8E%8B%E5%AD%90%E3%83%B6%E5%B2%B3%20%E7%80%AC%E6%88%B8%E5%86%85%E3%82%AA%E3%83%BC%E3%82%B7%E3%83%A3%E3%83%B3%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB"
+    }
   },
   {
     "id": "kochi-navigms-winter-2026",
@@ -6038,7 +6907,11 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "4,500円"
+    "entry_fee": "4,500円",
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "https://kochi-navigms.com/"
+    }
   },
   {
     "id": "sanuki-mountains-skytrail-2027",
@@ -6082,7 +6955,15 @@
         "category": "ギア"
       }
     ],
-    "entry_fee": "11,000円"
+    "entry_fee": "11,000円",
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search?keyword=%E8%AE%83%E5%B2%90%E5%B1%B1%E8%84%88"
+    },
+    "venue": {
+      "name": "高松〜まんのう",
+      "mapQuery": "香川県 高松〜まんのう"
+    }
   },
   {
     "id": "suo-oshima-maranic-2027",
@@ -6130,7 +7011,15 @@
         "category": "ウェア"
       }
     ],
-    "entry_fee": "22,000円"
+    "entry_fee": "22,000円",
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search/?keyword=%E5%91%A8%E9%98%B2%E5%A4%A7%E5%B3%B6%E3%83%9E%E3%83%A9%E3%83%8B%E3%83%83%E3%82%AF%20100km"
+    },
+    "venue": {
+      "name": "周防大島一周",
+      "mapQuery": "山口県 周防大島一周"
+    }
   },
   {
     "id": "sainokuni-100mile-2027",
@@ -6184,7 +7073,11 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "38,000円"
+    "entry_fee": "38,000円",
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "https://trainic-world.org/sainokuni/"
+    }
   },
   {
     "id": "aso-volcano-trail-2027",
@@ -6238,7 +7131,15 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "24,000円"
+    "entry_fee": "24,000円",
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "https://universal-field.com/"
+    },
+    "venue": {
+      "name": "阿蘇ボルケーノトレイル 112km",
+      "mapQuery": "熊本県 阿蘇ボルケーノトレイル 112km"
+    }
   },
   {
     "id": "yatsugatake-nobeyama-ultra-2027",
@@ -6283,7 +7184,15 @@
         "category": "ウェア"
       }
     ],
-    "entry_fee": "22,000円"
+    "entry_fee": "22,000円",
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "https://www.r-wellness.com/nobeyama/"
+    },
+    "venue": {
+      "name": "長野",
+      "mapQuery": "長野県 長野"
+    }
   },
   {
     "id": "nikko-mountain-2026",
@@ -6330,7 +7239,11 @@
         "name": "携帯コップ＆健康保険証",
         "category": "エイド"
       }
-    ]
+    ],
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search/?keyword=%E6%97%A5%E5%85%89%E5%9B%BD%E7%AB%8B%E5%85%AC%E5%9C%92%E3%83%9E%E3%82%A6%E3%83%B3%E3%83%86%E3%83%B3%E3%83%A9%E3%83%B3%E3%83%8B%E3%83%B3%E3%82%B0"
+    }
   },
   {
     "id": "shiga-kogen-100-2026",
@@ -6380,7 +7293,11 @@
         "name": "オフラインGPSウォッチまたはジオグラフィカ",
         "category": "ナビゲーション"
       }
-    ]
+    ],
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "https://nature-scene.net/shiga100/"
+    }
   },
   {
     "id": "forest-trail-tango-2026",
@@ -6427,7 +7344,11 @@
         "name": "ライト（日没前点灯用300ルーメン以上）",
         "category": "ライト"
       }
-    ]
+    ],
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search/?keyword=FOREST%20TRAIL"
+    }
   },
   {
     "id": "fairy-trail-takashima-2026",
@@ -6473,7 +7394,11 @@
         "name": "コースマップ（紙またはGPX）",
         "category": "ナビゲーション"
       }
-    ]
+    ],
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search/?keyword=FAIRY%20TRAIL"
+    }
   },
   {
     "id": "kumano-kodo-trail-2026",
@@ -6518,7 +7443,11 @@
         "name": "ヘッドランプ（日没対応）",
         "category": "ライト"
       }
-    ]
+    ],
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "http://kumanooldtrails.com/"
+    }
   },
   {
     "id": "shimanami-cycling-2026",
@@ -6564,7 +7493,11 @@
         "name": "携帯マルチツール（六角レンチ各種）",
         "category": "リペア"
       }
-    ]
+    ],
+    "source": {
+      "portalName": "スポーツエントリー",
+      "portalUrl": "https://www.sportsentry.ne.jp/cycle/10/3"
+    }
   },
   {
     "id": "shimanto-ultra-marathon-2026",
@@ -6606,7 +7539,11 @@
         "name": "足攣り防止マグネシウム（Mag-on等）",
         "category": "補給"
       }
-    ]
+    ],
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search/?keyword=%E5%9B%9B%E4%B8%87%E5%8D%81%E5%B7%9D%E3%82%A6%E3%83%AB%E3%83%88%E3%83%A9%E3%83%9E%E3%83%A9%E3%82%BD%E3%83%B3"
+    }
   },
   {
     "id": "grandfondo-kyoto-2026",
@@ -6648,7 +7585,11 @@
         "name": "パンク修理チューブ2本＆携帯ツール",
         "category": "リペア"
       }
-    ]
+    ],
+    "source": {
+      "portalName": "スポエンCYCLE",
+      "portalUrl": "https://cycle.spoen.jp/"
+    }
   },
   {
     "id": "hasetsune-30k-2026",
@@ -6695,7 +7636,11 @@
         "name": "健康保険証＆現金",
         "category": "エイド"
       }
-    ]
+    ],
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search/?keyword=%E3%83%8F%E3%82%BB%E3%83%84%E3%83%8D30K"
+    }
   },
   {
     "id": "aso-round-trail-2026",
@@ -6747,7 +7692,15 @@
         "name": "GPSウォッチまたはGPS端末",
         "category": "ナビゲーション"
       }
-    ]
+    ],
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search/?keyword=%E9%98%BF%E8%98%87%E3%83%A9%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB"
+    },
+    "venue": {
+      "name": "ART",
+      "mapQuery": "熊本県 ART"
+    }
   },
   {
     "id": "fuji-5lakes-118k-2027",
@@ -6789,7 +7742,11 @@
         "name": "エナジージェル・電解質タブレット",
         "category": "補給"
       }
-    ]
+    ],
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search/?keyword=%E3%83%81%E3%83%A3%E3%83%AC%E3%83%B3%E3%82%B8%E5%AF%8C%E5%A3%AB%E4%BA%94%E6%B9%96%E3%82%A6%E3%83%AB%E3%83%88%E3%83%A9%E3%83%9E%E3%83%A9%E3%82%BD%E3%83%B3"
+    }
   },
   {
     "id": "okumikawa-power-trail-2027",
@@ -6836,7 +7793,11 @@
         "name": "エマージェンシーシート",
         "category": "エイド"
       }
-    ]
+    ],
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search/?keyword=%E5%A5%A5%E4%B8%89%E6%B2%B3%E3%83%91%E3%83%AF%E3%83%BC%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB"
+    }
   },
   {
     "id": "saba-kaido-ultra-2027",
@@ -6879,7 +7840,11 @@
         "name": "健康保険証＆小銭",
         "category": "エイド"
       }
-    ]
+    ],
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search/?keyword=%E9%AF%96%E8%A1%97%E9%81%93%E3%82%A6%E3%83%AB%E3%83%88%E3%83%A9%E3%83%9E%E3%83%A9%E3%82%BD%E3%83%B3"
+    }
   },
   {
     "id": "hiroshima-wangantrail-108k-2027",
@@ -6925,7 +7890,16 @@
         "name": "水分1L以上＆携帯コップ",
         "category": "補給"
       }
-    ]
+    ],
+    "venue": {
+      "name": "旧広島市民球場跡地（ひろしまゲートパークプラザ）",
+      "address": "広島県広島市中区基町5-25",
+      "mapQuery": "ひろしまゲートパーク"
+    },
+    "source": {
+      "portalName": "公式サイト",
+      "portalUrl": "https://wangantrailrun.com/"
+    }
   },
   {
     "id": "zentsuji-gogaku-2027",
@@ -6968,7 +7942,11 @@
         "name": "トレイルランニングシューズ",
         "category": "ウェア"
       }
-    ]
+    ],
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search/?keyword=%E5%96%84%E9%80%9A%E5%AF%BA%E4%BA%94%E5%B2%B3%E5%B1%B1%E7%A9%BA%E6%B5%B7%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB"
+    }
   },
   {
     "id": "niseko-ar-2026",
@@ -7017,7 +7995,11 @@
         "name": "ファーストエイドキット＆エマージェンシーシート",
         "category": "エイド"
       }
-    ]
+    ],
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search/?keyword=%E3%83%8B%E3%82%BB%E3%82%B3%E3%82%A2%E3%83%89%E3%83%99%E3%83%B3%E3%83%81%E3%83%A3%E3%83%BC%E3%83%AC%E3%83%BC%E3%82%B9"
+    }
   },
   {
     "id": "michinoku-ar-2026",
@@ -7065,7 +8047,11 @@
         "name": "救急包帯＆サバイバルシート",
         "category": "エイド"
       }
-    ]
+    ],
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search/?keyword=%E3%81%BF%E3%81%A1%E3%81%AE%E3%81%8F%E3%82%A2%E3%83%89%E3%83%99%E3%83%B3%E3%83%81%E3%83%A3%E3%83%BC%E3%83%AC%E3%83%BC%E3%82%B9"
+    }
   },
   {
     "id": "boso-rogaining-2026",
@@ -7108,7 +8094,11 @@
         "name": "筆記用具（大会地図チェック用）",
         "category": "ナビゲーション"
       }
-    ]
+    ],
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search/?keyword=%E6%88%BF%E7%B7%8F%E4%B8%98%E9%99%B5%E3%83%95%E3%82%A9%E3%83%AC%E3%82%B9%E3%83%88%E3%83%AD%E3%82%B2%E3%82%A4%E3%83%8B%E3%83%B3%E3%82%B0"
+    }
   },
   {
     "id": "azumino-rogaining-2026",
@@ -7151,7 +8141,11 @@
         "name": "健康保険証＆雨具",
         "category": "エイド"
       }
-    ]
+    ],
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search/?keyword=%E4%BF%A1%E5%B7%9E%E5%AE%89%E6%9B%87%E9%87%8E%E3%83%AD%E3%82%B2%E3%82%A4%E3%83%8B%E3%83%B3%E3%82%B0%E3%83%95%E3%82%A7%E3%82%B9%E3%83%86%E3%82%A3%E3%83%90%E3%83%AB"
+    }
   },
   {
     "id": "kirishima-ebino-trail-2026",
@@ -7198,7 +8192,11 @@
         "name": "コースマップ＆健康保険証",
         "category": "ナビゲーション"
       }
-    ]
+    ],
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search/?keyword=%E9%9C%A7%E5%B3%B6%E3%83%BB%E3%81%88%E3%81%B3%E3%81%AE%E9%AB%98%E5%8E%9F%E3%82%A8%E3%82%AF%E3%82%B9%E3%83%88%E3%83%AA%E3%83%BC%E3%83%A0%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB"
+    }
   },
   {
     "id": "yakushima-adventure-2026",
@@ -7242,7 +8240,11 @@
         "name": "ファーストエイド＆ヘッドランプ",
         "category": "ライト"
       }
-    ]
+    ],
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search/?keyword=%E5%B1%8B%E4%B9%85%E5%B3%B6%E3%82%A2%E3%82%A4%E3%83%A9%E3%83%B3%E3%83%89%E3%82%A2%E3%83%89%E3%83%99%E3%83%B3%E3%83%81%E3%83%A3%E3%83%BC"
+    }
   },
   {
     "id": "amami-jungle-trail-2026",
@@ -7284,7 +8286,11 @@
         "name": "給水ボトル1L以上",
         "category": "補給"
       }
-    ]
+    ],
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search/?keyword=%E5%A5%84%E7%BE%8E%E5%A4%A7%E5%B3%B6%E3%83%9E%E3%83%B3%E3%82%B0%E3%83%AD%E3%83%BC%E3%83%96%E3%82%B8%E3%83%A3%E3%83%B3%E3%82%B0%E3%83%AB%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB"
+    }
   },
   {
     "id": "tobishima-blue-ride-2026",
@@ -7326,7 +8332,11 @@
         "name": "予備チューブ＆携帯マルチツール",
         "category": "リペア"
       }
-    ]
+    ],
+    "source": {
+      "portalName": "スポエンCYCLE",
+      "portalUrl": "https://cycle.spoen.jp/"
+    }
   },
   {
     "id": "gonokawa-canoe-bike-2026",
@@ -7370,7 +8380,11 @@
         "name": "防水バッグ＆携帯工具",
         "category": "リペア"
       }
-    ]
+    ],
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search/?keyword=%E6%B1%9F%E3%81%AE%E5%B7%9D%E3%82%AB%E3%83%8C%E3%83%BC%EF%BC%86%E3%83%90%E3%82%A4%E3%82%AF%E3%82%A2%E3%83%89%E3%83%99%E3%83%B3%E3%83%81%E3%83%A3%E3%83%BC%E3%83%95%E3%82%A7%E3%82%B9"
+    }
   },
   {
     "id": "daisen-hillclimb-2026",
@@ -7410,7 +8424,11 @@
         "name": "パンク修理キット＆携帯ポンプ",
         "category": "リペア"
       }
-    ]
+    ],
+    "source": {
+      "portalName": "スポエンCYCLE",
+      "portalUrl": "https://cycle.spoen.jp/"
+    }
   },
   {
     "id": "hiruzen-green-rally-2026",
@@ -7448,7 +8466,11 @@
         "name": "水分補給ボトル",
         "category": "補給"
       }
-    ]
+    ],
+    "source": {
+      "portalName": "スポエンCYCLE",
+      "portalUrl": "https://cycle.spoen.jp/"
+    }
   },
   {
     "id": "yoshinogawa-cycle-fest-2026",
@@ -7488,7 +8510,11 @@
         "name": "予備チューブ2本",
         "category": "リペア"
       }
-    ]
+    ],
+    "source": {
+      "portalName": "スポエンCYCLE",
+      "portalUrl": "https://cycle.spoen.jp/"
+    }
   },
   {
     "id": "shodoshima-mameichi-2026",
@@ -7528,7 +8554,15 @@
         "name": "携帯ツール＆CO2インフレーター",
         "category": "リペア"
       }
-    ]
+    ],
+    "source": {
+      "portalName": "スポーツエントリー",
+      "portalUrl": "https://www.sportsentry.ne.jp/cycle/10/3"
+    },
+    "venue": {
+      "name": "マメイチ",
+      "mapQuery": "香川県 マメイチ"
+    }
   },
   {
     "id": "ishizuchi-hillclimb-2026",
@@ -7564,7 +8598,11 @@
         "name": "下山用防寒着（山頂冷え込み対応）",
         "category": "ウェア"
       }
-    ]
+    ],
+    "source": {
+      "portalName": "スポエンCYCLE",
+      "portalUrl": "https://cycle.spoen.jp/"
+    }
   },
   {
     "id": "okusimanto-adventure-ride-2026",
@@ -7606,7 +8644,11 @@
         "name": "パンク修理キット",
         "category": "リペア"
       }
-    ]
+    ],
+    "source": {
+      "portalName": "スポエンCYCLE",
+      "portalUrl": "https://cycle.spoen.jp/"
+    }
   },
   {
     "id": "shiwai-marathon-88k-2026",
@@ -7648,7 +8690,15 @@
         "name": "点滅テールランプ（トンネル走行用）",
         "category": "ライト"
       }
-    ]
+    ],
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search/?keyword=%E5%AE%89%E8%8A%B8%E5%A4%AA%E7%94%B0%E3%81%97%E3%82%8F%E3%81%84%E3%83%9E%E3%83%A9%E3%82%BD%E3%83%B3"
+    },
+    "venue": {
+      "name": "酷道激坂88km",
+      "mapQuery": "広島県 酷道激坂88km"
+    }
   },
   {
     "id": "muroto-geopark-trail-2026",
@@ -7690,7 +8740,11 @@
         "name": "ファーストエイドシート",
         "category": "エイド"
       }
-    ]
+    ],
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search/?keyword=%E5%AE%A4%E6%88%B8%E3%83%A6%E3%83%8D%E3%82%B9%E3%82%B3%E4%B8%96%E7%95%8C%E3%82%B8%E3%82%AA%E3%83%91%E3%83%BC%E3%82%AF%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%EF%BC%86%E3%83%A9%E3%83%B3"
+    }
   },
   {
     "id": "tottori-sanddune-run-2026",
@@ -7726,7 +8780,11 @@
         "name": "携帯ボトル＆サングラス",
         "category": "補給"
       }
-    ]
+    ],
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search/?keyword=%E9%B3%A5%E5%8F%96%E7%A0%82%E4%B8%98%E3%82%B5%E3%83%B3%E3%83%89%E3%83%87%E3%83%A5%E3%83%BC%E3%83%B3%E3%82%A8%E3%83%B3%E3%83%87%E3%83%A5%E3%83%A9%E3%83%B3%E3%82%B9%E3%83%A9%E3%83%B3"
+    }
   },
   {
     "id": "hagi-oukan-run-2026",
@@ -7764,7 +8822,11 @@
         "name": "健康保険証＆小銭",
         "category": "エイド"
       }
-    ]
+    ],
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search/?keyword=%E8%90%A9%E5%BE%80%E9%82%84%E6%AD%B4%E5%8F%B2%E8%A1%97%E9%81%93%E6%8E%A2%E8%A8%AA%E3%83%9E%E3%83%A9%E3%83%8B%E3%83%83%E3%82%AF"
+    }
   },
   {
     "id": "okutsu-onsen-trail-2026",
@@ -7802,6 +8864,10 @@
         "name": "レインウェア",
         "category": "ウェア"
       }
-    ]
+    ],
+    "source": {
+      "portalName": "モシコム",
+      "portalUrl": "https://moshicom.com/search/?keyword=%E9%8F%A1%E9%87%8E%E7%94%BA%E5%A5%A5%E6%B4%A5%E6%B8%A9%E6%B3%89%E6%B8%93%E8%B0%B7%E3%83%8F%E3%82%A4%E3%82%AF%EF%BC%86%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB"
+    }
   }
 ]

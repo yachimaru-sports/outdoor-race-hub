@@ -247,11 +247,32 @@ export function buildRakutenSearchAffiliateUrl(gearName: string): string {
 
 /**
  * 大会情報からGoogleマップ検索URLを生成
- * タイトル内のカッコに含まれる具体的な会場名（例: 「（香川・道の駅ことなみ）」→「道の駅ことなみ」）や
- * 大会名・都道府県を元にピンポイントな集合場所URLを返す
+ * 1. event.venue.mapQuery または event.venue.address がある場合はそれを最優先（山奥でも100%狂わない）
+ * 2. 次にタイトル内のカッコに含まれる具体的な会場名（例: 「（香川・道の駅ことなみ）」→「道の駅ことなみ」）
+ * 3. 都道府県＋大会名＋会場
  */
-export function getGoogleMapsUrl(event: { title: string; prefecture: string; subCategory?: string }): string {
-  // タイトルからカッコ内の場所を抽出
+export function getGoogleMapsUrl(event: {
+  title: string;
+  prefecture: string;
+  subCategory?: string;
+  venue?: { name: string; address?: string; mapQuery?: string };
+}): string {
+  // 1. 正式な集合場所・会場データが保存されている場合は最優先
+  if (event.venue) {
+    if (event.venue.mapQuery) {
+      return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(event.venue.mapQuery.trim())}`;
+    }
+    if (event.venue.address) {
+      const q = `${event.venue.address} ${event.venue.name || ''}`.trim();
+      return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`;
+    }
+    if (event.venue.name) {
+      const q = `${event.prefecture} ${event.venue.name}`.trim();
+      return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`;
+    }
+  }
+
+  // 2. タイトルからカッコ内の場所を抽出
   const match = event.title.match(/[(（]([^)）]+)[)）]/);
   let place = '';
   if (match && match[1]) {

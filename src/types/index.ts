@@ -18,6 +18,17 @@ export interface EventReview {
   count: number;
 }
 
+export interface EventVenue {
+  name: string;        // 正式な集合場所・受付会場・スタート地点（例: "道の駅ことなみ", "iti SETOUCHI"）
+  address?: string;     // 集合場所の住所
+  mapQuery?: string;    // Googleマップ用ピンポイント確定クエリ
+}
+
+export interface EventSource {
+  portalName: 'RUNNET' | 'モシコム' | 'スポエンCYCLE' | 'スポーツエントリー' | '公式サイト' | '大会事務局' | string;
+  portalUrl?: string;   // 大会情報を入手・検証した元サイトのURL
+}
+
 export interface RaceEvent {
   id: string;
   category: EventCategory;
@@ -36,6 +47,8 @@ export interface RaceEvent {
   links: EventLinks;
   review?: EventReview | null;
   mandatory_gear: MandatoryGear[];
+  venue?: EventVenue;   // 集合場所・受付場所データ（Googleマップ高精度連携用）
+  source?: EventSource; // 大会情報の入手元ポータルデータ
 }
 
 export interface DealItem {

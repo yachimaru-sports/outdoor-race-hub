@@ -321,7 +321,11 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
                           target="_blank"
                           rel="noopener noreferrer"
                           className="inline-flex items-center gap-1 text-[11px] font-black text-teal-800 dark:text-teal-300 bg-teal-50 dark:bg-teal-950/60 hover:bg-teal-100 dark:hover:bg-teal-900/60 px-2 py-0.5 rounded-md border border-teal-300 dark:border-teal-700 shrink-0 transition-all hover:scale-105 shadow-2xs group/map cursor-pointer"
-                          title={`クリックでGoogleマップを開き、「${event.prefecture}」の大会会場・集合場所を表示します`}
+                          title={
+                            event.venue?.name
+                              ? `Googleマップで集合場所「${event.venue.name}」を開きます`
+                              : `Googleマップで「${event.prefecture}」の大会会場を開きます`
+                          }
                         >
                           <MapPin className="w-3 h-3 text-teal-600 dark:text-teal-400 group-hover/map:text-red-500 transition-colors shrink-0" />
                           <span>{event.prefecture}</span>

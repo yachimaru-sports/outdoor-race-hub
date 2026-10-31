@@ -203,7 +203,11 @@ export const EventCardView: React.FC<EventCardViewProps> = ({
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 font-bold text-slate-800 dark:text-slate-200 hover:text-teal-700 dark:hover:text-teal-300 transition-colors group/map"
-                  title={`クリックでGoogleマップを開き、「${event.prefecture}」の大会会場・集合場所を表示します`}
+                  title={
+                    event.venue?.name
+                      ? `Googleマップで集合場所「${event.venue.name}」を開きます`
+                      : `Googleマップで「${event.prefecture}」の大会会場を開きます`
+                  }
                   onClick={(e) => e.stopPropagation()}
                 >
                   <MapPin className="w-4 h-4 text-teal-700 dark:text-teal-400 group-hover/map:text-red-500 transition-colors shrink-0" />
