@@ -103,7 +103,7 @@
     "distance_km": 125,
     "elevation_m": 1600,
     "entry_fee": "10,000円",
-    "entry_status": "open",
+    "entry_status": "closing_soon",
     "entry_deadline": "2026-11-20",
     "links": {
       "official": "https://www.sportsentry.ne.jp/cycle/10/2",
@@ -311,7 +311,7 @@
     "distance_km": 60,
     "elevation_m": 350,
     "entry_fee": "6,000円",
-    "entry_status": "open",
+    "entry_status": "closing_soon",
     "entry_deadline": "2026-11-15",
     "links": {
       "official": "https://cycle.spoen.jp/",
