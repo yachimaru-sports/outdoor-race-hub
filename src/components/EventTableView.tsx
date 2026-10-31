@@ -337,7 +337,7 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
                       </div>
                     </td>
 
-                    {/* 5. 主な必携品ボタン（★赤色でしっかり目立たせる＆「主な○点」表記） */}
+                    {/* 5. 必携品ボタン（★赤色でしっかり目立たせる＆シンプルに「○点」表記） */}
                     <td className="py-2.5 px-2 text-center align-middle whitespace-nowrap">
                       {totalGearCount > 0 ? (
                         <button
@@ -353,7 +353,7 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
                           title="クリックで主な必携品リストと楽天購入リンクを開閉"
                         >
                           <Backpack className="w-3.5 h-3.5 shrink-0" />
-                          <span>主な{totalGearCount}点</span>
+                          <span>{totalGearCount}点</span>
                           {isGearExpanded ? (
                             <ChevronUp className="w-3 h-3" />
                           ) : (

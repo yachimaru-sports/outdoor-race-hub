@@ -1,11 +1,10 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import eventsData from './data/events.json';
 import dealsData from './data/deals.json';
-import { RaceEvent, DealItem, FilterState, Preset, ViewMode } from './types';
-import { INITIAL_FILTERS, DEFAULT_PRESETS } from './utils/presets';
+import { RaceEvent, DealItem, FilterState, ViewMode } from './types';
+import { INITIAL_FILTERS } from './utils/presets';
 import { DealsTicker } from './components/DealsTicker';
 import { SportCategoryNav } from './components/SportCategoryNav';
-import { PresetBar } from './components/PresetBar';
 import { ToretoreBanner } from './components/ToretoreBanner';
 import { FilterSection } from './components/FilterSection';
 import { EventTableView } from './components/EventTableView';
@@ -117,23 +116,6 @@ export const App: React.FC = () => {
     } catch {}
   };
 
-  // プリセット管理
-  const [presets, setPresets] = useState<Preset[]>(() => {
-    try {
-      const saved = localStorage.getItem('race_hub_presets_v3');
-      if (saved) {
-        const parsed: Preset[] = JSON.parse(saved);
-        const userCustom = parsed.filter((p) => !p.isDefault);
-        return [...DEFAULT_PRESETS, ...userCustom];
-      }
-      return DEFAULT_PRESETS;
-    } catch {
-      return DEFAULT_PRESETS;
-    }
-  });
-
-  const [activePresetId, setActivePresetId] = useState<string | null>(null);
-
   // 大型スポーツ種目ナビバーからの選択ハンドラ
   const handleSelectSportNav = (
     category: string,
@@ -146,7 +128,6 @@ export const App: React.FC = () => {
       featureTag,
       onlyFavorites,
     }));
-    setActivePresetId(null);
   };
 
   // アドベンチャーゲーム絞り込みショートカット（ピックアップカード1）
@@ -156,7 +137,6 @@ export const App: React.FC = () => {
       category: 'adventure',
       featureTag: 'toretore',
     });
-    setActivePresetId('preset-toretore-adventure');
   };
 
   // ピックアップカード2・3からの絞り込みショートカット
@@ -167,56 +147,16 @@ export const App: React.FC = () => {
       featureTag,
       region,
     });
-    setActivePresetId(null);
   };
 
-  // プリセット選択
-  const handleSelectPreset = (preset: Preset) => {
-    setFilters({
-      ...INITIAL_FILTERS,
-      ...preset.filters,
-    });
-    setActivePresetId(preset.id);
-  };
-
-  // フィルター手動変更時、プリセット解除
+  // フィルター手動変更
   const handleFilterChange = (newFilters: FilterState) => {
     setFilters(newFilters);
-    setActivePresetId(null);
-  };
-
-  // プリセット新規保存
-  const handleSavePreset = (name: string) => {
-    const newPreset: Preset = {
-      id: `custom-preset-${Date.now()}`,
-      name: `📌 ${name}`,
-      isDefault: false,
-      filters: { ...filters },
-    };
-    const updated = [...presets, newPreset];
-    setPresets(updated);
-    setActivePresetId(newPreset.id);
-    try {
-      localStorage.setItem('race_hub_presets_v3', JSON.stringify(updated));
-    } catch {}
-  };
-
-  // プリセット削除
-  const handleDeletePreset = (id: string) => {
-    const updated = presets.filter((p) => p.id !== id);
-    setPresets(updated);
-    if (activePresetId === id) {
-      setActivePresetId(null);
-    }
-    try {
-      localStorage.setItem('race_hub_presets_v3', JSON.stringify(updated));
-    } catch {}
   };
 
   // フィルターリセット
   const handleResetFilters = () => {
     setFilters(INITIAL_FILTERS);
-    setActivePresetId(null);
   };
 
   // 統計値
@@ -373,48 +313,37 @@ export const App: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-slate-100 dark:bg-[#0b0f19] text-slate-900 dark:text-slate-100 transition-colors duration-150">
-      {/* 1. サイトメインヘッダー：楽天特価セールギア ＆ ブランドロゴ ＆ テーマ切り替え */}
-      <div id="deals-carousel">
-        <DealsTicker
-          deals={deals}
-          totalEvents={totalEvents}
-          openCount={openCount}
-          theme={theme}
-          onToggleTheme={toggleTheme}
-        />
-      </div>
+      {/* 1. 常時固定ヘッダー：楽天特価セールギア ＆ アップデート情報バー */}
+      <header className="sticky top-0 z-50 shadow-md">
+        <div id="deals-carousel">
+          <DealsTicker
+            deals={deals}
+            totalEvents={totalEvents}
+            openCount={openCount}
+            theme={theme}
+            onToggleTheme={toggleTheme}
+          />
+        </div>
+        <UpdateTicker />
+      </header>
 
-      {/* 2. アップデート情報スライドバー（クリックで該当機能・箇所へスムーズジャンプ） */}
-      <UpdateTicker />
-
-      {/* 3. e-moshicom風の大型ビジュアル・スポーツ種目ナビゲーションバー */}
-      <SportCategoryNav
-        events={events}
-        filters={filters}
-        favoriteIds={favoriteIds}
-        onSelectNav={handleSelectSportNav}
-      />
-
-      {/* 4. マイプリセットバー */}
-      <PresetBar
-        presets={presets}
-        activePresetId={activePresetId}
-        onSelectPreset={handleSelectPreset}
-        onSavePreset={handleSavePreset}
-        onDeletePreset={handleDeletePreset}
-        onResetFilters={handleResetFilters}
-        currentFilters={filters}
-      />
-
-      {/* メインコンテンツ（ゆったりとした余白構造） */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 py-7 sm:py-9 space-y-7 sm:space-y-8">
-        {/* 5. 3連ビジュアルピックアップカード（とれとれバイク＆AR関西 / 読図・ロゲイニング / 中国地方・UTMB） */}
+      {/* メインコンテンツ（ご要望順：注目の競技カテゴリー → すべての大会 → 条件にマッチする → 大会一覧） */}
+      <main className="flex-1 max-w-7xl w-full mx-auto px-4 py-6 sm:py-8 space-y-6 sm:space-y-8">
+        {/* 2. 注目の競技カテゴリー・主要大会クイック抽出 */}
         <ToretoreBanner
           onFilterAdventure={handleFilterAdventure}
           onFilterFeature={handleFilterFeature}
         />
 
-        {/* 6. 多次元検索パネル（受付中ワンクリック・時期選択・競技エレメントタグ・距離スライダー） */}
+        {/* 3. すべての大会・大型ビジュアル種別ナビゲーションバー */}
+        <SportCategoryNav
+          events={events}
+          filters={filters}
+          favoriteIds={favoriteIds}
+          onSelectNav={handleSelectSportNav}
+        />
+
+        {/* 4. 条件にマッチする（多次元検索パネル） */}
         <div id="filter-section">
           <FilterSection
             events={events}
@@ -427,7 +356,7 @@ export const App: React.FC = () => {
           />
         </div>
 
-        {/* 7. ハイブリッド表示（テーブルビュー vs カードビュー） */}
+        {/* 5. 大会情報一覧（テーブルビュー vs カードビュー） */}
         <div id="events-section">
           {viewMode === 'table' ? (
             <EventTableView
