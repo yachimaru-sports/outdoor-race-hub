@@ -11,8 +11,9 @@ interface DealsTickerProps {
 export const DealsTicker: React.FC<DealsTickerProps> = ({ deals }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [isPaused, setIsPaused] = useState(false);
+  const animFrameId = useRef<number | null>(null);
 
-  // 途切れず無限にぐるぐる繋がるように3セット複製
+  // 途切れず無限にぐるぐる繋がるように3セット配置
   const tripleDeals = [...deals, ...deals, ...deals];
 
   // 初期スクロール位置を中央セットの開始位置に設定
@@ -20,67 +21,84 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({ deals }) => {
     const el = scrollRef.current;
     if (!el || deals.length === 0) return;
 
-    // 1セット分の推定幅が計算できるまでわずかに待つ
     const timer = setTimeout(() => {
-      const singleWidth = el.scrollWidth / 3;
-      if (el.scrollLeft === 0) {
+      if (el) {
+        const singleWidth = el.scrollWidth / 3;
         el.scrollLeft = singleWidth;
       }
-    }, 100);
+    }, 50);
 
     return () => clearTimeout(timer);
   }, [deals.length]);
 
-  // 無限ループ境界判定（端に近づいたら中央セットに瞬間移動して途切れをゼロに）
-  const handleScrollEvent = () => {
-    const el = scrollRef.current;
-    if (!el || deals.length === 0) return;
-
-    const singleWidth = el.scrollWidth / 3;
-    if (singleWidth <= 0) return;
-
-    if (el.scrollLeft <= 10) {
-      // 左端付近に来たら中央ブロックへシームレスにジャンプ
-      el.scrollLeft += singleWidth;
-    } else if (el.scrollLeft >= singleWidth * 2 - 10) {
-      // 右端付近に来たら中央ブロックへシームレスにジャンプ
-      el.scrollLeft -= singleWidth;
-    }
-  };
-
-  // 自動ゆっくりスクロール（マウスホバーで一時停止）
+  // requestAnimationFrame による超高精度・引っかかりゼロの滑らか自動スクロール
   useEffect(() => {
     if (isPaused || deals.length === 0) return;
 
-    const interval = setInterval(() => {
+    let lastTime = performance.now();
+
+    const step = (now: number) => {
       const el = scrollRef.current;
       if (!el) return;
 
-      el.scrollLeft += 1;
-      handleScrollEvent();
-    }, 35);
+      const elapsed = now - lastTime;
+      // 60fps想定で1秒間に約45px移動（引っかかりのない等速移動）
+      if (elapsed > 16) {
+        lastTime = now;
+        const singleWidth = el.scrollWidth / 3;
 
-    return () => clearInterval(interval);
+        if (singleWidth > 0) {
+          el.scrollLeft += 0.8;
+
+          // 右端（2セット分通過）に達したら、中央セットへ瞬間ワープ（視覚的な途切れゼロ）
+          if (el.scrollLeft >= singleWidth * 2) {
+            el.scrollLeft -= singleWidth;
+          }
+        }
+      }
+
+      animFrameId.current = requestAnimationFrame(step);
+    };
+
+    animFrameId.current = requestAnimationFrame(step);
+
+    return () => {
+      if (animFrameId.current) {
+        cancelAnimationFrame(animFrameId.current);
+      }
+    };
   }, [isPaused, deals.length]);
 
+  // 左右の手動スクロールボタン（クリック時のみスムーズ移動）
   const handleManualScroll = (direction: 'left' | 'right') => {
     const el = scrollRef.current;
     if (!el) return;
 
-    const offset = direction === 'left' ? -330 : 330;
+    const singleWidth = el.scrollWidth / 3;
+    const offset = direction === 'left' ? -340 : 340;
+
+    // 端のワープ処理
+    if (direction === 'right' && el.scrollLeft >= singleWidth * 2 - 100) {
+      el.scrollLeft -= singleWidth;
+    } else if (direction === 'left' && el.scrollLeft <= singleWidth + 100) {
+      el.scrollLeft += singleWidth;
+    }
+
     el.scrollBy({ left: offset, behavior: 'smooth' });
   };
 
   return (
     <div
-      className="bg-slate-900 border-b-2 border-amber-500/80 text-slate-100 sticky top-0 z-40 shadow-md transition-colors"
+      className="bg-slate-900 border-b-2 border-amber-500/80 text-slate-100 sticky top-0 z-40 shadow-md select-none"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
+      onTouchStart={() => setIsPaused(true)}
+      onTouchEnd={() => setIsPaused(false)}
     >
       <div className="max-w-7xl mx-auto px-3 sm:px-4 py-2">
         <div className="flex items-center gap-2 sm:gap-2.5">
           {/* 左端：超コンパクト縦型ラベル */}
-          <div className="flex flex-col items-center justify-center px-2.5 py-1.5 bg-gradient-to-b from-red-600 to-amber-600 text-white rounded-xl shrink-0 shadow-sm border border-amber-300/40 leading-none select-none">
+          <div className="flex flex-col items-center justify-center px-2.5 py-1.5 bg-gradient-to-b from-red-600 to-amber-600 text-white rounded-xl shrink-0 shadow-sm border border-amber-300/40 leading-none">
             <div className="flex items-center gap-0.5 text-[11px] font-black tracking-tighter whitespace-nowrap">
               <Zap className="w-3.5 h-3.5 fill-yellow-300 text-yellow-300 shrink-0" />
               <span>楽天特価</span>
@@ -90,12 +108,11 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({ deals }) => {
             </span>
           </div>
 
-          {/* 無限カルーセルコンテナ（右端に行くと最初のアイテムにシームレスにつながる） */}
+          {/* 無限カルーセルコンテナ（※引っかかりを防ぐためscroll-smoothは外し、手動時のみscrollByで滑らか制御） */}
           <div className="relative flex-1 min-w-0 overflow-hidden">
             <div
               ref={scrollRef}
-              onScroll={handleScrollEvent}
-              className="flex items-center gap-2.5 overflow-x-auto no-scrollbar scroll-smooth py-0.5"
+              className="flex items-center gap-2.5 overflow-x-auto no-scrollbar py-0.5"
             >
               {tripleDeals.map((deal, idx) => {
                 const savedYen = deal.original_price - deal.price;

@@ -6,7 +6,7 @@ export const INITIAL_FILTERS: FilterState = {
   prefecture: 'all',
   minDistance: 0,
   maxDistance: 250,
-  entryStatus: 'all',
+  entryStatus: 'open_or_closing', // デフォルトで「申込可能（エントリー受付中＋締切間近）」を表示
   searchKeyword: '',
   sortBy: 'date-asc',
   monthFilter: 'all',
