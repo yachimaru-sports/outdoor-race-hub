@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { RaceEvent, DealItem } from '../types';
+import { RaceEvent, DealItem, SortOption } from '../types';
 import {
   CATEGORY_LABELS,
   ELEMENT_BADGES,
@@ -25,12 +25,15 @@ import {
   Square,
   Sparkles,
   X,
+  ArrowUpDown,
 } from 'lucide-react';
 
 interface EventTableViewProps {
   events: RaceEvent[];
   deals?: DealItem[];
   favoriteIds: string[];
+  sortBy?: SortOption;
+  onSortChange?: (newSort: SortOption) => void;
   onToggleFavorite: (id: string) => void;
   onSelectEvent?: (event: RaceEvent) => void;
 }
@@ -39,6 +42,8 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
   events,
   deals = [],
   favoriteIds,
+  sortBy,
+  onSortChange,
   onToggleFavorite,
 }) => {
   // 必携品アコーディオン展開中の大会ID
@@ -101,15 +106,44 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
               <th className="py-3 pl-3 pr-1 w-[46px] text-center" title="参戦予定ブックマーク">
                 保存
               </th>
-              {/* 2. 開催日 / 締切 */}
-              <th className="py-3 px-3 w-[145px]">
+              {/* 2. 開催日 / 締切（クリックでソート） */}
+              <th
+                className={`py-3 px-3 w-[145px] transition-colors select-none ${
+                  onSortChange ? 'cursor-pointer hover:bg-slate-200 dark:hover:bg-slate-750' : ''
+                }`}
+                onClick={() => {
+                  if (onSortChange) {
+                    onSortChange(sortBy === 'date-asc' ? 'date-desc' : 'date-asc');
+                  }
+                }}
+                title="クリックで開催日順（昇順/降順）に並び替え"
+              >
                 <div className="flex items-center gap-1 text-teal-800 dark:text-teal-300">
                   <Calendar className="w-3.5 h-3.5" />
                   <span>開催日 / 締切</span>
+                  <ArrowUpDown className={`w-3 h-3 ${sortBy?.startsWith('date') ? 'text-teal-600 font-black' : 'text-slate-400'}`} />
                 </div>
               </th>
-              {/* 3. 種別 */}
-              <th className="py-3 px-2.5 w-[130px]">種別</th>
+              {/* 3. 種別（★クリックで種別ソート） */}
+              <th
+                className={`py-3 px-2.5 w-[130px] transition-colors select-none ${
+                  onSortChange ? 'cursor-pointer hover:bg-slate-200 dark:hover:bg-slate-750' : ''
+                }`}
+                onClick={() => {
+                  if (onSortChange) {
+                    onSortChange(sortBy === 'category-asc' ? 'date-asc' : 'category-asc');
+                  }
+                }}
+                title="クリックで種別順（トレイル→マラソン→サイクル→読図）に並び替え"
+              >
+                <div className="flex items-center gap-1 text-slate-800 dark:text-slate-200">
+                  <span>種別</span>
+                  <ArrowUpDown className={`w-3 h-3 ${sortBy === 'category-asc' ? 'text-teal-600 dark:text-teal-400 font-black' : 'text-slate-400'}`} />
+                  {sortBy === 'category-asc' && (
+                    <span className="text-[10px] bg-teal-600 text-white px-1 rounded font-bold">順</span>
+                  )}
+                </div>
+              </th>
               {/* 4. 大会名 / エリア / 競技特徴 */}
               <th className="py-3 px-3">大会名 / エリア / 競技特徴</th>
               {/* 5. 主な必携品（★赤色で目立たせる） */}
@@ -119,8 +153,23 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
                   <span>主な必携品</span>
                 </div>
               </th>
-              {/* 6. 距離 / 標高 */}
-              <th className="py-3 px-2.5 w-[120px] text-right">距離 / 標高</th>
+              {/* 6. 距離 / 標高（クリックでソート） */}
+              <th
+                className={`py-3 px-2.5 w-[120px] text-right transition-colors select-none ${
+                  onSortChange ? 'cursor-pointer hover:bg-slate-200 dark:hover:bg-slate-750' : ''
+                }`}
+                onClick={() => {
+                  if (onSortChange) {
+                    onSortChange(sortBy === 'distance-desc' ? 'distance-asc' : 'distance-desc');
+                  }
+                }}
+                title="クリックで距離順（長い順/短い順）に並び替え"
+              >
+                <div className="flex items-center justify-end gap-1">
+                  <span>距離 / 標高</span>
+                  <ArrowUpDown className={`w-3 h-3 ${sortBy?.startsWith('distance') ? 'text-teal-600 font-black' : 'text-slate-400'}`} />
+                </div>
+              </th>
               {/* 7. 参加費 */}
               <th className="py-3 px-2.5 w-[95px] text-right">
                 <div className="flex items-center justify-end gap-1 text-amber-800 dark:text-amber-300">

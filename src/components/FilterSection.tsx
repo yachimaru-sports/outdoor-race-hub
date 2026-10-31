@@ -140,6 +140,7 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
   const sortOptions: { id: SortOption; label: string }[] = [
     { id: 'date-asc', label: '開催日が近い順' },
     { id: 'date-desc', label: '開催日が遠い順' },
+    { id: 'category-asc', label: '種別順（トレイル・マラソン・サイクル・AR）' },
     { id: 'distance-asc', label: '距離が短い順' },
     { id: 'distance-desc', label: '距離が長い順（100マイル・ロング）' },
     { id: 'elevation-desc', label: '獲得標高が高い順（ハード）' },

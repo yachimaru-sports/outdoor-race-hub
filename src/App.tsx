@@ -344,6 +344,17 @@ export const App: React.FC = () => {
       })
       .sort((a, b) => {
         switch (filters.sortBy) {
+          case 'category-asc': {
+            const order: Record<string, number> = {
+              trail: 1,
+              marathon: 2,
+              cycling: 3,
+              adventure: 4,
+            };
+            const diff = (order[a.category] || 99) - (order[b.category] || 99);
+            if (diff !== 0) return diff;
+            return new Date(a.date).getTime() - new Date(b.date).getTime();
+          }
           case 'date-asc':
             return new Date(a.date).getTime() - new Date(b.date).getTime();
           case 'date-desc':
@@ -423,6 +434,8 @@ export const App: React.FC = () => {
               events={filteredEvents}
               deals={deals}
               favoriteIds={favoriteIds}
+              sortBy={filters.sortBy}
+              onSortChange={(newSort) => setFilters((prev) => ({ ...prev, sortBy: newSort }))}
               onToggleFavorite={handleToggleFavorite}
             />
           ) : (

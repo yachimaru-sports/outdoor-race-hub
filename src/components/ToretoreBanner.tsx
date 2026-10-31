@@ -17,7 +17,7 @@ export const ToretoreBanner: React.FC<ToretoreBannerProps> = ({
         <div className="flex items-center gap-2.5">
           <span className="w-2 h-6 rounded-full bg-teal-700 dark:bg-teal-400" />
           <h2 className="text-lg sm:text-xl font-black tracking-tight text-slate-950 dark:text-white">
-            PICK UP 特集・注目の競技カテゴリー
+            注目の競技カテゴリー・主要大会クイック抽出
           </h2>
           <span className="text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-300 hidden sm:inline">
             — アドベンチャー・国内100マイル・中国＆四国エリア完全網羅
@@ -137,7 +137,7 @@ export const ToretoreBanner: React.FC<ToretoreBannerProps> = ({
           </div>
         </div>
 
-        {/* カード2: 国内100マイル（160km）レース完全網羅特集 */}
+        {/* カード2: 国内100マイル（160km）レース完全網羅 */}
         <div
           onClick={() => onFilterFeature && onFilterFeature('all', '100mile')}
           className="group relative rounded-2xl overflow-hidden border-2 border-slate-800 shadow-sm hover:shadow-md transition-all cursor-pointer bg-gradient-to-br from-rose-950 via-slate-900 to-amber-950 text-white p-5 sm:p-6 flex flex-col justify-between min-h-[205px]"
@@ -148,7 +148,7 @@ export const ToretoreBanner: React.FC<ToretoreBannerProps> = ({
             <div className="flex items-center justify-between gap-2 mb-2.5">
               <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-black bg-rose-400 text-slate-950">
                 <Crown className="w-3.5 h-3.5 fill-current" />
-                国内100マイルレース特集
+                国内100マイルレース一覧
               </span>
               <span className="text-xs font-mono text-rose-300 font-extrabold">160km級 網羅</span>
             </div>
@@ -171,7 +171,7 @@ export const ToretoreBanner: React.FC<ToretoreBannerProps> = ({
           </div>
         </div>
 
-        {/* カード3: 中国地方＆四国地方 徹底網羅特集 */}
+        {/* カード3: 中国地方＆四国地方 徹底網羅 */}
         <div
           onClick={() => onFilterFeature && onFilterFeature('all', 'all', '中国')}
           className="group relative rounded-2xl overflow-hidden border-2 border-slate-800 shadow-sm hover:shadow-md transition-all cursor-pointer bg-gradient-to-br from-teal-950 via-slate-900 to-sky-950 text-white p-5 sm:p-6 flex flex-col justify-between min-h-[205px]"
@@ -181,7 +181,7 @@ export const ToretoreBanner: React.FC<ToretoreBannerProps> = ({
           <div>
             <div className="flex items-center justify-between gap-2 mb-2.5">
               <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-black bg-emerald-400 text-slate-950">
-                ⛰️ 中国5県 ＆ 四国4県 大特集
+                ⛰️ 中国5県 ＆ 四国4県 地域別一覧
               </span>
               <span className="text-xs font-mono text-emerald-300 font-extrabold">地元密着</span>
             </div>

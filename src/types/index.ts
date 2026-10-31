@@ -55,6 +55,7 @@ export interface DealItem {
 export type SortOption =
   | 'date-asc'
   | 'date-desc'
+  | 'category-asc'
   | 'distance-asc'
   | 'distance-desc'
   | 'elevation-desc';
