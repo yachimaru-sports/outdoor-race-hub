@@ -63,6 +63,7 @@ export type SortOption =
 export interface FilterState {
   category: string;
   selectedCategories?: string[]; // 複数選択・除外対応の競技ジャンル（親）
+  selectedElements?: string[];   // 複数選択対応の競技エレメント（子・特徴条件）
   region: string;
   prefecture: string;
   minDistance: number;
@@ -71,7 +72,7 @@ export interface FilterState {
   searchKeyword: string;
   sortBy: SortOption;
   monthFilter?: string;    // 'all' | 'spring' | 'summer' | 'autumn' | 'winter' | '1'..'12'
-  featureTag?: string;     // 'all' | 'map' | 'mtb' | 'paddle' | 'rogaining' | 'night' | 'toretore'
+  featureTag?: string;     // 後方互換用
   onlyFavorites?: boolean; // お気に入り・参戦予定のみ
 }
 

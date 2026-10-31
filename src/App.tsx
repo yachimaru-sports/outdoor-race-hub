@@ -233,38 +233,46 @@ export const App: React.FC = () => {
           }
         }
 
-        // 競技エレメント・特徴タグフィルター
-        const featureTag = filters.featureTag || 'all';
-        if (featureTag !== 'all') {
-          if (featureTag === '100mile') {
-            if (!event.elements?.includes('100マイル') && event.distance_km < 155) {
-              return false;
+        // 競技エレメント・特徴チェックボックス（複数選択＆AND絞り込み対応）
+        if (filters.selectedElements && filters.selectedElements.length > 0) {
+          for (const el of filters.selectedElements) {
+            if (el === '100mile') {
+              if (!event.elements?.includes('100マイル') && event.distance_km < 155) return false;
+            } else if (el === '100km') {
+              if (!event.elements?.includes('100km+') && (event.distance_km < 95 || event.distance_km >= 155)) return false;
+            } else if (el === 'map') {
+              if (!event.elements?.includes('読図')) return false;
+            } else if (el === 'mtb') {
+              if (!event.elements?.includes('MTB')) return false;
+            } else if (el === 'paddle') {
+              if (!event.elements?.includes('パドル')) return false;
+            } else if (el === 'night') {
+              if (!event.elements?.includes('夜間')) return false;
+            } else if (el === 'toretore') {
+              if (!event.id.startsWith('toretore-') && !event.id.includes('rogaining') && event.category !== 'adventure') return false;
             }
-          } else if (featureTag === '100km') {
-            if (
-              !event.elements?.includes('100km+') &&
-              (event.distance_km < 95 || event.distance_km >= 155)
-            ) {
-              return false;
+          }
+        } else {
+          // 単一タグの後方互換
+          const featureTag = filters.featureTag || 'all';
+          if (featureTag !== 'all') {
+            if (featureTag === '100mile') {
+              if (!event.elements?.includes('100マイル') && event.distance_km < 155) return false;
+            } else if (featureTag === '100km') {
+              if (!event.elements?.includes('100km+') && (event.distance_km < 95 || event.distance_km >= 155)) return false;
+            } else if (featureTag === 'toretore') {
+              if (!event.id.startsWith('toretore-') && !event.id.includes('rogaining') && event.category !== 'adventure') return false;
+            } else if (featureTag === 'map') {
+              if (!event.elements?.includes('読図')) return false;
+            } else if (featureTag === 'mtb') {
+              if (!event.elements?.includes('MTB')) return false;
+            } else if (featureTag === 'paddle') {
+              if (!event.elements?.includes('パドル')) return false;
+            } else if (featureTag === 'rogaining') {
+              if (!event.elements?.includes('ロゲイニング')) return false;
+            } else if (featureTag === 'night') {
+              if (!event.elements?.includes('夜間')) return false;
             }
-          } else if (featureTag === 'toretore') {
-            if (
-              !event.id.startsWith('toretore-') &&
-              !event.id.includes('rogaining') &&
-              event.category !== 'adventure'
-            ) {
-              return false;
-            }
-          } else if (featureTag === 'map') {
-            if (!event.elements?.includes('読図')) return false;
-          } else if (featureTag === 'mtb') {
-            if (!event.elements?.includes('MTB')) return false;
-          } else if (featureTag === 'paddle') {
-            if (!event.elements?.includes('パドル')) return false;
-          } else if (featureTag === 'rogaining') {
-            if (!event.elements?.includes('ロゲイニング')) return false;
-          } else if (featureTag === 'night') {
-            if (!event.elements?.includes('夜間')) return false;
           }
         }
 
