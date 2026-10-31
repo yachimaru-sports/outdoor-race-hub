@@ -201,7 +201,7 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
                       </div>
                     </td>
 
-                    {/* 3. スポーツ種別 & サブカテゴリ（見切れ防止＆ホバーで全文ポップアップ） */}
+                    {/* 3. スポーツ種別 & サブカテゴリ */}
                     <td className="py-2.5 px-2.5 align-middle">
                       <span
                         className={`inline-block px-2 py-0.5 rounded-full text-[11px] font-extrabold border ${cat.badgeBg}`}
@@ -209,66 +209,42 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
                         {cat.shortLabel}
                       </span>
                       {event.subCategory && (
-                        <div className="relative group/subcat mt-0.5">
-                          <div
-                            className="text-[11px] text-slate-700 dark:text-slate-300 font-bold truncate max-w-[130px] cursor-help"
-                            title={event.subCategory}
-                          >
-                            {event.subCategory}
-                          </div>
-                          {/* ホバー時にサブカテゴリ全文がポップアップ表示 */}
-                          <div className="absolute left-0 bottom-full mb-1 hidden group-hover/subcat:block z-50 bg-slate-950/95 text-white text-xs font-bold px-2.5 py-1.5 rounded-lg shadow-xl border border-teal-500/40 pointer-events-none whitespace-normal leading-tight max-w-[200px] backdrop-blur-xs">
-                            <div className="text-[10px] text-teal-300 font-bold mb-0.5">種別詳細:</div>
-                            {event.subCategory}
-                          </div>
+                        <div
+                          className="text-[11px] text-slate-700 dark:text-slate-300 font-bold truncate max-w-[130px] mt-0.5"
+                          title={event.subCategory}
+                        >
+                          {event.subCategory}
                         </div>
                       )}
                     </td>
 
-                    {/* 4. 大会名 / エリア / 競技特徴（クリック無効化・テキスト選択可・ホバー全文表示・バッジ見切れ解消） */}
+                    {/* 4. 大会名 / エリア / 競技特徴（2行で常時全文表示・短縮バッジで視認性向上） */}
                     <td className="py-2.5 px-3 align-middle">
-                      {/* 大会タイトル（クリックしても画面が白くならず、安全に閲覧） */}
-                      <div className="relative group/title">
-                        <div
-                          className="font-black text-slate-950 dark:text-white text-sm leading-snug line-clamp-2 select-text"
-                          title={event.title}
-                        >
-                          {event.title}
-                        </div>
-
-                        {/* ホバー時に大会名全文がポップアップ表示 */}
-                        <div className="absolute left-0 bottom-full mb-1.5 hidden group-hover/title:block z-50 bg-slate-950/95 text-white text-xs font-extrabold px-3 py-2 rounded-xl shadow-2xl border border-teal-500/40 max-w-md pointer-events-none whitespace-normal leading-relaxed backdrop-blur-xs">
-                          <div className="text-[10px] text-teal-300 font-bold mb-0.5">大会名（全文）:</div>
-                          {event.title}
-                        </div>
+                      {/* 大会タイトル（不要なポップアップを廃止し、2行で綺麗に常時全文表示） */}
+                      <div className="font-black text-slate-950 dark:text-white text-sm leading-snug select-text">
+                        {event.title}
                       </div>
 
-                      {/* 開催都道府県 ＋ 特徴バッジ ＋ 必携品ボタン（折り返しで隠れず全表示） */}
+                      {/* 開催都道府県 ＋ 特徴短縮バッジ ＋ 必携品ボタン */}
                       <div className="flex flex-wrap items-center gap-1.5 mt-1.5 text-xs">
                         <span className="inline-flex items-center gap-0.5 text-[11px] font-extrabold text-slate-700 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded border border-slate-300 dark:border-slate-700 shrink-0">
                           <MapPin className="w-3 h-3 text-teal-700 dark:text-teal-400" />
                           {event.prefecture}
                         </span>
 
-                        {/* すべての競技エレメントバッジ（隠さずに表示 ＆ ホバーで詳細説明） */}
+                        {/* 短縮された競技特徴バッジ（読図、MTB、山岳、ロゲ、1日等で視認性向上） */}
                         {(event.elements || []).map((el) => {
                           const badge = ELEMENT_BADGES[el];
                           if (!badge) return null;
                           return (
-                            <div key={el} className="relative group/elem shrink-0">
-                              <span
-                                className={`inline-flex items-center gap-0.5 text-[11px] font-bold px-1.5 py-0.5 rounded border cursor-help ${badge.style}`}
-                                title={badge.desc || badge.label}
-                              >
-                                <span>{badge.icon}</span>
-                                <span>{badge.label}</span>
-                              </span>
-                              {badge.desc && (
-                                <div className="absolute left-0 bottom-full mb-1 hidden group-hover/elem:block z-50 bg-slate-950/95 text-white text-[11px] font-bold px-2.5 py-1 rounded-lg shadow-xl border border-teal-500/40 pointer-events-none whitespace-nowrap backdrop-blur-xs">
-                                  {badge.desc}
-                                </div>
-                              )}
-                            </div>
+                            <span
+                              key={el}
+                              className={`inline-flex items-center gap-0.5 text-[11px] font-bold px-1.5 py-0.5 rounded border shrink-0 ${badge.style}`}
+                              title={badge.desc || badge.label}
+                            >
+                              <span>{badge.icon}</span>
+                              <span>{badge.label}</span>
+                            </span>
                           );
                         })}
 
