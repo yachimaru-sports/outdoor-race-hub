@@ -245,3 +245,41 @@ export function buildRakutenSearchAffiliateUrl(gearName: string): string {
   return `https://hb.afl.rakuten.co.jp/ichiba/${RAKUTEN_AFFILIATE_ID}/?pc=${encodeURIComponent(searchUrl)}&link_type=picttext`;
 }
 
+/**
+ * 大会情報からGoogleマップ検索URLを生成
+ * タイトル内のカッコに含まれる具体的な会場名（例: 「（香川・道の駅ことなみ）」→「道の駅ことなみ」）や
+ * 大会名・都道府県を元にピンポイントな集合場所URLを返す
+ */
+export function getGoogleMapsUrl(event: { title: string; prefecture: string; subCategory?: string }): string {
+  // タイトルからカッコ内の場所を抽出
+  const match = event.title.match(/[(（]([^)）]+)[)）]/);
+  let place = '';
+  if (match && match[1]) {
+    const parts = match[1]
+      .split(/[・,\s]/)
+      .filter((p) => !p.includes('県') && !['香川', '広島', '愛媛', '高知', '徳島', '岡山', '鳥取', '島根', '山口', '兵庫', '大阪', '京都', '奈良', '和歌山', '滋賀'].includes(p));
+    if (parts.length > 0) {
+      place = parts.join(' ');
+    } else {
+      place = match[1];
+    }
+  }
+
+  // 大会名から年号を除去
+  const cleanTitle = event.title
+    .replace(/202[5-9]/g, '')
+    .replace(/[(（][^)）]+[)）]/g, '')
+    .trim();
+
+  let query = '';
+  if (place) {
+    query = `${event.prefecture} ${place}`;
+  } else if (event.subCategory) {
+    query = `${event.prefecture} ${cleanTitle} ${event.subCategory}`;
+  } else {
+    query = `${event.prefecture} ${cleanTitle} 会場 集合場所`;
+  }
+
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query.trim())}`;
+}
+

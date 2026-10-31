@@ -1,6 +1,6 @@
 import React from 'react';
 import { RaceEvent } from '../types';
-import { CATEGORY_LABELS, ELEMENT_BADGES, ENTRY_STATUS_CONFIG, formatDate } from '../utils/helpers';
+import { CATEGORY_LABELS, ELEMENT_BADGES, ENTRY_STATUS_CONFIG, formatDate, getGoogleMapsUrl } from '../utils/helpers';
 import { LinkButton } from './LinkButton';
 import {
   Calendar,
@@ -16,6 +16,7 @@ import {
   CheckCircle2,
   Backpack,
   Coins,
+  ExternalLink,
 } from 'lucide-react';
 
 interface EventCardViewProps {
@@ -195,15 +196,25 @@ export const EventCardView: React.FC<EventCardViewProps> = ({
                   })}
               </div>
 
-              {/* エリア表示 */}
-              <div className="mt-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
-                <MapPin className="w-4 h-4 text-teal-700 dark:text-teal-400 shrink-0" />
-                <span className="font-bold text-slate-800 dark:text-slate-200">
-                  {event.prefecture}{' '}
-                  <span className="text-slate-600 dark:text-slate-400 font-semibold">
+              {/* エリア表示（クリックでGoogleマップの集合場所へ直行） */}
+              <div className="mt-2 text-xs sm:text-sm">
+                <a
+                  href={getGoogleMapsUrl(event)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 font-bold text-slate-800 dark:text-slate-200 hover:text-teal-700 dark:hover:text-teal-300 transition-colors group/map"
+                  title={`クリックでGoogleマップを開き、「${event.prefecture}」の大会会場・集合場所を表示します`}
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <MapPin className="w-4 h-4 text-teal-700 dark:text-teal-400 group-hover/map:text-red-500 transition-colors shrink-0" />
+                  <span className="font-black underline decoration-teal-400/50 underline-offset-2">
+                    {event.prefecture}
+                  </span>
+                  <span className="text-slate-500 dark:text-slate-400 font-semibold text-xs">
                     ({event.region}地方)
                   </span>
-                </span>
+                  <ExternalLink className="w-3 h-3 text-slate-400 group-hover/map:text-teal-600 shrink-0" />
+                </a>
               </div>
 
               {/* スペック（距離・獲得標高・参加費） */}

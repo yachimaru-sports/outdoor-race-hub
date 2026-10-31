@@ -5,6 +5,7 @@ import {
   ELEMENT_BADGES,
   ENTRY_STATUS_CONFIG,
   buildRakutenSearchAffiliateUrl,
+  getGoogleMapsUrl,
   formatPrice,
 } from '../utils/helpers';
 import { LinkButton } from './LinkButton';
@@ -313,12 +314,19 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
                         </div>
                       </div>
 
-                      {/* 開催都道府県 ＋ 特徴短縮バッジのみ（必携バッジは削除してスッキリ） */}
+                      {/* 開催都道府県（クリックでGoogleマップの集合場所へ直行） ＋ 特徴短縮バッジ */}
                       <div className="flex flex-wrap items-center gap-1.5 mt-1.5 text-xs">
-                        <span className="inline-flex items-center gap-0.5 text-[11px] font-extrabold text-slate-700 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded border border-slate-300 dark:border-slate-700 shrink-0">
-                          <MapPin className="w-3 h-3 text-teal-700 dark:text-teal-400" />
-                          {event.prefecture}
-                        </span>
+                        <a
+                          href={getGoogleMapsUrl(event)}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 text-[11px] font-black text-teal-800 dark:text-teal-300 bg-teal-50 dark:bg-teal-950/60 hover:bg-teal-100 dark:hover:bg-teal-900/60 px-2 py-0.5 rounded-md border border-teal-300 dark:border-teal-700 shrink-0 transition-all hover:scale-105 shadow-2xs group/map cursor-pointer"
+                          title={`クリックでGoogleマップを開き、「${event.prefecture}」の大会会場・集合場所を表示します`}
+                        >
+                          <MapPin className="w-3 h-3 text-teal-600 dark:text-teal-400 group-hover/map:text-red-500 transition-colors shrink-0" />
+                          <span>{event.prefecture}</span>
+                          <ExternalLink className="w-2.5 h-2.5 text-teal-500/70 group-hover/map:text-teal-600 shrink-0" />
+                        </a>
 
                         {/* 短縮された競技特徴バッジ（読図、MTB、山岳、ロゲ、1日等） */}
                         {(event.elements || []).map((el) => {
