@@ -212,21 +212,38 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
                       </div>
                     </td>
 
-                    {/* 3. スポーツ種別 & サブカテゴリ */}
+                    {/* 3. スポーツ種別 & サブカテゴリ（ホバー時に吹き出し全文ポップアップ表示） */}
                     <td className="py-2.5 px-2.5 align-middle">
-                      <span
-                        className={`inline-block px-2 py-0.5 rounded-full text-[11px] font-extrabold border ${cat.badgeBg}`}
-                      >
-                        {cat.shortLabel}
-                      </span>
-                      {event.subCategory && (
-                        <div
-                          className="text-[11px] text-slate-700 dark:text-slate-300 font-bold truncate max-w-[125px] mt-0.5"
-                          title={event.subCategory}
+                      <div className="relative group/category">
+                        <span
+                          className={`inline-block px-2 py-0.5 rounded-full text-[11px] font-extrabold border ${cat.badgeBg} cursor-help`}
                         >
-                          {event.subCategory}
+                          {cat.shortLabel}
+                        </span>
+                        {event.subCategory && (
+                          <div
+                            className="text-[11px] text-slate-700 dark:text-slate-300 font-bold truncate max-w-[125px] mt-0.5 cursor-help"
+                          >
+                            {event.subCategory}
+                          </div>
+                        )}
+
+                        {/* マウスを当てると全文と詳細が浮き出る吹き出しポップアップ */}
+                        <div className="absolute left-0 bottom-full mb-1 hidden group-hover/category:block z-50 bg-slate-950/95 text-white text-xs font-bold px-3 py-2 rounded-xl shadow-2xl border border-teal-500/50 min-w-[180px] max-w-[240px] pointer-events-none whitespace-normal leading-relaxed backdrop-blur-xs">
+                          <div className="text-[10px] text-teal-300 font-black mb-0.5">種別・カテゴリー詳細:</div>
+                          <div className="text-white font-extrabold">{cat.label}</div>
+                          {event.subCategory && (
+                            <div className="text-teal-200 font-bold mt-1 text-[11px] border-t border-slate-700/80 pt-1">
+                              サブ種目: {event.subCategory}
+                            </div>
+                          )}
+                          {cat.desc && (
+                            <div className="text-slate-400 text-[10px] mt-0.5 font-medium">
+                              {cat.desc}
+                            </div>
+                          )}
                         </div>
-                      )}
+                      </div>
                     </td>
 
                     {/* 4. 大会名 / エリア / 競技特徴（★ホバーポップアップ復活 ＆ 必携バッジは次列へ移動） */}
