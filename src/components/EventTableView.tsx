@@ -10,12 +10,9 @@ import {
 import {
   Globe,
   FileEdit,
-  MessageSquare,
-  Share2,
   TrendingUp,
   MapPin,
   Bookmark,
-  CheckCircle2,
   Calendar,
   Clock,
   Coins,
@@ -24,7 +21,6 @@ import {
   ChevronUp,
   ShoppingCart,
   ExternalLink,
-  Flame,
   CheckSquare,
   Square,
   Sparkles,
@@ -78,7 +74,7 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
 
   const getGearProgress = (event: RaceEvent) => {
     const eventChecks = checkedGears[event.id] || {};
-    return event.mandatory_gear.filter((g) => eventChecks[g.name]).length;
+    return (event.mandatory_gear || []).filter((g) => eventChecks[g.name]).length;
   };
 
   if (events.length === 0) {
@@ -97,30 +93,44 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
   return (
     <div className="bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm">
       <div className="overflow-x-auto">
-        <table className="w-full text-left border-collapse table-fixed min-w-[1100px]">
+        <table className="w-full text-left border-collapse table-fixed min-w-[1080px]">
           <thead>
             <tr className="bg-slate-100 dark:bg-slate-850 text-slate-800 dark:text-slate-200 border-b-2 border-slate-300 dark:border-slate-700 text-xs font-extrabold tracking-wide">
+              {/* 1. 保存 */}
               <th className="py-2.5 pl-3 pr-1 w-[46px] text-center" title="参戦予定ブックマーク">
                 保存
               </th>
+              {/* 2. 開催日 / 締切 */}
               <th className="py-2.5 px-3 w-[145px]">
                 <div className="flex items-center gap-1 text-teal-800 dark:text-teal-300">
                   <Calendar className="w-3.5 h-3.5" />
                   <span>開催日 / 締切</span>
                 </div>
               </th>
-              <th className="py-2.5 px-2.5 w-[145px]">種別</th>
+              {/* 3. 種別 */}
+              <th className="py-2.5 px-2.5 w-[130px]">種別</th>
+              {/* 4. 大会名 / エリア / 競技特徴 */}
               <th className="py-2.5 px-3">大会名 / エリア / 競技特徴</th>
-              <th className="py-2.5 px-2.5 w-[125px] text-right">距離 / 標高</th>
-              <th className="py-2.5 px-2.5 w-[100px] text-right">
+              {/* 5. 必携品（★大会名の次に配置） */}
+              <th className="py-2.5 px-2 w-[88px] text-center">
+                <div className="flex items-center justify-center gap-1 text-amber-800 dark:text-amber-300">
+                  <Backpack className="w-3.5 h-3.5" />
+                  <span>必携品</span>
+                </div>
+              </th>
+              {/* 6. 距離 / 標高 */}
+              <th className="py-2.5 px-2.5 w-[120px] text-right">距離 / 標高</th>
+              {/* 7. 参加費 */}
+              <th className="py-2.5 px-2.5 w-[95px] text-right">
                 <div className="flex items-center justify-end gap-1 text-amber-800 dark:text-amber-300">
                   <Coins className="w-3.5 h-3.5" />
                   <span>参加費</span>
                 </div>
               </th>
+              {/* 8. 受付状況 */}
               <th className="py-2.5 px-2.5 w-[115px] text-center">受付状況</th>
-              <th className="py-2.5 px-2.5 w-[220px] text-center">申込・公式・レポ・SNS</th>
-              <th className="py-2.5 px-2 w-[85px] text-center">必携品</th>
+              {/* 9. 申込・公式（レポ・SNS削除でスッキリ2ボタン） */}
+              <th className="py-2.5 px-2.5 w-[140px] text-center">申込・公式</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-200 dark:divide-slate-800 text-xs sm:text-sm">
@@ -146,7 +156,7 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
 
               return (
                 <React.Fragment key={event.id}>
-                  {/* メインレース行（行クリックによる画面遷移を完全撤廃） */}
+                  {/* メインレース行 */}
                   <tr
                     className={`transition-colors ${
                       isFav
@@ -210,7 +220,7 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
                       </span>
                       {event.subCategory && (
                         <div
-                          className="text-[11px] text-slate-700 dark:text-slate-300 font-bold truncate max-w-[130px] mt-0.5"
+                          className="text-[11px] text-slate-700 dark:text-slate-300 font-bold truncate max-w-[125px] mt-0.5"
                           title={event.subCategory}
                         >
                           {event.subCategory}
@@ -218,21 +228,31 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
                       )}
                     </td>
 
-                    {/* 4. 大会名 / エリア / 競技特徴（2行で常時全文表示・短縮バッジで視認性向上） */}
+                    {/* 4. 大会名 / エリア / 競技特徴（★ホバーポップアップ復活 ＆ 必携バッジは次列へ移動） */}
                     <td className="py-2.5 px-3 align-middle">
-                      {/* 大会タイトル（不要なポップアップを廃止し、2行で綺麗に常時全文表示） */}
-                      <div className="font-black text-slate-950 dark:text-white text-sm leading-snug select-text">
-                        {event.title}
+                      {/* 大会タイトル（画面幅で見切れてもホバーで全文確認可能） */}
+                      <div className="relative group/title">
+                        <div
+                          className="font-black text-slate-950 dark:text-white text-sm leading-snug line-clamp-2 select-text cursor-default"
+                        >
+                          {event.title}
+                        </div>
+
+                        {/* ホバー時に大会名全文が浮き出るポップアップ */}
+                        <div className="absolute left-0 bottom-full mb-1 hidden group-hover/title:block z-50 bg-slate-950/95 text-white text-xs font-extrabold px-3 py-1.5 rounded-lg shadow-xl border border-teal-500/50 max-w-md pointer-events-none whitespace-normal leading-relaxed backdrop-blur-xs">
+                          <div className="text-[10px] text-teal-300 font-bold mb-0.5">大会名（全文）:</div>
+                          {event.title}
+                        </div>
                       </div>
 
-                      {/* 開催都道府県 ＋ 特徴短縮バッジ ＋ 必携品ボタン */}
+                      {/* 開催都道府県 ＋ 特徴短縮バッジのみ（必携バッジは削除してスッキリ） */}
                       <div className="flex flex-wrap items-center gap-1.5 mt-1.5 text-xs">
                         <span className="inline-flex items-center gap-0.5 text-[11px] font-extrabold text-slate-700 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded border border-slate-300 dark:border-slate-700 shrink-0">
                           <MapPin className="w-3 h-3 text-teal-700 dark:text-teal-400" />
                           {event.prefecture}
                         </span>
 
-                        {/* 短縮された競技特徴バッジ（読図、MTB、山岳、ロゲ、1日等で視認性向上） */}
+                        {/* 短縮された競技特徴バッジ（読図、MTB、山岳、ロゲ、1日等） */}
                         {(event.elements || []).map((el) => {
                           const badge = ELEMENT_BADGES[el];
                           if (!badge) return null;
@@ -247,41 +267,40 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
                             </span>
                           );
                         })}
-
-                        {/* 必携品ボタン（クリックで直下の必携品＆楽天購入パネルを展開） */}
-                        {totalGearCount > 0 && (
-                          <button
-                            type="button"
-                            onClick={() =>
-                              setExpandedGearEventId(isGearExpanded ? null : event.id)
-                            }
-                            className={`inline-flex items-center gap-1 text-[11px] font-black px-2 py-0.5 rounded-md border transition-all cursor-pointer shadow-2xs ${
-                              isGearExpanded
-                                ? 'bg-teal-700 text-white border-teal-700 ring-2 ring-teal-500/40'
-                                : checkedGearCount > 0
-                                ? 'bg-emerald-100 text-emerald-950 border-emerald-400 dark:bg-emerald-950/60 dark:text-emerald-200 hover:bg-emerald-200'
-                                : 'bg-amber-100 text-amber-950 border-amber-300 dark:bg-amber-950/60 dark:text-amber-200 hover:bg-amber-200'
-                            }`}
-                            title="クリックで必携品リストと楽天購入リンクを開閉"
-                          >
-                            <Backpack className="w-3 h-3" />
-                            <span>必携{totalGearCount}点</span>
-                            {checkedGearCount > 0 && (
-                              <span className="text-[10px] bg-emerald-600 text-white px-1 rounded-full">
-                                {checkedGearCount}/{totalGearCount}
-                              </span>
-                            )}
-                            {isGearExpanded ? (
-                              <ChevronUp className="w-3 h-3 ml-0.5" />
-                            ) : (
-                              <ChevronDown className="w-3 h-3 ml-0.5" />
-                            )}
-                          </button>
-                        )}
                       </div>
                     </td>
 
-                    {/* 5. 距離 / 標高（★文字サイズを大きく・視認性大幅アップ） */}
+                    {/* 5. 必携装備ボタン（★大会名の次に配置！「4点」「5点」など点数を明記） */}
+                    <td className="py-2.5 px-2 text-center align-middle whitespace-nowrap">
+                      {totalGearCount > 0 ? (
+                        <button
+                          type="button"
+                          onClick={() =>
+                            setExpandedGearEventId(isGearExpanded ? null : event.id)
+                          }
+                          className={`inline-flex items-center justify-center gap-1 w-[72px] py-1 rounded-lg border text-xs font-black transition-all cursor-pointer shadow-2xs ${
+                            isGearExpanded
+                              ? 'bg-teal-700 text-white border-teal-700 ring-2 ring-teal-500/40 shadow-xs'
+                              : checkedGearCount > 0
+                              ? 'bg-emerald-100 text-emerald-950 border-emerald-400 dark:bg-emerald-950/60 dark:text-emerald-200 hover:bg-emerald-200'
+                              : 'bg-amber-100 text-amber-950 border-amber-300 dark:bg-amber-950/60 dark:text-amber-200 hover:bg-amber-200'
+                          }`}
+                          title="クリックで必携品リストと楽天購入リンクを開閉"
+                        >
+                          <Backpack className="w-3.5 h-3.5 shrink-0" />
+                          <span>{totalGearCount}点</span>
+                          {isGearExpanded ? (
+                            <ChevronUp className="w-3 h-3" />
+                          ) : (
+                            <ChevronDown className="w-3 h-3" />
+                          )}
+                        </button>
+                      ) : (
+                        <span className="text-slate-400 text-xs font-bold">—</span>
+                      )}
+                    </td>
+
+                    {/* 6. 距離 / 標高（文字サイズ大きく視認性抜群） */}
                     <td className="py-2.5 px-2.5 text-right align-middle whitespace-nowrap font-mono">
                       <div className="font-black text-slate-950 dark:text-white text-base sm:text-lg tracking-tight">
                         {event.distance_km}{' '}
@@ -299,14 +318,14 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
                       )}
                     </td>
 
-                    {/* 6. エントリー費用（参加費） */}
+                    {/* 7. エントリー費用（参加費） */}
                     <td className="py-2.5 px-2.5 text-right align-middle whitespace-nowrap font-mono">
                       <span className="text-xs font-black text-slate-900 dark:text-slate-100 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded border border-slate-300 dark:border-slate-700">
                         {event.entry_fee || '—'}
                       </span>
                     </td>
 
-                    {/* 7. 受付状況 */}
+                    {/* 8. 受付状況 */}
                     <td className="py-2.5 px-2.5 text-center align-middle whitespace-nowrap">
                       <span
                         className={`inline-flex items-center justify-center gap-1 w-[100px] py-0.5 rounded-full text-xs border ${
@@ -318,10 +337,10 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
                       </span>
                     </td>
 
-                    {/* 8. 右端アクション列（4つの固定スロット） */}
+                    {/* 9. 申込・公式（レポ・SNS削除でスッキリ整理） */}
                     <td className="py-2.5 px-2.5 align-middle whitespace-nowrap">
-                      <div className="grid grid-cols-[68px_58px_30px_30px] items-center justify-end gap-1">
-                        {/* スロット1: 申込ボタン */}
+                      <div className="flex items-center justify-center gap-1.5">
+                        {/* 申込ボタン */}
                         {canEntry ? (
                           <a
                             href={event.links.entry!}
@@ -342,7 +361,7 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
                           </div>
                         )}
 
-                        {/* スロット2: 公式サイト */}
+                        {/* 公式サイト */}
                         {event.links.official ? (
                           <a
                             href={event.links.official}
@@ -359,72 +378,11 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
                             —
                           </div>
                         )}
-
-                        {/* スロット3: 大会レポ */}
-                        {event.links.review ? (
-                          <a
-                            href={event.links.review}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="w-[30px] h-[26px] rounded-lg bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 flex items-center justify-center transition-colors shadow-2xs cursor-pointer select-none"
-                            title="大会レポート・口コミを見る"
-                          >
-                            <MessageSquare className="w-3 h-3 text-amber-600 shrink-0" />
-                          </a>
-                        ) : (
-                          <div className="w-[30px] h-[26px] rounded-lg bg-slate-100 dark:bg-slate-850 text-slate-400 dark:text-slate-600 text-xs font-bold flex items-center justify-center border border-slate-200 dark:border-slate-800 select-none">
-                            —
-                          </div>
-                        )}
-
-                        {/* スロット4: 公式SNS */}
-                        {event.links.sns ? (
-                          <a
-                            href={event.links.sns}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="w-[30px] h-[26px] rounded-lg bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 flex items-center justify-center transition-colors shadow-2xs cursor-pointer select-none"
-                            title="公式SNS・Facebookを見る"
-                          >
-                            <Share2 className="w-3 h-3 text-sky-600 shrink-0" />
-                          </a>
-                        ) : (
-                          <div className="w-[30px] h-[26px] rounded-lg bg-slate-100 dark:bg-slate-850 text-slate-400 dark:text-slate-600 text-xs font-bold flex items-center justify-center border border-slate-200 dark:border-slate-800 select-none">
-                            —
-                          </div>
-                        )}
                       </div>
-                    </td>
-
-                    {/* 9. 必携品アコーディオン開閉ボタン */}
-                    <td className="py-2.5 px-2 text-center align-middle">
-                      {totalGearCount > 0 ? (
-                        <button
-                          type="button"
-                          onClick={() =>
-                            setExpandedGearEventId(isGearExpanded ? null : event.id)
-                          }
-                          className={`p-1.5 rounded-lg border text-xs font-extrabold flex items-center justify-center gap-0.5 mx-auto transition-all cursor-pointer ${
-                            isGearExpanded
-                              ? 'bg-teal-700 text-white border-teal-700 shadow-2xs'
-                              : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-300 dark:border-slate-700 hover:bg-teal-50 dark:hover:bg-slate-750'
-                          }`}
-                          title="必携品リスト＆楽天購入リンクを展開"
-                        >
-                          <Backpack className="w-3.5 h-3.5" />
-                          {isGearExpanded ? (
-                            <ChevronUp className="w-3 h-3" />
-                          ) : (
-                            <ChevronDown className="w-3 h-3" />
-                          )}
-                        </button>
-                      ) : (
-                        <span className="text-slate-300 dark:text-slate-700 text-xs">—</span>
-                      )}
                     </td>
                   </tr>
 
-                  {/* ★ 必携品の具体的な情報 ＆ 楽天市場アフィリエイト購入パネル（インライン展開） */}
+                  {/* 必携品の具体的な情報 ＆ 楽天市場アフィリエイト購入パネル（インライン展開） */}
                   {isGearExpanded && (
                     <tr className="bg-gradient-to-b from-teal-50/60 to-slate-50/80 dark:from-slate-850 dark:to-slate-900 border-b-2 border-teal-600/30">
                       <td colSpan={9} className="p-4 sm:p-5">
