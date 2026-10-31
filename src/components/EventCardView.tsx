@@ -243,7 +243,7 @@ export const EventCardView: React.FC<EventCardViewProps> = ({
                   <div className="flex items-center justify-between text-xs font-extrabold text-slate-700 dark:text-slate-300 mb-1.5">
                     <span className="flex items-center gap-1">
                       <Backpack className="w-4 h-4 text-teal-700 dark:text-teal-400" />
-                      <span>必携装備 ({totalGearCount}点):</span>
+                      <span>必携装備 ({totalGearCount}アイテム):</span>
                     </span>
                     {checkedGearCount > 0 && (
                       <span className="inline-flex items-center gap-1 text-xs font-extrabold text-emerald-900 dark:text-emerald-300 bg-emerald-100 dark:bg-emerald-950/60 px-2 py-0.5 rounded-full border border-emerald-300 dark:border-emerald-700">
@@ -263,7 +263,7 @@ export const EventCardView: React.FC<EventCardViewProps> = ({
                     ))}
                     {totalGearCount > 3 && (
                       <span className="text-xs text-slate-600 dark:text-slate-400 px-1 py-0.5 font-bold">
-                        +{totalGearCount - 3}点
+                        +{totalGearCount - 3}アイテム
                       </span>
                     )}
                   </div>

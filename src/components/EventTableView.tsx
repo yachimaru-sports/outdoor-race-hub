@@ -346,7 +346,7 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
                           onClick={() =>
                             setExpandedGearEventId(isGearExpanded ? null : event.id)
                           }
-                          className={`inline-flex items-center justify-center gap-1 w-[82px] py-1.5 rounded-lg text-xs font-black transition-all cursor-pointer shadow-xs select-none ${
+                          className={`inline-flex items-center justify-center gap-1 min-w-[88px] px-2 py-1.5 rounded-lg text-xs font-black transition-all cursor-pointer shadow-xs select-none ${
                             isGearExpanded
                               ? 'bg-red-800 text-white ring-2 ring-red-400'
                               : 'bg-red-600 hover:bg-red-700 text-white hover:scale-105'
@@ -354,7 +354,7 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
                           title="クリックで主な必携品リストと楽天購入リンクを開閉"
                         >
                           <Backpack className="w-3.5 h-3.5 shrink-0" />
-                          <span>{totalGearCount}点</span>
+                          <span>{totalGearCount}アイテム</span>
                           {isGearExpanded ? (
                             <ChevronUp className="w-3 h-3" />
                           ) : (
@@ -438,7 +438,7 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
                                 <h4 className="font-black text-slate-950 dark:text-white text-sm sm:text-base flex items-center gap-2">
                                   <span>【{event.title}】の主な必携装備リスト（参考）</span>
                                   <span className="text-xs font-bold text-red-700 dark:text-red-300 bg-red-100 dark:bg-red-950/70 px-2 py-0.5 rounded-full border border-red-300 dark:border-red-700">
-                                    主要{totalGearCount}点抜粋
+                                    主要{totalGearCount}アイテム抜粋
                                   </span>
                                 </h4>
                                 <p className="text-xs text-red-700 dark:text-red-400 font-bold mt-0.5">
