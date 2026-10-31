@@ -15,6 +15,10 @@ import {
   mergeDuplicateEvents,
   auditEvents
 } from './audit-duplicates.mjs';
+import {
+  checkUrlLive,
+  verifyAllLinks
+} from './verify-links.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -507,9 +511,9 @@ const NEW_DISCOVERED_RACES = [
 ];
 
 /**
- * 1. 新着大会の自動検出＆自動マージ（重複防止・最高参加費・最長距離優先エンジン適用）
+ * 1. 新着大会の自動検出＆自動マージ（実機アクセスリンク生存検証・重複防止・最高参加費・最長距離優先）
  */
-function discoverAndAddNewEvents() {
+async function discoverAndAddNewEvents() {
   console.log(`[1/3] 全国の新着大会の自動検出＆スマートマージを開始...`);
   const raw = fs.readFileSync(EVENTS_PATH, 'utf-8');
   let events = JSON.parse(raw);
@@ -518,6 +522,17 @@ function discoverAndAddNewEvents() {
   let mergedCount = 0;
 
   for (const newRace of NEW_DISCOVERED_RACES) {
+    // 【重要】DBに追加・マージする前に、リンク先URLに実機アクセスしてページが存在するか事前検証
+    const officialCheck = await checkUrlLive(newRace.links?.official);
+    const entryCheck = await checkUrlLive(newRace.links?.entry);
+
+    if (!officialCheck.ok || !entryCheck.ok) {
+      console.warn(`  ⚠️ [登録スキップ] リンク先が存在しないため追加を見送りました: ${newRace.title}`);
+      if (!officialCheck.ok) console.warn(`     公式リンクNG: ${newRace.links?.official} (${officialCheck.reason})`);
+      if (!entryCheck.ok) console.warn(`     申込リンクNG: ${newRace.links?.entry} (${entryCheck.reason})`);
+      continue;
+    }
+
     // 既存大会リストの中に同一大会（ID一致、または開催日×タイトル類似度・同一URL）が存在するか検査
     let duplicateIndex = -1;
     let dupReason = '';
@@ -540,10 +555,10 @@ function discoverAndAddNewEvents() {
       console.log(`  🔄 [重複防止・既存更新] ${merged.title} (${dupReason})`);
       console.log(`     => 距離: ${merged.distance_km}km / 参加費: ${merged.entry_fee} / ステータス: ${merged.entry_status}`);
     } else {
-      // 完全に新規の大会のみ追加
+      // 完全に新規かつ実機アクセスでページ存在が確認できた大会のみ追加
       events.push(newRace);
       addedCount++;
-      console.log(`  ★ [完全新着追加] ${newRace.title} (${newRace.prefecture} / ${newRace.distance_km}km / ${newRace.entry_fee})`);
+      console.log(`  ★ [完全新着追加・リンク実機確認済] ${newRace.title} (${newRace.prefecture} / ${newRace.distance_km}km / ${newRace.entry_fee})`);
     }
   }
 
@@ -861,8 +876,8 @@ async function main() {
   console.log(`OUTDOOR RACE HUB 自動調査・更新バッチ開始 (${isoNow})`);
   console.log(`====================================================`);
 
-  // 1. 新着大会の自動検出＆新規追加
-  discoverAndAddNewEvents();
+  // 1. 新着大会の自動検出＆実機アクセスリンク検証付きスマートマージ
+  await discoverAndAddNewEvents();
 
   // 2. 開催日・締切日のステータス自動照合
   await updateEventsData(todayStr, soonStr);
@@ -870,8 +885,12 @@ async function main() {
   // 3. 楽天15%以上特価ギアの自動抽出
   await updateDealsData(isoNow);
 
-  // 4. 【徹底再発防止】全大会リンク健全性の自動監視＆自己修復（Broken Link Self-Healing）
-  await verifyAndHealEventLinks();
+  // 4. 【実機アクセス検証恒久保証】全大会リンクのHTTP GET生存＆ソフト404排除チェック
+  console.log(`\n[ステップ4: 全大会リンク実アクセス生存検証開始]`);
+  const linkResult = await verifyAllLinks();
+  if (!linkResult.success) {
+    throw new Error(`リンク先が存在しない大会が ${linkResult.badLinks.length} 件検出されました。`);
+  }
 
   // 5. 【重複ゼロ恒久保証】全大会データの重複監査＆自動統合（最長距離・最高参加費優先）
   console.log(`\n[ステップ5: 全大会データ重複監査＆恒久排除チェック開始]`);

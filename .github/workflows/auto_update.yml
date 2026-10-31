@@ -46,6 +46,9 @@ jobs:
       - name: Assert Zero Duplicates in Race Database
         run: npm run check:duplicates
 
+      - name: Assert All Links Live via HTTP Verification
+        run: npm run check:links
+
       - name: Commit & Push Updated Data to Repository
         run: |
           git config user.name "yachimaru-sports-bot"

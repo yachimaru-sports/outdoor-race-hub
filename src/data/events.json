@@ -70,8 +70,8 @@
     "entry_status": "open",
     "entry_deadline": "2027-03-31",
     "links": {
-      "official": "https://www.sportsentry.ne.jp/cycle/10/2",
-      "entry": "https://www.sportsentry.ne.jp/cycle/10/2",
+      "official": "https://www.tour-de-nippon.jp/",
+      "entry": "https://cycle.spoen.jp/",
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -122,8 +122,8 @@
     "entry_status": "closing_soon",
     "entry_deadline": "2026-11-20",
     "links": {
-      "official": "https://www.sportsentry.ne.jp/cycle/10/2",
-      "entry": "https://www.sportsentry.ne.jp/cycle/10/2",
+      "official": "https://ride-on-susami.com/",
+      "entry": "https://cycle.spoen.jp/",
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -169,8 +169,8 @@
     "entry_status": "open",
     "entry_deadline": "2027-03-20",
     "links": {
-      "official": "https://www.sportsentry.ne.jp/cycle/10/3",
-      "entry": "https://www.sportsentry.ne.jp/cycle/10/3",
+      "official": "https://kca36.sakura.ne.jp/wp/",
+      "entry": "https://cycle.spoen.jp/",
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -216,10 +216,10 @@
     "entry_status": "open",
     "entry_deadline": "2027-03-20",
     "links": {
-      "official": "https://www.sportsentry.ne.jp/cycle/10/3",
-      "entry": "https://www.sportsentry.ne.jp/cycle/10/3",
-      "verified": true,
-      "verified_at": "2026-10-31"
+      "official": "https://www.htv.jp/grandtour/index.html",
+      "entry": "https://cycle.spoen.jp/",
+      "review": "https://runnet.jp/",
+      "sns": "https://www.facebook.com/grandtoursetouchi/"
     },
     "mandatory_gear": [
       {
@@ -237,6 +237,22 @@
       {
         "name": "補給食・携帯工具",
         "is_prepared": false
+      },
+      {
+        "name": "ロードバイク/クロスバイク（点検済）＆ヘルメット",
+        "category": "ギア"
+      },
+      {
+        "name": "前後ライト＆ベル",
+        "category": "ライト"
+      },
+      {
+        "name": "パンク修理キット＆携帯ポンプ/CO2ボンベ",
+        "category": "リペア"
+      },
+      {
+        "name": "携帯マルチツール（六角レンチ各種）",
+        "category": "リペア"
       }
     ],
     "source": {
@@ -267,8 +283,8 @@
     "entry_status": "open",
     "entry_deadline": "2027-02-28",
     "links": {
-      "official": "https://www.sportsentry.ne.jp/cycle/10/3",
-      "entry": "https://www.sportsentry.ne.jp/cycle/10/3",
+      "official": "https://niyodoblue.jp/",
+      "entry": "https://cycle.spoen.jp/",
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -1354,8 +1370,8 @@
     "entry_status": "upcoming",
     "entry_deadline": "2026-11-30",
     "links": {
-      "official": "https://utmb.world/",
-      "entry": "https://utmb.world/",
+      "official": "https://hiroshima-wangantrail.jp/",
+      "entry": "https://hiroshima-wangantrail.jp/",
       "review": "https://dogsorcaravan.com/",
       "sns": "https://x.com/UTMBWorldSeries",
       "verified": true,
@@ -2336,8 +2352,8 @@
     "entry_status": "closed",
     "entry_deadline": "2026-04-12",
     "links": {
-      "official": "https://moshicom.com/139981/",
-      "entry": "https://moshicom.com/139981/",
+      "official": "https://megahiraextreme500.com/",
+      "entry": "https://megahiraextreme500.com/",
       "review": "https://moshicom.com/",
       "sns": "https://x.com/",
       "verified": true,
@@ -2426,58 +2442,6 @@
     "venue": {
       "name": "広島湾岸トレイル 60km",
       "mapQuery": "広島県 広島湾岸トレイル 60km"
-    }
-  },
-  {
-    "id": "hibayama-skyrun-2026",
-    "category": "trail",
-    "subCategory": "国定公園トレイル",
-    "elements": [
-      "トレック"
-    ],
-    "title": "西日本豪雨復興支援 ひばやま国際スカイラン（広島・庄原比婆山）2026",
-    "date": "2026-05-31",
-    "month": 5,
-    "region": "中国",
-    "prefecture": "広島県",
-    "distance_km": 32,
-    "elevation_m": 1850,
-    "entry_status": "closed",
-    "entry_deadline": "2026-05-05",
-    "links": {
-      "official": "https://runnet.jp/parts/2026/races/search.php?keyword=%E8%A5%BF%E6%97%A5%E6%9C%AC%E8%B1%AA%E9%9B%A8%E5%BE%A9%E8%88%88%E6%94%AF%E6%8F%B4%20%E3%81%B2%E3%81%B0%E3%82%84%E3%81%BE%E5%9B%BD%E9%9A%9B%E3%82%B9%E3%82%AB%E3%82%A4%E3%83%A9%E3%83%B3",
-      "entry": "https://runnet.jp/parts/2026/races/search.php?keyword=%E8%A5%BF%E6%97%A5%E6%9C%AC%E8%B1%AA%E9%9B%A8%E5%BE%A9%E8%88%88%E6%94%AF%E6%8F%B4%20%E3%81%B2%E3%81%B0%E3%82%84%E3%81%BE%E5%9B%BD%E9%9A%9B%E3%82%B9%E3%82%AB%E3%82%A4%E3%83%A9%E3%83%B3",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
-      "verified": true,
-      "verified_at": "2026-10-31"
-    },
-    "mandatory_gear": [
-      {
-        "name": "レインジャケットまたは防風シェル",
-        "category": "ウェア"
-      },
-      {
-        "name": "エマージェンシーシート・ホイッスル・保険証コピー",
-        "category": "エイド"
-      },
-      {
-        "name": "水分500ml〜1.0L以上・行動食・マイカップ",
-        "category": "補給"
-      },
-      {
-        "name": "トレイルランニングシューズ＆トレランザック",
-        "category": "ギア"
-      }
-    ],
-    "entry_fee": "11,000円",
-    "source": {
-      "portalName": "RUNNET",
-      "portalUrl": "https://runnet.jp/parts/2026/races/search.php?keyword=%E8%A5%BF%E6%97%A5%E6%9C%AC%E8%B1%AA%E9%9B%A8%E5%BE%A9%E8%88%88%E6%94%AF%E6%8F%B4%20%E3%81%B2%E3%81%B0%E3%82%84%E3%81%BE%E5%9B%BD%E9%9A%9B%E3%82%B9%E3%82%AB%E3%82%A4%E3%83%A9%E3%83%B3"
-    },
-    "venue": {
-      "name": "庄原比婆山",
-      "mapQuery": "広島県 庄原比婆山"
     }
   },
   {
@@ -2697,50 +2661,6 @@
     }
   },
   {
-    "id": "hiroshima-peace-marathon-2026",
-    "category": "marathon",
-    "subCategory": "都市型マラソン",
-    "elements": [
-      "ロード"
-    ],
-    "title": "ひろしま国際平和マラソン＆リバーサイドラン 2026",
-    "date": "2026-11-03",
-    "month": 11,
-    "region": "中国",
-    "prefecture": "広島県",
-    "distance_km": 21,
-    "elevation_m": 120,
-    "entry_status": "closed",
-    "entry_deadline": "2026-09-20",
-    "links": {
-      "official": "https://runnet.jp/parts/2026/races/search.php?keyword=%E3%81%B2%E3%82%8D%E3%81%97%E3%81%BE%E5%9B%BD%E9%9A%9B%E5%B9%B3%E5%92%8C%E3%83%9E%E3%83%A9%E3%82%BD%E3%83%B3%EF%BC%86%E3%83%AA%E3%83%90%E3%83%BC%E3%82%B5%E3%82%A4%E3%83%89%E3%83%A9%E3%83%B3",
-      "entry": "https://runnet.jp/parts/2026/races/search.php?keyword=%E3%81%B2%E3%82%8D%E3%81%97%E3%81%BE%E5%9B%BD%E9%9A%9B%E5%B9%B3%E5%92%8C%E3%83%9E%E3%83%A9%E3%82%BD%E3%83%B3%EF%BC%86%E3%83%AA%E3%83%90%E3%83%BC%E3%82%B5%E3%82%A4%E3%83%89%E3%83%A9%E3%83%B3",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
-      "verified": true,
-      "verified_at": "2026-10-31"
-    },
-    "mandatory_gear": [
-      {
-        "name": "高機能ランニングウェア・吸汗速乾インナー",
-        "category": "ウェア"
-      },
-      {
-        "name": "エナジージェル（10km毎補給用 3〜4個）＆BCAA",
-        "category": "補給"
-      },
-      {
-        "name": "GPSランニングウォッチ",
-        "category": "ナビゲーション"
-      }
-    ],
-    "entry_fee": "7,500円",
-    "source": {
-      "portalName": "RUNNET",
-      "portalUrl": "https://runnet.jp/parts/2026/races/search.php?keyword=%E3%81%B2%E3%82%8D%E3%81%97%E3%81%BE%E5%9B%BD%E9%9A%9B%E5%B9%B3%E5%92%8C%E3%83%9E%E3%83%A9%E3%82%BD%E3%83%B3%EF%BC%86%E3%83%AA%E3%83%90%E3%83%BC%E3%82%B5%E3%82%A4%E3%83%89%E3%83%A9%E3%83%B3"
-    }
-  },
-  {
     "id": "akiota-shinkansen-cycle-2026",
     "category": "cycling",
     "subCategory": "中国山地グランフォンド",
@@ -2867,8 +2787,8 @@
     "entry_status": "closed",
     "entry_deadline": "2026-06-15",
     "links": {
-      "official": "https://runnet.jp/parts/2026/races/search.php?keyword=%E8%92%9C%E5%B1%B1%E9%AB%98%E5%8E%9F%E3%82%AF%E3%83%AD%E3%82%B9%E3%82%AB%E3%83%B3%E3%83%88%E3%83%AA%E3%83%BC%EF%BC%86%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%E3%83%A9%E3%83%B3",
-      "entry": "https://runnet.jp/parts/2026/races/search.php?keyword=%E8%92%9C%E5%B1%B1%E9%AB%98%E5%8E%9F%E3%82%AF%E3%83%AD%E3%82%B9%E3%82%AB%E3%83%B3%E3%83%88%E3%83%AA%E3%83%BC%EF%BC%86%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%E3%83%A9%E3%83%B3",
+      "official": "https://www.city.maniwa.lg.jp/",
+      "entry": "https://moshicom.com/search/?keyword=%E8%92%9C%E5%B1%B1%E9%AB%98%E5%8E%9F",
       "review": "https://runnet.jp/",
       "sns": "https://x.com/",
       "verified": true,
@@ -3873,7 +3793,7 @@
     "entry_deadline": "2027-04-15",
     "links": {
       "official": "https://cycle.spoen.jp/",
-      "entry": "https://www.sportsentry.ne.jp/cycle/10/3",
+      "entry": "https://cycle.spoen.jp/",
       "review": "https://runnet.jp/",
       "sns": "https://x.com/",
       "official_fallback": false,
@@ -4731,8 +4651,8 @@
     "entry_status": "open",
     "entry_deadline": "2027-04-10",
     "links": {
-      "official": "https://cycle.spoen.jp/",
-      "entry": "https://www.sportsentry.ne.jp/cycle/10/3",
+      "official": "https://nishi-awa.jp/",
+      "entry": "https://cycle.spoen.jp/",
       "review": "https://runnet.jp/",
       "sns": "https://www.facebook.com/",
       "official_fallback": false,
@@ -4988,7 +4908,7 @@
     "elements": [
       "ロード"
     ],
-    "title": "四万十ドラゴンライド（清流四万十川＆足摺岬 ロングライド 135km）2026",
+    "title": "幡多・四万十エリア どっぷりライド（清流四万十川＆足摺岬ロングライド 135km）2026",
     "date": "2026-11-22",
     "month": 11,
     "region": "四国",
@@ -4998,8 +4918,8 @@
     "entry_status": "closing_soon",
     "entry_deadline": "2026-11-15",
     "links": {
-      "official": "https://www.sportsentry.ne.jp/cycle/10/3",
-      "entry": "https://www.sportsentry.ne.jp/cycle/10/3",
+      "official": "https://cycling.hata-kochi.jp/",
+      "entry": "https://cycling.hata-kochi.jp/event/",
       "review": "https://runnet.jp/",
       "sns": "https://x.com/",
       "official_fallback": false,
@@ -5112,8 +5032,8 @@
     "entry_status": "closed",
     "entry_deadline": "2026-06-01",
     "links": {
-      "official": "https://www.hasetsune.org/",
-      "entry": "https://www.hasetsune.org/",
+      "official": "https://www.hasetsune.jp/",
+      "entry": "https://www.hasetsune.jp/",
       "review": "https://runnet.jp/",
       "sns": "https://x.com/hasetsune_cup",
       "verified": true,
@@ -5227,8 +5147,8 @@
     "entry_status": "closed",
     "entry_deadline": "2026-03-31",
     "links": {
-      "official": "https://kagaspa.utmb.world/",
-      "entry": "https://kagaspa.utmb.world/",
+      "official": "https://www.yamanaka-spa.or.jp/",
+      "entry": "https://www.yamanaka-spa.or.jp/",
       "review": "https://dogsorcaravan.com/",
       "sns": "https://x.com/UTMBWorldSeries",
       "verified": true,
@@ -6166,8 +6086,8 @@
     "entry_status": "open",
     "entry_deadline": "2027-03-31",
     "links": {
-      "official": "https://funride.jp/events/mt-fujihc/",
-      "entry": "https://funride.jp/events/mt-fujihc/",
+      "official": "https://www.fujihc.jp/",
+      "entry": "https://www.fujihc.jp/",
       "review": "https://runnet.jp/",
       "sns": "https://x.com/",
       "verified": true,
@@ -7444,56 +7364,6 @@
     }
   },
   {
-    "id": "shimanami-cycling-2026",
-    "category": "cycling",
-    "subCategory": "グランフォンド・しまなみ",
-    "elements": [
-      "MTB"
-    ],
-    "title": "グラン・ツール・せとうち / しまなみ海道ロングライド 2026",
-    "date": "2027-04-18",
-    "month": 4,
-    "region": "中国",
-    "prefecture": "広島県",
-    "distance_km": 140,
-    "elevation_m": 900,
-    "entry_fee": "12,000円",
-    "entry_status": "open",
-    "entry_deadline": "2027-03-20",
-    "links": {
-      "official": "https://cycle.spoen.jp/",
-      "entry": "https://www.sportsentry.ne.jp/cycle/10/3",
-      "review": "https://runnet.jp/",
-      "sns": "https://www.facebook.com/grandtoursetouchi/",
-      "official_fallback": false,
-      "entry_fallback": false,
-      "verified": true,
-      "verified_at": "2026-10-31"
-    },
-    "mandatory_gear": [
-      {
-        "name": "ロードバイク/クロスバイク（点検済）＆ヘルメット",
-        "category": "ギア"
-      },
-      {
-        "name": "前後ライト＆ベル",
-        "category": "ライト"
-      },
-      {
-        "name": "パンク修理キット＆携帯ポンプ/CO2ボンベ",
-        "category": "リペア"
-      },
-      {
-        "name": "携帯マルチツール（六角レンチ各種）",
-        "category": "リペア"
-      }
-    ],
-    "source": {
-      "portalName": "スポーツエントリー",
-      "portalUrl": "https://www.sportsentry.ne.jp/cycle/10/3"
-    }
-  },
-  {
     "id": "grandfondo-kyoto-2026",
     "category": "cycling",
     "subCategory": "山岳ロングライド",
@@ -8445,8 +8315,8 @@
     "entry_status": "closing_soon",
     "entry_deadline": "2026-11-20",
     "links": {
-      "official": "https://cycle.spoen.jp/",
-      "entry": "https://www.sportsentry.ne.jp/cycle/10/3",
+      "official": "https://kca36.sakura.ne.jp/wp/",
+      "entry": "https://cycle.spoen.jp/",
       "review": null,
       "sns": "https://www.facebook.com/mameichi.shodoshima/",
       "official_fallback": false,
@@ -8802,8 +8672,8 @@
     "entry_status": "closed",
     "entry_deadline": "2026-04-20",
     "links": {
-      "official": "https://saiotocolors.themedia.jp/",
-      "entry": "https://moshicom.com/search?keyword=SAIOTO+COLORS",
+      "official": "https://moshicom.com/search/?keyword=SAIOTO+COLORS",
+      "entry": "https://moshicom.com/search/?keyword=SAIOTO+COLORS",
       "review": "https://runnet.jp/",
       "sns": "https://www.instagram.com/saiotocolors/",
       "verified": true,
@@ -8861,8 +8731,8 @@
     "entry_status": "closed",
     "entry_deadline": "2026-10-15",
     "links": {
-      "official": "https://saiotocolors.themedia.jp/",
-      "entry": "https://moshicom.com/search?keyword=SAIOTO+COLORS",
+      "official": "https://moshicom.com/search/?keyword=SAIOTO+COLORS",
+      "entry": "https://moshicom.com/search/?keyword=SAIOTO+COLORS",
       "review": "https://runnet.jp/",
       "sns": "https://www.instagram.com/saiotocolors/",
       "verified": true,
