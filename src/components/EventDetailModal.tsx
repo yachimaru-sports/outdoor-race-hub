@@ -29,10 +29,11 @@ import {
 interface EventDetailModalProps {
   event: RaceEvent | null;
   deals: DealItem[];
+  isFavorite?: boolean;
   onClose: () => void;
 }
 
-export const EventDetailModal: React.FC<EventDetailModalProps> = ({ event, deals, onClose }) => {
+export const EventDetailModal: React.FC<EventDetailModalProps> = ({ event, deals, isFavorite = false, onClose }) => {
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
@@ -87,7 +88,16 @@ export const EventDetailModal: React.FC<EventDetailModalProps> = ({ event, deals
       : [...matchedDeals, ...deals.filter((d) => !matchedDeals.includes(d))].slice(0, 4);
 
   const cat = CATEGORY_LABELS[event.category];
+  const now = new Date();
+  const todayStr = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+  const isPastRace = event.date < todayStr;
   const status = ENTRY_STATUS_CONFIG[event.entry_status];
+  const isAwaitingRace = isFavorite && !isPastRace && event.entry_status === 'closed';
+  const statusLabel = isPastRace ? '開催終了' : (isAwaitingRace ? '開催待ち' : status.label);
+  const statusBadgeClass = isAwaitingRace
+    ? 'bg-sky-50 text-sky-800 border-sky-400 dark:bg-sky-950/70 dark:text-sky-300 dark:border-sky-600 font-black'
+    : status.badge;
+  const statusDotClass = isAwaitingRace ? 'bg-sky-500 animate-pulse' : status.dot;
 
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/70 dark:bg-black/80 backdrop-blur-xs flex items-center justify-center p-3 sm:p-5 animate-fadeIn">
@@ -103,11 +113,12 @@ export const EventDetailModal: React.FC<EventDetailModalProps> = ({ event, deals
             </span>
             <span
               className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs sm:text-sm font-bold border ${
-                status.badge
+                statusBadgeClass
               } ${status.pulse ? 'animate-pulse' : ''}`}
+              title={isAwaitingRace ? 'エントリー済・大会開催日を待っている状態です' : undefined}
             >
-              <span className={`w-2 h-2 rounded-full ${status.dot}`} />
-              {status.label}
+              <span className={`w-2 h-2 rounded-full ${statusDotClass}`} />
+              {statusLabel}
             </span>
           </div>
 

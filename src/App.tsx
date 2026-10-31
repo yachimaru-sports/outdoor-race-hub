@@ -215,12 +215,25 @@ export const App: React.FC = () => {
 
   // フィルタリング＆ソート
   const filteredEvents = useMemo(() => {
+    const now = new Date();
+    const todayStr = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+
     return events
       .filter((event) => {
-        // マイ参戦予定（お気に入り）のみ表示
-        if (filters.onlyFavorites && !favoriteIds.includes(event.id)) {
-          return false;
+        const isFavorite = favoriteIds.includes(event.id);
+        const endDateStr = event.date.includes('~') ? event.date.split('~')[1].trim() : event.date;
+        const isFutureOrActive = event.date >= todayStr || endDateStr >= todayStr;
+
+        // マイ参戦予定（お気に入り）のみ表示モードの場合
+        // 自分が申し込んだ・保存した大会は、受付が終了（closed）していても開催日まで100%確実に全件表示！
+        if (filters.onlyFavorites) {
+          if (!isFavorite) return false;
+          return true;
         }
+
+        // 自分が保存（マイ参戦予定）している大会で、開催日前のものは、
+        // 「受付中のみ表示」フィルターで隠れてしまわないように特別にデフォルト常時表示（保存アイテム保護）
+        const isProtectedFavorite = isFavorite && isFutureOrActive;
 
         // 競技ジャンル（親・種目）のチェックボックス判定（複数選択＆除外OFF対応）
         if (filters.selectedCategories !== undefined) {
@@ -244,13 +257,15 @@ export const App: React.FC = () => {
           return false;
         }
 
-        // エントリー受付状況絞り込み
-        if (filters.entryStatus === 'open_or_closing') {
-          if (event.entry_status !== 'open' && event.entry_status !== 'closing_soon') {
+        // エントリー受付状況絞り込み（※保存済みアイテムは開催日まで受付終了であっても隠さず常時表示）
+        if (!isProtectedFavorite) {
+          if (filters.entryStatus === 'open_or_closing') {
+            if (event.entry_status !== 'open' && event.entry_status !== 'closing_soon') {
+              return false;
+            }
+          } else if (filters.entryStatus !== 'all' && event.entry_status !== filters.entryStatus) {
             return false;
           }
-        } else if (filters.entryStatus !== 'all' && event.entry_status !== filters.entryStatus) {
-          return false;
         }
 
         // 開催時期・月別フィルター

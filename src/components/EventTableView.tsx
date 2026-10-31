@@ -197,8 +197,15 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
               const todayStr = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
               const isPastRace = event.date < todayStr;
               const status = ENTRY_STATUS_CONFIG[event.entry_status];
-              const statusLabel = isPastRace ? '開催終了' : status.label;
               const isFav = favoriteIds.includes(event.id);
+              // 保存済みで申込締切が過ぎ、開催日を待っている状態
+              const isAwaitingRace = isFav && !isPastRace && event.entry_status === 'closed';
+              const statusLabel = isPastRace ? '開催終了' : (isAwaitingRace ? '開催待ち' : status.label);
+              const statusBadgeClass = isAwaitingRace
+                ? 'bg-sky-50 text-sky-800 border-sky-400 dark:bg-sky-950/70 dark:text-sky-300 dark:border-sky-600 font-black'
+                : status.badge;
+              const statusDotClass = isAwaitingRace ? 'bg-sky-500 animate-pulse' : status.dot;
+
               const totalGearCount = event.mandatory_gear?.length || 0;
               const checkedGearCount = getGearProgress(event);
               const canEntry = !!event.links.entry && event.entry_status !== 'closed' && !isPastRace;
@@ -424,10 +431,11 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
                     <td className="py-2.5 px-2.5 text-center align-middle whitespace-nowrap">
                       <span
                         className={`inline-flex items-center justify-center gap-1 w-[100px] py-0.5 rounded-full text-xs border ${
-                          status.badge
+                          statusBadgeClass
                         } ${status.pulse ? 'animate-pulse' : ''}`}
+                        title={isAwaitingRace ? 'エントリー済・大会開催日を待っている状態です' : undefined}
                       >
-                        <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${status.dot}`} />
+                        <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${statusDotClass}`} />
                         <span>{statusLabel}</span>
                       </span>
                     </td>
