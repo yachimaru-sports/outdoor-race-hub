@@ -123,11 +123,6 @@ export const EventDetailModal: React.FC<EventDetailModalProps> = ({ event, deals
               <span className="flex items-center gap-1.5 font-black text-teal-800 dark:text-teal-300 bg-teal-50 dark:bg-teal-950/40 px-3 py-1 rounded-lg border border-teal-300 dark:border-teal-800">
                 <Calendar className="w-4 h-4 text-teal-700 dark:text-teal-400" />
                 開催日: {formatEventDateRange(event.date, event.end_date, true)}
-                {event.end_date && event.end_date !== event.date && (
-                  <span className="ml-1 text-[10px] bg-amber-500 text-white font-black px-1.5 py-0.5 rounded shadow-xs">
-                    2Days開催
-                  </span>
-                )}
               </span>
               <span className="flex items-center gap-1.5 font-bold">
                 <MapPin className="w-4 h-4 text-teal-700 dark:text-teal-400" />

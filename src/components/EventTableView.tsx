@@ -112,7 +112,7 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
               </th>
               {/* 2. 開催日 / 締切（クリックでソート） */}
               <th
-                className={`py-3 px-3 w-[145px] transition-colors select-none ${
+                className={`py-3 px-3 w-[150px] transition-colors select-none ${
                   onSortChange ? 'cursor-pointer hover:bg-slate-200 dark:hover:bg-slate-750' : ''
                 }`}
                 onClick={() => {
@@ -238,23 +238,17 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
                       </button>
                     </td>
 
-                    {/* 2. 開催日 / 締切（2行でスッキリ整列 ＋ 2Days対応） */}
+                    {/* 2. 開催日 / 締切（2行でスッキリ整列） */}
                     <td className="py-2.5 px-3 align-middle whitespace-nowrap">
                       <div className="relative group/daterange flex items-center gap-1 font-mono cursor-help" title={fullDateTooltip}>
                         <Calendar className="w-3.5 h-3.5 text-teal-700 dark:text-teal-400 shrink-0" />
                         <span className="text-sm font-black text-slate-950 dark:text-white tracking-tight">
                           {dateInfo.text}
                         </span>
-                        {dateInfo.isMultiDay && (
-                          <span className="inline-block px-1 py-0.2 text-[9px] font-sans font-black bg-amber-500 text-white rounded-md tracking-tighter shadow-xs">
-                            2Days
-                          </span>
-                        )}
                         {/* ホバー時詳細日程ポップアップ */}
                         <div className="absolute left-0 bottom-full mb-1.5 hidden group-hover/daterange:block z-50 bg-slate-950/95 text-white text-[11px] font-extrabold px-2.5 py-1.5 rounded-lg shadow-xl border border-teal-500/40 pointer-events-none whitespace-nowrap backdrop-blur-xs">
                           <span className="text-teal-300 mr-1">開催日程:</span>
                           {fullDateTooltip}
-                          {dateInfo.isMultiDay && <span className="text-amber-300 ml-1 font-black">【2日間開催】</span>}
                         </div>
                       </div>
 

@@ -1052,7 +1052,8 @@
     "source": {
       "portalName": "公式サイト",
       "portalUrl": "https://nisekoexpedition.jp/"
-    }
+    },
+    "end_date": "2026-06-21"
   },
   {
     "id": "echigo-adventure-2026",
@@ -1331,7 +1332,8 @@
     "source": {
       "portalName": "公式サイト",
       "portalUrl": "https://mtfuji100.com/"
-    }
+    },
+    "end_date": "2027-04-25"
   },
   {
     "id": "hiroshima-utmb-2027",
@@ -1389,7 +1391,8 @@
     "source": {
       "portalName": "公式サイト",
       "portalUrl": "https://utmb.world/"
-    }
+    },
+    "end_date": "2027-04-18"
   },
   {
     "id": "shinetsu-five-mountains-100mile-2026",
@@ -1447,7 +1450,8 @@
     "source": {
       "portalName": "公式サイト",
       "portalUrl": "https://sfmt100.com/"
-    }
+    },
+    "end_date": "2026-09-20"
   },
   {
     "id": "ggr-ishikiriba-100-2027",
@@ -1577,7 +1581,8 @@
     "venue": {
       "name": "びわ湖100マイル トレイルラン 2026",
       "mapQuery": "滋賀県 びわ湖100マイル トレイルラン 2026"
-    }
+    },
+    "end_date": "2026-10-04"
   },
   {
     "id": "koumi-100-2026",
@@ -1639,7 +1644,8 @@
     "venue": {
       "name": "小海100マイル トレイルランニング 2026",
       "mapQuery": "長野県 小海100マイル トレイルランニング 2026"
-    }
+    },
+    "end_date": "2026-10-11"
   },
   {
     "id": "sainokuni-100mile-2026",
@@ -1697,7 +1703,8 @@
     "source": {
       "portalName": "公式サイト",
       "portalUrl": "https://trainic-world.org/sainokuni/"
-    }
+    },
+    "end_date": "2026-05-17"
   },
   {
     "id": "ftr-chichibu-okumusashi-100mile-2026",
@@ -1759,7 +1766,8 @@
     "venue": {
       "name": "FTR100",
       "mapQuery": "埼玉県 FTR100"
-    }
+    },
+    "end_date": "2026-11-22"
   },
   {
     "id": "osj-ontake-100mile-2026",
@@ -1821,7 +1829,8 @@
     "venue": {
       "name": "御嶽100マイル 100km",
       "mapQuery": "長野県 御嶽100マイル 100km"
-    }
+    },
+    "end_date": "2026-07-19"
   },
   {
     "id": "deep-japan-ultra-100-2026",
@@ -1884,7 +1893,8 @@
     "venue": {
       "name": "ディープジャパン166km 新潟 群馬",
       "mapQuery": "新潟県 ディープジャパン166km 新潟 群馬"
-    }
+    },
+    "end_date": "2026-06-28"
   },
   {
     "id": "kumagawa-revival-trail-100mile-2026",
@@ -1947,7 +1957,8 @@
     "venue": {
       "name": "KRT 167km",
       "mapQuery": "熊本県 KRT 167km"
-    }
+    },
+    "end_date": "2026-11-15"
   },
   {
     "id": "osj-koushu-alps-100mile-2026",
@@ -2011,7 +2022,8 @@
     "venue": {
       "name": "甲州アルプスオートルート 100mile",
       "mapQuery": "山梨県 甲州アルプスオートルート 100mile"
-    }
+    },
+    "end_date": "2026-10-25"
   },
   {
     "id": "tambasasayama-100mile-2026",
@@ -2073,7 +2085,8 @@
     "venue": {
       "name": "丹波100マイル",
       "mapQuery": "兵庫県 丹波100マイル"
-    }
+    },
+    "end_date": "2026-06-07"
   },
   {
     "id": "michinoku-coastal-trail-100mile-2026",
@@ -2131,7 +2144,8 @@
     "source": {
       "portalName": "モシコム",
       "portalUrl": "https://moshicom.com/search?keyword=%E3%81%BF%E3%81%A1%E3%81%AE%E3%81%8F%E6%BD%AE%E9%A2%A8%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%20100%E3%83%9E%E3%82%A4%E3%83%AB%20%E3%82%B8%E3%83%A3%E3%83%BC%E3%83%8B%E3%83%BC%E3%83%A9%E3%83%B3"
-    }
+    },
+    "end_date": "2026-10-11"
   },
   {
     "id": "ibuki-hyakkei-100mile-2026",
@@ -2189,7 +2203,8 @@
     "source": {
       "portalName": "モシコム",
       "portalUrl": "https://moshicom.com/search?keyword=%E4%BC%8A%E5%90%B9%E5%B1%B1"
-    }
+    },
+    "end_date": "2026-09-27"
   },
   {
     "id": "backyard-ultra-hiroshima-2026",
@@ -2247,7 +2262,8 @@
     "source": {
       "portalName": "モシコム",
       "portalUrl": "https://moshicom.com/search?keyword=Backyard%20Ultra%20Last%20Samurai%20Standing%20%E5%BA%83%E5%B3%B6"
-    }
+    },
+    "end_date": "2026-11-08"
   },
   {
     "id": "mihara-hakuryuko-trail-2026",
@@ -3464,7 +3480,8 @@
     "venue": {
       "name": "大田市 100km",
       "mapQuery": "島根県 大田市 100km"
-    }
+    },
+    "end_date": "2026-09-21"
   },
   {
     "id": "okinosima-ultra-2026",
@@ -5250,7 +5267,8 @@
     "venue": {
       "name": "石川 加賀温泉郷 100km",
       "mapQuery": "石川県 石川 加賀温泉郷 100km"
-    }
+    },
+    "end_date": "2026-06-21"
   },
   {
     "id": "utsukushigahara-trail-2026",
@@ -5369,7 +5387,8 @@
     "venue": {
       "name": "阿蘇ボルケーノトレイル 112km",
       "mapQuery": "熊本県 阿蘇ボルケーノトレイル 112km"
-    }
+    },
+    "end_date": "2026-05-10"
   },
   {
     "id": "hiraodai-trail-2026",
@@ -5705,7 +5724,8 @@
     "venue": {
       "name": "福井",
       "mapQuery": "福井県 福井"
-    }
+    },
+    "end_date": "2026-10-25"
   },
   {
     "id": "zao-skyrun-vertical-2026",
@@ -7101,7 +7121,8 @@
     "source": {
       "portalName": "公式サイト",
       "portalUrl": "https://trainic-world.org/sainokuni/"
-    }
+    },
+    "end_date": "2027-05-16"
   },
   {
     "id": "aso-volcano-trail-2027",
@@ -7163,7 +7184,8 @@
     "venue": {
       "name": "阿蘇ボルケーノトレイル 112km",
       "mapQuery": "熊本県 阿蘇ボルケーノトレイル 112km"
-    }
+    },
+    "end_date": "2027-05-09"
   },
   {
     "id": "yatsugatake-nobeyama-ultra-2027",
@@ -7321,7 +7343,8 @@
     "source": {
       "portalName": "公式サイト",
       "portalUrl": "https://nature-scene.net/shiga100/"
-    }
+    },
+    "end_date": "2026-07-12"
   },
   {
     "id": "forest-trail-tango-2026",
@@ -7724,7 +7747,8 @@
     "venue": {
       "name": "ART",
       "mapQuery": "熊本県 ART"
-    }
+    },
+    "end_date": "2026-05-10"
   },
   {
     "id": "fuji-5lakes-118k-2027",

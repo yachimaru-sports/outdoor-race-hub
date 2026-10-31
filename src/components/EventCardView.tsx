@@ -152,11 +152,6 @@ export const EventCardView: React.FC<EventCardViewProps> = ({
                     <span className="text-sm font-black text-slate-950 dark:text-white font-mono">
                       {formatEventDateRange(event.date, event.end_date, true)}
                     </span>
-                    {event.end_date && event.end_date !== event.date && (
-                      <span className="inline-block px-1.5 py-0.5 text-[10px] font-sans font-black bg-amber-500 text-white rounded-md tracking-tight shadow-xs">
-                        2Days開催
-                      </span>
-                    )}
                   </div>
                 </div>
 
