@@ -1,5 +1,6 @@
 import React from 'react';
 import { Mountain, ShieldCheck, Compass, ExternalLink } from 'lucide-react';
+import { AccessCounter } from './AccessCounter';
 
 export const Footer: React.FC = () => {
   return (
@@ -52,7 +53,12 @@ export const Footer: React.FC = () => {
             【免責事項・アフィリエイトについて】
             当サイトに掲載されている大会日程、エントリー期間、必携装備等の情報は変更される場合があります。必ず各大会の公式サイトおよびRUNNET・スポーツエントリー・e-moshicom等の公式受付ページにて最新情報をご確認ください。また、当サイトは楽天アフィリエイトプログラム等のアフィリエイト広告を利用しておすすめのギアを紹介しています。
           </p>
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 pt-2">
+          {/* リアルタイム累計アクセスカウンター（中央配置） */}
+          <div className="py-2 flex justify-center">
+            <AccessCounter variant="footer" />
+          </div>
+
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 pt-2 border-t border-slate-250 dark:border-slate-800">
             <div className="font-semibold">
               © {new Date().getFullYear()} OUTDOOR RACE HUB. All rights reserved.
             </div>

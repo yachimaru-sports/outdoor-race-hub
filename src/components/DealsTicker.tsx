@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { DealItem } from '../types';
+import { AccessCounter } from './AccessCounter';
 import {
   ChevronLeft,
   ChevronRight,
@@ -136,7 +137,7 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({
               </div>
             </a>
 
-            {/* 下段：ロゴの真下に大会数バッジ ＆ 楽天特価ラベルを横並びで配置 */}
+            {/* 下段：ロゴの真下に大会数バッジ ＆ 楽天特価ラベル ＆ 累計アクセスカウンター */}
             <div className="flex items-center gap-1.5 mt-1.5">
               {/* 掲載大会数（受付中） */}
               <div className="flex items-center gap-1 px-1.5 py-0.5 rounded bg-slate-900 border border-slate-800 text-[10px] font-bold text-slate-300 leading-none whitespace-nowrap">
@@ -151,6 +152,9 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({
                 <span>楽天特価</span>
                 <span className="text-[9px] text-yellow-200 font-extrabold ml-0.5">20〜53%OFF</span>
               </div>
+
+              {/* リアルタイム累計アクセスカウンター */}
+              <AccessCounter variant="compact" />
             </div>
           </div>
 

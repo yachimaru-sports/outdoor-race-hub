@@ -1,5 +1,6 @@
 import React from 'react';
 import { Globe, FileEdit, ExternalLink, AlertTriangle } from 'lucide-react';
+import { trackEvent } from '../utils/analytics';
 
 interface LinkButtonProps {
   type: 'entry' | 'official';
@@ -118,6 +119,7 @@ export const LinkButton: React.FC<LinkButtonProps> = ({
           href={url}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => trackEvent('entry_click', { event_title: eventTitle, target_url: url })}
           className="w-[68px] py-1 rounded-lg bg-teal-700 hover:bg-teal-800 text-white text-xs font-extrabold flex items-center justify-center gap-1 transition-all shadow-2xs hover:shadow-xs hover:scale-105 cursor-pointer select-none"
         >
           <FileEdit className="w-3 h-3 shrink-0" />
@@ -128,6 +130,7 @@ export const LinkButton: React.FC<LinkButtonProps> = ({
           href={url}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => trackEvent('official_click', { event_title: eventTitle, target_url: url })}
           className="w-[58px] py-1 rounded-lg bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 text-xs font-extrabold flex items-center justify-center gap-1 transition-all shadow-2xs hover:shadow-xs hover:scale-105 cursor-pointer select-none"
         >
           <Globe className="w-3 h-3 text-teal-700 dark:text-teal-400 shrink-0" />
