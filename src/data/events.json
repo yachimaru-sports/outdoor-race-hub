@@ -510,7 +510,7 @@
         "category": "エイド"
       }
     ],
-    "entry_fee": "9,400円〜11,200円",
+    "entry_fee": "11,200円",
     "venue": {
       "name": "京都府亀岡市（保津峡エリア）",
       "address": "京都府亀岡市保津町",
@@ -572,7 +572,7 @@
         "category": "エイド"
       }
     ],
-    "entry_fee": "15,700円〜17,800円",
+    "entry_fee": "17,800円",
     "venue": {
       "name": "奈良吉野川 五條市近郊",
       "address": "奈良県五條市",
@@ -636,7 +636,7 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "8,000円〜9,200円",
+    "entry_fee": "9,200円",
     "venue": {
       "name": "兵庫県姫路市安富町富栖エリア",
       "address": "兵庫県姫路市安富町皆河",
@@ -7878,12 +7878,13 @@
     ],
     "title": "広島湾岸TRAIL RUN 2027",
     "date": "2027-03-27",
+    "end_date": "2027-03-28",
     "month": 3,
     "region": "中国",
     "prefecture": "広島県",
     "distance_km": 108,
     "elevation_m": 6900,
-    "entry_fee": "29,000円",
+    "entry_fee": "38,000円",
     "entry_status": "open",
     "entry_deadline": "2026-12-25",
     "links": {
@@ -7927,19 +7928,18 @@
     "category": "trail",
     "subCategory": "空海五岳山トレイル",
     "elements": [
-      "トレラン",
-      "読図"
+      "トレラン"
     ],
     "title": "第8回 善通寺五岳山空海トレイル 2027",
-    "date": "2027-03-14",
-    "month": 3,
+    "date": "2027-02-27",
+    "month": 2,
     "region": "四国",
     "prefecture": "香川県",
-    "distance_km": 25,
-    "elevation_m": 1450,
-    "entry_fee": "7,500円",
+    "distance_km": 45,
+    "elevation_m": 3900,
+    "entry_fee": "10,000円",
     "entry_status": "open",
-    "entry_deadline": "2027-01-31",
+    "entry_deadline": "2027-01-25",
     "links": {
       "official": "https://moshicom.com/search/?keyword=%E5%96%84%E9%80%9A%E5%AF%BA%E4%BA%94%E5%B2%B3%E5%B1%B1%E7%A9%BA%E6%B5%B7%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB",
       "entry": "https://moshicom.com/search/?keyword=%E5%96%84%E9%80%9A%E5%AF%BA%E4%BA%94%E5%B2%B3%E5%B1%B1%E7%A9%BA%E6%B5%B7%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB",
@@ -7964,6 +7964,11 @@
         "category": "ウェア"
       }
     ],
+    "venue": {
+      "name": "善通寺五岳の里（市民集いの丘公園）",
+      "address": "香川県善通寺市吉原町918-1",
+      "mapQuery": "善通寺五岳の里 市民集いの丘公園"
+    },
     "source": {
       "portalName": "モシコム",
       "portalUrl": "https://moshicom.com/search/?keyword=%E5%96%84%E9%80%9A%E5%AF%BA%E4%BA%94%E5%B2%B3%E5%B1%B1%E7%A9%BA%E6%B5%B7%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB"
