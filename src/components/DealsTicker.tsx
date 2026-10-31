@@ -153,9 +153,7 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({
                 <span className="text-[9px] text-yellow-200 font-extrabold ml-0.5">20〜53%OFF</span>
               </div>
 
-              {/* リアルタイム累計アクセスカウンター */}
-              <AccessCounter variant="compact" />
-            </div>
+              </div>
           </div>
 
           {/* 中央：無限スライド 楽天特価ギアカルーセル */}
@@ -224,7 +222,9 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({
           </div>
 
           {/* 右端：スライドアクション ＆ テーマ切り替え */}
-          <div className="flex items-center gap-1 shrink-0">
+          <div className="flex items-center gap-1.5 shrink-0">
+            {/* リアルタイム累計アクセスカウンター（画面最右上） */}
+            <AccessCounter variant="compact" />
             <button
               onClick={() => handleManualScroll('left')}
               className="p-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-white transition-colors border border-slate-700 shadow-2xs cursor-pointer"

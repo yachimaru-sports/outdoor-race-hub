@@ -6901,12 +6901,10 @@
     "entry_status": "open",
     "entry_deadline": "2026-12-25",
     "links": {
-      "official": "https://moshicom.com/search/?keyword=%E5%BA%83%E5%B3%B6%E6%B9%BE%E5%B2%B8TRAIL%20RUN",
-      "entry": "https://moshicom.com/search/?keyword=%E5%BA%83%E5%B3%B6%E6%B9%BE%E5%B2%B8TRAIL%20RUN",
+      "official": "https://wangantrailrun.com/",
+      "entry": "https://wangantrailrun.com/",
       "review": "https://runnet.jp/",
       "sns": "https://www.facebook.com/hiroshimawangantrailrun/",
-      "official_fallback": true,
-      "entry_fallback": true,
       "verified": true,
       "verified_at": "2026-10-31"
     },

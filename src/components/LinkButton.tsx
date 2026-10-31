@@ -92,7 +92,7 @@ export const LinkButton: React.FC<LinkButtonProps> = ({
         </a>
 
         {/* ホバー時の直リンクURLポップアップ（右端見切れ防止） */}
-        <div className="absolute bottom-full right-0 mb-2 hidden group-hover/link:flex flex-col items-end z-50 pointer-events-none w-72 sm:w-80">
+        <div className="absolute bottom-full right-0 mb-2 hidden group-hover/link:flex flex-col items-end z-50 pointer-events-none w-64 sm:w-72 max-w-[calc(100vw-2rem)]">
           <div className="w-full bg-slate-900 text-white text-[11px] font-mono px-3 py-2 rounded-lg shadow-2xl border border-rose-500 leading-tight text-left">
             <div className="flex items-center gap-1 text-rose-400 font-extrabold mb-1 font-sans">
               <AlertTriangle className="w-3 h-3 shrink-0" />
@@ -150,7 +150,7 @@ export const LinkButton: React.FC<LinkButtonProps> = ({
               {providerLabel}
             </span>
           </div>
-          <div className="text-emerald-400 font-mono text-[10px] break-all leading-normal select-all bg-slate-900/80 p-1 rounded border border-slate-800">
+          <div className="text-emerald-400 font-mono text-[10px] break-all whitespace-normal leading-normal select-all bg-slate-900/80 p-1.5 rounded border border-slate-800">
             {url}
           </div>
         </div>

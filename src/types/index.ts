@@ -62,6 +62,7 @@ export type SortOption =
 
 export interface FilterState {
   category: string;
+  selectedCategories?: string[]; // 複数選択・除外対応の競技ジャンル（親）
   region: string;
   prefecture: string;
   minDistance: number;

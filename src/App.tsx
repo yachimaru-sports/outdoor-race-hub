@@ -116,15 +116,23 @@ export const App: React.FC = () => {
     } catch {}
   };
 
-  // 大型スポーツ種目ナビバーからの選択ハンドラ
+  // 大型スポーツ種目ナビバーからの選択ハンドラ（親チェックボックスと同期）
   const handleSelectSportNav = (
     category: string,
     featureTag = 'all',
     onlyFavorites = false
   ) => {
+    const allGenres = ['trail', 'cycling', 'marathon', 'adventure', 'rogaining'];
+    let selectedCategories = allGenres;
+    if (category === 'all' && featureTag === 'rogaining') {
+      selectedCategories = ['rogaining'];
+    } else if (category !== 'all') {
+      selectedCategories = [category];
+    }
     setFilters((prev) => ({
       ...prev,
       category,
+      selectedCategories,
       featureTag,
       onlyFavorites,
     }));
@@ -176,8 +184,15 @@ export const App: React.FC = () => {
           return false;
         }
 
-        // カテゴリ絞り込み
-        if (filters.category !== 'all' && event.category !== filters.category) {
+        // 競技ジャンル（親・種目）のチェックボックス判定（複数選択＆除外OFF対応）
+        if (filters.selectedCategories !== undefined) {
+          const eventGenre = (event.elements?.includes('ロゲイニング') || event.id.includes('rogaining'))
+            ? 'rogaining'
+            : event.category;
+          if (!filters.selectedCategories.includes(eventGenre)) {
+            return false;
+          }
+        } else if (filters.category !== 'all' && event.category !== filters.category) {
           return false;
         }
 
