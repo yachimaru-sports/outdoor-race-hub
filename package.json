@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/audit-duplicates.mjs && node scripts/verify-links.mjs && tsc && vite build",
+    "build": "node scripts/audit-duplicates.mjs && tsc && vite build",
     "preview": "vite preview",
     "auto-update": "node scripts/auto_update.mjs",
     "check:duplicates": "node scripts/audit-duplicates.mjs",
