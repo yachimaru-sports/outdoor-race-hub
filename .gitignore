@@ -18,6 +18,8 @@ dist-ssr
 .idea
 .DS_Store
 .tmp.driveupload
+*.gsheet
+*.gdoc
 *.suo
 *.ntvs*
 *.njsproj
