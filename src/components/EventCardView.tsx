@@ -3,16 +3,18 @@ import { RaceEvent } from '../types';
 import { CATEGORY_LABELS, ELEMENT_BADGES, ENTRY_STATUS_CONFIG, formatDate } from '../utils/helpers';
 import {
   Calendar,
+  Clock,
   MapPin,
   TrendingUp,
-  Star,
   Globe,
   FileEdit,
   MessageSquare,
   Share2,
-  Backpack,
+  ChevronRight,
   Bookmark,
   CheckCircle2,
+  Backpack,
+  Coins,
 } from 'lucide-react';
 
 interface EventCardViewProps {
@@ -53,7 +55,7 @@ export const EventCardView: React.FC<EventCardViewProps> = ({
   }
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
       {events.map((event) => {
         const cat = CATEGORY_LABELS[event.category];
         const now = new Date();
@@ -65,18 +67,20 @@ export const EventCardView: React.FC<EventCardViewProps> = ({
         const checkedGearCount = getGearProgress(event);
         const totalGearCount = event.mandatory_gear.length;
         const canEntry = !!event.links.entry && event.entry_status !== 'closed' && !isPastRace;
+        const isClosingSoon = event.entry_status === 'closing_soon';
+        const isOpen = event.entry_status === 'open';
 
         return (
           <div
             key={event.id}
             onClick={() => onSelectEvent(event)}
-            className={`group rounded-2xl p-5 sm:p-6 flex flex-col justify-between transition-all duration-200 cursor-pointer shadow-sm hover:shadow-md relative overflow-hidden border ${
+            className={`group relative bg-white dark:bg-slate-900 border-2 rounded-2xl p-5 shadow-sm hover:shadow-md transition-all flex flex-col justify-between cursor-pointer overflow-hidden ${
               isFav
-                ? 'bg-rose-50/30 dark:bg-slate-900 border-rose-400 dark:border-rose-700'
-                : 'bg-white dark:bg-slate-900 border-slate-300 dark:border-slate-800 hover:border-teal-600 dark:hover:border-slate-700'
+                ? 'border-rose-400 dark:border-rose-800 ring-2 ring-rose-300/40 bg-rose-50/20'
+                : 'border-slate-250 dark:border-slate-800 hover:border-teal-600 dark:hover:border-teal-500'
             }`}
           >
-            {/* 上部カラーアクセントバー */}
+            {/* 上部アクセントカラーバー */}
             <div className={`absolute top-0 left-0 right-0 h-1.5 ${cat.accentBg}`} />
 
             {/* 上部：カテゴリ ＆ ステータス ＆ ブックマーク */}
@@ -129,6 +133,41 @@ export const EventCardView: React.FC<EventCardViewProps> = ({
                 {event.title}
               </h3>
 
+              {/* 開催日 ＆ 締切日ハイライトバナー（重要情報として大幅強調） */}
+              <div className="mt-3 p-3 bg-slate-50 dark:bg-slate-850/80 rounded-xl border border-slate-200 dark:border-slate-750 space-y-1.5">
+                <div className="flex items-center justify-between gap-2">
+                  <div className="flex items-center gap-1.5">
+                    <Calendar className="w-4 h-4 text-teal-700 dark:text-teal-400 shrink-0" />
+                    <span className="text-xs font-bold text-slate-600 dark:text-slate-400">開催日:</span>
+                    <span className="text-sm font-black text-slate-950 dark:text-white font-mono">
+                      {formatDate(event.date)}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="flex items-center justify-between gap-2 pt-1 border-t border-slate-200 dark:border-slate-700/60">
+                  <div className="flex items-center gap-1.5">
+                    <Clock className="w-3.5 h-3.5 text-slate-500 shrink-0" />
+                    <span className="text-xs font-bold text-slate-600 dark:text-slate-400">申込締切:</span>
+                  </div>
+                  <div>
+                    {isClosingSoon ? (
+                      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-xs font-black bg-red-100 text-red-700 dark:bg-red-950/60 dark:text-red-300 border border-red-300 animate-pulse font-mono">
+                        🔥 {event.entry_deadline || '締切間近'}
+                      </span>
+                    ) : isOpen ? (
+                      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-xs font-extrabold bg-amber-100 text-amber-900 dark:bg-amber-950/50 dark:text-amber-200 border border-amber-300 font-mono">
+                        {event.entry_deadline ? `締切: ${event.entry_deadline}` : '受付中'}
+                      </span>
+                    ) : (
+                      <span className="text-xs text-slate-500 font-bold font-mono">
+                        {event.entry_deadline ? `締切: ${event.entry_deadline}` : '受付終了'}
+                      </span>
+                    )}
+                  </div>
+                </div>
+              </div>
+
               {/* 競技エレメントタグ（読図・MTB・パドル等） */}
               <div className="flex flex-wrap items-center gap-1.5 mt-2 min-h-[28px]">
                 {event.elements &&
@@ -147,58 +186,44 @@ export const EventCardView: React.FC<EventCardViewProps> = ({
                   })}
               </div>
 
-              {/* 開催日 & エリア */}
-              <div className="mt-3 space-y-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300 border-b border-slate-200 dark:border-slate-800 pb-3">
-                <div className="flex items-center gap-2">
-                  <Calendar className="w-4 h-4 text-teal-700 dark:text-teal-400 shrink-0" />
-                  <span className="font-extrabold text-slate-950 dark:text-slate-100">
-                    {formatDate(event.date)}
+              {/* エリア表示 */}
+              <div className="mt-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
+                <MapPin className="w-4 h-4 text-teal-700 dark:text-teal-400 shrink-0" />
+                <span className="font-bold text-slate-800 dark:text-slate-200">
+                  {event.prefecture}{' '}
+                  <span className="text-slate-600 dark:text-slate-400 font-semibold">
+                    ({event.region}地方)
                   </span>
-                  {event.entry_deadline && (
-                    <span className="text-xs text-slate-600 dark:text-slate-400 ml-auto font-bold">
-                      締切: {event.entry_deadline}
-                    </span>
-                  )}
-                </div>
-
-                <div className="flex items-center gap-2">
-                  <MapPin className="w-4 h-4 text-teal-700 dark:text-teal-400 shrink-0" />
-                  <span className="font-bold text-slate-800 dark:text-slate-200">
-                    {event.prefecture}{' '}
-                    <span className="text-slate-600 dark:text-slate-400 font-semibold">
-                      ({event.region}地方)
-                    </span>
-                  </span>
-                  {event.review && (
-                    <div className="ml-auto flex items-center gap-1 text-xs text-amber-950 dark:text-amber-300 font-extrabold bg-amber-50 dark:bg-amber-500/10 px-2 py-0.5 rounded-md border border-amber-300 dark:border-amber-500/20">
-                      <Star className="w-3.5 h-3.5 text-amber-500 fill-amber-500" />
-                      <span className="font-mono">{event.review.rating.toFixed(1)}</span>
-                      <span className="text-xs text-slate-600 dark:text-slate-400 font-semibold">
-                        ({event.review.count})
-                      </span>
-                    </div>
-                  )}
-                </div>
+                </span>
               </div>
 
-              {/* スペック（距離・獲得標高） */}
-              <div className="grid grid-cols-2 gap-2.5 my-3 py-3 px-4 bg-slate-100/80 dark:bg-slate-850/60 rounded-xl border border-slate-250 dark:border-slate-800">
+              {/* スペック（距離・獲得標高・参加費） */}
+              <div className="grid grid-cols-3 gap-2 my-3 py-3 px-3 bg-slate-100/80 dark:bg-slate-850/60 rounded-xl border border-slate-250 dark:border-slate-800 text-center">
                 <div>
-                  <div className="text-xs text-slate-600 dark:text-slate-400 font-bold">
+                  <div className="text-[11px] text-slate-600 dark:text-slate-400 font-bold">
                     距離
                   </div>
-                  <div className="text-lg font-black text-slate-950 dark:text-white font-mono mt-0.5">
-                    {event.distance_km}{' '}
-                    <span className="text-xs font-bold text-slate-600 dark:text-slate-400">km</span>
+                  <div className="text-base font-black text-slate-950 dark:text-white font-mono mt-0.5">
+                    {event.distance_km}
+                    <span className="text-[11px] font-bold text-slate-600">km</span>
                   </div>
                 </div>
+
                 <div>
-                  <div className="text-xs text-slate-600 dark:text-slate-400 font-bold">
-                    累積標高 (D+)
+                  <div className="text-[11px] text-slate-600 dark:text-slate-400 font-bold">
+                    獲得標高
                   </div>
-                  <div className="text-lg font-black text-amber-800 dark:text-amber-400 font-mono mt-0.5 flex items-center gap-1">
-                    <TrendingUp className="w-4 h-4 text-amber-600 dark:text-amber-400" />
-                    {event.elevation_m > 0 ? `+${event.elevation_m.toLocaleString()}m` : 'フラット'}
+                  <div className="text-sm font-black text-amber-800 dark:text-amber-400 font-mono mt-0.5">
+                    {event.elevation_m > 0 ? `+${event.elevation_m}m` : '平坦'}
+                  </div>
+                </div>
+
+                <div>
+                  <div className="text-[11px] text-slate-600 dark:text-slate-400 font-bold">
+                    参加費
+                  </div>
+                  <div className="text-sm font-black text-slate-900 dark:text-slate-100 font-mono mt-0.5 truncate">
+                    {event.entry_fee || '—'}
                   </div>
                 </div>
               </div>
@@ -222,13 +247,13 @@ export const EventCardView: React.FC<EventCardViewProps> = ({
                     {event.mandatory_gear.slice(0, 3).map((gear, idx) => (
                       <span
                         key={idx}
-                        className="text-xs bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 font-bold px-2.5 py-1 rounded-md border border-slate-300 dark:border-slate-700 truncate max-w-[140px]"
+                        className="text-xs bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 font-bold px-2 py-0.5 rounded-md border border-slate-300 dark:border-slate-700 truncate max-w-[130px]"
                       >
                         {gear.name}
                       </span>
                     ))}
                     {totalGearCount > 3 && (
-                      <span className="text-xs text-slate-600 dark:text-slate-400 px-1.5 py-1 font-bold">
+                      <span className="text-xs text-slate-600 dark:text-slate-400 px-1 py-0.5 font-bold">
                         +{totalGearCount - 3}点
                       </span>
                     )}
@@ -239,79 +264,88 @@ export const EventCardView: React.FC<EventCardViewProps> = ({
 
             {/* フッターリンクボタン群（4スロット固定整列） */}
             <div
-              className="pt-3.5 border-t border-slate-200 dark:border-slate-800 grid grid-cols-[1fr_40px_40px_40px] items-center gap-2"
+              className="pt-3 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between gap-2"
               onClick={(e) => e.stopPropagation()}
             >
-              {/* スロット1: エントリー申込 or 詳細 */}
-              {canEntry ? (
-                <a
-                  href={event.links.entry!}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="h-10 px-3 rounded-xl bg-teal-700 hover:bg-teal-800 text-white text-xs sm:text-sm font-extrabold flex items-center justify-center gap-1.5 transition-colors shadow-2xs"
-                >
-                  <FileEdit className="w-4 h-4" />
-                  <span>エントリー申込</span>
-                </a>
-              ) : (
-                <button
-                  onClick={() => onSelectEvent(event)}
-                  className="h-10 px-3 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 text-slate-800 dark:text-slate-200 text-xs sm:text-sm font-extrabold border border-slate-300 dark:border-slate-700 transition-colors cursor-pointer"
-                >
-                  必携品・詳細を見る
-                </button>
-              )}
+              <div className="grid grid-cols-[76px_60px_34px_34px] items-center gap-1.5">
+                {/* スロット1: 申込ボタン */}
+                {canEntry ? (
+                  <a
+                    href={event.links.entry!}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-[76px] py-1.5 rounded-lg bg-teal-700 hover:bg-teal-800 text-white text-xs font-bold flex items-center justify-center gap-1 transition-colors shadow-2xs"
+                  >
+                    <FileEdit className="w-3.5 h-3.5" />
+                    <span>申込</span>
+                  </a>
+                ) : (
+                  <div className="w-[76px] py-1.5 rounded-lg bg-slate-150 dark:bg-slate-800/50 text-slate-500 text-xs font-bold text-center border border-slate-250 dark:border-slate-800 select-none cursor-not-allowed">
+                    受付終了
+                  </div>
+                )}
 
-              {/* スロット2: 公式 */}
-              {event.links.official ? (
-                <a
-                  href={event.links.official}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-xl bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 flex items-center justify-center transition-colors shadow-2xs"
-                  title="大会公式サイト"
-                >
-                  <Globe className="w-4 h-4 text-teal-700 dark:text-teal-400" />
-                </a>
-              ) : (
-                <span className="w-10 h-10 rounded-xl bg-slate-50 dark:bg-slate-800/40 text-slate-300 border border-slate-200 dark:border-slate-800 flex items-center justify-center">
-                  <Globe className="w-4 h-4 opacity-40" />
-                </span>
-              )}
+                {/* スロット2: 公式サイト */}
+                {event.links.official ? (
+                  <a
+                    href={event.links.official}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-[60px] py-1.5 rounded-lg bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 text-xs font-bold flex items-center justify-center gap-1 transition-colors shadow-2xs"
+                  >
+                    <Globe className="w-3.5 h-3.5 text-teal-700 dark:text-teal-400" />
+                    <span>公式</span>
+                  </a>
+                ) : (
+                  <div className="w-[60px] py-1.5 rounded-lg bg-slate-100 dark:bg-slate-850 text-slate-400 text-xs font-bold text-center border border-slate-200 dark:border-slate-800">
+                    —
+                  </div>
+                )}
 
-              {/* スロット3: 口コミ */}
-              {event.links.review ? (
-                <a
-                  href={event.links.review}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-xl bg-white dark:bg-slate-800 hover:bg-amber-50 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 flex items-center justify-center transition-colors shadow-2xs"
-                  title="大会レポ・口コミ"
-                >
-                  <MessageSquare className="w-4 h-4 text-amber-600" />
-                </a>
-              ) : (
-                <span className="w-10 h-10 rounded-xl bg-slate-50 dark:bg-slate-800/40 text-slate-300 border border-slate-200 dark:border-slate-800 flex items-center justify-center">
-                  <MessageSquare className="w-4 h-4 opacity-40" />
-                </span>
-              )}
+                {/* スロット3: 大会レポ */}
+                {event.links.review ? (
+                  <a
+                    href={event.links.review}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-[34px] h-[29px] rounded-lg bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 flex items-center justify-center transition-colors shadow-2xs"
+                    title="大会レポートを見る"
+                  >
+                    <MessageSquare className="w-3.5 h-3.5 text-amber-600" />
+                  </a>
+                ) : (
+                  <div className="w-[34px] h-[29px] rounded-lg bg-slate-100 dark:bg-slate-850 text-slate-400 text-xs font-bold flex items-center justify-center border border-slate-200 dark:border-slate-800">
+                    —
+                  </div>
+                )}
 
-              {/* スロット4: SNS */}
-              {event.links.sns ? (
-                <a
-                  href={event.links.sns}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-xl bg-white dark:bg-slate-800 hover:bg-sky-50 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 flex items-center justify-center transition-colors shadow-2xs"
-                  title="公式SNS"
-                >
-                  <Share2 className="w-4 h-4 text-sky-600" />
-                </a>
-              ) : (
-                <span className="w-10 h-10 rounded-xl bg-slate-50 dark:bg-slate-800/40 text-slate-300 border border-slate-200 dark:border-slate-800 flex items-center justify-center">
-                  <Share2 className="w-4 h-4 opacity-40" />
-                </span>
-              )}
+                {/* スロット4: 公式SNS */}
+                {event.links.sns ? (
+                  <a
+                    href={event.links.sns}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-[34px] h-[29px] rounded-lg bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 flex items-center justify-center transition-colors shadow-2xs"
+                    title="公式SNSを見る"
+                  >
+                    <Share2 className="w-3.5 h-3.5 text-sky-600" />
+                  </a>
+                ) : (
+                  <div className="w-[34px] h-[29px] rounded-lg bg-slate-100 dark:bg-slate-850 text-slate-400 text-xs font-bold flex items-center justify-center border border-slate-200 dark:border-slate-800">
+                    —
+                  </div>
+                )}
+              </div>
+
+              {/* 右端：詳細矢印ボタン */}
+              <button
+                type="button"
+                onClick={() => onSelectEvent(event)}
+                className="p-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 transition-colors cursor-pointer"
+                title="詳細・必携品リストを見る"
+              >
+                <ChevronRight className="w-4 h-4" />
+              </button>
             </div>
           </div>
         );

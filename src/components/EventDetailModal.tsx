@@ -6,7 +6,6 @@ import {
   Calendar,
   MapPin,
   TrendingUp,
-  Star,
   Globe,
   FileEdit,
   MessageSquare,
@@ -121,47 +120,45 @@ export const EventDetailModal: React.FC<EventDetailModalProps> = ({ event, deals
               {event.title}
             </h2>
             <div className="flex flex-wrap items-center gap-3.5 mt-3 text-sm text-slate-700 dark:text-slate-300">
-              <span className="flex items-center gap-1.5 font-bold text-slate-900 dark:text-slate-100">
+              <span className="flex items-center gap-1.5 font-black text-teal-800 dark:text-teal-300 bg-teal-50 dark:bg-teal-950/40 px-3 py-1 rounded-lg border border-teal-300 dark:border-teal-800">
                 <Calendar className="w-4 h-4 text-teal-700 dark:text-teal-400" />
-                {formatDate(event.date)}
+                開催日: {formatDate(event.date)}
               </span>
-              <span className="flex items-center gap-1.5 font-semibold">
+              <span className="flex items-center gap-1.5 font-bold">
                 <MapPin className="w-4 h-4 text-teal-700 dark:text-teal-400" />
                 {event.prefecture} ({event.region}地方)
               </span>
-              {event.review && (
-                <div className="flex items-center gap-1.5 text-amber-900 dark:text-amber-300 font-bold bg-amber-50 dark:bg-amber-500/10 px-2.5 py-0.5 rounded-lg border border-amber-300 dark:border-amber-500/20">
-                  <Star className="w-4 h-4 text-amber-500 fill-amber-500" />
-                  <span className="font-mono text-sm">{event.review.rating.toFixed(1)}</span>
-                  <span className="text-slate-600 dark:text-slate-400 text-xs font-medium">
-                    （{event.review.count}件の口コミ）
-                  </span>
-                </div>
-              )}
             </div>
           </div>
 
-          {/* スペックカード */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 bg-slate-50 dark:bg-slate-850/80 p-4 sm:p-5 rounded-xl border border-slate-200 dark:border-slate-800">
+          {/* スペックカード（距離・標高・参加費・締切） */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5 bg-slate-50 dark:bg-slate-850/80 p-4 sm:p-5 rounded-xl border border-slate-200 dark:border-slate-800">
             <div className="text-center sm:text-left">
               <span className="text-xs text-slate-600 dark:text-slate-400 font-bold">コース総距離</span>
-              <div className="text-2xl sm:text-3xl font-black text-slate-950 dark:text-white font-mono mt-0.5">
-                {event.distance_km} <span className="text-sm font-bold text-slate-600">km</span>
+              <div className="text-xl sm:text-2xl font-black text-slate-950 dark:text-white font-mono mt-0.5">
+                {event.distance_km} <span className="text-xs font-bold text-slate-600">km</span>
               </div>
             </div>
 
             <div className="text-center sm:text-left">
               <span className="text-xs text-slate-600 dark:text-slate-400 font-bold">累積標高 (D+)</span>
-              <div className="text-2xl sm:text-3xl font-black text-amber-700 dark:text-amber-400 font-mono mt-0.5 flex items-center justify-center sm:justify-start gap-1">
-                <TrendingUp className="w-5 h-5 text-amber-600 dark:text-amber-400" />
+              <div className="text-xl sm:text-2xl font-black text-amber-700 dark:text-amber-400 font-mono mt-0.5 flex items-center justify-center sm:justify-start gap-1">
+                <TrendingUp className="w-4 h-4 text-amber-600 dark:text-amber-400" />
                 {event.elevation_m > 0 ? `+${event.elevation_m.toLocaleString()}m` : 'フラット'}
               </div>
             </div>
 
             <div className="text-center sm:text-left">
+              <span className="text-xs text-slate-600 dark:text-slate-400 font-bold">エントリー費</span>
+              <div className="text-xl sm:text-2xl font-black text-slate-950 dark:text-white font-mono mt-0.5">
+                {event.entry_fee || '—'}
+              </div>
+            </div>
+
+            <div className="text-center sm:text-left">
               <span className="text-xs text-slate-600 dark:text-slate-400 font-bold">エントリー締切</span>
-              <div className="text-base font-extrabold text-slate-900 dark:text-slate-200 mt-1.5 font-mono">
-                {event.entry_deadline ? formatDate(event.entry_deadline) : '公式サイトにて確認'}
+              <div className="text-sm sm:text-base font-black text-red-700 dark:text-red-400 mt-1 font-mono">
+                {event.entry_deadline ? formatDate(event.entry_deadline) : '公式サイト確認'}
               </div>
             </div>
           </div>

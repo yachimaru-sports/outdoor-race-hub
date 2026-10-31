@@ -350,15 +350,8 @@ export const App: React.FC = () => {
       })
       .sort((a, b) => {
         switch (filters.sortBy) {
-          case 'date-asc': {
-            // 開催日が近い順のとき、これから開催される大会（または受付中・告知中）を上に、すでに終了した大会を下に並べる
-            const aFinished = a.entry_status === 'closed';
-            const bFinished = b.entry_status === 'closed';
-            if (aFinished !== bFinished) {
-              return aFinished ? 1 : -1;
-            }
+          case 'date-asc':
             return new Date(a.date).getTime() - new Date(b.date).getTime();
-          }
           case 'date-desc':
             return new Date(b.date).getTime() - new Date(a.date).getTime();
           case 'distance-asc':
@@ -367,11 +360,6 @@ export const App: React.FC = () => {
             return b.distance_km - a.distance_km;
           case 'elevation-desc':
             return b.elevation_m - a.elevation_m;
-          case 'rating-desc': {
-            const ratingA = a.review ? a.review.rating : 0;
-            const ratingB = b.review ? b.review.rating : 0;
-            return ratingB - ratingA;
-          }
           default:
             return 0;
         }

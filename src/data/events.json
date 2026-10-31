@@ -25,10 +25,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://www.facebook.com/advkansai/"
     },
-    "review": {
-      "rating": 4.8,
-      "count": 36
-    },
     "mandatory_gear": [
       {
         "name": "マウンテンバイク（MTB）＆JCF公認ヘルメット",
@@ -54,7 +50,8 @@
         "name": "行動食・水分1.5L以上",
         "category": "補給"
       }
-    ]
+    ],
+    "entry_fee": "7,000円"
   },
   {
     "id": "toretore-hozukyou-2026",
@@ -82,10 +79,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://www.facebook.com/advkansai/"
     },
-    "review": {
-      "rating": 4.9,
-      "count": 42
-    },
     "mandatory_gear": [
       {
         "name": "パックラフトまたは指定カヤック＆パドル・PFD（ライフジャケット）",
@@ -107,7 +100,8 @@
         "name": "SOLエスケープヴィヴィ・保温シート＆ホイッスル",
         "category": "エイド"
       }
-    ]
+    ],
+    "entry_fee": "7,000円"
   },
   {
     "id": "toretore-narayoshi-2026",
@@ -134,10 +128,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://www.facebook.com/advkansai/"
     },
-    "review": {
-      "rating": 4.9,
-      "count": 58
-    },
     "mandatory_gear": [
       {
         "name": "パックラフトまたは指定カヤック＆パドル・PFD（ライフジャケット）",
@@ -159,7 +149,8 @@
         "name": "SOLエスケープヴィヴィ・保温シート＆ホイッスル",
         "category": "エイド"
       }
-    ]
+    ],
+    "entry_fee": "8,500円"
   },
   {
     "id": "toretore-tomisu-2026",
@@ -187,10 +178,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://www.facebook.com/advkansai/"
     },
-    "review": {
-      "rating": 4.7,
-      "count": 31
-    },
     "mandatory_gear": [
       {
         "name": "マウンテンバイク（MTB）＆JCF公認ヘルメット",
@@ -216,7 +203,8 @@
         "name": "行動食・水分1.5L以上",
         "category": "補給"
       }
-    ]
+    ],
+    "entry_fee": "7,000円"
   },
   {
     "id": "toretore-obsidian-2026",
@@ -243,10 +231,6 @@
       "review": "https://moshicom.com/",
       "sns": "https://www.facebook.com/advkansai/"
     },
-    "review": {
-      "rating": 4.7,
-      "count": 24
-    },
     "mandatory_gear": [
       {
         "name": "マウンテンバイク（MTB）＆JCF公認ヘルメット",
@@ -272,7 +256,8 @@
         "name": "行動食・水分1.5L以上",
         "category": "補給"
       }
-    ]
+    ],
+    "entry_fee": "7,000円"
   },
   {
     "id": "toretore-iwamura-2026",
@@ -299,10 +284,6 @@
       "review": "https://moshicom.com/",
       "sns": "https://www.facebook.com/advkansai/"
     },
-    "review": {
-      "rating": 4.6,
-      "count": 29
-    },
     "mandatory_gear": [
       {
         "name": "マウンテンバイク（MTB）＆JCF公認ヘルメット",
@@ -328,7 +309,8 @@
         "name": "行動食・水分1.5L以上",
         "category": "補給"
       }
-    ]
+    ],
+    "entry_fee": "7,000円"
   },
   {
     "id": "kannabe-rogaining-2026",
@@ -355,10 +337,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://www.facebook.com/advkansai/"
     },
-    "review": {
-      "rating": 4.7,
-      "count": 39
-    },
     "mandatory_gear": [
       {
         "name": "プレートコンパス（シルバコンパス等・方位磁石）",
@@ -380,7 +358,8 @@
         "name": "行動食（エナジージェル等）＆水分1.0L以上",
         "category": "補給"
       }
-    ]
+    ],
+    "entry_fee": "4,500円"
   },
   {
     "id": "mannou-rogaining-2026",
@@ -407,10 +386,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://www.facebook.com/advkansai/"
     },
-    "review": {
-      "rating": 4.8,
-      "count": 34
-    },
     "mandatory_gear": [
       {
         "name": "プレートコンパス（シルバコンパス等・方位磁石）",
@@ -432,7 +407,8 @@
         "name": "行動食（エナジージェル等）＆水分1.0L以上",
         "category": "補給"
       }
-    ]
+    ],
+    "entry_fee": "4,500円"
   },
   {
     "id": "omm-japan-2026",
@@ -459,10 +435,6 @@
       "review": "https://theomm.jp/",
       "sns": "https://www.facebook.com/theommjapan"
     },
-    "review": {
-      "rating": 4.9,
-      "count": 178
-    },
     "mandatory_gear": [
       {
         "name": "ツエルトまたは軽量山岳テント（耐水フライ付）",
@@ -484,7 +456,8 @@
         "name": "シーム処理済み完全防水レイン上下＆防寒ダウン",
         "category": "ウェア"
       }
-    ]
+    ],
+    "entry_fee": "6,500円"
   },
   {
     "id": "omm-lite-bike-hakuba-2026",
@@ -511,10 +484,6 @@
       "review": "https://theomm.jp/",
       "sns": "https://www.facebook.com/theommjapan"
     },
-    "review": {
-      "rating": 4.9,
-      "count": 132
-    },
     "mandatory_gear": [
       {
         "name": "マウンテンバイク（MTB）＆JCF公認ヘルメット",
@@ -540,7 +509,8 @@
         "name": "行動食・水分1.5L以上",
         "category": "補給"
       }
-    ]
+    ],
+    "entry_fee": "6,500円"
   },
   {
     "id": "niseko-expedition-2026",
@@ -568,10 +538,6 @@
       "review": "https://nisekoexpedition.jp/",
       "sns": "https://www.facebook.com/"
     },
-    "review": {
-      "rating": 4.9,
-      "count": 64
-    },
     "mandatory_gear": [
       {
         "name": "パックラフトまたは指定カヤック＆パドル・PFD（ライフジャケット）",
@@ -593,7 +559,8 @@
         "name": "SOLエスケープヴィヴィ・保温シート＆ホイッスル",
         "category": "エイド"
       }
-    ]
+    ],
+    "entry_fee": "28,000円"
   },
   {
     "id": "echigo-adventure-2026",
@@ -621,10 +588,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.6,
-      "count": 41
-    },
     "mandatory_gear": [
       {
         "name": "パックラフトまたは指定カヤック＆パドル・PFD（ライフジャケット）",
@@ -646,7 +609,8 @@
         "name": "SOLエスケープヴィヴィ・保温シート＆ホイッスル",
         "category": "エイド"
       }
-    ]
+    ],
+    "entry_fee": "12,000円"
   },
   {
     "id": "izumo-kunibiki-rogaining-2026",
@@ -672,10 +636,6 @@
       "review": "https://moshicom.com/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.7,
-      "count": 33
-    },
     "mandatory_gear": [
       {
         "name": "プレートコンパス（シルバコンパス等・方位磁石）",
@@ -697,7 +657,8 @@
         "name": "行動食（エナジージェル等）＆水分1.0L以上",
         "category": "補給"
       }
-    ]
+    ],
+    "entry_fee": "4,500円"
   },
   {
     "id": "hiroshima-miyajima-rogaining-2026",
@@ -724,10 +685,6 @@
       "review": "https://moshicom.com/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.8,
-      "count": 48
-    },
     "mandatory_gear": [
       {
         "name": "プレートコンパス（シルバコンパス等・方位磁石）",
@@ -749,7 +706,8 @@
         "name": "行動食（エナジージェル等）＆水分1.0L以上",
         "category": "補給"
       }
-    ]
+    ],
+    "entry_fee": "4,500円"
   },
   {
     "id": "setouchi-island-adventure-2026",
@@ -776,10 +734,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.8,
-      "count": 37
-    },
     "mandatory_gear": [
       {
         "name": "パックラフトまたは指定カヤック＆パドル・PFD（ライフジャケット）",
@@ -801,7 +755,8 @@
         "name": "SOLエスケープヴィヴィ・保温シート＆ホイッスル",
         "category": "エイド"
       }
-    ]
+    ],
+    "entry_fee": "8,000円"
   },
   {
     "id": "mt-fuji-100-2027",
@@ -827,10 +782,6 @@
       "review": "https://runnet.jp/runtes/raceDetail/top/n319194.html",
       "sns": "https://x.com/MtFUJI100"
     },
-    "review": {
-      "rating": 4.9,
-      "count": 645
-    },
     "mandatory_gear": [
       {
         "name": "ゴアテックス等 シームテープ加工防水透湿レイン上下",
@@ -856,7 +807,8 @@
         "name": "水分1.5L以上携行可能なトレランザック（10L〜12L）＆補給食",
         "category": "補給"
       }
-    ]
+    ],
+    "entry_fee": "38,000円"
   },
   {
     "id": "hiroshima-utmb-2027",
@@ -882,10 +834,6 @@
       "review": "https://dogsorcaravan.com/",
       "sns": "https://x.com/UTMBWorldSeries"
     },
-    "review": {
-      "rating": 4.9,
-      "count": 288
-    },
     "mandatory_gear": [
       {
         "name": "ゴアテックス等 シームテープ加工防水透湿レイン上下",
@@ -911,7 +859,8 @@
         "name": "水分1.5L以上携行可能なトレランザック（10L〜12L）＆補給食",
         "category": "補給"
       }
-    ]
+    ],
+    "entry_fee": "38,000円"
   },
   {
     "id": "shinetsu-five-mountains-100mile-2026",
@@ -937,10 +886,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://www.facebook.com/sfmt100/"
     },
-    "review": {
-      "rating": 5,
-      "count": 520
-    },
     "mandatory_gear": [
       {
         "name": "ゴアテックス等 シームテープ加工防水透湿レイン上下",
@@ -966,7 +911,8 @@
         "name": "水分1.5L以上携行可能なトレランザック（10L〜12L）＆補給食",
         "category": "補給"
       }
-    ]
+    ],
+    "entry_fee": "44,000円"
   },
   {
     "id": "ggr-ishikiriba-100-2026",
@@ -992,10 +938,6 @@
       "review": "https://moshicom.com/",
       "sns": "https://www.facebook.com/"
     },
-    "review": {
-      "rating": 4.7,
-      "count": 74
-    },
     "mandatory_gear": [
       {
         "name": "ゴアテックス等 シームテープ加工防水透湿レイン上下",
@@ -1021,7 +963,8 @@
         "name": "水分1.5L以上携行可能なトレランザック（10L〜12L）＆補給食",
         "category": "補給"
       }
-    ]
+    ],
+    "entry_fee": "38,000円"
   },
   {
     "id": "lake-biwa-100-2026",
@@ -1048,10 +991,6 @@
       "review": "https://dogsorcaravan.com/",
       "sns": "https://www.facebook.com/"
     },
-    "review": {
-      "rating": 4.9,
-      "count": 145
-    },
     "mandatory_gear": [
       {
         "name": "ゴアテックス等 シームテープ加工防水透湿レイン上下",
@@ -1077,7 +1016,8 @@
         "name": "水分1.5L以上携行可能なトレランザック（10L〜12L）＆補給食",
         "category": "補給"
       }
-    ]
+    ],
+    "entry_fee": "38,000円"
   },
   {
     "id": "koumi-100-2026",
@@ -1103,10 +1043,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://www.facebook.com/"
     },
-    "review": {
-      "rating": 4.8,
-      "count": 198
-    },
     "mandatory_gear": [
       {
         "name": "ゴアテックス等 シームテープ加工防水透湿レイン上下",
@@ -1132,7 +1068,8 @@
         "name": "水分1.5L以上携行可能なトレランザック（10L〜12L）＆補給食",
         "category": "補給"
       }
-    ]
+    ],
+    "entry_fee": "38,000円"
   },
   {
     "id": "sainokuni-100mile-2026",
@@ -1158,10 +1095,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://www.facebook.com/"
     },
-    "review": {
-      "rating": 4.8,
-      "count": 215
-    },
     "mandatory_gear": [
       {
         "name": "ゴアテックス等 シームテープ加工防水透湿レイン上下",
@@ -1187,7 +1120,8 @@
         "name": "水分1.5L以上携行可能なトレランザック（10L〜12L）＆補給食",
         "category": "補給"
       }
-    ]
+    ],
+    "entry_fee": "38,000円"
   },
   {
     "id": "ftr-chichibu-okumusashi-100mile-2026",
@@ -1213,10 +1147,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://www.facebook.com/"
     },
-    "review": {
-      "rating": 4.8,
-      "count": 260
-    },
     "mandatory_gear": [
       {
         "name": "ゴアテックス等 シームテープ加工防水透湿レイン上下",
@@ -1242,7 +1172,8 @@
         "name": "水分1.5L以上携行可能なトレランザック（10L〜12L）＆補給食",
         "category": "補給"
       }
-    ]
+    ],
+    "entry_fee": "38,000円"
   },
   {
     "id": "osj-ontake-100mile-2026",
@@ -1268,10 +1199,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://www.facebook.com/"
     },
-    "review": {
-      "rating": 4.8,
-      "count": 340
-    },
     "mandatory_gear": [
       {
         "name": "ゴアテックス等 シームテープ加工防水透湿レイン上下",
@@ -1297,7 +1224,8 @@
         "name": "水分1.5L以上携行可能なトレランザック（10L〜12L）＆補給食",
         "category": "補給"
       }
-    ]
+    ],
+    "entry_fee": "38,000円"
   },
   {
     "id": "deep-japan-ultra-100-2026",
@@ -1324,10 +1252,6 @@
       "review": "https://dogsorcaravan.com/",
       "sns": "https://www.facebook.com/"
     },
-    "review": {
-      "rating": 4.9,
-      "count": 118
-    },
     "mandatory_gear": [
       {
         "name": "ゴアテックス等 シームテープ加工防水透湿レイン上下",
@@ -1353,7 +1277,8 @@
         "name": "水分1.5L以上携行可能なトレランザック（10L〜12L）＆補給食",
         "category": "補給"
       }
-    ]
+    ],
+    "entry_fee": "45,000円"
   },
   {
     "id": "kumagawa-revival-trail-100mile-2026",
@@ -1379,10 +1304,6 @@
       "review": "https://dogsorcaravan.com/",
       "sns": "https://www.facebook.com/"
     },
-    "review": {
-      "rating": 4.9,
-      "count": 134
-    },
     "mandatory_gear": [
       {
         "name": "ゴアテックス等 シームテープ加工防水透湿レイン上下",
@@ -1408,7 +1329,8 @@
         "name": "水分1.5L以上携行可能なトレランザック（10L〜12L）＆補給食",
         "category": "補給"
       }
-    ]
+    ],
+    "entry_fee": "39,000円"
   },
   {
     "id": "osj-koushu-alps-100mile-2026",
@@ -1434,10 +1356,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://www.facebook.com/"
     },
-    "review": {
-      "rating": 4.7,
-      "count": 95
-    },
     "mandatory_gear": [
       {
         "name": "ゴアテックス等 シームテープ加工防水透湿レイン上下",
@@ -1463,7 +1381,8 @@
         "name": "水分1.5L以上携行可能なトレランザック（10L〜12L）＆補給食",
         "category": "補給"
       }
-    ]
+    ],
+    "entry_fee": "38,000円"
   },
   {
     "id": "tambasasayama-100mile-2026",
@@ -1489,10 +1408,6 @@
       "review": "https://dogsorcaravan.com/",
       "sns": "https://www.facebook.com/"
     },
-    "review": {
-      "rating": 4.9,
-      "count": 110
-    },
     "mandatory_gear": [
       {
         "name": "ゴアテックス等 シームテープ加工防水透湿レイン上下",
@@ -1518,7 +1433,8 @@
         "name": "水分1.5L以上携行可能なトレランザック（10L〜12L）＆補給食",
         "category": "補給"
       }
-    ]
+    ],
+    "entry_fee": "38,000円"
   },
   {
     "id": "michinoku-coastal-trail-100mile-2026",
@@ -1544,10 +1460,6 @@
       "review": "https://moshicom.com/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.8,
-      "count": 76
-    },
     "mandatory_gear": [
       {
         "name": "ゴアテックス等 シームテープ加工防水透湿レイン上下",
@@ -1573,7 +1485,8 @@
         "name": "水分1.5L以上携行可能なトレランザック（10L〜12L）＆補給食",
         "category": "補給"
       }
-    ]
+    ],
+    "entry_fee": "38,000円"
   },
   {
     "id": "ibuki-hyakkei-100mile-2026",
@@ -1599,10 +1512,6 @@
       "review": "https://moshicom.com/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.7,
-      "count": 68
-    },
     "mandatory_gear": [
       {
         "name": "ゴアテックス等 シームテープ加工防水透湿レイン上下",
@@ -1628,7 +1537,8 @@
         "name": "水分1.5L以上携行可能なトレランザック（10L〜12L）＆補給食",
         "category": "補給"
       }
-    ]
+    ],
+    "entry_fee": "38,000円"
   },
   {
     "id": "backyard-ultra-hiroshima-2026",
@@ -1654,10 +1564,6 @@
       "review": "https://moshicom.com/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.8,
-      "count": 82
-    },
     "mandatory_gear": [
       {
         "name": "ゴアテックス等 シームテープ加工防水透湿レイン上下",
@@ -1683,7 +1589,8 @@
         "name": "水分1.5L以上携行可能なトレランザック（10L〜12L）＆補給食",
         "category": "補給"
       }
-    ]
+    ],
+    "entry_fee": "38,000円"
   },
   {
     "id": "mihara-hakuryuko-trail-2026",
@@ -1708,10 +1615,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://www.facebook.com/miharatrail"
     },
-    "review": {
-      "rating": 4.6,
-      "count": 114
-    },
     "mandatory_gear": [
       {
         "name": "レインジャケットまたは防風シェル",
@@ -1729,7 +1632,8 @@
         "name": "トレイルランニングシューズ＆トレランザック",
         "category": "ギア"
       }
-    ]
+    ],
+    "entry_fee": "11,000円"
   },
   {
     "id": "megahira-extreme-500-2026",
@@ -1754,10 +1658,6 @@
       "review": "https://moshicom.com/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.7,
-      "count": 45
-    },
     "mandatory_gear": [
       {
         "name": "レインジャケットまたは防風シェル",
@@ -1775,7 +1675,8 @@
         "name": "トレイルランニングシューズ＆トレランザック",
         "category": "ギア"
       }
-    ]
+    ],
+    "entry_fee": "6,500円"
   },
   {
     "id": "hiroshima-bay-night-trail-2026",
@@ -1800,10 +1701,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.7,
-      "count": 94
-    },
     "mandatory_gear": [
       {
         "name": "防水透湿レインジャケット（フード付き・シーム処理済）",
@@ -1825,7 +1722,8 @@
         "name": "ソフトフラスク水分1.0L以上＆マグネシウム系エナジージェル",
         "category": "補給"
       }
-    ]
+    ],
+    "entry_fee": "24,000円"
   },
   {
     "id": "hibayama-skyrun-2026",
@@ -1850,10 +1748,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.8,
-      "count": 128
-    },
     "mandatory_gear": [
       {
         "name": "レインジャケットまたは防風シェル",
@@ -1871,7 +1765,8 @@
         "name": "トレイルランニングシューズ＆トレランザック",
         "category": "ギア"
       }
-    ]
+    ],
+    "entry_fee": "11,000円"
   },
   {
     "id": "shinjo-forest-trail-2026",
@@ -1896,10 +1791,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.7,
-      "count": 79
-    },
     "mandatory_gear": [
       {
         "name": "レインジャケットまたは防風シェル",
@@ -1917,7 +1808,8 @@
         "name": "トレイルランニングシューズ＆トレランザック",
         "category": "ギア"
       }
-    ]
+    ],
+    "entry_fee": "6,500円"
   },
   {
     "id": "osorakan-ekiden-trail-2026",
@@ -1942,10 +1834,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://www.facebook.com/"
     },
-    "review": {
-      "rating": 4.9,
-      "count": 186
-    },
     "mandatory_gear": [
       {
         "name": "防水透湿レインジャケット（フード付き・シーム処理済）",
@@ -1967,7 +1855,8 @@
         "name": "ソフトフラスク水分1.0L以上＆マグネシウム系エナジージェル",
         "category": "補給"
       }
-    ]
+    ],
+    "entry_fee": "16,000円"
   },
   {
     "id": "momiji-trail-hatsukaichi-2026",
@@ -1992,10 +1881,6 @@
       "review": "https://moshicom.com/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.7,
-      "count": 92
-    },
     "mandatory_gear": [
       {
         "name": "レインジャケットまたは防風シェル",
@@ -2013,7 +1898,8 @@
         "name": "トレイルランニングシューズ＆トレランザック",
         "category": "ギア"
       }
-    ]
+    ],
+    "entry_fee": "11,000円"
   },
   {
     "id": "kure-tobishima-ultra-2026",
@@ -2038,10 +1924,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.8,
-      "count": 112
-    },
     "mandatory_gear": [
       {
         "name": "早朝・夜間走行用ヘッドライト＆背面点滅赤色ライト",
@@ -2059,7 +1941,8 @@
         "name": "撥水ウインドシェル＆ワセリン・テーピング",
         "category": "ウェア"
       }
-    ]
+    ],
+    "entry_fee": "22,000円"
   },
   {
     "id": "hiroshima-peace-marathon-2026",
@@ -2084,10 +1967,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.5,
-      "count": 240
-    },
     "mandatory_gear": [
       {
         "name": "高機能ランニングウェア・吸汗速乾インナー",
@@ -2101,7 +1980,8 @@
         "name": "GPSランニングウォッチ",
         "category": "ナビゲーション"
       }
-    ]
+    ],
+    "entry_fee": "7,500円"
   },
   {
     "id": "akiota-shinkansen-cycle-2026",
@@ -2126,10 +2006,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.7,
-      "count": 68
-    },
     "mandatory_gear": [
       {
         "name": "JCF公認サイクルヘルメット＆グローブ",
@@ -2151,7 +2027,8 @@
         "name": "ウインドブレーカー・レインジレ",
         "category": "ウェア"
       }
-    ]
+    ],
+    "entry_fee": "10,000円"
   },
   {
     "id": "nagi-peaks-tough-trail-2026",
@@ -2176,10 +2053,6 @@
       "review": "https://dogsorcaravan.com/",
       "sns": "https://www.facebook.com/"
     },
-    "review": {
-      "rating": 4.9,
-      "count": 136
-    },
     "mandatory_gear": [
       {
         "name": "防水透湿レインジャケット（フード付き・シーム処理済）",
@@ -2201,7 +2074,8 @@
         "name": "ソフトフラスク水分1.0L以上＆マグネシウム系エナジージェル",
         "category": "補給"
       }
-    ]
+    ],
+    "entry_fee": "11,000円"
   },
   {
     "id": "hiruzen-kougen-marathon-trail-2026",
@@ -2226,10 +2100,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.7,
-      "count": 88
-    },
     "mandatory_gear": [
       {
         "name": "レインジャケットまたは防風シェル",
@@ -2247,7 +2117,8 @@
         "name": "トレイルランニングシューズ＆トレランザック",
         "category": "ギア"
       }
-    ]
+    ],
+    "entry_fee": "11,000円"
   },
   {
     "id": "okayama-marathon-2026",
@@ -2272,10 +2143,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.9,
-      "count": 890
-    },
     "mandatory_gear": [
       {
         "name": "高機能ランニングウェア・吸汗速乾インナー",
@@ -2289,7 +2156,8 @@
         "name": "GPSランニングウォッチ",
         "category": "ナビゲーション"
       }
-    ]
+    ],
+    "entry_fee": "15,000円"
   },
   {
     "id": "soja-kibiji-marathon-2027",
@@ -2314,10 +2182,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.6,
-      "count": 410
-    },
     "mandatory_gear": [
       {
         "name": "高機能ランニングウェア・吸汗速乾インナー",
@@ -2331,7 +2195,8 @@
         "name": "GPSランニングウォッチ",
         "category": "ナビゲーション"
       }
-    ]
+    ],
+    "entry_fee": "15,000円"
   },
   {
     "id": "kagamino-forest-trail-2026",
@@ -2356,10 +2221,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.7,
-      "count": 63
-    },
     "mandatory_gear": [
       {
         "name": "レインジャケットまたは防風シェル",
@@ -2377,7 +2238,8 @@
         "name": "トレイルランニングシューズ＆トレランザック",
         "category": "ギア"
       }
-    ]
+    ],
+    "entry_fee": "11,000円"
   },
   {
     "id": "harima-okayama-ride-2026",
@@ -2402,10 +2264,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.7,
-      "count": 94
-    },
     "mandatory_gear": [
       {
         "name": "JCF公認サイクルヘルメット＆グローブ",
@@ -2427,7 +2285,8 @@
         "name": "ウインドブレーカー・レインジレ",
         "category": "ウェア"
       }
-    ]
+    ],
+    "entry_fee": "13,000円"
   },
   {
     "id": "akiyoshidai-karst-trail-2026",
@@ -2452,10 +2311,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://www.facebook.com/"
     },
-    "review": {
-      "rating": 4.9,
-      "count": 245
-    },
     "mandatory_gear": [
       {
         "name": "防水透湿レインジャケット（フード付き・シーム処理済）",
@@ -2477,7 +2332,8 @@
         "name": "ソフトフラスク水分1.0L以上＆マグネシウム系エナジージェル",
         "category": "補給"
       }
-    ]
+    ],
+    "entry_fee": "16,000円"
   },
   {
     "id": "くだまつ笠戸島アイランドトレイル-2027",
@@ -2502,10 +2358,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://www.facebook.com/"
     },
-    "review": {
-      "rating": 4.9,
-      "count": 210
-    },
     "mandatory_gear": [
       {
         "name": "レインジャケットまたは防風シェル",
@@ -2523,7 +2375,8 @@
         "name": "トレイルランニングシューズ＆トレランザック",
         "category": "ギア"
       }
-    ]
+    ],
+    "entry_fee": "11,000円"
   },
   {
     "id": "shimonoseki-kaikyo-marathon-2026",
@@ -2548,10 +2401,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.8,
-      "count": 760
-    },
     "mandatory_gear": [
       {
         "name": "高機能ランニングウェア・吸汗速乾インナー",
@@ -2565,7 +2414,8 @@
         "name": "GPSランニングウォッチ",
         "category": "ナビゲーション"
       }
-    ]
+    ],
+    "entry_fee": "15,000円"
   },
   {
     "id": "mukatsuku-double-marathon-2026",
@@ -2590,10 +2440,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.9,
-      "count": 315
-    },
     "mandatory_gear": [
       {
         "name": "早朝・夜間走行用ヘッドライト＆背面点滅赤色ライト",
@@ -2611,7 +2457,8 @@
         "name": "撥水ウインドシェル＆ワセリン・テーピング",
         "category": "ウェア"
       }
-    ]
+    ],
+    "entry_fee": "15,000円"
   },
   {
     "id": "suo-oshima-マラニック-2026",
@@ -2637,10 +2484,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.7,
-      "count": 118
-    },
     "mandatory_gear": [
       {
         "name": "早朝・夜間走行用ヘッドライト＆背面点滅赤色ライト",
@@ -2658,7 +2501,8 @@
         "name": "撥水ウインドシェル＆ワセリン・テーピング",
         "category": "ウェア"
       }
-    ]
+    ],
+    "entry_fee": "22,000円"
   },
   {
     "id": "mine-akiyoshidai-cycle-2026",
@@ -2683,10 +2527,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.8,
-      "count": 175
-    },
     "mandatory_gear": [
       {
         "name": "JCF公認サイクルヘルメット＆グローブ",
@@ -2708,7 +2548,8 @@
         "name": "ウインドブレーカー・レインジレ",
         "category": "ウェア"
       }
-    ]
+    ],
+    "entry_fee": "10,000円"
   },
   {
     "id": "marishiten-trail-2026",
@@ -2734,10 +2575,6 @@
       "review": "https://dogsorcaravan.com/",
       "sns": "https://www.facebook.com/"
     },
-    "review": {
-      "rating": 4.8,
-      "count": 106
-    },
     "mandatory_gear": [
       {
         "name": "防水透湿レインジャケット（フード付き・シーム処理済）",
@@ -2759,7 +2596,8 @@
         "name": "ソフトフラスク水分1.0L以上＆マグネシウム系エナジージェル",
         "category": "補給"
       }
-    ]
+    ],
+    "entry_fee": "24,000円"
   },
   {
     "id": "okinosima-ultra-2026",
@@ -2785,10 +2623,6 @@
       "review": "https://runnet.jp/runtes/raceDetail/top/n314512.html",
       "sns": "https://www.facebook.com/okinoshimaultra"
     },
-    "review": {
-      "rating": 4.9,
-      "count": 320
-    },
     "mandatory_gear": [
       {
         "name": "早朝・夜間走行用ヘッドライト＆背面点滅赤色ライト",
@@ -2806,7 +2640,8 @@
         "name": "撥水ウインドシェル＆ワセリン・テーピング",
         "category": "ウェア"
       }
-    ]
+    ],
+    "entry_fee": "22,000円"
   },
   {
     "id": "sanbe-mountain-trail-2026",
@@ -2831,10 +2666,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.7,
-      "count": 74
-    },
     "mandatory_gear": [
       {
         "name": "レインジャケットまたは防風シェル",
@@ -2852,7 +2683,8 @@
         "name": "トレイルランニングシューズ＆トレランザック",
         "category": "ギア"
       }
-    ]
+    ],
+    "entry_fee": "11,000円"
   },
   {
     "id": "matsue-kokuhou-marathon-2026",
@@ -2877,10 +2709,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.8,
-      "count": 430
-    },
     "mandatory_gear": [
       {
         "name": "高機能ランニングウェア・吸汗速乾インナー",
@@ -2894,7 +2722,8 @@
         "name": "GPSランニングウォッチ",
         "category": "ナビゲーション"
       }
-    ]
+    ],
+    "entry_fee": "15,000円"
   },
   {
     "id": "shimanami-yamanami-cycle-2026",
@@ -2919,10 +2748,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.7,
-      "count": 89
-    },
     "mandatory_gear": [
       {
         "name": "JCF公認サイクルヘルメット＆グローブ",
@@ -2944,7 +2769,8 @@
         "name": "ウインドブレーカー・レインジレ",
         "category": "ウェア"
       }
-    ]
+    ],
+    "entry_fee": "10,000円"
   },
   {
     "id": "daisen-mountain-trail-2026",
@@ -2969,10 +2795,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.8,
-      "count": 122
-    },
     "mandatory_gear": [
       {
         "name": "防水透湿レインジャケット（フード付き・シーム処理済）",
@@ -2994,7 +2816,8 @@
         "name": "ソフトフラスク水分1.0L以上＆マグネシウム系エナジージェル",
         "category": "補給"
       }
-    ]
+    ],
+    "entry_fee": "11,000円"
   },
   {
     "id": "hyonosen-trail-tottori-2026",
@@ -3019,10 +2842,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.7,
-      "count": 85
-    },
     "mandatory_gear": [
       {
         "name": "防水透湿レインジャケット（フード付き・シーム処理済）",
@@ -3044,7 +2863,8 @@
         "name": "ソフトフラスク水分1.0L以上＆マグネシウム系エナジージェル",
         "category": "補給"
       }
-    ]
+    ],
+    "entry_fee": "11,000円"
   },
   {
     "id": "tottori-marathon-2027",
@@ -3069,10 +2889,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.7,
-      "count": 460
-    },
     "mandatory_gear": [
       {
         "name": "高機能ランニングウェア・吸汗速乾インナー",
@@ -3086,7 +2902,8 @@
         "name": "GPSランニングウォッチ",
         "category": "ナビゲーション"
       }
-    ]
+    ],
+    "entry_fee": "15,000円"
   },
   {
     "id": "tour-de-daisen-2026",
@@ -3111,10 +2928,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.8,
-      "count": 145
-    },
     "mandatory_gear": [
       {
         "name": "JCF公認サイクルヘルメット＆グローブ",
@@ -3136,7 +2949,8 @@
         "name": "ウインドブレーカー・レインジレ",
         "category": "ウェア"
       }
-    ]
+    ],
+    "entry_fee": "10,000円"
   },
   {
     "id": "cycling-shimanami-2026",
@@ -3161,10 +2975,6 @@
       "review": "https://www.sportsentry.ne.jp/",
       "sns": "https://x.com/cshimanami"
     },
-    "review": {
-      "rating": 4.9,
-      "count": 680
-    },
     "mandatory_gear": [
       {
         "name": "JCF公認サイクルヘルメット＆グローブ",
@@ -3186,7 +2996,8 @@
         "name": "ウインドブレーカー・レインジレ",
         "category": "ウェア"
       }
-    ]
+    ],
+    "entry_fee": "10,000円"
   },
   {
     "id": "ishizuchi-skyrun-trail-2026",
@@ -3211,10 +3022,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.8,
-      "count": 142
-    },
     "mandatory_gear": [
       {
         "name": "防水透湿レインジャケット（フード付き・シーム処理済）",
@@ -3236,7 +3043,8 @@
         "name": "ソフトフラスク水分1.0L以上＆マグネシウム系エナジージェル",
         "category": "補給"
       }
-    ]
+    ],
+    "entry_fee": "11,000円"
   },
   {
     "id": "kumakogen-four-seasons-trail-2026",
@@ -3261,10 +3069,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.7,
-      "count": 76
-    },
     "mandatory_gear": [
       {
         "name": "レインジャケットまたは防風シェル",
@@ -3282,7 +3086,8 @@
         "name": "トレイルランニングシューズ＆トレランザック",
         "category": "ギア"
       }
-    ]
+    ],
+    "entry_fee": "11,000円"
   },
   {
     "id": "ehime-marathon-2027",
@@ -3307,10 +3112,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.9,
-      "count": 1120
-    },
     "mandatory_gear": [
       {
         "name": "高機能ランニングウェア・吸汗速乾インナー",
@@ -3324,7 +3125,8 @@
         "name": "GPSランニングウォッチ",
         "category": "ナビゲーション"
       }
-    ]
+    ],
+    "entry_fee": "15,000円"
   },
   {
     "id": "shimanami-jukan-ultra-100-2026",
@@ -3350,10 +3152,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.8,
-      "count": 210
-    },
     "mandatory_gear": [
       {
         "name": "早朝・夜間走行用ヘッドライト＆背面点滅赤色ライト",
@@ -3371,7 +3169,8 @@
         "name": "撥水ウインドシェル＆ワセリン・テーピング",
         "category": "ウェア"
       }
-    ]
+    ],
+    "entry_fee": "22,000円"
   },
   {
     "id": "ufo-line-hillclimb-2026",
@@ -3396,10 +3195,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.9,
-      "count": 195
-    },
     "mandatory_gear": [
       {
         "name": "JCF公認サイクルヘルメット＆グローブ",
@@ -3421,7 +3216,8 @@
         "name": "ウインドブレーカー・レインジレ",
         "category": "ウェア"
       }
-    ]
+    ],
+    "entry_fee": "7,000円"
   },
   {
     "id": "shodoshima-olive-trail-2026",
@@ -3446,10 +3242,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.8,
-      "count": 108
-    },
     "mandatory_gear": [
       {
         "name": "レインジャケットまたは防風シェル",
@@ -3467,7 +3259,8 @@
         "name": "トレイルランニングシューズ＆トレランザック",
         "category": "ギア"
       }
-    ]
+    ],
+    "entry_fee": "11,000円"
   },
   {
     "id": "sanuki-mountains-skytrail-2026",
@@ -3492,10 +3285,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.6,
-      "count": 84
-    },
     "mandatory_gear": [
       {
         "name": "防水透湿レインジャケット（フード付き・シーム処理済）",
@@ -3517,7 +3306,8 @@
         "name": "ソフトフラスク水分1.0L以上＆マグネシウム系エナジージェル",
         "category": "補給"
       }
-    ]
+    ],
+    "entry_fee": "11,000円"
   },
   {
     "id": "kagawa-marugame-half-2027",
@@ -3542,10 +3332,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.8,
-      "count": 610
-    },
     "mandatory_gear": [
       {
         "name": "高機能ランニングウェア・吸汗速乾インナー",
@@ -3559,7 +3345,8 @@
         "name": "GPSランニングウォッチ",
         "category": "ナビゲーション"
       }
-    ]
+    ],
+    "entry_fee": "7,500円"
   },
   {
     "id": "tour-de-sanuki-udon-2026",
@@ -3584,10 +3371,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.8,
-      "count": 230
-    },
     "mandatory_gear": [
       {
         "name": "JCF公認サイクルヘルメット＆グローブ",
@@ -3609,7 +3392,8 @@
         "name": "ウインドブレーカー・レインジレ",
         "category": "ウェア"
       }
-    ]
+    ],
+    "entry_fee": "10,000円"
   },
   {
     "id": "mameichi-shodoshima-cycle-2026",
@@ -3634,10 +3418,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.8,
-      "count": 165
-    },
     "mandatory_gear": [
       {
         "name": "JCF公認サイクルヘルメット＆グローブ",
@@ -3659,7 +3439,8 @@
         "name": "ウインドブレーカー・レインジレ",
         "category": "ウェア"
       }
-    ]
+    ],
+    "entry_fee": "10,000円"
   },
   {
     "id": "tsurugisan-super-rin-do-trail-2026",
@@ -3684,10 +3465,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.8,
-      "count": 134
-    },
     "mandatory_gear": [
       {
         "name": "防水透湿レインジャケット（フード付き・シーム処理済）",
@@ -3709,7 +3486,8 @@
         "name": "ソフトフラスク水分1.0L以上＆マグネシウム系エナジージェル",
         "category": "補給"
       }
-    ]
+    ],
+    "entry_fee": "16,000円"
   },
   {
     "id": "senba-sea-cliff-trail-2027",
@@ -3734,10 +3512,6 @@
       "review": "https://dogsorcaravan.com/",
       "sns": "https://www.facebook.com/"
     },
-    "review": {
-      "rating": 4.9,
-      "count": 192
-    },
     "mandatory_gear": [
       {
         "name": "レインジャケットまたは防風シェル",
@@ -3755,7 +3529,8 @@
         "name": "トレイルランニングシューズ＆トレランザック",
         "category": "ギア"
       }
-    ]
+    ],
+    "entry_fee": "11,000円"
   },
   {
     "id": "iya-valley-adventure-trail-2026",
@@ -3780,10 +3555,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.8,
-      "count": 96
-    },
     "mandatory_gear": [
       {
         "name": "防水透湿レインジャケット（フード付き・シーム処理済）",
@@ -3805,7 +3576,8 @@
         "name": "ソフトフラスク水分1.0L以上＆マグネシウム系エナジージェル",
         "category": "補給"
       }
-    ]
+    ],
+    "entry_fee": "11,000円"
   },
   {
     "id": "tokushima-marathon-2027",
@@ -3830,10 +3602,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.8,
-      "count": 720
-    },
     "mandatory_gear": [
       {
         "name": "高機能ランニングウェア・吸汗速乾インナー",
@@ -3847,7 +3615,8 @@
         "name": "GPSランニングウォッチ",
         "category": "ナビゲーション"
       }
-    ]
+    ],
+    "entry_fee": "15,000円"
   },
   {
     "id": "tour-de-nishi-awa-2026",
@@ -3872,10 +3641,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://www.facebook.com/"
     },
-    "review": {
-      "rating": 4.9,
-      "count": 310
-    },
     "mandatory_gear": [
       {
         "name": "JCF公認サイクルヘルメット＆グローブ",
@@ -3897,7 +3662,8 @@
         "name": "ウインドブレーカー・レインジレ",
         "category": "ウェア"
       }
-    ]
+    ],
+    "entry_fee": "13,000円"
   },
   {
     "id": "oku-shimanto-trail-2026",
@@ -3922,10 +3688,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.8,
-      "count": 126
-    },
     "mandatory_gear": [
       {
         "name": "レインジャケットまたは防風シェル",
@@ -3943,7 +3705,8 @@
         "name": "トレイルランニングシューズ＆トレランザック",
         "category": "ギア"
       }
-    ]
+    ],
+    "entry_fee": "11,000円"
   },
   {
     "id": "reihoku-shikoku-mountain-trail-2026",
@@ -3968,10 +3731,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.7,
-      "count": 88
-    },
     "mandatory_gear": [
       {
         "name": "防水透湿レインジャケット（フード付き・シーム処理済）",
@@ -3993,7 +3752,8 @@
         "name": "ソフトフラスク水分1.0L以上＆マグネシウム系エナジージェル",
         "category": "補給"
       }
-    ]
+    ],
+    "entry_fee": "11,000円"
   },
   {
     "id": "shimantogawa-ultra-2026",
@@ -4019,10 +3779,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://www.facebook.com/"
     },
-    "review": {
-      "rating": 4.9,
-      "count": 840
-    },
     "mandatory_gear": [
       {
         "name": "早朝・夜間走行用ヘッドライト＆背面点滅赤色ライト",
@@ -4040,7 +3796,8 @@
         "name": "撥水ウインドシェル＆ワセリン・テーピング",
         "category": "ウェア"
       }
-    ]
+    ],
+    "entry_fee": "22,000円"
   },
   {
     "id": "kochi-ryoma-marathon-2027",
@@ -4065,10 +3822,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.9,
-      "count": 780
-    },
     "mandatory_gear": [
       {
         "name": "高機能ランニングウェア・吸汗速乾インナー",
@@ -4082,7 +3835,8 @@
         "name": "GPSランニングウォッチ",
         "category": "ナビゲーション"
       }
-    ]
+    ],
+    "entry_fee": "15,000円"
   },
   {
     "id": "shimanto-dragon-ride-2026",
@@ -4107,10 +3861,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.8,
-      "count": 220
-    },
     "mandatory_gear": [
       {
         "name": "JCF公認サイクルヘルメット＆グローブ",
@@ -4132,7 +3882,8 @@
         "name": "ウインドブレーカー・レインジレ",
         "category": "ウェア"
       }
-    ]
+    ],
+    "entry_fee": "10,000円"
   },
   {
     "id": "niyodogawa-blue-ride-2026",
@@ -4157,10 +3908,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.8,
-      "count": 138
-    },
     "mandatory_gear": [
       {
         "name": "JCF公認サイクルヘルメット＆グローブ",
@@ -4182,7 +3929,8 @@
         "name": "ウインドブレーカー・レインジレ",
         "category": "ウェア"
       }
-    ]
+    ],
+    "entry_fee": "10,000円"
   },
   {
     "id": "hasetsune-cup-2026",
@@ -4208,10 +3956,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/hasetsune_cup"
     },
-    "review": {
-      "rating": 4.7,
-      "count": 540
-    },
     "mandatory_gear": [
       {
         "name": "防水透湿レインジャケット（フード付き・シーム処理済）",
@@ -4233,7 +3977,8 @@
         "name": "ソフトフラスク水分1.0L以上＆マグネシウム系エナジージェル",
         "category": "補給"
       }
-    ]
+    ],
+    "entry_fee": "18,000円"
   },
   {
     "id": "izu-trail-journey-2026",
@@ -4258,10 +4003,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/izutrailjourney"
     },
-    "review": {
-      "rating": 4.9,
-      "count": 430
-    },
     "mandatory_gear": [
       {
         "name": "防水透湿レインジャケット（フード付き・シーム処理済）",
@@ -4283,7 +4024,8 @@
         "name": "ソフトフラスク水分1.0L以上＆マグネシウム系エナジージェル",
         "category": "補給"
       }
-    ]
+    ],
+    "entry_fee": "16,000円"
   },
   {
     "id": "kaga-spa-trail-utmb-2026",
@@ -4309,10 +4051,6 @@
       "review": "https://dogsorcaravan.com/",
       "sns": "https://x.com/UTMBWorldSeries"
     },
-    "review": {
-      "rating": 4.8,
-      "count": 295
-    },
     "mandatory_gear": [
       {
         "name": "ゴアテックス等 シームテープ加工防水透湿レイン上下",
@@ -4338,7 +4076,8 @@
         "name": "水分1.5L以上携行可能なトレランザック（10L〜12L）＆補給食",
         "category": "補給"
       }
-    ]
+    ],
+    "entry_fee": "24,000円"
   },
   {
     "id": "utsukushigahara-trail-2026",
@@ -4363,10 +4102,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://www.facebook.com/"
     },
-    "review": {
-      "rating": 4.8,
-      "count": 260
-    },
     "mandatory_gear": [
       {
         "name": "防水透湿レインジャケット（フード付き・シーム処理済）",
@@ -4388,7 +4123,8 @@
         "name": "ソフトフラスク水分1.0L以上＆マグネシウム系エナジージェル",
         "category": "補給"
       }
-    ]
+    ],
+    "entry_fee": "16,000円"
   },
   {
     "id": "aso-volcano-trail-2026",
@@ -4414,10 +4150,6 @@
       "review": "https://dogsorcaravan.com/",
       "sns": "https://www.facebook.com/"
     },
-    "review": {
-      "rating": 4.9,
-      "count": 210
-    },
     "mandatory_gear": [
       {
         "name": "ゴアテックス等 シームテープ加工防水透湿レイン上下",
@@ -4443,7 +4175,8 @@
         "name": "水分1.5L以上携行可能なトレランザック（10L〜12L）＆補給食",
         "category": "補給"
       }
-    ]
+    ],
+    "entry_fee": "24,000円"
   },
   {
     "id": "hiraodai-trail-2026",
@@ -4468,10 +4201,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://www.facebook.com/"
     },
-    "review": {
-      "rating": 4.8,
-      "count": 195
-    },
     "mandatory_gear": [
       {
         "name": "レインジャケットまたは防風シェル",
@@ -4489,7 +4218,8 @@
         "name": "トレイルランニングシューズ＆トレランザック",
         "category": "ギア"
       }
-    ]
+    ],
+    "entry_fee": "11,000円"
   },
   {
     "id": "kirishima-ebino-extremetrail-2026",
@@ -4514,10 +4244,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://www.facebook.com/"
     },
-    "review": {
-      "rating": 4.8,
-      "count": 180
-    },
     "mandatory_gear": [
       {
         "name": "防水透湿レインジャケット（フード付き・シーム処理済）",
@@ -4539,7 +4265,8 @@
         "name": "ソフトフラスク水分1.0L以上＆マグネシウム系エナジージェル",
         "category": "補給"
       }
-    ]
+    ],
+    "entry_fee": "16,000円"
   },
   {
     "id": "kyoto-grand-traverse-2026",
@@ -4564,10 +4291,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.7,
-      "count": 230
-    },
     "mandatory_gear": [
       {
         "name": "防水透湿レインジャケット（フード付き・シーム処理済）",
@@ -4589,7 +4312,8 @@
         "name": "ソフトフラスク水分1.0L以上＆マグネシウム系エナジージェル",
         "category": "補給"
       }
-    ]
+    ],
+    "entry_fee": "16,000円"
   },
   {
     "id": "kumano-old-trail-2026",
@@ -4614,10 +4338,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://www.facebook.com/"
     },
-    "review": {
-      "rating": 4.9,
-      "count": 175
-    },
     "mandatory_gear": [
       {
         "name": "防水透湿レインジャケット（フード付き・シーム処理済）",
@@ -4639,7 +4359,8 @@
         "name": "ソフトフラスク水分1.0L以上＆マグネシウム系エナジージェル",
         "category": "補給"
       }
-    ]
+    ],
+    "entry_fee": "11,000円"
   },
   {
     "id": "ikko-diamond-trail-2026",
@@ -4664,10 +4385,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.7,
-      "count": 340
-    },
     "mandatory_gear": [
       {
         "name": "レインジャケットまたは防風シェル",
@@ -4685,7 +4402,8 @@
         "name": "トレイルランニングシューズ＆トレランザック",
         "category": "ギア"
       }
-    ]
+    ],
+    "entry_fee": "11,000円"
   },
   {
     "id": "wakasa-michinoku-100km-trail-2026",
@@ -4711,10 +4429,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.7,
-      "count": 115
-    },
     "mandatory_gear": [
       {
         "name": "防水透湿レインジャケット（フード付き・シーム処理済）",
@@ -4736,7 +4450,8 @@
         "name": "ソフトフラスク水分1.0L以上＆マグネシウム系エナジージェル",
         "category": "補給"
       }
-    ]
+    ],
+    "entry_fee": "24,000円"
   },
   {
     "id": "zao-skyrun-vertical-2026",
@@ -4761,10 +4476,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.8,
-      "count": 130
-    },
     "mandatory_gear": [
       {
         "name": "レインジャケットまたは防風シェル",
@@ -4782,7 +4493,8 @@
         "name": "トレイルランニングシューズ＆トレランザック",
         "category": "ギア"
       }
-    ]
+    ],
+    "entry_fee": "6,500円"
   },
   {
     "id": "savas-fuji-mountain-race-2026",
@@ -4807,10 +4519,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.9,
-      "count": 980
-    },
     "mandatory_gear": [
       {
         "name": "レインジャケットまたは防風シェル",
@@ -4828,7 +4536,8 @@
         "name": "トレイルランニングシューズ＆トレランザック",
         "category": "ギア"
       }
-    ]
+    ],
+    "entry_fee": "6,500円"
   },
   {
     "id": "saroma-lake-100km-ultra-2026",
@@ -4854,10 +4563,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://www.facebook.com/"
     },
-    "review": {
-      "rating": 4.9,
-      "count": 1250
-    },
     "mandatory_gear": [
       {
         "name": "早朝・夜間走行用ヘッドライト＆背面点滅赤色ライト",
@@ -4875,7 +4580,8 @@
         "name": "撥水ウインドシェル＆ワセリン・テーピング",
         "category": "ウェア"
       }
-    ]
+    ],
+    "entry_fee": "22,000円"
   },
   {
     "id": "challenger-fuji-5lakes-ultra-2027",
@@ -4901,10 +4607,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.8,
-      "count": 940
-    },
     "mandatory_gear": [
       {
         "name": "早朝・夜間走行用ヘッドライト＆背面点滅赤色ライト",
@@ -4922,7 +4624,8 @@
         "name": "撥水ウインドシェル＆ワセリン・テーピング",
         "category": "ウェア"
       }
-    ]
+    ],
+    "entry_fee": "22,000円"
   },
   {
     "id": "hidatakayama-ultra-100-2026",
@@ -4948,10 +4651,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.9,
-      "count": 780
-    },
     "mandatory_gear": [
       {
         "name": "早朝・夜間走行用ヘッドライト＆背面点滅赤色ライト",
@@ -4969,7 +4668,8 @@
         "name": "撥水ウインドシェル＆ワセリン・テーピング",
         "category": "ウェア"
       }
-    ]
+    ],
+    "entry_fee": "22,000円"
   },
   {
     "id": "yatsugatake-nobeyama-ultra-2026",
@@ -4995,10 +4695,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.9,
-      "count": 890
-    },
     "mandatory_gear": [
       {
         "name": "早朝・夜間走行用ヘッドライト＆背面点滅赤色ライト",
@@ -5016,7 +4712,8 @@
         "name": "撥水ウインドシェル＆ワセリン・テーピング",
         "category": "ウェア"
       }
-    ]
+    ],
+    "entry_fee": "22,000円"
   },
   {
     "id": "tango-100km-ultra-2026",
@@ -5042,10 +4739,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.8,
-      "count": 720
-    },
     "mandatory_gear": [
       {
         "name": "早朝・夜間走行用ヘッドライト＆背面点滅赤色ライト",
@@ -5063,7 +4756,8 @@
         "name": "撥水ウインドシェル＆ワセリン・テーピング",
         "category": "ウェア"
       }
-    ]
+    ],
+    "entry_fee": "22,000円"
   },
   {
     "id": "akita-naisairiku-100km-ultra-2026",
@@ -5089,10 +4783,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.8,
-      "count": 490
-    },
     "mandatory_gear": [
       {
         "name": "早朝・夜間走行用ヘッドライト＆背面点滅赤色ライト",
@@ -5110,7 +4800,8 @@
         "name": "撥水ウインドシェル＆ワセリン・テーピング",
         "category": "ウェア"
       }
-    ]
+    ],
+    "entry_fee": "22,000円"
   },
   {
     "id": "tour-de-okinawa-2026",
@@ -5135,10 +4826,6 @@
       "review": "https://www.sportsentry.ne.jp/",
       "sns": "https://www.facebook.com/tourdeokinawa"
     },
-    "review": {
-      "rating": 4.9,
-      "count": 520
-    },
     "mandatory_gear": [
       {
         "name": "JCF公認サイクルヘルメット＆グローブ",
@@ -5160,7 +4847,8 @@
         "name": "ウインドブレーカー・レインジレ",
         "category": "ウェア"
       }
-    ]
+    ],
+    "entry_fee": "13,000円"
   },
   {
     "id": "mt-fuji-hillclimb-2026",
@@ -5185,10 +4873,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.9,
-      "count": 1450
-    },
     "mandatory_gear": [
       {
         "name": "JCF公認サイクルヘルメット＆グローブ",
@@ -5210,7 +4894,8 @@
         "name": "ウインドブレーカー・レインジレ",
         "category": "ウェア"
       }
-    ]
+    ],
+    "entry_fee": "7,000円"
   },
   {
     "id": "sado-long-ride-210-2026",
@@ -5235,10 +4920,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.8,
-      "count": 620
-    },
     "mandatory_gear": [
       {
         "name": "JCF公認サイクルヘルメット＆グローブ",
@@ -5260,7 +4941,8 @@
         "name": "ウインドブレーカー・レインジレ",
         "category": "ウェア"
       }
-    ]
+    ],
+    "entry_fee": "13,000円"
   },
   {
     "id": "niseko-classic-150km-2026",
@@ -5285,10 +4967,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.9,
-      "count": 410
-    },
     "mandatory_gear": [
       {
         "name": "JCF公認サイクルヘルメット＆グローブ",
@@ -5310,7 +4988,8 @@
         "name": "ウインドブレーカー・レインジレ",
         "category": "ウェア"
       }
-    ]
+    ],
+    "entry_fee": "13,000円"
   },
   {
     "id": "biwaichi-cycling-160-2026",
@@ -5335,10 +5014,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.8,
-      "count": 380
-    },
     "mandatory_gear": [
       {
         "name": "JCF公認サイクルヘルメット＆グローブ",
@@ -5360,7 +5035,8 @@
         "name": "ウインドブレーカー・レインジレ",
         "category": "ウェア"
       }
-    ]
+    ],
+    "entry_fee": "13,000円"
   },
   {
     "id": "onomichi-shimanami-coastal-trail-2026",
@@ -5385,10 +5061,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.8,
-      "count": 92
-    },
     "mandatory_gear": [
       {
         "name": "レインジャケットまたは防風シェル",
@@ -5406,7 +5078,8 @@
         "name": "トレイルランニングシューズ＆トレランザック",
         "category": "ギア"
       }
-    ]
+    ],
+    "entry_fee": "11,000円"
   },
   {
     "id": "bizen-oni-trail-okayama-2026",
@@ -5431,10 +5104,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.7,
-      "count": 78
-    },
     "mandatory_gear": [
       {
         "name": "レインジャケットまたは防風シェル",
@@ -5452,7 +5121,8 @@
         "name": "トレイルランニングシューズ＆トレランザック",
         "category": "ギア"
       }
-    ]
+    ],
+    "entry_fee": "11,000円"
   },
   {
     "id": "nagato-tawarayama-trail-2026",
@@ -5477,10 +5147,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.7,
-      "count": 66
-    },
     "mandatory_gear": [
       {
         "name": "レインジャケットまたは防風シェル",
@@ -5498,7 +5164,8 @@
         "name": "トレイルランニングシューズ＆トレランザック",
         "category": "ギア"
       }
-    ]
+    ],
+    "entry_fee": "11,000円"
   },
   {
     "id": "ashizuri-cape-ocean-trail-2027",
@@ -5523,10 +5190,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.8,
-      "count": 84
-    },
     "mandatory_gear": [
       {
         "name": "レインジャケットまたは防風シェル",
@@ -5544,7 +5207,8 @@
         "name": "トレイルランニングシューズ＆トレランザック",
         "category": "ギア"
       }
-    ]
+    ],
+    "entry_fee": "11,000円"
   },
   {
     "id": "sanuki-kotohira-konpira-trail-2026",
@@ -5569,10 +5233,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.7,
-      "count": 72
-    },
     "mandatory_gear": [
       {
         "name": "レインジャケットまたは防風シェル",
@@ -5590,7 +5250,8 @@
         "name": "トレイルランニングシューズ＆トレランザック",
         "category": "ギア"
       }
-    ]
+    ],
+    "entry_fee": "6,500円"
   },
   {
     "id": "toretore-ueyama-2027",
@@ -5618,10 +5279,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://www.facebook.com/advkansai/"
     },
-    "review": {
-      "rating": 4.8,
-      "count": 36
-    },
     "mandatory_gear": [
       {
         "name": "マウンテンバイク（MTB）＆JCF公認ヘルメット",
@@ -5647,7 +5304,8 @@
         "name": "行動食・水分1.5L以上",
         "category": "補給"
       }
-    ]
+    ],
+    "entry_fee": "7,000円"
   },
   {
     "id": "mihara-hakuryuko-trail-2027",
@@ -5672,10 +5330,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://www.facebook.com/miharatrail"
     },
-    "review": {
-      "rating": 4.6,
-      "count": 114
-    },
     "mandatory_gear": [
       {
         "name": "レインジャケットまたは防風シェル",
@@ -5693,7 +5347,8 @@
         "name": "トレイルランニングシューズ＆トレランザック",
         "category": "ギア"
       }
-    ]
+    ],
+    "entry_fee": "11,000円"
   },
   {
     "id": "iwakuni-shirohebi-trail-2027",
@@ -5718,10 +5373,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.7,
-      "count": 64
-    },
     "mandatory_gear": [
       {
         "name": "レインジャケットまたは防風シェル",
@@ -5739,7 +5390,8 @@
         "name": "トレイルランニングシューズ＆トレランザック",
         "category": "ギア"
       }
-    ]
+    ],
+    "entry_fee": "6,500円"
   },
   {
     "id": "kurashiki-washuzan- coastal-trail-2027",
@@ -5764,10 +5416,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.8,
-      "count": 82
-    },
     "mandatory_gear": [
       {
         "name": "レインジャケットまたは防風シェル",
@@ -5785,7 +5433,8 @@
         "name": "トレイルランニングシューズ＆トレランザック",
         "category": "ギア"
       }
-    ]
+    ],
+    "entry_fee": "11,000円"
   },
   {
     "id": "kochi-navigms-winter-2026",
@@ -5812,10 +5461,6 @@
       "review": "https://kochi-navigms.com/",
       "sns": "https://kochi-navigms.com/"
     },
-    "review": {
-      "rating": 4.9,
-      "count": 45
-    },
     "mandatory_gear": [
       {
         "name": "プレートコンパス（シルバコンパス等・方位磁石）",
@@ -5837,7 +5482,8 @@
         "name": "行動食（エナジージェル等）＆水分1.0L以上",
         "category": "補給"
       }
-    ]
+    ],
+    "entry_fee": "4,500円"
   },
   {
     "id": "sanuki-mountains-skytrail-2027",
@@ -5862,10 +5508,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.6,
-      "count": 84
-    },
     "mandatory_gear": [
       {
         "name": "レインジャケットまたは防風シェル",
@@ -5883,7 +5525,8 @@
         "name": "トレイルランニングシューズ＆トレランザック",
         "category": "ギア"
       }
-    ]
+    ],
+    "entry_fee": "11,000円"
   },
   {
     "id": "suo-oshima-maranic-2027",
@@ -5909,10 +5552,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.7,
-      "count": 118
-    },
     "mandatory_gear": [
       {
         "name": "早朝・夜間走行用ヘッドライト＆背面点滅赤色ライト",
@@ -5930,7 +5569,8 @@
         "name": "撥水ウインドシェル＆ワセリン・テーピング",
         "category": "ウェア"
       }
-    ]
+    ],
+    "entry_fee": "22,000円"
   },
   {
     "id": "sainokuni-100mile-2027",
@@ -5956,10 +5596,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://www.facebook.com/"
     },
-    "review": {
-      "rating": 4.8,
-      "count": 215
-    },
     "mandatory_gear": [
       {
         "name": "ゴアテックス等 シームテープ加工防水透湿レイン上下",
@@ -5985,7 +5621,8 @@
         "name": "水分1.5L以上携行可能なトレランザック（10L〜12L）＆補給食",
         "category": "補給"
       }
-    ]
+    ],
+    "entry_fee": "38,000円"
   },
   {
     "id": "aso-volcano-trail-2027",
@@ -6011,10 +5648,6 @@
       "review": "https://dogsorcaravan.com/",
       "sns": "https://www.facebook.com/"
     },
-    "review": {
-      "rating": 4.9,
-      "count": 210
-    },
     "mandatory_gear": [
       {
         "name": "ゴアテックス等 シームテープ加工防水透湿レイン上下",
@@ -6040,7 +5673,8 @@
         "name": "水分1.5L以上携行可能なトレランザック（10L〜12L）＆補給食",
         "category": "補給"
       }
-    ]
+    ],
+    "entry_fee": "24,000円"
   },
   {
     "id": "yatsugatake-nobeyama-ultra-2027",
@@ -6066,10 +5700,6 @@
       "review": "https://runnet.jp/",
       "sns": "https://x.com/"
     },
-    "review": {
-      "rating": 4.9,
-      "count": 890
-    },
     "mandatory_gear": [
       {
         "name": "早朝・夜間走行用ヘッドライト＆背面点滅赤色ライト",
@@ -6087,6 +5717,7 @@
         "name": "撥水ウインドシェル＆ワセリン・テーピング",
         "category": "ウェア"
       }
-    ]
+    ],
+    "entry_fee": "22,000円"
   }
 ]

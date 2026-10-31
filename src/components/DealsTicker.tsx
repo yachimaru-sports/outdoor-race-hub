@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { DealItem } from '../types';
 import { ChevronLeft, ChevronRight, Zap, ExternalLink, Flame } from 'lucide-react';
 import { formatPrice } from '../utils/helpers';
@@ -10,46 +10,104 @@ interface DealsTickerProps {
 
 export const DealsTicker: React.FC<DealsTickerProps> = ({ deals }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [isPaused, setIsPaused] = useState(false);
 
-  const handleScroll = (direction: 'left' | 'right') => {
-    if (scrollRef.current) {
-      const offset = direction === 'left' ? -330 : 330;
-      scrollRef.current.scrollBy({ left: offset, behavior: 'smooth' });
+  // 途切れず無限にぐるぐる繋がるように3セット複製
+  const tripleDeals = [...deals, ...deals, ...deals];
+
+  // 初期スクロール位置を中央セットの開始位置に設定
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el || deals.length === 0) return;
+
+    // 1セット分の推定幅が計算できるまでわずかに待つ
+    const timer = setTimeout(() => {
+      const singleWidth = el.scrollWidth / 3;
+      if (el.scrollLeft === 0) {
+        el.scrollLeft = singleWidth;
+      }
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, [deals.length]);
+
+  // 無限ループ境界判定（端に近づいたら中央セットに瞬間移動して途切れをゼロに）
+  const handleScrollEvent = () => {
+    const el = scrollRef.current;
+    if (!el || deals.length === 0) return;
+
+    const singleWidth = el.scrollWidth / 3;
+    if (singleWidth <= 0) return;
+
+    if (el.scrollLeft <= 10) {
+      // 左端付近に来たら中央ブロックへシームレスにジャンプ
+      el.scrollLeft += singleWidth;
+    } else if (el.scrollLeft >= singleWidth * 2 - 10) {
+      // 右端付近に来たら中央ブロックへシームレスにジャンプ
+      el.scrollLeft -= singleWidth;
     }
   };
 
+  // 自動ゆっくりスクロール（マウスホバーで一時停止）
+  useEffect(() => {
+    if (isPaused || deals.length === 0) return;
+
+    const interval = setInterval(() => {
+      const el = scrollRef.current;
+      if (!el) return;
+
+      el.scrollLeft += 1;
+      handleScrollEvent();
+    }, 35);
+
+    return () => clearInterval(interval);
+  }, [isPaused, deals.length]);
+
+  const handleManualScroll = (direction: 'left' | 'right') => {
+    const el = scrollRef.current;
+    if (!el) return;
+
+    const offset = direction === 'left' ? -330 : 330;
+    el.scrollBy({ left: offset, behavior: 'smooth' });
+  };
+
   return (
-    <div className="bg-slate-900 border-b-2 border-amber-500/80 text-slate-100 sticky top-0 z-40 shadow-md transition-colors">
+    <div
+      className="bg-slate-900 border-b-2 border-amber-500/80 text-slate-100 sticky top-0 z-40 shadow-md transition-colors"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
       <div className="max-w-7xl mx-auto px-3 sm:px-4 py-2">
         <div className="flex items-center gap-2 sm:gap-2.5">
-          {/* 左端：超コンパクト縦型ラベル（横幅を最小化し商品カード枠を最大化） */}
+          {/* 左端：超コンパクト縦型ラベル */}
           <div className="flex flex-col items-center justify-center px-2.5 py-1.5 bg-gradient-to-b from-red-600 to-amber-600 text-white rounded-xl shrink-0 shadow-sm border border-amber-300/40 leading-none select-none">
             <div className="flex items-center gap-0.5 text-[11px] font-black tracking-tighter whitespace-nowrap">
               <Zap className="w-3.5 h-3.5 fill-yellow-300 text-yellow-300 shrink-0" />
               <span>楽天特価</span>
             </div>
             <span className="text-[10px] font-extrabold text-yellow-200 mt-1 whitespace-nowrap">
-              20〜50%OFF
+              20〜53%OFF
             </span>
           </div>
 
-          {/* カルーセルコンテナ（横幅いっぱいに3〜4枚しっかり表示） */}
+          {/* 無限カルーセルコンテナ（右端に行くと最初のアイテムにシームレスにつながる） */}
           <div className="relative flex-1 min-w-0 overflow-hidden">
             <div
               ref={scrollRef}
+              onScroll={handleScrollEvent}
               className="flex items-center gap-2.5 overflow-x-auto no-scrollbar scroll-smooth py-0.5"
             >
-              {deals.map((deal) => {
+              {tripleDeals.map((deal, idx) => {
                 const savedYen = deal.original_price - deal.price;
                 return (
                   <a
-                    key={deal.id}
+                    key={`${deal.id}-${idx}`}
                     href={deal.affiliate_url}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group relative flex items-center gap-2.5 bg-slate-800 hover:bg-slate-750 border-2 border-slate-700 hover:border-amber-400 rounded-xl p-2 w-[305px] sm:w-[320px] shrink-0 transition-all shadow-sm"
                   >
-                    {/* 商品イラスト画像 + 特大割引リボン */}
+                    {/* 商品画像 + 特大割引リボン */}
                     <div className="relative shrink-0">
                       <img
                         src={deal.image_url}
@@ -100,17 +158,17 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({ deals }) => {
             </div>
           </div>
 
-          {/* 右端：スクロールボタン（コンパクト縦並び or 省スペース横並び） */}
+          {/* 右端：スクロールボタン（手動で前後に送れる） */}
           <div className="flex items-center gap-1 shrink-0">
             <button
-              onClick={() => handleScroll('left')}
+              onClick={() => handleManualScroll('left')}
               className="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-white transition-colors border border-slate-600 shadow-xs cursor-pointer"
               aria-label="前へスクロール"
             >
               <ChevronLeft className="w-4 h-4" />
             </button>
             <button
-              onClick={() => handleScroll('right')}
+              onClick={() => handleManualScroll('right')}
               className="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-white transition-colors border border-slate-600 shadow-xs cursor-pointer"
               aria-label="次へスクロール"
             >

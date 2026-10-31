@@ -30,10 +30,11 @@ export interface RaceEvent {
   prefecture: string;
   distance_km: number;
   elevation_m: number;
+  entry_fee: string;    // 例: "18,000円", "8,000円", "38,000円"
   entry_status: EntryStatus;
   entry_deadline: string;
   links: EventLinks;
-  review: EventReview | null;
+  review?: EventReview | null;
   mandatory_gear: MandatoryGear[];
 }
 
@@ -56,8 +57,7 @@ export type SortOption =
   | 'date-desc'
   | 'distance-asc'
   | 'distance-desc'
-  | 'elevation-desc'
-  | 'rating-desc';
+  | 'elevation-desc';
 
 export interface FilterState {
   category: string;

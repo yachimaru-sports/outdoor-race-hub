@@ -6,12 +6,14 @@ import {
   FileEdit,
   MessageSquare,
   Share2,
-  Star,
   ChevronRight,
   TrendingUp,
   MapPin,
   Bookmark,
   CheckCircle2,
+  Calendar,
+  Clock,
+  Coins,
 } from 'lucide-react';
 
 interface EventTableViewProps {
@@ -60,12 +62,22 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
               <th className="py-3.5 pl-4 pr-2 w-[52px] text-center" title="参戦予定ブックマーク">
                 保存
               </th>
-              <th className="py-3.5 px-3 w-[135px]">開催日 / 締切</th>
-              <th className="py-3.5 px-3 w-[155px]">スポーツ種別</th>
+              <th className="py-3.5 px-3 w-[155px]">
+                <div className="flex items-center gap-1 text-teal-800 dark:text-teal-300">
+                  <Calendar className="w-4 h-4" />
+                  <span>開催日 / 申込締切</span>
+                </div>
+              </th>
+              <th className="py-3.5 px-3 w-[150px]">スポーツ種別</th>
               <th className="py-3.5 px-4">大会名 / 開催都道府県 / 競技エレメント</th>
-              <th className="py-3.5 px-3 w-[130px] text-right">距離 / 累積標高</th>
-              <th className="py-3.5 px-3 w-[145px] text-center">受付状況</th>
-              <th className="py-3.5 px-2 w-[88px] text-center">口コミ</th>
+              <th className="py-3.5 px-3 w-[115px] text-right">距離 / 標高</th>
+              <th className="py-3.5 px-3 w-[115px] text-right">
+                <div className="flex items-center justify-end gap-1 text-amber-800 dark:text-amber-300">
+                  <Coins className="w-4 h-4" />
+                  <span>参加費</span>
+                </div>
+              </th>
+              <th className="py-3.5 px-3 w-[130px] text-center">受付状況</th>
               <th className="py-3.5 px-3 w-[236px] text-center">申込・公式・レポ・SNS</th>
               <th className="py-3.5 px-2 w-[36px] text-center">詳細</th>
             </tr>
@@ -82,6 +94,10 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
               const checkedGearCount = getGearProgress(event);
               const totalGearCount = event.mandatory_gear.length;
               const canEntry = !!event.links.entry && event.entry_status !== 'closed' && !isPastRace;
+
+              // 締切日の表示スタイル
+              const isClosingSoon = event.entry_status === 'closing_soon';
+              const isOpen = event.entry_status === 'open';
 
               return (
                 <tr
@@ -114,13 +130,32 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
                     </button>
                   </td>
 
-                  {/* 2. 開催日 / 締切 */}
-                  <td className="py-4 px-3 font-mono align-middle whitespace-nowrap">
-                    <div className="text-sm font-black text-slate-950 dark:text-slate-100">
-                      {event.date}
+                  {/* 2. 開催日 / 締切（目立つデザインに大幅強化） */}
+                  <td className="py-4 px-3 align-middle whitespace-nowrap">
+                    <div className="flex items-center gap-1.5 font-mono">
+                      <Calendar className="w-4 h-4 text-teal-700 dark:text-teal-400 shrink-0" />
+                      <span className="text-[15px] font-black text-slate-950 dark:text-white tracking-tight">
+                        {event.date}
+                      </span>
                     </div>
-                    <div className="text-xs text-slate-600 dark:text-slate-400 font-bold mt-0.5">
-                      締切: {event.entry_deadline || '未定'}
+
+                    {/* 締切日ハイライト */}
+                    <div className="mt-1">
+                      {isClosingSoon ? (
+                        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-extrabold bg-red-100 text-red-700 dark:bg-red-950/60 dark:text-red-300 border border-red-300 dark:border-red-800 animate-pulse">
+                          <Clock className="w-3 h-3 text-red-600" />
+                          締切: {event.entry_deadline || '締切間近'}
+                        </span>
+                      ) : isOpen ? (
+                        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-bold bg-amber-50 text-amber-800 dark:bg-amber-950/40 dark:text-amber-200 border border-amber-300 dark:border-amber-700">
+                          <Clock className="w-3 h-3 text-amber-600" />
+                          締切: {event.entry_deadline || '受付中'}
+                        </span>
+                      ) : (
+                        <span className="text-xs text-slate-500 dark:text-slate-400 font-bold pl-1">
+                          締切: {event.entry_deadline || '終了'}
+                        </span>
+                      )}
                     </div>
                   </td>
 
@@ -208,10 +243,17 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
                     )}
                   </td>
 
-                  {/* 6. 受付状況（固定幅ピル） */}
+                  {/* 6. エントリー費用（参加費） */}
+                  <td className="py-4 px-3 text-right align-middle whitespace-nowrap font-mono">
+                    <span className="text-sm font-black text-slate-900 dark:text-slate-100 bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded-md border border-slate-250 dark:border-slate-700">
+                      {event.entry_fee || '—'}
+                    </span>
+                  </td>
+
+                  {/* 7. 受付状況（固定幅ピル） */}
                   <td className="py-4 px-3 text-center align-middle whitespace-nowrap">
                     <span
-                      className={`inline-flex items-center justify-center gap-1.5 w-[124px] py-1 rounded-full text-xs border ${
+                      className={`inline-flex items-center justify-center gap-1.5 w-[115px] py-1 rounded-full text-xs border ${
                         status.badge
                       } ${status.pulse ? 'animate-pulse' : ''}`}
                     >
@@ -220,23 +262,7 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
                     </span>
                   </td>
 
-                  {/* 7. 口コミ評価 */}
-                  <td className="py-4 px-2 text-center align-middle whitespace-nowrap">
-                    {event.review ? (
-                      <div className="inline-flex items-center justify-center gap-1 w-[68px] py-1 bg-amber-50 dark:bg-slate-800 rounded-lg border border-amber-300 dark:border-slate-700">
-                        <Star className="w-3.5 h-3.5 text-amber-500 fill-amber-500 shrink-0" />
-                        <span className="font-black text-amber-950 dark:text-amber-300 text-xs sm:text-sm font-mono">
-                          {event.review.rating.toFixed(1)}
-                        </span>
-                      </div>
-                    ) : (
-                      <span className="inline-block w-[68px] py-1 text-slate-500 text-xs font-bold">
-                        —
-                      </span>
-                    )}
-                  </td>
-
-                  {/* 8. 右端アクション列（4つの固定スロットに完全整列！ガタつきゼロ） */}
+                  {/* 8. 右端アクション列（4つの固定スロットに完全整列） */}
                   <td
                     className="py-4 px-3 align-middle whitespace-nowrap"
                     onClick={(e) => e.stopPropagation()}
@@ -248,86 +274,78 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
                           href={event.links.entry!}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="w-[72px] h-8 rounded-lg bg-teal-700 hover:bg-teal-800 text-white text-xs font-extrabold flex items-center justify-center gap-1 transition-colors shadow-2xs"
+                          className="w-[72px] py-1.5 rounded-lg bg-teal-700 hover:bg-teal-800 text-white text-xs font-bold flex items-center justify-center gap-1 transition-colors shadow-2xs cursor-pointer select-none"
                           title="エントリー申込ページを開く"
                         >
                           <FileEdit className="w-3.5 h-3.5 shrink-0" />
                           <span>申込</span>
                         </a>
                       ) : (
-                        <span
-                          className="w-[72px] h-8 rounded-lg bg-slate-100 dark:bg-slate-800/60 text-slate-400 dark:text-slate-600 border border-slate-200 dark:border-slate-800 text-xs font-bold flex items-center justify-center select-none"
-                          title={
-                            event.entry_status === 'closed' ? 'エントリー受付終了' : '申込開始前'
-                          }
+                        <div
+                          className="w-[72px] py-1.5 rounded-lg bg-slate-150 dark:bg-slate-800/50 text-slate-500 dark:text-slate-500 text-xs font-bold text-center border border-slate-250 dark:border-slate-800 select-none cursor-not-allowed"
+                          title="現在エントリーは受け付けていません"
                         >
-                          {event.entry_status === 'closed' ? '終了' : '準備中'}
-                        </span>
+                          受付無
+                        </div>
                       )}
 
-                      {/* スロット2: 公式サイトボタン (幅64px固定) */}
+                      {/* スロット2: 公式サイト (幅64px固定) */}
                       {event.links.official ? (
                         <a
                           href={event.links.official}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="w-[64px] h-8 rounded-lg bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 text-xs font-extrabold flex items-center justify-center gap-1 transition-colors shadow-2xs"
+                          className="w-[64px] py-1.5 rounded-lg bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 text-xs font-bold flex items-center justify-center gap-1 transition-colors shadow-2xs cursor-pointer select-none"
                           title="大会公式サイトを開く"
                         >
                           <Globe className="w-3.5 h-3.5 text-teal-700 dark:text-teal-400 shrink-0" />
                           <span>公式</span>
                         </a>
                       ) : (
-                        <span className="w-[64px] h-8 rounded-lg bg-slate-50 dark:bg-slate-800/40 text-slate-300 dark:text-slate-600 border border-slate-200 dark:border-slate-800 text-xs font-bold flex items-center justify-center select-none">
+                        <div className="w-[64px] py-1.5 rounded-lg bg-slate-100 dark:bg-slate-850 text-slate-400 dark:text-slate-600 text-xs font-bold text-center border border-slate-200 dark:border-slate-800 select-none">
                           —
-                        </span>
+                        </div>
                       )}
 
-                      {/* スロット3: 口コミ・レポボタン (幅34px固定) */}
+                      {/* スロット3: 大会レポ (幅34px固定) */}
                       {event.links.review ? (
                         <a
                           href={event.links.review}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="w-[34px] h-8 rounded-lg bg-white dark:bg-slate-800 hover:bg-amber-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-slate-700 flex items-center justify-center transition-colors shadow-2xs"
-                          title="大会レポ・口コミを見る"
+                          className="w-[34px] h-[29px] rounded-lg bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 flex items-center justify-center transition-colors shadow-2xs cursor-pointer select-none"
+                          title="大会レポート・口コミを見る"
                         >
-                          <MessageSquare className="w-4 h-4 text-amber-600" />
+                          <MessageSquare className="w-3.5 h-3.5 text-amber-600 shrink-0" />
                         </a>
                       ) : (
-                        <span
-                          className="w-[34px] h-8 rounded-lg bg-slate-50 dark:bg-slate-800/40 text-slate-300 dark:text-slate-700 border border-slate-200 dark:border-slate-800 flex items-center justify-center select-none"
-                          title="レポ未登録"
-                        >
-                          <MessageSquare className="w-3.5 h-3.5 opacity-40" />
-                        </span>
+                        <div className="w-[34px] h-[29px] rounded-lg bg-slate-100 dark:bg-slate-850 text-slate-400 dark:text-slate-600 text-xs font-bold flex items-center justify-center border border-slate-200 dark:border-slate-800 select-none">
+                          —
+                        </div>
                       )}
 
-                      {/* スロット4: SNSボタン (幅34px固定) */}
+                      {/* スロット4: 公式SNS (幅34px固定) */}
                       {event.links.sns ? (
                         <a
                           href={event.links.sns}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="w-[34px] h-8 rounded-lg bg-white dark:bg-slate-800 hover:bg-sky-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-slate-700 flex items-center justify-center transition-colors shadow-2xs"
-                          title="公式SNSを見る"
+                          className="w-[34px] h-[29px] rounded-lg bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 flex items-center justify-center transition-colors shadow-2xs cursor-pointer select-none"
+                          title="公式SNS・Facebookを見る"
                         >
-                          <Share2 className="w-4 h-4 text-sky-600" />
+                          <Share2 className="w-3.5 h-3.5 text-sky-600 shrink-0" />
                         </a>
                       ) : (
-                        <span
-                          className="w-[34px] h-8 rounded-lg bg-slate-50 dark:bg-slate-800/40 text-slate-300 dark:text-slate-700 border border-slate-200 dark:border-slate-800 flex items-center justify-center select-none"
-                          title="SNS未登録"
-                        >
-                          <Share2 className="w-3.5 h-3.5 opacity-40" />
-                        </span>
+                        <div className="w-[34px] h-[29px] rounded-lg bg-slate-100 dark:bg-slate-850 text-slate-400 dark:text-slate-600 text-xs font-bold flex items-center justify-center border border-slate-200 dark:border-slate-800 select-none">
+                          —
+                        </div>
                       )}
                     </div>
                   </td>
 
-                  {/* 9. 詳細モーダル矢印 */}
-                  <td className="py-4 px-2 text-center align-middle text-slate-400 group-hover:text-teal-700 dark:group-hover:text-teal-400 transition-colors">
-                    <ChevronRight className="w-5 h-5 mx-auto" />
+                  {/* 9. 詳細モーダル展開アイコン */}
+                  <td className="py-4 px-2 text-center align-middle">
+                    <ChevronRight className="w-4 h-4 text-slate-400 dark:text-slate-500 group-hover:text-teal-700 dark:group-hover:text-teal-400 group-hover:translate-x-0.5 transition-all" />
                   </td>
                 </tr>
               );
