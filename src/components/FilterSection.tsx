@@ -338,14 +338,25 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
           </button>
         </div>
 
-        {/* 右側：条件クリア ＆ 表示モード切替 */}
+        {/* 右側：条件クリア（★ご要望：目立つように大幅強調！） ＆ 表示モード切替 */}
         <div className="flex items-center justify-between sm:justify-end gap-2.5 shrink-0">
           <button
+            type="button"
             onClick={onResetFilters}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-750 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 text-xs sm:text-sm font-bold transition-colors cursor-pointer"
+            className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-black border-2 transition-all cursor-pointer select-none shadow-xs ${
+              activeChips.length > 0
+                ? 'bg-rose-600 hover:bg-rose-700 text-white border-rose-600 shadow-md ring-2 ring-rose-400/40 hover:scale-[1.02]'
+                : 'bg-rose-50 dark:bg-rose-950/40 text-rose-700 dark:text-rose-300 border-rose-300 dark:border-rose-700 hover:bg-rose-100 hover:border-rose-400'
+            }`}
+            title="現在の検索・絞り込み条件をすべて解除して初期状態に戻す（全リセット）"
           >
-            <RotateCcw className="w-3.5 h-3.5" />
+            <RotateCcw className={`w-3.5 h-3.5 ${activeChips.length > 0 ? 'stroke-[2.5] text-white' : 'text-rose-600 dark:text-rose-400 stroke-[2.2]'}`} />
             <span>条件をクリア</span>
+            {activeChips.length > 0 && (
+              <span className="bg-white/25 text-white text-[11px] px-1.5 py-0.2 rounded-full font-mono font-black ml-0.5">
+                {activeChips.length}
+              </span>
+            )}
           </button>
 
           <div className="flex items-center bg-slate-100 dark:bg-slate-800 p-0.5 rounded-xl border border-slate-300 dark:border-slate-700">

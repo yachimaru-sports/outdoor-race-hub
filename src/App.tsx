@@ -137,23 +137,62 @@ export const App: React.FC = () => {
     }));
   };
 
-  // アドベンチャーゲーム絞り込みショートカット（ピックアップカード1）
+  // アドベンチャーゲーム絞り込みショートカット（ピックアップカード1：オン/オフトグル）
   const handleFilterAdventure = () => {
-    setFilters({
-      ...INITIAL_FILTERS,
-      category: 'adventure',
-      featureTag: 'toretore',
-    });
+    if (filters.category === 'adventure' && (filters.featureTag === 'toretore' || filters.featureTag === 'nav')) {
+      setFilters(INITIAL_FILTERS);
+    } else {
+      setFilters({
+        ...INITIAL_FILTERS,
+        category: 'adventure',
+        featureTag: 'toretore',
+        selectedCategories: ['adventure'],
+      });
+    }
   };
 
-  // ピックアップカード2・3からの絞り込みショートカット
+  // ピックアップカード2・3からの絞り込みショートカット（オン/オフトグル）
   const handleFilterFeature = (category: string, featureTag: string, region = 'all') => {
-    setFilters({
-      ...INITIAL_FILTERS,
-      category,
-      featureTag,
-      region,
-    });
+    // 100マイルカードの場合
+    if (featureTag === '100mile') {
+      if (filters.featureTag === '100mile') {
+        setFilters(INITIAL_FILTERS);
+        return;
+      }
+      setFilters({
+        ...INITIAL_FILTERS,
+        category: 'all',
+        featureTag: '100mile',
+      });
+      return;
+    }
+
+    // 地域（中国・四国）カードの場合
+    if (region !== 'all') {
+      if (filters.region === region) {
+        setFilters(INITIAL_FILTERS);
+        return;
+      }
+      setFilters({
+        ...INITIAL_FILTERS,
+        category: 'all',
+        featureTag: 'all',
+        region: region,
+      });
+      return;
+    }
+
+    // その他の汎用処理
+    if (filters.category === category && filters.featureTag === featureTag) {
+      setFilters(INITIAL_FILTERS);
+    } else {
+      setFilters({
+        ...INITIAL_FILTERS,
+        category,
+        featureTag,
+        region,
+      });
+    }
   };
 
   // フィルター手動変更
@@ -351,6 +390,7 @@ export const App: React.FC = () => {
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 py-6 sm:py-8 space-y-6 sm:space-y-8">
         {/* 2. 注目の競技カテゴリー・主要大会クイック抽出 */}
         <ToretoreBanner
+          filters={filters}
           onFilterAdventure={handleFilterAdventure}
           onFilterFeature={handleFilterFeature}
         />
