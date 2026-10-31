@@ -78,7 +78,7 @@ export const MobileEventCardList: React.FC<MobileEventCardListProps> = ({
   }
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-3.5 w-full">
       {events.map((event) => {
         const cat = CATEGORY_LABELS[event.category];
         const now = new Date();
@@ -101,7 +101,7 @@ export const MobileEventCardList: React.FC<MobileEventCardListProps> = ({
         return (
           <div
             key={event.id}
-            className={`bg-white dark:bg-slate-900 border-2 rounded-2xl shadow-sm overflow-hidden transition-all ${
+            className={`bg-white dark:bg-slate-900 border-2 rounded-2xl shadow-sm overflow-hidden transition-all w-full ${
               isFav
                 ? 'border-rose-400 dark:border-rose-800 ring-2 ring-rose-300/40 bg-rose-50/15'
                 : 'border-slate-250 dark:border-slate-800'
@@ -110,7 +110,7 @@ export const MobileEventCardList: React.FC<MobileEventCardListProps> = ({
             {/* 上部アクセントカラーバー */}
             <div className={`h-1.5 w-full ${cat.accentBg}`} />
 
-            <div className="p-4 space-y-3">
+            <div className="p-3.5 sm:p-4 space-y-3">
               {/* 1. 最上部：種別バッジ ＆ 日付 ＆ 受付ステータス ＆ マイ参戦保存ボタン */}
               <div className="flex items-center justify-between gap-2">
                 <div className="flex items-center gap-1.5 flex-wrap min-w-0">

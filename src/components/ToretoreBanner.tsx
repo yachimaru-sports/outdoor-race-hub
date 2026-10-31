@@ -117,12 +117,93 @@ export const ToretoreBanner: React.FC<ToretoreBannerProps> = ({
         </div>
       </div>
 
-      {/* 3連ビジュアルピックアップカード（スマホでは横スワイプ snap-x、PCでは3列グリッド） */}
-      <div className="flex lg:grid overflow-x-auto lg:overflow-visible no-scrollbar snap-x snap-mandatory gap-3 sm:gap-5 pb-2 lg:pb-0 lg:grid-cols-3">
+      {/* スマホ専用：黄色・赤・緑の文字のみの縦型表示（右スライド廃止・画面幅ピッタリ） */}
+      <div className="flex flex-col gap-2.5 lg:hidden w-full">
+        {/* 黄色: とれとれバイク・読図・AR */}
+        <button
+          type="button"
+          onClick={onFilterAdventure}
+          className={`w-full min-h-[48px] px-3.5 py-2.5 rounded-xl border-2 flex items-center justify-between text-left transition-all cursor-pointer select-none ${
+            isAdventureActive
+              ? 'bg-amber-400 text-slate-950 border-amber-500 shadow-md ring-2 ring-amber-400/50 font-black'
+              : 'bg-amber-50 dark:bg-amber-950/30 text-amber-900 dark:text-amber-200 border-amber-300 dark:border-amber-800 hover:bg-amber-100 font-bold'
+          }`}
+        >
+          <div className="flex items-center gap-2">
+            <span className="w-2.5 h-2.5 rounded-full bg-amber-500 shrink-0" />
+            <div className="leading-snug">
+              <span className="font-black text-xs sm:text-sm">とれとれバイク・読図・AR</span>
+              <span className="text-[11px] opacity-80 ml-2">（2.5万図必携・アドベンチャー）</span>
+            </div>
+          </div>
+          {isAdventureActive ? (
+            <span className="text-[10px] font-black bg-slate-950 text-white px-2 py-0.5 rounded-full shrink-0">
+              適用中 ✕
+            </span>
+          ) : (
+            <span className="text-xs font-mono font-black opacity-70 shrink-0">抽出 ➔</span>
+          )}
+        </button>
+
+        {/* 赤色: 国内100マイルレース一覧 */}
+        <button
+          type="button"
+          onClick={() => onFilterFeature && onFilterFeature('all', '100mile')}
+          className={`w-full min-h-[48px] px-3.5 py-2.5 rounded-xl border-2 flex items-center justify-between text-left transition-all cursor-pointer select-none ${
+            is100MileActive
+              ? 'bg-rose-500 text-white border-rose-600 shadow-md ring-2 ring-rose-400/50 font-black'
+              : 'bg-rose-50 dark:bg-rose-950/30 text-rose-900 dark:text-rose-200 border-rose-300 dark:border-rose-800 hover:bg-rose-100 font-bold'
+          }`}
+        >
+          <div className="flex items-center gap-2">
+            <span className="w-2.5 h-2.5 rounded-full bg-rose-500 shrink-0" />
+            <div className="leading-snug">
+              <span className="font-black text-xs sm:text-sm">国内100マイルレース一覧</span>
+              <span className="text-[11px] opacity-80 ml-2">（160km級・UTMB等）</span>
+            </div>
+          </div>
+          {is100MileActive ? (
+            <span className="text-[10px] font-black bg-white text-rose-700 px-2 py-0.5 rounded-full shrink-0">
+              適用中 ✕
+            </span>
+          ) : (
+            <span className="text-xs font-mono font-black opacity-70 shrink-0">抽出 ➔</span>
+          )}
+        </button>
+
+        {/* 緑色: 中国5県 ＆ 四国4県 地域別一覧 */}
+        <button
+          type="button"
+          onClick={() => onFilterFeature && onFilterFeature('all', 'all', '中国')}
+          className={`w-full min-h-[48px] px-3.5 py-2.5 rounded-xl border-2 flex items-center justify-between text-left transition-all cursor-pointer select-none ${
+            isRegionCardActive
+              ? 'bg-emerald-600 text-white border-emerald-700 shadow-md ring-2 ring-emerald-400/50 font-black'
+              : 'bg-emerald-50 dark:bg-emerald-950/30 text-emerald-900 dark:text-emerald-200 border-emerald-300 dark:border-emerald-800 hover:bg-emerald-100 font-bold'
+          }`}
+        >
+          <div className="flex items-center gap-2">
+            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 shrink-0" />
+            <div className="leading-snug">
+              <span className="font-black text-xs sm:text-sm">中国5県 ＆ 四国4県 地域別一覧</span>
+              <span className="text-[11px] opacity-80 ml-2">（地元密着・中四国大会）</span>
+            </div>
+          </div>
+          {isRegionCardActive ? (
+            <span className="text-[10px] font-black bg-white text-emerald-800 px-2 py-0.5 rounded-full shrink-0">
+              適用中 ✕
+            </span>
+          ) : (
+            <span className="text-xs font-mono font-black opacity-70 shrink-0">抽出 ➔</span>
+          )}
+        </button>
+      </div>
+
+      {/* PC表示：3連ビジュアルピックアップカード */}
+      <div className="hidden lg:grid grid-cols-3 gap-5">
         {/* カード1: とれとれバイク＆AR関西・全国アドベンチャー特集 */}
         <div
           onClick={onFilterAdventure}
-          className={`group relative rounded-2xl overflow-hidden border-2 transition-all cursor-pointer bg-gradient-to-br from-slate-900 via-slate-850 to-amber-950 text-white p-5 sm:p-6 flex flex-col justify-between min-h-[205px] w-[86vw] sm:w-[360px] lg:w-auto shrink-0 snap-center select-none ${
+          className={`group relative rounded-2xl overflow-hidden border-2 transition-all cursor-pointer bg-gradient-to-br from-slate-900 via-slate-850 to-amber-950 text-white p-5 sm:p-6 flex flex-col justify-between min-h-[205px] select-none ${
             isAdventureActive
               ? 'border-amber-400 ring-4 ring-amber-500/40 shadow-xl scale-[1.01]'
               : 'border-slate-800 shadow-sm hover:shadow-md hover:border-slate-700'
@@ -192,7 +273,7 @@ export const ToretoreBanner: React.FC<ToretoreBannerProps> = ({
         {/* カード2: 国内100マイル（160km）レース完全網羅 */}
         <div
           onClick={() => onFilterFeature && onFilterFeature('all', '100mile')}
-          className={`group relative rounded-2xl overflow-hidden border-2 transition-all cursor-pointer bg-gradient-to-br from-rose-950 via-slate-900 to-amber-950 text-white p-5 sm:p-6 flex flex-col justify-between min-h-[205px] w-[86vw] sm:w-[360px] lg:w-auto shrink-0 snap-center select-none ${
+          className={`group relative rounded-2xl overflow-hidden border-2 transition-all cursor-pointer bg-gradient-to-br from-rose-950 via-slate-900 to-amber-950 text-white p-5 sm:p-6 flex flex-col justify-between min-h-[205px] select-none ${
             is100MileActive
               ? 'border-rose-400 ring-4 ring-rose-500/40 shadow-xl scale-[1.01]'
               : 'border-slate-800 shadow-sm hover:shadow-md hover:border-slate-700'
@@ -251,7 +332,7 @@ export const ToretoreBanner: React.FC<ToretoreBannerProps> = ({
         {/* カード3: 中国地方＆四国地方 徹底網羅 */}
         <div
           onClick={() => onFilterFeature && onFilterFeature('all', 'all', '中国')}
-          className={`group relative rounded-2xl overflow-hidden border-2 transition-all cursor-pointer bg-gradient-to-br from-teal-950 via-slate-900 to-sky-950 text-white p-5 sm:p-6 flex flex-col justify-between min-h-[205px] w-[86vw] sm:w-[360px] lg:w-auto shrink-0 snap-center select-none ${
+          className={`group relative rounded-2xl overflow-hidden border-2 transition-all cursor-pointer bg-gradient-to-br from-teal-950 via-slate-900 to-sky-950 text-white p-5 sm:p-6 flex flex-col justify-between min-h-[205px] select-none ${
             isRegionCardActive
               ? 'border-emerald-400 ring-4 ring-emerald-500/40 shadow-xl scale-[1.01]'
               : 'border-slate-800 shadow-sm hover:shadow-md hover:border-slate-700'

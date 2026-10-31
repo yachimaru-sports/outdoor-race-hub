@@ -387,9 +387,9 @@ export const App: React.FC = () => {
   }, [events, filters, favoriteIds]);
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-100 dark:bg-[#0b0f19] text-slate-900 dark:text-slate-100 transition-colors duration-150">
+    <div className="min-h-screen flex flex-col bg-slate-100 dark:bg-[#0b0f19] text-slate-900 dark:text-slate-100 transition-colors duration-150 overflow-x-hidden w-full">
       {/* 1. 常時固定ヘッダー：楽天特価セールギア ＆ アップデート情報バー */}
-      <header className="sticky top-0 z-50 shadow-md">
+      <header className="sticky top-0 z-50 shadow-md w-full overflow-hidden">
         <div id="deals-carousel">
           <DealsTicker
             deals={deals}
@@ -403,7 +403,7 @@ export const App: React.FC = () => {
       </header>
 
       {/* メインコンテンツ（ご要望順：注目の競技カテゴリー → すべての大会 → 条件にマッチする → 大会一覧） */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 py-6 sm:py-8 space-y-6 sm:space-y-8">
+      <main className="flex-1 max-w-7xl w-full mx-auto px-2.5 sm:px-4 py-4 sm:py-8 space-y-4 sm:space-y-8 overflow-x-hidden">
         {/* 2. 注目の競技カテゴリー・主要大会クイック抽出 */}
         <ToretoreBanner
           filters={filters}

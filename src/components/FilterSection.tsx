@@ -283,7 +283,7 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
   }
 
   return (
-    <div className="bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 rounded-2xl p-4 sm:p-5 shadow-sm space-y-4">
+    <div className="bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 rounded-2xl p-3 sm:p-5 shadow-sm space-y-4 w-full overflow-hidden">
       {/* 0. 最上部ヘッダー：件数 ＆ 受付中トグル ＆ マイ参戦予定 ＆ 表示切替 */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-200 dark:border-slate-800 pb-3.5">
         <div className="flex flex-wrap items-center gap-2.5 sm:gap-3">
@@ -303,18 +303,19 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
           <button
             type="button"
             onClick={toggleOnlyOpen}
-            className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-black border-2 transition-all cursor-pointer select-none ${
+            className={`inline-flex items-center gap-1.5 px-2.5 sm:px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-black border-2 transition-all cursor-pointer select-none ${
               isOnlyOpen
                 ? 'bg-emerald-700 text-white border-emerald-700 shadow-xs'
                 : 'bg-emerald-50 dark:bg-emerald-950/40 text-emerald-950 dark:text-emerald-200 border-emerald-400 dark:border-emerald-700 hover:bg-emerald-100'
             }`}
           >
             {isOnlyOpen ? (
-              <CheckSquare className="w-4 h-4 fill-white text-emerald-700" />
+              <CheckSquare className="w-4 h-4 fill-white text-emerald-700 shrink-0" />
             ) : (
-              <Square className="w-4 h-4 text-emerald-700 dark:text-emerald-400" />
+              <Square className="w-4 h-4 text-emerald-700 dark:text-emerald-400 shrink-0" />
             )}
-            <span>エントリー受付中・申込可能のみ表示</span>
+            <span className="hidden sm:inline">エントリー受付中・申込可能のみ表示</span>
+            <span className="sm:hidden">受付中のみ</span>
           </button>
 
           {/* マイ参戦予定 */}
@@ -424,8 +425,8 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
           </div>
         </div>
 
-        {/* スマホ専用：横スクロール可能なピル型タブ（片手でサクサク切り替え） */}
-        <div className="flex md:hidden overflow-x-auto no-scrollbar gap-2 pb-1.5 snap-x">
+        {/* スマホ専用：縦型表示（右スライド廃止・画面横幅ピッタリ配置） */}
+        <div className="flex flex-col md:hidden gap-2 w-full">
           {genreDefinitions.map((genre) => {
             const isChecked = selectedGenres.includes(genre.id);
             const Icon = genre.icon;
@@ -434,33 +435,56 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
                 key={genre.id}
                 type="button"
                 onClick={() => handleToggleGenre(genre.id)}
-                className={`flex items-center gap-2 px-3 py-2 rounded-xl border-2 shrink-0 snap-start transition-all cursor-pointer select-none min-h-[44px] ${
+                className={`w-full min-h-[48px] px-3.5 py-2.5 rounded-xl border-2 flex items-center justify-between transition-all cursor-pointer select-none ${
                   isChecked
                     ? `${genre.activeColor} shadow-xs font-black`
-                    : 'border-slate-300 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 text-slate-500 opacity-60'
+                    : 'border-slate-300 dark:border-slate-800 bg-slate-100/70 dark:bg-slate-900/60 text-slate-500 opacity-60'
                 }`}
               >
-                <div
-                  className={`w-6 h-6 rounded-lg flex items-center justify-center shrink-0 ${
-                    isChecked ? genre.activeIconBg : genre.iconBg
-                  }`}
-                >
-                  <Icon className="w-3.5 h-3.5 stroke-[2.2]" />
-                </div>
-                <div className="text-left">
-                  <div className="text-xs font-black whitespace-nowrap">
-                    {genre.label.split('・')[0]}
+                <div className="flex items-center gap-2.5 min-w-0">
+                  {/* ON/OFF チェック */}
+                  <div className="shrink-0">
+                    {isChecked ? (
+                      <div className="flex items-center gap-1 bg-teal-600 text-white px-2 py-0.5 rounded text-[11px] font-black">
+                        <CheckSquare className="w-3.5 h-3.5 fill-white text-teal-600" />
+                        <span>ON</span>
+                      </div>
+                    ) : (
+                      <div className="flex items-center gap-1 bg-slate-300 dark:bg-slate-700 text-slate-600 dark:text-slate-400 px-2 py-0.5 rounded text-[11px] font-black">
+                        <Square className="w-3.5 h-3.5" />
+                        <span>OFF</span>
+                      </div>
+                    )}
+                  </div>
+
+                  <div
+                    className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 ${
+                      isChecked ? genre.activeIconBg : genre.iconBg
+                    }`}
+                  >
+                    <Icon className="w-4 h-4 stroke-[2.2]" />
+                  </div>
+
+                  <div className="text-left min-w-0">
+                    <div className="text-xs sm:text-sm font-black text-slate-950 dark:text-white truncate">
+                      {genre.label}
+                    </div>
                   </div>
                 </div>
-                <span
-                  className={`text-[10px] font-mono font-black px-1.5 py-0.2 rounded-full leading-none shrink-0 ${
-                    isChecked
-                      ? 'bg-slate-950 text-white dark:bg-white dark:text-slate-950'
-                      : 'bg-slate-200 text-slate-400 dark:bg-slate-700'
-                  }`}
-                >
-                  {genre.count}
-                </span>
+
+                {/* 件数バッジ */}
+                <div className="shrink-0 ml-2">
+                  <span
+                    className={`text-xs font-mono font-black px-2.5 py-1 rounded-full flex items-center gap-1 ${
+                      isChecked
+                        ? 'bg-slate-950 text-white dark:bg-white dark:text-slate-950'
+                        : 'bg-slate-200 text-slate-400 dark:bg-slate-800'
+                    }`}
+                  >
+                    <span>{genre.count}件</span>
+                    <span className="text-emerald-500 text-[10px]">(受付{genre.openCount})</span>
+                  </span>
+                </div>
               </button>
             );
           })}
