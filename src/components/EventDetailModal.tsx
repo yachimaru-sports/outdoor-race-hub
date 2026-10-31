@@ -1,6 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { RaceEvent, DealItem } from '../types';
-import { CATEGORY_LABELS, ENTRY_STATUS_CONFIG, formatDate, formatEventDateRange, formatPrice } from '../utils/helpers';
+import {
+  CATEGORY_LABELS,
+  ENTRY_STATUS_CONFIG,
+  formatDate,
+  formatEventDateRange,
+  formatEventDateSlash,
+  formatDeadlineSlash,
+  formatPrice,
+} from '../utils/helpers';
 import {
   X,
   Calendar,
@@ -122,7 +130,7 @@ export const EventDetailModal: React.FC<EventDetailModalProps> = ({ event, deals
             <div className="flex flex-wrap items-center gap-3.5 mt-3 text-sm text-slate-700 dark:text-slate-300">
               <span className="flex items-center gap-1.5 font-black text-teal-800 dark:text-teal-300 bg-teal-50 dark:bg-teal-950/40 px-3 py-1 rounded-lg border border-teal-300 dark:border-teal-800">
                 <Calendar className="w-4 h-4 text-teal-700 dark:text-teal-400" />
-                開催日: {formatEventDateRange(event.date, event.end_date, true)}
+                開催日: {formatEventDateSlash(event.date, event.end_date)}
               </span>
               <span className="flex items-center gap-1.5 font-bold">
                 <MapPin className="w-4 h-4 text-teal-700 dark:text-teal-400" />
@@ -158,7 +166,7 @@ export const EventDetailModal: React.FC<EventDetailModalProps> = ({ event, deals
             <div className="text-center sm:text-left">
               <span className="text-xs text-slate-600 dark:text-slate-400 font-bold">エントリー締切</span>
               <div className="text-sm sm:text-base font-black text-red-700 dark:text-red-400 mt-1 font-mono">
-                {event.entry_deadline ? formatDate(event.entry_deadline) : '公式サイト確認'}
+                {event.entry_deadline ? formatDeadlineSlash(event.entry_deadline) : '公式サイト確認'}
               </div>
             </div>
           </div>

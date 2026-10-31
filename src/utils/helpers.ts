@@ -211,6 +211,7 @@ export const PREFECTURES = [
 ];
 
 const WEEKDAYS = ['日', '月', '火', '水', '木', '金', '土'];
+const WEEKDAY_CHARS = ['㈰', '㈪', '㈫', '㈬', '㈭', '㈮', '㈯'];
 
 export function getDayOfWeek(dateStr: string): string {
   try {
@@ -218,6 +219,22 @@ export function getDayOfWeek(dateStr: string): string {
     if (parts.length === 3) {
       const d = new Date(parseInt(parts[0], 10), parseInt(parts[1], 10) - 1, parseInt(parts[2], 10));
       return WEEKDAYS[d.getDay()] || '';
+    }
+  } catch {
+    // ignore
+  }
+  return '';
+}
+
+/**
+ * 曜日の組文字（㈰ ㈪ ㈫ ㈬ ㈭ ㈮ ㈯）を取得
+ */
+export function getWeekdayChar(dateStr: string): string {
+  try {
+    const parts = dateStr.split('-');
+    if (parts.length === 3) {
+      const d = new Date(parseInt(parts[0], 10), parseInt(parts[1], 10) - 1, parseInt(parts[2], 10));
+      return WEEKDAY_CHARS[d.getDay()] || '';
     }
   } catch {
     // ignore
@@ -235,6 +252,70 @@ export function formatDate(dateStr: string): string {
   } catch {
     return dateStr;
   }
+}
+
+/**
+ * 開催日スラッシュ＆曜日表記（ご要望形式: 2026/11/28㈯~29㈰ または 2026/12/5㈯）
+ */
+export function formatEventDateSlash(startDateStr: string, endDateStr?: string): string {
+  if (!startDateStr) return '';
+  const sParts = startDateStr.split('-');
+  if (sParts.length !== 3) return startDateStr;
+
+  const y = sParts[0];
+  const m = parseInt(sParts[1], 10);
+  const d = parseInt(sParts[2], 10);
+  const sW = getWeekdayChar(startDateStr);
+
+  if (!endDateStr || startDateStr === endDateStr) {
+    return `${y}/${m}/${d}${sW}`;
+  }
+
+  const eParts = endDateStr.split('-');
+  if (eParts.length !== 3) {
+    return `${y}/${m}/${d}${sW}~${endDateStr}`;
+  }
+
+  const ey = eParts[0];
+  const em = parseInt(eParts[1], 10);
+  const ed = parseInt(eParts[2], 10);
+  const eW = getWeekdayChar(endDateStr);
+
+  // 同年・同月の場合: 2026/11/28㈯~29㈰
+  if (y === ey && m === em) {
+    return `${y}/${m}/${d}${sW}~${ed}${eW}`;
+  }
+
+  // 同年・異月の場合: 2026/5/31㈰~6/1㈪
+  if (y === ey) {
+    return `${y}/${m}/${d}${sW}~${em}/${ed}${eW}`;
+  }
+
+  // 異年の場合: 2026/12/31㈭~2027/1/1㈮
+  return `${y}/${m}/${d}${sW}~${ey}/${em}/${ed}${eW}`;
+}
+
+/**
+ * 締切日スラッシュ＆曜日表記（ご要望形式: 10/9㈮）
+ */
+export function formatDeadlineSlash(dateStr: string): string {
+  if (!dateStr) return '';
+  const parts = dateStr.split('-');
+  if (parts.length !== 3) return dateStr;
+  const m = parseInt(parts[1], 10);
+  const d = parseInt(parts[2], 10);
+  const w = getWeekdayChar(dateStr);
+  return `${m}/${d}${w}`;
+}
+
+/**
+ * 期間（受付開始〜締切）スラッシュ表記（例: 4/1㈬~5/20㈬）
+ */
+export function formatPeriodSlash(startStr?: string, endStr?: string): string {
+  if (!startStr && !endStr) return '';
+  if (!startStr && endStr) return formatDeadlineSlash(endStr);
+  if (startStr && !endStr) return `${formatDeadlineSlash(startStr)}~`;
+  return `${formatDeadlineSlash(startStr!)}~${formatDeadlineSlash(endStr!)}`;
 }
 
 /**

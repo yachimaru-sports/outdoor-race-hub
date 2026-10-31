@@ -9,6 +9,9 @@ import {
   formatPrice,
   formatTableDateRange,
   formatEventDateRange,
+  formatEventDateSlash,
+  formatDeadlineSlash,
+  formatPeriodSlash,
 } from '../utils/helpers';
 import { LinkButton } from './LinkButton';
 import {
@@ -112,7 +115,7 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
               </th>
               {/* 2. 開催日 / 締切（クリックでソート） */}
               <th
-                className={`py-3 px-3 w-[150px] transition-colors select-none ${
+                className={`py-3 px-3 w-[155px] transition-colors select-none ${
                   onSortChange ? 'cursor-pointer hover:bg-slate-200 dark:hover:bg-slate-750' : ''
                 }`}
                 onClick={() => {
@@ -238,12 +241,12 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
                       </button>
                     </td>
 
-                    {/* 2. 開催日 / 締切（2行でスッキリ整列） */}
+                    {/* 2. 開催日 / 締切（2行でスッキリ整列: 例 2026/11/28㈯~29㈰, 締切:10/9㈮） */}
                     <td className="py-2.5 px-3 align-middle whitespace-nowrap">
                       <div className="relative group/daterange flex items-center gap-1 font-mono cursor-help" title={fullDateTooltip}>
                         <Calendar className="w-3.5 h-3.5 text-teal-700 dark:text-teal-400 shrink-0" />
                         <span className="text-sm font-black text-slate-950 dark:text-white tracking-tight">
-                          {dateInfo.text}
+                          {formatEventDateSlash(event.date, event.end_date)}
                         </span>
                         {/* ホバー時詳細日程ポップアップ */}
                         <div className="absolute left-0 bottom-full mb-1.5 hidden group-hover/daterange:block z-50 bg-slate-950/95 text-white text-[11px] font-extrabold px-2.5 py-1.5 rounded-lg shadow-xl border border-teal-500/40 pointer-events-none whitespace-nowrap backdrop-blur-xs">
@@ -252,26 +255,26 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
                         </div>
                       </div>
 
-                      {/* 締切日 / 受付期間表示 */}
+                      {/* 締切日 / 受付期間表示（例: 10/9㈮） */}
                       <div className="mt-0.5">
                         {event.entry_start_date ? (
                           <span className="inline-flex items-center gap-0.5 px-1.5 py-0.2 rounded text-[10px] font-bold bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300 border border-slate-300 dark:border-slate-700 font-mono" title={`受付期間: ${event.entry_start_date} 〜 ${event.entry_deadline}`}>
                             <Clock className="w-2.5 h-2.5 text-slate-500" />
-                            受付:{event.entry_start_date.slice(5)}〜{event.entry_deadline ? event.entry_deadline.slice(5) : ''}
+                            受付:{formatPeriodSlash(event.entry_start_date, event.entry_deadline)}
                           </span>
                         ) : isClosingSoon ? (
                           <span className="inline-flex items-center gap-0.5 px-1.5 py-0.2 rounded text-[11px] font-extrabold bg-red-100 text-red-700 dark:bg-red-950/60 dark:text-red-300 border border-red-300 animate-pulse font-mono">
                             <Clock className="w-2.5 h-2.5 text-red-600" />
-                            締切:{event.entry_deadline ? event.entry_deadline.slice(5) : '間近'}
+                            締切:{event.entry_deadline ? formatDeadlineSlash(event.entry_deadline) : '間近'}
                           </span>
                         ) : isOpen ? (
                           <span className="inline-flex items-center gap-0.5 px-1.5 py-0.2 rounded text-[11px] font-bold bg-amber-50 text-amber-800 dark:bg-amber-950/40 dark:text-amber-200 border border-amber-300 font-mono">
                             <Clock className="w-2.5 h-2.5 text-amber-600" />
-                            締切:{event.entry_deadline ? event.entry_deadline.slice(5) : '受付中'}
+                            締切:{event.entry_deadline ? formatDeadlineSlash(event.entry_deadline) : '受付中'}
                           </span>
                         ) : (
                           <span className="text-[11px] text-slate-500 font-bold font-mono pl-0.5">
-                            締切:{event.entry_deadline ? event.entry_deadline.slice(5) : '終了'}
+                            締切:{event.entry_deadline ? formatDeadlineSlash(event.entry_deadline) : '終了'}
                           </span>
                         )}
                       </div>

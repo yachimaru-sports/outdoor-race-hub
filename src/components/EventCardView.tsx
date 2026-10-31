@@ -1,6 +1,15 @@
 import React from 'react';
 import { RaceEvent } from '../types';
-import { CATEGORY_LABELS, ELEMENT_BADGES, ENTRY_STATUS_CONFIG, formatDate, formatEventDateRange, getGoogleMapsUrl } from '../utils/helpers';
+import {
+  CATEGORY_LABELS,
+  ELEMENT_BADGES,
+  ENTRY_STATUS_CONFIG,
+  formatDate,
+  formatEventDateRange,
+  formatEventDateSlash,
+  formatDeadlineSlash,
+  getGoogleMapsUrl,
+} from '../utils/helpers';
 import { LinkButton } from './LinkButton';
 import {
   Calendar,
@@ -150,7 +159,7 @@ export const EventCardView: React.FC<EventCardViewProps> = ({
                     <Calendar className="w-4 h-4 text-teal-700 dark:text-teal-400 shrink-0" />
                     <span className="text-xs font-bold text-slate-600 dark:text-slate-400">開催日:</span>
                     <span className="text-sm font-black text-slate-950 dark:text-white font-mono">
-                      {formatEventDateRange(event.date, event.end_date, true)}
+                      {formatEventDateSlash(event.date, event.end_date)}
                     </span>
                   </div>
                 </div>
@@ -163,15 +172,15 @@ export const EventCardView: React.FC<EventCardViewProps> = ({
                   <div>
                     {isClosingSoon ? (
                       <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-xs font-black bg-red-100 text-red-700 dark:bg-red-950/60 dark:text-red-300 border border-red-300 animate-pulse font-mono">
-                        🔥 {event.entry_deadline || '締切間近'}
+                        🔥 締切: {event.entry_deadline ? formatDeadlineSlash(event.entry_deadline) : '間近'}
                       </span>
                     ) : isOpen ? (
                       <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-xs font-extrabold bg-amber-100 text-amber-900 dark:bg-amber-950/50 dark:text-amber-200 border border-amber-300 font-mono">
-                        {event.entry_deadline ? `締切: ${event.entry_deadline}` : '受付中'}
+                        {event.entry_deadline ? `締切: ${formatDeadlineSlash(event.entry_deadline)}` : '受付中'}
                       </span>
                     ) : (
                       <span className="text-xs text-slate-500 font-bold font-mono">
-                        {event.entry_deadline ? `締切: ${event.entry_deadline}` : '受付終了'}
+                        {event.entry_deadline ? `締切: ${formatDeadlineSlash(event.entry_deadline)}` : '受付終了'}
                       </span>
                     )}
                   </div>
