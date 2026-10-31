@@ -14,42 +14,40 @@
     "prefecture": "兵庫県",
     "distance_km": 150,
     "elevation_m": 1300,
-    "entry_fee": "13,000円",
     "entry_status": "closed",
+    "entry_start_date": "2027-01-30",
     "entry_deadline": "2027-03-31",
+    "entry_fee": "13,000円",
     "links": {
       "official": "https://note.com/tour_de_nippon",
       "entry": "https://www.sportsentry.ne.jp/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
     "mandatory_gear": [
       {
         "name": "ヘルメット・アイウェア",
-        "is_prepared": false
+        "category": "ウェア"
       },
       {
         "name": "前後ライト",
-        "is_prepared": false
+        "category": "ライト"
       },
       {
         "name": "ボトル2本",
-        "is_prepared": false
+        "category": "補給"
       },
       {
         "name": "携帯工具・CO2ボンベ",
-        "is_prepared": false
+        "category": "ギア"
       }
     ],
-    "source": {
-      "portalName": "スポーツエントリー",
-      "portalUrl": "https://www.sportsentry.ne.jp/cycle/10/2"
-    },
     "venue": {
       "name": "春のプレミアムアワイチ",
       "mapQuery": "兵庫県 春のプレミアムアワイチ"
-    },
-    "entry_start_date": "2027-01-30"
+    }
   },
   {
     "id": "nanki-shirahama-adventure-ride-2026",
@@ -67,38 +65,40 @@
     "prefecture": "和歌山県",
     "distance_km": 125,
     "elevation_m": 1600,
-    "entry_fee": "10,000円",
     "entry_status": "closing_soon",
+    "entry_start_date": "2026-09-21",
     "entry_deadline": "2026-11-20",
+    "entry_fee": "10,000円",
     "links": {
       "official": "https://ride-on-susami.com/",
       "entry": "https://cycle.spoen.jp/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
     "mandatory_gear": [
       {
         "name": "ヘルメット・グローブ",
-        "is_prepared": false
+        "category": "ウェア"
       },
       {
         "name": "前後ライト",
-        "is_prepared": false
+        "category": "ライト"
       },
       {
         "name": "防寒着",
-        "is_prepared": false
+        "category": "ウェア"
       },
       {
         "name": "パンク修理セット",
-        "is_prepared": false
+        "category": "ギア"
       }
     ],
-    "source": {
-      "portalName": "スポーツエントリー",
-      "portalUrl": "https://www.sportsentry.ne.jp/cycle/10/2"
-    },
-    "entry_start_date": "2026-09-21"
+    "venue": {
+      "name": "",
+      "mapQuery": "和歌山県 "
+    }
   },
   {
     "id": "shimanami-spring-century-2026",
@@ -115,34 +115,41 @@
     "prefecture": "広島県",
     "distance_km": 140,
     "elevation_m": 1200,
-    "entry_fee": "12,000円",
     "entry_status": "closed",
+    "entry_start_date": "2026-12-01",
     "entry_deadline": "2027-03-20",
+    "entry_fee": "12,000円",
     "links": {
       "official": "https://www.htv.jp/grandtour/index.html",
       "entry": "https://cycle.spoen.jp/",
-      "review": "https://runnet.jp/",
-      "sns": "https://www.facebook.com/grandtoursetouchi/"
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-10-31"
     },
     "mandatory_gear": [
       {
         "name": "ヘルメット",
-        "is_prepared": false
+        "category": "ギア"
       },
       {
         "name": "高輝度フロントライト・リア赤色点滅灯",
-        "is_prepared": false
+        "category": "ライト"
       },
       {
         "name": "ボトル2本",
-        "is_prepared": false
+        "category": "補給"
       },
       {
         "name": "補給食・携帯工具",
-        "is_prepared": false
+        "category": "補給"
       },
       {
-        "name": "ロードバイク/クロスバイク（点検済）＆ヘルメット",
+        "name": "ロードバイク",
+        "category": "ギア"
+      },
+      {
+        "name": "クロスバイク（点検済）＆ヘルメット",
         "category": "ギア"
       },
       {
@@ -150,23 +157,22 @@
         "category": "ライト"
       },
       {
-        "name": "パンク修理キット＆携帯ポンプ/CO2ボンベ",
-        "category": "リペア"
+        "name": "パンク修理キット＆携帯ポンプ",
+        "category": "ギア"
+      },
+      {
+        "name": "CO2ボンベ",
+        "category": "ギア"
       },
       {
         "name": "携帯マルチツール（六角レンチ各種）",
-        "category": "リペア"
+        "category": "ギア"
       }
     ],
-    "source": {
-      "portalName": "スポーツエントリー",
-      "portalUrl": "https://www.sportsentry.ne.jp/cycle/10/3"
-    },
     "venue": {
       "name": "尾道〜今治 往復",
       "mapQuery": "広島県 尾道〜今治 往復"
-    },
-    "entry_start_date": "2026-12-01"
+    }
   },
   {
     "id": "tobishima-orange-ride-2026",
@@ -183,38 +189,36 @@
     "prefecture": "広島県",
     "distance_km": 90,
     "elevation_m": 650,
-    "entry_fee": "8,500円",
     "entry_status": "closing_soon",
+    "entry_start_date": "2026-09-11",
     "entry_deadline": "2026-11-10",
+    "entry_fee": "8,500円",
     "links": {
       "official": "https://cycle.spoen.jp/",
       "entry": "https://cycle.spoen.jp/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
     "mandatory_gear": [
       {
         "name": "ヘルメット・グローブ",
-        "is_prepared": false
+        "category": "ウェア"
       },
       {
         "name": "前後ライト",
-        "is_prepared": false
+        "category": "ライト"
       },
       {
         "name": "ボトル（水分補給）",
-        "is_prepared": false
+        "category": "補給"
       }
     ],
-    "source": {
-      "portalName": "スポエンCYCLE",
-      "portalUrl": "https://cycle.spoen.jp/"
-    },
     "venue": {
       "name": "呉市",
       "mapQuery": "広島県 呉市"
-    },
-    "entry_start_date": "2026-09-11"
+    }
   },
   {
     "id": "fukufuku-ride-2026",
@@ -232,44 +236,40 @@
     "prefecture": "広島県",
     "distance_km": 60,
     "elevation_m": 350,
-    "entry_fee": "6,000円",
     "entry_status": "closing_soon",
+    "entry_start_date": "2026-09-16",
     "entry_deadline": "2026-11-15",
+    "entry_fee": "6,000円",
     "links": {
       "official": "https://cycle.spoen.jp/",
       "entry": "https://cycle.spoen.jp/",
-      "review": "https://cycle.spoen.jp/",
-      "sns": "https://cycle.spoen.jp/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
     "mandatory_gear": [
       {
         "name": "ヘルメット・グローブ",
-        "is_prepared": false
+        "category": "ウェア"
       },
       {
         "name": "前後ライト（フロント・テール）",
-        "is_prepared": false
+        "category": "ライト"
       },
       {
         "name": "スマートフォン（チェックポイント撮影・ナビ用）",
-        "is_prepared": false
+        "category": "ギア"
       },
       {
         "name": "パンク修理キット・携帯ポンプ",
-        "is_prepared": false
+        "category": "ギア"
       }
     ],
-    "source": {
-      "portalName": "スポエンCYCLE",
-      "portalUrl": "https://cycle.spoen.jp/"
-    },
     "venue": {
       "name": "福山",
       "mapQuery": "広島県 福山"
-    },
-    "entry_start_date": "2026-09-16"
+    }
   },
   {
     "id": "toretore-ueyama-2026",
@@ -289,12 +289,14 @@
     "distance_km": 38,
     "elevation_m": 1200,
     "entry_status": "closed",
+    "entry_start_date": "2025-12-27",
     "entry_deadline": "2026-02-25",
+    "entry_fee": "7,000円",
     "links": {
       "official": "http://toretore.web.fc2.com/ueyama/2026/UMAG2026.htm",
       "entry": "http://toretore.web.fc2.com/",
-      "review": "https://runnet.jp/",
-      "sns": "https://www.facebook.com/advkansai/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -304,16 +306,20 @@
         "category": "ギア"
       },
       {
-        "name": "シルバコンパス（方位磁石/プレート式）",
+        "name": "シルバコンパス（方位磁石",
         "category": "ナビゲーション"
+      },
+      {
+        "name": "プレート式）",
+        "category": "ギア"
       },
       {
         "name": "国土地理院2万5千分の1地図用防水マップケース",
-        "category": "ナビゲーション"
+        "category": "補給"
       },
       {
         "name": "MTBパンク修理キット＆携帯マルチツール",
-        "category": "リペア"
+        "category": "ギア"
       },
       {
         "name": "ファーストエイドキット＆エマージェンシーシート",
@@ -324,12 +330,10 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "7,000円",
-    "source": {
-      "portalName": "公式サイト",
-      "portalUrl": "http://toretore.web.fc2.com/ueyama/2026/UMAG2026.htm"
-    },
-    "entry_start_date": "2025-12-27"
+    "venue": {
+      "name": "",
+      "mapQuery": "岡山県 "
+    }
   },
   {
     "id": "toretore-hozukyou-2026",
@@ -343,7 +347,6 @@
     ],
     "title": "保津峡ミニアドベンチャーゲーム2026",
     "date": "2026-06-06",
-    "end_date": "2026-06-07",
     "month": 6,
     "region": "近畿",
     "prefecture": "京都府",
@@ -352,18 +355,19 @@
     "entry_status": "closed",
     "entry_start_date": "2026-04-01",
     "entry_deadline": "2026-05-20",
+    "entry_fee": "11,200円",
     "links": {
       "official": "http://toretore.web.fc2.com/hozukyou/HMAG2026.htm",
       "entry": "http://toretore.web.fc2.com/",
-      "review": "https://runnet.jp/",
-      "sns": "https://www.facebook.com/advkansai/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
     "mandatory_gear": [
       {
         "name": "パックラフトまたは指定カヤック＆パドル・PFD（ライフジャケット）",
-        "category": "ギア"
+        "category": "ウェア"
       },
       {
         "name": "MTB＋高輝度防水ヘッドランプ（夜間行動対応）",
@@ -371,26 +375,20 @@
       },
       {
         "name": "読図用ベースプレートコンパス＆防水マップボード",
-        "category": "ナビゲーション"
+        "category": "補給"
       },
       {
         "name": "完全防水ドライバッグ（20L以上）",
-        "category": "ギア"
+        "category": "補給"
       },
       {
         "name": "SOLエスケープヴィヴィ・保温シート＆ホイッスル",
         "category": "エイド"
       }
     ],
-    "entry_fee": "11,200円",
     "venue": {
       "name": "京都府亀岡市（保津峡エリア）",
-      "address": "京都府亀岡市保津町",
       "mapQuery": "京都府亀岡市 保津峡"
-    },
-    "source": {
-      "portalName": "AR関西",
-      "portalUrl": "http://toretore.web.fc2.com/hozukyou/HMAG2026.htm"
     }
   },
   {
@@ -405,7 +403,6 @@
     ],
     "title": "奈良吉野川アドベンチャーゲーム2026",
     "date": "2026-10-17",
-    "end_date": "2026-10-18",
     "month": 10,
     "region": "近畿",
     "prefecture": "奈良県",
@@ -414,18 +411,19 @@
     "entry_status": "closed",
     "entry_start_date": "2026-09-01",
     "entry_deadline": "2026-10-07",
+    "entry_fee": "17,800円",
     "links": {
       "official": "http://toretore.web.fc2.com/narayoshi/NYAG2026.html",
       "entry": "http://toretore.web.fc2.com/",
-      "review": "https://runnet.jp/",
-      "sns": "https://www.facebook.com/advkansai/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
     "mandatory_gear": [
       {
         "name": "パックラフトまたは指定カヤック＆パドル・PFD（ライフジャケット）",
-        "category": "ギア"
+        "category": "ウェア"
       },
       {
         "name": "MTB＋高輝度防水ヘッドランプ（夜間行動対応）",
@@ -433,26 +431,20 @@
       },
       {
         "name": "読図用ベースプレートコンパス＆防水マップボード",
-        "category": "ナビゲーション"
+        "category": "補給"
       },
       {
         "name": "完全防水ドライバッグ（20L以上）",
-        "category": "ギア"
+        "category": "補給"
       },
       {
         "name": "SOLエスケープヴィヴィ・保温シート＆ホイッスル",
         "category": "エイド"
       }
     ],
-    "entry_fee": "17,800円",
     "venue": {
       "name": "奈良吉野川 五條市近郊",
-      "address": "奈良県五條市",
       "mapQuery": "奈良県五條市 吉野川"
-    },
-    "source": {
-      "portalName": "AR関西",
-      "portalUrl": "http://toretore.web.fc2.com/narayoshi/NYAG2026.html"
     }
   },
   {
@@ -473,12 +465,14 @@
     "distance_km": 32,
     "elevation_m": 980,
     "entry_status": "open",
+    "entry_start_date": "2026-09-25",
     "entry_deadline": "2026-11-24",
+    "entry_fee": "9,200円",
     "links": {
       "official": "http://toretore.web.fc2.com/",
       "entry": "http://toretore.web.fc2.com/",
-      "review": "https://runnet.jp/",
-      "sns": "https://www.facebook.com/advkansai/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -488,16 +482,20 @@
         "category": "ギア"
       },
       {
-        "name": "シルバコンパス（方位磁石/プレート式）",
+        "name": "シルバコンパス（方位磁石",
         "category": "ナビゲーション"
+      },
+      {
+        "name": "プレート式）",
+        "category": "ギア"
       },
       {
         "name": "国土地理院2万5千分の1地図用防水マップケース",
-        "category": "ナビゲーション"
+        "category": "補給"
       },
       {
         "name": "MTBパンク修理キット＆携帯マルチツール",
-        "category": "リペア"
+        "category": "ギア"
       },
       {
         "name": "ファーストエイドキット＆エマージェンシーシート",
@@ -508,17 +506,10 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "9,200円",
     "venue": {
       "name": "兵庫県姫路市安富町富栖エリア",
-      "address": "兵庫県姫路市安富町皆河",
       "mapQuery": "兵庫県姫路市安富町皆河 富栖の里"
-    },
-    "source": {
-      "portalName": "AR関西",
-      "portalUrl": "http://toretore.web.fc2.com/"
-    },
-    "entry_start_date": "2026-09-25"
+    }
   },
   {
     "id": "toretore-obsidian-2026",
@@ -537,12 +528,14 @@
     "distance_km": 45,
     "elevation_m": 1400,
     "entry_status": "closed",
+    "entry_start_date": "2025-12-17",
     "entry_deadline": "2026-02-15",
+    "entry_fee": "7,000円",
     "links": {
       "official": "http://toretore.web.fc2.com/",
       "entry": "http://toretore.web.fc2.com/",
-      "review": "https://moshicom.com/",
-      "sns": "https://www.facebook.com/advkansai/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -552,16 +545,20 @@
         "category": "ギア"
       },
       {
-        "name": "シルバコンパス（方位磁石/プレート式）",
+        "name": "シルバコンパス（方位磁石",
         "category": "ナビゲーション"
+      },
+      {
+        "name": "プレート式）",
+        "category": "ギア"
       },
       {
         "name": "国土地理院2万5千分の1地図用防水マップケース",
-        "category": "ナビゲーション"
+        "category": "補給"
       },
       {
         "name": "MTBパンク修理キット＆携帯マルチツール",
-        "category": "リペア"
+        "category": "ギア"
       },
       {
         "name": "ファーストエイドキット＆エマージェンシーシート",
@@ -572,12 +569,10 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "7,000円",
-    "source": {
-      "portalName": "公式サイト",
-      "portalUrl": "http://toretore.web.fc2.com/"
-    },
-    "entry_start_date": "2025-12-17"
+    "venue": {
+      "name": "",
+      "mapQuery": "岐阜県 "
+    }
   },
   {
     "id": "toretore-iwamura-2026",
@@ -596,12 +591,14 @@
     "distance_km": 40,
     "elevation_m": 1250,
     "entry_status": "closed",
+    "entry_start_date": "2026-02-19",
     "entry_deadline": "2026-04-20",
+    "entry_fee": "7,000円",
     "links": {
       "official": "http://toretore.web.fc2.com/",
       "entry": "http://toretore.web.fc2.com/",
-      "review": "https://moshicom.com/",
-      "sns": "https://www.facebook.com/advkansai/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -611,16 +608,20 @@
         "category": "ギア"
       },
       {
-        "name": "シルバコンパス（方位磁石/プレート式）",
+        "name": "シルバコンパス（方位磁石",
         "category": "ナビゲーション"
+      },
+      {
+        "name": "プレート式）",
+        "category": "ギア"
       },
       {
         "name": "国土地理院2万5千分の1地図用防水マップケース",
-        "category": "ナビゲーション"
+        "category": "補給"
       },
       {
         "name": "MTBパンク修理キット＆携帯マルチツール",
-        "category": "リペア"
+        "category": "ギア"
       },
       {
         "name": "ファーストエイドキット＆エマージェンシーシート",
@@ -631,12 +632,10 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "7,000円",
-    "source": {
-      "portalName": "公式サイト",
-      "portalUrl": "http://toretore.web.fc2.com/"
-    },
-    "entry_start_date": "2026-02-19"
+    "venue": {
+      "name": "",
+      "mapQuery": "岐阜県 "
+    }
   },
   {
     "id": "kannabe-rogaining-2026",
@@ -655,14 +654,14 @@
     "distance_km": 25,
     "elevation_m": 850,
     "entry_status": "closed",
+    "entry_start_date": "2026-03-16",
     "entry_deadline": "2026-05-15",
+    "entry_fee": "4,500円",
     "links": {
       "official": "https://moshicom.com/search/?keyword=%E7%A5%9E%E9%8D%8B%E9%AB%98%E5%8E%9F%E3%83%AD%E3%82%B2%E3%82%A4%E3%83%8B%E3%83%B3%E3%82%B0",
       "entry": "https://moshicom.com/search/?keyword=%E7%A5%9E%E9%8D%8B%E9%AB%98%E5%8E%9F%E3%83%AD%E3%82%B2%E3%82%A4%E3%83%8B%E3%83%B3%E3%82%B0",
-      "review": "https://runnet.jp/",
-      "sns": "https://www.facebook.com/advkansai/",
-      "official_fallback": true,
-      "entry_fallback": true,
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -673,7 +672,7 @@
       },
       {
         "name": "デジタルカメラまたはスマートフォン（CP撮影・集計用）",
-        "category": "ナビゲーション"
+        "category": "ギア"
       },
       {
         "name": "ゴアテックス等 防水透湿レインジャケット",
@@ -688,16 +687,10 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "4,500円",
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search/?keyword=%E7%A5%9E%E9%8D%8B%E9%AB%98%E5%8E%9F%E3%83%AD%E3%82%B2%E3%82%A4%E3%83%8B%E3%83%B3%E3%82%B0"
-    },
     "venue": {
       "name": "日高神鍋観光",
       "mapQuery": "兵庫県 日高神鍋観光"
-    },
-    "entry_start_date": "2026-03-16"
+    }
   },
   {
     "id": "mannou-rogaining-2026",
@@ -716,12 +709,14 @@
     "distance_km": 22,
     "elevation_m": 600,
     "entry_status": "closing_soon",
+    "entry_start_date": "2026-09-03",
     "entry_deadline": "2026-11-02",
+    "entry_fee": "4,500円",
     "links": {
       "official": "https://www.outdoor-sports.info/mannou-rogaining",
       "entry": "https://www.outdoor-sports.info/mannou-rogaining",
-      "review": "https://runnet.jp/",
-      "sns": "https://www.facebook.com/advkansai/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -732,7 +727,7 @@
       },
       {
         "name": "デジタルカメラまたはスマートフォン（CP撮影・集計用）",
-        "category": "ナビゲーション"
+        "category": "ギア"
       },
       {
         "name": "ゴアテックス等 防水透湿レインジャケット",
@@ -747,17 +742,10 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "4,500円",
     "venue": {
       "name": "道の駅ことなみ（エナガ荘前広場）",
-      "address": "香川県仲多度郡まんのう町造田4130",
       "mapQuery": "道の駅ことなみ"
-    },
-    "source": {
-      "portalName": "公式サイト",
-      "portalUrl": "https://www.outdoor-sports.info/mannou-rogaining"
-    },
-    "entry_start_date": "2026-09-03"
+    }
   },
   {
     "id": "omm-japan-2026",
@@ -771,50 +759,49 @@
     ],
     "title": "OMM JAPAN 2026 TAKASHIMA（滋賀・高島）",
     "date": "2026-11-07",
-    "end_date": "2026-11-08",
     "month": 11,
     "region": "近畿",
     "prefecture": "滋賀県",
     "distance_km": 50,
     "elevation_m": 2800,
     "entry_status": "closed",
+    "entry_start_date": "2026-06-12",
     "entry_deadline": "2026-09-30",
+    "entry_fee": "44,000円",
     "links": {
       "official": "https://theomm.jp/",
       "entry": "https://theomm.jp/",
-      "review": "https://theomm.jp/",
-      "sns": "https://www.facebook.com/theommjapan",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
     "mandatory_gear": [
       {
         "name": "ツエルトまたは軽量山岳テント（耐水フライ付）",
-        "category": "ギア"
+        "category": "補給"
       },
       {
         "name": "シュラフ（寝袋）＆エマージェンシービバークヴィヴィ",
-        "category": "エイド"
+        "category": "ギア"
       },
       {
         "name": "シルバコンパス＆防水マップケース",
-        "category": "ナビゲーション"
+        "category": "補給"
       },
       {
         "name": "ストーブ（バーナー）・クッカー＆2日分の非常食・行動食",
-        "category": "補給"
+        "category": "ギア"
       },
       {
         "name": "シーム処理済み完全防水レイン上下＆防寒ダウン",
         "category": "ウェア"
       }
     ],
-    "entry_fee": "44,000円",
-    "source": {
-      "portalName": "公式サイト",
-      "portalUrl": "https://theomm.jp/"
-    },
-    "entry_start_date": "2026-06-12"
+    "venue": {
+      "name": "",
+      "mapQuery": "滋賀県 "
+    }
   },
   {
     "id": "omm-lite-bike-hakuba-2026",
@@ -828,19 +815,20 @@
     ],
     "title": "OMM LITE / BIKE HAKUBA OTARI 2026",
     "date": "2026-07-18",
-    "end_date": "2026-07-19",
     "month": 7,
     "region": "甲信越",
     "prefecture": "長野県",
     "distance_km": 45,
     "elevation_m": 1600,
     "entry_status": "closed",
+    "entry_start_date": "2026-04-21",
     "entry_deadline": "2026-06-20",
+    "entry_fee": "6,500円",
     "links": {
       "official": "https://theomm.jp/",
       "entry": "https://theomm.jp/",
-      "review": "https://theomm.jp/",
-      "sns": "https://www.facebook.com/theommjapan",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -850,16 +838,20 @@
         "category": "ギア"
       },
       {
-        "name": "シルバコンパス（方位磁石/プレート式）",
+        "name": "シルバコンパス（方位磁石",
         "category": "ナビゲーション"
+      },
+      {
+        "name": "プレート式）",
+        "category": "ギア"
       },
       {
         "name": "国土地理院2万5千分の1地図用防水マップケース",
-        "category": "ナビゲーション"
+        "category": "補給"
       },
       {
         "name": "MTBパンク修理キット＆携帯マルチツール",
-        "category": "リペア"
+        "category": "ギア"
       },
       {
         "name": "ファーストエイドキット＆エマージェンシーシート",
@@ -870,12 +862,10 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "6,500円",
-    "source": {
-      "portalName": "公式サイト",
-      "portalUrl": "https://theomm.jp/"
-    },
-    "entry_start_date": "2026-04-21"
+    "venue": {
+      "name": "",
+      "mapQuery": "長野県 "
+    }
   },
   {
     "id": "niseko-expedition-2026",
@@ -896,19 +886,21 @@
     "distance_km": 150,
     "elevation_m": 4200,
     "entry_status": "closed",
+    "entry_start_date": "2026-03-16",
     "entry_deadline": "2026-05-15",
+    "entry_fee": "28,000円",
     "links": {
       "official": "https://nisekoexpedition.jp/",
       "entry": "https://nisekoexpedition.jp/",
-      "review": "https://nisekoexpedition.jp/",
-      "sns": "https://www.facebook.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
     "mandatory_gear": [
       {
         "name": "パックラフトまたは指定カヤック＆パドル・PFD（ライフジャケット）",
-        "category": "ギア"
+        "category": "ウェア"
       },
       {
         "name": "MTB＋高輝度防水ヘッドランプ（夜間行動対応）",
@@ -916,24 +908,21 @@
       },
       {
         "name": "読図用ベースプレートコンパス＆防水マップボード",
-        "category": "ナビゲーション"
+        "category": "補給"
       },
       {
         "name": "完全防水ドライバッグ（20L以上）",
-        "category": "ギア"
+        "category": "補給"
       },
       {
         "name": "SOLエスケープヴィヴィ・保温シート＆ホイッスル",
         "category": "エイド"
       }
     ],
-    "entry_fee": "28,000円",
-    "source": {
-      "portalName": "公式サイト",
-      "portalUrl": "https://nisekoexpedition.jp/"
-    },
-    "end_date": "2026-06-21",
-    "entry_start_date": "2026-03-16"
+    "venue": {
+      "name": "",
+      "mapQuery": "北海道 "
+    }
   },
   {
     "id": "echigo-adventure-2026",
@@ -953,21 +942,21 @@
     "distance_km": 52,
     "elevation_m": 1800,
     "entry_status": "closed",
+    "entry_start_date": "2026-06-26",
     "entry_deadline": "2026-08-25",
+    "entry_fee": "12,000円",
     "links": {
       "official": "https://moshicom.com/search/?keyword=%E8%B6%8A%E5%BE%8C%E3%82%AB%E3%83%B3%E3%83%88%E3%83%AA%E3%83%BC%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%EF%BC%86%E3%82%A2%E3%83%89%E3%83%99%E3%83%B3%E3%83%81%E3%83%A3%E3%83%BC%E3%83%AC%E3%83%BC%E3%82%B9",
       "entry": "https://moshicom.com/search/?keyword=%E8%B6%8A%E5%BE%8C%E3%82%AB%E3%83%B3%E3%83%88%E3%83%AA%E3%83%BC%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%EF%BC%86%E3%82%A2%E3%83%89%E3%83%99%E3%83%B3%E3%83%81%E3%83%A3%E3%83%BC%E3%83%AC%E3%83%BC%E3%82%B9",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
-      "official_fallback": true,
-      "entry_fallback": true,
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
     "mandatory_gear": [
       {
         "name": "パックラフトまたは指定カヤック＆パドル・PFD（ライフジャケット）",
-        "category": "ギア"
+        "category": "ウェア"
       },
       {
         "name": "MTB＋高輝度防水ヘッドランプ（夜間行動対応）",
@@ -975,23 +964,21 @@
       },
       {
         "name": "読図用ベースプレートコンパス＆防水マップボード",
-        "category": "ナビゲーション"
+        "category": "補給"
       },
       {
         "name": "完全防水ドライバッグ（20L以上）",
-        "category": "ギア"
+        "category": "補給"
       },
       {
         "name": "SOLエスケープヴィヴィ・保温シート＆ホイッスル",
         "category": "エイド"
       }
     ],
-    "entry_fee": "12,000円",
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search/?keyword=%E8%B6%8A%E5%BE%8C%E3%82%AB%E3%83%B3%E3%83%88%E3%83%AA%E3%83%BC%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%EF%BC%86%E3%82%A2%E3%83%89%E3%83%99%E3%83%B3%E3%83%81%E3%83%A3%E3%83%BC%E3%83%AC%E3%83%BC%E3%82%B9"
-    },
-    "entry_start_date": "2026-06-26"
+    "venue": {
+      "name": "",
+      "mapQuery": "新潟県 "
+    }
   },
   {
     "id": "izumo-kunibiki-rogaining-2026",
@@ -1009,12 +996,14 @@
     "distance_km": 24,
     "elevation_m": 550,
     "entry_status": "closed",
+    "entry_start_date": "2026-08-21",
     "entry_deadline": "2026-10-20",
+    "entry_fee": "4,500円",
     "links": {
       "official": "https://moshicom.com/search?keyword=%E5%87%BA%E9%9B%B2%E3%81%8F%E3%81%AB%E3%81%B3%E3%81%8D%E3%83%AD%E3%82%B2%E3%82%A4%E3%83%8B%E3%83%B3%E3%82%B0%E5%A4%A7%E4%BC%9A",
       "entry": "https://moshicom.com/search?keyword=%E5%87%BA%E9%9B%B2%E3%81%8F%E3%81%AB%E3%81%B3%E3%81%8D%E3%83%AD%E3%82%B2%E3%82%A4%E3%83%8B%E3%83%B3%E3%82%B0",
-      "review": "https://moshicom.com/",
-      "sns": "https://x.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -1025,7 +1014,7 @@
       },
       {
         "name": "デジタルカメラまたはスマートフォン（CP撮影・集計用）",
-        "category": "ナビゲーション"
+        "category": "ギア"
       },
       {
         "name": "ゴアテックス等 防水透湿レインジャケット",
@@ -1040,12 +1029,10 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "4,500円",
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search?keyword=%E5%87%BA%E9%9B%B2%E3%81%8F%E3%81%AB%E3%81%B3%E3%81%8D%E3%83%AD%E3%82%B2%E3%82%A4%E3%83%8B%E3%83%B3%E3%82%B0"
-    },
-    "entry_start_date": "2026-08-21"
+    "venue": {
+      "name": "",
+      "mapQuery": "島根県 "
+    }
   },
   {
     "id": "hiroshima-miyajima-rogaining-2026",
@@ -1064,12 +1051,14 @@
     "distance_km": 22,
     "elevation_m": 800,
     "entry_status": "closed",
+    "entry_start_date": "2026-08-11",
     "entry_deadline": "2026-10-10",
+    "entry_fee": "4,500円",
     "links": {
       "official": "https://moshicom.com/search?keyword=%E5%AE%AE%E5%B3%B6%E3%83%BB%E7%80%AC%E6%88%B8%E5%86%85%E3%82%A2%E3%82%A4%E3%83%A9%E3%83%B3%E3%83%89%E3%83%AD%E3%82%B2%E3%82%A4%E3%83%8B%E3%83%B3%E3%82%B0%20in%20%E5%BA%83%E5%B3%B6",
       "entry": "https://moshicom.com/search?keyword=%E5%AE%AE%E5%B3%B6",
-      "review": "https://moshicom.com/",
-      "sns": "https://x.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -1080,7 +1069,7 @@
       },
       {
         "name": "デジタルカメラまたはスマートフォン（CP撮影・集計用）",
-        "category": "ナビゲーション"
+        "category": "ギア"
       },
       {
         "name": "ゴアテックス等 防水透湿レインジャケット",
@@ -1095,12 +1084,10 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "4,500円",
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search?keyword=%E5%AE%AE%E5%B3%B6"
-    },
-    "entry_start_date": "2026-08-11"
+    "venue": {
+      "name": "",
+      "mapQuery": "広島県 "
+    }
   },
   {
     "id": "setouchi-island-adventure-2026",
@@ -1120,21 +1107,21 @@
     "distance_km": 48,
     "elevation_m": 1450,
     "entry_status": "closed",
+    "entry_start_date": "2026-07-12",
     "entry_deadline": "2026-09-10",
+    "entry_fee": "8,000円",
     "links": {
       "official": "https://moshicom.com/search/?keyword=%E7%80%AC%E6%88%B8%E5%86%85%E3%82%A2%E3%82%A4%E3%83%A9%E3%83%B3%E3%83%89%E3%83%BB%E3%82%A2%E3%83%89%E3%83%99%E3%83%B3%E3%83%81%E3%83%A3%E3%83%BC%E3%83%AC%E3%83%BC%E3%82%B9%20in",
       "entry": "https://moshicom.com/search/?keyword=%E7%80%AC%E6%88%B8%E5%86%85%E3%82%A2%E3%82%A4%E3%83%A9%E3%83%B3%E3%83%89%E3%83%BB%E3%82%A2%E3%83%89%E3%83%99%E3%83%B3%E3%83%81%E3%83%A3%E3%83%BC%E3%83%AC%E3%83%BC%E3%82%B9%20in",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
-      "official_fallback": true,
-      "entry_fallback": true,
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
     "mandatory_gear": [
       {
         "name": "パックラフトまたは指定カヤック＆パドル・PFD（ライフジャケット）",
-        "category": "ギア"
+        "category": "ウェア"
       },
       {
         "name": "MTB＋高輝度防水ヘッドランプ（夜間行動対応）",
@@ -1142,23 +1129,21 @@
       },
       {
         "name": "読図用ベースプレートコンパス＆防水マップボード",
-        "category": "ナビゲーション"
+        "category": "補給"
       },
       {
         "name": "完全防水ドライバッグ（20L以上）",
-        "category": "ギア"
+        "category": "補給"
       },
       {
         "name": "SOLエスケープヴィヴィ・保温シート＆ホイッスル",
         "category": "エイド"
       }
     ],
-    "entry_fee": "8,000円",
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search/?keyword=%E7%80%AC%E6%88%B8%E5%86%85%E3%82%A2%E3%82%A4%E3%83%A9%E3%83%B3%E3%83%89%E3%83%BB%E3%82%A2%E3%83%89%E3%83%99%E3%83%B3%E3%83%81%E3%83%A3%E3%83%BC%E3%83%AC%E3%83%BC%E3%82%B9%20in"
-    },
-    "entry_start_date": "2026-07-12"
+    "venue": {
+      "name": "",
+      "mapQuery": "香川県 "
+    }
   },
   {
     "id": "mt-fuji-100-2027",
@@ -1177,12 +1162,16 @@
     "distance_km": 166,
     "elevation_m": 7574,
     "entry_status": "upcoming",
+    "entry_start_date": "2026-09-16",
     "entry_deadline": "2026-11-15",
+    "entry_fee": "48,000円",
     "links": {
       "official": "https://mtfuji100.com/",
       "entry": "https://mtfuji100.com/",
-      "review": "https://runnet.jp/runtes/raceDetail/top/n319194.html",
-      "sns": "https://x.com/MtFUJI100"
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-10-31"
     },
     "mandatory_gear": [
       {
@@ -1194,8 +1183,12 @@
         "category": "ライト"
       },
       {
-        "name": "GPXトラック収録GPSウォッチ（SUUNTO/GARMIN等）",
+        "name": "GPXトラック収録GPSウォッチ（SUUNTO",
         "category": "ナビゲーション"
+      },
+      {
+        "name": "GARMIN等）",
+        "category": "ギア"
       },
       {
         "name": "エマージェンシーサバイバルシート（130×200cm以上）＆ホイッスル",
@@ -1230,13 +1223,10 @@
         "category": "エイド"
       }
     ],
-    "entry_fee": "48,000円",
-    "source": {
-      "portalName": "公式サイト",
-      "portalUrl": "https://mtfuji100.com/"
-    },
-    "end_date": "2027-04-25",
-    "entry_start_date": "2026-09-16"
+    "venue": {
+      "name": "",
+      "mapQuery": "山梨県 "
+    }
   },
   {
     "id": "hiroshima-utmb-2027",
@@ -1258,12 +1248,14 @@
     "distance_km": 109,
     "elevation_m": 6570,
     "entry_status": "open",
+    "entry_start_date": "2026-10-01",
     "entry_deadline": "2027-01-31",
+    "entry_fee": "38,000円 (100K) / 22,000円 (50K) / 12,000円 (25K)",
     "links": {
       "official": "https://hiroshima.utmb.world/ja",
       "entry": "https://hiroshima.utmb.world/ja",
-      "review": "https://dogsorcaravan.com/2024/11/17/hiroshima-trail-2026-utmb/",
-      "sns": "https://x.com/UTMBWorldSeries",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -1277,16 +1269,28 @@
         "category": "ライト"
       },
       {
-        "name": "GPXコーストラック登録済みGPSウォッチ（GARMIN / SUUNTO / COROS等）",
+        "name": "GPXコーストラック登録済みGPSウォッチ（GARMIN",
         "category": "ナビゲーション"
+      },
+      {
+        "name": "SUUNTO",
+        "category": "ギア"
+      },
+      {
+        "name": "COROS等）",
+        "category": "ギア"
       },
       {
         "name": "エマージェンシーサバイバルブランケット（1.4m×2m以上）＆ホイッスル",
         "category": "エイド"
       },
       {
-        "name": "トレラン専用ザック（容量10L〜12L・ハイドレーション/ソフトフラスク水分1.5L以上携行）",
+        "name": "トレラン専用ザック（容量10L〜12L・ハイドレーション",
         "category": "ギア"
+      },
+      {
+        "name": "ソフトフラスク水分1.5L以上携行）",
+        "category": "補給"
       },
       {
         "name": "防寒用保温長袖ミッドレイヤー＆ロングタイツ＆手袋（グローブ）",
@@ -1294,20 +1298,13 @@
       },
       {
         "name": "携帯コップ（150ml以上・エイドステーション給水用マイカップ必携）",
-        "category": "ギア"
+        "category": "エイド"
       },
       {
         "name": "ファーストエイドキット（伸縮包帯・テーピング・消毒液・絆創膏・ポイズンリムーバー）",
         "category": "エイド"
       }
     ],
-    "entry_fee": "38,000円 (100K) / 22,000円 (50K) / 12,000円 (25K)",
-    "source": {
-      "portalName": "UTMB公式 / 広島湾岸トレイル協議会",
-      "portalUrl": "https://hiroshima.utmb.world/ja"
-    },
-    "end_date": "2027-04-11",
-    "entry_start_date": "2026-10-01",
     "venue": {
       "name": "ひろしまゲートパーク・ひろしまスタジアムパーク（広島市中区・エディオンピースウイング広島隣接 / 広島湾岸トレイル）",
       "mapQuery": "広島県 広島市中区 ひろしまゲートパーク"
@@ -1330,12 +1327,14 @@
     "distance_km": 160,
     "elevation_m": 6500,
     "entry_status": "closed",
+    "entry_start_date": "2026-03-16",
     "entry_deadline": "2026-05-15",
+    "entry_fee": "44,000円",
     "links": {
       "official": "https://sfmt100.com/",
       "entry": "https://sfmt100.com/",
-      "review": "https://runnet.jp/",
-      "sns": "https://www.facebook.com/sfmt100/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -1349,8 +1348,12 @@
         "category": "ライト"
       },
       {
-        "name": "GPXトラック収録GPSウォッチ（SUUNTO/GARMIN等）",
+        "name": "GPXトラック収録GPSウォッチ（SUUNTO",
         "category": "ナビゲーション"
+      },
+      {
+        "name": "GARMIN等）",
+        "category": "ギア"
       },
       {
         "name": "エマージェンシーサバイバルシート（130×200cm以上）＆ホイッスル",
@@ -1365,13 +1368,10 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "44,000円",
-    "source": {
-      "portalName": "公式サイト",
-      "portalUrl": "https://sfmt100.com/"
-    },
-    "end_date": "2026-09-20",
-    "entry_start_date": "2026-03-16"
+    "venue": {
+      "name": "",
+      "mapQuery": "長野県 "
+    }
   },
   {
     "id": "ggr-ishikiriba-100-2027",
@@ -1385,21 +1385,20 @@
     ],
     "title": "2027 GGR石切場100 (周回トレイル100kmレース)",
     "date": "2027-02-21",
-    "end_date": "2027-02-22",
     "month": 2,
     "region": "中国",
     "prefecture": "広島県",
     "distance_km": 100,
     "elevation_m": 5200,
     "entry_status": "open",
+    "entry_start_date": "2026-10-01",
     "entry_deadline": "2027-02-01",
+    "entry_fee": "19,800円",
     "links": {
       "official": "https://moshicom.com/search?keyword=GGR%E7%9F%B3%E5%88%87%E5%A0%B4100",
       "entry": "https://moshicom.com/search?keyword=GGR%E7%9F%B3%E5%88%87%E5%A0%B4100",
-      "review": "https://moshicom.com/",
-      "sns": "https://www.instagram.com/gripdrop/",
-      "official_fallback": true,
-      "entry_fallback": true,
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -1413,8 +1412,12 @@
         "category": "ライト"
       },
       {
-        "name": "GPXトラック収録GPSウォッチ（SUUNTO/GARMIN等）",
+        "name": "GPXトラック収録GPSウォッチ（SUUNTO",
         "category": "ナビゲーション"
+      },
+      {
+        "name": "GARMIN等）",
+        "category": "ギア"
       },
       {
         "name": "エマージェンシーサバイバルシート（130×200cm以上）＆ホイッスル",
@@ -1429,17 +1432,10 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "19,800円",
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search?keyword=GGR%E7%9F%B3%E5%88%87%E5%A0%B4100"
-    },
     "venue": {
       "name": "広島県呉市倉橋町（ホシアカリ山びこ / 桂浜西側採石場跡）",
-      "address": "広島県呉市倉橋町",
       "mapQuery": "広島県呉市倉橋町 桂浜"
-    },
-    "entry_start_date": "2026-10-01"
+    }
   },
   {
     "id": "lake-biwa-100-2026",
@@ -1459,12 +1455,14 @@
     "distance_km": 169,
     "elevation_m": 10500,
     "entry_status": "closed",
+    "entry_start_date": "2026-04-01",
     "entry_deadline": "2026-05-31",
+    "entry_fee": "38,000円",
     "links": {
       "official": "https://lakebiwa100.com/",
       "entry": "https://lakebiwa100.com/",
-      "review": "https://dogsorcaravan.com/",
-      "sns": "https://www.facebook.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -1478,8 +1476,12 @@
         "category": "ライト"
       },
       {
-        "name": "GPXトラック収録GPSウォッチ（SUUNTO/GARMIN等）",
+        "name": "GPXトラック収録GPSウォッチ（SUUNTO",
         "category": "ナビゲーション"
+      },
+      {
+        "name": "GARMIN等）",
+        "category": "ギア"
       },
       {
         "name": "エマージェンシーサバイバルシート（130×200cm以上）＆ホイッスル",
@@ -1494,17 +1496,10 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "38,000円",
-    "source": {
-      "portalName": "公式サイト",
-      "portalUrl": "https://lakebiwa100.com/"
-    },
     "venue": {
       "name": "びわ湖100マイル トレイルラン 2026",
       "mapQuery": "滋賀県 びわ湖100マイル トレイルラン 2026"
-    },
-    "end_date": "2026-10-04",
-    "entry_start_date": "2026-04-01"
+    }
   },
   {
     "id": "koumi-100-2026",
@@ -1523,12 +1518,14 @@
     "distance_km": 175,
     "elevation_m": 7900,
     "entry_status": "closed",
+    "entry_start_date": "2026-07-02",
     "entry_deadline": "2026-08-31",
+    "entry_fee": "38,000円",
     "links": {
       "official": "https://www.outdoorsportsjapan.com/trail/koumi100/",
       "entry": "https://www.outdoorsportsjapan.com/trail/koumi100/",
-      "review": "https://runnet.jp/",
-      "sns": "https://www.facebook.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -1542,8 +1539,12 @@
         "category": "ライト"
       },
       {
-        "name": "GPXトラック収録GPSウォッチ（SUUNTO/GARMIN等）",
+        "name": "GPXトラック収録GPSウォッチ（SUUNTO",
         "category": "ナビゲーション"
+      },
+      {
+        "name": "GARMIN等）",
+        "category": "ギア"
       },
       {
         "name": "エマージェンシーサバイバルシート（130×200cm以上）＆ホイッスル",
@@ -1558,17 +1559,10 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "38,000円",
-    "source": {
-      "portalName": "公式サイト",
-      "portalUrl": "https://www.outdoorsportsjapan.com/trail/koumi100/"
-    },
     "venue": {
       "name": "小海100マイル トレイルランニング 2026",
       "mapQuery": "長野県 小海100マイル トレイルランニング 2026"
-    },
-    "end_date": "2026-10-11",
-    "entry_start_date": "2026-07-02"
+    }
   },
   {
     "id": "sainokuni-100mile-2026",
@@ -1587,12 +1581,14 @@
     "distance_km": 162,
     "elevation_m": 10500,
     "entry_status": "closed",
+    "entry_start_date": "2025-12-30",
     "entry_deadline": "2026-02-28",
+    "entry_fee": "38,000円",
     "links": {
       "official": "https://trainic-world.org/sainokuni/",
       "entry": "https://runnet.jp/",
-      "review": "https://runnet.jp/",
-      "sns": "https://www.facebook.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -1606,8 +1602,12 @@
         "category": "ライト"
       },
       {
-        "name": "GPXトラック収録GPSウォッチ（SUUNTO/GARMIN等）",
+        "name": "GPXトラック収録GPSウォッチ（SUUNTO",
         "category": "ナビゲーション"
+      },
+      {
+        "name": "GARMIN等）",
+        "category": "ギア"
       },
       {
         "name": "エマージェンシーサバイバルシート（130×200cm以上）＆ホイッスル",
@@ -1622,13 +1622,10 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "38,000円",
-    "source": {
-      "portalName": "公式サイト",
-      "portalUrl": "https://trainic-world.org/sainokuni/"
-    },
-    "end_date": "2026-05-17",
-    "entry_start_date": "2025-12-30"
+    "venue": {
+      "name": "",
+      "mapQuery": "埼玉県 "
+    }
   },
   {
     "id": "ftr-chichibu-okumusashi-100mile-2026",
@@ -1647,12 +1644,14 @@
     "distance_km": 163,
     "elevation_m": 9800,
     "entry_status": "closed",
+    "entry_start_date": "2026-08-01",
     "entry_deadline": "2026-09-30",
+    "entry_fee": "38,000円",
     "links": {
       "official": "https://fun-trails.com/",
       "entry": "https://fun-trails.com/",
-      "review": "https://runnet.jp/",
-      "sns": "https://www.facebook.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -1666,8 +1665,12 @@
         "category": "ライト"
       },
       {
-        "name": "GPXトラック収録GPSウォッチ（SUUNTO/GARMIN等）",
+        "name": "GPXトラック収録GPSウォッチ（SUUNTO",
         "category": "ナビゲーション"
+      },
+      {
+        "name": "GARMIN等）",
+        "category": "ギア"
       },
       {
         "name": "エマージェンシーサバイバルシート（130×200cm以上）＆ホイッスル",
@@ -1682,17 +1685,10 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "38,000円",
-    "source": {
-      "portalName": "公式サイト",
-      "portalUrl": "https://fun-trails.com/"
-    },
     "venue": {
       "name": "FTR100",
       "mapQuery": "埼玉県 FTR100"
-    },
-    "end_date": "2026-11-22",
-    "entry_start_date": "2026-08-01"
+    }
   },
   {
     "id": "osj-ontake-100mile-2026",
@@ -1711,12 +1707,14 @@
     "distance_km": 160,
     "elevation_m": 5600,
     "entry_status": "closed",
+    "entry_start_date": "2026-04-16",
     "entry_deadline": "2026-06-15",
+    "entry_fee": "38,000円",
     "links": {
       "official": "https://www.outdoorsportsjapan.com/trail/ontake100/",
       "entry": "https://www.outdoorsportsjapan.com/trail/ontake100/",
-      "review": "https://runnet.jp/",
-      "sns": "https://www.facebook.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -1730,8 +1728,12 @@
         "category": "ライト"
       },
       {
-        "name": "GPXトラック収録GPSウォッチ（SUUNTO/GARMIN等）",
+        "name": "GPXトラック収録GPSウォッチ（SUUNTO",
         "category": "ナビゲーション"
+      },
+      {
+        "name": "GARMIN等）",
+        "category": "ギア"
       },
       {
         "name": "エマージェンシーサバイバルシート（130×200cm以上）＆ホイッスル",
@@ -1746,17 +1748,10 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "38,000円",
-    "source": {
-      "portalName": "公式サイト",
-      "portalUrl": "https://www.outdoorsportsjapan.com/trail/ontake100/"
-    },
     "venue": {
       "name": "御嶽100マイル 100km",
       "mapQuery": "長野県 御嶽100マイル 100km"
-    },
-    "end_date": "2026-07-19",
-    "entry_start_date": "2026-04-16"
+    }
   },
   {
     "id": "deep-japan-ultra-100-2026",
@@ -1776,12 +1771,14 @@
     "distance_km": 166,
     "elevation_m": 9700,
     "entry_status": "closed",
+    "entry_start_date": "2026-03-01",
     "entry_deadline": "2026-04-30",
+    "entry_fee": "45,000円",
     "links": {
       "official": "https://deepjapanultra.com/",
       "entry": "https://deepjapanultra.com/",
-      "review": "https://dogsorcaravan.com/",
-      "sns": "https://www.facebook.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -1795,8 +1792,12 @@
         "category": "ライト"
       },
       {
-        "name": "GPXトラック収録GPSウォッチ（SUUNTO/GARMIN等）",
+        "name": "GPXトラック収録GPSウォッチ（SUUNTO",
         "category": "ナビゲーション"
+      },
+      {
+        "name": "GARMIN等）",
+        "category": "ギア"
       },
       {
         "name": "エマージェンシーサバイバルシート（130×200cm以上）＆ホイッスル",
@@ -1811,17 +1812,10 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "45,000円",
-    "source": {
-      "portalName": "公式サイト",
-      "portalUrl": "https://deepjapanultra.com/"
-    },
     "venue": {
       "name": "ディープジャパン166km 新潟 群馬",
       "mapQuery": "新潟県 ディープジャパン166km 新潟 群馬"
-    },
-    "end_date": "2026-06-28",
-    "entry_start_date": "2026-03-01"
+    }
   },
   {
     "id": "kumagawa-revival-trail-100mile-2026",
@@ -1840,13 +1834,14 @@
     "distance_km": 167,
     "elevation_m": 9400,
     "entry_status": "closed",
+    "entry_start_date": "2026-07-27",
     "entry_deadline": "2026-09-25",
+    "entry_fee": "39,000円",
     "links": {
       "official": "https://moshicom.com/search/?keyword=%E7%90%83%E7%A3%A8%E5%B7%9D%E3%83%AA%E3%83%90%E3%82%A4%E3%83%90%E3%83%AB%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%20100%E3%83%9E%E3%82%A4%E3%83%AB",
       "entry": "https://universal-field.com/",
-      "review": "https://dogsorcaravan.com/",
-      "sns": "https://www.facebook.com/",
-      "official_fallback": true,
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -1860,8 +1855,12 @@
         "category": "ライト"
       },
       {
-        "name": "GPXトラック収録GPSウォッチ（SUUNTO/GARMIN等）",
+        "name": "GPXトラック収録GPSウォッチ（SUUNTO",
         "category": "ナビゲーション"
+      },
+      {
+        "name": "GARMIN等）",
+        "category": "ギア"
       },
       {
         "name": "エマージェンシーサバイバルシート（130×200cm以上）＆ホイッスル",
@@ -1876,17 +1875,10 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "39,000円",
-    "source": {
-      "portalName": "公式サイト",
-      "portalUrl": "https://moshicom.com/search/?keyword=%E7%90%83%E7%A3%A8%E5%B7%9D%E3%83%AA%E3%83%90%E3%82%A4%E3%83%90%E3%83%AB%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%20100%E3%83%9E%E3%82%A4%E3%83%AB"
-    },
     "venue": {
       "name": "KRT 167km",
       "mapQuery": "熊本県 KRT 167km"
-    },
-    "end_date": "2026-11-15",
-    "entry_start_date": "2026-07-27"
+    }
   },
   {
     "id": "osj-koushu-alps-100mile-2026",
@@ -1905,14 +1897,14 @@
     "distance_km": 160,
     "elevation_m": 9200,
     "entry_status": "closed",
+    "entry_start_date": "2026-07-12",
     "entry_deadline": "2026-09-10",
+    "entry_fee": "38,000円",
     "links": {
       "official": "https://moshicom.com/search/?keyword=OSJ%20KOUSHU",
       "entry": "https://moshicom.com/search/?keyword=OSJ%20KOUSHU",
-      "review": "https://runnet.jp/",
-      "sns": "https://www.facebook.com/",
-      "official_fallback": true,
-      "entry_fallback": true,
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -1926,8 +1918,12 @@
         "category": "ライト"
       },
       {
-        "name": "GPXトラック収録GPSウォッチ（SUUNTO/GARMIN等）",
+        "name": "GPXトラック収録GPSウォッチ（SUUNTO",
         "category": "ナビゲーション"
+      },
+      {
+        "name": "GARMIN等）",
+        "category": "ギア"
       },
       {
         "name": "エマージェンシーサバイバルシート（130×200cm以上）＆ホイッスル",
@@ -1942,17 +1938,10 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "38,000円",
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search/?keyword=OSJ%20KOUSHU"
-    },
     "venue": {
       "name": "甲州アルプスオートルート 100mile",
       "mapQuery": "山梨県 甲州アルプスオートルート 100mile"
-    },
-    "end_date": "2026-10-25",
-    "entry_start_date": "2026-07-12"
+    }
   },
   {
     "id": "tambasasayama-100mile-2026",
@@ -1971,12 +1960,14 @@
     "distance_km": 170,
     "elevation_m": 12800,
     "entry_status": "closed",
+    "entry_start_date": "2026-02-19",
     "entry_deadline": "2026-04-20",
+    "entry_fee": "38,000円",
     "links": {
       "official": "https://trailrun-tamba.com/",
       "entry": "https://trailrun-tamba.com/",
-      "review": "https://dogsorcaravan.com/",
-      "sns": "https://www.facebook.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -1990,8 +1981,12 @@
         "category": "ライト"
       },
       {
-        "name": "GPXトラック収録GPSウォッチ（SUUNTO/GARMIN等）",
+        "name": "GPXトラック収録GPSウォッチ（SUUNTO",
         "category": "ナビゲーション"
+      },
+      {
+        "name": "GARMIN等）",
+        "category": "ギア"
       },
       {
         "name": "エマージェンシーサバイバルシート（130×200cm以上）＆ホイッスル",
@@ -2006,17 +2001,10 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "38,000円",
-    "source": {
-      "portalName": "公式サイト",
-      "portalUrl": "https://trailrun-tamba.com/"
-    },
     "venue": {
       "name": "丹波100マイル",
       "mapQuery": "兵庫県 丹波100マイル"
-    },
-    "end_date": "2026-06-07",
-    "entry_start_date": "2026-02-19"
+    }
   },
   {
     "id": "michinoku-coastal-trail-100mile-2026",
@@ -2035,12 +2023,14 @@
     "distance_km": 160,
     "elevation_m": 4800,
     "entry_status": "closed",
+    "entry_start_date": "2026-07-02",
     "entry_deadline": "2026-08-31",
+    "entry_fee": "38,000円",
     "links": {
       "official": "https://moshicom.com/search?keyword=%E3%81%BF%E3%81%A1%E3%81%AE%E3%81%8F%E6%BD%AE%E9%A2%A8%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%20100%E3%83%9E%E3%82%A4%E3%83%AB%20%E3%82%B8%E3%83%A3%E3%83%BC%E3%83%8B%E3%83%BC%E3%83%A9%E3%83%B3",
       "entry": "https://moshicom.com/search?keyword=%E3%81%BF%E3%81%A1%E3%81%AE%E3%81%8F%E6%BD%AE%E9%A2%A8%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%20100%E3%83%9E%E3%82%A4%E3%83%AB%20%E3%82%B8%E3%83%A3%E3%83%BC%E3%83%8B%E3%83%BC%E3%83%A9%E3%83%B3",
-      "review": "https://moshicom.com/",
-      "sns": "https://x.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -2054,8 +2044,12 @@
         "category": "ライト"
       },
       {
-        "name": "GPXトラック収録GPSウォッチ（SUUNTO/GARMIN等）",
+        "name": "GPXトラック収録GPSウォッチ（SUUNTO",
         "category": "ナビゲーション"
+      },
+      {
+        "name": "GARMIN等）",
+        "category": "ギア"
       },
       {
         "name": "エマージェンシーサバイバルシート（130×200cm以上）＆ホイッスル",
@@ -2070,13 +2064,10 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "38,000円",
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search?keyword=%E3%81%BF%E3%81%A1%E3%81%AE%E3%81%8F%E6%BD%AE%E9%A2%A8%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%20100%E3%83%9E%E3%82%A4%E3%83%AB%20%E3%82%B8%E3%83%A3%E3%83%BC%E3%83%8B%E3%83%BC%E3%83%A9%E3%83%B3"
-    },
-    "end_date": "2026-10-11",
-    "entry_start_date": "2026-07-02"
+    "venue": {
+      "name": "",
+      "mapQuery": "岩手県 "
+    }
   },
   {
     "id": "ibuki-hyakkei-100mile-2026",
@@ -2095,12 +2086,14 @@
     "distance_km": 160,
     "elevation_m": 7800,
     "entry_status": "closed",
+    "entry_start_date": "2026-06-16",
     "entry_deadline": "2026-08-15",
+    "entry_fee": "38,000円",
     "links": {
       "official": "https://moshicom.com/search?keyword=%E4%BC%8A%E5%90%B9%E5%B1%B1%E3%83%BB%E9%96%A2%E3%82%B1%E5%8E%9F100%E3%83%9E%E3%82%A4%E3%83%AB%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB",
       "entry": "https://moshicom.com/search?keyword=%E4%BC%8A%E5%90%B9%E5%B1%B1",
-      "review": "https://moshicom.com/",
-      "sns": "https://x.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -2114,8 +2107,12 @@
         "category": "ライト"
       },
       {
-        "name": "GPXトラック収録GPSウォッチ（SUUNTO/GARMIN等）",
+        "name": "GPXトラック収録GPSウォッチ（SUUNTO",
         "category": "ナビゲーション"
+      },
+      {
+        "name": "GARMIN等）",
+        "category": "ギア"
       },
       {
         "name": "エマージェンシーサバイバルシート（130×200cm以上）＆ホイッスル",
@@ -2130,13 +2127,10 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "38,000円",
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search?keyword=%E4%BC%8A%E5%90%B9%E5%B1%B1"
-    },
-    "end_date": "2026-09-27",
-    "entry_start_date": "2026-06-16"
+    "venue": {
+      "name": "",
+      "mapQuery": "岐阜県 "
+    }
   },
   {
     "id": "backyard-ultra-hiroshima-2026",
@@ -2155,12 +2149,14 @@
     "distance_km": 161,
     "elevation_m": 3200,
     "entry_status": "closed",
+    "entry_start_date": "2026-08-11",
     "entry_deadline": "2026-10-10",
+    "entry_fee": "38,000円",
     "links": {
       "official": "https://moshicom.com/search?keyword=Backyard%20Ultra%20Last%20Samurai%20Standing%20%E5%BA%83%E5%B3%B6%E3%83%BB%E7%80%AC%E6%88%B8%E5%86%85%E5%A4%A7%E4%BC%9A",
       "entry": "https://moshicom.com/search?keyword=Backyard%20Ultra%20Last%20Samurai%20Standing%20%E5%BA%83%E5%B3%B6",
-      "review": "https://moshicom.com/",
-      "sns": "https://x.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -2174,8 +2170,12 @@
         "category": "ライト"
       },
       {
-        "name": "GPXトラック収録GPSウォッチ（SUUNTO/GARMIN等）",
+        "name": "GPXトラック収録GPSウォッチ（SUUNTO",
         "category": "ナビゲーション"
+      },
+      {
+        "name": "GARMIN等）",
+        "category": "ギア"
       },
       {
         "name": "エマージェンシーサバイバルシート（130×200cm以上）＆ホイッスル",
@@ -2190,13 +2190,10 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "38,000円",
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search?keyword=Backyard%20Ultra%20Last%20Samurai%20Standing%20%E5%BA%83%E5%B3%B6"
-    },
-    "end_date": "2026-11-08",
-    "entry_start_date": "2026-08-11"
+    "venue": {
+      "name": "",
+      "mapQuery": "広島県 "
+    }
   },
   {
     "id": "mihara-hakuryuko-trail-2026",
@@ -2213,14 +2210,14 @@
     "distance_km": 36,
     "elevation_m": 1580,
     "entry_status": "closed",
+    "entry_start_date": "2025-11-20",
     "entry_deadline": "2026-01-19",
+    "entry_fee": "11,000円",
     "links": {
       "official": "https://moshicom.com/search/?keyword=%E4%B8%89%E5%8E%9F%E3%83%BB%E7%99%BD%E7%AB%9C%E6%B9%96%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%E3%83%A9%E3%83%B3%E3%83%AC%E3%83%BC%E3%82%B9",
       "entry": "https://moshicom.com/search/?keyword=%E4%B8%89%E5%8E%9F%E3%83%BB%E7%99%BD%E7%AB%9C%E6%B9%96%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%E3%83%A9%E3%83%B3%E3%83%AC%E3%83%BC%E3%82%B9",
-      "review": "https://runnet.jp/",
-      "sns": "https://www.facebook.com/miharatrail",
-      "official_fallback": true,
-      "entry_fallback": true,
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -2242,16 +2239,10 @@
         "category": "ギア"
       }
     ],
-    "entry_fee": "11,000円",
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search/?keyword=%E4%B8%89%E5%8E%9F%E3%83%BB%E7%99%BD%E7%AB%9C%E6%B9%96%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%E3%83%A9%E3%83%B3%E3%83%AC%E3%83%BC%E3%82%B9"
-    },
     "venue": {
       "name": "三原市",
       "mapQuery": "広島県 三原市"
-    },
-    "entry_start_date": "2025-11-20"
+    }
   },
   {
     "id": "megahira-extreme-500-2026",
@@ -2268,12 +2259,14 @@
     "distance_km": 12,
     "elevation_m": 1650,
     "entry_status": "closed",
+    "entry_start_date": "2026-02-11",
     "entry_deadline": "2026-04-12",
+    "entry_fee": "6,500円",
     "links": {
       "official": "https://megahiraextreme500.com/",
       "entry": "https://megahiraextreme500.com/",
-      "review": "https://moshicom.com/",
-      "sns": "https://x.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -2295,16 +2288,10 @@
         "category": "ギア"
       }
     ],
-    "entry_fee": "6,500円",
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/139981/"
-    },
     "venue": {
       "name": "廿日市",
       "mapQuery": "広島県 廿日市"
-    },
-    "entry_start_date": "2026-02-11"
+    }
   },
   {
     "id": "hiroshima-trail-wangan-2026",
@@ -2325,12 +2312,14 @@
     "distance_km": 109,
     "elevation_m": 6570,
     "entry_status": "closed",
+    "entry_start_date": "2025-11-01",
     "entry_deadline": "2026-02-28",
+    "entry_fee": "32,000円 (100K) / 18,000円 (50K) / 9,000円 (20K)",
     "links": {
       "official": "https://hiroshima-wangantrail.jp/",
       "entry": "https://sportsentry.ne.jp/",
-      "review": "https://runnerspulse.jp/",
-      "sns": "https://x.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -2357,20 +2346,13 @@
       },
       {
         "name": "マイカップ（エイド給水用）",
-        "category": "ギア"
+        "category": "エイド"
       }
     ],
-    "entry_fee": "32,000円 (100K) / 18,000円 (50K) / 9,000円 (20K)",
-    "source": {
-      "portalName": "広島湾岸トレイル協議会 公式",
-      "portalUrl": "https://hiroshima-wangantrail.jp/"
-    },
     "venue": {
       "name": "ひろしまスタジアムパーク（エディオンピースウイング広島隣接 / 広島湾岸トレイル）",
       "mapQuery": "広島県 広島市中区 ひろしまスタジアムパーク"
-    },
-    "entry_start_date": "2025-11-01",
-    "end_date": "2026-04-12"
+    }
   },
   {
     "id": "shinjo-forest-trail-2026",
@@ -2387,12 +2369,14 @@
     "distance_km": 28,
     "elevation_m": 1500,
     "entry_status": "closed",
+    "entry_start_date": "2026-03-26",
     "entry_deadline": "2026-05-25",
+    "entry_fee": "6,500円",
     "links": {
       "official": "https://moshicom.com/search?keyword=%E3%81%B2%E3%82%8D%E3%81%97%E3%81%BE%E6%81%90%E7%BE%85%E6%BC%A2%E3%83%BB%E6%96%B0%E5%BA%84%E3%83%95%E3%82%A9%E3%83%AC%E3%82%B9%E3%83%88%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB",
       "entry": "https://moshicom.com/search?keyword=%E3%81%B2%E3%82%8D%E3%81%97%E3%81%BE%E6%81%90%E7%BE%85%E6%BC%A2",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -2414,16 +2398,10 @@
         "category": "ギア"
       }
     ],
-    "entry_fee": "6,500円",
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search?keyword=%E3%81%B2%E3%82%8D%E3%81%97%E3%81%BE%E6%81%90%E7%BE%85%E6%BC%A2"
-    },
     "venue": {
       "name": "北広島町",
       "mapQuery": "広島県 北広島町"
-    },
-    "entry_start_date": "2026-03-26"
+    }
   },
   {
     "id": "osorakan-ekiden-trail-2026",
@@ -2440,14 +2418,14 @@
     "distance_km": 65,
     "elevation_m": 3600,
     "entry_status": "closed",
+    "entry_start_date": "2026-05-21",
     "entry_deadline": "2026-07-20",
+    "entry_fee": "16,000円",
     "links": {
       "official": "https://moshicom.com/search/?keyword=%E6%81%90%E7%BE%85%E6%BC%A2%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%20in",
       "entry": "https://moshicom.com/search/?keyword=%E6%81%90%E7%BE%85%E6%BC%A2%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%20in",
-      "review": "https://runnet.jp/",
-      "sns": "https://www.facebook.com/",
-      "official_fallback": true,
-      "entry_fallback": true,
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -2473,16 +2451,10 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "16,000円",
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search/?keyword=%E6%81%90%E7%BE%85%E6%BC%A2%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%20in"
-    },
     "venue": {
       "name": "エキスパート65km 広島最高峰",
       "mapQuery": "広島県 エキスパート65km 広島最高峰"
-    },
-    "entry_start_date": "2026-05-21"
+    }
   },
   {
     "id": "momiji-trail-hatsukaichi-2026",
@@ -2499,12 +2471,14 @@
     "distance_km": 30,
     "elevation_m": 1750,
     "entry_status": "closed",
+    "entry_start_date": "2026-07-22",
     "entry_deadline": "2026-09-20",
+    "entry_fee": "11,000円",
     "links": {
       "official": "https://moshicom.com/search?keyword=%E5%BB%BF%E6%97%A5%E5%B8%82%E3%82%82%E3%81%BF%E3%81%98%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%E3%83%A9%E3%83%B3",
       "entry": "https://moshicom.com/search?keyword=%E5%BB%BF%E6%97%A5%E5%B8%82%E3%82%82%E3%81%BF%E3%81%98%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%E3%83%A9%E3%83%B3",
-      "review": "https://moshicom.com/",
-      "sns": "https://x.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -2526,16 +2500,10 @@
         "category": "ギア"
       }
     ],
-    "entry_fee": "11,000円",
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search?keyword=%E5%BB%BF%E6%97%A5%E5%B8%82%E3%82%82%E3%81%BF%E3%81%98%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%E3%83%A9%E3%83%B3"
-    },
     "venue": {
       "name": "大野権現山〜経小屋山",
       "mapQuery": "広島県 大野権現山〜経小屋山"
-    },
-    "entry_start_date": "2026-07-22"
+    }
   },
   {
     "id": "kure-tobishima-ultra-2026",
@@ -2552,14 +2520,14 @@
     "distance_km": 100,
     "elevation_m": 950,
     "entry_status": "closed",
+    "entry_start_date": "2026-07-02",
     "entry_deadline": "2026-08-31",
+    "entry_fee": "22,000円",
     "links": {
       "official": "https://moshicom.com/search/?keyword=%E5%91%89%E3%83%BB%E3%81%A8%E3%81%B3%E3%81%97%E3%81%BE%E6%B5%B7%E9%81%93%E3%82%A6%E3%83%AB%E3%83%88%E3%83%A9%E3%83%9E%E3%83%A9%E3%83%8B%E3%83%83%E3%82%AF%20100km",
       "entry": "https://moshicom.com/search/?keyword=%E5%91%89%E3%83%BB%E3%81%A8%E3%81%B3%E3%81%97%E3%81%BE%E6%B5%B7%E9%81%93%E3%82%A6%E3%83%AB%E3%83%88%E3%83%A9%E3%83%9E%E3%83%A9%E3%83%8B%E3%83%83%E3%82%AF%20100km",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
-      "official_fallback": true,
-      "entry_fallback": true,
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -2570,7 +2538,7 @@
       },
       {
         "name": "マイカップ（エイド給水用）＆ソフトフラスク",
-        "category": "ギア"
+        "category": "エイド"
       },
       {
         "name": "足攣り防止マグネシウムジェル（Mag-on等）・塩分タブレット",
@@ -2578,19 +2546,13 @@
       },
       {
         "name": "撥水ウインドシェル＆ワセリン・テーピング",
-        "category": "ウェア"
+        "category": "補給"
       }
     ],
-    "entry_fee": "22,000円",
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search/?keyword=%E5%91%89%E3%83%BB%E3%81%A8%E3%81%B3%E3%81%97%E3%81%BE%E6%B5%B7%E9%81%93%E3%82%A6%E3%83%AB%E3%83%88%E3%83%A9%E3%83%9E%E3%83%A9%E3%83%8B%E3%83%83%E3%82%AF%20100km"
-    },
     "venue": {
       "name": "呉市",
       "mapQuery": "広島県 呉市"
-    },
-    "entry_start_date": "2026-07-02"
+    }
   },
   {
     "id": "akiota-shinkansen-cycle-2026",
@@ -2607,21 +2569,21 @@
     "distance_km": 120,
     "elevation_m": 2200,
     "entry_status": "closed",
+    "entry_start_date": "2026-06-16",
     "entry_deadline": "2026-08-15",
+    "entry_fee": "10,000円",
     "links": {
       "official": "https://cycle.spoen.jp/",
       "entry": "https://cycle.spoen.jp/",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
-      "official_fallback": false,
-      "entry_fallback": false,
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
     "mandatory_gear": [
       {
         "name": "JCF公認サイクルヘルメット＆グローブ",
-        "category": "ギア"
+        "category": "ウェア"
       },
       {
         "name": "高輝度フロントライト＆リアレッドライト（トンネル通過必須）",
@@ -2629,7 +2591,7 @@
       },
       {
         "name": "携帯マルチツール・予備チューブ2本・タイヤレバー・携帯ポンプ",
-        "category": "リペア"
+        "category": "ギア"
       },
       {
         "name": "サイクルボトル水分＆高カロリー補給食",
@@ -2640,12 +2602,10 @@
         "category": "ウェア"
       }
     ],
-    "entry_fee": "10,000円",
-    "source": {
-      "portalName": "スポエンCYCLE",
-      "portalUrl": "https://cycle.spoen.jp/"
-    },
-    "entry_start_date": "2026-06-16"
+    "venue": {
+      "name": "",
+      "mapQuery": "広島県 "
+    }
   },
   {
     "id": "nagi-peaks-tough-trail-2026",
@@ -2662,12 +2622,14 @@
     "distance_km": 56,
     "elevation_m": 3500,
     "entry_status": "closed",
+    "entry_start_date": "2026-02-24",
     "entry_deadline": "2026-04-25",
+    "entry_fee": "11,000円",
     "links": {
       "official": "https://nagipeaks.com/",
       "entry": "https://nagipeaks.com/",
-      "review": "https://dogsorcaravan.com/",
-      "sns": "https://www.facebook.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -2693,16 +2655,10 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "11,000円",
-    "source": {
-      "portalName": "公式サイト",
-      "portalUrl": "https://nagipeaks.com/"
-    },
     "venue": {
       "name": "奈義町那岐山",
       "mapQuery": "岡山県 奈義町那岐山"
-    },
-    "entry_start_date": "2026-02-24"
+    }
   },
   {
     "id": "hiruzen-kougen-marathon-trail-2026",
@@ -2719,12 +2675,14 @@
     "distance_km": 30,
     "elevation_m": 1300,
     "entry_status": "closed",
+    "entry_start_date": "2026-04-16",
     "entry_deadline": "2026-06-15",
+    "entry_fee": "11,000円",
     "links": {
       "official": "https://www.city.maniwa.lg.jp/",
       "entry": "https://moshicom.com/search/?keyword=%E8%92%9C%E5%B1%B1%E9%AB%98%E5%8E%9F",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -2746,16 +2704,10 @@
         "category": "ギア"
       }
     ],
-    "entry_fee": "11,000円",
-    "source": {
-      "portalName": "RUNNET",
-      "portalUrl": "https://runnet.jp/parts/2026/races/search.php?keyword=%E8%92%9C%E5%B1%B1%E9%AB%98%E5%8E%9F%E3%82%AF%E3%83%AD%E3%82%B9%E3%82%AB%E3%83%B3%E3%83%88%E3%83%AA%E3%83%BC%EF%BC%86%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%E3%83%A9%E3%83%B3"
-    },
     "venue": {
       "name": "真庭市",
       "mapQuery": "岡山県 真庭市"
-    },
-    "entry_start_date": "2026-04-16"
+    }
   },
   {
     "id": "okayama-marathon-2026",
@@ -2772,12 +2724,14 @@
     "distance_km": 42,
     "elevation_m": 140,
     "entry_status": "closed",
+    "entry_start_date": "2026-03-21",
     "entry_deadline": "2026-05-20",
+    "entry_fee": "15,000円",
     "links": {
       "official": "https://www.okayamamarathon.jp/",
       "entry": "https://www.okayamamarathon.jp/",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -2795,16 +2749,10 @@
         "category": "ナビゲーション"
       }
     ],
-    "entry_fee": "15,000円",
-    "source": {
-      "portalName": "公式サイト",
-      "portalUrl": "https://www.okayamamarathon.jp/"
-    },
     "venue": {
       "name": "岡山市 フルマラソン",
       "mapQuery": "岡山県 岡山市 フルマラソン"
-    },
-    "entry_start_date": "2026-03-21"
+    }
   },
   {
     "id": "soja-kibiji-marathon-2027",
@@ -2821,12 +2769,14 @@
     "distance_km": 42,
     "elevation_m": 190,
     "entry_status": "open",
+    "entry_start_date": "2026-10-16",
     "entry_deadline": "2026-12-15",
+    "entry_fee": "15,000円",
     "links": {
       "official": "https://www.city.soja.okayama.jp/",
       "entry": "https://www.city.soja.okayama.jp/",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -2844,16 +2794,10 @@
         "category": "ナビゲーション"
       }
     ],
-    "entry_fee": "15,000円",
-    "source": {
-      "portalName": "公式サイト",
-      "portalUrl": "https://www.city.soja.okayama.jp/"
-    },
     "venue": {
       "name": "総社市 フル＆ハーフ",
       "mapQuery": "岡山県 総社市 フル＆ハーフ"
-    },
-    "entry_start_date": "2026-10-16"
+    }
   },
   {
     "id": "kagamino-forest-trail-2026",
@@ -2870,12 +2814,14 @@
     "distance_km": 35,
     "elevation_m": 1900,
     "entry_status": "closed",
+    "entry_start_date": "2026-07-07",
     "entry_deadline": "2026-09-05",
+    "entry_fee": "11,000円",
     "links": {
       "official": "https://moshicom.com/search?keyword=%E9%8F%A1%E9%87%8E%E3%83%BB%E5%A5%A5%E6%B4%A5%E6%B8%93%E3%83%9E%E3%82%A6%E3%83%B3%E3%83%86%E3%83%B3%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB",
       "entry": "https://moshicom.com/search?keyword=%E9%8F%A1%E9%87%8E",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -2897,16 +2843,10 @@
         "category": "ギア"
       }
     ],
-    "entry_fee": "11,000円",
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search?keyword=%E9%8F%A1%E9%87%8E"
-    },
     "venue": {
       "name": "鏡野町",
       "mapQuery": "岡山県 鏡野町"
-    },
-    "entry_start_date": "2026-07-07"
+    }
   },
   {
     "id": "harima-okayama-ride-2026",
@@ -2923,21 +2863,21 @@
     "distance_km": 160,
     "elevation_m": 1450,
     "entry_status": "closed",
+    "entry_start_date": "2026-07-27",
     "entry_deadline": "2026-09-25",
+    "entry_fee": "13,000円",
     "links": {
       "official": "https://cycle.spoen.jp/",
       "entry": "https://cycle.spoen.jp/",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
-      "official_fallback": false,
-      "entry_fallback": false,
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
     "mandatory_gear": [
       {
         "name": "JCF公認サイクルヘルメット＆グローブ",
-        "category": "ギア"
+        "category": "ウェア"
       },
       {
         "name": "高輝度フロントライト＆リアレッドライト（トンネル通過必須）",
@@ -2945,7 +2885,7 @@
       },
       {
         "name": "携帯マルチツール・予備チューブ2本・タイヤレバー・携帯ポンプ",
-        "category": "リペア"
+        "category": "ギア"
       },
       {
         "name": "サイクルボトル水分＆高カロリー補給食",
@@ -2956,12 +2896,10 @@
         "category": "ウェア"
       }
     ],
-    "entry_fee": "13,000円",
-    "source": {
-      "portalName": "スポエンCYCLE",
-      "portalUrl": "https://cycle.spoen.jp/"
-    },
-    "entry_start_date": "2026-07-27"
+    "venue": {
+      "name": "",
+      "mapQuery": "岡山県 "
+    }
   },
   {
     "id": "akiyoshidai-karst-trail-2026",
@@ -2978,12 +2916,14 @@
     "distance_km": 60,
     "elevation_m": 2600,
     "entry_status": "closed",
+    "entry_start_date": "2026-07-17",
     "entry_deadline": "2026-09-15",
+    "entry_fee": "16,000円",
     "links": {
       "official": "https://akiyoshidai-trail.com/",
       "entry": "https://akiyoshidai-trail.com/",
-      "review": "https://runnet.jp/",
-      "sns": "https://www.facebook.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -3009,16 +2949,10 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "16,000円",
-    "source": {
-      "portalName": "公式サイト",
-      "portalUrl": "https://akiyoshidai-trail.com/"
-    },
     "venue": {
       "name": "美祢市 エクストリーム60km",
       "mapQuery": "山口県 美祢市 エクストリーム60km"
-    },
-    "entry_start_date": "2026-07-17"
+    }
   },
   {
     "id": "くだまつ笠戸島アイランドトレイル-2027",
@@ -3035,14 +2969,14 @@
     "distance_km": 32,
     "elevation_m": 1750,
     "entry_status": "open",
+    "entry_start_date": "2026-10-11",
     "entry_deadline": "2026-12-10",
+    "entry_fee": "11,000円",
     "links": {
       "official": "https://moshicom.com/search/?keyword=%E3%81%8F%E3%81%A0%E3%81%BE%E3%81%A4%E7%AC%A0%E6%88%B8%E5%B3%B6%E3%82%A2%E3%82%A4%E3%83%A9%E3%83%B3%E3%83%89%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB",
       "entry": "https://moshicom.com/search/?keyword=%E3%81%8F%E3%81%A0%E3%81%BE%E3%81%A4%E7%AC%A0%E6%88%B8%E5%B3%B6%E3%82%A2%E3%82%A4%E3%83%A9%E3%83%B3%E3%83%89%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB",
-      "review": "https://runnet.jp/",
-      "sns": "https://www.facebook.com/",
-      "official_fallback": true,
-      "entry_fallback": true,
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -3064,16 +2998,10 @@
         "category": "ギア"
       }
     ],
-    "entry_fee": "11,000円",
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search/?keyword=%E3%81%8F%E3%81%A0%E3%81%BE%E3%81%A4%E7%AC%A0%E6%88%B8%E5%B3%B6%E3%82%A2%E3%82%A4%E3%83%A9%E3%83%B3%E3%83%89%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB"
-    },
     "venue": {
       "name": "下松市",
       "mapQuery": "山口県 下松市"
-    },
-    "entry_start_date": "2026-10-11"
+    }
   },
   {
     "id": "shimonoseki-kaikyo-marathon-2026",
@@ -3090,12 +3018,14 @@
     "distance_km": 42,
     "elevation_m": 290,
     "entry_status": "closed",
+    "entry_start_date": "2026-05-01",
     "entry_deadline": "2026-06-30",
+    "entry_fee": "15,000円",
     "links": {
       "official": "https://kaikyomarathon.jp/",
       "entry": "https://kaikyomarathon.jp/",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -3113,16 +3043,10 @@
         "category": "ナビゲーション"
       }
     ],
-    "entry_fee": "15,000円",
-    "source": {
-      "portalName": "公式サイト",
-      "portalUrl": "https://kaikyomarathon.jp/"
-    },
     "venue": {
       "name": "下関市 関門海峡コース",
       "mapQuery": "山口県 下関市 関門海峡コース"
-    },
-    "entry_start_date": "2026-05-01"
+    }
   },
   {
     "id": "mukatsuku-double-marathon-2026",
@@ -3139,12 +3063,14 @@
     "distance_km": 84,
     "elevation_m": 1650,
     "entry_status": "closed",
+    "entry_start_date": "2026-03-01",
     "entry_deadline": "2026-04-30",
+    "entry_fee": "15,000円",
     "links": {
       "official": "https://www.mukatsuku-w-marathon.com/",
       "entry": "https://www.mukatsuku-w-marathon.com/",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -3155,7 +3081,7 @@
       },
       {
         "name": "マイカップ（エイド給水用）＆ソフトフラスク",
-        "category": "ギア"
+        "category": "エイド"
       },
       {
         "name": "足攣り防止マグネシウムジェル（Mag-on等）・塩分タブレット",
@@ -3163,19 +3089,13 @@
       },
       {
         "name": "撥水ウインドシェル＆ワセリン・テーピング",
-        "category": "ウェア"
+        "category": "補給"
       }
     ],
-    "entry_fee": "15,000円",
-    "source": {
-      "portalName": "公式サイト",
-      "portalUrl": "https://www.mukatsuku-w-marathon.com/"
-    },
     "venue": {
       "name": "むかつく",
       "mapQuery": "山口県 むかつく"
-    },
-    "entry_start_date": "2026-03-01"
+    }
   },
   {
     "id": "suo-oshima-マラニック-2026",
@@ -3194,14 +3114,14 @@
     "distance_km": 100,
     "elevation_m": 1200,
     "entry_status": "closed",
+    "entry_start_date": "2026-01-09",
     "entry_deadline": "2026-03-10",
+    "entry_fee": "22,000円",
     "links": {
       "official": "https://suooshima-maranic.jp/",
       "entry": "https://suooshima-maranic.jp/",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
-      "official_fallback": true,
-      "entry_fallback": true,
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -3212,7 +3132,7 @@
       },
       {
         "name": "マイカップ（エイド給水用）＆ソフトフラスク",
-        "category": "ギア"
+        "category": "エイド"
       },
       {
         "name": "足攣り防止マグネシウムジェル（Mag-on等）・塩分タブレット",
@@ -3220,20 +3140,13 @@
       },
       {
         "name": "撥水ウインドシェル＆ワセリン・テーピング",
-        "category": "ウェア"
+        "category": "補給"
       }
     ],
-    "entry_fee": "22,000円",
-    "source": {
-      "portalName": "公式サイト",
-      "portalUrl": "https://suooshima-maranic.jp/"
-    },
     "venue": {
       "name": "片添ヶ浜海浜公園（周防大島町）",
-      "address": "山口県大島郡周防大島町平野片添",
       "mapQuery": "周防大島町 片添ヶ浜海浜公園"
-    },
-    "entry_start_date": "2026-01-09"
+    }
   },
   {
     "id": "mine-akiyoshidai-cycle-2026",
@@ -3250,21 +3163,21 @@
     "distance_km": 130,
     "elevation_m": 1600,
     "entry_status": "closed",
+    "entry_start_date": "2026-02-19",
     "entry_deadline": "2026-04-20",
+    "entry_fee": "10,000円",
     "links": {
       "official": "https://cycle.spoen.jp/",
       "entry": "https://cycle.spoen.jp/",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
-      "official_fallback": false,
-      "entry_fallback": false,
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
     "mandatory_gear": [
       {
         "name": "JCF公認サイクルヘルメット＆グローブ",
-        "category": "ギア"
+        "category": "ウェア"
       },
       {
         "name": "高輝度フロントライト＆リアレッドライト（トンネル通過必須）",
@@ -3272,7 +3185,7 @@
       },
       {
         "name": "携帯マルチツール・予備チューブ2本・タイヤレバー・携帯ポンプ",
-        "category": "リペア"
+        "category": "ギア"
       },
       {
         "name": "サイクルボトル水分＆高カロリー補給食",
@@ -3283,12 +3196,10 @@
         "category": "ウェア"
       }
     ],
-    "entry_fee": "10,000円",
-    "source": {
-      "portalName": "スポエンCYCLE",
-      "portalUrl": "https://cycle.spoen.jp/"
-    },
-    "entry_start_date": "2026-02-19"
+    "venue": {
+      "name": "",
+      "mapQuery": "山口県 "
+    }
   },
   {
     "id": "marishiten-trail-2026",
@@ -3307,12 +3218,14 @@
     "distance_km": 100,
     "elevation_m": 5600,
     "entry_status": "closed",
+    "entry_start_date": "2026-06-11",
     "entry_deadline": "2026-08-10",
+    "entry_fee": "24,000円",
     "links": {
       "official": "https://moshicom.com/search?keyword=%E4%B8%96%E7%95%8C%E9%81%BA%E7%94%A3%E3%83%BB%E7%9F%B3%E8%A6%8B%E9%8A%80%E5%B1%B1%20%E6%91%A9%E5%88%A9%E6%94%AF%E5%A4%A9%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%E3%83%A9%E3%83%B3",
       "entry": "https://moshicom.com/search?keyword=%E4%B8%96%E7%95%8C%E9%81%BA%E7%94%A3",
-      "review": "https://dogsorcaravan.com/",
-      "sns": "https://www.facebook.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -3338,17 +3251,10 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "24,000円",
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search?keyword=%E4%B8%96%E7%95%8C%E9%81%BA%E7%94%A3"
-    },
     "venue": {
       "name": "大田市 100km",
       "mapQuery": "島根県 大田市 100km"
-    },
-    "end_date": "2026-09-21",
-    "entry_start_date": "2026-06-11"
+    }
   },
   {
     "id": "okinosima-ultra-2026",
@@ -3366,12 +3272,14 @@
     "distance_km": 100,
     "elevation_m": 1680,
     "entry_status": "closed",
+    "entry_start_date": "2026-02-19",
     "entry_deadline": "2026-04-20",
+    "entry_fee": "22,000円",
     "links": {
       "official": "https://www.town.okinoshima.shimane.jp/",
       "entry": "https://www.town.okinoshima.shimane.jp/",
-      "review": "https://runnet.jp/runtes/raceDetail/top/n314512.html",
-      "sns": "https://www.facebook.com/okinoshimaultra",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -3382,7 +3290,7 @@
       },
       {
         "name": "マイカップ（エイド給水用）＆ソフトフラスク",
-        "category": "ギア"
+        "category": "エイド"
       },
       {
         "name": "足攣り防止マグネシウムジェル（Mag-on等）・塩分タブレット",
@@ -3390,19 +3298,13 @@
       },
       {
         "name": "撥水ウインドシェル＆ワセリン・テーピング",
-        "category": "ウェア"
+        "category": "補給"
       }
     ],
-    "entry_fee": "22,000円",
-    "source": {
-      "portalName": "公式サイト",
-      "portalUrl": "https://www.town.okinoshima.shimane.jp/"
-    },
     "venue": {
       "name": "隠岐の島町 100km",
       "mapQuery": "島根県 隠岐の島町 100km"
-    },
-    "entry_start_date": "2026-02-19"
+    }
   },
   {
     "id": "sanbe-mountain-trail-2026",
@@ -3419,12 +3321,14 @@
     "distance_km": 34,
     "elevation_m": 2100,
     "entry_status": "closed",
+    "entry_start_date": "2026-07-12",
     "entry_deadline": "2026-09-10",
+    "entry_fee": "11,000円",
     "links": {
       "official": "https://moshicom.com/search?keyword=%E5%9B%BD%E7%AB%8B%E5%85%AC%E5%9C%92%20%E4%B8%89%E7%93%B6%E5%B1%B1%E5%B1%B1%E5%B2%B3%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%E3%83%A9%E3%83%B3",
       "entry": "https://moshicom.com/search?keyword=%E5%9B%BD%E7%AB%8B%E5%85%AC%E5%9C%92%20%E4%B8%89%E7%93%B6%E5%B1%B1%E5%B1%B1%E5%B2%B3%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%E3%83%A9%E3%83%B3",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -3446,16 +3350,10 @@
         "category": "ギア"
       }
     ],
-    "entry_fee": "11,000円",
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search?keyword=%E5%9B%BD%E7%AB%8B%E5%85%AC%E5%9C%92%20%E4%B8%89%E7%93%B6%E5%B1%B1%E5%B1%B1%E5%B2%B3%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%E3%83%A9%E3%83%B3"
-    },
     "venue": {
       "name": "さんべさん",
       "mapQuery": "島根県 さんべさん"
-    },
-    "entry_start_date": "2026-07-12"
+    }
   },
   {
     "id": "matsue-kokuhou-marathon-2026",
@@ -3472,14 +3370,14 @@
     "distance_km": 42,
     "elevation_m": 130,
     "entry_status": "closed",
+    "entry_start_date": "2026-07-17",
     "entry_deadline": "2026-09-15",
+    "entry_fee": "15,000円",
     "links": {
       "official": "https://moshicom.com/search/?keyword=%E5%9B%BD%E5%AE%9D%E6%9D%BE%E6%B1%9F%E5%9F%8E%E3%83%9E%E3%83%A9%E3%82%BD%E3%83%B3",
       "entry": "https://moshicom.com/search/?keyword=%E5%9B%BD%E5%AE%9D%E6%9D%BE%E6%B1%9F%E5%9F%8E%E3%83%9E%E3%83%A9%E3%82%BD%E3%83%B3",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
-      "official_fallback": true,
-      "entry_fallback": true,
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -3497,16 +3395,10 @@
         "category": "ナビゲーション"
       }
     ],
-    "entry_fee": "15,000円",
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search/?keyword=%E5%9B%BD%E5%AE%9D%E6%9D%BE%E6%B1%9F%E5%9F%8E%E3%83%9E%E3%83%A9%E3%82%BD%E3%83%B3"
-    },
     "venue": {
       "name": "松江市 フルマラソン",
       "mapQuery": "島根県 松江市 フルマラソン"
-    },
-    "entry_start_date": "2026-07-17"
+    }
   },
   {
     "id": "shimanami-yamanami-cycle-2026",
@@ -3523,21 +3415,21 @@
     "distance_km": 140,
     "elevation_m": 1850,
     "entry_status": "closed",
+    "entry_start_date": "2026-04-06",
     "entry_deadline": "2026-06-05",
+    "entry_fee": "10,000円",
     "links": {
       "official": "https://cycle.spoen.jp/",
       "entry": "https://cycle.spoen.jp/",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
-      "official_fallback": false,
-      "entry_fallback": false,
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
     "mandatory_gear": [
       {
         "name": "JCF公認サイクルヘルメット＆グローブ",
-        "category": "ギア"
+        "category": "ウェア"
       },
       {
         "name": "高輝度フロントライト＆リアレッドライト（トンネル通過必須）",
@@ -3545,7 +3437,7 @@
       },
       {
         "name": "携帯マルチツール・予備チューブ2本・タイヤレバー・携帯ポンプ",
-        "category": "リペア"
+        "category": "ギア"
       },
       {
         "name": "サイクルボトル水分＆高カロリー補給食",
@@ -3556,12 +3448,10 @@
         "category": "ウェア"
       }
     ],
-    "entry_fee": "10,000円",
-    "source": {
-      "portalName": "スポエンCYCLE",
-      "portalUrl": "https://cycle.spoen.jp/"
-    },
-    "entry_start_date": "2026-04-06"
+    "venue": {
+      "name": "",
+      "mapQuery": "島根県 "
+    }
   },
   {
     "id": "daisen-mountain-trail-2026",
@@ -3578,12 +3468,14 @@
     "distance_km": 40,
     "elevation_m": 2450,
     "entry_status": "closed",
+    "entry_start_date": "2026-05-26",
     "entry_deadline": "2026-07-25",
+    "entry_fee": "11,000円",
     "links": {
       "official": "https://moshicom.com/search?keyword=%E9%B3%A5%E5%8F%96%E3%83%BB%E5%A4%A7%E5%B1%B1%E3%83%9E%E3%82%A6%E3%83%B3%E3%83%86%E3%83%B3%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%EF%BC%86%E3%82%B9%E3%82%AB%E3%82%A4%E3%83%A9%E3%83%B3",
       "entry": "https://moshicom.com/search?keyword=%E9%B3%A5%E5%8F%96",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -3609,16 +3501,10 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "11,000円",
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search?keyword=%E9%B3%A5%E5%8F%96"
-    },
     "venue": {
       "name": "だいせん",
       "mapQuery": "鳥取県 だいせん"
-    },
-    "entry_start_date": "2026-05-26"
+    }
   },
   {
     "id": "hyonosen-trail-tottori-2026",
@@ -3635,12 +3521,14 @@
     "distance_km": 46,
     "elevation_m": 2650,
     "entry_status": "closed",
+    "entry_start_date": "2026-06-26",
     "entry_deadline": "2026-08-25",
+    "entry_fee": "11,000円",
     "links": {
       "official": "https://moshicom.com/search?keyword=%E6%B0%B7%E3%83%8E%E5%B1%B1%E3%83%BB%E9%89%A2%E4%BC%8F%E5%B1%B1%E3%83%AF%E3%82%A4%E3%83%AB%E3%83%89%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%20in%20%E3%82%8F%E3%81%8B%E3%81%95",
       "entry": "https://moshicom.com/search?keyword=%E6%B0%B7%E3%83%8E%E5%B1%B1",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -3666,16 +3554,10 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "11,000円",
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search?keyword=%E6%B0%B7%E3%83%8E%E5%B1%B1"
-    },
     "venue": {
       "name": "若桜町",
       "mapQuery": "鳥取県 若桜町"
-    },
-    "entry_start_date": "2026-06-26"
+    }
   },
   {
     "id": "tottori-marathon-2027",
@@ -3692,14 +3574,14 @@
     "distance_km": 42,
     "elevation_m": 195,
     "entry_status": "open",
+    "entry_start_date": "2026-10-21",
     "entry_deadline": "2026-12-20",
+    "entry_fee": "15,000円",
     "links": {
       "official": "https://moshicom.com/search/?keyword=%E9%B3%A5%E5%8F%96%E3%83%9E%E3%83%A9%E3%82%BD%E3%83%B3",
       "entry": "https://moshicom.com/search/?keyword=%E9%B3%A5%E5%8F%96%E3%83%9E%E3%83%A9%E3%82%BD%E3%83%B3",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
-      "official_fallback": true,
-      "entry_fallback": true,
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -3717,16 +3599,10 @@
         "category": "ナビゲーション"
       }
     ],
-    "entry_fee": "15,000円",
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search/?keyword=%E9%B3%A5%E5%8F%96%E3%83%9E%E3%83%A9%E3%82%BD%E3%83%B3"
-    },
     "venue": {
       "name": "鳥取砂丘〜鳥取城跡 ワンウェイ公認フル",
       "mapQuery": "鳥取県 鳥取砂丘〜鳥取城跡 ワンウェイ公認フル"
-    },
-    "entry_start_date": "2026-10-21"
+    }
   },
   {
     "id": "tour-de-daisen-2026",
@@ -3743,21 +3619,21 @@
     "distance_km": 112,
     "elevation_m": 2350,
     "entry_status": "closed",
+    "entry_start_date": "2027-02-14",
     "entry_deadline": "2027-04-15",
+    "entry_fee": "10,000円",
     "links": {
       "official": "https://cycle.spoen.jp/",
       "entry": "https://cycle.spoen.jp/",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
-      "official_fallback": false,
-      "entry_fallback": false,
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
     "mandatory_gear": [
       {
         "name": "JCF公認サイクルヘルメット＆グローブ",
-        "category": "ギア"
+        "category": "ウェア"
       },
       {
         "name": "高輝度フロントライト＆リアレッドライト（トンネル通過必須）",
@@ -3765,7 +3641,7 @@
       },
       {
         "name": "携帯マルチツール・予備チューブ2本・タイヤレバー・携帯ポンプ",
-        "category": "リペア"
+        "category": "ギア"
       },
       {
         "name": "サイクルボトル水分＆高カロリー補給食",
@@ -3776,16 +3652,10 @@
         "category": "ウェア"
       }
     ],
-    "entry_fee": "10,000円",
-    "source": {
-      "portalName": "スポーツエントリー",
-      "portalUrl": "https://www.sportsentry.ne.jp/cycle/10/3"
-    },
     "venue": {
       "name": "名峰大山一周ヒルクライム＆ロングライド",
       "mapQuery": "鳥取県 名峰大山一周ヒルクライム＆ロングライド"
-    },
-    "entry_start_date": "2027-02-14"
+    }
   },
   {
     "id": "cycling-shimanami-2026",
@@ -3802,19 +3672,21 @@
     "distance_km": 140,
     "elevation_m": 1150,
     "entry_status": "closed",
+    "entry_start_date": "2026-05-01",
     "entry_deadline": "2026-06-30",
+    "entry_fee": "10,000円",
     "links": {
       "official": "https://cycling-shimanami.jp/",
       "entry": "https://cycling-shimanami.jp/",
-      "review": "https://www.sportsentry.ne.jp/",
-      "sns": "https://x.com/cshimanami",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
     "mandatory_gear": [
       {
         "name": "JCF公認サイクルヘルメット＆グローブ",
-        "category": "ギア"
+        "category": "ウェア"
       },
       {
         "name": "高輝度フロントライト＆リアレッドライト（トンネル通過必須）",
@@ -3822,7 +3694,7 @@
       },
       {
         "name": "携帯マルチツール・予備チューブ2本・タイヤレバー・携帯ポンプ",
-        "category": "リペア"
+        "category": "ギア"
       },
       {
         "name": "サイクルボトル水分＆高カロリー補給食",
@@ -3833,12 +3705,10 @@
         "category": "ウェア"
       }
     ],
-    "entry_fee": "10,000円",
-    "source": {
-      "portalName": "公式サイト",
-      "portalUrl": "https://cycling-shimanami.jp/"
-    },
-    "entry_start_date": "2026-05-01"
+    "venue": {
+      "name": "",
+      "mapQuery": "愛媛県 "
+    }
   },
   {
     "id": "ishizuchi-skyrun-trail-2026",
@@ -3855,12 +3725,14 @@
     "distance_km": 38,
     "elevation_m": 2500,
     "entry_status": "closed",
+    "entry_start_date": "2026-06-06",
     "entry_deadline": "2026-08-05",
+    "entry_fee": "11,000円",
     "links": {
       "official": "https://moshicom.com/search?keyword=%E7%9F%B3%E9%8E%9A%E5%B1%B1%E3%82%B9%E3%82%AB%E3%82%A4%E3%83%AC%E3%83%BC%E3%82%B9%EF%BC%86%E5%9B%9B%E5%9B%BD%E3%82%AB%E3%83%AB%E3%82%B9%E3%83%88%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB",
       "entry": "https://moshicom.com/search?keyword=%E7%9F%B3%E9%8E%9A%E5%B1%B1%E3%82%B9%E3%82%AB%E3%82%A4%E3%83%AC%E3%83%BC%E3%82%B9",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -3886,16 +3758,10 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "11,000円",
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search?keyword=%E7%9F%B3%E9%8E%9A%E5%B1%B1%E3%82%B9%E3%82%AB%E3%82%A4%E3%83%AC%E3%83%BC%E3%82%B9"
-    },
     "venue": {
       "name": "いしづちさん",
       "mapQuery": "愛媛県 いしづちさん"
-    },
-    "entry_start_date": "2026-06-06"
+    }
   },
   {
     "id": "kumakogen-four-seasons-trail-2026",
@@ -3912,12 +3778,14 @@
     "distance_km": 35,
     "elevation_m": 1950,
     "entry_status": "closed",
+    "entry_start_date": "2026-03-31",
     "entry_deadline": "2026-05-30",
+    "entry_fee": "11,000円",
     "links": {
       "official": "https://moshicom.com/search?keyword=%E4%B9%85%E4%B8%87%E9%AB%98%E5%8E%9F%E3%83%BB%E7%9A%BF%E3%83%B6%E5%B6%BA%E3%83%9E%E3%82%A6%E3%83%B3%E3%83%86%E3%83%B3%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB",
       "entry": "https://moshicom.com/search?keyword=%E4%B9%85%E4%B8%87%E9%AB%98%E5%8E%9F",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -3939,16 +3807,10 @@
         "category": "ギア"
       }
     ],
-    "entry_fee": "11,000円",
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search?keyword=%E4%B9%85%E4%B8%87%E9%AB%98%E5%8E%9F"
-    },
     "venue": {
       "name": "久万高原町",
       "mapQuery": "愛媛県 久万高原町"
-    },
-    "entry_start_date": "2026-03-31"
+    }
   },
   {
     "id": "ehime-marathon-2027",
@@ -3965,12 +3827,14 @@
     "distance_km": 42,
     "elevation_m": 160,
     "entry_status": "closed",
+    "entry_start_date": "2026-07-02",
     "entry_deadline": "2026-08-31",
+    "entry_fee": "15,000円",
     "links": {
       "official": "https://ehimemarathon.jp/",
       "entry": "https://ehimemarathon.jp/",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -3988,16 +3852,10 @@
         "category": "ナビゲーション"
       }
     ],
-    "entry_fee": "15,000円",
-    "source": {
-      "portalName": "公式サイト",
-      "portalUrl": "https://ehimemarathon.jp/"
-    },
     "venue": {
       "name": "松山市 坊っちゃんスタジアム",
       "mapQuery": "愛媛県 松山市 坊っちゃんスタジアム"
-    },
-    "entry_start_date": "2026-07-02"
+    }
   },
   {
     "id": "shimanami-jukan-ultra-100-2026",
@@ -4016,14 +3874,14 @@
     "distance_km": 100,
     "elevation_m": 1050,
     "entry_status": "closed",
+    "entry_start_date": "2026-02-14",
     "entry_deadline": "2026-04-15",
+    "entry_fee": "22,000円",
     "links": {
       "official": "https://moshicom.com/search/?keyword=%E3%81%97%E3%81%BE%E3%81%AA%E3%81%BF%E6%B5%B7%E9%81%93%E7%B8%A6%E6%96%AD%E3%82%A6%E3%83%AB%E3%83%88%E3%83%A9%E3%83%9E%E3%83%A9%E3%83%8B%E3%83%83%E3%82%AF%20100km",
       "entry": "https://moshicom.com/search/?keyword=%E3%81%97%E3%81%BE%E3%81%AA%E3%81%BF%E6%B5%B7%E9%81%93%E7%B8%A6%E6%96%AD%E3%82%A6%E3%83%AB%E3%83%88%E3%83%A9%E3%83%9E%E3%83%A9%E3%83%8B%E3%83%83%E3%82%AF%20100km",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
-      "official_fallback": true,
-      "entry_fallback": true,
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -4034,7 +3892,7 @@
       },
       {
         "name": "マイカップ（エイド給水用）＆ソフトフラスク",
-        "category": "ギア"
+        "category": "エイド"
       },
       {
         "name": "足攣り防止マグネシウムジェル（Mag-on等）・塩分タブレット",
@@ -4042,19 +3900,13 @@
       },
       {
         "name": "撥水ウインドシェル＆ワセリン・テーピング",
-        "category": "ウェア"
+        "category": "補給"
       }
     ],
-    "entry_fee": "22,000円",
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search/?keyword=%E3%81%97%E3%81%BE%E3%81%AA%E3%81%BF%E6%B5%B7%E9%81%93%E7%B8%A6%E6%96%AD%E3%82%A6%E3%83%AB%E3%83%88%E3%83%A9%E3%83%9E%E3%83%A9%E3%83%8B%E3%83%83%E3%82%AF%20100km"
-    },
     "venue": {
       "name": "今治〜尾道",
       "mapQuery": "愛媛県 今治〜尾道"
-    },
-    "entry_start_date": "2026-02-14"
+    }
   },
   {
     "id": "ufo-line-hillclimb-2026",
@@ -4071,21 +3923,21 @@
     "distance_km": 45,
     "elevation_m": 1600,
     "entry_status": "closed",
+    "entry_start_date": "2026-05-21",
     "entry_deadline": "2026-07-20",
+    "entry_fee": "7,000円",
     "links": {
       "official": "https://cycle.spoen.jp/",
       "entry": "https://cycle.spoen.jp/",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
-      "official_fallback": false,
-      "entry_fallback": false,
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
     "mandatory_gear": [
       {
         "name": "JCF公認サイクルヘルメット＆グローブ",
-        "category": "ギア"
+        "category": "ウェア"
       },
       {
         "name": "高輝度フロントライト＆リアレッドライト（トンネル通過必須）",
@@ -4093,7 +3945,7 @@
       },
       {
         "name": "携帯マルチツール・予備チューブ2本・タイヤレバー・携帯ポンプ",
-        "category": "リペア"
+        "category": "ギア"
       },
       {
         "name": "サイクルボトル水分＆高カロリー補給食",
@@ -4104,12 +3956,10 @@
         "category": "ウェア"
       }
     ],
-    "entry_fee": "7,000円",
-    "source": {
-      "portalName": "スポエンCYCLE",
-      "portalUrl": "https://cycle.spoen.jp/"
-    },
-    "entry_start_date": "2026-05-21"
+    "venue": {
+      "name": "",
+      "mapQuery": "愛媛県 "
+    }
   },
   {
     "id": "shodoshima-olive-trail-2026",
@@ -4126,12 +3976,14 @@
     "distance_km": 36,
     "elevation_m": 1850,
     "entry_status": "closed",
+    "entry_start_date": "2026-08-16",
     "entry_deadline": "2026-10-15",
+    "entry_fee": "11,000円",
     "links": {
       "official": "https://moshicom.com/search?keyword=%E5%B0%8F%E8%B1%86%E5%B3%B6%E3%82%AA%E3%83%AA%E3%83%BC%E3%83%96%E3%83%BB%E5%AF%92%E9%9C%9E%E6%B8%93%E3%82%A2%E3%82%A4%E3%83%A9%E3%83%B3%E3%83%89%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB",
       "entry": "https://moshicom.com/search?keyword=%E5%B0%8F%E8%B1%86%E5%B3%B6%E3%82%AA%E3%83%AA%E3%83%BC%E3%83%96",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -4153,16 +4005,10 @@
         "category": "ギア"
       }
     ],
-    "entry_fee": "11,000円",
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search?keyword=%E5%B0%8F%E8%B1%86%E5%B3%B6%E3%82%AA%E3%83%AA%E3%83%BC%E3%83%96"
-    },
     "venue": {
       "name": "かんかけい",
       "mapQuery": "香川県 かんかけい"
-    },
-    "entry_start_date": "2026-08-16"
+    }
   },
   {
     "id": "sanuki-mountains-skytrail-2026",
@@ -4179,12 +4025,14 @@
     "distance_km": 42,
     "elevation_m": 2200,
     "entry_status": "closed",
+    "entry_start_date": "2026-01-14",
     "entry_deadline": "2026-03-15",
+    "entry_fee": "11,000円",
     "links": {
       "official": "https://moshicom.com/search?keyword=%E8%AE%83%E5%B2%90%E5%B1%B1%E8%84%88%E3%83%BB%E7%AB%9C%E7%8E%8B%E5%B1%B1%E7%B8%A6%E8%B5%B0%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%E3%83%A9%E3%83%B3",
       "entry": "https://moshicom.com/search?keyword=%E8%AE%83%E5%B2%90%E5%B1%B1%E8%84%88",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -4210,16 +4058,10 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "11,000円",
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search?keyword=%E8%AE%83%E5%B2%90%E5%B1%B1%E8%84%88"
-    },
     "venue": {
       "name": "高松〜まんのう",
       "mapQuery": "香川県 高松〜まんのう"
-    },
-    "entry_start_date": "2026-01-14"
+    }
   },
   {
     "id": "kagawa-marugame-half-2027",
@@ -4236,12 +4078,14 @@
     "distance_km": 21,
     "elevation_m": 45,
     "entry_status": "closing_soon",
+    "entry_start_date": "2026-09-16",
     "entry_deadline": "2026-11-15",
+    "entry_fee": "7,500円",
     "links": {
       "official": "https://www.km-half.com/",
       "entry": "https://www.km-half.com/",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -4259,16 +4103,10 @@
         "category": "ナビゲーション"
       }
     ],
-    "entry_fee": "7,500円",
-    "source": {
-      "portalName": "公式サイト",
-      "portalUrl": "https://www.km-half.com/"
-    },
     "venue": {
       "name": "日本屈指の高速コース",
       "mapQuery": "香川県 日本屈指の高速コース"
-    },
-    "entry_start_date": "2026-09-16"
+    }
   },
   {
     "id": "tour-de-sanuki-udon-2026",
@@ -4285,21 +4123,21 @@
     "distance_km": 120,
     "elevation_m": 1250,
     "entry_status": "closed",
+    "entry_start_date": "2026-02-09",
     "entry_deadline": "2026-04-10",
+    "entry_fee": "10,000円",
     "links": {
       "official": "https://cycle.spoen.jp/",
       "entry": "https://cycle.spoen.jp/",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
-      "official_fallback": false,
-      "entry_fallback": false,
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
     "mandatory_gear": [
       {
         "name": "JCF公認サイクルヘルメット＆グローブ",
-        "category": "ギア"
+        "category": "ウェア"
       },
       {
         "name": "高輝度フロントライト＆リアレッドライト（トンネル通過必須）",
@@ -4307,7 +4145,7 @@
       },
       {
         "name": "携帯マルチツール・予備チューブ2本・タイヤレバー・携帯ポンプ",
-        "category": "リペア"
+        "category": "ギア"
       },
       {
         "name": "サイクルボトル水分＆高カロリー補給食",
@@ -4318,16 +4156,10 @@
         "category": "ウェア"
       }
     ],
-    "entry_fee": "10,000円",
-    "source": {
-      "portalName": "スポエンCYCLE",
-      "portalUrl": "https://cycle.spoen.jp/"
-    },
     "venue": {
       "name": "讃岐うどん巡り＆瀬戸内ロングライド 120km",
       "mapQuery": "香川県 讃岐うどん巡り＆瀬戸内ロングライド 120km"
-    },
-    "entry_start_date": "2026-02-09"
+    }
   },
   {
     "id": "mameichi-shodoshima-cycle-2026",
@@ -4344,21 +4176,21 @@
     "distance_km": 110,
     "elevation_m": 1380,
     "entry_status": "closed",
+    "entry_start_date": "2026-07-22",
     "entry_deadline": "2026-09-20",
+    "entry_fee": "10,000円",
     "links": {
       "official": "https://cycle.spoen.jp/",
       "entry": "https://cycle.spoen.jp/",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
-      "official_fallback": false,
-      "entry_fallback": false,
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
     "mandatory_gear": [
       {
         "name": "JCF公認サイクルヘルメット＆グローブ",
-        "category": "ギア"
+        "category": "ウェア"
       },
       {
         "name": "高輝度フロントライト＆リアレッドライト（トンネル通過必須）",
@@ -4366,7 +4198,7 @@
       },
       {
         "name": "携帯マルチツール・予備チューブ2本・タイヤレバー・携帯ポンプ",
-        "category": "リペア"
+        "category": "ギア"
       },
       {
         "name": "サイクルボトル水分＆高カロリー補給食",
@@ -4377,12 +4209,10 @@
         "category": "ウェア"
       }
     ],
-    "entry_fee": "10,000円",
-    "source": {
-      "portalName": "スポエンCYCLE",
-      "portalUrl": "https://cycle.spoen.jp/"
-    },
-    "entry_start_date": "2026-07-22"
+    "venue": {
+      "name": "",
+      "mapQuery": "香川県 "
+    }
   },
   {
     "id": "tsurugisan-super-rin-do-trail-2026",
@@ -4400,12 +4230,14 @@
     "distance_km": 62,
     "elevation_m": 3400,
     "entry_status": "closed",
+    "entry_start_date": "2026-05-01",
     "entry_deadline": "2026-06-30",
+    "entry_fee": "16,000円",
     "links": {
       "official": "https://moshicom.com/search?keyword=%E9%98%BF%E6%B3%A2%E3%83%BB%E5%89%A3%E5%B1%B1%E3%82%B9%E3%83%BC%E3%83%91%E3%83%BC%E6%9E%97%E9%81%93%E3%83%9E%E3%82%A6%E3%83%B3%E3%83%86%E3%83%B3%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB",
       "entry": "https://moshicom.com/search?keyword=%E9%98%BF%E6%B3%A2",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -4431,16 +4263,10 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "16,000円",
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search?keyword=%E9%98%BF%E6%B3%A2"
-    },
     "venue": {
       "name": "つるぎさん",
       "mapQuery": "徳島県 つるぎさん"
-    },
-    "entry_start_date": "2026-05-01"
+    }
   },
   {
     "id": "senba-sea-cliff-trail-2027",
@@ -4457,14 +4283,14 @@
     "distance_km": 36,
     "elevation_m": 2250,
     "entry_status": "open",
+    "entry_start_date": "2026-10-06",
     "entry_deadline": "2026-12-05",
+    "entry_fee": "11,000円",
     "links": {
       "official": "https://moshicom.com/search/?keyword=%E5%8D%83%E7%BE%BD%E6%B5%B7%E5%B4%96%20%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%E3%83%A9%E3%83%B3%E3%83%8B%E3%83%B3%E3%82%B0%E3%83%AC%E3%83%BC%E3%82%B9",
       "entry": "https://moshicom.com/search/?keyword=%E5%8D%83%E7%BE%BD%E6%B5%B7%E5%B4%96%20%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%E3%83%A9%E3%83%B3%E3%83%8B%E3%83%B3%E3%82%B0%E3%83%AC%E3%83%BC%E3%82%B9",
-      "review": "https://dogsorcaravan.com/",
-      "sns": "https://www.facebook.com/",
-      "official_fallback": true,
-      "entry_fallback": true,
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -4486,16 +4312,10 @@
         "category": "ギア"
       }
     ],
-    "entry_fee": "11,000円",
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search/?keyword=%E5%8D%83%E7%BE%BD%E6%B5%B7%E5%B4%96%20%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%E3%83%A9%E3%83%B3%E3%83%8B%E3%83%B3%E3%82%B0%E3%83%AC%E3%83%BC%E3%82%B9"
-    },
     "venue": {
       "name": "せんばかいがい",
       "mapQuery": "徳島県 せんばかいがい"
-    },
-    "entry_start_date": "2026-10-06"
+    }
   },
   {
     "id": "iya-valley-adventure-trail-2026",
@@ -4512,12 +4332,14 @@
     "distance_km": 45,
     "elevation_m": 2900,
     "entry_status": "closed",
+    "entry_start_date": "2026-07-12",
     "entry_deadline": "2026-09-10",
+    "entry_fee": "11,000円",
     "links": {
       "official": "https://moshicom.com/search?keyword=%E7%A7%98%E5%A2%83%E3%83%BB%E6%9D%B1%E7%A5%96%E8%B0%B7%E4%B8%89%E5%B6%BA%E3%83%BB%E3%81%8B%E3%81%9A%E3%82%89%E6%A9%8B%E3%83%9E%E3%82%A6%E3%83%B3%E3%83%86%E3%83%B3%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB",
       "entry": "https://moshicom.com/search?keyword=%E7%A7%98%E5%A2%83",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -4543,16 +4365,10 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "11,000円",
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search?keyword=%E7%A7%98%E5%A2%83"
-    },
     "venue": {
       "name": "ひがしいや",
       "mapQuery": "徳島県 ひがしいや"
-    },
-    "entry_start_date": "2026-07-12"
+    }
   },
   {
     "id": "tokushima-marathon-2027",
@@ -4569,12 +4385,14 @@
     "distance_km": 42,
     "elevation_m": 110,
     "entry_status": "open",
+    "entry_start_date": "2026-10-26",
     "entry_deadline": "2026-12-25",
+    "entry_fee": "15,000円",
     "links": {
       "official": "https://www.tokushima-marathon.jp/",
       "entry": "https://www.tokushima-marathon.jp/",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -4592,16 +4410,10 @@
         "category": "ナビゲーション"
       }
     ],
-    "entry_fee": "15,000円",
-    "source": {
-      "portalName": "公式サイト",
-      "portalUrl": "https://www.tokushima-marathon.jp/"
-    },
     "venue": {
       "name": "吉野川ブルーライン公認コース",
       "mapQuery": "徳島県 吉野川ブルーライン公認コース"
-    },
-    "entry_start_date": "2026-10-26"
+    }
   },
   {
     "id": "oku-shimanto-trail-2026",
@@ -4618,12 +4430,14 @@
     "distance_km": 35,
     "elevation_m": 2100,
     "entry_status": "closed",
+    "entry_start_date": "2026-08-06",
     "entry_deadline": "2026-10-05",
+    "entry_fee": "11,000円",
     "links": {
       "official": "https://moshicom.com/search?keyword=%E5%A5%A5%E5%9B%9B%E4%B8%87%E5%8D%81%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%E3%83%AC%E3%83%BC%E3%82%B9%20in%20%E6%9D%BE%E8%91%89%E5%B7%9D",
       "entry": "https://moshicom.com/search?keyword=%E5%A5%A5%E5%9B%9B%E4%B8%87%E5%8D%81%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%E3%83%AC%E3%83%BC%E3%82%B9",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -4645,16 +4459,10 @@
         "category": "ギア"
       }
     ],
-    "entry_fee": "11,000円",
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search?keyword=%E5%A5%A5%E5%9B%9B%E4%B8%87%E5%8D%81%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%E3%83%AC%E3%83%BC%E3%82%B9"
-    },
     "venue": {
       "name": "四万十町",
       "mapQuery": "高知県 四万十町"
-    },
-    "entry_start_date": "2026-08-06"
+    }
   },
   {
     "id": "reihoku-shikoku-mountain-trail-2026",
@@ -4671,12 +4479,14 @@
     "distance_km": 44,
     "elevation_m": 2400,
     "entry_status": "closed",
+    "entry_start_date": "2026-06-21",
     "entry_deadline": "2026-08-20",
+    "entry_fee": "11,000円",
     "links": {
       "official": "https://moshicom.com/search?keyword=%E5%9C%9F%E4%BD%90%E3%82%8C%E3%81%84%E3%81%BB%E3%81%8F%E3%83%BB%E5%9B%9B%E5%9B%BD%E3%82%AB%E3%83%AB%E3%82%B9%E3%83%88%E5%A4%A9%E7%8B%97%E9%AB%98%E5%8E%9F%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB",
       "entry": "https://moshicom.com/search?keyword=%E5%9C%9F%E4%BD%90%E3%82%8C%E3%81%84%E3%81%BB%E3%81%8F",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -4702,16 +4512,10 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "11,000円",
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search?keyword=%E5%9C%9F%E4%BD%90%E3%82%8C%E3%81%84%E3%81%BB%E3%81%8F"
-    },
     "venue": {
       "name": "本山〜津野",
       "mapQuery": "高知県 本山〜津野"
-    },
-    "entry_start_date": "2026-06-21"
+    }
   },
   {
     "id": "shimantogawa-ultra-2026",
@@ -4729,12 +4533,16 @@
     "distance_km": 100,
     "elevation_m": 1250,
     "entry_status": "closed",
+    "entry_start_date": "2026-04-16",
     "entry_deadline": "2026-06-15",
+    "entry_fee": "22,000円",
     "links": {
       "official": "https://shimanto-ultra.jp/",
       "entry": "https://shimanto-ultra.jp/",
-      "review": "https://runnet.jp/",
-      "sns": "https://www.facebook.com/"
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-10-31"
     },
     "mandatory_gear": [
       {
@@ -4743,7 +4551,7 @@
       },
       {
         "name": "マイカップ（エイド給水用）＆ソフトフラスク",
-        "category": "ギア"
+        "category": "エイド"
       },
       {
         "name": "足攣り防止マグネシウムジェル（Mag-on等）・塩分タブレット",
@@ -4751,11 +4559,11 @@
       },
       {
         "name": "撥水ウインドシェル＆ワセリン・テーピング",
-        "category": "ウェア"
+        "category": "補給"
       },
       {
         "name": "マイカップ（エイド給水用）",
-        "category": "補給"
+        "category": "エイド"
       },
       {
         "name": "水分ボトル（携帯必須）",
@@ -4763,19 +4571,13 @@
       },
       {
         "name": "足攣り防止マグネシウム（Mag-on等）",
-        "category": "補給"
+        "category": "ギア"
       }
     ],
-    "entry_fee": "22,000円",
-    "source": {
-      "portalName": "公式サイト",
-      "portalUrl": "https://shimanto-ultra.jp/"
-    },
     "venue": {
       "name": "四万十市",
       "mapQuery": "高知県 四万十市"
-    },
-    "entry_start_date": "2026-04-16"
+    }
   },
   {
     "id": "kochi-ryoma-marathon-2027",
@@ -4792,12 +4594,14 @@
     "distance_km": 42,
     "elevation_m": 190,
     "entry_status": "closing_soon",
+    "entry_start_date": "2026-09-11",
     "entry_deadline": "2026-11-10",
+    "entry_fee": "15,000円",
     "links": {
       "official": "https://ryoma-marathon.jp/",
       "entry": "https://ryoma-marathon.jp/",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -4815,16 +4619,10 @@
         "category": "ナビゲーション"
       }
     ],
-    "entry_fee": "15,000円",
-    "source": {
-      "portalName": "公式サイト",
-      "portalUrl": "https://ryoma-marathon.jp/"
-    },
     "venue": {
       "name": "桂浜〜仁淀川河口大橋",
       "mapQuery": "高知県 桂浜〜仁淀川河口大橋"
-    },
-    "entry_start_date": "2026-09-11"
+    }
   },
   {
     "id": "shimanto-dragon-ride-2026",
@@ -4841,21 +4639,21 @@
     "distance_km": 135,
     "elevation_m": 1650,
     "entry_status": "closing_soon",
+    "entry_start_date": "2026-09-16",
     "entry_deadline": "2026-11-15",
+    "entry_fee": "10,000円",
     "links": {
       "official": "https://cycling.hata-kochi.jp/",
       "entry": "https://cycling.hata-kochi.jp/event/",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
-      "official_fallback": false,
-      "entry_fallback": false,
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
     "mandatory_gear": [
       {
         "name": "JCF公認サイクルヘルメット＆グローブ",
-        "category": "ギア"
+        "category": "ウェア"
       },
       {
         "name": "高輝度フロントライト＆リアレッドライト（トンネル通過必須）",
@@ -4863,7 +4661,7 @@
       },
       {
         "name": "携帯マルチツール・予備チューブ2本・タイヤレバー・携帯ポンプ",
-        "category": "リペア"
+        "category": "ギア"
       },
       {
         "name": "サイクルボトル水分＆高カロリー補給食",
@@ -4874,16 +4672,10 @@
         "category": "ウェア"
       }
     ],
-    "entry_fee": "10,000円",
-    "source": {
-      "portalName": "スポーツエントリー",
-      "portalUrl": "https://www.sportsentry.ne.jp/cycle/10/3"
-    },
     "venue": {
       "name": "清流四万十川＆足摺岬 ロングライド 135km",
       "mapQuery": "高知県 清流四万十川＆足摺岬 ロングライド 135km"
-    },
-    "entry_start_date": "2026-09-16"
+    }
   },
   {
     "id": "niyodogawa-blue-ride-2026",
@@ -4900,21 +4692,21 @@
     "distance_km": 110,
     "elevation_m": 1300,
     "entry_status": "closed",
+    "entry_start_date": "2026-06-26",
     "entry_deadline": "2026-08-25",
+    "entry_fee": "10,000円",
     "links": {
       "official": "https://cycle.spoen.jp/",
       "entry": "https://cycle.spoen.jp/",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
-      "official_fallback": false,
-      "entry_fallback": false,
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
     "mandatory_gear": [
       {
         "name": "JCF公認サイクルヘルメット＆グローブ",
-        "category": "ギア"
+        "category": "ウェア"
       },
       {
         "name": "高輝度フロントライト＆リアレッドライト（トンネル通過必須）",
@@ -4922,7 +4714,7 @@
       },
       {
         "name": "携帯マルチツール・予備チューブ2本・タイヤレバー・携帯ポンプ",
-        "category": "リペア"
+        "category": "ギア"
       },
       {
         "name": "サイクルボトル水分＆高カロリー補給食",
@@ -4933,12 +4725,10 @@
         "category": "ウェア"
       }
     ],
-    "entry_fee": "10,000円",
-    "source": {
-      "portalName": "スポエンCYCLE",
-      "portalUrl": "https://cycle.spoen.jp/"
-    },
-    "entry_start_date": "2026-06-26"
+    "venue": {
+      "name": "",
+      "mapQuery": "高知県 "
+    }
   },
   {
     "id": "hasetsune-cup-2026",
@@ -4957,12 +4747,14 @@
     "distance_km": 72,
     "elevation_m": 4582,
     "entry_status": "closed",
+    "entry_start_date": "2026-06-01",
     "entry_deadline": "2026-06-01",
+    "entry_fee": "18,000円",
     "links": {
       "official": "https://www.hasetsune.jp/",
       "entry": "https://www.hasetsune.jp/",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/hasetsune_cup",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -4988,16 +4780,10 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "18,000円",
-    "source": {
-      "portalName": "公式サイト",
-      "portalUrl": "https://www.hasetsune.org/"
-    },
     "venue": {
       "name": "24時間以内",
       "mapQuery": "東京都 24時間以内"
-    },
-    "entry_start_date": "2026-06-01"
+    }
   },
   {
     "id": "izu-trail-journey-2026",
@@ -5015,12 +4801,14 @@
     "distance_km": 70,
     "elevation_m": 3200,
     "entry_status": "closed",
+    "entry_start_date": "2026-07-02",
     "entry_deadline": "2026-08-31",
+    "entry_fee": "16,000円",
     "links": {
       "official": "https://www.izutrailjourney.com/",
       "entry": "https://www.izutrailjourney.com/",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/izutrailjourney",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -5046,16 +4834,10 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "16,000円",
-    "source": {
-      "portalName": "公式サイト",
-      "portalUrl": "https://www.izutrailjourney.com/"
-    },
     "venue": {
       "name": "ITJ 70km 松崎〜修善寺",
       "mapQuery": "静岡県 ITJ 70km 松崎〜修善寺"
-    },
-    "entry_start_date": "2026-07-02"
+    }
   },
   {
     "id": "kaga-spa-trail-utmb-2026",
@@ -5074,12 +4856,14 @@
     "distance_km": 100,
     "elevation_m": 6100,
     "entry_status": "closed",
+    "entry_start_date": "2026-01-30",
     "entry_deadline": "2026-03-31",
+    "entry_fee": "24,000円",
     "links": {
       "official": "https://www.yamanaka-spa.or.jp/",
       "entry": "https://www.yamanaka-spa.or.jp/",
-      "review": "https://dogsorcaravan.com/",
-      "sns": "https://x.com/UTMBWorldSeries",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -5093,8 +4877,12 @@
         "category": "ライト"
       },
       {
-        "name": "GPXトラック収録GPSウォッチ（SUUNTO/GARMIN等）",
+        "name": "GPXトラック収録GPSウォッチ（SUUNTO",
         "category": "ナビゲーション"
+      },
+      {
+        "name": "GARMIN等）",
+        "category": "ギア"
       },
       {
         "name": "エマージェンシーサバイバルシート（130×200cm以上）＆ホイッスル",
@@ -5109,17 +4897,10 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "24,000円",
-    "source": {
-      "portalName": "公式サイト",
-      "portalUrl": "https://kagaspa.utmb.world/"
-    },
     "venue": {
       "name": "石川 加賀温泉郷 100km",
       "mapQuery": "石川県 石川 加賀温泉郷 100km"
-    },
-    "end_date": "2026-06-21",
-    "entry_start_date": "2026-01-30"
+    }
   },
   {
     "id": "utsukushigahara-trail-2026",
@@ -5137,12 +4918,14 @@
     "distance_km": 90,
     "elevation_m": 4500,
     "entry_status": "closed",
+    "entry_start_date": "2026-04-16",
     "entry_deadline": "2026-06-15",
+    "entry_fee": "16,000円",
     "links": {
       "official": "https://utsukushigahara-trail.jp/",
       "entry": "https://utsukushigahara-trail.jp/",
-      "review": "https://runnet.jp/",
-      "sns": "https://www.facebook.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -5168,16 +4951,10 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "16,000円",
-    "source": {
-      "portalName": "公式サイト",
-      "portalUrl": "https://utsukushigahara-trail.jp/"
-    },
     "venue": {
       "name": "長野 長和町 90kmロング",
       "mapQuery": "長野県 長野 長和町 90kmロング"
-    },
-    "entry_start_date": "2026-04-16"
+    }
   },
   {
     "id": "aso-volcano-trail-2026",
@@ -5196,12 +4973,14 @@
     "distance_km": 112,
     "elevation_m": 5600,
     "entry_status": "closed",
+    "entry_start_date": "2026-01-19",
     "entry_deadline": "2026-03-20",
+    "entry_fee": "24,000円",
     "links": {
       "official": "https://aso-field-run.jp/volcano/",
       "entry": "https://aso-field-run.jp/volcano/",
-      "review": "https://dogsorcaravan.com/",
-      "sns": "https://www.facebook.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -5215,8 +4994,12 @@
         "category": "ライト"
       },
       {
-        "name": "GPXトラック収録GPSウォッチ（SUUNTO/GARMIN等）",
+        "name": "GPXトラック収録GPSウォッチ（SUUNTO",
         "category": "ナビゲーション"
+      },
+      {
+        "name": "GARMIN等）",
+        "category": "ギア"
       },
       {
         "name": "エマージェンシーサバイバルシート（130×200cm以上）＆ホイッスル",
@@ -5231,17 +5014,10 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "24,000円",
-    "source": {
-      "portalName": "公式サイト",
-      "portalUrl": "https://universal-field.com/"
-    },
     "venue": {
       "name": "阿蘇ボルケーノトレイル 112km",
       "mapQuery": "熊本県 阿蘇ボルケーノトレイル 112km"
-    },
-    "end_date": "2026-05-10",
-    "entry_start_date": "2026-01-19"
+    }
   },
   {
     "id": "hiraodai-trail-2026",
@@ -5258,12 +5034,14 @@
     "distance_km": 40,
     "elevation_m": 2150,
     "entry_status": "closed",
+    "entry_start_date": "2026-01-04",
     "entry_deadline": "2026-03-05",
+    "entry_fee": "11,000円",
     "links": {
       "official": "https://hiraodai-trail.com/",
       "entry": "https://hiraodai-trail.com/",
-      "review": "https://runnet.jp/",
-      "sns": "https://www.facebook.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -5285,16 +5063,10 @@
         "category": "ギア"
       }
     ],
-    "entry_fee": "11,000円",
-    "source": {
-      "portalName": "公式サイト",
-      "portalUrl": "https://hiraodai-trail.com/"
-    },
     "venue": {
       "name": "福岡 北九州市 40km",
       "mapQuery": "福岡県 福岡 北九州市 40km"
-    },
-    "entry_start_date": "2026-01-04"
+    }
   },
   {
     "id": "kyoto-grand-traverse-2026",
@@ -5311,14 +5083,14 @@
     "distance_km": 60,
     "elevation_m": 2800,
     "entry_status": "closed",
+    "entry_start_date": "2025-12-17",
     "entry_deadline": "2026-02-15",
+    "entry_fee": "16,000円",
     "links": {
       "official": "https://moshicom.com/search/?keyword=%E4%BA%AC%E9%83%BD%E3%82%B0%E3%83%A9%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%90%E3%83%BC%E3%82%B9",
       "entry": "https://moshicom.com/search/?keyword=%E4%BA%AC%E9%83%BD%E3%82%B0%E3%83%A9%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%90%E3%83%BC%E3%82%B9",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
-      "official_fallback": true,
-      "entry_fallback": true,
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -5344,16 +5116,10 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "16,000円",
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search/?keyword=%E4%BA%AC%E9%83%BD%E3%82%B0%E3%83%A9%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%90%E3%83%BC%E3%82%B9"
-    },
     "venue": {
       "name": "東山 北山 60km",
       "mapQuery": "京都府 東山 北山 60km"
-    },
-    "entry_start_date": "2025-12-17"
+    }
   },
   {
     "id": "kumano-old-trail-2026",
@@ -5370,14 +5136,14 @@
     "distance_km": 50,
     "elevation_m": 3100,
     "entry_status": "closed",
+    "entry_start_date": "2026-08-21",
     "entry_deadline": "2026-10-20",
+    "entry_fee": "11,000円",
     "links": {
       "official": "https://moshicom.com/search/?keyword=KUMANO%20OLD",
       "entry": "https://moshicom.com/search/?keyword=KUMANO%20OLD",
-      "review": "https://runnet.jp/",
-      "sns": "https://www.facebook.com/",
-      "official_fallback": true,
-      "entry_fallback": true,
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -5403,16 +5169,10 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "11,000円",
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search/?keyword=KUMANO%20OLD"
-    },
     "venue": {
       "name": "世界遺産 熊野古道トレイルラン 50km",
       "mapQuery": "三重県 世界遺産 熊野古道トレイルラン 50km"
-    },
-    "entry_start_date": "2026-08-21"
+    }
   },
   {
     "id": "ikko-diamond-trail-2026",
@@ -5429,14 +5189,14 @@
     "distance_km": 36,
     "elevation_m": 2200,
     "entry_status": "closed",
+    "entry_start_date": "2026-01-09",
     "entry_deadline": "2026-03-10",
+    "entry_fee": "11,000円",
     "links": {
       "official": "https://moshicom.com/search/?keyword=%E5%A4%A7%E9%98%AA%E5%BA%9C%E3%83%81%E3%83%A3%E3%83%AC%E3%83%B3%E3%82%B8%E7%99%BB%E5%B1%B1%E5%A4%A7%E4%BC%9A",
       "entry": "https://moshicom.com/search/?keyword=%E5%A4%A7%E9%98%AA%E5%BA%9C%E3%83%81%E3%83%A3%E3%83%AC%E3%83%B3%E3%82%B8%E7%99%BB%E5%B1%B1%E5%A4%A7%E4%BC%9A",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
-      "official_fallback": true,
-      "entry_fallback": true,
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -5458,16 +5218,10 @@
         "category": "ギア"
       }
     ],
-    "entry_fee": "11,000円",
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search/?keyword=%E5%A4%A7%E9%98%AA%E5%BA%9C%E3%83%81%E3%83%A3%E3%83%AC%E3%83%B3%E3%82%B8%E7%99%BB%E5%B1%B1%E5%A4%A7%E4%BC%9A"
-    },
     "venue": {
       "name": "ダイヤモンドトレール縦走 36km",
       "mapQuery": "大阪府 ダイヤモンドトレール縦走 36km"
-    },
-    "entry_start_date": "2026-01-09"
+    }
   },
   {
     "id": "wakasa-michinoku-100km-trail-2026",
@@ -5486,12 +5240,14 @@
     "distance_km": 100,
     "elevation_m": 5800,
     "entry_status": "closed",
+    "entry_start_date": "2026-07-17",
     "entry_deadline": "2026-09-15",
+    "entry_fee": "24,000円",
     "links": {
       "official": "https://moshicom.com/search?keyword=%E3%81%8A%E3%81%8A%E3%81%84%E7%94%BA%E3%83%BB%E8%8B%A5%E7%8B%AD%E8%B7%AF%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%E3%83%A9%E3%83%B3%20100km",
       "entry": "https://moshicom.com/search?keyword=%E3%81%8A%E3%81%8A%E3%81%84%E7%94%BA",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -5517,17 +5273,10 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "24,000円",
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search?keyword=%E3%81%8A%E3%81%8A%E3%81%84%E7%94%BA"
-    },
     "venue": {
       "name": "福井",
       "mapQuery": "福井県 福井"
-    },
-    "end_date": "2026-10-25",
-    "entry_start_date": "2026-07-17"
+    }
   },
   {
     "id": "zao-skyrun-vertical-2026",
@@ -5544,12 +5293,14 @@
     "distance_km": 28,
     "elevation_m": 2200,
     "entry_status": "closed",
+    "entry_start_date": "2026-06-06",
     "entry_deadline": "2026-08-05",
+    "entry_fee": "6,500円",
     "links": {
       "official": "https://moshicom.com/search?keyword=%E8%94%B5%E7%8E%8B%E3%82%B9%E3%82%AB%E3%82%A4%E3%83%AC%E3%83%BC%E3%82%B9",
       "entry": "https://moshicom.com/search?keyword=%E8%94%B5%E7%8E%8B%E3%82%B9%E3%82%AB%E3%82%A4",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -5571,16 +5322,10 @@
         "category": "ギア"
       }
     ],
-    "entry_fee": "6,500円",
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search?keyword=%E8%94%B5%E7%8E%8B%E3%82%B9%E3%82%AB%E3%82%A4"
-    },
     "venue": {
       "name": "ZAO SKYRUN お釜 熊野岳",
       "mapQuery": "山形県 ZAO SKYRUN お釜 熊野岳"
-    },
-    "entry_start_date": "2026-06-06"
+    }
   },
   {
     "id": "savas-fuji-mountain-race-2026",
@@ -5597,12 +5342,14 @@
     "distance_km": 21,
     "elevation_m": 3000,
     "entry_status": "closed",
+    "entry_start_date": "2026-01-30",
     "entry_deadline": "2026-03-31",
+    "entry_fee": "6,500円",
     "links": {
       "official": "https://fujimountainrace.city.fujiyoshida.yamanashi.jp/",
       "entry": "https://fujimountainrace.city.fujiyoshida.yamanashi.jp/",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -5624,16 +5371,10 @@
         "category": "ギア"
       }
     ],
-    "entry_fee": "6,500円",
-    "source": {
-      "portalName": "公式サイト",
-      "portalUrl": "https://fujimountainrace.city.fujiyoshida.yamanashi.jp/"
-    },
     "venue": {
       "name": "市役所〜富士山頂 21km D+3000m",
       "mapQuery": "山梨県 市役所〜富士山頂 21km D+3000m"
-    },
-    "entry_start_date": "2026-01-30"
+    }
   },
   {
     "id": "saroma-lake-100km-ultra-2026",
@@ -5651,12 +5392,14 @@
     "distance_km": 100,
     "elevation_m": 350,
     "entry_status": "closed",
+    "entry_start_date": "2025-12-17",
     "entry_deadline": "2026-02-15",
+    "entry_fee": "22,000円",
     "links": {
       "official": "https://saromanblue.jp/",
       "entry": "https://saromanblue.jp/",
-      "review": "https://runnet.jp/",
-      "sns": "https://www.facebook.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -5667,7 +5410,7 @@
       },
       {
         "name": "マイカップ（エイド給水用）＆ソフトフラスク",
-        "category": "ギア"
+        "category": "エイド"
       },
       {
         "name": "足攣り防止マグネシウムジェル（Mag-on等）・塩分タブレット",
@@ -5675,19 +5418,13 @@
       },
       {
         "name": "撥水ウインドシェル＆ワセリン・テーピング",
-        "category": "ウェア"
+        "category": "補給"
       }
     ],
-    "entry_fee": "22,000円",
-    "source": {
-      "portalName": "公式サイト",
-      "portalUrl": "https://saromanblue.jp/"
-    },
     "venue": {
       "name": "北海道 湧別〜北見〜佐呂間",
       "mapQuery": "北海道 北海道 湧別〜北見〜佐呂間"
-    },
-    "entry_start_date": "2025-12-17"
+    }
   },
   {
     "id": "challenger-fuji-5lakes-ultra-2027",
@@ -5705,12 +5442,16 @@
     "distance_km": 118,
     "elevation_m": 1250,
     "entry_status": "open",
+    "entry_start_date": "2026-12-02",
     "entry_deadline": "2027-01-31",
+    "entry_fee": "24,000円",
     "links": {
       "official": "https://www.r-wellness.com/fuji5/",
       "entry": "https://www.r-wellness.com/fuji5/",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/"
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-10-31"
     },
     "mandatory_gear": [
       {
@@ -5719,7 +5460,7 @@
       },
       {
         "name": "マイカップ（エイド給水用）＆ソフトフラスク",
-        "category": "ギア"
+        "category": "エイド"
       },
       {
         "name": "足攣り防止マグネシウムジェル（Mag-on等）・塩分タブレット",
@@ -5727,11 +5468,15 @@
       },
       {
         "name": "撥水ウインドシェル＆ワセリン・テーピング",
-        "category": "ウェア"
+        "category": "補給"
       },
       {
-        "name": "給水用マイボトル/マイカップ",
+        "name": "給水用マイボトル",
         "category": "補給"
+      },
+      {
+        "name": "マイカップ",
+        "category": "ギア"
       },
       {
         "name": "夜間点滅反射バンド＆テールライト",
@@ -5742,17 +5487,10 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "24,000円",
-    "source": {
-      "portalName": "公式サイト",
-      "portalUrl": "https://www.r-wellness.com/fuji5/"
-    },
     "venue": {
       "name": "富士北麓公園陸上競技場",
-      "address": "山梨県富士吉田市上吉田5000",
       "mapQuery": "富士北麓公園"
-    },
-    "entry_start_date": "2026-12-02"
+    }
   },
   {
     "id": "hidatakayama-ultra-100-2026",
@@ -5770,12 +5508,14 @@
     "distance_km": 100,
     "elevation_m": 2500,
     "entry_status": "closed",
+    "entry_start_date": "2026-01-30",
     "entry_deadline": "2026-03-31",
+    "entry_fee": "22,000円",
     "links": {
       "official": "https://www.r-wellness.com/takayama/",
       "entry": "https://www.r-wellness.com/takayama/",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -5786,7 +5526,7 @@
       },
       {
         "name": "マイカップ（エイド給水用）＆ソフトフラスク",
-        "category": "ギア"
+        "category": "エイド"
       },
       {
         "name": "足攣り防止マグネシウムジェル（Mag-on等）・塩分タブレット",
@@ -5794,19 +5534,13 @@
       },
       {
         "name": "撥水ウインドシェル＆ワセリン・テーピング",
-        "category": "ウェア"
+        "category": "補給"
       }
     ],
-    "entry_fee": "22,000円",
-    "source": {
-      "portalName": "公式サイト",
-      "portalUrl": "https://www.r-wellness.com/takayama/"
-    },
     "venue": {
       "name": "岐阜 高山市 D+2500m",
       "mapQuery": "岐阜県 岐阜 高山市 D+2500m"
-    },
-    "entry_start_date": "2026-01-30"
+    }
   },
   {
     "id": "yatsugatake-nobeyama-ultra-2026",
@@ -5824,12 +5558,14 @@
     "distance_km": 100,
     "elevation_m": 2100,
     "entry_status": "closed",
+    "entry_start_date": "2026-01-14",
     "entry_deadline": "2026-03-15",
+    "entry_fee": "22,000円",
     "links": {
       "official": "https://www.r-wellness.com/nobeyama/",
       "entry": "https://www.r-wellness.com/nobeyama/",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -5840,7 +5576,7 @@
       },
       {
         "name": "マイカップ（エイド給水用）＆ソフトフラスク",
-        "category": "ギア"
+        "category": "エイド"
       },
       {
         "name": "足攣り防止マグネシウムジェル（Mag-on等）・塩分タブレット",
@@ -5848,19 +5584,13 @@
       },
       {
         "name": "撥水ウインドシェル＆ワセリン・テーピング",
-        "category": "ウェア"
+        "category": "補給"
       }
     ],
-    "entry_fee": "22,000円",
-    "source": {
-      "portalName": "公式サイト",
-      "portalUrl": "https://www.r-wellness.com/nobeyama/"
-    },
     "venue": {
       "name": "長野",
       "mapQuery": "長野県 長野"
-    },
-    "entry_start_date": "2026-01-14"
+    }
   },
   {
     "id": "tango-100km-ultra-2026",
@@ -5878,12 +5608,14 @@
     "distance_km": 100,
     "elevation_m": 1450,
     "entry_status": "closed",
+    "entry_start_date": "2026-05-01",
     "entry_deadline": "2026-06-30",
+    "entry_fee": "22,000円",
     "links": {
       "official": "https://www.r-wellness.com/tango/",
       "entry": "https://www.r-wellness.com/tango/",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -5894,7 +5626,7 @@
       },
       {
         "name": "マイカップ（エイド給水用）＆ソフトフラスク",
-        "category": "ギア"
+        "category": "エイド"
       },
       {
         "name": "足攣り防止マグネシウムジェル（Mag-on等）・塩分タブレット",
@@ -5902,19 +5634,13 @@
       },
       {
         "name": "撥水ウインドシェル＆ワセリン・テーピング",
-        "category": "ウェア"
+        "category": "補給"
       }
     ],
-    "entry_fee": "22,000円",
-    "source": {
-      "portalName": "公式サイト",
-      "portalUrl": "https://www.r-wellness.com/tango/"
-    },
     "venue": {
       "name": "京丹後市",
       "mapQuery": "京都府 京丹後市"
-    },
-    "entry_start_date": "2026-05-01"
+    }
   },
   {
     "id": "akita-naisairiku-100km-ultra-2026",
@@ -5932,14 +5658,14 @@
     "distance_km": 100,
     "elevation_m": 1300,
     "entry_status": "closed",
+    "entry_start_date": "2026-05-16",
     "entry_deadline": "2026-07-15",
+    "entry_fee": "22,000円",
     "links": {
       "official": "https://moshicom.com/search/?keyword=%E7%A7%8B%E7%94%B0%E5%86%85%E9%99%B8%E3%83%AA%E3%82%BE%E3%83%BC%E3%83%88%E3%82%AB%E3%83%83%E3%83%97%20100%E3%82%AD%E3%83%AD%E3%83%81%E3%83%A3%E3%83%AC%E3%83%B3%E3%82%B8%E3%83%9E%E3%83%A9%E3%82%BD%E3%83%B3",
       "entry": "https://moshicom.com/search/?keyword=%E7%A7%8B%E7%94%B0%E5%86%85%E9%99%B8%E3%83%AA%E3%82%BE%E3%83%BC%E3%83%88%E3%82%AB%E3%83%83%E3%83%97%20100%E3%82%AD%E3%83%AD%E3%83%81%E3%83%A3%E3%83%AC%E3%83%B3%E3%82%B8%E3%83%9E%E3%83%A9%E3%82%BD%E3%83%B3",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
-      "official_fallback": true,
-      "entry_fallback": true,
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -5950,7 +5676,7 @@
       },
       {
         "name": "マイカップ（エイド給水用）＆ソフトフラスク",
-        "category": "ギア"
+        "category": "エイド"
       },
       {
         "name": "足攣り防止マグネシウムジェル（Mag-on等）・塩分タブレット",
@@ -5958,15 +5684,13 @@
       },
       {
         "name": "撥水ウインドシェル＆ワセリン・テーピング",
-        "category": "ウェア"
+        "category": "補給"
       }
     ],
-    "entry_fee": "22,000円",
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search/?keyword=%E7%A7%8B%E7%94%B0%E5%86%85%E9%99%B8%E3%83%AA%E3%82%BE%E3%83%BC%E3%83%88%E3%82%AB%E3%83%83%E3%83%97%20100%E3%82%AD%E3%83%AD%E3%83%81%E3%83%A3%E3%83%AC%E3%83%B3%E3%82%B8%E3%83%9E%E3%83%A9%E3%82%BD%E3%83%B3"
-    },
-    "entry_start_date": "2026-05-16"
+    "venue": {
+      "name": "",
+      "mapQuery": "秋田県 "
+    }
   },
   {
     "id": "tour-de-okinawa-2026",
@@ -5983,19 +5707,21 @@
     "distance_km": 200,
     "elevation_m": 2600,
     "entry_status": "closing_soon",
+    "entry_start_date": "2026-08-01",
     "entry_deadline": "2026-11-05",
+    "entry_fee": "13,000円",
     "links": {
       "official": "https://www.tour-de-okinawa.jp/",
       "entry": "https://www.tour-de-okinawa.jp/",
-      "review": "https://www.sportsentry.ne.jp/",
-      "sns": "https://www.facebook.com/tourdeokinawa",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
     "mandatory_gear": [
       {
         "name": "JCF公認サイクルヘルメット＆グローブ",
-        "category": "ギア"
+        "category": "ウェア"
       },
       {
         "name": "高輝度フロントライト＆リアレッドライト（トンネル通過必須）",
@@ -6003,7 +5729,7 @@
       },
       {
         "name": "携帯マルチツール・予備チューブ2本・タイヤレバー・携帯ポンプ",
-        "category": "リペア"
+        "category": "ギア"
       },
       {
         "name": "サイクルボトル水分＆高カロリー補給食",
@@ -6014,16 +5740,10 @@
         "category": "ウェア"
       }
     ],
-    "entry_fee": "13,000円",
-    "source": {
-      "portalName": "公式サイト",
-      "portalUrl": "https://www.tour-de-okinawa.jp/"
-    },
     "venue": {
       "name": "沖縄 名護市 市民レース200km",
       "mapQuery": "沖縄県 沖縄 名護市 市民レース200km"
-    },
-    "entry_start_date": "2026-08-01"
+    }
   },
   {
     "id": "mt-fuji-hillclimb-2026",
@@ -6040,19 +5760,21 @@
     "distance_km": 24,
     "elevation_m": 1255,
     "entry_status": "closed",
+    "entry_start_date": "2026-02-09",
     "entry_deadline": "2027-03-31",
+    "entry_fee": "7,000円",
     "links": {
       "official": "https://www.fujihc.jp/",
       "entry": "https://www.fujihc.jp/",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
     "mandatory_gear": [
       {
         "name": "JCF公認サイクルヘルメット＆グローブ",
-        "category": "ギア"
+        "category": "ウェア"
       },
       {
         "name": "高輝度フロントライト＆リアレッドライト（トンネル通過必須）",
@@ -6060,7 +5782,7 @@
       },
       {
         "name": "携帯マルチツール・予備チューブ2本・タイヤレバー・携帯ポンプ",
-        "category": "リペア"
+        "category": "ギア"
       },
       {
         "name": "サイクルボトル水分＆高カロリー補給食",
@@ -6071,16 +5793,10 @@
         "category": "ウェア"
       }
     ],
-    "entry_fee": "7,000円",
-    "source": {
-      "portalName": "公式サイト",
-      "portalUrl": "https://funride.jp/events/mt-fujihc/"
-    },
     "venue": {
       "name": "富士スバルライン 24km D+1255m",
       "mapQuery": "山梨県 富士スバルライン 24km D+1255m"
-    },
-    "entry_start_date": "2026-02-09"
+    }
   },
   {
     "id": "sado-long-ride-210-2026",
@@ -6097,19 +5813,21 @@
     "distance_km": 210,
     "elevation_m": 1850,
     "entry_status": "closed",
+    "entry_start_date": "2026-02-09",
     "entry_deadline": "2026-04-10",
+    "entry_fee": "13,000円",
     "links": {
       "official": "https://www.sado-longride.com/",
       "entry": "https://www.sado-longride.com/",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
     "mandatory_gear": [
       {
         "name": "JCF公認サイクルヘルメット＆グローブ",
-        "category": "ギア"
+        "category": "ウェア"
       },
       {
         "name": "高輝度フロントライト＆リアレッドライト（トンネル通過必須）",
@@ -6117,7 +5835,7 @@
       },
       {
         "name": "携帯マルチツール・予備チューブ2本・タイヤレバー・携帯ポンプ",
-        "category": "リペア"
+        "category": "ギア"
       },
       {
         "name": "サイクルボトル水分＆高カロリー補給食",
@@ -6128,16 +5846,10 @@
         "category": "ウェア"
       }
     ],
-    "entry_fee": "13,000円",
-    "source": {
-      "portalName": "公式サイト",
-      "portalUrl": "https://www.sado-longride.com/"
-    },
     "venue": {
       "name": "新潟 佐渡島一周 210km",
       "mapQuery": "新潟県 新潟 佐渡島一周 210km"
-    },
-    "entry_start_date": "2026-02-09"
+    }
   },
   {
     "id": "niseko-classic-150km-2026",
@@ -6154,19 +5866,21 @@
     "distance_km": 150,
     "elevation_m": 2480,
     "entry_status": "closed",
+    "entry_start_date": "2026-03-11",
     "entry_deadline": "2026-05-10",
+    "entry_fee": "13,000円",
     "links": {
       "official": "https://nisekoclassic.com/",
       "entry": "https://nisekoclassic.com/",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
     "mandatory_gear": [
       {
         "name": "JCF公認サイクルヘルメット＆グローブ",
-        "category": "ギア"
+        "category": "ウェア"
       },
       {
         "name": "高輝度フロントライト＆リアレッドライト（トンネル通過必須）",
@@ -6174,7 +5888,7 @@
       },
       {
         "name": "携帯マルチツール・予備チューブ2本・タイヤレバー・携帯ポンプ",
-        "category": "リペア"
+        "category": "ギア"
       },
       {
         "name": "サイクルボトル水分＆高カロリー補給食",
@@ -6185,16 +5899,10 @@
         "category": "ウェア"
       }
     ],
-    "entry_fee": "13,000円",
-    "source": {
-      "portalName": "公式サイト",
-      "portalUrl": "https://nisekoclassic.com/"
-    },
     "venue": {
       "name": "ニセコクラシック 150km / UCI GFWS",
       "mapQuery": "北海道 ニセコクラシック 150km / UCI GFWS"
-    },
-    "entry_start_date": "2026-03-11"
+    }
   },
   {
     "id": "biwaichi-cycling-160-2026",
@@ -6211,21 +5919,21 @@
     "distance_km": 160,
     "elevation_m": 450,
     "entry_status": "closed",
+    "entry_start_date": "2026-07-02",
     "entry_deadline": "2026-08-31",
+    "entry_fee": "13,000円",
     "links": {
       "official": "https://cycle.spoen.jp/",
       "entry": "https://cycle.spoen.jp/",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
-      "official_fallback": false,
-      "entry_fallback": false,
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
     "mandatory_gear": [
       {
         "name": "JCF公認サイクルヘルメット＆グローブ",
-        "category": "ギア"
+        "category": "ウェア"
       },
       {
         "name": "高輝度フロントライト＆リアレッドライト（トンネル通過必須）",
@@ -6233,7 +5941,7 @@
       },
       {
         "name": "携帯マルチツール・予備チューブ2本・タイヤレバー・携帯ポンプ",
-        "category": "リペア"
+        "category": "ギア"
       },
       {
         "name": "サイクルボトル水分＆高カロリー補給食",
@@ -6244,16 +5952,10 @@
         "category": "ウェア"
       }
     ],
-    "entry_fee": "13,000円",
-    "source": {
-      "portalName": "スポエンCYCLE",
-      "portalUrl": "https://cycle.spoen.jp/"
-    },
     "venue": {
       "name": "ビワイチ 160km センチュリー",
       "mapQuery": "滋賀県 ビワイチ 160km センチュリー"
-    },
-    "entry_start_date": "2026-07-02"
+    }
   },
   {
     "id": "onomichi-shimanami-coastal-trail-2026",
@@ -6270,12 +5972,14 @@
     "distance_km": 38,
     "elevation_m": 1950,
     "entry_status": "closed",
+    "entry_start_date": "2026-08-26",
     "entry_deadline": "2026-10-25",
+    "entry_fee": "11,000円",
     "links": {
       "official": "https://moshicom.com/search?keyword=%E5%B0%BE%E9%81%93%E3%83%BB%E5%9B%A0%E5%B3%B6%E3%83%BB%E7%80%AC%E6%88%B8%E7%94%B0%20%E3%81%97%E3%81%BE%E3%81%AA%E3%81%BF%E3%82%A2%E3%82%A4%E3%83%A9%E3%83%B3%E3%83%89%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB",
       "entry": "https://moshicom.com/search?keyword=%E5%B0%BE%E9%81%93",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -6297,16 +6001,10 @@
         "category": "ギア"
       }
     ],
-    "entry_fee": "11,000円",
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search?keyword=%E5%B0%BE%E9%81%93"
-    },
     "venue": {
       "name": "尾道市",
       "mapQuery": "広島県 尾道市"
-    },
-    "entry_start_date": "2026-08-26"
+    }
   },
   {
     "id": "bizen-oni-trail-okayama-2026",
@@ -6323,12 +6021,14 @@
     "distance_km": 34,
     "elevation_m": 1800,
     "entry_status": "closing_soon",
+    "entry_start_date": "2026-09-16",
     "entry_deadline": "2026-11-15",
+    "entry_fee": "11,000円",
     "links": {
       "official": "https://moshicom.com/search?keyword=%E5%82%99%E5%89%8D%E3%83%BB%E7%B7%8F%E7%A4%BE%20%E9%AC%BC%E3%83%8E%E5%9F%8E%E5%8F%A4%E4%BB%A3%E5%B1%B1%E5%9F%8E%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%E3%83%A9%E3%83%B3",
       "entry": "https://moshicom.com/search?keyword=%E5%82%99%E5%89%8D",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -6350,16 +6050,10 @@
         "category": "ギア"
       }
     ],
-    "entry_fee": "11,000円",
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search?keyword=%E5%82%99%E5%89%8D"
-    },
     "venue": {
       "name": "きのじょう",
       "mapQuery": "岡山県 きのじょう"
-    },
-    "entry_start_date": "2026-09-16"
+    }
   },
   {
     "id": "nagato-tawarayama-trail-2026",
@@ -6376,12 +6070,14 @@
     "distance_km": 30,
     "elevation_m": 1650,
     "entry_status": "closed",
+    "entry_start_date": "2026-08-16",
     "entry_deadline": "2026-10-15",
+    "entry_fee": "11,000円",
     "links": {
       "official": "https://moshicom.com/search?keyword=%E9%95%B7%E9%96%80%E3%83%BB%E4%BF%B5%E5%B1%B1%E6%B8%A9%E6%B3%89%E3%83%9E%E3%82%A6%E3%83%B3%E3%83%86%E3%83%B3%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB",
       "entry": "https://moshicom.com/search?keyword=%E9%95%B7%E9%96%80",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -6403,16 +6099,10 @@
         "category": "ギア"
       }
     ],
-    "entry_fee": "11,000円",
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search?keyword=%E9%95%B7%E9%96%80"
-    },
     "venue": {
       "name": "長門市",
       "mapQuery": "山口県 長門市"
-    },
-    "entry_start_date": "2026-08-16"
+    }
   },
   {
     "id": "sanuki-kotohira-konpira-trail-2026",
@@ -6429,12 +6119,14 @@
     "distance_km": 28,
     "elevation_m": 1600,
     "entry_status": "closing_soon",
+    "entry_start_date": "2026-09-21",
     "entry_deadline": "2026-11-20",
+    "entry_fee": "6,500円",
     "links": {
       "official": "https://moshicom.com/search?keyword=%E3%81%95%E3%81%AC%E3%81%8D%E3%83%BB%E3%81%93%E3%82%93%E3%81%B4%E3%82%89%E5%B1%B1%E5%B2%B3%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%EF%BC%86%E7%9F%B3%E6%AE%B5%E3%82%AF%E3%83%A9%E3%82%A4%E3%83%A0",
       "entry": "https://moshicom.com/search?keyword=%E3%81%95%E3%81%AC%E3%81%8D",
-      "review": "https://runnet.jp/",
-      "sns": "https://x.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -6456,16 +6148,10 @@
         "category": "ギア"
       }
     ],
-    "entry_fee": "6,500円",
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search?keyword=%E3%81%95%E3%81%AC%E3%81%8D"
-    },
     "venue": {
       "name": "琴平町",
       "mapQuery": "香川県 琴平町"
-    },
-    "entry_start_date": "2026-09-21"
+    }
   },
   {
     "id": "kochi-navigms-winter-2026",
@@ -6484,12 +6170,14 @@
     "distance_km": 20,
     "elevation_m": 650,
     "entry_status": "open",
+    "entry_start_date": "2026-10-01",
     "entry_deadline": "2026-11-30",
+    "entry_fee": "4,500円",
     "links": {
       "official": "https://kochi-navigms.com/",
       "entry": "https://kochi-navigms.com/",
-      "review": "https://kochi-navigms.com/",
-      "sns": "https://kochi-navigms.com/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -6500,7 +6188,7 @@
       },
       {
         "name": "デジタルカメラまたはスマートフォン（CP撮影・集計用）",
-        "category": "ナビゲーション"
+        "category": "ギア"
       },
       {
         "name": "ゴアテックス等 防水透湿レインジャケット",
@@ -6515,12 +6203,10 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "4,500円",
-    "source": {
-      "portalName": "公式サイト",
-      "portalUrl": "https://kochi-navigms.com/"
-    },
-    "entry_start_date": "2026-10-01"
+    "venue": {
+      "name": "",
+      "mapQuery": "高知県 "
+    }
   },
   {
     "id": "nikko-mountain-2026",
@@ -6537,14 +6223,17 @@
     "prefecture": "栃木県",
     "distance_km": 56,
     "elevation_m": 2900,
-    "entry_fee": "15,000円",
     "entry_status": "closed",
+    "entry_start_date": "2026-08-11",
     "entry_deadline": "2026-10-10",
+    "entry_fee": "15,000円",
     "links": {
       "official": "https://moshicom.com/search/?keyword=%E6%97%A5%E5%85%89%E5%9B%BD%E7%AB%8B%E5%85%AC%E5%9C%92%E3%83%9E%E3%82%A6%E3%83%B3%E3%83%86%E3%83%B3%E3%83%A9%E3%83%B3%E3%83%8B%E3%83%B3%E3%82%B0",
       "entry": "https://moshicom.com/search/?keyword=%E6%97%A5%E5%85%89%E5%9B%BD%E7%AB%8B%E5%85%AC%E5%9C%92%E3%83%9E%E3%82%A6%E3%83%B3%E3%83%86%E3%83%B3%E3%83%A9%E3%83%B3%E3%83%8B%E3%83%B3%E3%82%B0",
-      "review": "https://runnet.jp/",
-      "sns": "https://www.facebook.com/nikkomountainrunning/"
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-10-31"
     },
     "mandatory_gear": [
       {
@@ -6564,11 +6253,10 @@
         "category": "エイド"
       }
     ],
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search/?keyword=%E6%97%A5%E5%85%89%E5%9B%BD%E7%AB%8B%E5%85%AC%E5%9C%92%E3%83%9E%E3%82%A6%E3%83%B3%E3%83%86%E3%83%B3%E3%83%A9%E3%83%B3%E3%83%8B%E3%83%B3%E3%82%B0"
-    },
-    "entry_start_date": "2026-08-11"
+    "venue": {
+      "name": "",
+      "mapQuery": "栃木県 "
+    }
   },
   {
     "id": "shiga-kogen-100-2026",
@@ -6586,14 +6274,17 @@
     "prefecture": "長野県",
     "distance_km": 100,
     "elevation_m": 5400,
-    "entry_fee": "26,000円",
     "entry_status": "closed",
+    "entry_start_date": "2026-04-16",
     "entry_deadline": "2026-06-15",
+    "entry_fee": "26,000円",
     "links": {
       "official": "https://nature-scene.net/shiga100/",
       "entry": "https://nature-scene.net/shiga100/",
-      "review": "https://runnet.jp/",
-      "sns": "https://www.instagram.com/shigakogen100/"
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-10-31"
     },
     "mandatory_gear": [
       {
@@ -6606,7 +6297,7 @@
       },
       {
         "name": "SOLエマージェンシーヴィヴィ",
-        "category": "エイド"
+        "category": "ギア"
       },
       {
         "name": "防寒用長袖フリースまたはダウン",
@@ -6617,12 +6308,10 @@
         "category": "ナビゲーション"
       }
     ],
-    "source": {
-      "portalName": "公式サイト",
-      "portalUrl": "https://nature-scene.net/shiga100/"
-    },
-    "end_date": "2026-07-12",
-    "entry_start_date": "2026-04-16"
+    "venue": {
+      "name": "",
+      "mapQuery": "長野県 "
+    }
   },
   {
     "id": "forest-trail-tango-2026",
@@ -6639,16 +6328,15 @@
     "prefecture": "京都府",
     "distance_km": 54,
     "elevation_m": 2600,
-    "entry_fee": "14,000円",
     "entry_status": "closed",
+    "entry_start_date": "2026-07-22",
     "entry_deadline": "2026-09-20",
+    "entry_fee": "14,000円",
     "links": {
       "official": "https://moshicom.com/search/?keyword=FOREST%20TRAIL",
       "entry": "https://moshicom.com/search/?keyword=FOREST%20TRAIL",
-      "review": "https://runnet.jp/",
-      "sns": "https://www.facebook.com/foresttrail.tango/",
-      "official_fallback": true,
-      "entry_fallback": true,
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -6670,11 +6358,10 @@
         "category": "ライト"
       }
     ],
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search/?keyword=FOREST%20TRAIL"
-    },
-    "entry_start_date": "2026-07-22"
+    "venue": {
+      "name": "",
+      "mapQuery": "京都府 "
+    }
   },
   {
     "id": "fairy-trail-takashima-2026",
@@ -6690,16 +6377,15 @@
     "prefecture": "滋賀県",
     "distance_km": 40,
     "elevation_m": 2100,
-    "entry_fee": "12,000円",
     "entry_status": "closed",
+    "entry_start_date": "2026-03-19",
     "entry_deadline": "2026-05-18",
+    "entry_fee": "12,000円",
     "links": {
       "official": "https://moshicom.com/search/?keyword=FAIRY%20TRAIL",
       "entry": "https://moshicom.com/search/?keyword=FAIRY%20TRAIL",
-      "review": "https://runnet.jp/",
-      "sns": "https://twitter.com/fairytrail",
-      "official_fallback": true,
-      "entry_fallback": true,
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -6721,11 +6407,10 @@
         "category": "ナビゲーション"
       }
     ],
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search/?keyword=FAIRY%20TRAIL"
-    },
-    "entry_start_date": "2026-03-19"
+    "venue": {
+      "name": "",
+      "mapQuery": "滋賀県 "
+    }
   },
   {
     "id": "kumano-kodo-trail-2026",
@@ -6742,14 +6427,15 @@
     "prefecture": "三重県",
     "distance_km": 50,
     "elevation_m": 2800,
-    "entry_fee": "13,500円",
     "entry_status": "closing_soon",
+    "entry_start_date": "2026-09-01",
     "entry_deadline": "2026-10-31",
+    "entry_fee": "13,500円",
     "links": {
       "official": "http://kumanooldtrails.com/",
       "entry": "http://kumanooldtrails.com/",
-      "review": "https://runnet.jp/",
-      "sns": "https://www.facebook.com/kumanokodotrail/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -6771,11 +6457,10 @@
         "category": "ライト"
       }
     ],
-    "source": {
-      "portalName": "公式サイト",
-      "portalUrl": "http://kumanooldtrails.com/"
-    },
-    "entry_start_date": "2026-09-01"
+    "venue": {
+      "name": "",
+      "mapQuery": "三重県 "
+    }
   },
   {
     "id": "grandfondo-kyoto-2026",
@@ -6791,16 +6476,15 @@
     "prefecture": "京都府",
     "distance_km": 130,
     "elevation_m": 1950,
-    "entry_fee": "11,000円",
     "entry_status": "closed",
+    "entry_start_date": "2026-02-19",
     "entry_deadline": "2026-04-20",
+    "entry_fee": "11,000円",
     "links": {
       "official": "https://cycle.spoen.jp/",
       "entry": "https://cycle.spoen.jp/",
-      "review": "https://runnet.jp/",
-      "sns": "https://www.facebook.com/grandfondokyoto/",
-      "official_fallback": false,
-      "entry_fallback": false,
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -6815,14 +6499,13 @@
       },
       {
         "name": "パンク修理チューブ2本＆携帯ツール",
-        "category": "リペア"
+        "category": "ギア"
       }
     ],
-    "source": {
-      "portalName": "スポエンCYCLE",
-      "portalUrl": "https://cycle.spoen.jp/"
-    },
-    "entry_start_date": "2026-02-19"
+    "venue": {
+      "name": "",
+      "mapQuery": "京都府 "
+    }
   },
   {
     "id": "hasetsune-30k-2026",
@@ -6839,16 +6522,15 @@
     "prefecture": "東京都",
     "distance_km": 32,
     "elevation_m": 2100,
-    "entry_fee": "11,000円",
     "entry_status": "closed",
+    "entry_start_date": "2025-12-12",
     "entry_deadline": "2026-02-10",
+    "entry_fee": "11,000円",
     "links": {
       "official": "https://moshicom.com/search/?keyword=%E3%83%8F%E3%82%BB%E3%83%84%E3%83%8D30K",
       "entry": "https://moshicom.com/search/?keyword=%E3%83%8F%E3%82%BB%E3%83%84%E3%83%8D30K",
-      "review": "https://runnet.jp/",
-      "sns": "https://www.facebook.com/hasetsune/",
-      "official_fallback": true,
-      "entry_fallback": true,
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -6870,11 +6552,10 @@
         "category": "エイド"
       }
     ],
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search/?keyword=%E3%83%8F%E3%82%BB%E3%83%84%E3%83%8D30K"
-    },
-    "entry_start_date": "2025-12-12"
+    "venue": {
+      "name": "",
+      "mapQuery": "東京都 "
+    }
   },
   {
     "id": "aso-round-trail-2026",
@@ -6892,14 +6573,17 @@
     "prefecture": "熊本県",
     "distance_km": 108,
     "elevation_m": 6800,
-    "entry_fee": "28,000円",
     "entry_status": "closed",
+    "entry_start_date": "2026-01-30",
     "entry_deadline": "2026-03-31",
+    "entry_fee": "28,000円",
     "links": {
       "official": "https://moshicom.com/search/?keyword=%E9%98%BF%E8%98%87%E3%83%A9%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB",
       "entry": "https://moshicom.com/search/?keyword=%E9%98%BF%E8%98%87%E3%83%A9%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB",
-      "review": "https://runnet.jp/",
-      "sns": "https://www.facebook.com/asoroundtrail/"
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-10-31"
     },
     "mandatory_gear": [
       {
@@ -6923,16 +6607,10 @@
         "category": "ナビゲーション"
       }
     ],
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search/?keyword=%E9%98%BF%E8%98%87%E3%83%A9%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB"
-    },
     "venue": {
       "name": "ART",
       "mapQuery": "熊本県 ART"
-    },
-    "end_date": "2026-05-10",
-    "entry_start_date": "2026-01-30"
+    }
   },
   {
     "id": "okumikawa-power-trail-2027",
@@ -6949,16 +6627,15 @@
     "prefecture": "愛知県",
     "distance_km": 70,
     "elevation_m": 4000,
-    "entry_fee": "19,000円",
     "entry_status": "open",
+    "entry_start_date": "2026-12-17",
     "entry_deadline": "2027-02-15",
+    "entry_fee": "19,000円",
     "links": {
       "official": "https://moshicom.com/search/?keyword=%E5%A5%A5%E4%B8%89%E6%B2%B3%E3%83%91%E3%83%AF%E3%83%BC%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB",
       "entry": "https://moshicom.com/search/?keyword=%E5%A5%A5%E4%B8%89%E6%B2%B3%E3%83%91%E3%83%AF%E3%83%BC%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB",
-      "review": "https://runnet.jp/",
-      "sns": "https://www.facebook.com/osjtrail/",
-      "official_fallback": true,
-      "entry_fallback": true,
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -6980,11 +6657,10 @@
         "category": "エイド"
       }
     ],
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search/?keyword=%E5%A5%A5%E4%B8%89%E6%B2%B3%E3%83%91%E3%83%AF%E3%83%BC%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB"
-    },
-    "entry_start_date": "2026-12-17"
+    "venue": {
+      "name": "",
+      "mapQuery": "愛知県 "
+    }
   },
   {
     "id": "saba-kaido-ultra-2026",
@@ -7001,16 +6677,15 @@
     "prefecture": "福井県",
     "distance_km": 77,
     "elevation_m": 1650,
-    "entry_fee": "14,000円",
     "entry_status": "closed",
+    "entry_start_date": "2026-12-30",
     "entry_deadline": "2027-02-28",
+    "entry_fee": "14,000円",
     "links": {
       "official": "https://saba-ultra.com/",
       "entry": "https://www.sportsentry.ne.jp/",
-      "review": "https://runnet.jp/",
-      "sns": "https://www.facebook.com/sabakaido/",
-      "official_fallback": true,
-      "entry_fallback": true,
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -7028,11 +6703,10 @@
         "category": "エイド"
       }
     ],
-    "source": {
-      "portalName": "スポーツエントリー",
-      "portalUrl": "https://www.sportsentry.ne.jp/event/t/鯖街道ウルトラマラソン"
-    },
-    "entry_start_date": "2026-12-30"
+    "venue": {
+      "name": "",
+      "mapQuery": "福井県 "
+    }
   },
   {
     "id": "zentsuji-gogaku-2027",
@@ -7048,16 +6722,15 @@
     "prefecture": "香川県",
     "distance_km": 45,
     "elevation_m": 3900,
-    "entry_fee": "10,000円",
     "entry_status": "open",
+    "entry_start_date": "2026-11-26",
     "entry_deadline": "2027-01-25",
+    "entry_fee": "10,000円",
     "links": {
       "official": "https://moshicom.com/search/?keyword=%E5%96%84%E9%80%9A%E5%AF%BA%E4%BA%94%E5%B2%B3%E5%B1%B1%E7%A9%BA%E6%B5%B7%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB",
       "entry": "https://moshicom.com/search/?keyword=%E5%96%84%E9%80%9A%E5%AF%BA%E4%BA%94%E5%B2%B3%E5%B1%B1%E7%A9%BA%E6%B5%B7%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB",
-      "review": "https://runnet.jp/",
-      "sns": "https://www.facebook.com/zentsujitrail/",
-      "official_fallback": true,
-      "entry_fallback": true,
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -7072,19 +6745,13 @@
       },
       {
         "name": "トレイルランニングシューズ",
-        "category": "ウェア"
+        "category": "ギア"
       }
     ],
     "venue": {
       "name": "善通寺五岳の里（市民集いの丘公園）",
-      "address": "香川県善通寺市吉原町918-1",
       "mapQuery": "善通寺五岳の里 市民集いの丘公園"
-    },
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search/?keyword=%E5%96%84%E9%80%9A%E5%AF%BA%E4%BA%94%E5%B2%B3%E5%B1%B1%E7%A9%BA%E6%B5%B7%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB"
-    },
-    "entry_start_date": "2026-11-26"
+    }
   },
   {
     "id": "niseko-ar-2026",
@@ -7103,16 +6770,15 @@
     "prefecture": "北海道",
     "distance_km": 65,
     "elevation_m": 2300,
-    "entry_fee": "16,000円",
     "entry_status": "closed",
+    "entry_start_date": "2026-06-01",
     "entry_deadline": "2026-07-31",
+    "entry_fee": "16,000円",
     "links": {
       "official": "https://moshicom.com/search/?keyword=%E3%83%8B%E3%82%BB%E3%82%B3%E3%82%A2%E3%83%89%E3%83%99%E3%83%B3%E3%83%81%E3%83%A3%E3%83%BC%E3%83%AC%E3%83%BC%E3%82%B9",
       "entry": "https://moshicom.com/search/?keyword=%E3%83%8B%E3%82%BB%E3%82%B3%E3%82%A2%E3%83%89%E3%83%99%E3%83%B3%E3%83%81%E3%83%A3%E3%83%BC%E3%83%AC%E3%83%BC%E3%82%B9",
       "review": null,
-      "sns": "https://www.facebook.com/nisekoadventure/",
-      "official_fallback": true,
-      "entry_fallback": true,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -7127,18 +6793,17 @@
       },
       {
         "name": "PFD（ライフジャケット）＆パドル",
-        "category": "ギア"
+        "category": "ウェア"
       },
       {
         "name": "ファーストエイドキット＆エマージェンシーシート",
         "category": "エイド"
       }
     ],
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search/?keyword=%E3%83%8B%E3%82%BB%E3%82%B3%E3%82%A2%E3%83%89%E3%83%99%E3%83%B3%E3%83%81%E3%83%A3%E3%83%BC%E3%83%AC%E3%83%BC%E3%82%B9"
-    },
-    "entry_start_date": "2026-06-01"
+    "venue": {
+      "name": "",
+      "mapQuery": "北海道 "
+    }
   },
   {
     "id": "michinoku-ar-2026",
@@ -7156,16 +6821,15 @@
     "prefecture": "岩手県",
     "distance_km": 55,
     "elevation_m": 1800,
-    "entry_fee": "14,000円",
     "entry_status": "closed",
+    "entry_start_date": "2026-05-01",
     "entry_deadline": "2026-06-30",
+    "entry_fee": "14,000円",
     "links": {
       "official": "https://moshicom.com/search/?keyword=%E3%81%BF%E3%81%A1%E3%81%AE%E3%81%8F%E3%82%A2%E3%83%89%E3%83%99%E3%83%B3%E3%83%81%E3%83%A3%E3%83%BC%E3%83%AC%E3%83%BC%E3%82%B9",
       "entry": "https://moshicom.com/search/?keyword=%E3%81%BF%E3%81%A1%E3%81%AE%E3%81%8F%E3%82%A2%E3%83%89%E3%83%99%E3%83%B3%E3%83%81%E3%83%A3%E3%83%BC%E3%83%AC%E3%83%BC%E3%82%B9",
       "review": null,
-      "sns": "https://www.facebook.com/michinoku.ar/",
-      "official_fallback": true,
-      "entry_fallback": true,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -7176,22 +6840,21 @@
       },
       {
         "name": "プレートコンパス＆防水マップケース",
-        "category": "ナビゲーション"
+        "category": "補給"
       },
       {
         "name": "リペア工具＆予備チューブ",
-        "category": "リペア"
+        "category": "ギア"
       },
       {
         "name": "救急包帯＆サバイバルシート",
         "category": "エイド"
       }
     ],
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search/?keyword=%E3%81%BF%E3%81%A1%E3%81%AE%E3%81%8F%E3%82%A2%E3%83%89%E3%83%99%E3%83%B3%E3%83%81%E3%83%A3%E3%83%BC%E3%83%AC%E3%83%BC%E3%82%B9"
-    },
-    "entry_start_date": "2026-05-01"
+    "venue": {
+      "name": "",
+      "mapQuery": "岩手県 "
+    }
   },
   {
     "id": "boso-rogaining-2026",
@@ -7208,16 +6871,15 @@
     "prefecture": "千葉県",
     "distance_km": 30,
     "elevation_m": 850,
-    "entry_fee": "5,000円",
     "entry_status": "closed",
+    "entry_start_date": "2026-08-26",
     "entry_deadline": "2026-10-25",
+    "entry_fee": "5,000円",
     "links": {
       "official": "https://moshicom.com/search/?keyword=%E6%88%BF%E7%B7%8F%E4%B8%98%E9%99%B5%E3%83%95%E3%82%A9%E3%83%AC%E3%82%B9%E3%83%88%E3%83%AD%E3%82%B2%E3%82%A4%E3%83%8B%E3%83%B3%E3%82%B0",
       "entry": "https://moshicom.com/search/?keyword=%E6%88%BF%E7%B7%8F%E4%B8%98%E9%99%B5%E3%83%95%E3%82%A9%E3%83%AC%E3%82%B9%E3%83%88%E3%83%AD%E3%82%B2%E3%82%A4%E3%83%8B%E3%83%B3%E3%82%B0",
       "review": null,
       "sns": null,
-      "official_fallback": true,
-      "entry_fallback": true,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -7235,11 +6897,10 @@
         "category": "ナビゲーション"
       }
     ],
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search/?keyword=%E6%88%BF%E7%B7%8F%E4%B8%98%E9%99%B5%E3%83%95%E3%82%A9%E3%83%AC%E3%82%B9%E3%83%88%E3%83%AD%E3%82%B2%E3%82%A4%E3%83%8B%E3%83%B3%E3%82%B0"
-    },
-    "entry_start_date": "2026-08-26"
+    "venue": {
+      "name": "",
+      "mapQuery": "千葉県 "
+    }
   },
   {
     "id": "azumino-rogaining-2026",
@@ -7256,16 +6917,15 @@
     "prefecture": "長野県",
     "distance_km": 35,
     "elevation_m": 600,
-    "entry_fee": "5,500円",
     "entry_status": "closed",
+    "entry_start_date": "2026-07-02",
     "entry_deadline": "2026-08-31",
+    "entry_fee": "5,500円",
     "links": {
       "official": "https://moshicom.com/search/?keyword=%E4%BF%A1%E5%B7%9E%E5%AE%89%E6%9B%87%E9%87%8E%E3%83%AD%E3%82%B2%E3%82%A4%E3%83%8B%E3%83%B3%E3%82%B0%E3%83%95%E3%82%A7%E3%82%B9%E3%83%86%E3%82%A3%E3%83%90%E3%83%AB",
       "entry": "https://moshicom.com/search/?keyword=%E4%BF%A1%E5%B7%9E%E5%AE%89%E6%9B%87%E9%87%8E%E3%83%AD%E3%82%B2%E3%82%A4%E3%83%8B%E3%83%B3%E3%82%B0%E3%83%95%E3%82%A7%E3%82%B9%E3%83%86%E3%82%A3%E3%83%90%E3%83%AB",
       "review": null,
-      "sns": "https://www.facebook.com/azuminorogaining/",
-      "official_fallback": true,
-      "entry_fallback": true,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -7276,18 +6936,17 @@
       },
       {
         "name": "デジタルカメラまたはスマートフォン（通過証明用）",
-        "category": "ナビゲーション"
+        "category": "ギア"
       },
       {
         "name": "健康保険証＆雨具",
         "category": "エイド"
       }
     ],
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search/?keyword=%E4%BF%A1%E5%B7%9E%E5%AE%89%E6%9B%87%E9%87%8E%E3%83%AD%E3%82%B2%E3%82%A4%E3%83%8B%E3%83%B3%E3%82%B0%E3%83%95%E3%82%A7%E3%82%B9%E3%83%86%E3%82%A3%E3%83%90%E3%83%AB"
-    },
-    "entry_start_date": "2026-07-02"
+    "venue": {
+      "name": "",
+      "mapQuery": "長野県 "
+    }
   },
   {
     "id": "kirishima-ebino-trail-2026",
@@ -7304,16 +6963,15 @@
     "prefecture": "宮崎県",
     "distance_km": 63,
     "elevation_m": 3200,
-    "entry_fee": "18,000円",
     "entry_status": "closed",
+    "entry_start_date": "2026-04-01",
     "entry_deadline": "2026-05-31",
+    "entry_fee": "18,000円",
     "links": {
       "official": "https://universal-field.com/",
       "entry": "https://moshicom.com/search/?keyword=%E9%9C%A7%E5%B3%B6%E3%83%BB%E3%81%88%E3%81%B3%E3%81%AE%E9%AB%98%E5%8E%9F%E3%82%A8%E3%82%AF%E3%82%B9%E3%83%88%E3%83%AA%E3%83%BC%E3%83%A0%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB",
       "review": null,
-      "sns": "https://www.facebook.com/kirishima.ebino.trail/",
-      "official_fallback": true,
-      "entry_fallback": true,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -7332,19 +6990,13 @@
       },
       {
         "name": "コースマップ＆健康保険証",
-        "category": "ナビゲーション"
+        "category": "エイド"
       }
     ],
-    "source": {
-      "portalName": "公式サイト",
-      "portalUrl": "https://universal-field.com/"
-    },
     "venue": {
       "name": "えびの高原ピクニック広場",
-      "address": "宮崎県えびの市末永",
       "mapQuery": "えびの高原ピクニック広場"
-    },
-    "entry_start_date": "2026-04-01"
+    }
   },
   {
     "id": "yakushima-adventure-2026",
@@ -7362,38 +7014,36 @@
     "prefecture": "鹿児島県",
     "distance_km": 48,
     "elevation_m": 1900,
-    "entry_fee": "18,000円",
     "entry_status": "closed",
+    "entry_start_date": "2026-07-17",
     "entry_deadline": "2026-09-15",
+    "entry_fee": "18,000円",
     "links": {
       "official": "https://moshicom.com/search/?keyword=%E5%B1%8B%E4%B9%85%E5%B3%B6%E3%82%A2%E3%82%A4%E3%83%A9%E3%83%B3%E3%83%89%E3%82%A2%E3%83%89%E3%83%99%E3%83%B3%E3%83%81%E3%83%A3%E3%83%BC",
       "entry": "https://moshicom.com/search/?keyword=%E5%B1%8B%E4%B9%85%E5%B3%B6%E3%82%A2%E3%82%A4%E3%83%A9%E3%83%B3%E3%83%89%E3%82%A2%E3%83%89%E3%83%99%E3%83%B3%E3%83%81%E3%83%A3%E3%83%BC",
       "review": null,
-      "sns": "https://www.facebook.com/yakushima.adventure/",
-      "official_fallback": true,
-      "entry_fallback": true,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
     "mandatory_gear": [
       {
         "name": "トレッキングシューズ＆雨具（屋久島豪雨対応）",
-        "category": "ウェア"
+        "category": "ギア"
       },
       {
         "name": "シルバコンパス＆防水マップケース",
-        "category": "ナビゲーション"
+        "category": "補給"
       },
       {
         "name": "ファーストエイド＆ヘッドランプ",
         "category": "ライト"
       }
     ],
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search/?keyword=%E5%B1%8B%E4%B9%85%E5%B3%B6%E3%82%A2%E3%82%A4%E3%83%A9%E3%83%B3%E3%83%89%E3%82%A2%E3%83%89%E3%83%99%E3%83%B3%E3%83%81%E3%83%A3%E3%83%BC"
-    },
-    "entry_start_date": "2026-07-17"
+    "venue": {
+      "name": "",
+      "mapQuery": "鹿児島県 "
+    }
   },
   {
     "id": "amami-jungle-trail-2026",
@@ -7409,23 +7059,22 @@
     "prefecture": "鹿児島県",
     "distance_km": 50,
     "elevation_m": 1850,
-    "entry_fee": "14,000円",
     "entry_status": "closing_soon",
+    "entry_start_date": "2026-09-01",
     "entry_deadline": "2026-10-31",
+    "entry_fee": "14,000円",
     "links": {
       "official": "https://moshicom.com/search/?keyword=%E5%A5%84%E7%BE%8E%E5%A4%A7%E5%B3%B6%E3%83%9E%E3%83%B3%E3%82%B0%E3%83%AD%E3%83%BC%E3%83%96%E3%82%B8%E3%83%A3%E3%83%B3%E3%82%B0%E3%83%AB%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB",
       "entry": "https://moshicom.com/search/?keyword=%E5%A5%84%E7%BE%8E%E5%A4%A7%E5%B3%B6%E3%83%9E%E3%83%B3%E3%82%B0%E3%83%AD%E3%83%BC%E3%83%96%E3%82%B8%E3%83%A3%E3%83%B3%E3%82%B0%E3%83%AB%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB",
       "review": null,
-      "sns": "https://www.facebook.com/amamitrail/",
-      "official_fallback": true,
-      "entry_fallback": true,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
     "mandatory_gear": [
       {
         "name": "ハブ対策スパッツまたはゲイター",
-        "category": "ウェア"
+        "category": "ギア"
       },
       {
         "name": "ポイズンリムーバー＆救急包帯",
@@ -7436,11 +7085,10 @@
         "category": "補給"
       }
     ],
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search/?keyword=%E5%A5%84%E7%BE%8E%E5%A4%A7%E5%B3%B6%E3%83%9E%E3%83%B3%E3%82%B0%E3%83%AD%E3%83%BC%E3%83%96%E3%82%B8%E3%83%A3%E3%83%B3%E3%82%B0%E3%83%AB%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB"
-    },
-    "entry_start_date": "2026-09-01"
+    "venue": {
+      "name": "",
+      "mapQuery": "鹿児島県 "
+    }
   },
   {
     "id": "tobishima-blue-ride-2026",
@@ -7456,22 +7104,25 @@
     "prefecture": "広島県",
     "distance_km": 90,
     "elevation_m": 650,
-    "entry_fee": "8,500円",
     "entry_status": "closed",
+    "entry_start_date": "2026-08-01",
     "entry_deadline": "2026-09-30",
+    "entry_fee": "8,500円",
     "links": {
       "official": "https://cycle.spoen.jp/",
       "entry": "https://cycle.spoen.jp/",
       "review": null,
-      "sns": "https://www.facebook.com/tobishimaride/",
-      "official_fallback": false,
-      "entry_fallback": false,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
     "mandatory_gear": [
       {
-        "name": "ロードバイク/クロスバイク＆ヘルメット",
+        "name": "ロードバイク",
+        "category": "ギア"
+      },
+      {
+        "name": "クロスバイク＆ヘルメット",
         "category": "ギア"
       },
       {
@@ -7480,14 +7131,13 @@
       },
       {
         "name": "予備チューブ＆携帯マルチツール",
-        "category": "リペア"
+        "category": "ギア"
       }
     ],
-    "source": {
-      "portalName": "スポエンCYCLE",
-      "portalUrl": "https://cycle.spoen.jp/"
-    },
-    "entry_start_date": "2026-08-01"
+    "venue": {
+      "name": "",
+      "mapQuery": "広島県 "
+    }
   },
   {
     "id": "gonokawa-canoe-bike-2026",
@@ -7505,16 +7155,15 @@
     "prefecture": "島根県",
     "distance_km": 45,
     "elevation_m": 750,
-    "entry_fee": "9,000円",
     "entry_status": "closed",
+    "entry_start_date": "2026-06-21",
     "entry_deadline": "2026-08-20",
+    "entry_fee": "9,000円",
     "links": {
       "official": "https://moshicom.com/search/?keyword=%E6%B1%9F%E3%81%AE%E5%B7%9D%E3%82%AB%E3%83%8C%E3%83%BC%EF%BC%86%E3%83%90%E3%82%A4%E3%82%AF%E3%82%A2%E3%83%89%E3%83%99%E3%83%B3%E3%83%81%E3%83%A3%E3%83%BC%E3%83%95%E3%82%A7%E3%82%B9",
       "entry": "https://moshicom.com/search/?keyword=%E6%B1%9F%E3%81%AE%E5%B7%9D%E3%82%AB%E3%83%8C%E3%83%BC%EF%BC%86%E3%83%90%E3%82%A4%E3%82%AF%E3%82%A2%E3%83%89%E3%83%99%E3%83%B3%E3%83%81%E3%83%A3%E3%83%BC%E3%83%95%E3%82%A7%E3%82%B9",
       "review": null,
       "sns": null,
-      "official_fallback": true,
-      "entry_fallback": true,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -7525,18 +7174,17 @@
       },
       {
         "name": "ライフジャケット（PFD）",
-        "category": "ギア"
+        "category": "ウェア"
       },
       {
         "name": "防水バッグ＆携帯工具",
-        "category": "リペア"
+        "category": "補給"
       }
     ],
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search/?keyword=%E6%B1%9F%E3%81%AE%E5%B7%9D%E3%82%AB%E3%83%8C%E3%83%BC%EF%BC%86%E3%83%90%E3%82%A4%E3%82%AF%E3%82%A2%E3%83%89%E3%83%99%E3%83%B3%E3%83%81%E3%83%A3%E3%83%BC%E3%83%95%E3%82%A7%E3%82%B9"
-    },
-    "entry_start_date": "2026-06-21"
+    "venue": {
+      "name": "",
+      "mapQuery": "島根県 "
+    }
   },
   {
     "id": "daisen-hillclimb-2026",
@@ -7550,16 +7198,15 @@
     "prefecture": "鳥取県",
     "distance_km": 85,
     "elevation_m": 1650,
-    "entry_fee": "9,500円",
     "entry_status": "closed",
+    "entry_start_date": "2026-03-21",
     "entry_deadline": "2026-05-20",
+    "entry_fee": "9,500円",
     "links": {
       "official": "https://cycle.spoen.jp/",
       "entry": "https://cycle.spoen.jp/",
       "review": null,
-      "sns": "https://twitter.com/daisen_ride",
-      "official_fallback": false,
-      "entry_fallback": false,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -7570,18 +7217,17 @@
       },
       {
         "name": "前照灯・後部反射材",
-        "category": "ライト"
+        "category": "ギア"
       },
       {
         "name": "パンク修理キット＆携帯ポンプ",
-        "category": "リペア"
+        "category": "ギア"
       }
     ],
-    "source": {
-      "portalName": "スポエンCYCLE",
-      "portalUrl": "https://cycle.spoen.jp/"
-    },
-    "entry_start_date": "2026-03-21"
+    "venue": {
+      "name": "",
+      "mapQuery": "鳥取県 "
+    }
   },
   {
     "id": "hiruzen-green-rally-2026",
@@ -7597,16 +7243,15 @@
     "prefecture": "岡山県",
     "distance_km": 60,
     "elevation_m": 800,
-    "entry_fee": "6,500円",
     "entry_status": "closed",
+    "entry_start_date": "2026-04-11",
     "entry_deadline": "2026-06-10",
+    "entry_fee": "6,500円",
     "links": {
       "official": "https://cycle.spoen.jp/",
       "entry": "https://cycle.spoen.jp/",
       "review": null,
       "sns": null,
-      "official_fallback": false,
-      "entry_fallback": false,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -7620,11 +7265,10 @@
         "category": "補給"
       }
     ],
-    "source": {
-      "portalName": "スポエンCYCLE",
-      "portalUrl": "https://cycle.spoen.jp/"
-    },
-    "entry_start_date": "2026-04-11"
+    "venue": {
+      "name": "",
+      "mapQuery": "岡山県 "
+    }
   },
   {
     "id": "yoshinogawa-cycle-fest-2026",
@@ -7638,16 +7282,15 @@
     "prefecture": "徳島県",
     "distance_km": 100,
     "elevation_m": 450,
-    "entry_fee": "8,000円",
     "entry_status": "closed",
+    "entry_start_date": "2026-07-17",
     "entry_deadline": "2026-09-15",
+    "entry_fee": "8,000円",
     "links": {
       "official": "https://cycle.spoen.jp/",
       "entry": "https://cycle.spoen.jp/",
       "review": null,
       "sns": null,
-      "official_fallback": false,
-      "entry_fallback": false,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -7662,14 +7305,13 @@
       },
       {
         "name": "予備チューブ2本",
-        "category": "リペア"
+        "category": "ギア"
       }
     ],
-    "source": {
-      "portalName": "スポエンCYCLE",
-      "portalUrl": "https://cycle.spoen.jp/"
-    },
-    "entry_start_date": "2026-07-17"
+    "venue": {
+      "name": "",
+      "mapQuery": "徳島県 "
+    }
   },
   {
     "id": "shodoshima-mameichi-2026",
@@ -7683,16 +7325,15 @@
     "prefecture": "香川県",
     "distance_km": 100,
     "elevation_m": 1350,
-    "entry_fee": "9,000円",
     "entry_status": "closing_soon",
+    "entry_start_date": "2026-09-21",
     "entry_deadline": "2026-11-20",
+    "entry_fee": "9,000円",
     "links": {
       "official": "https://kca36.sakura.ne.jp/wp/",
       "entry": "https://cycle.spoen.jp/",
       "review": null,
-      "sns": "https://www.facebook.com/mameichi.shodoshima/",
-      "official_fallback": false,
-      "entry_fallback": false,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -7707,18 +7348,13 @@
       },
       {
         "name": "携帯ツール＆CO2インフレーター",
-        "category": "リペア"
+        "category": "ギア"
       }
     ],
-    "source": {
-      "portalName": "スポーツエントリー",
-      "portalUrl": "https://www.sportsentry.ne.jp/cycle/10/3"
-    },
     "venue": {
       "name": "マメイチ",
       "mapQuery": "香川県 マメイチ"
-    },
-    "entry_start_date": "2026-09-21"
+    }
   },
   {
     "id": "ishizuchi-hillclimb-2026",
@@ -7732,16 +7368,15 @@
     "prefecture": "愛媛県",
     "distance_km": 22,
     "elevation_m": 920,
-    "entry_fee": "8,500円",
     "entry_status": "closed",
+    "entry_start_date": "2026-05-21",
     "entry_deadline": "2026-07-20",
+    "entry_fee": "8,500円",
     "links": {
       "official": "https://cycle.spoen.jp/",
       "entry": "https://cycle.spoen.jp/",
       "review": null,
-      "sns": "https://www.facebook.com/ishizuchihillclimb/",
-      "official_fallback": false,
-      "entry_fallback": false,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -7755,11 +7390,10 @@
         "category": "ウェア"
       }
     ],
-    "source": {
-      "portalName": "スポエンCYCLE",
-      "portalUrl": "https://cycle.spoen.jp/"
-    },
-    "entry_start_date": "2026-05-21"
+    "venue": {
+      "name": "",
+      "mapQuery": "愛媛県 "
+    }
   },
   {
     "id": "okusimanto-adventure-ride-2026",
@@ -7775,22 +7409,25 @@
     "prefecture": "高知県",
     "distance_km": 75,
     "elevation_m": 1400,
-    "entry_fee": "8,000円",
     "entry_status": "closed",
+    "entry_start_date": "2026-07-07",
     "entry_deadline": "2026-09-05",
+    "entry_fee": "8,000円",
     "links": {
       "official": "https://cycle.spoen.jp/",
       "entry": "https://cycle.spoen.jp/",
       "review": null,
       "sns": null,
-      "official_fallback": false,
-      "entry_fallback": false,
       "verified": true,
       "verified_at": "2026-10-31"
     },
     "mandatory_gear": [
       {
-        "name": "グラベル/MTBまたはロードバイク",
+        "name": "グラベル",
+        "category": "ギア"
+      },
+      {
+        "name": "MTBまたはロードバイク",
         "category": "ギア"
       },
       {
@@ -7799,14 +7436,13 @@
       },
       {
         "name": "パンク修理キット",
-        "category": "リペア"
+        "category": "ギア"
       }
     ],
-    "source": {
-      "portalName": "スポエンCYCLE",
-      "portalUrl": "https://cycle.spoen.jp/"
-    },
-    "entry_start_date": "2026-07-07"
+    "venue": {
+      "name": "",
+      "mapQuery": "高知県 "
+    }
   },
   {
     "id": "shiwai-marathon-88k-2026",
@@ -7822,16 +7458,15 @@
     "prefecture": "広島県",
     "distance_km": 88,
     "elevation_m": 2150,
-    "entry_fee": "16,000円",
     "entry_status": "closed",
+    "entry_start_date": "2026-06-01",
     "entry_deadline": "2026-07-31",
+    "entry_fee": "16,000円",
     "links": {
       "official": "https://moshicom.com/search/?keyword=%E5%AE%89%E8%8A%B8%E5%A4%AA%E7%94%B0%E3%81%97%E3%82%8F%E3%81%84%E3%83%9E%E3%83%A9%E3%82%BD%E3%83%B3",
       "entry": "https://moshicom.com/search/?keyword=%E5%AE%89%E8%8A%B8%E5%A4%AA%E7%94%B0%E3%81%97%E3%82%8F%E3%81%84%E3%83%9E%E3%83%A9%E3%82%BD%E3%83%B3",
       "review": null,
-      "sns": "https://www.facebook.com/shiwai.marathon/",
-      "official_fallback": true,
-      "entry_fallback": true,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -7842,22 +7477,17 @@
       },
       {
         "name": "足攣り対策電解質サプリ（Mag-on等）",
-        "category": "補給"
+        "category": "ギア"
       },
       {
         "name": "点滅テールランプ（トンネル走行用）",
         "category": "ライト"
       }
     ],
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search/?keyword=%E5%AE%89%E8%8A%B8%E5%A4%AA%E7%94%B0%E3%81%97%E3%82%8F%E3%81%84%E3%83%9E%E3%83%A9%E3%82%BD%E3%83%B3"
-    },
     "venue": {
       "name": "酷道激坂88km",
       "mapQuery": "広島県 酷道激坂88km"
-    },
-    "entry_start_date": "2026-06-01"
+    }
   },
   {
     "id": "muroto-geopark-trail-2026",
@@ -7873,16 +7503,15 @@
     "prefecture": "高知県",
     "distance_km": 35,
     "elevation_m": 1250,
-    "entry_fee": "8,000円",
     "entry_status": "closed",
+    "entry_start_date": "2026-08-21",
     "entry_deadline": "2026-10-20",
+    "entry_fee": "8,000円",
     "links": {
       "official": "https://moshicom.com/search/?keyword=%E5%AE%A4%E6%88%B8%E3%83%A6%E3%83%8D%E3%82%B9%E3%82%B3%E4%B8%96%E7%95%8C%E3%82%B8%E3%82%AA%E3%83%91%E3%83%BC%E3%82%AF%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%EF%BC%86%E3%83%A9%E3%83%B3",
       "entry": "https://moshicom.com/search/?keyword=%E5%AE%A4%E6%88%B8%E3%83%A6%E3%83%8D%E3%82%B9%E3%82%B3%E4%B8%96%E7%95%8C%E3%82%B8%E3%82%AA%E3%83%91%E3%83%BC%E3%82%AF%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%EF%BC%86%E3%83%A9%E3%83%B3",
       "review": null,
       "sns": null,
-      "official_fallback": true,
-      "entry_fallback": true,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -7900,11 +7529,10 @@
         "category": "エイド"
       }
     ],
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search/?keyword=%E5%AE%A4%E6%88%B8%E3%83%A6%E3%83%8D%E3%82%B9%E3%82%B3%E4%B8%96%E7%95%8C%E3%82%B8%E3%82%AA%E3%83%91%E3%83%BC%E3%82%AF%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%EF%BC%86%E3%83%A9%E3%83%B3"
-    },
-    "entry_start_date": "2026-08-21"
+    "venue": {
+      "name": "",
+      "mapQuery": "高知県 "
+    }
   },
   {
     "id": "tottori-sanddune-run-2026",
@@ -7918,34 +7546,32 @@
     "prefecture": "鳥取県",
     "distance_km": 21,
     "elevation_m": 450,
-    "entry_fee": "6,500円",
     "entry_status": "closed",
+    "entry_start_date": "2026-07-22",
     "entry_deadline": "2026-09-20",
+    "entry_fee": "6,500円",
     "links": {
       "official": "https://moshicom.com/search/?keyword=%E9%B3%A5%E5%8F%96%E7%A0%82%E4%B8%98%E3%82%B5%E3%83%B3%E3%83%89%E3%83%87%E3%83%A5%E3%83%BC%E3%83%B3%E3%82%A8%E3%83%B3%E3%83%87%E3%83%A5%E3%83%A9%E3%83%B3%E3%82%B9%E3%83%A9%E3%83%B3",
       "entry": "https://moshicom.com/search/?keyword=%E9%B3%A5%E5%8F%96%E7%A0%82%E4%B8%98%E3%82%B5%E3%83%B3%E3%83%89%E3%83%87%E3%83%A5%E3%83%BC%E3%83%B3%E3%82%A8%E3%83%B3%E3%83%87%E3%83%A5%E3%83%A9%E3%83%B3%E3%82%B9%E3%83%A9%E3%83%B3",
       "review": null,
       "sns": null,
-      "official_fallback": true,
-      "entry_fallback": true,
       "verified": true,
       "verified_at": "2026-10-31"
     },
     "mandatory_gear": [
       {
         "name": "砂侵入防止ゲイター（砂丘走行推奨）",
-        "category": "ウェア"
+        "category": "ギア"
       },
       {
         "name": "携帯ボトル＆サングラス",
         "category": "補給"
       }
     ],
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search/?keyword=%E9%B3%A5%E5%8F%96%E7%A0%82%E4%B8%98%E3%82%B5%E3%83%B3%E3%83%89%E3%83%87%E3%83%A5%E3%83%BC%E3%83%B3%E3%82%A8%E3%83%B3%E3%83%87%E3%83%A5%E3%83%A9%E3%83%B3%E3%82%B9%E3%83%A9%E3%83%B3"
-    },
-    "entry_start_date": "2026-07-22"
+    "venue": {
+      "name": "",
+      "mapQuery": "鳥取県 "
+    }
   },
   {
     "id": "hagi-oukan-run-2026",
@@ -7961,16 +7587,15 @@
     "prefecture": "山口県",
     "distance_km": 33,
     "elevation_m": 780,
-    "entry_fee": "7,000円",
     "entry_status": "closed",
+    "entry_start_date": "2026-01-14",
     "entry_deadline": "2026-03-15",
+    "entry_fee": "7,000円",
     "links": {
       "official": "https://moshicom.com/search/?keyword=%E8%90%A9%E5%BE%80%E9%82%84%E6%AD%B4%E5%8F%B2%E8%A1%97%E9%81%93%E6%8E%A2%E8%A8%AA%E3%83%9E%E3%83%A9%E3%83%8B%E3%83%83%E3%82%AF",
       "entry": "https://moshicom.com/search/?keyword=%E8%90%A9%E5%BE%80%E9%82%84%E6%AD%B4%E5%8F%B2%E8%A1%97%E9%81%93%E6%8E%A2%E8%A8%AA%E3%83%9E%E3%83%A9%E3%83%8B%E3%83%83%E3%82%AF",
       "review": null,
       "sns": null,
-      "official_fallback": true,
-      "entry_fallback": true,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -7984,11 +7609,10 @@
         "category": "エイド"
       }
     ],
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search/?keyword=%E8%90%A9%E5%BE%80%E9%82%84%E6%AD%B4%E5%8F%B2%E8%A1%97%E9%81%93%E6%8E%A2%E8%A8%AA%E3%83%9E%E3%83%A9%E3%83%8B%E3%83%83%E3%82%AF"
-    },
-    "entry_start_date": "2026-01-14"
+    "venue": {
+      "name": "",
+      "mapQuery": "山口県 "
+    }
   },
   {
     "id": "okutsu-onsen-trail-2026",
@@ -8004,16 +7628,15 @@
     "prefecture": "岡山県",
     "distance_km": 24,
     "elevation_m": 950,
-    "entry_fee": "6,000円",
     "entry_status": "closed",
+    "entry_start_date": "2026-03-16",
     "entry_deadline": "2026-05-15",
+    "entry_fee": "6,000円",
     "links": {
       "official": "https://moshicom.com/search/?keyword=%E9%8F%A1%E9%87%8E%E7%94%BA%E5%A5%A5%E6%B4%A5%E6%B8%A9%E6%B3%89%E6%B8%93%E8%B0%B7%E3%83%8F%E3%82%A4%E3%82%AF%EF%BC%86%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB",
       "entry": "https://moshicom.com/search/?keyword=%E9%8F%A1%E9%87%8E%E7%94%BA%E5%A5%A5%E6%B4%A5%E6%B8%A9%E6%B3%89%E6%B8%93%E8%B0%B7%E3%83%8F%E3%82%A4%E3%82%AF%EF%BC%86%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB",
       "review": null,
       "sns": null,
-      "official_fallback": true,
-      "entry_fallback": true,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -8027,11 +7650,10 @@
         "category": "ウェア"
       }
     ],
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search/?keyword=%E9%8F%A1%E9%87%8E%E7%94%BA%E5%A5%A5%E6%B4%A5%E6%B8%A9%E6%B3%89%E6%B8%93%E8%B0%B7%E3%83%8F%E3%82%A4%E3%82%AF%EF%BC%86%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB"
-    },
-    "entry_start_date": "2026-03-16"
+    "venue": {
+      "name": "",
+      "mapQuery": "岡山県 "
+    }
   },
   {
     "id": "saioto-colors-green-2026",
@@ -8048,14 +7670,15 @@
     "prefecture": "広島県",
     "distance_km": 40,
     "elevation_m": 2439,
-    "entry_fee": "12,500円",
     "entry_status": "closed",
+    "entry_start_date": "2026-02-19",
     "entry_deadline": "2026-04-20",
+    "entry_fee": "12,500円",
     "links": {
       "official": "https://moshicom.com/search/?keyword=SAIOTO+COLORS",
       "entry": "https://moshicom.com/search/?keyword=SAIOTO+COLORS",
-      "review": "https://runnet.jp/",
-      "sns": "https://www.instagram.com/saiotocolors/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -8078,19 +7701,13 @@
       },
       {
         "name": "マイカップ（エイド給水用）",
-        "category": "ギア"
+        "category": "エイド"
       }
     ],
     "venue": {
       "name": "ユートピアサイオト",
-      "address": "広島県山県郡北広島町才乙144",
       "mapQuery": "ユートピアサイオト"
-    },
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://saiotocolors.themedia.jp/"
-    },
-    "entry_start_date": "2026-02-19"
+    }
   },
   {
     "id": "saioto-colors-autumn-2026",
@@ -8108,14 +7725,15 @@
     "prefecture": "広島県",
     "distance_km": 52,
     "elevation_m": 3100,
-    "entry_fee": "15,400円",
     "entry_status": "closed",
+    "entry_start_date": "2026-08-16",
     "entry_deadline": "2026-10-15",
+    "entry_fee": "15,400円",
     "links": {
       "official": "https://moshicom.com/search/?keyword=SAIOTO+COLORS",
       "entry": "https://moshicom.com/search/?keyword=SAIOTO+COLORS",
-      "review": "https://runnet.jp/",
-      "sns": "https://www.instagram.com/saiotocolors/",
+      "review": null,
+      "sns": null,
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -8138,18 +7756,12 @@
       },
       {
         "name": "マイカップ（エイド給水用）",
-        "category": "ギア"
+        "category": "エイド"
       }
     ],
     "venue": {
       "name": "ユートピアサイオト",
-      "address": "広島県山県郡北広島町才乙144",
       "mapQuery": "ユートピアサイオト"
-    },
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://saiotocolors.themedia.jp/"
-    },
-    "entry_start_date": "2026-08-16"
+    }
   }
 ]
