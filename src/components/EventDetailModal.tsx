@@ -7,6 +7,7 @@ import {
   formatEventDateRange,
   formatEventDateSlash,
   formatDeadlineSlash,
+  formatPeriodSlash,
   formatPrice,
 } from '../utils/helpers';
 import {
@@ -175,9 +176,9 @@ export const EventDetailModal: React.FC<EventDetailModalProps> = ({ event, deals
             </div>
 
             <div className="text-center sm:text-left">
-              <span className="text-xs text-slate-600 dark:text-slate-400 font-bold">エントリー締切</span>
-              <div className="text-sm sm:text-base font-black text-red-700 dark:text-red-400 mt-1 font-mono">
-                {event.entry_deadline ? formatDeadlineSlash(event.entry_deadline) : '公式サイト確認'}
+              <span className="text-xs text-slate-600 dark:text-slate-400 font-bold">申込受付期間</span>
+              <div className="text-sm sm:text-base font-black text-amber-800 dark:text-amber-400 mt-1 font-mono">
+                {formatPeriodSlash(event.entry_start_date, event.entry_deadline) || '公式サイト確認'}
               </div>
             </div>
           </div>

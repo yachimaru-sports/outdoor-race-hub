@@ -127,7 +127,7 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
               >
                 <div className="flex items-center gap-1 text-teal-800 dark:text-teal-300">
                   <Calendar className="w-3.5 h-3.5" />
-                  <span>開催日 / 締切</span>
+                  <span>開催日 / 申込期間</span>
                   <ArrowUpDown className={`w-3 h-3 ${sortBy?.startsWith('date') ? 'text-teal-600 font-black' : 'text-slate-400'}`} />
                 </div>
               </th>
@@ -262,26 +262,25 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
                         </div>
                       </div>
 
-                      {/* 締切日 / 受付期間表示（例: 10/9㈮） */}
+                      {/* 申込期間表示（開催日同様に 〇/〇~〇/〇 形式でスッキリ表示） */}
                       <div className="mt-0.5">
-                        {event.entry_start_date ? (
-                          <span className="inline-flex items-center gap-0.5 px-1.5 py-0.2 rounded text-[10px] font-bold bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300 border border-slate-300 dark:border-slate-700 font-mono" title={`受付期間: ${event.entry_start_date} 〜 ${event.entry_deadline}`}>
-                            <Clock className="w-2.5 h-2.5 text-slate-500" />
-                            受付:{formatPeriodSlash(event.entry_start_date, event.entry_deadline)}
-                          </span>
-                        ) : isClosingSoon ? (
-                          <span className="inline-flex items-center gap-0.5 px-1.5 py-0.2 rounded text-[11px] font-extrabold bg-red-100 text-red-700 dark:bg-red-950/60 dark:text-red-300 border border-red-300 animate-pulse font-mono">
-                            <Clock className="w-2.5 h-2.5 text-red-600" />
-                            締切:{event.entry_deadline ? formatDeadlineSlash(event.entry_deadline) : '間近'}
-                          </span>
-                        ) : isOpen ? (
-                          <span className="inline-flex items-center gap-0.5 px-1.5 py-0.2 rounded text-[11px] font-bold bg-amber-50 text-amber-800 dark:bg-amber-950/40 dark:text-amber-200 border border-amber-300 font-mono">
-                            <Clock className="w-2.5 h-2.5 text-amber-600" />
-                            締切:{event.entry_deadline ? formatDeadlineSlash(event.entry_deadline) : '受付中'}
+                        {event.entry_start_date || event.entry_deadline ? (
+                          <span
+                            className={`inline-flex items-center gap-0.5 px-1.5 py-0.2 rounded text-[11px] font-mono whitespace-nowrap ${
+                              isClosingSoon
+                                ? 'bg-red-50 text-red-700 dark:bg-red-950/60 dark:text-red-300 border border-red-300 font-extrabold animate-pulse'
+                                : isOpen
+                                ? 'bg-amber-50 text-amber-800 dark:bg-amber-950/40 dark:text-amber-200 border border-amber-300 font-bold'
+                                : 'bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-400 border border-slate-250 dark:border-slate-700 font-medium'
+                            }`}
+                            title={`エントリー申込期間: ${event.entry_start_date || '未定'} 〜 ${event.entry_deadline || '締切まで'}`}
+                          >
+                            <Clock className="w-2.5 h-2.5 opacity-80" />
+                            <span>申込:{formatPeriodSlash(event.entry_start_date, event.entry_deadline)}</span>
                           </span>
                         ) : (
                           <span className="text-[11px] text-slate-500 font-bold font-mono pl-0.5">
-                            締切:{event.entry_deadline ? formatDeadlineSlash(event.entry_deadline) : '終了'}
+                            申込:公式HP参照
                           </span>
                         )}
                       </div>

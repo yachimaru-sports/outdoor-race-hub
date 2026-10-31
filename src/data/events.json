@@ -49,7 +49,8 @@
     "venue": {
       "name": "尾道〜松江 175km",
       "mapQuery": "広島県 尾道〜松江 175km"
-    }
+    },
+    "entry_start_date": "2027-02-24"
   },
   {
     "id": "awaji-longride-spring-2027",
@@ -100,7 +101,8 @@
     "venue": {
       "name": "春のプレミアムアワイチ",
       "mapQuery": "兵庫県 春のプレミアムアワイチ"
-    }
+    },
+    "entry_start_date": "2027-01-30"
   },
   {
     "id": "nanki-shirahama-adventure-ride-2026",
@@ -148,7 +150,8 @@
     "source": {
       "portalName": "スポーツエントリー",
       "portalUrl": "https://www.sportsentry.ne.jp/cycle/10/2"
-    }
+    },
+    "entry_start_date": "2026-09-21"
   },
   {
     "id": "shodoshima-mameichi-spring-2027",
@@ -195,7 +198,8 @@
     "venue": {
       "name": "春のマメイチ",
       "mapQuery": "香川県 春のマメイチ"
-    }
+    },
+    "entry_start_date": "2027-01-19"
   },
   {
     "id": "shimanami-spring-century-2027",
@@ -262,7 +266,8 @@
     "venue": {
       "name": "尾道〜今治 往復",
       "mapQuery": "広島県 尾道〜今治 往復"
-    }
+    },
+    "entry_start_date": "2026-12-01"
   },
   {
     "id": "niyodogawa-spring-ride-2027",
@@ -313,7 +318,8 @@
     "venue": {
       "name": "いの町",
       "mapQuery": "高知県 いの町"
-    }
+    },
+    "entry_start_date": "2026-12-30"
   },
   {
     "id": "tobishima-orange-ride-2026",
@@ -360,7 +366,8 @@
     "venue": {
       "name": "呉市",
       "mapQuery": "広島県 呉市"
-    }
+    },
+    "entry_start_date": "2026-09-11"
   },
   {
     "id": "fukufuku-ride-2026",
@@ -414,7 +421,8 @@
     "venue": {
       "name": "福山",
       "mapQuery": "広島県 福山"
-    }
+    },
+    "entry_start_date": "2026-09-16"
   },
   {
     "id": "toretore-ueyama-2026",
@@ -473,7 +481,8 @@
     "source": {
       "portalName": "公式サイト",
       "portalUrl": "http://toretore.web.fc2.com/ueyama/2026/UMAG2026.htm"
-    }
+    },
+    "entry_start_date": "2025-12-27"
   },
   {
     "id": "toretore-hozukyou-2026",
@@ -661,7 +670,8 @@
     "source": {
       "portalName": "AR関西",
       "portalUrl": "http://toretore.web.fc2.com/"
-    }
+    },
+    "entry_start_date": "2026-09-25"
   },
   {
     "id": "toretore-obsidian-2026",
@@ -719,7 +729,8 @@
     "source": {
       "portalName": "公式サイト",
       "portalUrl": "http://toretore.web.fc2.com/"
-    }
+    },
+    "entry_start_date": "2025-12-17"
   },
   {
     "id": "toretore-iwamura-2026",
@@ -777,7 +788,8 @@
     "source": {
       "portalName": "公式サイト",
       "portalUrl": "http://toretore.web.fc2.com/"
-    }
+    },
+    "entry_start_date": "2026-02-19"
   },
   {
     "id": "kannabe-rogaining-2026",
@@ -837,7 +849,8 @@
     "venue": {
       "name": "日高神鍋観光",
       "mapQuery": "兵庫県 日高神鍋観光"
-    }
+    },
+    "entry_start_date": "2026-03-16"
   },
   {
     "id": "mannou-rogaining-2026",
@@ -896,7 +909,8 @@
     "source": {
       "portalName": "公式サイト",
       "portalUrl": "https://www.outdoor-sports.info/mannou-rogaining"
-    }
+    },
+    "entry_start_date": "2026-09-03"
   },
   {
     "id": "omm-japan-2026",
@@ -908,12 +922,12 @@
       "オリエンテーリング",
       "夜間"
     ],
-    "title": "OMM JAPAN 2026",
-    "date": "2026-11-14",
-    "end_date": "2026-11-15",
+    "title": "OMM JAPAN 2026 TAKASHIMA（滋賀・高島）",
+    "date": "2026-11-07",
+    "end_date": "2026-11-08",
     "month": 11,
-    "region": "甲信越",
-    "prefecture": "長野県",
+    "region": "近畿",
+    "prefecture": "滋賀県",
     "distance_km": 50,
     "elevation_m": 2800,
     "entry_status": "closed",
@@ -948,11 +962,12 @@
         "category": "ウェア"
       }
     ],
-    "entry_fee": "6,500円",
+    "entry_fee": "44,000円",
     "source": {
       "portalName": "公式サイト",
       "portalUrl": "https://theomm.jp/"
-    }
+    },
+    "entry_start_date": "2026-06-12"
   },
   {
     "id": "omm-lite-bike-hakuba-2026",
@@ -1012,7 +1027,8 @@
     "source": {
       "portalName": "公式サイト",
       "portalUrl": "https://theomm.jp/"
-    }
+    },
+    "entry_start_date": "2026-04-21"
   },
   {
     "id": "niseko-expedition-2026",
@@ -1069,7 +1085,8 @@
       "portalName": "公式サイト",
       "portalUrl": "https://nisekoexpedition.jp/"
     },
-    "end_date": "2026-06-21"
+    "end_date": "2026-06-21",
+    "entry_start_date": "2026-03-16"
   },
   {
     "id": "echigo-adventure-2026",
@@ -1126,7 +1143,8 @@
     "source": {
       "portalName": "モシコム",
       "portalUrl": "https://moshicom.com/search/?keyword=%E8%B6%8A%E5%BE%8C%E3%82%AB%E3%83%B3%E3%83%88%E3%83%AA%E3%83%BC%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%EF%BC%86%E3%82%A2%E3%83%89%E3%83%99%E3%83%B3%E3%83%81%E3%83%A3%E3%83%BC%E3%83%AC%E3%83%BC%E3%82%B9"
-    }
+    },
+    "entry_start_date": "2026-06-26"
   },
   {
     "id": "izumo-kunibiki-rogaining-2026",
@@ -1179,7 +1197,8 @@
     "source": {
       "portalName": "モシコム",
       "portalUrl": "https://moshicom.com/search?keyword=%E5%87%BA%E9%9B%B2%E3%81%8F%E3%81%AB%E3%81%B3%E3%81%8D%E3%83%AD%E3%82%B2%E3%82%A4%E3%83%8B%E3%83%B3%E3%82%B0"
-    }
+    },
+    "entry_start_date": "2026-08-21"
   },
   {
     "id": "hiroshima-miyajima-rogaining-2026",
@@ -1233,7 +1252,8 @@
     "source": {
       "portalName": "モシコム",
       "portalUrl": "https://moshicom.com/search?keyword=%E5%AE%AE%E5%B3%B6"
-    }
+    },
+    "entry_start_date": "2026-08-11"
   },
   {
     "id": "setouchi-island-adventure-2026",
@@ -1290,7 +1310,8 @@
     "source": {
       "portalName": "モシコム",
       "portalUrl": "https://moshicom.com/search/?keyword=%E7%80%AC%E6%88%B8%E5%86%85%E3%82%A2%E3%82%A4%E3%83%A9%E3%83%B3%E3%83%89%E3%83%BB%E3%82%A2%E3%83%89%E3%83%99%E3%83%B3%E3%83%81%E3%83%A3%E3%83%BC%E3%83%AC%E3%83%BC%E3%82%B9%20in"
-    }
+    },
+    "entry_start_date": "2026-07-12"
   },
   {
     "id": "mt-fuji-100-2027",
@@ -1349,7 +1370,8 @@
       "portalName": "公式サイト",
       "portalUrl": "https://mtfuji100.com/"
     },
-    "end_date": "2027-04-25"
+    "end_date": "2027-04-25",
+    "entry_start_date": "2026-09-16"
   },
   {
     "id": "hiroshima-utmb-2027",
@@ -1408,7 +1430,8 @@
       "portalName": "公式サイト",
       "portalUrl": "https://utmb.world/"
     },
-    "end_date": "2027-04-18"
+    "end_date": "2027-04-18",
+    "entry_start_date": "2026-10-01"
   },
   {
     "id": "shinetsu-five-mountains-100mile-2026",
@@ -1467,7 +1490,8 @@
       "portalName": "公式サイト",
       "portalUrl": "https://sfmt100.com/"
     },
-    "end_date": "2026-09-20"
+    "end_date": "2026-09-20",
+    "entry_start_date": "2026-03-16"
   },
   {
     "id": "ggr-ishikiriba-100-2027",
@@ -1534,7 +1558,8 @@
       "name": "広島県呉市倉橋町（ホシアカリ山びこ / 桂浜西側採石場跡）",
       "address": "広島県呉市倉橋町",
       "mapQuery": "広島県呉市倉橋町 桂浜"
-    }
+    },
+    "entry_start_date": "2026-10-01"
   },
   {
     "id": "lake-biwa-100-2026",
@@ -1598,7 +1623,8 @@
       "name": "びわ湖100マイル トレイルラン 2026",
       "mapQuery": "滋賀県 びわ湖100マイル トレイルラン 2026"
     },
-    "end_date": "2026-10-04"
+    "end_date": "2026-10-04",
+    "entry_start_date": "2026-04-01"
   },
   {
     "id": "koumi-100-2026",
@@ -1661,7 +1687,8 @@
       "name": "小海100マイル トレイルランニング 2026",
       "mapQuery": "長野県 小海100マイル トレイルランニング 2026"
     },
-    "end_date": "2026-10-11"
+    "end_date": "2026-10-11",
+    "entry_start_date": "2026-07-02"
   },
   {
     "id": "sainokuni-100mile-2026",
@@ -1720,7 +1747,8 @@
       "portalName": "公式サイト",
       "portalUrl": "https://trainic-world.org/sainokuni/"
     },
-    "end_date": "2026-05-17"
+    "end_date": "2026-05-17",
+    "entry_start_date": "2025-12-30"
   },
   {
     "id": "ftr-chichibu-okumusashi-100mile-2026",
@@ -1783,7 +1811,8 @@
       "name": "FTR100",
       "mapQuery": "埼玉県 FTR100"
     },
-    "end_date": "2026-11-22"
+    "end_date": "2026-11-22",
+    "entry_start_date": "2026-08-01"
   },
   {
     "id": "osj-ontake-100mile-2026",
@@ -1846,7 +1875,8 @@
       "name": "御嶽100マイル 100km",
       "mapQuery": "長野県 御嶽100マイル 100km"
     },
-    "end_date": "2026-07-19"
+    "end_date": "2026-07-19",
+    "entry_start_date": "2026-04-16"
   },
   {
     "id": "deep-japan-ultra-100-2026",
@@ -1910,7 +1940,8 @@
       "name": "ディープジャパン166km 新潟 群馬",
       "mapQuery": "新潟県 ディープジャパン166km 新潟 群馬"
     },
-    "end_date": "2026-06-28"
+    "end_date": "2026-06-28",
+    "entry_start_date": "2026-03-01"
   },
   {
     "id": "kumagawa-revival-trail-100mile-2026",
@@ -1974,7 +2005,8 @@
       "name": "KRT 167km",
       "mapQuery": "熊本県 KRT 167km"
     },
-    "end_date": "2026-11-15"
+    "end_date": "2026-11-15",
+    "entry_start_date": "2026-07-27"
   },
   {
     "id": "osj-koushu-alps-100mile-2026",
@@ -2039,7 +2071,8 @@
       "name": "甲州アルプスオートルート 100mile",
       "mapQuery": "山梨県 甲州アルプスオートルート 100mile"
     },
-    "end_date": "2026-10-25"
+    "end_date": "2026-10-25",
+    "entry_start_date": "2026-07-12"
   },
   {
     "id": "tambasasayama-100mile-2026",
@@ -2102,7 +2135,8 @@
       "name": "丹波100マイル",
       "mapQuery": "兵庫県 丹波100マイル"
     },
-    "end_date": "2026-06-07"
+    "end_date": "2026-06-07",
+    "entry_start_date": "2026-02-19"
   },
   {
     "id": "michinoku-coastal-trail-100mile-2026",
@@ -2161,7 +2195,8 @@
       "portalName": "モシコム",
       "portalUrl": "https://moshicom.com/search?keyword=%E3%81%BF%E3%81%A1%E3%81%AE%E3%81%8F%E6%BD%AE%E9%A2%A8%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%20100%E3%83%9E%E3%82%A4%E3%83%AB%20%E3%82%B8%E3%83%A3%E3%83%BC%E3%83%8B%E3%83%BC%E3%83%A9%E3%83%B3"
     },
-    "end_date": "2026-10-11"
+    "end_date": "2026-10-11",
+    "entry_start_date": "2026-07-02"
   },
   {
     "id": "ibuki-hyakkei-100mile-2026",
@@ -2220,7 +2255,8 @@
       "portalName": "モシコム",
       "portalUrl": "https://moshicom.com/search?keyword=%E4%BC%8A%E5%90%B9%E5%B1%B1"
     },
-    "end_date": "2026-09-27"
+    "end_date": "2026-09-27",
+    "entry_start_date": "2026-06-16"
   },
   {
     "id": "backyard-ultra-hiroshima-2026",
@@ -2279,7 +2315,8 @@
       "portalName": "モシコム",
       "portalUrl": "https://moshicom.com/search?keyword=Backyard%20Ultra%20Last%20Samurai%20Standing%20%E5%BA%83%E5%B3%B6"
     },
-    "end_date": "2026-11-08"
+    "end_date": "2026-11-08",
+    "entry_start_date": "2026-08-11"
   },
   {
     "id": "mihara-hakuryuko-trail-2026",
@@ -2333,7 +2370,8 @@
     "venue": {
       "name": "三原市",
       "mapQuery": "広島県 三原市"
-    }
+    },
+    "entry_start_date": "2025-11-20"
   },
   {
     "id": "megahira-extreme-500-2026",
@@ -2385,7 +2423,8 @@
     "venue": {
       "name": "廿日市",
       "mapQuery": "広島県 廿日市"
-    }
+    },
+    "entry_start_date": "2026-02-11"
   },
   {
     "id": "hiroshima-bay-night-trail-2026",
@@ -2442,7 +2481,8 @@
     "venue": {
       "name": "広島湾岸トレイル 60km",
       "mapQuery": "広島県 広島湾岸トレイル 60km"
-    }
+    },
+    "entry_start_date": "2026-02-04"
   },
   {
     "id": "shinjo-forest-trail-2026",
@@ -2494,7 +2534,8 @@
     "venue": {
       "name": "北広島町",
       "mapQuery": "広島県 北広島町"
-    }
+    },
+    "entry_start_date": "2026-03-26"
   },
   {
     "id": "osorakan-ekiden-trail-2026",
@@ -2552,7 +2593,8 @@
     "venue": {
       "name": "エキスパート65km 広島最高峰",
       "mapQuery": "広島県 エキスパート65km 広島最高峰"
-    }
+    },
+    "entry_start_date": "2026-05-21"
   },
   {
     "id": "momiji-trail-hatsukaichi-2026",
@@ -2604,7 +2646,8 @@
     "venue": {
       "name": "大野権現山〜経小屋山",
       "mapQuery": "広島県 大野権現山〜経小屋山"
-    }
+    },
+    "entry_start_date": "2026-07-22"
   },
   {
     "id": "kure-tobishima-ultra-2026",
@@ -2658,7 +2701,8 @@
     "venue": {
       "name": "呉市",
       "mapQuery": "広島県 呉市"
-    }
+    },
+    "entry_start_date": "2026-07-02"
   },
   {
     "id": "akiota-shinkansen-cycle-2026",
@@ -2712,7 +2756,8 @@
     "source": {
       "portalName": "スポエンCYCLE",
       "portalUrl": "https://cycle.spoen.jp/"
-    }
+    },
+    "entry_start_date": "2026-06-16"
   },
   {
     "id": "nagi-peaks-tough-trail-2026",
@@ -2768,7 +2813,8 @@
     "venue": {
       "name": "奈義町那岐山",
       "mapQuery": "岡山県 奈義町那岐山"
-    }
+    },
+    "entry_start_date": "2026-02-24"
   },
   {
     "id": "hiruzen-kougen-marathon-trail-2026",
@@ -2820,7 +2866,8 @@
     "venue": {
       "name": "真庭市",
       "mapQuery": "岡山県 真庭市"
-    }
+    },
+    "entry_start_date": "2026-04-16"
   },
   {
     "id": "okayama-marathon-2026",
@@ -2868,7 +2915,8 @@
     "venue": {
       "name": "岡山市 フルマラソン",
       "mapQuery": "岡山県 岡山市 フルマラソン"
-    }
+    },
+    "entry_start_date": "2026-03-21"
   },
   {
     "id": "soja-kibiji-marathon-2027",
@@ -2916,7 +2964,8 @@
     "venue": {
       "name": "総社市 フル＆ハーフ",
       "mapQuery": "岡山県 総社市 フル＆ハーフ"
-    }
+    },
+    "entry_start_date": "2026-10-16"
   },
   {
     "id": "kagamino-forest-trail-2026",
@@ -2968,7 +3017,8 @@
     "venue": {
       "name": "鏡野町",
       "mapQuery": "岡山県 鏡野町"
-    }
+    },
+    "entry_start_date": "2026-07-07"
   },
   {
     "id": "harima-okayama-ride-2026",
@@ -3022,7 +3072,8 @@
     "source": {
       "portalName": "スポエンCYCLE",
       "portalUrl": "https://cycle.spoen.jp/"
-    }
+    },
+    "entry_start_date": "2026-07-27"
   },
   {
     "id": "akiyoshidai-karst-trail-2026",
@@ -3078,7 +3129,8 @@
     "venue": {
       "name": "美祢市 エクストリーム60km",
       "mapQuery": "山口県 美祢市 エクストリーム60km"
-    }
+    },
+    "entry_start_date": "2026-07-17"
   },
   {
     "id": "くだまつ笠戸島アイランドトレイル-2027",
@@ -3132,7 +3184,8 @@
     "venue": {
       "name": "下松市",
       "mapQuery": "山口県 下松市"
-    }
+    },
+    "entry_start_date": "2026-10-11"
   },
   {
     "id": "shimonoseki-kaikyo-marathon-2026",
@@ -3180,7 +3233,8 @@
     "venue": {
       "name": "下関市 関門海峡コース",
       "mapQuery": "山口県 下関市 関門海峡コース"
-    }
+    },
+    "entry_start_date": "2026-05-01"
   },
   {
     "id": "mukatsuku-double-marathon-2026",
@@ -3232,7 +3286,8 @@
     "venue": {
       "name": "むかつく",
       "mapQuery": "山口県 むかつく"
-    }
+    },
+    "entry_start_date": "2026-03-01"
   },
   {
     "id": "suo-oshima-マラニック-2026",
@@ -3289,7 +3344,8 @@
       "name": "片添ヶ浜海浜公園（周防大島町）",
       "address": "山口県大島郡周防大島町平野片添",
       "mapQuery": "周防大島町 片添ヶ浜海浜公園"
-    }
+    },
+    "entry_start_date": "2026-01-09"
   },
   {
     "id": "mine-akiyoshidai-cycle-2026",
@@ -3343,7 +3399,8 @@
     "source": {
       "portalName": "スポエンCYCLE",
       "portalUrl": "https://cycle.spoen.jp/"
-    }
+    },
+    "entry_start_date": "2026-02-19"
   },
   {
     "id": "marishiten-trail-2026",
@@ -3402,7 +3459,8 @@
       "name": "大田市 100km",
       "mapQuery": "島根県 大田市 100km"
     },
-    "end_date": "2026-09-21"
+    "end_date": "2026-09-21",
+    "entry_start_date": "2026-06-11"
   },
   {
     "id": "okinosima-ultra-2026",
@@ -3455,7 +3513,8 @@
     "venue": {
       "name": "隠岐の島町 100km",
       "mapQuery": "島根県 隠岐の島町 100km"
-    }
+    },
+    "entry_start_date": "2026-02-19"
   },
   {
     "id": "sanbe-mountain-trail-2026",
@@ -3507,7 +3566,8 @@
     "venue": {
       "name": "さんべさん",
       "mapQuery": "島根県 さんべさん"
-    }
+    },
+    "entry_start_date": "2026-07-12"
   },
   {
     "id": "matsue-kokuhou-marathon-2026",
@@ -3557,7 +3617,8 @@
     "venue": {
       "name": "松江市 フルマラソン",
       "mapQuery": "島根県 松江市 フルマラソン"
-    }
+    },
+    "entry_start_date": "2026-07-17"
   },
   {
     "id": "shimanami-yamanami-cycle-2026",
@@ -3611,7 +3672,8 @@
     "source": {
       "portalName": "スポエンCYCLE",
       "portalUrl": "https://cycle.spoen.jp/"
-    }
+    },
+    "entry_start_date": "2026-04-06"
   },
   {
     "id": "daisen-mountain-trail-2026",
@@ -3667,7 +3729,8 @@
     "venue": {
       "name": "だいせん",
       "mapQuery": "鳥取県 だいせん"
-    }
+    },
+    "entry_start_date": "2026-05-26"
   },
   {
     "id": "hyonosen-trail-tottori-2026",
@@ -3723,7 +3786,8 @@
     "venue": {
       "name": "若桜町",
       "mapQuery": "鳥取県 若桜町"
-    }
+    },
+    "entry_start_date": "2026-06-26"
   },
   {
     "id": "tottori-marathon-2027",
@@ -3773,7 +3837,8 @@
     "venue": {
       "name": "鳥取砂丘〜鳥取城跡 ワンウェイ公認フル",
       "mapQuery": "鳥取県 鳥取砂丘〜鳥取城跡 ワンウェイ公認フル"
-    }
+    },
+    "entry_start_date": "2026-10-21"
   },
   {
     "id": "tour-de-daisen-2026",
@@ -3831,7 +3896,8 @@
     "venue": {
       "name": "名峰大山一周ヒルクライム＆ロングライド",
       "mapQuery": "鳥取県 名峰大山一周ヒルクライム＆ロングライド"
-    }
+    },
+    "entry_start_date": "2027-02-14"
   },
   {
     "id": "cycling-shimanami-2026",
@@ -3883,7 +3949,8 @@
     "source": {
       "portalName": "公式サイト",
       "portalUrl": "https://cycling-shimanami.jp/"
-    }
+    },
+    "entry_start_date": "2026-05-01"
   },
   {
     "id": "ishizuchi-skyrun-trail-2026",
@@ -3939,7 +4006,8 @@
     "venue": {
       "name": "いしづちさん",
       "mapQuery": "愛媛県 いしづちさん"
-    }
+    },
+    "entry_start_date": "2026-06-06"
   },
   {
     "id": "kumakogen-four-seasons-trail-2026",
@@ -3991,7 +4059,8 @@
     "venue": {
       "name": "久万高原町",
       "mapQuery": "愛媛県 久万高原町"
-    }
+    },
+    "entry_start_date": "2026-03-31"
   },
   {
     "id": "ehime-marathon-2027",
@@ -4039,7 +4108,8 @@
     "venue": {
       "name": "松山市 坊っちゃんスタジアム",
       "mapQuery": "愛媛県 松山市 坊っちゃんスタジアム"
-    }
+    },
+    "entry_start_date": "2026-07-02"
   },
   {
     "id": "shimanami-jukan-ultra-100-2026",
@@ -4095,7 +4165,8 @@
     "venue": {
       "name": "今治〜尾道",
       "mapQuery": "愛媛県 今治〜尾道"
-    }
+    },
+    "entry_start_date": "2026-02-14"
   },
   {
     "id": "ufo-line-hillclimb-2026",
@@ -4149,7 +4220,8 @@
     "source": {
       "portalName": "スポエンCYCLE",
       "portalUrl": "https://cycle.spoen.jp/"
-    }
+    },
+    "entry_start_date": "2026-05-21"
   },
   {
     "id": "shodoshima-olive-trail-2026",
@@ -4201,7 +4273,8 @@
     "venue": {
       "name": "かんかけい",
       "mapQuery": "香川県 かんかけい"
-    }
+    },
+    "entry_start_date": "2026-08-16"
   },
   {
     "id": "sanuki-mountains-skytrail-2026",
@@ -4257,7 +4330,8 @@
     "venue": {
       "name": "高松〜まんのう",
       "mapQuery": "香川県 高松〜まんのう"
-    }
+    },
+    "entry_start_date": "2026-01-14"
   },
   {
     "id": "kagawa-marugame-half-2027",
@@ -4305,7 +4379,8 @@
     "venue": {
       "name": "日本屈指の高速コース",
       "mapQuery": "香川県 日本屈指の高速コース"
-    }
+    },
+    "entry_start_date": "2026-09-16"
   },
   {
     "id": "tour-de-sanuki-udon-2026",
@@ -4363,7 +4438,8 @@
     "venue": {
       "name": "讃岐うどん巡り＆瀬戸内ロングライド 120km",
       "mapQuery": "香川県 讃岐うどん巡り＆瀬戸内ロングライド 120km"
-    }
+    },
+    "entry_start_date": "2026-02-09"
   },
   {
     "id": "mameichi-shodoshima-cycle-2026",
@@ -4417,7 +4493,8 @@
     "source": {
       "portalName": "スポエンCYCLE",
       "portalUrl": "https://cycle.spoen.jp/"
-    }
+    },
+    "entry_start_date": "2026-07-22"
   },
   {
     "id": "tsurugisan-super-rin-do-trail-2026",
@@ -4474,7 +4551,8 @@
     "venue": {
       "name": "つるぎさん",
       "mapQuery": "徳島県 つるぎさん"
-    }
+    },
+    "entry_start_date": "2026-05-01"
   },
   {
     "id": "senba-sea-cliff-trail-2027",
@@ -4528,7 +4606,8 @@
     "venue": {
       "name": "せんばかいがい",
       "mapQuery": "徳島県 せんばかいがい"
-    }
+    },
+    "entry_start_date": "2026-10-06"
   },
   {
     "id": "iya-valley-adventure-trail-2026",
@@ -4584,7 +4663,8 @@
     "venue": {
       "name": "ひがしいや",
       "mapQuery": "徳島県 ひがしいや"
-    }
+    },
+    "entry_start_date": "2026-07-12"
   },
   {
     "id": "tokushima-marathon-2027",
@@ -4632,7 +4712,8 @@
     "venue": {
       "name": "吉野川ブルーライン公認コース",
       "mapQuery": "徳島県 吉野川ブルーライン公認コース"
-    }
+    },
+    "entry_start_date": "2026-10-26"
   },
   {
     "id": "tour-de-nishi-awa-2026",
@@ -4690,7 +4771,8 @@
     "venue": {
       "name": "剣山 祖谷 過酷山岳グランフォンド 160km",
       "mapQuery": "徳島県 剣山 祖谷 過酷山岳グランフォンド 160km"
-    }
+    },
+    "entry_start_date": "2027-02-09"
   },
   {
     "id": "oku-shimanto-trail-2026",
@@ -4742,7 +4824,8 @@
     "venue": {
       "name": "四万十町",
       "mapQuery": "高知県 四万十町"
-    }
+    },
+    "entry_start_date": "2026-08-06"
   },
   {
     "id": "reihoku-shikoku-mountain-trail-2026",
@@ -4798,7 +4881,8 @@
     "venue": {
       "name": "本山〜津野",
       "mapQuery": "高知県 本山〜津野"
-    }
+    },
+    "entry_start_date": "2026-06-21"
   },
   {
     "id": "shimantogawa-ultra-2026",
@@ -4851,7 +4935,8 @@
     "venue": {
       "name": "四万十市",
       "mapQuery": "高知県 四万十市"
-    }
+    },
+    "entry_start_date": "2026-04-16"
   },
   {
     "id": "kochi-ryoma-marathon-2027",
@@ -4899,7 +4984,8 @@
     "venue": {
       "name": "桂浜〜仁淀川河口大橋",
       "mapQuery": "高知県 桂浜〜仁淀川河口大橋"
-    }
+    },
+    "entry_start_date": "2026-09-11"
   },
   {
     "id": "shimanto-dragon-ride-2026",
@@ -4957,7 +5043,8 @@
     "venue": {
       "name": "清流四万十川＆足摺岬 ロングライド 135km",
       "mapQuery": "高知県 清流四万十川＆足摺岬 ロングライド 135km"
-    }
+    },
+    "entry_start_date": "2026-09-16"
   },
   {
     "id": "niyodogawa-blue-ride-2026",
@@ -5011,7 +5098,8 @@
     "source": {
       "portalName": "スポエンCYCLE",
       "portalUrl": "https://cycle.spoen.jp/"
-    }
+    },
+    "entry_start_date": "2026-06-26"
   },
   {
     "id": "hasetsune-cup-2026",
@@ -5069,7 +5157,8 @@
     "venue": {
       "name": "24時間以内",
       "mapQuery": "東京都 24時間以内"
-    }
+    },
+    "entry_start_date": "2026-06-01"
   },
   {
     "id": "izu-trail-journey-2026",
@@ -5126,7 +5215,8 @@
     "venue": {
       "name": "ITJ 70km 松崎〜修善寺",
       "mapQuery": "静岡県 ITJ 70km 松崎〜修善寺"
-    }
+    },
+    "entry_start_date": "2026-07-02"
   },
   {
     "id": "kaga-spa-trail-utmb-2026",
@@ -5189,7 +5279,8 @@
       "name": "石川 加賀温泉郷 100km",
       "mapQuery": "石川県 石川 加賀温泉郷 100km"
     },
-    "end_date": "2026-06-21"
+    "end_date": "2026-06-21",
+    "entry_start_date": "2026-01-30"
   },
   {
     "id": "utsukushigahara-trail-2026",
@@ -5246,7 +5337,8 @@
     "venue": {
       "name": "長野 長和町 90kmロング",
       "mapQuery": "長野県 長野 長和町 90kmロング"
-    }
+    },
+    "entry_start_date": "2026-04-16"
   },
   {
     "id": "aso-volcano-trail-2026",
@@ -5309,7 +5401,8 @@
       "name": "阿蘇ボルケーノトレイル 112km",
       "mapQuery": "熊本県 阿蘇ボルケーノトレイル 112km"
     },
-    "end_date": "2026-05-10"
+    "end_date": "2026-05-10",
+    "entry_start_date": "2026-01-19"
   },
   {
     "id": "hiraodai-trail-2026",
@@ -5361,7 +5454,8 @@
     "venue": {
       "name": "福岡 北九州市 40km",
       "mapQuery": "福岡県 福岡 北九州市 40km"
-    }
+    },
+    "entry_start_date": "2026-01-04"
   },
   {
     "id": "kyoto-grand-traverse-2026",
@@ -5419,7 +5513,8 @@
     "venue": {
       "name": "東山 北山 60km",
       "mapQuery": "京都府 東山 北山 60km"
-    }
+    },
+    "entry_start_date": "2025-12-17"
   },
   {
     "id": "kumano-old-trail-2026",
@@ -5477,7 +5572,8 @@
     "venue": {
       "name": "世界遺産 熊野古道トレイルラン 50km",
       "mapQuery": "三重県 世界遺産 熊野古道トレイルラン 50km"
-    }
+    },
+    "entry_start_date": "2026-08-21"
   },
   {
     "id": "ikko-diamond-trail-2026",
@@ -5531,7 +5627,8 @@
     "venue": {
       "name": "ダイヤモンドトレール縦走 36km",
       "mapQuery": "大阪府 ダイヤモンドトレール縦走 36km"
-    }
+    },
+    "entry_start_date": "2026-01-09"
   },
   {
     "id": "wakasa-michinoku-100km-trail-2026",
@@ -5590,7 +5687,8 @@
       "name": "福井",
       "mapQuery": "福井県 福井"
     },
-    "end_date": "2026-10-25"
+    "end_date": "2026-10-25",
+    "entry_start_date": "2026-07-17"
   },
   {
     "id": "zao-skyrun-vertical-2026",
@@ -5642,7 +5740,8 @@
     "venue": {
       "name": "ZAO SKYRUN お釜 熊野岳",
       "mapQuery": "山形県 ZAO SKYRUN お釜 熊野岳"
-    }
+    },
+    "entry_start_date": "2026-06-06"
   },
   {
     "id": "savas-fuji-mountain-race-2026",
@@ -5694,7 +5793,8 @@
     "venue": {
       "name": "市役所〜富士山頂 21km D+3000m",
       "mapQuery": "山梨県 市役所〜富士山頂 21km D+3000m"
-    }
+    },
+    "entry_start_date": "2026-01-30"
   },
   {
     "id": "saroma-lake-100km-ultra-2026",
@@ -5747,7 +5847,8 @@
     "venue": {
       "name": "北海道 湧別〜北見〜佐呂間",
       "mapQuery": "北海道 北海道 湧別〜北見〜佐呂間"
-    }
+    },
+    "entry_start_date": "2025-12-17"
   },
   {
     "id": "challenger-fuji-5lakes-ultra-2027",
@@ -5801,7 +5902,8 @@
       "name": "富士北麓公園陸上競技場",
       "address": "山梨県富士吉田市上吉田5000",
       "mapQuery": "富士北麓公園"
-    }
+    },
+    "entry_start_date": "2026-12-02"
   },
   {
     "id": "hidatakayama-ultra-100-2026",
@@ -5854,7 +5956,8 @@
     "venue": {
       "name": "岐阜 高山市 D+2500m",
       "mapQuery": "岐阜県 岐阜 高山市 D+2500m"
-    }
+    },
+    "entry_start_date": "2026-01-30"
   },
   {
     "id": "yatsugatake-nobeyama-ultra-2026",
@@ -5907,7 +6010,8 @@
     "venue": {
       "name": "長野",
       "mapQuery": "長野県 長野"
-    }
+    },
+    "entry_start_date": "2026-01-14"
   },
   {
     "id": "tango-100km-ultra-2026",
@@ -5960,7 +6064,8 @@
     "venue": {
       "name": "京丹後市",
       "mapQuery": "京都府 京丹後市"
-    }
+    },
+    "entry_start_date": "2026-05-01"
   },
   {
     "id": "akita-naisairiku-100km-ultra-2026",
@@ -6011,7 +6116,8 @@
     "source": {
       "portalName": "モシコム",
       "portalUrl": "https://moshicom.com/search/?keyword=%E7%A7%8B%E7%94%B0%E5%86%85%E9%99%B8%E3%83%AA%E3%82%BE%E3%83%BC%E3%83%88%E3%82%AB%E3%83%83%E3%83%97%20100%E3%82%AD%E3%83%AD%E3%83%81%E3%83%A3%E3%83%AC%E3%83%B3%E3%82%B8%E3%83%9E%E3%83%A9%E3%82%BD%E3%83%B3"
-    }
+    },
+    "entry_start_date": "2026-05-16"
   },
   {
     "id": "tour-de-okinawa-2026",
@@ -6067,7 +6173,8 @@
     "venue": {
       "name": "沖縄 名護市 市民レース200km",
       "mapQuery": "沖縄県 沖縄 名護市 市民レース200km"
-    }
+    },
+    "entry_start_date": "2026-08-01"
   },
   {
     "id": "mt-fuji-hillclimb-2026",
@@ -6123,7 +6230,8 @@
     "venue": {
       "name": "富士スバルライン 24km D+1255m",
       "mapQuery": "山梨県 富士スバルライン 24km D+1255m"
-    }
+    },
+    "entry_start_date": "2026-02-09"
   },
   {
     "id": "sado-long-ride-210-2026",
@@ -6179,7 +6287,8 @@
     "venue": {
       "name": "新潟 佐渡島一周 210km",
       "mapQuery": "新潟県 新潟 佐渡島一周 210km"
-    }
+    },
+    "entry_start_date": "2026-02-09"
   },
   {
     "id": "niseko-classic-150km-2026",
@@ -6235,7 +6344,8 @@
     "venue": {
       "name": "ニセコクラシック 150km / UCI GFWS",
       "mapQuery": "北海道 ニセコクラシック 150km / UCI GFWS"
-    }
+    },
+    "entry_start_date": "2026-03-11"
   },
   {
     "id": "biwaichi-cycling-160-2026",
@@ -6293,7 +6403,8 @@
     "venue": {
       "name": "ビワイチ 160km センチュリー",
       "mapQuery": "滋賀県 ビワイチ 160km センチュリー"
-    }
+    },
+    "entry_start_date": "2026-07-02"
   },
   {
     "id": "onomichi-shimanami-coastal-trail-2026",
@@ -6345,7 +6456,8 @@
     "venue": {
       "name": "尾道市",
       "mapQuery": "広島県 尾道市"
-    }
+    },
+    "entry_start_date": "2026-08-26"
   },
   {
     "id": "bizen-oni-trail-okayama-2026",
@@ -6397,7 +6509,8 @@
     "venue": {
       "name": "きのじょう",
       "mapQuery": "岡山県 きのじょう"
-    }
+    },
+    "entry_start_date": "2026-09-16"
   },
   {
     "id": "nagato-tawarayama-trail-2026",
@@ -6449,7 +6562,8 @@
     "venue": {
       "name": "長門市",
       "mapQuery": "山口県 長門市"
-    }
+    },
+    "entry_start_date": "2026-08-16"
   },
   {
     "id": "ashizuri-cape-ocean-trail-2027",
@@ -6501,7 +6615,8 @@
     "venue": {
       "name": "土佐清水市",
       "mapQuery": "高知県 土佐清水市"
-    }
+    },
+    "entry_start_date": "2026-10-21"
   },
   {
     "id": "sanuki-kotohira-konpira-trail-2026",
@@ -6553,7 +6668,8 @@
     "venue": {
       "name": "琴平町",
       "mapQuery": "香川県 琴平町"
-    }
+    },
+    "entry_start_date": "2026-09-21"
   },
   {
     "id": "toretore-ueyama-2027",
@@ -6612,7 +6728,8 @@
     "source": {
       "portalName": "公式サイト",
       "portalUrl": "http://toretore.web.fc2.com/"
-    }
+    },
+    "entry_start_date": "2026-12-22"
   },
   {
     "id": "mihara-hakuryuko-trail-2027",
@@ -6666,7 +6783,8 @@
     "venue": {
       "name": "三原市",
       "mapQuery": "広島県 三原市"
-    }
+    },
+    "entry_start_date": "2026-11-19"
   },
   {
     "id": "iwakuni-shirohebi-trail-2027",
@@ -6718,7 +6836,8 @@
     "venue": {
       "name": "岩国市",
       "mapQuery": "山口県 岩国市"
-    }
+    },
+    "entry_start_date": "2026-10-16"
   },
   {
     "id": "kurashiki-washuzan- coastal-trail-2027",
@@ -6767,7 +6886,8 @@
     "source": {
       "portalName": "モシコム",
       "portalUrl": "https://moshicom.com/search/?keyword=%E5%80%89%E6%95%B7%E3%83%BB%E9%B7%B2%E7%BE%BD%E5%B1%B1%EF%BC%86%E7%8E%8B%E5%AD%90%E3%83%B6%E5%B2%B3%20%E7%80%AC%E6%88%B8%E5%86%85%E3%82%AA%E3%83%BC%E3%82%B7%E3%83%A3%E3%83%B3%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB"
-    }
+    },
+    "entry_start_date": "2026-11-11"
   },
   {
     "id": "kochi-navigms-winter-2026",
@@ -6821,7 +6941,8 @@
     "source": {
       "portalName": "公式サイト",
       "portalUrl": "https://kochi-navigms.com/"
-    }
+    },
+    "entry_start_date": "2026-10-01"
   },
   {
     "id": "sanuki-mountains-skytrail-2027",
@@ -6873,7 +6994,8 @@
     "venue": {
       "name": "高松〜まんのう",
       "mapQuery": "香川県 高松〜まんのう"
-    }
+    },
+    "entry_start_date": "2027-01-09"
   },
   {
     "id": "suo-oshima-maranic-2027",
@@ -6930,7 +7052,8 @@
       "name": "片添ヶ浜海浜公園（周防大島町）",
       "address": "山口県大島郡周防大島町平野片添",
       "mapQuery": "周防大島町 片添ヶ浜海浜公園"
-    }
+    },
+    "entry_start_date": "2027-01-09"
   },
   {
     "id": "sainokuni-100mile-2027",
@@ -6989,7 +7112,8 @@
       "portalName": "公式サイト",
       "portalUrl": "https://trainic-world.org/sainokuni/"
     },
-    "end_date": "2027-05-16"
+    "end_date": "2027-05-16",
+    "entry_start_date": "2026-12-02"
   },
   {
     "id": "aso-volcano-trail-2027",
@@ -7052,7 +7176,8 @@
       "name": "阿蘇ボルケーノトレイル 112km",
       "mapQuery": "熊本県 阿蘇ボルケーノトレイル 112km"
     },
-    "end_date": "2027-05-09"
+    "end_date": "2027-05-09",
+    "entry_start_date": "2026-12-01"
   },
   {
     "id": "yatsugatake-nobeyama-ultra-2027",
@@ -7105,7 +7230,8 @@
     "venue": {
       "name": "長野",
       "mapQuery": "長野県 長野"
-    }
+    },
+    "entry_start_date": "2026-12-30"
   },
   {
     "id": "nikko-mountain-2026",
@@ -7156,7 +7282,8 @@
     "source": {
       "portalName": "モシコム",
       "portalUrl": "https://moshicom.com/search/?keyword=%E6%97%A5%E5%85%89%E5%9B%BD%E7%AB%8B%E5%85%AC%E5%9C%92%E3%83%9E%E3%82%A6%E3%83%B3%E3%83%86%E3%83%B3%E3%83%A9%E3%83%B3%E3%83%8B%E3%83%B3%E3%82%B0"
-    }
+    },
+    "entry_start_date": "2026-08-11"
   },
   {
     "id": "shiga-kogen-100-2026",
@@ -7211,7 +7338,8 @@
       "portalName": "公式サイト",
       "portalUrl": "https://nature-scene.net/shiga100/"
     },
-    "end_date": "2026-07-12"
+    "end_date": "2026-07-12",
+    "entry_start_date": "2026-04-16"
   },
   {
     "id": "forest-trail-tango-2026",
@@ -7262,7 +7390,8 @@
     "source": {
       "portalName": "モシコム",
       "portalUrl": "https://moshicom.com/search/?keyword=FOREST%20TRAIL"
-    }
+    },
+    "entry_start_date": "2026-07-22"
   },
   {
     "id": "fairy-trail-takashima-2026",
@@ -7312,7 +7441,8 @@
     "source": {
       "portalName": "モシコム",
       "portalUrl": "https://moshicom.com/search/?keyword=FAIRY%20TRAIL"
-    }
+    },
+    "entry_start_date": "2026-03-19"
   },
   {
     "id": "kumano-kodo-trail-2026",
@@ -7361,7 +7491,8 @@
     "source": {
       "portalName": "公式サイト",
       "portalUrl": "http://kumanooldtrails.com/"
-    }
+    },
+    "entry_start_date": "2026-09-01"
   },
   {
     "id": "grandfondo-kyoto-2026",
@@ -7407,7 +7538,8 @@
     "source": {
       "portalName": "スポエンCYCLE",
       "portalUrl": "https://cycle.spoen.jp/"
-    }
+    },
+    "entry_start_date": "2026-02-19"
   },
   {
     "id": "hasetsune-30k-2026",
@@ -7458,7 +7590,8 @@
     "source": {
       "portalName": "モシコム",
       "portalUrl": "https://moshicom.com/search/?keyword=%E3%83%8F%E3%82%BB%E3%83%84%E3%83%8D30K"
-    }
+    },
+    "entry_start_date": "2025-12-12"
   },
   {
     "id": "aso-round-trail-2026",
@@ -7519,7 +7652,8 @@
       "name": "ART",
       "mapQuery": "熊本県 ART"
     },
-    "end_date": "2026-05-10"
+    "end_date": "2026-05-10",
+    "entry_start_date": "2026-01-30"
   },
   {
     "id": "okumikawa-power-trail-2027",
@@ -7570,7 +7704,8 @@
     "source": {
       "portalName": "モシコム",
       "portalUrl": "https://moshicom.com/search/?keyword=%E5%A5%A5%E4%B8%89%E6%B2%B3%E3%83%91%E3%83%AF%E3%83%BC%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB"
-    }
+    },
+    "entry_start_date": "2026-12-17"
   },
   {
     "id": "saba-kaido-ultra-2027",
@@ -7617,7 +7752,8 @@
     "source": {
       "portalName": "モシコム",
       "portalUrl": "https://moshicom.com/search/?keyword=%E9%AF%96%E8%A1%97%E9%81%93%E3%82%A6%E3%83%AB%E3%83%88%E3%83%A9%E3%83%9E%E3%83%A9%E3%82%BD%E3%83%B3"
-    }
+    },
+    "entry_start_date": "2026-12-30"
   },
   {
     "id": "hiroshima-wangantrail-108k-2027",
@@ -7673,7 +7809,8 @@
     "source": {
       "portalName": "公式サイト",
       "portalUrl": "https://wangantrailrun.com/"
-    }
+    },
+    "entry_start_date": "2026-10-26"
   },
   {
     "id": "zentsuji-gogaku-2027",
@@ -7724,7 +7861,8 @@
     "source": {
       "portalName": "モシコム",
       "portalUrl": "https://moshicom.com/search/?keyword=%E5%96%84%E9%80%9A%E5%AF%BA%E4%BA%94%E5%B2%B3%E5%B1%B1%E7%A9%BA%E6%B5%B7%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB"
-    }
+    },
+    "entry_start_date": "2026-11-26"
   },
   {
     "id": "niseko-ar-2026",
@@ -7777,7 +7915,8 @@
     "source": {
       "portalName": "モシコム",
       "portalUrl": "https://moshicom.com/search/?keyword=%E3%83%8B%E3%82%BB%E3%82%B3%E3%82%A2%E3%83%89%E3%83%99%E3%83%B3%E3%83%81%E3%83%A3%E3%83%BC%E3%83%AC%E3%83%BC%E3%82%B9"
-    }
+    },
+    "entry_start_date": "2026-06-01"
   },
   {
     "id": "michinoku-ar-2026",
@@ -7829,7 +7968,8 @@
     "source": {
       "portalName": "モシコム",
       "portalUrl": "https://moshicom.com/search/?keyword=%E3%81%BF%E3%81%A1%E3%81%AE%E3%81%8F%E3%82%A2%E3%83%89%E3%83%99%E3%83%B3%E3%83%81%E3%83%A3%E3%83%BC%E3%83%AC%E3%83%BC%E3%82%B9"
-    }
+    },
+    "entry_start_date": "2026-05-01"
   },
   {
     "id": "boso-rogaining-2026",
@@ -7876,7 +8016,8 @@
     "source": {
       "portalName": "モシコム",
       "portalUrl": "https://moshicom.com/search/?keyword=%E6%88%BF%E7%B7%8F%E4%B8%98%E9%99%B5%E3%83%95%E3%82%A9%E3%83%AC%E3%82%B9%E3%83%88%E3%83%AD%E3%82%B2%E3%82%A4%E3%83%8B%E3%83%B3%E3%82%B0"
-    }
+    },
+    "entry_start_date": "2026-08-26"
   },
   {
     "id": "azumino-rogaining-2026",
@@ -7923,7 +8064,8 @@
     "source": {
       "portalName": "モシコム",
       "portalUrl": "https://moshicom.com/search/?keyword=%E4%BF%A1%E5%B7%9E%E5%AE%89%E6%9B%87%E9%87%8E%E3%83%AD%E3%82%B2%E3%82%A4%E3%83%8B%E3%83%B3%E3%82%B0%E3%83%95%E3%82%A7%E3%82%B9%E3%83%86%E3%82%A3%E3%83%90%E3%83%AB"
-    }
+    },
+    "entry_start_date": "2026-07-02"
   },
   {
     "id": "kirishima-ebino-trail-2026",
@@ -7979,7 +8121,8 @@
       "name": "えびの高原ピクニック広場",
       "address": "宮崎県えびの市末永",
       "mapQuery": "えびの高原ピクニック広場"
-    }
+    },
+    "entry_start_date": "2026-04-01"
   },
   {
     "id": "yakushima-adventure-2026",
@@ -8027,7 +8170,8 @@
     "source": {
       "portalName": "モシコム",
       "portalUrl": "https://moshicom.com/search/?keyword=%E5%B1%8B%E4%B9%85%E5%B3%B6%E3%82%A2%E3%82%A4%E3%83%A9%E3%83%B3%E3%83%89%E3%82%A2%E3%83%89%E3%83%99%E3%83%B3%E3%83%81%E3%83%A3%E3%83%BC"
-    }
+    },
+    "entry_start_date": "2026-07-17"
   },
   {
     "id": "amami-jungle-trail-2026",
@@ -8073,7 +8217,8 @@
     "source": {
       "portalName": "モシコム",
       "portalUrl": "https://moshicom.com/search/?keyword=%E5%A5%84%E7%BE%8E%E5%A4%A7%E5%B3%B6%E3%83%9E%E3%83%B3%E3%82%B0%E3%83%AD%E3%83%BC%E3%83%96%E3%82%B8%E3%83%A3%E3%83%B3%E3%82%B0%E3%83%AB%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB"
-    }
+    },
+    "entry_start_date": "2026-09-01"
   },
   {
     "id": "tobishima-blue-ride-2026",
@@ -8119,7 +8264,8 @@
     "source": {
       "portalName": "スポエンCYCLE",
       "portalUrl": "https://cycle.spoen.jp/"
-    }
+    },
+    "entry_start_date": "2026-08-01"
   },
   {
     "id": "gonokawa-canoe-bike-2026",
@@ -8167,7 +8313,8 @@
     "source": {
       "portalName": "モシコム",
       "portalUrl": "https://moshicom.com/search/?keyword=%E6%B1%9F%E3%81%AE%E5%B7%9D%E3%82%AB%E3%83%8C%E3%83%BC%EF%BC%86%E3%83%90%E3%82%A4%E3%82%AF%E3%82%A2%E3%83%89%E3%83%99%E3%83%B3%E3%83%81%E3%83%A3%E3%83%BC%E3%83%95%E3%82%A7%E3%82%B9"
-    }
+    },
+    "entry_start_date": "2026-06-21"
   },
   {
     "id": "daisen-hillclimb-2026",
@@ -8211,7 +8358,8 @@
     "source": {
       "portalName": "スポエンCYCLE",
       "portalUrl": "https://cycle.spoen.jp/"
-    }
+    },
+    "entry_start_date": "2026-03-21"
   },
   {
     "id": "hiruzen-green-rally-2026",
@@ -8253,7 +8401,8 @@
     "source": {
       "portalName": "スポエンCYCLE",
       "portalUrl": "https://cycle.spoen.jp/"
-    }
+    },
+    "entry_start_date": "2026-04-11"
   },
   {
     "id": "yoshinogawa-cycle-fest-2026",
@@ -8297,7 +8446,8 @@
     "source": {
       "portalName": "スポエンCYCLE",
       "portalUrl": "https://cycle.spoen.jp/"
-    }
+    },
+    "entry_start_date": "2026-07-17"
   },
   {
     "id": "shodoshima-mameichi-2026",
@@ -8345,7 +8495,8 @@
     "venue": {
       "name": "マメイチ",
       "mapQuery": "香川県 マメイチ"
-    }
+    },
+    "entry_start_date": "2026-09-21"
   },
   {
     "id": "ishizuchi-hillclimb-2026",
@@ -8385,7 +8536,8 @@
     "source": {
       "portalName": "スポエンCYCLE",
       "portalUrl": "https://cycle.spoen.jp/"
-    }
+    },
+    "entry_start_date": "2026-05-21"
   },
   {
     "id": "okusimanto-adventure-ride-2026",
@@ -8431,7 +8583,8 @@
     "source": {
       "portalName": "スポエンCYCLE",
       "portalUrl": "https://cycle.spoen.jp/"
-    }
+    },
+    "entry_start_date": "2026-07-07"
   },
   {
     "id": "shiwai-marathon-88k-2026",
@@ -8481,7 +8634,8 @@
     "venue": {
       "name": "酷道激坂88km",
       "mapQuery": "広島県 酷道激坂88km"
-    }
+    },
+    "entry_start_date": "2026-06-01"
   },
   {
     "id": "muroto-geopark-trail-2026",
@@ -8527,7 +8681,8 @@
     "source": {
       "portalName": "モシコム",
       "portalUrl": "https://moshicom.com/search/?keyword=%E5%AE%A4%E6%88%B8%E3%83%A6%E3%83%8D%E3%82%B9%E3%82%B3%E4%B8%96%E7%95%8C%E3%82%B8%E3%82%AA%E3%83%91%E3%83%BC%E3%82%AF%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%EF%BC%86%E3%83%A9%E3%83%B3"
-    }
+    },
+    "entry_start_date": "2026-08-21"
   },
   {
     "id": "tottori-sanddune-run-2026",
@@ -8567,7 +8722,8 @@
     "source": {
       "portalName": "モシコム",
       "portalUrl": "https://moshicom.com/search/?keyword=%E9%B3%A5%E5%8F%96%E7%A0%82%E4%B8%98%E3%82%B5%E3%83%B3%E3%83%89%E3%83%87%E3%83%A5%E3%83%BC%E3%83%B3%E3%82%A8%E3%83%B3%E3%83%87%E3%83%A5%E3%83%A9%E3%83%B3%E3%82%B9%E3%83%A9%E3%83%B3"
-    }
+    },
+    "entry_start_date": "2026-07-22"
   },
   {
     "id": "hagi-oukan-run-2026",
@@ -8609,7 +8765,8 @@
     "source": {
       "portalName": "モシコム",
       "portalUrl": "https://moshicom.com/search/?keyword=%E8%90%A9%E5%BE%80%E9%82%84%E6%AD%B4%E5%8F%B2%E8%A1%97%E9%81%93%E6%8E%A2%E8%A8%AA%E3%83%9E%E3%83%A9%E3%83%8B%E3%83%83%E3%82%AF"
-    }
+    },
+    "entry_start_date": "2026-01-14"
   },
   {
     "id": "okutsu-onsen-trail-2026",
@@ -8651,7 +8808,8 @@
     "source": {
       "portalName": "モシコム",
       "portalUrl": "https://moshicom.com/search/?keyword=%E9%8F%A1%E9%87%8E%E7%94%BA%E5%A5%A5%E6%B4%A5%E6%B8%A9%E6%B3%89%E6%B8%93%E8%B0%B7%E3%83%8F%E3%82%A4%E3%82%AF%EF%BC%86%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB"
-    }
+    },
+    "entry_start_date": "2026-03-16"
   },
   {
     "id": "saioto-colors-green-2026",
@@ -8709,7 +8867,8 @@
     "source": {
       "portalName": "モシコム",
       "portalUrl": "https://saiotocolors.themedia.jp/"
-    }
+    },
+    "entry_start_date": "2026-02-19"
   },
   {
     "id": "saioto-colors-autumn-2026",
@@ -8768,6 +8927,7 @@
     "source": {
       "portalName": "モシコム",
       "portalUrl": "https://saiotocolors.themedia.jp/"
-    }
+    },
+    "entry_start_date": "2026-08-16"
   }
 ]

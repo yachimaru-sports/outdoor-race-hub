@@ -309,13 +309,35 @@ export function formatDeadlineSlash(dateStr: string): string {
 }
 
 /**
- * 期間（受付開始〜締切）スラッシュ表記（例: 4/1㈬~5/20㈬）
+ * 期間（受付開始〜締切）スラッシュ＆曜日表記（例: 6/12㈮~9/30㈬、同月なら 4/1㈬~20㈬）
  */
 export function formatPeriodSlash(startStr?: string, endStr?: string): string {
   if (!startStr && !endStr) return '';
-  if (!startStr && endStr) return formatDeadlineSlash(endStr);
+  if (!startStr && endStr) return `~${formatDeadlineSlash(endStr)}`;
   if (startStr && !endStr) return `${formatDeadlineSlash(startStr)}~`;
-  return `${formatDeadlineSlash(startStr!)}~${formatDeadlineSlash(endStr!)}`;
+  if (!startStr || !endStr) return '';
+
+  const sParts = startStr.split('-');
+  const eParts = endStr.split('-');
+  if (sParts.length !== 3 || eParts.length !== 3) {
+    return `${formatDeadlineSlash(startStr)}~${formatDeadlineSlash(endStr)}`;
+  }
+
+  const sm = parseInt(sParts[1], 10);
+  const sd = parseInt(sParts[2], 10);
+  const sw = getWeekdayChar(startStr);
+
+  const em = parseInt(eParts[1], 10);
+  const ed = parseInt(eParts[2], 10);
+  const ew = getWeekdayChar(endStr);
+
+  // 同年・同月の場合: 4/1㈬~20㈬
+  if (sm === em && sParts[0] === eParts[0]) {
+    return `${sm}/${sd}${sw}~${ed}${ew}`;
+  }
+
+  // 異月の場合: 6/12㈮~9/30㈬
+  return `${sm}/${sd}${sw}~${em}/${ed}${ew}`;
 }
 
 /**
