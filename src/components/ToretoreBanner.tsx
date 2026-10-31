@@ -24,80 +24,81 @@ export const ToretoreBanner: React.FC<ToretoreBannerProps> = ({
           </span>
         </div>
 
-        <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
-          <span className="text-xs font-black text-slate-500 dark:text-slate-400 mr-0.5">
-            情報元・検索ポータル:
+        <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-0.5">
+          <span className="text-xs font-black text-slate-500 dark:text-slate-400 shrink-0 mr-0.5">
+            情報元・ポータル:
           </span>
 
           <a
             href="https://runnet.jp/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-xs font-black text-blue-900 dark:text-blue-200 hover:underline bg-blue-50 dark:bg-blue-950/60 px-3 py-1.5 rounded-full border border-blue-300 dark:border-blue-700 shadow-2xs transition-all hover:bg-blue-100 dark:hover:bg-blue-900/60"
-            title="日本最大のランニング・トレイルラン総合ポータル RUNNET"
+            className="inline-flex items-center gap-1 text-xs font-black text-blue-900 dark:text-blue-200 bg-blue-50 dark:bg-blue-950/60 px-2.5 py-1 rounded-full border border-blue-300 dark:border-blue-700 shadow-2xs hover:bg-blue-100 transition-all shrink-0"
+            title="RUNNET（ランネット）"
           >
             <span className="w-2 h-2 rounded-full bg-blue-600" />
-            <span>RUNNET (ランネット)</span>
-            <ExternalLink className="w-3 h-3" />
+            <span>RUNNET</span>
+            <ExternalLink className="w-2.5 h-2.5 opacity-60" />
           </a>
 
           <a
             href="https://moshicom.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-xs font-black text-emerald-900 dark:text-emerald-200 hover:underline bg-emerald-50 dark:bg-emerald-950/60 px-3 py-1.5 rounded-full border border-emerald-300 dark:border-emerald-700 shadow-2xs transition-all hover:bg-emerald-100 dark:hover:bg-emerald-900/60"
-            title="イベント・練習会・エントリー募集サイト e-moshicom（イー・モシコム）"
+            className="inline-flex items-center gap-1 text-xs font-black text-emerald-900 dark:text-emerald-200 bg-emerald-50 dark:bg-emerald-950/60 px-2.5 py-1 rounded-full border border-emerald-300 dark:border-emerald-700 shadow-2xs hover:bg-emerald-100 transition-all shrink-0"
+            title="e-moshicom（モシコム）"
           >
             <span className="w-2 h-2 rounded-full bg-emerald-600" />
-            <span>e-moshicom (モシコム)</span>
-            <ExternalLink className="w-3 h-3" />
+            <span>モシコム</span>
+            <ExternalLink className="w-2.5 h-2.5 opacity-60" />
           </a>
 
           <a
             href="https://www.sportsentry.ne.jp/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-xs font-black text-orange-900 dark:text-orange-200 hover:underline bg-orange-50 dark:bg-orange-950/60 px-3 py-1.5 rounded-full border border-orange-300 dark:border-orange-700 shadow-2xs transition-all hover:bg-orange-100 dark:hover:bg-orange-900/60"
-            title="サイクリング・アドベンチャー・マラソンエントリー SPORTS ENTRY"
+            className="inline-flex items-center gap-1 text-xs font-black text-orange-900 dark:text-orange-200 bg-orange-50 dark:bg-orange-950/60 px-2.5 py-1 rounded-full border border-orange-300 dark:border-orange-700 shadow-2xs hover:bg-orange-100 transition-all shrink-0"
+            title="スポーツエントリー"
           >
             <span className="w-2 h-2 rounded-full bg-orange-600" />
-            <span>スポーツエントリー</span>
-            <ExternalLink className="w-3 h-3" />
+            <span>スポエン</span>
+            <ExternalLink className="w-2.5 h-2.5 opacity-60" />
           </a>
 
           <a
             href="https://cycle.spoen.jp/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-xs font-black text-sky-900 dark:text-sky-200 hover:underline bg-sky-50 dark:bg-sky-950/60 px-3 py-1.5 rounded-full border border-sky-300 dark:border-sky-700 shadow-2xs transition-all hover:bg-sky-100 dark:hover:bg-sky-900/60"
-            title="日本最大のサイクルイベント専門エントリーサイト スポエンCYCLE"
+            className="inline-flex items-center gap-1 text-xs font-black text-sky-900 dark:text-sky-200 bg-sky-50 dark:bg-sky-950/60 px-2.5 py-1 rounded-full border border-sky-300 dark:border-sky-700 shadow-2xs hover:bg-sky-100 transition-all shrink-0"
+            title="スポエンCYCLE（サイクル専門）"
           >
-            <Bike className="w-3.5 h-3.5 text-sky-600 dark:text-sky-400" />
+            <Bike className="w-3 h-3 text-sky-600 dark:text-sky-400" />
             <span>スポエンCYCLE</span>
-            <ExternalLink className="w-3 h-3" />
+            <ExternalLink className="w-2.5 h-2.5 opacity-60" />
           </a>
 
           <a
             href="http://toretore.web.fc2.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-xs font-extrabold text-amber-900 dark:text-amber-300 hover:underline bg-amber-100 dark:bg-amber-950/60 px-3 py-1.5 rounded-full border border-amber-300 dark:border-amber-700 shadow-2xs transition-all hover:bg-amber-200 dark:hover:bg-amber-900/60"
+            className="inline-flex items-center gap-1 text-xs font-black text-amber-900 dark:text-amber-300 bg-amber-100 dark:bg-amber-950/60 px-2.5 py-1 rounded-full border border-amber-300 dark:border-amber-700 shadow-2xs hover:bg-amber-200 transition-all shrink-0"
+            title="とれとれバイク関西 公式HP"
           >
-            <Compass className="w-3.5 h-3.5" />
-            <span>とれとれバイク関西 公式HP</span>
-            <ExternalLink className="w-3 h-3" />
+            <Compass className="w-3 h-3 text-amber-700" />
+            <span>とれとれバイク</span>
+            <ExternalLink className="w-2.5 h-2.5 opacity-60" />
           </a>
 
           <a
             href="https://kochi-navigms.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-xs font-bold text-teal-900 dark:text-teal-300 hover:underline bg-teal-50 dark:bg-teal-950/50 px-3 py-1.5 rounded-full border border-teal-300 dark:border-teal-800 shadow-2xs transition-all hover:bg-teal-100 dark:hover:bg-teal-900/60"
+            className="inline-flex items-center gap-1 text-xs font-black text-teal-900 dark:text-teal-300 bg-teal-50 dark:bg-teal-950/50 px-2.5 py-1 rounded-full border border-teal-300 dark:border-teal-800 shadow-2xs hover:bg-teal-100 transition-all shrink-0"
             title="ナビゲーションゲーム（kochi-navigms.com）"
           >
-            <Compass className="w-3.5 h-3.5 text-teal-700 dark:text-teal-400" />
-            <span>ナビゲーションゲーム</span>
-            <ExternalLink className="w-3 h-3" />
+            <Compass className="w-3 h-3 text-teal-700" />
+            <span>ナビゲーム</span>
+            <ExternalLink className="w-2.5 h-2.5 opacity-60" />
           </a>
         </div>
       </div>
