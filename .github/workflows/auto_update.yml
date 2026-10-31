@@ -1,0 +1,73 @@
+name: Auto Update Race Events & Rakuten Deals (3x Daily)
+
+on:
+  schedule:
+    # 日本時間（JST）朝 08:00（UTC 23:00）
+    - cron: '0 23 * * *'
+    # 日本時間（JST）昼 12:00（UTC 03:00）
+    - cron: '0 3 * * *'
+    # 日本時間（JST）夜 20:00（UTC 11:00）
+    - cron: '0 11 * * *'
+  workflow_dispatch: # GitHub Actions 画面からいつでも手動で即時実行も可能
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: 'pages-and-auto-update'
+  cancel-in-progress: false
+
+jobs:
+  auto-update-and-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Run Auto Investigation & Data Update (Events & >=15% Rakuten Deals)
+        run: node scripts/auto_update.mjs
+
+      - name: Commit & Push Updated Data to Repository
+        run: |
+          git config user.name "yachimaru-sports-bot"
+          git config user.email "yachimaru-sports@users.noreply.github.com"
+          git add src/data/events.json src/data/deals.json
+          if ! git diff --staged --quiet; then
+            git commit -m "chore(auto): 定期自動調査による大会ステータス・楽天15%以上特価ギア情報の更新"
+            git push origin main
+          else
+            echo "データ変更なし（ビルド・デプロイへ進みます）"
+          fi
+
+      - name: Build SPA for GitHub Pages
+        run: |
+          npm run build
+          cp dist/index.html dist/404.html
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

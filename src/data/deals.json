@@ -1,55 +1,29 @@
 [
   {
-    "id": "deal-petzl-swift-rl",
-    "title": "[PETZL] ペツル スイフト RL E095BC 1200ルーメン 国内正規品 充電式ヘッドライト（夜間・100マイル必携）",
-    "category": "ライト",
-    "price": 19008,
-    "original_price": 23760,
-    "discount_rate": 20,
-    "point_rate": 10,
-    "image_url": "https://hbb.afl.rakuten.co.jp/hgb/58fb598b.0ed2da59.58fb598c.27018da5/?me_id=1205477&item_id=10051359&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fyoshikip2%2Fcabinet%2Fsukeneko9%2Fe095bc_01.jpg%3F_ex%3D240x240&s=240x240&t=picttext",
-    "affiliate_url": "https://hb.afl.rakuten.co.jp/ichiba/58fb598b.0ed2da59.58fb598c.27018da5/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fyoshikip2%2Fe095bc%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
-    "badge": "20%OFF+P10倍",
-    "updated_at": "2026-10-31T09:10:00Z"
-  },
-  {
-    "id": "deal-millet-typhon-50000",
-    "title": "MILLET(ミレー) ティフォン 50000 ストレッチ ジャケット MIV01479 透湿50,000g/耐水圧20,000mm（必携レイン適合）",
-    "category": "ウェア",
-    "price": 28710,
-    "original_price": 36300,
-    "discount_rate": 21,
-    "point_rate": 10,
-    "image_url": "https://tshop.r10s.jp/spray/cabinet/07798164/imgrc0085433124.jpg?fitin=275:275",
-    "affiliate_url": "https://hb.afl.rakuten.co.jp/ichiba/58fb598b.0ed2da59.58fb598c.27018da5/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fspray%2Fmiv01479%2F&link_type=picttext",
-    "badge": "21%OFF+P10倍",
-    "updated_at": "2026-10-31T09:10:00Z"
-  },
-  {
-    "id": "deal-tnf-tr6-vest",
-    "title": "THE NORTH FACE(ザ・ノース・フェイス) ティーアール6 TR 6 NM62513 トレイルランニングベスト（30%OFF特価）",
-    "category": "ギア",
-    "price": 16170,
-    "original_price": 23100,
-    "discount_rate": 30,
-    "point_rate": 10,
-    "image_url": "https://tshop.r10s.jp/sakaiya/cabinet/10636268/62513-1.jpg?fitin=275:275",
-    "affiliate_url": "https://hb.afl.rakuten.co.jp/ichiba/58fb598b.0ed2da59.58fb598c.27018da5/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsakaiya%2F202603101841%2F&link_type=picttext",
-    "badge": "30%OFF 特価",
-    "updated_at": "2026-10-31T09:10:00Z"
-  },
-  {
     "id": "deal-nathan-pinnacle-12l",
-    "title": "【公式50%OFF】NATHAN(ネイサン) ピナクル 12L JP トレイルランニングザック ハイドレーションベスト（100マイル対応）",
+    "title": "【公式特価】NATHAN(ネイサン) ピナクル 12L JP トレイルランニングザック ハイドレーションベスト（100マイル対応）",
     "category": "ギア",
-    "price": 9350,
+    "price": 8800,
     "original_price": 18700,
-    "discount_rate": 50,
+    "discount_rate": 53,
     "point_rate": 10,
-    "image_url": "https://tshop.r10s.jp/usbonline/cabinet/pic-2/ns40240j-gr_main.jpg?fitin=275:275",
-    "affiliate_url": "https://hb.afl.rakuten.co.jp/ichiba/58fb598b.0ed2da59.58fb598c.27018da5/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fusbonline%2Fns40240j-gr%2F&link_type=picttext",
-    "badge": "半額 50%OFF",
-    "updated_at": "2026-10-31T09:10:00Z"
+    "image_url": "https://tshop.r10s.jp/usbonline/cabinet/pic-2/ns40180j-main.jpg?fitin=275:275",
+    "affiliate_url": "https://hb.afl.rakuten.co.jp/ichiba/58fb598b.0ed2da59.58fb598c.27018da5/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fusbonline%2Fns40180j%2F&link_type=picttext",
+    "badge": "53%OFF 特価",
+    "updated_at": "2026-10-31T00:15:12.649Z"
+  },
+  {
+    "id": "deal-bd-spot400r",
+    "title": "Black Diamond(ブラックダイヤモンド) スポット400-R 充電式防水LEDヘッドランプ（サブライト・OMM必携）",
+    "category": "ライト",
+    "price": 7620,
+    "original_price": 12980,
+    "discount_rate": 41,
+    "point_rate": 10,
+    "image_url": "https://tshop.r10s.jp/canpanera/cabinet/item243/item_b17001_0.jpg?fitin=275:275",
+    "affiliate_url": "https://hb.afl.rakuten.co.jp/ichiba/58fb598b.0ed2da59.58fb598c.27018da5/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fcanpanera%2Fb17001-1%2F&link_type=picttext",
+    "badge": "41%OFF 特価",
+    "updated_at": "2026-10-31T00:15:12.649Z"
   },
   {
     "id": "deal-black-diamond-carbon-poles",
@@ -61,21 +35,34 @@
     "point_rate": 10,
     "image_url": "https://tshop.r10s.jp/canpanera/cabinet/item257/item_b17031-1_0.jpg?fitin=275:275",
     "affiliate_url": "https://hb.afl.rakuten.co.jp/ichiba/58fb598b.0ed2da59.58fb598c.27018da5/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fcanpanera%2Fb17031-1%2F&link_type=picttext",
-    "badge": "SALE 40%OFF",
-    "updated_at": "2026-10-31T09:10:00Z"
+    "badge": "40%OFF 特価",
+    "updated_at": "2026-10-31T00:15:12.649Z"
   },
   {
-    "id": "deal-garmin-forerunner-265",
-    "title": "GARMIN(ガーミン) Forerunner 265 AMOLEDディスプレイ＆高精度マルチバンドGNSS搭載ランニングGPSウォッチ",
-    "category": "ナビゲーション",
-    "price": 62800,
-    "original_price": 84800,
-    "discount_rate": 26,
+    "id": "deal-tnf-tr6-vest",
+    "title": "THE NORTH FACE(ザ・ノース・フェイス) ティーアール6 TR 6 NM62513 トレイルランニングベスト",
+    "category": "ギア",
+    "price": 13860,
+    "original_price": 23100,
+    "discount_rate": 40,
     "point_rate": 10,
-    "image_url": "https://tshop.r10s.jp/fitnessclub/cabinet/garmin/imgrc0113816772.jpg?fitin=275:275",
-    "affiliate_url": "https://hb.afl.rakuten.co.jp/ichiba/58fb598b.0ed2da59.58fb598c.27018da5/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ffitnessclub%2Fgarmin-fr265-010-02810%2F&link_type=picttext",
-    "badge": "26%OFF+P10倍",
-    "updated_at": "2026-10-31T09:10:00Z"
+    "image_url": "https://tshop.r10s.jp/naturum-outdoor/cabinet/main-image/099792/88_1.jpg?fitin=275:275",
+    "affiliate_url": "https://hb.afl.rakuten.co.jp/ichiba/58fb598b.0ed2da59.58fb598c.27018da5/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fnaturum-outdoor%2F9979288%2F&link_type=picttext",
+    "badge": "40%OFF 特価",
+    "updated_at": "2026-10-31T00:15:12.649Z"
+  },
+  {
+    "id": "deal-millet-typhon-50000",
+    "title": "MILLET(ミレー) ティフォン 50000 ストレッチ ジャケット MIV01479 透湿50,000g/耐水圧20,000mm（必携レイン適合）",
+    "category": "ウェア",
+    "price": 23242,
+    "original_price": 36300,
+    "discount_rate": 36,
+    "point_rate": 10,
+    "image_url": "https://tshop.r10s.jp/miraiyuki/cabinet/13294882/5609679_4.jpg?fitin=275:275",
+    "affiliate_url": "https://hb.afl.rakuten.co.jp/ichiba/58fb598b.0ed2da59.58fb598c.27018da5/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmiraiyuki%2Fds2pzwktd7tloetdueoczfnenm%2F&link_type=picttext",
+    "badge": "36%OFF 特価",
+    "updated_at": "2026-10-31T00:15:12.649Z"
   },
   {
     "id": "deal-sol-emergency-bivvy",
@@ -88,20 +75,7 @@
     "image_url": "https://tshop.r10s.jp/canpanera/cabinet/item209/item_s23005_0.jpg?fitin=275:275",
     "affiliate_url": "https://hb.afl.rakuten.co.jp/ichiba/58fb598b.0ed2da59.58fb598c.27018da5/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fcanpanera%2Fs23005%2F&link_type=picttext",
     "badge": "29%OFF 特価",
-    "updated_at": "2026-10-31T09:10:00Z"
-  },
-  {
-    "id": "deal-topeak-mini-tool",
-    "title": "TOPEAK(トピーク) Mini 20 Pro 20機能携帯マルチツール＆チェーンツール（とれとれバイク・MTBラリー必携）",
-    "category": "リペア",
-    "price": 5423,
-    "original_price": 7150,
-    "discount_rate": 24,
-    "point_rate": 10,
-    "image_url": "https://tshop.r10s.jp/o-trick/cabinet/topeak/top-tol218.jpg?fitin=275:275",
-    "affiliate_url": "https://hb.afl.rakuten.co.jp/ichiba/58fb598b.0ed2da59.58fb598c.27018da5/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fo-trick%2Ftop-tol218%2F&link_type=picttext",
-    "badge": "24%OFF 特価",
-    "updated_at": "2026-10-31T09:10:00Z"
+    "updated_at": "2026-10-31T00:15:12.649Z"
   },
   {
     "id": "deal-millet-drynamic-mesh",
@@ -114,19 +88,45 @@
     "image_url": "https://tshop.r10s.jp/sportsmario2/cabinet/evidence_20250822/i06mjmiv01248_1.jpg?fitin=275:275",
     "affiliate_url": "https://hb.afl.rakuten.co.jp/ichiba/58fb598b.0ed2da59.58fb598c.27018da5/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsportsmario2%2Fi06mjmiv01248%2F&link_type=picttext",
     "badge": "29%OFF 特価",
-    "updated_at": "2026-10-31T09:10:00Z"
+    "updated_at": "2026-10-31T00:15:12.649Z"
   },
   {
-    "id": "deal-bd-spot400r",
-    "title": "Black Diamond(ブラックダイヤモンド) スポット400-R 充電式防水LEDヘッドランプ BD81312（サブライト必携）",
-    "category": "ライト",
-    "price": 8888,
-    "original_price": 12980,
-    "discount_rate": 32,
+    "id": "deal-garmin-forerunner-265",
+    "title": "GARMIN(ガーミン) Forerunner 265 AMOLEDディスプレイ＆高精度マルチバンドGNSS搭載ランニングGPSウォッチ",
+    "category": "ナビゲーション",
+    "price": 60800,
+    "original_price": 84800,
+    "discount_rate": 28,
     "point_rate": 10,
-    "image_url": "https://tshop.r10s.jp/canpanera/cabinet/item230/item_b17466_0.jpg?fitin=275:275",
-    "affiliate_url": "https://hb.afl.rakuten.co.jp/ichiba/58fb598b.0ed2da59.58fb598c.27018da5/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fcanpanera%2Fb17466%2F&link_type=picttext",
-    "badge": "32%OFF 特価",
-    "updated_at": "2026-10-31T09:10:00Z"
+    "image_url": "https://tshop.r10s.jp/fitnessclub/cabinet/garmin/imgrc0113816774.jpg?fitin=275:275",
+    "affiliate_url": "https://hb.afl.rakuten.co.jp/ichiba/58fb598b.0ed2da59.58fb598c.27018da5/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ffitnessclub%2Fgarmin-fr265s-010-02810%2F&link_type=picttext",
+    "badge": "28%OFF 特価",
+    "updated_at": "2026-10-31T00:15:12.649Z"
+  },
+  {
+    "id": "deal-petzl-swift-rl",
+    "title": "[PETZL] ペツル スイフト RL E095BC 1200ルーメン 国内正規品 充電式ヘッドライト（夜間・100マイル必携）",
+    "category": "ライト",
+    "price": 17559,
+    "original_price": 23760,
+    "discount_rate": 26,
+    "point_rate": 10,
+    "image_url": "https://tshop.r10s.jp/alpine-rose/cabinet/360/181/2545.jpg?fitin=275:275",
+    "affiliate_url": "https://hb.afl.rakuten.co.jp/ichiba/58fb598b.0ed2da59.58fb598c.27018da5/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Falpine-rose%2F2545%2F&link_type=picttext",
+    "badge": "26%OFF 特価",
+    "updated_at": "2026-10-31T00:15:12.649Z"
+  },
+  {
+    "id": "deal-topeak-mini-tool",
+    "title": "TOPEAK(トピーク) Mini 20 Pro 20機能携帯マルチツール＆チェーンツール（とれとれバイク・MTBラリー必携）",
+    "category": "リペア",
+    "price": 5280,
+    "original_price": 7150,
+    "discount_rate": 26,
+    "point_rate": 10,
+    "image_url": "https://tshop.r10s.jp/uemura-cycle-parts/cabinet/items/folder3/tpk-0000000651y.jpg?fitin=275:275",
+    "affiliate_url": "https://hb.afl.rakuten.co.jp/ichiba/58fb598b.0ed2da59.58fb598c.27018da5/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fuemura-cycle-parts%2Ftpk-0000000651r%2F&link_type=picttext",
+    "badge": "26%OFF 特価",
+    "updated_at": "2026-10-31T00:15:12.649Z"
   }
 ]
