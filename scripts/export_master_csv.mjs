@@ -8,11 +8,32 @@ const ROOT_DIR = path.resolve(__dirname, '..');
 
 const eventsPath = path.join(ROOT_DIR, 'src', 'data', 'events.json');
 const outputPath = path.join(ROOT_DIR, 'outdoor_race_hub_events_master.csv');
+const packageCsvPath = path.join(ROOT_DIR, 'gemini_skill_package', 'outdoor_race_hub_events_master.csv');
 
 const events = JSON.parse(fs.readFileSync(eventsPath, 'utf-8'));
 
+/**
+ * URLや種目・IDから情報元ポータル名を自動判別
+ */
+function detectPortal(e) {
+  if (e.source?.portalName) return e.source.portalName;
+  const allUrls = [e.links?.entry || '', e.links?.official || ''].join(' ');
+  if (allUrls.includes('cycle.spoen.jp')) return 'スポエンCYCLE';
+  if (allUrls.includes('sportsentry.ne.jp')) return 'スポエン';
+  if (allUrls.includes('moshicom.com')) return 'モシコム';
+  if (allUrls.includes('runnet.jp')) return 'RUNNET';
+  if (allUrls.includes('toretore') || e.id.startsWith('toretore-')) return 'とれとれバイク';
+  if (allUrls.includes('navigames') || allUrls.includes('orienteering')) return 'ナビゲーム';
+  if (allUrls.includes('theomm.jp')) return 'OMM公式';
+  if (allUrls.includes('utmb.world') || e.id.includes('utmb')) return 'UTMB公式';
+  if (e.category === 'cycling') return 'スポエンCYCLE';
+  if (e.category === 'adventure' || e.category === 'rogaining') return 'ナビゲーム';
+  return '大会公式';
+}
+
 const headers = [
   'id',
+  'source_portal',
   'title',
   'category',
   'subCategory',
@@ -48,8 +69,11 @@ const rows = [headers.join(',')];
 for (const e of events) {
   const gearStr = (e.mandatory_gear || []).map(g => typeof g === 'string' ? g : g.name).join(' / ');
   const elementsStr = (e.elements || []).join(' / ');
+  const portalName = detectPortal(e);
+
   const row = [
     escapeCsv(e.id),
+    escapeCsv(portalName),
     escapeCsv(e.title),
     escapeCsv(e.category),
     escapeCsv(e.subCategory || ''),
@@ -73,6 +97,7 @@ for (const e of events) {
   rows.push(row.join(','));
 }
 
-// UTF-8 BOM付きで保存（ExcelやGoogleスプレッドシートで文字化けゼロ）
-fs.writeFileSync(outputPath, '\uFEFF' + rows.join('\r\n'), 'utf-8');
-console.log(`Successfully generated ${outputPath} with ${events.length} records!`);
+const csvOutput = '\uFEFF' + rows.join('\r\n');
+fs.writeFileSync(outputPath, csvOutput, 'utf-8');
+fs.writeFileSync(packageCsvPath, csvOutput, 'utf-8');
+console.log(`Successfully generated CSV master files with ${events.length} records!`);

@@ -24,32 +24,33 @@ description: 全国および中四国のアウトドア・エンデュランス�
 
 ---
 
-## 📋 スプレッドシート出力フォーマット（全20列）
+## 📋 スプレッドシート出力フォーマット（全21列）
 
-新しい大会を発見した際は、以下の20列のカンマ区切り（またはタブ区切りテーブル）形式で出力してください：
+新しい大会を発見した際は、以下の21列のカンマ区切り（またはタブ区切りテーブル）形式で出力してください：
 
 | 列番号 | 列名 | 内容・ルール | 例 |
 | :--- | :--- | :--- | :--- |
 | 1 | `id` | 半角英数字とハイフン。地名-種別-西暦 | `hiroshima-utmb-2027` |
-| 2 | `title` | 大会正式名称（年度・距離を含む） | `Hiroshima Ultra-Trail by UTMB® 2027（広島湾岸TRAILRUN 100K）` |
-| 3 | `category` | `trail` / `cycling` / `marathon` / `adventure` / `rogaining` | `trail` |
-| 4 | `subCategory` | 特徴やシリーズ名 | `広島湾岸トレイル / UTMBワールドシリーズ` |
-| 5 | `date` | 開催日（YYYY-MM-DD または YYYY-MM-DD ~ YYYY-MM-DD） | `2027-04-09` |
-| 6 | `month` | 開催月（数値のみ） | `4` |
-| 7 | `region` | 中国 / 四国 / 近畿 / 中部 / 関東 / 東北 / 北海道 / 九州 | `中国` |
-| 8 | `prefecture` | 都道府県（○県/○都/○道/○府） | `広島県` |
-| 9 | `distance_km` | 最長種目の距離（半角数値のみ） | `109` |
-| 10 | `elevation_m` | 累積標高（半角数値のみ、不明な場合は概算または0） | `6570` |
-| 11 | `entry_status` | `open`（受付中）/ `closing_soon`（締切間近）/ `upcoming`（予定）/ `closed`（終了） | `open` |
-| 12 | `entry_start_date` | 申込開始日（YYYY-MM-DD） | `2026-10-01` |
-| 13 | `entry_deadline` | 申込締切日（YYYY-MM-DD） | `2027-01-31` |
-| 14 | `entry_fee` | 参加費 | `38,000円` |
-| 15 | `official_url` | **大会公式サイトURL**（※該当大会のトップ/要項ページ） | `https://hiroshima.utmb.world/ja` |
-| 16 | `entry_url` | **申込直通URL**（モシコム/スポエン/RUNNET等の大会固有ページ） | `https://hiroshima.utmb.world/ja` |
-| 17 | `venue_name` | 会場・発着地名称 | `ひろしまゲートパーク・スタジアムパーク` |
-| 18 | `venue_map` | Googleマップ検索用クエリ（都道府県＋会場名） | `広島県 広島市中区 ひろしまゲートパーク` |
-| 19 | `elements` | 特徴タグ（スラッシュ区切り） | `広島湾岸トレイル / 100km+ / 100マイル / 夜間 / UTMB` |
-| 20 | `mandatory_gear` | 必携装備リスト（スラッシュ区切り） | `レインウェア上下 / ヘッドライト2灯 / GPS時計 / サバイバルシート` |
+| 2 | `source_portal` | **情報源ポータル名**（`RUNNET` / `モシコム` / `スポエン` / `スポエンCYCLE` / `とれとれバイク` / `ナビゲーム` / `UTMB公式` / `大会公式` 等） | `UTMB公式` |
+| 3 | `title` | 大会正式名称（年度・距離を含む） | `Hiroshima Ultra-Trail by UTMB® 2027（広島湾岸TRAILRUN 100K）` |
+| 4 | `category` | `trail` / `cycling` / `marathon` / `adventure` / `rogaining` | `trail` |
+| 5 | `subCategory` | 特徴やシリーズ名 | `広島湾岸トレイル / UTMBワールドシリーズ` |
+| 6 | `date` | 開催日（YYYY-MM-DD または YYYY-MM-DD ~ YYYY-MM-DD） | `2027-04-09` |
+| 7 | `month` | 開催月（数値のみ） | `4` |
+| 8 | `region` | 中国 / 四国 / 近畿 / 中部 / 関東 / 東北 / 北海道 / 九州 | `中国` |
+| 9 | `prefecture` | 都道府県（○県/○都/○道/○府） | `広島県` |
+| 10 | `distance_km` | 最長種目の距離（半角数値のみ） | `109` |
+| 11 | `elevation_m` | 累積標高（半角数値のみ、不明な場合は概算または0） | `6570` |
+| 12 | `entry_status` | `open`（受付中）/ `closing_soon`（締切間近）/ `upcoming`（予定）/ `closed`（終了） | `open` |
+| 13 | `entry_start_date` | 申込開始日（YYYY-MM-DD） | `2026-10-01` |
+| 14 | `entry_deadline` | 申込締切日（YYYY-MM-DD） | `2027-01-31` |
+| 15 | `entry_fee` | 参加費 | `38,000円` |
+| 16 | `official_url` | **大会公式サイトURL**（※該当大会のトップ/要項ページ） | `https://hiroshima.utmb.world/ja` |
+| 17 | `entry_url` | **申込直通URL**（モシコム/スポエン/RUNNET等の大会固有ページ） | `https://hiroshima.utmb.world/ja` |
+| 18 | `venue_name` | 会場・発着地名称 | `ひろしまゲートパーク・スタジアムパーク` |
+| 19 | `venue_map` | Googleマップ検索用クエリ（都道府県＋会場名） | `広島県 広島市中区 ひろしまゲートパーク` |
+| 20 | `elements` | 特徴タグ（スラッシュ区切り） | `広島湾岸トレイル / 100km+ / 100マイル / 夜間 / UTMB` |
+| 21 | `mandatory_gear` | 必携装備リスト（スラッシュ区切り） | `レインウェア上下 / ヘッドライト2灯 / GPS時計 / サバイバルシート` |
 
 ---
 

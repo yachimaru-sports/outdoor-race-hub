@@ -113,6 +113,9 @@ function rowToEvent(headers, row) {
     venue: {
       name: getVal('venue_name') || '',
       mapQuery: getVal('venue_map') || (getVal('prefecture') + ' ' + getVal('venue_name'))
+    },
+    source: {
+      portalName: getVal('source_portal') || '大会公式'
     }
   };
 }

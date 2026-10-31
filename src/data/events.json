@@ -47,6 +47,9 @@
     "venue": {
       "name": "春のプレミアムアワイチ",
       "mapQuery": "兵庫県 春のプレミアムアワイチ"
+    },
+    "source": {
+      "portalName": "スポエン"
     }
   },
   {
@@ -97,7 +100,10 @@
     ],
     "venue": {
       "name": "",
-      "mapQuery": "和歌山県 "
+      "mapQuery": "和歌山県"
+    },
+    "source": {
+      "portalName": "スポエンCYCLE"
     }
   },
   {
@@ -172,6 +178,9 @@
     "venue": {
       "name": "尾道〜今治 往復",
       "mapQuery": "広島県 尾道〜今治 往復"
+    },
+    "source": {
+      "portalName": "スポエンCYCLE"
     }
   },
   {
@@ -218,6 +227,9 @@
     "venue": {
       "name": "呉市",
       "mapQuery": "広島県 呉市"
+    },
+    "source": {
+      "portalName": "スポエンCYCLE"
     }
   },
   {
@@ -269,6 +281,9 @@
     "venue": {
       "name": "福山",
       "mapQuery": "広島県 福山"
+    },
+    "source": {
+      "portalName": "スポエンCYCLE"
     }
   },
   {
@@ -332,7 +347,10 @@
     ],
     "venue": {
       "name": "",
-      "mapQuery": "岡山県 "
+      "mapQuery": "岡山県"
+    },
+    "source": {
+      "portalName": "とれとれバイク"
     }
   },
   {
@@ -389,6 +407,9 @@
     "venue": {
       "name": "京都府亀岡市（保津峡エリア）",
       "mapQuery": "京都府亀岡市 保津峡"
+    },
+    "source": {
+      "portalName": "とれとれバイク"
     }
   },
   {
@@ -445,6 +466,9 @@
     "venue": {
       "name": "奈良吉野川 五條市近郊",
       "mapQuery": "奈良県五條市 吉野川"
+    },
+    "source": {
+      "portalName": "とれとれバイク"
     }
   },
   {
@@ -509,6 +533,9 @@
     "venue": {
       "name": "兵庫県姫路市安富町富栖エリア",
       "mapQuery": "兵庫県姫路市安富町皆河 富栖の里"
+    },
+    "source": {
+      "portalName": "とれとれバイク"
     }
   },
   {
@@ -571,7 +598,10 @@
     ],
     "venue": {
       "name": "",
-      "mapQuery": "岐阜県 "
+      "mapQuery": "岐阜県"
+    },
+    "source": {
+      "portalName": "とれとれバイク"
     }
   },
   {
@@ -634,7 +664,10 @@
     ],
     "venue": {
       "name": "",
-      "mapQuery": "岐阜県 "
+      "mapQuery": "岐阜県"
+    },
+    "source": {
+      "portalName": "とれとれバイク"
     }
   },
   {
@@ -690,6 +723,9 @@
     "venue": {
       "name": "日高神鍋観光",
       "mapQuery": "兵庫県 日高神鍋観光"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -745,6 +781,9 @@
     "venue": {
       "name": "道の駅ことなみ（エナガ荘前広場）",
       "mapQuery": "道の駅ことなみ"
+    },
+    "source": {
+      "portalName": "ナビゲーム"
     }
   },
   {
@@ -800,7 +839,10 @@
     ],
     "venue": {
       "name": "",
-      "mapQuery": "滋賀県 "
+      "mapQuery": "滋賀県"
+    },
+    "source": {
+      "portalName": "OMM公式"
     }
   },
   {
@@ -864,7 +906,10 @@
     ],
     "venue": {
       "name": "",
-      "mapQuery": "長野県 "
+      "mapQuery": "長野県"
+    },
+    "source": {
+      "portalName": "OMM公式"
     }
   },
   {
@@ -921,7 +966,10 @@
     ],
     "venue": {
       "name": "",
-      "mapQuery": "北海道 "
+      "mapQuery": "北海道"
+    },
+    "source": {
+      "portalName": "ナビゲーム"
     }
   },
   {
@@ -977,7 +1025,10 @@
     ],
     "venue": {
       "name": "",
-      "mapQuery": "新潟県 "
+      "mapQuery": "新潟県"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -1031,7 +1082,10 @@
     ],
     "venue": {
       "name": "",
-      "mapQuery": "島根県 "
+      "mapQuery": "島根県"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -1086,7 +1140,10 @@
     ],
     "venue": {
       "name": "",
-      "mapQuery": "広島県 "
+      "mapQuery": "広島県"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -1142,7 +1199,10 @@
     ],
     "venue": {
       "name": "",
-      "mapQuery": "香川県 "
+      "mapQuery": "香川県"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -1225,7 +1285,10 @@
     ],
     "venue": {
       "name": "",
-      "mapQuery": "山梨県 "
+      "mapQuery": "山梨県"
+    },
+    "source": {
+      "portalName": "大会公式"
     }
   },
   {
@@ -1308,6 +1371,9 @@
     "venue": {
       "name": "ひろしまゲートパーク・ひろしまスタジアムパーク（広島市中区・エディオンピースウイング広島隣接 / 広島湾岸トレイル）",
       "mapQuery": "広島県 広島市中区 ひろしまゲートパーク"
+    },
+    "source": {
+      "portalName": "UTMB公式"
     }
   },
   {
@@ -1370,7 +1436,10 @@
     ],
     "venue": {
       "name": "",
-      "mapQuery": "長野県 "
+      "mapQuery": "長野県"
+    },
+    "source": {
+      "portalName": "大会公式"
     }
   },
   {
@@ -1435,6 +1504,9 @@
     "venue": {
       "name": "広島県呉市倉橋町（ホシアカリ山びこ / 桂浜西側採石場跡）",
       "mapQuery": "広島県呉市倉橋町 桂浜"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -1499,6 +1571,9 @@
     "venue": {
       "name": "びわ湖100マイル トレイルラン 2026",
       "mapQuery": "滋賀県 びわ湖100マイル トレイルラン 2026"
+    },
+    "source": {
+      "portalName": "大会公式"
     }
   },
   {
@@ -1562,6 +1637,9 @@
     "venue": {
       "name": "小海100マイル トレイルランニング 2026",
       "mapQuery": "長野県 小海100マイル トレイルランニング 2026"
+    },
+    "source": {
+      "portalName": "大会公式"
     }
   },
   {
@@ -1624,7 +1702,10 @@
     ],
     "venue": {
       "name": "",
-      "mapQuery": "埼玉県 "
+      "mapQuery": "埼玉県"
+    },
+    "source": {
+      "portalName": "RUNNET"
     }
   },
   {
@@ -1688,6 +1769,9 @@
     "venue": {
       "name": "FTR100",
       "mapQuery": "埼玉県 FTR100"
+    },
+    "source": {
+      "portalName": "大会公式"
     }
   },
   {
@@ -1751,6 +1835,9 @@
     "venue": {
       "name": "御嶽100マイル 100km",
       "mapQuery": "長野県 御嶽100マイル 100km"
+    },
+    "source": {
+      "portalName": "大会公式"
     }
   },
   {
@@ -1815,6 +1902,9 @@
     "venue": {
       "name": "ディープジャパン166km 新潟 群馬",
       "mapQuery": "新潟県 ディープジャパン166km 新潟 群馬"
+    },
+    "source": {
+      "portalName": "大会公式"
     }
   },
   {
@@ -1878,6 +1968,9 @@
     "venue": {
       "name": "KRT 167km",
       "mapQuery": "熊本県 KRT 167km"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -1941,6 +2034,9 @@
     "venue": {
       "name": "甲州アルプスオートルート 100mile",
       "mapQuery": "山梨県 甲州アルプスオートルート 100mile"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -2004,6 +2100,9 @@
     "venue": {
       "name": "丹波100マイル",
       "mapQuery": "兵庫県 丹波100マイル"
+    },
+    "source": {
+      "portalName": "大会公式"
     }
   },
   {
@@ -2066,7 +2165,10 @@
     ],
     "venue": {
       "name": "",
-      "mapQuery": "岩手県 "
+      "mapQuery": "岩手県"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -2129,7 +2231,10 @@
     ],
     "venue": {
       "name": "",
-      "mapQuery": "岐阜県 "
+      "mapQuery": "岐阜県"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -2192,7 +2297,10 @@
     ],
     "venue": {
       "name": "",
-      "mapQuery": "広島県 "
+      "mapQuery": "広島県"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -2242,6 +2350,9 @@
     "venue": {
       "name": "三原市",
       "mapQuery": "広島県 三原市"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -2291,6 +2402,9 @@
     "venue": {
       "name": "廿日市",
       "mapQuery": "広島県 廿日市"
+    },
+    "source": {
+      "portalName": "大会公式"
     }
   },
   {
@@ -2352,6 +2466,9 @@
     "venue": {
       "name": "ひろしまスタジアムパーク（エディオンピースウイング広島隣接 / 広島湾岸トレイル）",
       "mapQuery": "広島県 広島市中区 ひろしまスタジアムパーク"
+    },
+    "source": {
+      "portalName": "スポエン"
     }
   },
   {
@@ -2401,6 +2518,9 @@
     "venue": {
       "name": "北広島町",
       "mapQuery": "広島県 北広島町"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -2454,6 +2574,9 @@
     "venue": {
       "name": "エキスパート65km 広島最高峰",
       "mapQuery": "広島県 エキスパート65km 広島最高峰"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -2503,6 +2626,9 @@
     "venue": {
       "name": "大野権現山〜経小屋山",
       "mapQuery": "広島県 大野権現山〜経小屋山"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -2552,6 +2678,9 @@
     "venue": {
       "name": "呉市",
       "mapQuery": "広島県 呉市"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -2604,7 +2733,10 @@
     ],
     "venue": {
       "name": "",
-      "mapQuery": "広島県 "
+      "mapQuery": "広島県"
+    },
+    "source": {
+      "portalName": "スポエンCYCLE"
     }
   },
   {
@@ -2658,6 +2790,9 @@
     "venue": {
       "name": "奈義町那岐山",
       "mapQuery": "岡山県 奈義町那岐山"
+    },
+    "source": {
+      "portalName": "大会公式"
     }
   },
   {
@@ -2707,6 +2842,9 @@
     "venue": {
       "name": "真庭市",
       "mapQuery": "岡山県 真庭市"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -2752,6 +2890,9 @@
     "venue": {
       "name": "岡山市 フルマラソン",
       "mapQuery": "岡山県 岡山市 フルマラソン"
+    },
+    "source": {
+      "portalName": "大会公式"
     }
   },
   {
@@ -2797,6 +2938,9 @@
     "venue": {
       "name": "総社市 フル＆ハーフ",
       "mapQuery": "岡山県 総社市 フル＆ハーフ"
+    },
+    "source": {
+      "portalName": "大会公式"
     }
   },
   {
@@ -2846,6 +2990,9 @@
     "venue": {
       "name": "鏡野町",
       "mapQuery": "岡山県 鏡野町"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -2898,7 +3045,10 @@
     ],
     "venue": {
       "name": "",
-      "mapQuery": "岡山県 "
+      "mapQuery": "岡山県"
+    },
+    "source": {
+      "portalName": "スポエンCYCLE"
     }
   },
   {
@@ -2952,6 +3102,9 @@
     "venue": {
       "name": "美祢市 エクストリーム60km",
       "mapQuery": "山口県 美祢市 エクストリーム60km"
+    },
+    "source": {
+      "portalName": "大会公式"
     }
   },
   {
@@ -3001,6 +3154,9 @@
     "venue": {
       "name": "下松市",
       "mapQuery": "山口県 下松市"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -3046,6 +3202,9 @@
     "venue": {
       "name": "下関市 関門海峡コース",
       "mapQuery": "山口県 下関市 関門海峡コース"
+    },
+    "source": {
+      "portalName": "大会公式"
     }
   },
   {
@@ -3095,6 +3254,9 @@
     "venue": {
       "name": "むかつく",
       "mapQuery": "山口県 むかつく"
+    },
+    "source": {
+      "portalName": "大会公式"
     }
   },
   {
@@ -3146,6 +3308,9 @@
     "venue": {
       "name": "片添ヶ浜海浜公園（周防大島町）",
       "mapQuery": "周防大島町 片添ヶ浜海浜公園"
+    },
+    "source": {
+      "portalName": "大会公式"
     }
   },
   {
@@ -3198,7 +3363,10 @@
     ],
     "venue": {
       "name": "",
-      "mapQuery": "山口県 "
+      "mapQuery": "山口県"
+    },
+    "source": {
+      "portalName": "スポエンCYCLE"
     }
   },
   {
@@ -3254,6 +3422,9 @@
     "venue": {
       "name": "大田市 100km",
       "mapQuery": "島根県 大田市 100km"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -3304,6 +3475,9 @@
     "venue": {
       "name": "隠岐の島町 100km",
       "mapQuery": "島根県 隠岐の島町 100km"
+    },
+    "source": {
+      "portalName": "大会公式"
     }
   },
   {
@@ -3353,6 +3527,9 @@
     "venue": {
       "name": "さんべさん",
       "mapQuery": "島根県 さんべさん"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -3398,6 +3575,9 @@
     "venue": {
       "name": "松江市 フルマラソン",
       "mapQuery": "島根県 松江市 フルマラソン"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -3450,7 +3630,10 @@
     ],
     "venue": {
       "name": "",
-      "mapQuery": "島根県 "
+      "mapQuery": "島根県"
+    },
+    "source": {
+      "portalName": "スポエンCYCLE"
     }
   },
   {
@@ -3504,6 +3687,9 @@
     "venue": {
       "name": "だいせん",
       "mapQuery": "鳥取県 だいせん"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -3557,6 +3743,9 @@
     "venue": {
       "name": "若桜町",
       "mapQuery": "鳥取県 若桜町"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -3602,6 +3791,9 @@
     "venue": {
       "name": "鳥取砂丘〜鳥取城跡 ワンウェイ公認フル",
       "mapQuery": "鳥取県 鳥取砂丘〜鳥取城跡 ワンウェイ公認フル"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -3655,6 +3847,9 @@
     "venue": {
       "name": "名峰大山一周ヒルクライム＆ロングライド",
       "mapQuery": "鳥取県 名峰大山一周ヒルクライム＆ロングライド"
+    },
+    "source": {
+      "portalName": "スポエンCYCLE"
     }
   },
   {
@@ -3707,7 +3902,10 @@
     ],
     "venue": {
       "name": "",
-      "mapQuery": "愛媛県 "
+      "mapQuery": "愛媛県"
+    },
+    "source": {
+      "portalName": "スポエンCYCLE"
     }
   },
   {
@@ -3761,6 +3959,9 @@
     "venue": {
       "name": "いしづちさん",
       "mapQuery": "愛媛県 いしづちさん"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -3810,6 +4011,9 @@
     "venue": {
       "name": "久万高原町",
       "mapQuery": "愛媛県 久万高原町"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -3855,6 +4059,9 @@
     "venue": {
       "name": "松山市 坊っちゃんスタジアム",
       "mapQuery": "愛媛県 松山市 坊っちゃんスタジアム"
+    },
+    "source": {
+      "portalName": "大会公式"
     }
   },
   {
@@ -3906,6 +4113,9 @@
     "venue": {
       "name": "今治〜尾道",
       "mapQuery": "愛媛県 今治〜尾道"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -3958,7 +4168,10 @@
     ],
     "venue": {
       "name": "",
-      "mapQuery": "愛媛県 "
+      "mapQuery": "愛媛県"
+    },
+    "source": {
+      "portalName": "スポエンCYCLE"
     }
   },
   {
@@ -4008,6 +4221,9 @@
     "venue": {
       "name": "かんかけい",
       "mapQuery": "香川県 かんかけい"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -4061,6 +4277,9 @@
     "venue": {
       "name": "高松〜まんのう",
       "mapQuery": "香川県 高松〜まんのう"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -4106,6 +4325,9 @@
     "venue": {
       "name": "日本屈指の高速コース",
       "mapQuery": "香川県 日本屈指の高速コース"
+    },
+    "source": {
+      "portalName": "大会公式"
     }
   },
   {
@@ -4159,6 +4381,9 @@
     "venue": {
       "name": "讃岐うどん巡り＆瀬戸内ロングライド 120km",
       "mapQuery": "香川県 讃岐うどん巡り＆瀬戸内ロングライド 120km"
+    },
+    "source": {
+      "portalName": "スポエンCYCLE"
     }
   },
   {
@@ -4211,7 +4436,10 @@
     ],
     "venue": {
       "name": "",
-      "mapQuery": "香川県 "
+      "mapQuery": "香川県"
+    },
+    "source": {
+      "portalName": "スポエンCYCLE"
     }
   },
   {
@@ -4266,6 +4494,9 @@
     "venue": {
       "name": "つるぎさん",
       "mapQuery": "徳島県 つるぎさん"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -4315,6 +4546,9 @@
     "venue": {
       "name": "せんばかいがい",
       "mapQuery": "徳島県 せんばかいがい"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -4368,6 +4602,9 @@
     "venue": {
       "name": "ひがしいや",
       "mapQuery": "徳島県 ひがしいや"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -4413,6 +4650,9 @@
     "venue": {
       "name": "吉野川ブルーライン公認コース",
       "mapQuery": "徳島県 吉野川ブルーライン公認コース"
+    },
+    "source": {
+      "portalName": "大会公式"
     }
   },
   {
@@ -4462,6 +4702,9 @@
     "venue": {
       "name": "四万十町",
       "mapQuery": "高知県 四万十町"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -4515,6 +4758,9 @@
     "venue": {
       "name": "本山〜津野",
       "mapQuery": "高知県 本山〜津野"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -4577,6 +4823,9 @@
     "venue": {
       "name": "四万十市",
       "mapQuery": "高知県 四万十市"
+    },
+    "source": {
+      "portalName": "大会公式"
     }
   },
   {
@@ -4622,6 +4871,9 @@
     "venue": {
       "name": "桂浜〜仁淀川河口大橋",
       "mapQuery": "高知県 桂浜〜仁淀川河口大橋"
+    },
+    "source": {
+      "portalName": "大会公式"
     }
   },
   {
@@ -4675,6 +4927,9 @@
     "venue": {
       "name": "清流四万十川＆足摺岬 ロングライド 135km",
       "mapQuery": "高知県 清流四万十川＆足摺岬 ロングライド 135km"
+    },
+    "source": {
+      "portalName": "スポエンCYCLE"
     }
   },
   {
@@ -4727,7 +4982,10 @@
     ],
     "venue": {
       "name": "",
-      "mapQuery": "高知県 "
+      "mapQuery": "高知県"
+    },
+    "source": {
+      "portalName": "スポエンCYCLE"
     }
   },
   {
@@ -4783,6 +5041,9 @@
     "venue": {
       "name": "24時間以内",
       "mapQuery": "東京都 24時間以内"
+    },
+    "source": {
+      "portalName": "大会公式"
     }
   },
   {
@@ -4837,6 +5098,9 @@
     "venue": {
       "name": "ITJ 70km 松崎〜修善寺",
       "mapQuery": "静岡県 ITJ 70km 松崎〜修善寺"
+    },
+    "source": {
+      "portalName": "大会公式"
     }
   },
   {
@@ -4900,6 +5164,9 @@
     "venue": {
       "name": "石川 加賀温泉郷 100km",
       "mapQuery": "石川県 石川 加賀温泉郷 100km"
+    },
+    "source": {
+      "portalName": "UTMB公式"
     }
   },
   {
@@ -4954,6 +5221,9 @@
     "venue": {
       "name": "長野 長和町 90kmロング",
       "mapQuery": "長野県 長野 長和町 90kmロング"
+    },
+    "source": {
+      "portalName": "大会公式"
     }
   },
   {
@@ -5017,6 +5287,9 @@
     "venue": {
       "name": "阿蘇ボルケーノトレイル 112km",
       "mapQuery": "熊本県 阿蘇ボルケーノトレイル 112km"
+    },
+    "source": {
+      "portalName": "大会公式"
     }
   },
   {
@@ -5066,6 +5339,9 @@
     "venue": {
       "name": "福岡 北九州市 40km",
       "mapQuery": "福岡県 福岡 北九州市 40km"
+    },
+    "source": {
+      "portalName": "大会公式"
     }
   },
   {
@@ -5119,6 +5395,9 @@
     "venue": {
       "name": "東山 北山 60km",
       "mapQuery": "京都府 東山 北山 60km"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -5172,6 +5451,9 @@
     "venue": {
       "name": "世界遺産 熊野古道トレイルラン 50km",
       "mapQuery": "三重県 世界遺産 熊野古道トレイルラン 50km"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -5221,6 +5503,9 @@
     "venue": {
       "name": "ダイヤモンドトレール縦走 36km",
       "mapQuery": "大阪府 ダイヤモンドトレール縦走 36km"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -5276,6 +5561,9 @@
     "venue": {
       "name": "福井",
       "mapQuery": "福井県 福井"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -5325,6 +5613,9 @@
     "venue": {
       "name": "ZAO SKYRUN お釜 熊野岳",
       "mapQuery": "山形県 ZAO SKYRUN お釜 熊野岳"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -5374,6 +5665,9 @@
     "venue": {
       "name": "市役所〜富士山頂 21km D+3000m",
       "mapQuery": "山梨県 市役所〜富士山頂 21km D+3000m"
+    },
+    "source": {
+      "portalName": "大会公式"
     }
   },
   {
@@ -5424,6 +5718,9 @@
     "venue": {
       "name": "北海道 湧別〜北見〜佐呂間",
       "mapQuery": "北海道 北海道 湧別〜北見〜佐呂間"
+    },
+    "source": {
+      "portalName": "大会公式"
     }
   },
   {
@@ -5490,6 +5787,9 @@
     "venue": {
       "name": "富士北麓公園陸上競技場",
       "mapQuery": "富士北麓公園"
+    },
+    "source": {
+      "portalName": "大会公式"
     }
   },
   {
@@ -5540,6 +5840,9 @@
     "venue": {
       "name": "岐阜 高山市 D+2500m",
       "mapQuery": "岐阜県 岐阜 高山市 D+2500m"
+    },
+    "source": {
+      "portalName": "大会公式"
     }
   },
   {
@@ -5590,6 +5893,9 @@
     "venue": {
       "name": "長野",
       "mapQuery": "長野県 長野"
+    },
+    "source": {
+      "portalName": "大会公式"
     }
   },
   {
@@ -5640,6 +5946,9 @@
     "venue": {
       "name": "京丹後市",
       "mapQuery": "京都府 京丹後市"
+    },
+    "source": {
+      "portalName": "大会公式"
     }
   },
   {
@@ -5689,7 +5998,10 @@
     ],
     "venue": {
       "name": "",
-      "mapQuery": "秋田県 "
+      "mapQuery": "秋田県"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -5743,6 +6055,9 @@
     "venue": {
       "name": "沖縄 名護市 市民レース200km",
       "mapQuery": "沖縄県 沖縄 名護市 市民レース200km"
+    },
+    "source": {
+      "portalName": "スポエンCYCLE"
     }
   },
   {
@@ -5796,6 +6111,9 @@
     "venue": {
       "name": "富士スバルライン 24km D+1255m",
       "mapQuery": "山梨県 富士スバルライン 24km D+1255m"
+    },
+    "source": {
+      "portalName": "スポエンCYCLE"
     }
   },
   {
@@ -5849,6 +6167,9 @@
     "venue": {
       "name": "新潟 佐渡島一周 210km",
       "mapQuery": "新潟県 新潟 佐渡島一周 210km"
+    },
+    "source": {
+      "portalName": "スポエンCYCLE"
     }
   },
   {
@@ -5902,6 +6223,9 @@
     "venue": {
       "name": "ニセコクラシック 150km / UCI GFWS",
       "mapQuery": "北海道 ニセコクラシック 150km / UCI GFWS"
+    },
+    "source": {
+      "portalName": "スポエンCYCLE"
     }
   },
   {
@@ -5955,6 +6279,9 @@
     "venue": {
       "name": "ビワイチ 160km センチュリー",
       "mapQuery": "滋賀県 ビワイチ 160km センチュリー"
+    },
+    "source": {
+      "portalName": "スポエンCYCLE"
     }
   },
   {
@@ -6004,6 +6331,9 @@
     "venue": {
       "name": "尾道市",
       "mapQuery": "広島県 尾道市"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -6053,6 +6383,9 @@
     "venue": {
       "name": "きのじょう",
       "mapQuery": "岡山県 きのじょう"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -6102,6 +6435,9 @@
     "venue": {
       "name": "長門市",
       "mapQuery": "山口県 長門市"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -6151,6 +6487,9 @@
     "venue": {
       "name": "琴平町",
       "mapQuery": "香川県 琴平町"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -6205,7 +6544,10 @@
     ],
     "venue": {
       "name": "",
-      "mapQuery": "高知県 "
+      "mapQuery": "高知県"
+    },
+    "source": {
+      "portalName": "ナビゲーム"
     }
   },
   {
@@ -6255,7 +6597,10 @@
     ],
     "venue": {
       "name": "",
-      "mapQuery": "栃木県 "
+      "mapQuery": "栃木県"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -6310,7 +6655,10 @@
     ],
     "venue": {
       "name": "",
-      "mapQuery": "長野県 "
+      "mapQuery": "長野県"
+    },
+    "source": {
+      "portalName": "大会公式"
     }
   },
   {
@@ -6360,7 +6708,10 @@
     ],
     "venue": {
       "name": "",
-      "mapQuery": "京都府 "
+      "mapQuery": "京都府"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -6409,7 +6760,10 @@
     ],
     "venue": {
       "name": "",
-      "mapQuery": "滋賀県 "
+      "mapQuery": "滋賀県"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -6459,7 +6813,10 @@
     ],
     "venue": {
       "name": "",
-      "mapQuery": "三重県 "
+      "mapQuery": "三重県"
+    },
+    "source": {
+      "portalName": "大会公式"
     }
   },
   {
@@ -6504,7 +6861,10 @@
     ],
     "venue": {
       "name": "",
-      "mapQuery": "京都府 "
+      "mapQuery": "京都府"
+    },
+    "source": {
+      "portalName": "スポエンCYCLE"
     }
   },
   {
@@ -6554,7 +6914,10 @@
     ],
     "venue": {
       "name": "",
-      "mapQuery": "東京都 "
+      "mapQuery": "東京都"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -6610,6 +6973,9 @@
     "venue": {
       "name": "ART",
       "mapQuery": "熊本県 ART"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -6659,7 +7025,10 @@
     ],
     "venue": {
       "name": "",
-      "mapQuery": "愛知県 "
+      "mapQuery": "愛知県"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -6705,7 +7074,10 @@
     ],
     "venue": {
       "name": "",
-      "mapQuery": "福井県 "
+      "mapQuery": "福井県"
+    },
+    "source": {
+      "portalName": "スポエン"
     }
   },
   {
@@ -6751,6 +7123,9 @@
     "venue": {
       "name": "善通寺五岳の里（市民集いの丘公園）",
       "mapQuery": "善通寺五岳の里 市民集いの丘公園"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -6802,7 +7177,10 @@
     ],
     "venue": {
       "name": "",
-      "mapQuery": "北海道 "
+      "mapQuery": "北海道"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -6853,7 +7231,10 @@
     ],
     "venue": {
       "name": "",
-      "mapQuery": "岩手県 "
+      "mapQuery": "岩手県"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -6899,7 +7280,10 @@
     ],
     "venue": {
       "name": "",
-      "mapQuery": "千葉県 "
+      "mapQuery": "千葉県"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -6945,7 +7329,10 @@
     ],
     "venue": {
       "name": "",
-      "mapQuery": "長野県 "
+      "mapQuery": "長野県"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -6996,6 +7383,9 @@
     "venue": {
       "name": "えびの高原ピクニック広場",
       "mapQuery": "えびの高原ピクニック広場"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -7042,7 +7432,10 @@
     ],
     "venue": {
       "name": "",
-      "mapQuery": "鹿児島県 "
+      "mapQuery": "鹿児島県"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -7087,7 +7480,10 @@
     ],
     "venue": {
       "name": "",
-      "mapQuery": "鹿児島県 "
+      "mapQuery": "鹿児島県"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -7136,7 +7532,10 @@
     ],
     "venue": {
       "name": "",
-      "mapQuery": "広島県 "
+      "mapQuery": "広島県"
+    },
+    "source": {
+      "portalName": "スポエンCYCLE"
     }
   },
   {
@@ -7183,7 +7582,10 @@
     ],
     "venue": {
       "name": "",
-      "mapQuery": "島根県 "
+      "mapQuery": "島根県"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -7226,7 +7628,10 @@
     ],
     "venue": {
       "name": "",
-      "mapQuery": "鳥取県 "
+      "mapQuery": "鳥取県"
+    },
+    "source": {
+      "portalName": "スポエンCYCLE"
     }
   },
   {
@@ -7267,7 +7672,10 @@
     ],
     "venue": {
       "name": "",
-      "mapQuery": "岡山県 "
+      "mapQuery": "岡山県"
+    },
+    "source": {
+      "portalName": "スポエンCYCLE"
     }
   },
   {
@@ -7310,7 +7718,10 @@
     ],
     "venue": {
       "name": "",
-      "mapQuery": "徳島県 "
+      "mapQuery": "徳島県"
+    },
+    "source": {
+      "portalName": "スポエンCYCLE"
     }
   },
   {
@@ -7354,6 +7765,9 @@
     "venue": {
       "name": "マメイチ",
       "mapQuery": "香川県 マメイチ"
+    },
+    "source": {
+      "portalName": "スポエンCYCLE"
     }
   },
   {
@@ -7392,7 +7806,10 @@
     ],
     "venue": {
       "name": "",
-      "mapQuery": "愛媛県 "
+      "mapQuery": "愛媛県"
+    },
+    "source": {
+      "portalName": "スポエンCYCLE"
     }
   },
   {
@@ -7441,7 +7858,10 @@
     ],
     "venue": {
       "name": "",
-      "mapQuery": "高知県 "
+      "mapQuery": "高知県"
+    },
+    "source": {
+      "portalName": "スポエンCYCLE"
     }
   },
   {
@@ -7487,6 +7907,9 @@
     "venue": {
       "name": "酷道激坂88km",
       "mapQuery": "広島県 酷道激坂88km"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -7531,7 +7954,10 @@
     ],
     "venue": {
       "name": "",
-      "mapQuery": "高知県 "
+      "mapQuery": "高知県"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -7570,7 +7996,10 @@
     ],
     "venue": {
       "name": "",
-      "mapQuery": "鳥取県 "
+      "mapQuery": "鳥取県"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -7611,7 +8040,10 @@
     ],
     "venue": {
       "name": "",
-      "mapQuery": "山口県 "
+      "mapQuery": "山口県"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -7652,7 +8084,10 @@
     ],
     "venue": {
       "name": "",
-      "mapQuery": "岡山県 "
+      "mapQuery": "岡山県"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -7707,6 +8142,9 @@
     "venue": {
       "name": "ユートピアサイオト",
       "mapQuery": "ユートピアサイオト"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   },
   {
@@ -7762,6 +8200,9 @@
     "venue": {
       "name": "ユートピアサイオト",
       "mapQuery": "ユートピアサイオト"
+    },
+    "source": {
+      "portalName": "モシコム"
     }
   }
 ]
