@@ -3323,7 +3323,7 @@
       "ロード",
       "夜間"
     ],
-    "title": "周防大島マラニック 100km 2026（山口・周防大島一周）",
+    "title": "周防大島ウルトラマラニック 100km 2026（山口・周防大島一周）",
     "date": "2026-04-19",
     "month": 4,
     "region": "中国",
@@ -3333,8 +3333,8 @@
     "entry_status": "closed",
     "entry_deadline": "2026-03-10",
     "links": {
-      "official": "https://moshicom.com/search/?keyword=%E5%91%A8%E9%98%B2%E5%A4%A7%E5%B3%B6%E3%83%9E%E3%83%A9%E3%83%8B%E3%83%83%E3%82%AF%20100km",
-      "entry": "https://moshicom.com/search/?keyword=%E5%91%A8%E9%98%B2%E5%A4%A7%E5%B3%B6%E3%83%9E%E3%83%A9%E3%83%8B%E3%83%83%E3%82%AF%20100km",
+      "official": "https://suooshima-maranic.jp/",
+      "entry": "https://suooshima-maranic.jp/",
       "review": "https://runnet.jp/",
       "sns": "https://x.com/",
       "official_fallback": true,
@@ -3362,12 +3362,13 @@
     ],
     "entry_fee": "22,000円",
     "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search/?keyword=%E5%91%A8%E9%98%B2%E5%A4%A7%E5%B3%B6%E3%83%9E%E3%83%A9%E3%83%8B%E3%83%83%E3%82%AF%20100km"
+      "portalName": "公式サイト",
+      "portalUrl": "https://suooshima-maranic.jp/"
     },
     "venue": {
-      "name": "周防大島一周",
-      "mapQuery": "山口県 周防大島一周"
+      "name": "片添ヶ浜海浜公園（周防大島町）",
+      "address": "山口県大島郡周防大島町平野片添",
+      "mapQuery": "周防大島町 片添ヶ浜海浜公園"
     }
   },
   {
@@ -5443,62 +5444,6 @@
     }
   },
   {
-    "id": "kirishima-ebino-extremetrail-2026",
-    "category": "trail",
-    "subCategory": "霧島連山火山トレイル",
-    "elements": [
-      "トレック"
-    ],
-    "title": "霧島・えびの高原エクストリームトレイル 2026（鹿児島・宮崎 63km）",
-    "date": "2026-07-19",
-    "month": 7,
-    "region": "九州",
-    "prefecture": "鹿児島県",
-    "distance_km": 63,
-    "elevation_m": 3450,
-    "entry_status": "closed",
-    "entry_deadline": "2026-06-15",
-    "links": {
-      "official": "https://universal-field.com/",
-      "entry": "https://universal-field.com/",
-      "review": "https://runnet.jp/",
-      "sns": "https://www.facebook.com/",
-      "verified": true,
-      "verified_at": "2026-10-31"
-    },
-    "mandatory_gear": [
-      {
-        "name": "防水透湿レインジャケット（フード付き・シーム処理済）",
-        "category": "ウェア"
-      },
-      {
-        "name": "ヘッドランプ（予備バッテリー含む）",
-        "category": "ライト"
-      },
-      {
-        "name": "サバイバルブランケット・ファーストエイドキット・熊鈴",
-        "category": "エイド"
-      },
-      {
-        "name": "コースマップまたはGPSナビゲーション時計",
-        "category": "ナビゲーション"
-      },
-      {
-        "name": "ソフトフラスク水分1.0L以上＆マグネシウム系エナジージェル",
-        "category": "補給"
-      }
-    ],
-    "entry_fee": "16,000円",
-    "source": {
-      "portalName": "公式サイト",
-      "portalUrl": "https://universal-field.com/"
-    },
-    "venue": {
-      "name": "鹿児島 宮崎 63km",
-      "mapQuery": "鹿児島県 鹿児島 宮崎 63km"
-    }
-  },
-  {
     "id": "kyoto-grand-traverse-2026",
     "category": "trail",
     "subCategory": "京都一周トレイル",
@@ -5927,14 +5872,15 @@
         "category": "ウェア"
       }
     ],
-    "entry_fee": "22,000円",
+    "entry_fee": "24,000円",
     "source": {
       "portalName": "公式サイト",
       "portalUrl": "https://www.r-wellness.com/fuji5/"
     },
     "venue": {
-      "name": "FUJI 5LAKES 118km/100km",
-      "mapQuery": "山梨県 FUJI 5LAKES 118km/100km"
+      "name": "富士北麓公園陸上競技場",
+      "address": "山梨県富士吉田市上吉田5000",
+      "mapQuery": "富士北麓公園"
     }
   },
   {
@@ -7018,7 +6964,7 @@
       "ロード",
       "夜間"
     ],
-    "title": "周防大島マラニック 100km 2027（山口・周防大島一周）",
+    "title": "周防大島ウルトラマラニック 100km 2027（山口・周防大島一周）",
     "date": "2027-04-18",
     "month": 4,
     "region": "中国",
@@ -7028,8 +6974,8 @@
     "entry_status": "open",
     "entry_deadline": "2027-03-10",
     "links": {
-      "official": "https://moshicom.com/search/?keyword=%E5%91%A8%E9%98%B2%E5%A4%A7%E5%B3%B6%E3%83%9E%E3%83%A9%E3%83%8B%E3%83%83%E3%82%AF%20100km",
-      "entry": "https://moshicom.com/search/?keyword=%E5%91%A8%E9%98%B2%E5%A4%A7%E5%B3%B6%E3%83%9E%E3%83%A9%E3%83%8B%E3%83%83%E3%82%AF%20100km",
+      "official": "https://suooshima-maranic.jp/",
+      "entry": "https://suooshima-maranic.jp/",
       "review": "https://runnet.jp/",
       "sns": "https://x.com/",
       "official_fallback": true,
@@ -7057,12 +7003,13 @@
     ],
     "entry_fee": "22,000円",
     "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search/?keyword=%E5%91%A8%E9%98%B2%E5%A4%A7%E5%B3%B6%E3%83%9E%E3%83%A9%E3%83%8B%E3%83%83%E3%82%AF%20100km"
+      "portalName": "公式サイト",
+      "portalUrl": "https://suooshima-maranic.jp/"
     },
     "venue": {
-      "name": "周防大島一周",
-      "mapQuery": "山口県 周防大島一周"
+      "name": "片添ヶ浜海浜公園（周防大島町）",
+      "address": "山口県大島郡周防大島町平野片添",
+      "mapQuery": "周防大島町 片添ヶ浜海浜公園"
     }
   },
   {
@@ -7547,52 +7494,6 @@
     }
   },
   {
-    "id": "shimanto-ultra-marathon-2026",
-    "category": "marathon",
-    "subCategory": "ウルトラマラソン100km",
-    "elements": [
-      "100km+"
-    ],
-    "title": "第32回 四万十川ウルトラマラソン 2026",
-    "date": "2026-10-18",
-    "month": 10,
-    "region": "四国",
-    "prefecture": "高知県",
-    "distance_km": 100,
-    "elevation_m": 650,
-    "entry_fee": "22,000円",
-    "entry_status": "closed",
-    "entry_deadline": "2026-06-30",
-    "links": {
-      "official": "https://moshicom.com/search/?keyword=%E5%9B%9B%E4%B8%87%E5%8D%81%E5%B7%9D%E3%82%A6%E3%83%AB%E3%83%88%E3%83%A9%E3%83%9E%E3%83%A9%E3%82%BD%E3%83%B3",
-      "entry": "https://moshicom.com/search/?keyword=%E5%9B%9B%E4%B8%87%E5%8D%81%E5%B7%9D%E3%82%A6%E3%83%AB%E3%83%88%E3%83%A9%E3%83%9E%E3%83%A9%E3%82%BD%E3%83%B3",
-      "review": "https://runnet.jp/",
-      "sns": "https://twitter.com/shimanto_ultra",
-      "official_fallback": true,
-      "entry_fallback": true,
-      "verified": true,
-      "verified_at": "2026-10-31"
-    },
-    "mandatory_gear": [
-      {
-        "name": "マイカップ（エイド給水用）",
-        "category": "補給"
-      },
-      {
-        "name": "水分ボトル（携帯必須）",
-        "category": "補給"
-      },
-      {
-        "name": "足攣り防止マグネシウム（Mag-on等）",
-        "category": "補給"
-      }
-    ],
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search/?keyword=%E5%9B%9B%E4%B8%87%E5%8D%81%E5%B7%9D%E3%82%A6%E3%83%AB%E3%83%88%E3%83%A9%E3%83%9E%E3%83%A9%E3%82%BD%E3%83%B3"
-    }
-  },
-  {
     "id": "grandfondo-kyoto-2026",
     "category": "cycling",
     "subCategory": "山岳ロングライド",
@@ -7749,52 +7650,6 @@
       "mapQuery": "熊本県 ART"
     },
     "end_date": "2026-05-10"
-  },
-  {
-    "id": "fuji-5lakes-118k-2027",
-    "category": "marathon",
-    "subCategory": "富士五湖ウルトラ",
-    "elements": [
-      "100km+"
-    ],
-    "title": "チャレンジ富士五湖ウルトラマラソン 2027",
-    "date": "2027-04-18",
-    "month": 4,
-    "region": "中部",
-    "prefecture": "山梨県",
-    "distance_km": 118,
-    "elevation_m": 1150,
-    "entry_fee": "24,000円",
-    "entry_status": "open",
-    "entry_deadline": "2027-01-31",
-    "links": {
-      "official": "https://moshicom.com/search/?keyword=%E3%83%81%E3%83%A3%E3%83%AC%E3%83%B3%E3%82%B8%E5%AF%8C%E5%A3%AB%E4%BA%94%E6%B9%96%E3%82%A6%E3%83%AB%E3%83%88%E3%83%A9%E3%83%9E%E3%83%A9%E3%82%BD%E3%83%B3",
-      "entry": "https://moshicom.com/search/?keyword=%E3%83%81%E3%83%A3%E3%83%AC%E3%83%B3%E3%82%B8%E5%AF%8C%E5%A3%AB%E4%BA%94%E6%B9%96%E3%82%A6%E3%83%AB%E3%83%88%E3%83%A9%E3%83%9E%E3%83%A9%E3%82%BD%E3%83%B3",
-      "review": "https://runnet.jp/",
-      "sns": "https://www.facebook.com/fuji5lakes/",
-      "official_fallback": true,
-      "entry_fallback": true,
-      "verified": true,
-      "verified_at": "2026-10-31"
-    },
-    "mandatory_gear": [
-      {
-        "name": "給水用マイボトル/マイカップ",
-        "category": "補給"
-      },
-      {
-        "name": "夜間点滅反射バンド＆テールライト",
-        "category": "ライト"
-      },
-      {
-        "name": "エナジージェル・電解質タブレット",
-        "category": "補給"
-      }
-    ],
-    "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search/?keyword=%E3%83%81%E3%83%A3%E3%83%AC%E3%83%B3%E3%82%B8%E5%AF%8C%E5%A3%AB%E4%BA%94%E6%B9%96%E3%82%A6%E3%83%AB%E3%83%88%E3%83%A9%E3%83%9E%E3%83%A9%E3%82%BD%E3%83%B3"
-    }
   },
   {
     "id": "okumikawa-power-trail-2027",
@@ -8208,7 +8063,7 @@
       "トレラン",
       "山岳トレック"
     ],
-    "title": "霧島・えびの高原エクストリームトレイル 2026",
+    "title": "霧島・えびの高原エクストリームトレイル 2026（鹿児島・宮崎 63km）",
     "date": "2026-07-19",
     "month": 7,
     "region": "九州・沖縄",
@@ -8219,7 +8074,7 @@
     "entry_status": "closed",
     "entry_deadline": "2026-05-31",
     "links": {
-      "official": "https://moshicom.com/search/?keyword=%E9%9C%A7%E5%B3%B6%E3%83%BB%E3%81%88%E3%81%B3%E3%81%AE%E9%AB%98%E5%8E%9F%E3%82%A8%E3%82%AF%E3%82%B9%E3%83%88%E3%83%AA%E3%83%BC%E3%83%A0%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB",
+      "official": "https://universal-field.com/",
       "entry": "https://moshicom.com/search/?keyword=%E9%9C%A7%E5%B3%B6%E3%83%BB%E3%81%88%E3%81%B3%E3%81%AE%E9%AB%98%E5%8E%9F%E3%82%A8%E3%82%AF%E3%82%B9%E3%83%88%E3%83%AA%E3%83%BC%E3%83%A0%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB",
       "review": null,
       "sns": "https://www.facebook.com/kirishima.ebino.trail/",
@@ -8247,8 +8102,13 @@
       }
     ],
     "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search/?keyword=%E9%9C%A7%E5%B3%B6%E3%83%BB%E3%81%88%E3%81%B3%E3%81%AE%E9%AB%98%E5%8E%9F%E3%82%A8%E3%82%AF%E3%82%B9%E3%83%88%E3%83%AA%E3%83%BC%E3%83%A0%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB"
+      "portalName": "公式サイト",
+      "portalUrl": "https://universal-field.com/"
+    },
+    "venue": {
+      "name": "えびの高原ピクニック広場",
+      "address": "宮崎県えびの市末永",
+      "mapQuery": "えびの高原ピクニック広場"
     }
   },
   {
