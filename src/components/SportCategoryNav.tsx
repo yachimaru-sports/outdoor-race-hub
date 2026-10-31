@@ -134,15 +134,25 @@ export const SportCategoryNav: React.FC<SportCategoryNavProps> = ({
         <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2.5">
           {navItems.map((item) => {
             const Icon = item.icon;
+            const handleClick = () => {
+              // 既に選択されている項目をもう一度押した場合はOFF（すべての大会）へリセット
+              if (item.isSelected && item.id !== 'all') {
+                onSelectNav('all', 'all', false);
+              } else {
+                item.onClick();
+              }
+            };
+
             return (
               <button
                 key={item.id}
-                onClick={item.onClick}
+                onClick={handleClick}
                 className={`group relative flex flex-col items-center text-center p-3 rounded-xl border-2 transition-all cursor-pointer ${
                   item.isSelected
                     ? `${item.activeColor} shadow-xs scale-[1.01]`
                     : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-850/50 hover:border-slate-400 dark:hover:border-slate-600 hover:bg-slate-50'
                 }`}
+                title={item.isSelected && item.id !== 'all' ? 'もう一度クリックすると解除（すべて表示）' : undefined}
               >
                 {/* 右上件数ピル */}
                 <span

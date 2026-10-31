@@ -11,6 +11,7 @@ import { ToretoreBanner } from './components/ToretoreBanner';
 import { FilterSection } from './components/FilterSection';
 import { EventTableView } from './components/EventTableView';
 import { EventCardView } from './components/EventCardView';
+import { UpdateTicker } from './components/UpdateTicker';
 import { Footer } from './components/Footer';
 
 export const App: React.FC = () => {
@@ -363,7 +364,9 @@ export const App: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col bg-slate-100 dark:bg-[#0b0f19] text-slate-900 dark:text-slate-100 transition-colors duration-150">
       {/* 1. 特価速報カルーセルティッカー（引き締めダーク帯） */}
-      <DealsTicker deals={deals} />
+      <div id="deals-carousel">
+        <DealsTicker deals={deals} />
+      </div>
 
       {/* 2. メインヘッダー */}
       <Header
@@ -373,6 +376,9 @@ export const App: React.FC = () => {
         theme={theme}
         onToggleTheme={toggleTheme}
       />
+
+      {/* 2.5 アップデート情報スライドバー（クリックで該当機能・箇所へスムーズジャンプ） */}
+      <UpdateTicker />
 
       {/* 3. e-moshicom風の大型ビジュアル・スポーツ種目ナビゲーションバー */}
       <SportCategoryNav
@@ -402,31 +408,35 @@ export const App: React.FC = () => {
         />
 
         {/* 6. 多次元検索パネル（受付中ワンクリック・時期選択・競技エレメントタグ・距離スライダー） */}
-        <FilterSection
-          events={events}
-          filters={filters}
-          onFilterChange={handleFilterChange}
-          onResetFilters={handleResetFilters}
-          viewMode={viewMode}
-          onViewModeChange={handleViewModeChange}
-          totalFilteredCount={filteredEvents.length}
-        />
+        <div id="filter-section">
+          <FilterSection
+            events={events}
+            filters={filters}
+            onFilterChange={handleFilterChange}
+            onResetFilters={handleResetFilters}
+            viewMode={viewMode}
+            onViewModeChange={handleViewModeChange}
+            totalFilteredCount={filteredEvents.length}
+          />
+        </div>
 
         {/* 7. ハイブリッド表示（テーブルビュー vs カードビュー） */}
-        {viewMode === 'table' ? (
-          <EventTableView
-            events={filteredEvents}
-            deals={deals}
-            favoriteIds={favoriteIds}
-            onToggleFavorite={handleToggleFavorite}
-          />
-        ) : (
-          <EventCardView
-            events={filteredEvents}
-            favoriteIds={favoriteIds}
-            onToggleFavorite={handleToggleFavorite}
-          />
-        )}
+        <div id="events-section">
+          {viewMode === 'table' ? (
+            <EventTableView
+              events={filteredEvents}
+              deals={deals}
+              favoriteIds={favoriteIds}
+              onToggleFavorite={handleToggleFavorite}
+            />
+          ) : (
+            <EventCardView
+              events={filteredEvents}
+              favoriteIds={favoriteIds}
+              onToggleFavorite={handleToggleFavorite}
+            />
+          )}
+        </div>
       </main>
 
       {/* フッター */}
