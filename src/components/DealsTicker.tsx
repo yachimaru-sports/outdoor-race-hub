@@ -221,42 +221,46 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({
             </div>
           </div>
 
-          {/* 右端：スライドアクション ＆ テーマ切り替え */}
-          <div className="flex items-center gap-1.5 shrink-0">
-            {/* リアルタイム累計アクセスカウンター（画面最右上） */}
+          {/* 右端：2段構成（上段：累計アクセス数 / 下段：＜ ＞ 月マーク） */}
+          <div className="flex flex-col items-end justify-center gap-1 shrink-0">
+            {/* 上段：アクセス数 */}
             <AccessCounter variant="compact" />
-            <button
-              onClick={() => handleManualScroll('left')}
-              className="p-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-white transition-colors border border-slate-700 shadow-2xs cursor-pointer"
-              aria-label="前へスクロール"
-              title="前へ"
-            >
-              <ChevronLeft className="w-3.5 h-3.5" />
-            </button>
-            <button
-              onClick={() => handleManualScroll('right')}
-              className="p-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-white transition-colors border border-slate-700 shadow-2xs cursor-pointer"
-              aria-label="次へスクロール"
-              title="次へ"
-            >
-              <ChevronRight className="w-3.5 h-3.5" />
-            </button>
 
-            {/* テーマ切り替えボタン */}
-            {onToggleTheme && (
+            {/* 下段：＜ ＞ 月マーク */}
+            <div className="flex items-center gap-1">
               <button
-                onClick={onToggleTheme}
-                className="p-1.5 rounded-lg border border-slate-700 bg-slate-900 hover:bg-slate-800 text-slate-200 transition-colors shadow-2xs cursor-pointer ml-0.5"
-                aria-label="テーマ切り替え"
-                title={theme === 'light' ? 'ダークモードに切り替え' : 'ライトモードに切り替え'}
+                onClick={() => handleManualScroll('left')}
+                className="p-1 rounded bg-slate-900 hover:bg-slate-800 text-white transition-colors border border-slate-700 shadow-2xs cursor-pointer"
+                aria-label="前へスクロール"
+                title="前へ"
               >
-                {theme === 'light' ? (
-                  <Moon className="w-3.5 h-3.5 text-slate-200" />
-                ) : (
-                  <Sun className="w-3.5 h-3.5 text-amber-400" />
-                )}
+                <ChevronLeft className="w-3 h-3" />
               </button>
-            )}
+              <button
+                onClick={() => handleManualScroll('right')}
+                className="p-1 rounded bg-slate-900 hover:bg-slate-800 text-white transition-colors border border-slate-700 shadow-2xs cursor-pointer"
+                aria-label="次へスクロール"
+                title="次へ"
+              >
+                <ChevronRight className="w-3 h-3" />
+              </button>
+
+              {/* テーマ切り替えボタン */}
+              {onToggleTheme && (
+                <button
+                  onClick={onToggleTheme}
+                  className="p-1 rounded border border-slate-700 bg-slate-900 hover:bg-slate-800 text-slate-200 transition-colors shadow-2xs cursor-pointer"
+                  aria-label="テーマ切り替え"
+                  title={theme === 'light' ? 'ダークモードに切り替え' : 'ライトモードに切り替え'}
+                >
+                  {theme === 'light' ? (
+                    <Moon className="w-3 h-3 text-slate-200" />
+                  ) : (
+                    <Sun className="w-3 h-3 text-amber-400" />
+                  )}
+                </button>
+              )}
+            </div>
           </div>
         </div>
       </div>

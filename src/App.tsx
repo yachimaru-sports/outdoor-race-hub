@@ -4,7 +4,6 @@ import dealsData from './data/deals.json';
 import { RaceEvent, DealItem, FilterState, ViewMode } from './types';
 import { INITIAL_FILTERS } from './utils/presets';
 import { DealsTicker } from './components/DealsTicker';
-import { SportCategoryNav } from './components/SportCategoryNav';
 import { ToretoreBanner } from './components/ToretoreBanner';
 import { FilterSection } from './components/FilterSection';
 import { EventTableView } from './components/EventTableView';
@@ -348,19 +347,12 @@ export const App: React.FC = () => {
           onFilterFeature={handleFilterFeature}
         />
 
-        {/* 3. すべての大会・大型ビジュアル種別ナビゲーションバー */}
-        <SportCategoryNav
-          events={events}
-          filters={filters}
-          favoriteIds={favoriteIds}
-          onSelectNav={handleSelectSportNav}
-        />
-
         {/* 4. 条件にマッチする（多次元検索パネル） */}
         <div id="filter-section">
           <FilterSection
             events={events}
             filters={filters}
+            favoriteIds={favoriteIds}
             onFilterChange={handleFilterChange}
             onResetFilters={handleResetFilters}
             viewMode={viewMode}

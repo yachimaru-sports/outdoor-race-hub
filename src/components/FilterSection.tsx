@@ -20,6 +20,7 @@ import {
   X,
   Trophy,
   Sparkles,
+  BookmarkCheck,
 } from 'lucide-react';
 
 interface FilterSectionProps {
@@ -30,6 +31,7 @@ interface FilterSectionProps {
   viewMode: ViewMode;
   onViewModeChange: (mode: ViewMode) => void;
   totalFilteredCount: number;
+  favoriteIds?: string[];
 }
 
 export const FilterSection: React.FC<FilterSectionProps> = ({
@@ -40,6 +42,7 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
   viewMode,
   onViewModeChange,
   totalFilteredCount,
+  favoriteIds = [],
 }) => {
   const isOnlyOpen = filters.entryStatus === 'open_or_closing';
 
@@ -382,6 +385,26 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
               <Square className="w-4 h-4 text-emerald-700 dark:text-emerald-400" />
             )}
             <span>エントリー受付中・申込可能のみ表示</span>
+          </button>
+
+          {/* マイ参戦予定リスト（保存した大会のみ表示） */}
+          <button
+            type="button"
+            onClick={() => onFilterChange({ ...filters, onlyFavorites: !filters.onlyFavorites })}
+            className={`inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-extrabold border-2 transition-all cursor-pointer select-none ${
+              filters.onlyFavorites
+                ? 'bg-rose-600 text-white border-rose-600 shadow-xs'
+                : 'bg-rose-50 dark:bg-rose-950/40 text-rose-950 dark:text-rose-200 border-rose-300 dark:border-rose-700 hover:bg-rose-100'
+            }`}
+            title="保存した参戦予定大会のみを表示"
+          >
+            <BookmarkCheck className="w-4 h-4" />
+            <span>マイ参戦予定</span>
+            <span className={`text-xs px-1.5 py-0.2 rounded-full font-mono font-black ${
+              filters.onlyFavorites ? 'bg-white text-rose-700' : 'bg-rose-200 dark:bg-rose-900 text-rose-950 dark:text-rose-100'
+            }`}>
+              {favoriteIds.length}
+            </span>
           </button>
         </div>
 
