@@ -4,13 +4,12 @@ import { AccessCounter } from './AccessCounter';
 import {
   ChevronLeft,
   ChevronRight,
-  Zap,
+  Clock,
   ExternalLink,
   Flame,
   Mountain,
   Sun,
   Moon,
-  Calendar,
 } from 'lucide-react';
 import { formatPrice } from '../utils/helpers';
 
@@ -18,6 +17,7 @@ interface DealsTickerProps {
   deals: DealItem[];
   totalEvents?: number;
   openCount?: number;
+  lastUpdated?: string;
   theme?: 'light' | 'dark';
   onToggleTheme?: () => void;
 }
@@ -26,6 +26,7 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({
   deals,
   totalEvents = 158,
   openCount = 29,
+  lastUpdated = '2026.10.31 10:30',
   theme = 'light',
   onToggleTheme,
 }) => {
@@ -105,9 +106,14 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({
     el.scrollBy({ left: offset, behavior: 'smooth' });
   };
 
+  const handleScrollToTop = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
-    <header
-      className="bg-slate-950 border-b-2 border-amber-500/80 text-slate-100 sticky top-0 z-50 shadow-md select-none transition-colors"
+    <div
+      className="bg-slate-950 border-b border-amber-500/70 text-slate-100 select-none transition-colors"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       onTouchStart={() => setIsPaused(true)}
@@ -115,13 +121,14 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({
     >
       <div className="max-w-7xl mx-auto px-3 sm:px-4 py-2">
         <div className="flex items-center justify-between gap-2.5">
-          {/* 左端：サイトブランドロゴ（上段に大きく配置） ＆ その下に大会数・楽天特価バッジ */}
+          {/* 左端：サイトブランドロゴ（上段に大きく配置） ＆ その下に更新日時バッジ */}
           <div className="flex flex-col justify-center shrink-0 pr-1">
-            {/* 上段：HP名称を大きく堂々と目立たせる */}
+            {/* 上段：HP名称をクリックでページ最上部へスムーズスクロール */}
             <a
               href="#"
+              onClick={handleScrollToTop}
               className="flex items-center gap-1.5 sm:gap-2 group cursor-pointer"
-              title="OUTDOOR RACE HUB トップへ"
+              title="OUTDOOR RACE HUB ページの先頭へ戻る"
             >
               <div className="w-7 h-7 sm:w-9 sm:h-9 rounded-xl bg-teal-600 text-white flex items-center justify-center shadow-md shrink-0 group-hover:bg-teal-500 transition-colors">
                 <Mountain className="w-4 h-4 sm:w-5 sm:h-5 stroke-[2.4]" />
@@ -137,23 +144,21 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({
               </div>
             </a>
 
-            {/* 下段：ロゴの真下に大会数バッジ ＆ 楽天特価ラベル ＆ 累計アクセスカウンター */}
+            {/* 下段：ロゴの真下に最新情報更新日時バッジ（いつ時点の最新情報かがひと目で分かる表示） */}
             <div className="flex items-center gap-1.5 mt-1.5">
-              {/* 掲載大会数（受付中） */}
-              <div className="flex items-center gap-1 px-1.5 py-0.5 rounded bg-slate-900 border border-slate-800 text-[10px] font-bold text-slate-300 leading-none whitespace-nowrap">
-                <Calendar className="w-2.5 h-2.5 text-teal-400 shrink-0" />
-                <span>全{totalEvents}大会</span>
-                <span className="text-emerald-400 font-black">(受付中{openCount})</span>
+              <div
+                className="flex items-center gap-1.5 px-2 py-0.5 rounded bg-emerald-950/70 border border-emerald-500/50 text-[10px] sm:text-[11px] font-bold text-emerald-300 leading-none whitespace-nowrap shadow-xs"
+                title="全国＆中四国の大会日程・エントリー受付状況・必携装備・ギア特価を常時巡回更新中"
+              >
+                <span className="relative flex h-2 w-2 shrink-0">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+                </span>
+                <Clock className="w-2.5 h-2.5 text-emerald-400 shrink-0" />
+                <span className="text-slate-300">最新情報:</span>
+                <span className="text-white font-mono font-black">{lastUpdated}</span>
               </div>
-
-              {/* 楽天特価ラベル */}
-              <div className="flex items-center gap-0.5 px-1.5 py-0.5 bg-gradient-to-r from-red-600 to-amber-600 text-white rounded shrink-0 shadow-xs border border-amber-300/40 text-[10px] font-black leading-none whitespace-nowrap">
-                <Zap className="w-2.5 h-2.5 fill-yellow-300 text-yellow-300 shrink-0" />
-                <span>楽天特価</span>
-                <span className="text-[9px] text-yellow-200 font-extrabold ml-0.5">20〜53%OFF</span>
-              </div>
-
-              </div>
+            </div>
           </div>
 
           {/* 中央：無限スライド 楽天特価ギアカルーセル */}
@@ -278,6 +283,6 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({
           </div>
         </div>
       </div>
-    </header>
+    </div>
   );
 };

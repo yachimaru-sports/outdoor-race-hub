@@ -24,6 +24,18 @@ export interface UpdateNewsItem {
 
 export const UPDATE_NEWS_DATA: UpdateNewsItem[] = [
   {
+    id: 'update-hiroshima-wangan-trail-20261031',
+    date: '2026.10.31',
+    time: '20:20',
+    tag: '公式大会追加',
+    tagStyle: 'bg-teal-100 text-teal-900 border-teal-300 dark:bg-teal-950/70 dark:text-teal-200',
+    title: '「広島湾岸TRAILRUN / Hiroshima Ultra-Trail by UTMB®」最新情報を完全登録！',
+    description:
+      '広島デルタと瀬戸内海を巡る「広島湾岸トレイル」100K/50K/25K公式大会の詳細スペック・必携装備・直通エントリーリンクを完全網羅しました。',
+    targetId: 'events-section',
+    targetLabel: '広島湾岸トレイルを見る',
+  },
+  {
     id: 'update-entry-links-20261031',
     date: '2026.10.31',
     time: '10:30',

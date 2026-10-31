@@ -1241,62 +1241,77 @@
   {
     "id": "hiroshima-utmb-2027",
     "category": "trail",
-    "subCategory": "UTMB World Series (100M/100K)",
+    "subCategory": "広島湾岸トレイル / UTMBワールドシリーズ (100K/50K/25K)",
     "elements": [
+      "広島湾岸トレイル",
+      "100km+",
       "100マイル",
-      "トレック",
-      "夜間"
+      "トレラン",
+      "夜間",
+      "UTMB"
     ],
-    "title": "Hiroshima Ultra-Trail by UTMB® 2027（広島湾岸 108km/160km）",
+    "title": "Hiroshima Ultra-Trail by UTMB® 2027（広島湾岸TRAILRUN / 広島湾岸トレイル 100K・50K・25K）",
     "date": "2027-04-09",
     "month": 4,
     "region": "中国",
     "prefecture": "広島県",
-    "distance_km": 108,
-    "elevation_m": 6900,
-    "entry_status": "upcoming",
-    "entry_deadline": "2026-11-30",
+    "distance_km": 109,
+    "elevation_m": 6570,
+    "entry_status": "open",
+    "entry_deadline": "2027-01-31",
     "links": {
-      "official": "https://hiroshima-wangantrail.jp/",
-      "entry": "https://utmb.world/",
-      "review": "https://dogsorcaravan.com/",
+      "official": "https://hiroshima.utmb.world/ja",
+      "entry": "https://hiroshima.utmb.world/ja",
+      "review": "https://dogsorcaravan.com/2024/11/17/hiroshima-trail-2026-utmb/",
       "sns": "https://x.com/UTMBWorldSeries",
       "verified": true,
       "verified_at": "2026-10-31"
     },
     "mandatory_gear": [
       {
-        "name": "ゴアテックス等 シームテープ加工防水透湿レイン上下",
+        "name": "防水透湿レインジャケット＆パンツ（耐水圧20,000mm以上・フルシームテープ加工・フード付き）",
         "category": "ウェア"
       },
       {
-        "name": "高光量ヘッドライト2灯（メイン300lm以上＋予備ライト・予備電池）",
+        "name": "高光量ヘッドライト2灯（メイン照射300ルーメン以上＋予備ライト＆予備リチウム電池）",
         "category": "ライト"
       },
       {
-        "name": "GPXトラック収録GPSウォッチ（SUUNTO/GARMIN等）",
+        "name": "GPXコーストラック登録済みGPSウォッチ（GARMIN / SUUNTO / COROS等）",
         "category": "ナビゲーション"
       },
       {
-        "name": "エマージェンシーサバイバルシート（130×200cm以上）＆ホイッスル",
+        "name": "エマージェンシーサバイバルブランケット（1.4m×2m以上）＆ホイッスル",
         "category": "エイド"
       },
       {
-        "name": "保温ベースレイヤー（ドライナミック等）・防寒長袖・グローブ",
+        "name": "トレラン専用ザック（容量10L〜12L・ハイドレーション/ソフトフラスク水分1.5L以上携行）",
+        "category": "ギア"
+      },
+      {
+        "name": "防寒用保温長袖ミッドレイヤー＆ロングタイツ＆手袋（グローブ）",
         "category": "ウェア"
       },
       {
-        "name": "水分1.5L以上携行可能なトレランザック（10L〜12L）＆補給食",
-        "category": "補給"
+        "name": "携帯コップ（150ml以上・エイドステーション給水用マイカップ必携）",
+        "category": "ギア"
+      },
+      {
+        "name": "ファーストエイドキット（伸縮包帯・テーピング・消毒液・絆創膏・ポイズンリムーバー）",
+        "category": "エイド"
       }
     ],
-    "entry_fee": "38,000円",
+    "entry_fee": "38,000円 (100K) / 22,000円 (50K) / 12,000円 (25K)",
     "source": {
-      "portalName": "公式サイト",
-      "portalUrl": "https://utmb.world/"
+      "portalName": "UTMB公式 / 広島湾岸トレイル協議会",
+      "portalUrl": "https://hiroshima.utmb.world/ja"
     },
     "end_date": "2027-04-11",
-    "entry_start_date": "2026-10-01"
+    "entry_start_date": "2026-10-01",
+    "venue": {
+      "name": "ひろしまゲートパーク・ひろしまスタジアムパーク（広島市中区・エディオンピースウイング広島隣接 / 広島湾岸トレイル）",
+      "mapQuery": "広島県 広島市中区 ひろしまゲートパーク"
+    }
   },
   {
     "id": "shinetsu-five-mountains-100mile-2026",
@@ -2292,62 +2307,70 @@
     "entry_start_date": "2026-02-11"
   },
   {
-    "id": "hiroshima-bay-night-trail-2026",
+    "id": "hiroshima-trail-wangan-2026",
     "category": "trail",
-    "subCategory": "ナイト＆ロングトレイル",
+    "subCategory": "広島湾岸トレイル（100K・50K・20K）",
     "elements": [
-      "トレック",
-      "夜間"
+      "広島湾岸トレイル",
+      "100km+",
+      "トレラン",
+      "夜間",
+      "都市周回"
     ],
-    "title": "HIROSHIMA BAY トレイルラン 2026（広島湾岸トレイル 60km）",
-    "date": "2026-05-03",
-    "month": 5,
+    "title": "HIROSHIMA TRAIL 2026（広島湾岸TRAILRUN / 広島湾岸トレイル 100K・50K・20K）",
+    "date": "2026-04-11",
+    "month": 4,
     "region": "中国",
     "prefecture": "広島県",
-    "distance_km": 60,
-    "elevation_m": 3400,
+    "distance_km": 109,
+    "elevation_m": 6570,
     "entry_status": "closed",
-    "entry_deadline": "2026-04-05",
+    "entry_deadline": "2026-02-28",
     "links": {
-      "official": "https://moshicom.com/search?keyword=HIROSHIMA%20BAY%20%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%E3%83%A9%E3%83%B3",
-      "entry": "https://moshicom.com/search?keyword=HIROSHIMA%20BAY%20%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%E3%83%A9%E3%83%B3",
-      "review": "https://runnet.jp/",
+      "official": "https://hiroshima-wangantrail.jp/",
+      "entry": "https://sportsentry.ne.jp/",
+      "review": "https://runnerspulse.jp/",
       "sns": "https://x.com/",
       "verified": true,
       "verified_at": "2026-10-31"
     },
     "mandatory_gear": [
       {
-        "name": "防水透湿レインジャケット（フード付き・シーム処理済）",
+        "name": "防水透湿レインジャケット（シーム処理済）＆レインパンツ",
         "category": "ウェア"
       },
       {
-        "name": "ヘッドランプ（予備バッテリー含む）",
+        "name": "ヘッドランプ2基（予備バッテリー含む）",
         "category": "ライト"
       },
       {
-        "name": "サバイバルブランケット・ファーストエイドキット・熊鈴",
+        "name": "サバイバルブランケット・ホイッスル・ファーストエイドキット",
         "category": "エイド"
       },
       {
-        "name": "コースマップまたはGPSナビゲーション時計",
+        "name": "コースGPXデータ入りGPS時計または登山地図アプリ",
         "category": "ナビゲーション"
       },
       {
-        "name": "ソフトフラスク水分1.0L以上＆マグネシウム系エナジージェル",
+        "name": "ソフトフラスク1.0L以上＆マグネシウム系エナジージェル・行動食",
         "category": "補給"
+      },
+      {
+        "name": "マイカップ（エイド給水用）",
+        "category": "ギア"
       }
     ],
-    "entry_fee": "24,000円",
+    "entry_fee": "32,000円 (100K) / 18,000円 (50K) / 9,000円 (20K)",
     "source": {
-      "portalName": "モシコム",
-      "portalUrl": "https://moshicom.com/search?keyword=HIROSHIMA%20BAY%20%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%E3%83%A9%E3%83%B3"
+      "portalName": "広島湾岸トレイル協議会 公式",
+      "portalUrl": "https://hiroshima-wangantrail.jp/"
     },
     "venue": {
-      "name": "広島湾岸トレイル 60km",
-      "mapQuery": "広島県 広島湾岸トレイル 60km"
+      "name": "ひろしまスタジアムパーク（エディオンピースウイング広島隣接 / 広島湾岸トレイル）",
+      "mapQuery": "広島県 広島市中区 ひろしまスタジアムパーク"
     },
-    "entry_start_date": "2026-02-04"
+    "entry_start_date": "2025-11-01",
+    "end_date": "2026-04-12"
   },
   {
     "id": "shinjo-forest-trail-2026",
