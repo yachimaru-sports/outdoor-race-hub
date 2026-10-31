@@ -14,14 +14,14 @@ import {
   CheckSquare,
   Square,
   RotateCcw,
-  Tag,
-  Bike,
-  ExternalLink,
   X,
   Trophy,
-  Sparkles,
   BookmarkCheck,
   Ruler,
+  Mountain,
+  Bike,
+  Footprints,
+  Map,
 } from 'lucide-react';
 
 interface FilterSectionProps {
@@ -57,38 +57,52 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
   const isOpen = (e: RaceEvent) => e.entry_status === 'open' || e.entry_status === 'closing_soon';
 
   // ==========================================
-  // 1. 競技ジャンル（親・種目）の定義と集計
+  // 競技ジャンル（親・種目）の定義と集計
+  // （元々の美しいカードデザイン：アイコン・色・サブ説明を完全継承）
   // ==========================================
   const genreDefinitions = [
     {
       id: 'trail',
       label: 'トレイルラン・100マイル',
-      icon: '⛰️',
       sub: 'ショート〜100mile網羅',
+      icon: Mountain,
+      activeColor: 'border-teal-600 bg-white dark:bg-slate-800 text-teal-950 dark:text-teal-200',
+      iconBg: 'bg-teal-100 text-teal-800 dark:bg-teal-950/60 dark:text-teal-300',
+      activeIconBg: 'bg-teal-700 text-white',
       count: events.filter((e) => e.category === 'trail').length,
       openCount: events.filter((e) => e.category === 'trail' && isOpen(e)).length,
     },
     {
       id: 'cycling',
       label: 'サイクリング',
-      icon: '🚴',
       sub: 'しまなみ・ロングライド',
+      icon: Bike,
+      activeColor: 'border-sky-600 bg-white dark:bg-slate-800 text-sky-950 dark:text-sky-200',
+      iconBg: 'bg-sky-100 text-sky-800 dark:bg-sky-950/60 dark:text-sky-300',
+      activeIconBg: 'bg-sky-700 text-white',
       count: events.filter((e) => e.category === 'cycling').length,
       openCount: events.filter((e) => e.category === 'cycling' && isOpen(e)).length,
     },
     {
       id: 'marathon',
       label: 'マラソン・ウルトラ',
-      icon: '🏃',
       sub: '100kmウルトラ・フル',
+      icon: Footprints,
+      activeColor: 'border-indigo-600 bg-white dark:bg-slate-800 text-indigo-950 dark:text-indigo-200',
+      iconBg: 'bg-indigo-100 text-indigo-800 dark:bg-indigo-950/60 dark:text-indigo-300',
+      activeIconBg: 'bg-indigo-700 text-white',
       count: events.filter((e) => e.category === 'marathon').length,
       openCount: events.filter((e) => e.category === 'marathon' && isOpen(e)).length,
     },
     {
       id: 'adventure',
       label: 'アドベンチャー・MTB読図',
-      icon: '🧭',
       sub: 'とれとれ・AR関西・複合',
+      icon: Compass,
+      badgeText: '注目',
+      activeColor: 'border-amber-600 bg-white dark:bg-slate-800 text-amber-950 dark:text-amber-200',
+      iconBg: 'bg-amber-100 text-amber-800 dark:bg-amber-950/60 dark:text-amber-300',
+      activeIconBg: 'bg-amber-500 text-slate-950',
       count: events.filter((e) => e.category === 'adventure' && !e.elements?.includes('ロゲイニング')).length,
       openCount: events.filter(
         (e) => e.category === 'adventure' && !e.elements?.includes('ロゲイニング') && isOpen(e)
@@ -97,8 +111,11 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
     {
       id: 'rogaining',
       label: 'ロゲイニング・OMM',
-      icon: '🗺️',
       sub: '地図読み・ナビゲーション',
+      icon: Map,
+      activeColor: 'border-emerald-600 bg-white dark:bg-slate-800 text-emerald-950 dark:text-emerald-200',
+      iconBg: 'bg-emerald-100 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300',
+      activeIconBg: 'bg-emerald-700 text-white',
       count: events.filter((e) => e.elements?.includes('ロゲイニング')).length,
       openCount: events.filter((e) => e.elements?.includes('ロゲイニング') && isOpen(e)).length,
     },
@@ -133,123 +150,6 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
       ...filters,
       selectedCategories: [],
       category: 'all',
-    });
-  };
-
-  const handleQuickPreset = (preset: 'no_bike' | 'run_only' | 'nav_only' | 'bike_only') => {
-    let next: string[] = [];
-    switch (preset) {
-      case 'no_bike':
-        next = ['trail', 'marathon', 'adventure', 'rogaining'];
-        break;
-      case 'run_only':
-        next = ['trail', 'marathon'];
-        break;
-      case 'nav_only':
-        next = ['adventure', 'rogaining'];
-        break;
-      case 'bike_only':
-        next = ['cycling'];
-        break;
-    }
-    onFilterChange({
-      ...filters,
-      selectedCategories: next,
-      category: next.length === 1 ? next[0] : 'all',
-    });
-  };
-
-  // ==========================================
-  // 2. 競技エレメント（子・特徴・スキル・装備条件）の定義と集計
-  // ==========================================
-  const elementDefinitions = [
-    {
-      id: '100mile',
-      label: '100マイル (160km級)',
-      icon: '👑',
-      sub: '超長距離・深夜行動',
-      count: events.filter((e) => e.elements?.includes('100マイル') || e.distance_km >= 155).length,
-      openCount: events.filter((e) => (e.elements?.includes('100マイル') || e.distance_km >= 155) && isOpen(e)).length,
-    },
-    {
-      id: '100km',
-      label: '100km級ウルトラ・ロング',
-      icon: '🔥',
-      sub: '95〜150km走破',
-      count: events.filter(
-        (e) => e.elements?.includes('100km+') || (e.distance_km >= 95 && e.distance_km < 155)
-      ).length,
-      openCount: events.filter(
-        (e) => (e.elements?.includes('100km+') || (e.distance_km >= 95 && e.distance_km < 155)) && isOpen(e)
-      ).length,
-    },
-    {
-      id: 'map',
-      label: '2.5万図・読図あり',
-      icon: '🧭',
-      sub: '地形図＆コンパスナビ',
-      count: events.filter((e) => e.elements?.includes('読図')).length,
-      openCount: events.filter((e) => e.elements?.includes('読図') && isOpen(e)).length,
-    },
-    {
-      id: 'mtb',
-      label: 'MTBセクション',
-      icon: '🚵',
-      sub: '林道・ダートバイク走行',
-      count: events.filter((e) => e.elements?.includes('MTB')).length,
-      openCount: events.filter((e) => e.elements?.includes('MTB') && isOpen(e)).length,
-    },
-    {
-      id: 'paddle',
-      label: 'カヤック・パックラフト',
-      icon: '🚣',
-      sub: '水上パドリング区間',
-      count: events.filter((e) => e.elements?.includes('パドル')).length,
-      openCount: events.filter((e) => e.elements?.includes('パドル') && isOpen(e)).length,
-    },
-    {
-      id: 'night',
-      label: '夜間行動・ナイトラン',
-      icon: '🔦',
-      sub: 'ヘッ電必携・闇夜行動',
-      count: events.filter((e) => e.elements?.includes('夜間')).length,
-      openCount: events.filter((e) => e.elements?.includes('夜間') && isOpen(e)).length,
-    },
-    {
-      id: 'toretore',
-      label: 'とれとれバイク・AR関西',
-      icon: '🏆',
-      sub: 'シリーズ戦・公式複合',
-      count: events.filter(
-        (e) => e.id.startsWith('toretore-') || e.id.includes('rogaining') || e.category === 'adventure'
-      ).length,
-      openCount: events.filter(
-        (e) => (e.id.startsWith('toretore-') || e.id.includes('rogaining') || e.category === 'adventure') && isOpen(e)
-      ).length,
-    },
-  ];
-
-  const selectedElements = filters.selectedElements ?? [];
-
-  const handleToggleElement = (elementId: string) => {
-    let next: string[];
-    if (selectedElements.includes(elementId)) {
-      next = selectedElements.filter((id) => id !== elementId);
-    } else {
-      next = [...selectedElements, elementId];
-    }
-    onFilterChange({
-      ...filters,
-      selectedElements: next,
-      featureTag: next.length === 1 ? next[0] : 'all',
-    });
-  };
-
-  const handleClearAllElements = () => {
-    onFilterChange({
-      ...filters,
-      selectedElements: [],
-      featureTag: 'all',
     });
   };
 
@@ -312,20 +212,6 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
       id: 'genre-selected',
       label: `種目: ${labels}`,
       onRemove: handleSelectAllGenres,
-    });
-  }
-
-  // 競技エレメント
-  if (selectedElements.length > 0) {
-    selectedElements.forEach((elId) => {
-      const def = elementDefinitions.find((d) => d.id === elId);
-      if (def) {
-        activeChips.push({
-          id: `el-${elId}`,
-          label: `${def.icon} ${def.label.split(' ')[0]}`,
-          onRemove: () => handleToggleElement(elId),
-        });
-      }
     });
   }
 
@@ -394,7 +280,7 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
   }
 
   return (
-    <div className="bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 rounded-2xl p-5 sm:p-6 shadow-sm space-y-6">
+    <div className="bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 rounded-2xl p-5 sm:p-6 shadow-sm space-y-5">
       {/* 0. 最上部ヘッダー：件数 ＆ 受付中トグル ＆ マイ参戦予定 ＆ 表示切替 */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-200 dark:border-slate-800 pb-4">
         <div className="flex flex-wrap items-center gap-3">
@@ -491,7 +377,8 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
       </div>
 
       {/* ========================================================
-          【ご指示順 1】競技ジャンル（親・種目）
+          1. 競技ジャンル（親・種目）
+          ★元々の大型カードデザインの美しさを完全継承！文字切れゼロ ＆ チェックボックス機能搭載
           ======================================================== */}
       <div className="bg-slate-50 dark:bg-slate-850/80 rounded-2xl p-4 sm:p-5 border-2 border-slate-250 dark:border-slate-750 space-y-3.5">
         <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 dark:border-slate-750 pb-2.5">
@@ -500,7 +387,7 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
               <Trophy className="w-4 h-4" />
             </div>
             <span className="text-sm sm:text-base font-black text-slate-950 dark:text-white">
-              1. 競技ジャンル（親・種目）:
+              競技ジャンル（種目選択・除外）:
             </span>
             <span className="text-xs text-slate-600 dark:text-slate-400 font-bold hidden sm:inline">
               ※チェックを外すとその競技が非表示（除外）になります
@@ -525,224 +412,99 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
           </div>
         </div>
 
-        {/* 5大ジャンルのチェックボックスカード（整列） */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2.5">
+        {/* 5大ジャンルのリッチカード（もともとのデザインを生かし、チェックボックス付き ＆ 文字切れ完全解消） */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
           {genreDefinitions.map((genre) => {
             const isChecked = selectedGenres.includes(genre.id);
+            const Icon = genre.icon;
             return (
-              <label
+              <button
                 key={genre.id}
+                type="button"
                 onClick={() => handleToggleGenre(genre.id)}
-                className={`flex items-center justify-between p-3 rounded-xl border-2 transition-all cursor-pointer select-none ${
+                className={`group relative flex flex-col items-center text-center p-3 sm:p-3.5 rounded-2xl border-2 transition-all cursor-pointer select-none ${
                   isChecked
-                    ? 'bg-white dark:bg-slate-800 border-teal-600 dark:border-teal-500 shadow-2xs'
-                    : 'bg-slate-100/70 dark:bg-slate-900/60 border-slate-300 dark:border-slate-800 opacity-60 hover:opacity-80'
+                    ? `${genre.activeColor} shadow-xs scale-[1.01]`
+                    : 'border-slate-250 dark:border-slate-800 bg-slate-100/60 dark:bg-slate-900/60 opacity-50 hover:opacity-75'
                 }`}
+                title={isChecked ? 'クリックしてこの競技を除外' : 'クリックしてこの競技を含める'}
               >
-                <div className="flex items-center gap-2.5 min-w-0">
-                  <div className="shrink-0">
-                    {isChecked ? (
-                      <CheckSquare className="w-5 h-5 text-teal-600 dark:text-teal-400 fill-teal-50 dark:fill-teal-950" />
-                    ) : (
-                      <Square className="w-5 h-5 text-slate-400 dark:text-slate-600" />
-                    )}
-                  </div>
-
-                  <div className="min-w-0">
-                    <div className="flex items-center gap-1">
-                      <span className="text-base">{genre.icon}</span>
-                      <span
-                        className={`text-xs sm:text-[13px] font-black truncate ${
-                          isChecked
-                            ? 'text-slate-950 dark:text-white'
-                            : 'text-slate-500 dark:text-slate-500 line-through'
-                        }`}
-                      >
-                        {genre.label}
-                      </span>
+                {/* 左上：チェックボックス（☑️ / ⬜） */}
+                <div className="absolute top-2.5 left-2.5">
+                  {isChecked ? (
+                    <div className="flex items-center gap-1 bg-teal-600 text-white px-1.5 py-0.5 rounded-md shadow-2xs">
+                      <CheckSquare className="w-3.5 h-3.5 fill-white text-teal-600" />
+                      <span className="text-[10px] font-black leading-none">ON</span>
                     </div>
-                    <div className="text-[10px] text-slate-500 dark:text-slate-400 truncate font-bold">
-                      {genre.sub}
+                  ) : (
+                    <div className="flex items-center gap-1 bg-slate-300 dark:bg-slate-700 text-slate-600 dark:text-slate-400 px-1.5 py-0.5 rounded-md">
+                      <Square className="w-3.5 h-3.5" />
+                      <span className="text-[10px] font-black leading-none">OFF</span>
                     </div>
-                  </div>
+                  )}
                 </div>
 
-                <div className="shrink-0 text-right font-mono ml-2">
+                {/* 右上：大会数 ＆ 受付中件数バッジ */}
+                <div className="absolute top-2.5 right-2.5">
                   <span
-                    className={`text-xs font-black px-1.5 py-0.5 rounded ${
+                    className={`text-[11px] font-mono font-black px-2 py-0.5 rounded-full leading-none flex items-center gap-1 shadow-2xs ${
                       isChecked
-                        ? 'bg-slate-150 text-slate-900 dark:bg-slate-700 dark:text-slate-200'
-                        : 'bg-slate-200 text-slate-400 dark:bg-slate-800 dark:text-slate-600'
+                        ? 'bg-slate-900 text-white dark:bg-white dark:text-slate-900'
+                        : 'bg-slate-200 text-slate-400 dark:bg-slate-800 dark:text-slate-500 line-through'
                     }`}
                   >
-                    {genre.count}
+                    <span>{genre.count}</span>
+                    <span className="text-emerald-500 dark:text-emerald-400 font-extrabold text-[10px]">
+                      (受付{genre.openCount})
+                    </span>
                   </span>
-                  <div className="text-[10px] text-emerald-600 dark:text-emerald-400 font-bold">
-                    ({genre.openCount})
-                  </div>
-                </div>
-              </label>
-            );
-          })}
-        </div>
-
-        {/* ⚡ ワンタップ切替ショートカット */}
-        <div className="flex flex-wrap items-center gap-2 pt-2 border-t border-slate-200 dark:border-slate-750 text-xs">
-          <div className="flex items-center gap-1 text-slate-700 dark:text-slate-300 font-extrabold mr-1">
-            <Sparkles className="w-3.5 h-3.5 text-amber-500" />
-            <span>ワンタップ切替:</span>
-          </div>
-
-          <button
-            type="button"
-            onClick={() => handleQuickPreset('no_bike')}
-            className={`px-3 py-1.5 rounded-lg font-black transition-all border cursor-pointer ${
-              selectedGenres.length === 4 && !selectedGenres.includes('cycling')
-                ? 'bg-red-600 text-white border-red-600 shadow-2xs'
-                : 'bg-white dark:bg-slate-800 hover:bg-slate-100 text-slate-800 dark:text-slate-200 border-slate-300 dark:border-slate-700'
-            }`}
-            title="サイクリング以外の全競技（トレラン・マラソン・ロゲ・アドベンチャー）を一撃抽出"
-          >
-            🚫 自転車以外（ラン・読図・AR）
-          </button>
-
-          <button
-            type="button"
-            onClick={() => handleQuickPreset('run_only')}
-            className={`px-3 py-1.5 rounded-lg font-black transition-all border cursor-pointer ${
-              selectedGenres.length === 2 &&
-              selectedGenres.includes('trail') &&
-              selectedGenres.includes('marathon')
-                ? 'bg-teal-700 text-white border-teal-700 shadow-2xs'
-                : 'bg-white dark:bg-slate-800 hover:bg-slate-100 text-slate-800 dark:text-slate-200 border-slate-300 dark:border-slate-700'
-            }`}
-            title="トレイルラン＋マラソンのみ"
-          >
-            🏃 ラン系のみ（トレラン・マラソン）
-          </button>
-
-          <button
-            type="button"
-            onClick={() => handleQuickPreset('nav_only')}
-            className={`px-3 py-1.5 rounded-lg font-black transition-all border cursor-pointer ${
-              selectedGenres.length === 2 &&
-              selectedGenres.includes('adventure') &&
-              selectedGenres.includes('rogaining')
-                ? 'bg-amber-600 text-white border-amber-600 shadow-2xs'
-                : 'bg-white dark:bg-slate-800 hover:bg-slate-100 text-slate-800 dark:text-slate-200 border-slate-300 dark:border-slate-700'
-            }`}
-            title="アドベンチャーレース＋ロゲイニングのみ"
-          >
-            🧭 読図系のみ（アドベンチャー・ロゲ）
-          </button>
-
-          <button
-            type="button"
-            onClick={() => handleQuickPreset('bike_only')}
-            className={`px-3 py-1.5 rounded-lg font-black transition-all border cursor-pointer ${
-              selectedGenres.length === 1 && selectedGenres.includes('cycling')
-                ? 'bg-sky-600 text-white border-sky-600 shadow-2xs'
-                : 'bg-white dark:bg-slate-800 hover:bg-slate-100 text-slate-800 dark:text-slate-200 border-slate-300 dark:border-slate-700'
-            }`}
-            title="サイクリングのみ"
-          >
-            🚴 自転車のみ
-          </button>
-        </div>
-      </div>
-
-      {/* ========================================================
-          【ご指示順 2】競技エレメント（子・特徴条件）★チェックボックス化＆整列
-          ======================================================== */}
-      <div className="bg-slate-50 dark:bg-slate-850/80 rounded-2xl p-4 sm:p-5 border-2 border-slate-250 dark:border-slate-750 space-y-3.5">
-        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 dark:border-slate-750 pb-2.5">
-          <div className="flex items-center gap-2">
-            <div className="p-1 rounded-lg bg-sky-700 text-white">
-              <Tag className="w-4 h-4" />
-            </div>
-            <span className="text-sm sm:text-base font-black text-slate-950 dark:text-white">
-              2. 競技エレメント（子・特徴・スキル・装備条件）:
-            </span>
-            <span className="text-xs text-slate-600 dark:text-slate-400 font-bold hidden sm:inline">
-              ※チェックを入れると該当条件の大会に絞り込みます（複数選択可）
-            </span>
-          </div>
-
-          {selectedElements.length > 0 && (
-            <button
-              type="button"
-              onClick={handleClearAllElements}
-              className="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 border border-slate-300 dark:border-slate-700 text-xs font-bold text-slate-800 dark:text-slate-200 transition-colors cursor-pointer"
-            >
-              条件を全解除
-            </button>
-          )}
-        </div>
-
-        {/* 競技エレメントのチェックボックスカード（一体感のある整列デザイン） */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2.5">
-          {elementDefinitions.map((el) => {
-            const isChecked = selectedElements.includes(el.id);
-            return (
-              <label
-                key={el.id}
-                onClick={() => handleToggleElement(el.id)}
-                className={`flex items-center justify-between p-3 rounded-xl border-2 transition-all cursor-pointer select-none ${
-                  isChecked
-                    ? 'bg-white dark:bg-slate-800 border-sky-600 dark:border-sky-500 shadow-2xs'
-                    : 'bg-slate-100/70 dark:bg-slate-900/60 border-slate-300 dark:border-slate-800 opacity-80 hover:opacity-100'
-                }`}
-              >
-                <div className="flex items-center gap-2.5 min-w-0">
-                  <div className="shrink-0">
-                    {isChecked ? (
-                      <CheckSquare className="w-5 h-5 text-sky-600 dark:text-sky-400 fill-sky-50 dark:fill-sky-950" />
-                    ) : (
-                      <Square className="w-5 h-5 text-slate-400 dark:text-slate-600" />
-                    )}
-                  </div>
-
-                  <div className="min-w-0">
-                    <div className="flex items-center gap-1">
-                      <span className="text-base">{el.icon}</span>
-                      <span
-                        className={`text-xs sm:text-[13px] font-black truncate ${
-                          isChecked
-                            ? 'text-sky-950 dark:text-sky-200'
-                            : 'text-slate-900 dark:text-white'
-                        }`}
-                      >
-                        {el.label}
-                      </span>
-                    </div>
-                    <div className="text-[10px] text-slate-500 dark:text-slate-400 truncate font-bold">
-                      {el.sub}
-                    </div>
-                  </div>
                 </div>
 
-                <div className="shrink-0 text-right font-mono ml-2">
-                  <span
-                    className={`text-xs font-black px-1.5 py-0.5 rounded ${
-                      isChecked
-                        ? 'bg-sky-100 text-sky-950 dark:bg-sky-950 dark:text-sky-200'
-                        : 'bg-slate-200 text-slate-700 dark:bg-slate-700 dark:text-slate-300'
-                    }`}
-                  >
-                    {el.count}
+                {/* 注目バッジ（アドベンチャーなど） */}
+                {genre.badgeText && isChecked && (
+                  <span className="absolute top-8 left-2.5 text-[10px] font-black px-1.5 py-0.2 rounded bg-amber-500 text-slate-950 shadow-2xs">
+                    {genre.badgeText}
                   </span>
-                  <div className="text-[10px] text-emerald-600 dark:text-emerald-400 font-bold">
-                    ({el.openCount})
-                  </div>
+                )}
+
+                {/* 中央：アイコンサークル（もともとのデザイン通りの美しいサークル） */}
+                <div
+                  className={`w-11 h-11 rounded-2xl flex items-center justify-center mt-5 mb-2 transition-transform group-hover:scale-105 shadow-2xs ${
+                    isChecked ? genre.activeIconBg : genre.iconBg
+                  }`}
+                >
+                  <Icon className="w-5.5 h-5.5 stroke-[2.2]" />
                 </div>
-              </label>
+
+                {/* 競技名（★文字切れゼロ！全体を確実に表示） */}
+                <div
+                  className={`font-black text-xs sm:text-sm leading-snug break-words px-1 ${
+                    isChecked
+                      ? 'text-slate-950 dark:text-white'
+                      : 'text-slate-400 dark:text-slate-500 line-through'
+                  }`}
+                >
+                  {genre.label}
+                </div>
+
+                {/* サブ説明（ショート〜100mile網羅、等） */}
+                <div
+                  className={`text-[11px] mt-1 font-bold break-words px-0.5 ${
+                    isChecked
+                      ? 'text-slate-600 dark:text-slate-300'
+                      : 'text-slate-400 dark:text-slate-500'
+                  }`}
+                >
+                  {genre.sub}
+                </div>
+              </button>
             );
           })}
         </div>
       </div>
 
       {/* ========================================================
-          【ご指示順 3】距離（距離範囲ボタン ＋ 数値指定）
+          2. 距離（距離範囲ボタン ＋ 数値指定）
           ======================================================== */}
       <div className="bg-slate-50 dark:bg-slate-850/80 rounded-2xl p-4 sm:p-5 border-2 border-slate-250 dark:border-slate-750 space-y-3.5">
         <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 dark:border-slate-750 pb-2.5">
@@ -751,7 +513,7 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
               <Ruler className="w-4 h-4" />
             </div>
             <span className="text-sm sm:text-base font-black text-slate-950 dark:text-white">
-              3. 距離範囲:
+              距離範囲:
             </span>
             <span className="text-xs text-slate-600 dark:text-slate-400 font-bold hidden sm:inline">
               ※ボタンを2度押すと全距離に戻ります
@@ -875,7 +637,7 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
       </div>
 
       {/* ========================================================
-          【ご指示順 4】大会名(エリア、都道府県、時期、並び替え、ポータル直通検索)
+          3. 大会名・エリア・都道府県・時期・並び替え
           ======================================================== */}
       <div className="bg-slate-50 dark:bg-slate-850/80 rounded-2xl p-4 sm:p-5 border-2 border-slate-250 dark:border-slate-750 space-y-3.5">
         <div className="flex items-center gap-2 border-b border-slate-200 dark:border-slate-750 pb-2.5">
@@ -883,7 +645,7 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
             <Search className="w-4 h-4" />
           </div>
           <span className="text-sm sm:text-base font-black text-slate-950 dark:text-white">
-            4. 大会名・エリア・都道府県・時期:
+            大会名・エリア・都道府県・時期:
           </span>
         </div>
 
@@ -971,75 +733,10 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
             </select>
           </div>
         </div>
-
-        {/* 各ポータル直通検索バー */}
-        <div className="flex flex-wrap items-center justify-between gap-2 pt-2 text-xs border-t border-slate-200 dark:border-slate-750">
-          <div className="flex items-center gap-1.5 text-slate-600 dark:text-slate-400 font-extrabold">
-            <ExternalLink className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400" />
-            <span>各ポータルサイトで直通検索:</span>
-          </div>
-          <div className="flex flex-wrap items-center gap-2">
-            <a
-              href={
-                filters.searchKeyword.trim()
-                  ? `https://cycle.spoen.jp/search/?keyword=${encodeURIComponent(filters.searchKeyword.trim())}`
-                  : 'https://cycle.spoen.jp/'
-              }
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 hover:bg-sky-50 dark:hover:bg-sky-950/40 text-sky-900 dark:text-sky-200 border border-slate-300 dark:border-slate-700 font-black shadow-2xs transition-all hover:scale-105 cursor-pointer"
-              title="スポエンCYCLEで検索"
-            >
-              <Bike className="w-3.5 h-3.5 text-sky-600 dark:text-sky-400 shrink-0" />
-              <span>スポエンCYCLE</span>
-              <ExternalLink className="w-2.5 h-2.5 text-slate-400" />
-            </a>
-
-            <a
-              href="https://www.sportsentry.ne.jp/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 hover:bg-orange-50 dark:hover:bg-orange-950/40 text-orange-900 dark:text-orange-200 border border-slate-300 dark:border-slate-700 font-bold shadow-2xs transition-all hover:scale-105 cursor-pointer"
-              title="スポーツエントリーで検索"
-            >
-              <span className="w-2 h-2 rounded-full bg-orange-500 shrink-0" />
-              <span>スポーツエントリー</span>
-              <ExternalLink className="w-2.5 h-2.5 text-slate-400" />
-            </a>
-
-            <a
-              href="https://runnet.jp/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 hover:bg-blue-50 dark:hover:bg-blue-950/40 text-blue-900 dark:text-blue-200 border border-slate-300 dark:border-slate-700 font-bold shadow-2xs transition-all hover:scale-105 cursor-pointer"
-              title="RUNNETで検索"
-            >
-              <span className="w-2 h-2 rounded-full bg-blue-500 shrink-0" />
-              <span>RUNNET</span>
-              <ExternalLink className="w-2.5 h-2.5 text-slate-400" />
-            </a>
-
-            <a
-              href={
-                filters.searchKeyword.trim()
-                  ? `https://moshicom.com/search/?keyword=${encodeURIComponent(filters.searchKeyword.trim())}`
-                  : 'https://moshicom.com/'
-              }
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 hover:bg-emerald-50 dark:hover:bg-emerald-950/40 text-emerald-900 dark:text-emerald-200 border border-slate-300 dark:border-slate-700 font-bold shadow-2xs transition-all hover:scale-105 cursor-pointer"
-              title="e-moshicomで検索"
-            >
-              <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" />
-              <span>モシコム</span>
-              <ExternalLink className="w-2.5 h-2.5 text-slate-400" />
-            </a>
-          </div>
-        </div>
       </div>
 
       {/* ========================================================
-          【ご指示順 5】一番下に：適用中の条件（最下段チップバー）
+          4. 一番下に：適用中の条件（最下段チップバー）
           ======================================================== */}
       <div className="p-4 rounded-2xl bg-teal-50/70 dark:bg-teal-950/40 border-2 border-teal-200 dark:border-teal-850 space-y-2">
         <div className="flex flex-wrap items-center justify-between gap-2">
@@ -1048,7 +745,7 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
               <SlidersHorizontal className="w-3.5 h-3.5" />
             </div>
             <span className="text-sm font-black text-teal-950 dark:text-teal-200">
-              5. 現在適用中の絞り込み条件:
+              現在適用中の絞り込み条件:
             </span>
           </div>
 
