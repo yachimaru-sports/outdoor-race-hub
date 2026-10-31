@@ -251,8 +251,6 @@ export const App: React.FC = () => {
             if (!event.elements?.includes('ロゲイニング')) return false;
           } else if (featureTag === 'night') {
             if (!event.elements?.includes('夜間')) return false;
-          } else if (featureTag === 'daytrip') {
-            if (!event.elements?.includes('日帰り')) return false;
           }
         }
 

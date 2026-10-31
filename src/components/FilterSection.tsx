@@ -100,12 +100,6 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
       icon: '🔦',
       count: events.filter((e) => e.elements?.includes('夜間')).length,
     },
-    {
-      id: 'daytrip',
-      label: '1日完結・日帰り可',
-      icon: '☀️',
-      count: events.filter((e) => e.elements?.includes('日帰り')).length,
-    },
   ];
 
   const seasonOptions = [

@@ -120,13 +120,6 @@ export const ELEMENT_BADGES: Record<string, { icon: string; label: string; style
       'bg-slate-200 text-slate-900 border-slate-300 dark:bg-slate-800 dark:text-slate-200 dark:border-slate-700',
     desc: 'オンロード舗装路コース',
   },
-  '日帰り': {
-    icon: '☀️',
-    label: '1日',
-    style:
-      'bg-sky-100 text-sky-950 border-sky-300 dark:bg-sky-950/60 dark:text-sky-200 dark:border-sky-700',
-    desc: '1日完結型イベント',
-  },
   '2日': {
     icon: '🏕️',
     label: '2日',
