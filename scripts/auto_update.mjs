@@ -10,6 +10,11 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import {
+  isDuplicateRace,
+  mergeDuplicateEvents,
+  auditEvents
+} from './audit-duplicates.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -502,30 +507,51 @@ const NEW_DISCOVERED_RACES = [
 ];
 
 /**
- * 1. 新着大会の自動検出＆自動追加（常に新しい大会を追加）
+ * 1. 新着大会の自動検出＆自動マージ（重複防止・最高参加費・最長距離優先エンジン適用）
  */
 function discoverAndAddNewEvents() {
-  console.log(`[1/3] 全国の新着大会の自動検出＆マージを開始...`);
+  console.log(`[1/3] 全国の新着大会の自動検出＆スマートマージを開始...`);
   const raw = fs.readFileSync(EVENTS_PATH, 'utf-8');
-  const events = JSON.parse(raw);
+  let events = JSON.parse(raw);
 
-  const existingIds = new Set(events.map((e) => e.id));
   let addedCount = 0;
+  let mergedCount = 0;
 
   for (const newRace of NEW_DISCOVERED_RACES) {
-    if (!existingIds.has(newRace.id)) {
+    // 既存大会リストの中に同一大会（ID一致、または開催日×タイトル類似度・同一URL）が存在するか検査
+    let duplicateIndex = -1;
+    let dupReason = '';
+
+    for (let i = 0; i < events.length; i++) {
+      const dupCheck = isDuplicateRace(events[i], newRace);
+      if (dupCheck.isDup) {
+        duplicateIndex = i;
+        dupReason = dupCheck.reason;
+        break;
+      }
+    }
+
+    if (duplicateIndex >= 0) {
+      // 既存大会と重複する場合: 新規追加は絶対に行わず、最長距離・最高参加費・最新情報で既存大会をマージ更新
+      const before = events[duplicateIndex];
+      const merged = mergeDuplicateEvents(before, newRace);
+      events[duplicateIndex] = merged;
+      mergedCount++;
+      console.log(`  🔄 [重複防止・既存更新] ${merged.title} (${dupReason})`);
+      console.log(`     => 距離: ${merged.distance_km}km / 参加費: ${merged.entry_fee} / ステータス: ${merged.entry_status}`);
+    } else {
+      // 完全に新規の大会のみ追加
       events.push(newRace);
-      existingIds.add(newRace.id);
       addedCount++;
-      console.log(`  ★ [新着大会追加] ${newRace.title} (${newRace.prefecture} / ${newRace.distance_km}km / ${newRace.entry_fee})`);
+      console.log(`  ★ [完全新着追加] ${newRace.title} (${newRace.prefecture} / ${newRace.distance_km}km / ${newRace.entry_fee})`);
     }
   }
 
-  if (addedCount > 0) {
+  if (addedCount > 0 || mergedCount > 0) {
     fs.writeFileSync(EVENTS_PATH, JSON.stringify(events, null, 2) + '\n', 'utf-8');
-    console.log(`  => 新規 ${addedCount} 件の大会を追加し、全 ${events.length} 大会に拡充しました！`);
+    console.log(`  => 新規追加: ${addedCount}件 / 既存マージ更新: ${mergedCount}件 (全 ${events.length} 大会)`);
   } else {
-    console.log(`  => 現在すべての新着候補はすでに登録済みです（全 ${events.length} 大会）。`);
+    console.log(`  => 現在すべての新着候補はすでに登録・最適化済みです（全 ${events.length} 大会）。`);
   }
 
   return events;
@@ -847,8 +873,15 @@ async function main() {
   // 4. 【徹底再発防止】全大会リンク健全性の自動監視＆自己修復（Broken Link Self-Healing）
   await verifyAndHealEventLinks();
 
+  // 5. 【重複ゼロ恒久保証】全大会データの重複監査＆自動統合（最長距離・最高参加費優先）
+  console.log(`\n[ステップ5: 全大会データ重複監査＆恒久排除チェック開始]`);
+  const auditResult = auditEvents({ fix: true });
+  if (!auditResult.success) {
+    throw new Error('大会データに未解決の重複が検出されました。');
+  }
+
   console.log(`====================================================`);
-  console.log(`自動調査・更新バッチが正常に完了しました！`);
+  console.log(`自動調査・更新バッチが正常に完了しました！ (全 ${auditResult.count} 大会・重複ゼロ保証)`);
   console.log(`====================================================`);
 }
 

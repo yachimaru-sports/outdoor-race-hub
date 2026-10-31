@@ -43,6 +43,9 @@ jobs:
       - name: Run Auto Investigation & Data Update (Events & >=15% Rakuten Deals)
         run: node scripts/auto_update.mjs
 
+      - name: Assert Zero Duplicates in Race Database
+        run: npm run check:duplicates
+
       - name: Commit & Push Updated Data to Repository
         run: |
           git config user.name "yachimaru-sports-bot"

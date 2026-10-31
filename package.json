@@ -5,9 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "node scripts/audit-duplicates.mjs && tsc && vite build",
     "preview": "vite preview",
     "auto-update": "node scripts/auto_update.mjs",
+    "check:duplicates": "node scripts/audit-duplicates.mjs",
+    "fix:duplicates": "node scripts/audit-duplicates.mjs --fix",
     "check:links": "node scripts/verify-links.mjs",
     "heal:links": "node scripts/heal-links.mjs"
   },
