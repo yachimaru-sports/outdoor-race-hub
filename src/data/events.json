@@ -53,16 +53,16 @@
     "entry_start_date": "2027-02-24"
   },
   {
-    "id": "awaji-longride-spring-2027",
+    "id": "awaji-longride-2026",
     "category": "cycling",
     "subCategory": "淡路島一周アワイチ",
     "elements": [
       "ロード",
       "1日"
     ],
-    "title": "淡路島ロングライド150（春のプレミアムアワイチ）2027（兵庫）",
-    "date": "2027-05-16",
-    "month": 5,
+    "title": "淡路島ロングライド150 2026（兵庫・アワイチ 150km）",
+    "date": "2026-09-20",
+    "month": 9,
     "region": "近畿",
     "prefecture": "兵庫県",
     "distance_km": 150,
@@ -71,8 +71,8 @@
     "entry_status": "open",
     "entry_deadline": "2027-03-31",
     "links": {
-      "official": "https://www.tour-de-nippon.jp/",
-      "entry": "https://cycle.spoen.jp/",
+      "official": "https://note.com/tour_de_nippon",
+      "entry": "https://www.sportsentry.ne.jp/",
       "verified": true,
       "verified_at": "2026-10-31"
     },
@@ -154,63 +154,15 @@
     "entry_start_date": "2026-09-21"
   },
   {
-    "id": "shodoshima-mameichi-spring-2027",
-    "category": "cycling",
-    "subCategory": "離島一周オリーブライド",
-    "elements": [
-      "ロード",
-      "1日"
-    ],
-    "title": "小豆島一周サイクリング（春のマメイチ）2027（香川）",
-    "date": "2027-04-11",
-    "month": 4,
-    "region": "四国",
-    "prefecture": "香川県",
-    "distance_km": 100,
-    "elevation_m": 1400,
-    "entry_fee": "8,000円",
-    "entry_status": "open",
-    "entry_deadline": "2027-03-20",
-    "links": {
-      "official": "https://kca36.sakura.ne.jp/wp/",
-      "entry": "https://cycle.spoen.jp/",
-      "verified": true,
-      "verified_at": "2026-10-31"
-    },
-    "mandatory_gear": [
-      {
-        "name": "ヘルメット・グローブ",
-        "is_prepared": false
-      },
-      {
-        "name": "前後ライト",
-        "is_prepared": false
-      },
-      {
-        "name": "携帯工具・チューブ",
-        "is_prepared": false
-      }
-    ],
-    "source": {
-      "portalName": "スポーツエントリー",
-      "portalUrl": "https://www.sportsentry.ne.jp/cycle/10/3"
-    },
-    "venue": {
-      "name": "春のマメイチ",
-      "mapQuery": "香川県 春のマメイチ"
-    },
-    "entry_start_date": "2027-01-19"
-  },
-  {
-    "id": "shimanami-spring-century-2027",
+    "id": "shimanami-spring-century-2026",
     "category": "cycling",
     "subCategory": "瀬戸内しまなみ海道センチュリーライド",
     "elements": [
       "ロード",
       "1日"
     ],
-    "title": "瀬戸内しまなみ海道センチュリーライド 2027（尾道〜今治 往復）",
-    "date": "2027-04-18",
+    "title": "グラン・ツール・せとうち 2026（しまなみ海道センチュリーライド 140km）",
+    "date": "2026-04-19",
     "month": 4,
     "region": "中国",
     "prefecture": "広島県",
@@ -277,8 +229,8 @@
       "ロード",
       "1日"
     ],
-    "title": "高知 仁淀川ブルーサイクリング 2027（高知・いの町）",
-    "date": "2027-03-21",
+    "title": "GREAT EARTH 高知仁淀ブルーサイクリング 2026",
+    "date": "2026-03-22",
     "month": 3,
     "region": "四国",
     "prefecture": "高知県",
@@ -288,7 +240,7 @@
     "entry_status": "open",
     "entry_deadline": "2027-02-28",
     "links": {
-      "official": "https://niyodoblue.jp/",
+      "official": "https://great-earth.jp/",
       "entry": "https://cycle.spoen.jp/",
       "verified": true,
       "verified_at": "2026-10-31"
@@ -1382,18 +1334,18 @@
       "トレック",
       "夜間"
     ],
-    "title": "Hiroshima Ultra-Trail by UTMB® 2027",
-    "date": "2027-04-16",
+    "title": "Hiroshima Ultra-Trail by UTMB® 2027（広島湾岸 108km/160km）",
+    "date": "2027-04-09",
     "month": 4,
     "region": "中国",
     "prefecture": "広島県",
-    "distance_km": 160,
-    "elevation_m": 8200,
+    "distance_km": 108,
+    "elevation_m": 6900,
     "entry_status": "upcoming",
     "entry_deadline": "2026-11-30",
     "links": {
       "official": "https://hiroshima-wangantrail.jp/",
-      "entry": "https://hiroshima-wangantrail.jp/",
+      "entry": "https://utmb.world/",
       "review": "https://dogsorcaravan.com/",
       "sns": "https://x.com/UTMBWorldSeries",
       "verified": true,
@@ -1430,7 +1382,7 @@
       "portalName": "公式サイト",
       "portalUrl": "https://utmb.world/"
     },
-    "end_date": "2027-04-18",
+    "end_date": "2027-04-11",
     "entry_start_date": "2026-10-01"
   },
   {
@@ -1710,7 +1662,7 @@
     "entry_deadline": "2026-02-28",
     "links": {
       "official": "https://trainic-world.org/sainokuni/",
-      "entry": "https://trainic-world.org/sainokuni/",
+      "entry": "https://runnet.jp/",
       "review": "https://runnet.jp/",
       "sns": "https://www.facebook.com/",
       "verified": true,
@@ -3848,7 +3800,7 @@
       "ロード"
     ],
     "title": "ツール・ド・大山（鳥取・名峰大山一周ヒルクライム＆ロングライド）2026",
-    "date": "2027-05-16",
+    "date": "2026-05-17",
     "month": 5,
     "region": "中国",
     "prefecture": "鳥取県",
@@ -4716,65 +4668,6 @@
     "entry_start_date": "2026-10-26"
   },
   {
-    "id": "tour-de-nishi-awa-2026",
-    "category": "cycling",
-    "subCategory": "世界農業遺産・山岳グランフォンド",
-    "elements": [
-      "ロード"
-    ],
-    "title": "ツール・ド・にし阿波（剣山・祖谷 過酷山岳グランフォンド 160km）2026",
-    "date": "2027-05-09",
-    "month": 5,
-    "region": "四国",
-    "prefecture": "徳島県",
-    "distance_km": 160,
-    "elevation_m": 3500,
-    "entry_status": "open",
-    "entry_deadline": "2027-04-10",
-    "links": {
-      "official": "https://nishi-awa.jp/",
-      "entry": "https://cycle.spoen.jp/",
-      "review": "https://runnet.jp/",
-      "sns": "https://www.facebook.com/",
-      "official_fallback": false,
-      "entry_fallback": false,
-      "verified": true,
-      "verified_at": "2026-10-31"
-    },
-    "mandatory_gear": [
-      {
-        "name": "JCF公認サイクルヘルメット＆グローブ",
-        "category": "ギア"
-      },
-      {
-        "name": "高輝度フロントライト＆リアレッドライト（トンネル通過必須）",
-        "category": "ライト"
-      },
-      {
-        "name": "携帯マルチツール・予備チューブ2本・タイヤレバー・携帯ポンプ",
-        "category": "リペア"
-      },
-      {
-        "name": "サイクルボトル水分＆高カロリー補給食",
-        "category": "補給"
-      },
-      {
-        "name": "ウインドブレーカー・レインジレ",
-        "category": "ウェア"
-      }
-    ],
-    "entry_fee": "13,000円",
-    "source": {
-      "portalName": "スポーツエントリー",
-      "portalUrl": "https://www.sportsentry.ne.jp/cycle/10/3"
-    },
-    "venue": {
-      "name": "剣山 祖谷 過酷山岳グランフォンド 160km",
-      "mapQuery": "徳島県 剣山 祖谷 過酷山岳グランフォンド 160km"
-    },
-    "entry_start_date": "2027-02-09"
-  },
-  {
     "id": "oku-shimanto-trail-2026",
     "category": "trail",
     "subCategory": "四万十川源流トレイル",
@@ -5359,8 +5252,8 @@
     "entry_status": "closed",
     "entry_deadline": "2026-03-20",
     "links": {
-      "official": "https://universal-field.com/",
-      "entry": "https://universal-field.com/",
+      "official": "https://aso-field-run.jp/volcano/",
+      "entry": "https://aso-field-run.jp/volcano/",
       "review": "https://dogsorcaravan.com/",
       "sns": "https://www.facebook.com/",
       "verified": true,
@@ -6184,7 +6077,7 @@
       "ロード"
     ],
     "title": "Mt.富士ヒルクライム（富士スバルライン 24km D+1255m）2026",
-    "date": "2027-06-06",
+    "date": "2026-06-07",
     "month": 6,
     "region": "甲信越",
     "prefecture": "山梨県",
@@ -7056,130 +6949,6 @@
     "entry_start_date": "2027-01-09"
   },
   {
-    "id": "sainokuni-100mile-2027",
-    "category": "trail",
-    "subCategory": "100マイル トレイル",
-    "elements": [
-      "100マイル",
-      "トレック",
-      "夜間"
-    ],
-    "title": "トレニックワールド 100mile & 100km in 彩の国 2027",
-    "date": "2027-05-15",
-    "month": 5,
-    "region": "関東",
-    "prefecture": "埼玉県",
-    "distance_km": 162,
-    "elevation_m": 10500,
-    "entry_status": "open",
-    "entry_deadline": "2027-01-31",
-    "links": {
-      "official": "https://trainic-world.org/sainokuni/",
-      "entry": "https://trainic-world.org/sainokuni/",
-      "review": "https://runnet.jp/",
-      "sns": "https://www.facebook.com/",
-      "verified": true,
-      "verified_at": "2026-10-31"
-    },
-    "mandatory_gear": [
-      {
-        "name": "ゴアテックス等 シームテープ加工防水透湿レイン上下",
-        "category": "ウェア"
-      },
-      {
-        "name": "高光量ヘッドライト2灯（メイン300lm以上＋予備ライト・予備電池）",
-        "category": "ライト"
-      },
-      {
-        "name": "GPXトラック収録GPSウォッチ（SUUNTO/GARMIN等）",
-        "category": "ナビゲーション"
-      },
-      {
-        "name": "エマージェンシーサバイバルシート（130×200cm以上）＆ホイッスル",
-        "category": "エイド"
-      },
-      {
-        "name": "保温ベースレイヤー（ドライナミック等）・防寒長袖・グローブ",
-        "category": "ウェア"
-      },
-      {
-        "name": "水分1.5L以上携行可能なトレランザック（10L〜12L）＆補給食",
-        "category": "補給"
-      }
-    ],
-    "entry_fee": "38,000円",
-    "source": {
-      "portalName": "公式サイト",
-      "portalUrl": "https://trainic-world.org/sainokuni/"
-    },
-    "end_date": "2027-05-16",
-    "entry_start_date": "2026-12-02"
-  },
-  {
-    "id": "aso-volcano-trail-2027",
-    "category": "trail",
-    "subCategory": "阿蘇カルデラ100km",
-    "elements": [
-      "100km+",
-      "トレック",
-      "夜間"
-    ],
-    "title": "ASO VOLCANO TRAIL (阿蘇ボルケーノトレイル 112km) 2027",
-    "date": "2027-05-08",
-    "month": 5,
-    "region": "九州",
-    "prefecture": "熊本県",
-    "distance_km": 112,
-    "elevation_m": 5600,
-    "entry_status": "open",
-    "entry_deadline": "2027-02-28",
-    "links": {
-      "official": "https://universal-field.com/",
-      "entry": "https://universal-field.com/",
-      "review": "https://dogsorcaravan.com/",
-      "sns": "https://www.facebook.com/",
-      "verified": true,
-      "verified_at": "2026-10-31"
-    },
-    "mandatory_gear": [
-      {
-        "name": "ゴアテックス等 シームテープ加工防水透湿レイン上下",
-        "category": "ウェア"
-      },
-      {
-        "name": "高光量ヘッドライト2灯（メイン300lm以上＋予備ライト・予備電池）",
-        "category": "ライト"
-      },
-      {
-        "name": "GPXトラック収録GPSウォッチ（SUUNTO/GARMIN等）",
-        "category": "ナビゲーション"
-      },
-      {
-        "name": "エマージェンシーサバイバルシート（130×200cm以上）＆ホイッスル",
-        "category": "エイド"
-      },
-      {
-        "name": "保温ベースレイヤー（ドライナミック等）・防寒長袖・グローブ",
-        "category": "ウェア"
-      },
-      {
-        "name": "水分1.5L以上携行可能なトレランザック（10L〜12L）＆補給食",
-        "category": "補給"
-      }
-    ],
-    "entry_fee": "24,000円",
-    "source": {
-      "portalName": "公式サイト",
-      "portalUrl": "https://universal-field.com/"
-    },
-    "venue": {
-      "name": "阿蘇ボルケーノトレイル 112km",
-      "mapQuery": "熊本県 阿蘇ボルケーノトレイル 112km"
-    },
-    "end_date": "2027-05-09",
-    "entry_start_date": "2026-12-01"
-  },
-  {
     "id": "yatsugatake-nobeyama-ultra-2027",
     "category": "marathon",
     "subCategory": "標高1900m高原100kmウルトラ",
@@ -7754,63 +7523,6 @@
       "portalUrl": "https://moshicom.com/search/?keyword=%E9%AF%96%E8%A1%97%E9%81%93%E3%82%A6%E3%83%AB%E3%83%88%E3%83%A9%E3%83%9E%E3%83%A9%E3%82%BD%E3%83%B3"
     },
     "entry_start_date": "2026-12-30"
-  },
-  {
-    "id": "hiroshima-wangantrail-108k-2027",
-    "category": "trail",
-    "subCategory": "広島湾岸メガトレイル",
-    "elements": [
-      "100km+",
-      "夜間",
-      "山岳トレック"
-    ],
-    "title": "広島湾岸TRAIL RUN 2027",
-    "date": "2027-03-27",
-    "end_date": "2027-03-28",
-    "month": 3,
-    "region": "中国",
-    "prefecture": "広島県",
-    "distance_km": 108,
-    "elevation_m": 6900,
-    "entry_fee": "38,000円",
-    "entry_status": "open",
-    "entry_deadline": "2026-12-25",
-    "links": {
-      "official": "https://wangantrailrun.com/",
-      "entry": "https://wangantrailrun.com/",
-      "review": "https://runnet.jp/",
-      "sns": "https://www.facebook.com/hiroshimawangantrailrun/",
-      "verified": true,
-      "verified_at": "2026-10-31"
-    },
-    "mandatory_gear": [
-      {
-        "name": "ライト2灯（各300ルーメン以上＋予備電池）",
-        "category": "ライト"
-      },
-      {
-        "name": "透湿防水レインウェア上下",
-        "category": "ウェア"
-      },
-      {
-        "name": "保温ブランケット＆ファーストエイド",
-        "category": "エイド"
-      },
-      {
-        "name": "水分1L以上＆携帯コップ",
-        "category": "補給"
-      }
-    ],
-    "venue": {
-      "name": "旧広島市民球場跡地（ひろしまゲートパークプラザ）",
-      "address": "広島県広島市中区基町5-25",
-      "mapQuery": "ひろしまゲートパーク"
-    },
-    "source": {
-      "portalName": "公式サイト",
-      "portalUrl": "https://wangantrailrun.com/"
-    },
-    "entry_start_date": "2026-10-26"
   },
   {
     "id": "zentsuji-gogaku-2027",
