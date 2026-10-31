@@ -348,22 +348,19 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
         </div>
       </div>
 
-      {/* 下段2：距離レンジ（ワンクリック切り替え ＆ ドロップダウン絞り込み） ＆ ステータス詳細 */}
-      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pt-1 border-t border-slate-200 dark:border-slate-800">
-        <div className="flex flex-wrap items-center gap-3 flex-1">
-          <div className="flex items-center gap-1.5 shrink-0">
-            <SlidersHorizontal className="w-4 h-4 text-teal-700 dark:text-teal-400 shrink-0" />
-            <span className="text-xs sm:text-sm font-extrabold text-slate-800 dark:text-slate-200">
-              距離範囲:
-            </span>
-            <span className="text-xs sm:text-sm font-mono font-black text-teal-950 dark:text-teal-200 bg-teal-100 dark:bg-slate-800 px-2.5 py-0.5 rounded-full border border-teal-300 dark:border-slate-700">
-              {filters.minDistance}km 〜{' '}
-              {filters.maxDistance >= 200 ? '200km+ (上限なし)' : `${filters.maxDistance}km`}
-            </span>
-          </div>
+      {/* 下段2：距離レンジ ＆ ステータス詳細（★最初から確実に2行で完全固定） */}
+      <div className="space-y-3 pt-3 border-t border-slate-200 dark:border-slate-800">
+        {/* 1行目：距離範囲ラベル ＋ クイックボタン ＋ 範囲バッジ */}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
+          <div className="flex flex-wrap items-center gap-2">
+            <div className="flex items-center gap-1.5 shrink-0 mr-1">
+              <SlidersHorizontal className="w-4 h-4 text-teal-700 dark:text-teal-400 shrink-0" />
+              <span className="text-xs sm:text-sm font-extrabold text-slate-800 dark:text-slate-200">
+                距離範囲:
+              </span>
+            </div>
 
-          {/* クイック距離ボタン（一瞬で切り替え・安定表示） */}
-          <div className="flex flex-wrap items-center gap-1.5">
+            {/* クイック距離ボタン（一瞬で切り替え） */}
             {[
               { label: '全距離', min: 0, max: 250 },
               { label: 'ショート (〜30km)', min: 0, max: 30 },
@@ -395,68 +392,82 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
             })}
           </div>
 
-          {/* 直感的な距離ドロップダウン選択（操作安定・誤動作ゼロ） */}
-          <div className="flex items-center gap-1.5 shrink-0 bg-slate-50 dark:bg-slate-800/60 p-1 rounded-xl border border-slate-250 dark:border-slate-700">
-            <select
-              value={filters.minDistance}
-              onChange={(e) => {
-                const val = Number(e.target.value);
-                onFilterChange({
-                  ...filters,
-                  minDistance: val,
-                  maxDistance: Math.max(val, filters.maxDistance),
-                });
-              }}
-              className="bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg px-2 py-1 text-xs font-bold text-slate-900 dark:text-slate-100 cursor-pointer"
-              title="下限距離"
-            >
-              <option value={0}>0km〜</option>
-              <option value={20}>20km〜</option>
-              <option value={40}>40km〜</option>
-              <option value={70}>70km〜</option>
-              <option value={100}>100km〜</option>
-              <option value={155}>155km(100マイル)〜</option>
-            </select>
-            <span className="text-xs text-slate-500 font-bold">〜</span>
-            <select
-              value={filters.maxDistance >= 200 ? 250 : filters.maxDistance}
-              onChange={(e) => {
-                const val = Number(e.target.value);
-                onFilterChange({
-                  ...filters,
-                  maxDistance: val,
-                  minDistance: Math.min(val, filters.minDistance),
-                });
-              }}
-              className="bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg px-2 py-1 text-xs font-bold text-slate-900 dark:text-slate-100 cursor-pointer"
-              title="上限距離"
-            >
-              <option value={30}>〜30km</option>
-              <option value={50}>〜50km</option>
-              <option value={70}>〜70km</option>
-              <option value={100}>〜100km</option>
-              <option value={155}>〜155km</option>
-              <option value={250}>上限なし (200km+)</option>
-            </select>
+          <div className="shrink-0">
+            <span className="text-xs sm:text-sm font-mono font-black text-teal-950 dark:text-teal-200 bg-teal-100 dark:bg-slate-800 px-3 py-1 rounded-full border border-teal-300 dark:border-slate-700">
+              {filters.minDistance}km 〜{' '}
+              {filters.maxDistance >= 200 ? '200km+ (上限なし)' : `${filters.maxDistance}km`}
+            </span>
           </div>
         </div>
 
-        {/* 受付状況の詳細ドロップダウン */}
-        <div className="flex items-center gap-2 shrink-0">
-          <span className="text-xs sm:text-sm font-extrabold text-slate-700 dark:text-slate-300">
-            受付状態:
-          </span>
-          <select
-            value={filters.entryStatus}
-            onChange={(e) => onFilterChange({ ...filters, entryStatus: e.target.value })}
-            className="bg-white dark:bg-slate-800 border-2 border-slate-300 dark:border-slate-700 rounded-xl px-3 py-1.5 text-xs sm:text-sm text-slate-900 dark:text-slate-100 font-bold focus:outline-none focus:border-teal-700 cursor-pointer"
-          >
-            {statusOptions.map((opt) => (
-              <option key={opt.id} value={opt.id}>
-                {opt.label}
-              </option>
-            ))}
-          </select>
+        {/* 2行目：数値ドロップダウン詳細 ＋ 受付状態 */}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-1">
+          <div className="flex items-center gap-2">
+            <span className="text-xs font-bold text-slate-600 dark:text-slate-400">
+              数値で細かく指定:
+            </span>
+            <div className="flex items-center gap-1.5 bg-slate-50 dark:bg-slate-800/60 p-1 rounded-xl border border-slate-250 dark:border-slate-700">
+              <select
+                value={filters.minDistance}
+                onChange={(e) => {
+                  const val = Number(e.target.value);
+                  onFilterChange({
+                    ...filters,
+                    minDistance: val,
+                    maxDistance: Math.max(val, filters.maxDistance),
+                  });
+                }}
+                className="bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg px-2.5 py-1 text-xs font-bold text-slate-900 dark:text-slate-100 cursor-pointer"
+                title="下限距離"
+              >
+                <option value={0}>0km〜</option>
+                <option value={20}>20km〜</option>
+                <option value={40}>40km〜</option>
+                <option value={70}>70km〜</option>
+                <option value={100}>100km〜</option>
+                <option value={155}>155km(100マイル)〜</option>
+              </select>
+              <span className="text-xs text-slate-500 font-bold px-0.5">〜</span>
+              <select
+                value={filters.maxDistance >= 200 ? 250 : filters.maxDistance}
+                onChange={(e) => {
+                  const val = Number(e.target.value);
+                  onFilterChange({
+                    ...filters,
+                    maxDistance: val,
+                    minDistance: Math.min(val, filters.minDistance),
+                  });
+                }}
+                className="bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg px-2.5 py-1 text-xs font-bold text-slate-900 dark:text-slate-100 cursor-pointer"
+                title="上限距離"
+              >
+                <option value={30}>〜30km</option>
+                <option value={50}>〜50km</option>
+                <option value={70}>〜70km</option>
+                <option value={100}>〜100km</option>
+                <option value={155}>〜155km</option>
+                <option value={250}>上限なし (200km+)</option>
+              </select>
+            </div>
+          </div>
+
+          {/* 受付状況の詳細ドロップダウン */}
+          <div className="flex items-center gap-2 shrink-0">
+            <span className="text-xs sm:text-sm font-extrabold text-slate-700 dark:text-slate-300">
+              受付状態:
+            </span>
+            <select
+              value={filters.entryStatus}
+              onChange={(e) => onFilterChange({ ...filters, entryStatus: e.target.value })}
+              className="bg-white dark:bg-slate-800 border-2 border-slate-300 dark:border-slate-700 rounded-xl px-3 py-1.5 text-xs sm:text-sm text-slate-900 dark:text-slate-100 font-bold focus:outline-none focus:border-teal-700 cursor-pointer"
+            >
+              {statusOptions.map((opt) => (
+                <option key={opt.id} value={opt.id}>
+                  {opt.label}
+                </option>
+              ))}
+            </select>
+          </div>
         </div>
       </div>
     </div>

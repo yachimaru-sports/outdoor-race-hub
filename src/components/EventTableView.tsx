@@ -175,17 +175,25 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
                     )}
                   </td>
 
-                  {/* 4. 大会名 / エリア / 競技特徴（★ここを2〜3行幅に完全統一！不格好な縦伸びゼロ） */}
+                  {/* 4. 大会名 / エリア / 競技特徴（★2行表示 ＋ ホバーで全文字吹き出しポップアップ） */}
                   <td className="py-2.5 px-3 align-middle">
-                    {/* 1行目：大会タイトル（最大2行でクッキリ） */}
-                    <div
-                      className="font-black text-slate-950 dark:text-white group-hover:text-teal-700 dark:group-hover:text-teal-400 transition-colors text-sm leading-snug line-clamp-1"
-                      title={event.title}
-                    >
-                      {event.title}
+                    {/* 1〜2行目：大会タイトル（2行でしっかり表示 ＋ マウスホバーで全文字吹き出し表示） */}
+                    <div className="relative group/title">
+                      <div
+                        className="font-black text-slate-950 dark:text-white group-hover:text-teal-700 dark:group-hover:text-teal-400 transition-colors text-sm leading-snug line-clamp-2"
+                        title={event.title}
+                      >
+                        {event.title}
+                      </div>
+
+                      {/* マウスを乗せると全文字が表示されるフローティング吹き出し */}
+                      <div className="absolute left-0 bottom-full mb-1.5 hidden group-hover/title:block z-50 bg-slate-950/95 text-white text-xs font-extrabold px-3 py-2 rounded-xl shadow-2xl border border-teal-500/40 max-w-md pointer-events-none whitespace-normal leading-relaxed backdrop-blur-xs">
+                        <div className="text-[10px] text-teal-300 font-bold mb-0.5">大会名（全文）:</div>
+                        {event.title}
+                      </div>
                     </div>
 
-                    {/* 2行目：開催都道府県 ＋ 主要タグ ＋ 必携品数（1行でコンパクトに横並び） */}
+                    {/* 3行目：開催都道府県 ＋ 主要タグ ＋ 必携品数（1行でコンパクトに横並び） */}
                     <div className="flex items-center gap-1.5 mt-1 text-xs whitespace-nowrap overflow-hidden">
                       <span className="inline-flex items-center gap-0.5 text-[11px] font-extrabold text-slate-700 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded border border-slate-300 dark:border-slate-700 shrink-0">
                         <MapPin className="w-3 h-3 text-teal-700 dark:text-teal-400" />

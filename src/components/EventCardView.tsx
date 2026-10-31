@@ -128,10 +128,20 @@ export const EventCardView: React.FC<EventCardViewProps> = ({
                 </div>
               </div>
 
-              {/* 大会タイトル */}
-              <h3 className="font-extrabold text-slate-950 dark:text-white text-base sm:text-lg group-hover:text-teal-700 dark:group-hover:text-teal-400 transition-colors line-clamp-2 min-h-[52px] leading-snug">
-                {event.title}
-              </h3>
+              {/* 大会タイトル（2行表示 ＋ ホバー時全文字吹き出しポップアップ） */}
+              <div className="relative group/cardtitle">
+                <h3
+                  className="font-black text-slate-950 dark:text-white text-base sm:text-lg group-hover:text-teal-700 dark:group-hover:text-teal-400 transition-colors line-clamp-2 min-h-[52px] leading-snug cursor-pointer"
+                  title={event.title}
+                >
+                  {event.title}
+                </h3>
+                {/* マウスホバーで全文表示 */}
+                <div className="absolute left-0 bottom-full mb-1.5 hidden group-hover/cardtitle:block z-50 bg-slate-950/95 text-white text-xs font-extrabold px-3 py-2 rounded-xl shadow-2xl border border-teal-500/40 max-w-sm pointer-events-none whitespace-normal leading-relaxed backdrop-blur-xs">
+                  <div className="text-[10px] text-teal-300 font-bold mb-0.5">大会名（全文）:</div>
+                  {event.title}
+                </div>
+              </div>
 
               {/* 開催日 ＆ 締切日ハイライトバナー（重要情報として大幅強調） */}
               <div className="mt-3 p-3 bg-slate-50 dark:bg-slate-850/80 rounded-xl border border-slate-200 dark:border-slate-750 space-y-1.5">
