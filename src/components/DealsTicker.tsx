@@ -133,22 +133,21 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({
               </div>
             </a>
 
-            {/* 掲載大会数バッジ（コンパクト表示） */}
-            <div className="hidden lg:flex items-center gap-1.5 px-2 py-1 rounded-md bg-slate-900 border border-slate-800 text-[11px] font-bold text-slate-300">
-              <Calendar className="w-3 h-3 text-teal-400" />
-              <span>全{totalEvents}大会</span>
-              <span className="text-emerald-400 font-extrabold">(受付中{openCount})</span>
-            </div>
-
-            {/* 楽天特価ギアラベル */}
-            <div className="flex flex-col items-center justify-center px-2 py-1 bg-gradient-to-b from-red-600 to-amber-600 text-white rounded-lg shrink-0 shadow-xs border border-amber-300/40 leading-none">
-              <div className="flex items-center gap-0.5 text-[11px] font-black tracking-tighter whitespace-nowrap">
-                <Zap className="w-3 h-3 fill-yellow-300 text-yellow-300 shrink-0" />
-                <span>楽天特価</span>
+            {/* 縦に並べて1列（1カラム）に集約：掲載大会数 ＆ 楽天特価ラベル */}
+            <div className="flex flex-col gap-1 shrink-0 justify-center">
+              {/* 上段：掲載大会数（受付中） */}
+              <div className="flex items-center gap-1 px-1.5 py-0.5 rounded bg-slate-900 border border-slate-800 text-[10px] font-bold text-slate-300 leading-none whitespace-nowrap">
+                <Calendar className="w-2.5 h-2.5 text-teal-400 shrink-0" />
+                <span>全{totalEvents}大会</span>
+                <span className="text-emerald-400 font-black">(受付中{openCount})</span>
               </div>
-              <span className="text-[9px] font-extrabold text-yellow-200 mt-0.5 whitespace-nowrap">
-                20〜53%OFF
-              </span>
+
+              {/* 下段：楽天特価ラベル */}
+              <div className="flex items-center justify-center gap-1 px-1.5 py-0.5 bg-gradient-to-r from-red-600 to-amber-600 text-white rounded shrink-0 shadow-xs border border-amber-300/40 text-[10px] font-black leading-none whitespace-nowrap">
+                <Zap className="w-2.5 h-2.5 fill-yellow-300 text-yellow-300 shrink-0" />
+                <span>楽天特価</span>
+                <span className="text-[9px] text-yellow-200 font-extrabold">20〜53%OFF</span>
+              </div>
             </div>
           </div>
 
