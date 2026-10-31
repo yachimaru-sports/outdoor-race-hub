@@ -348,9 +348,9 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
         </div>
       </div>
 
-      {/* 下段2：距離レンジ ＆ ステータス詳細（★最初から確実に2行で完全固定） */}
+      {/* 下段2：距離レンジ ＆ ステータス詳細（★2行固定 ＆ 厳密な連動） */}
       <div className="space-y-3 pt-3 border-t border-slate-200 dark:border-slate-800">
-        {/* 1行目：距離範囲ラベル ＋ クイックボタン ＋ 範囲バッジ */}
+        {/* 1行目：距離範囲ラベル ＋ 5つの指定ボタン ＋ 範囲バッジ */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
           <div className="flex flex-wrap items-center gap-2">
             <div className="flex items-center gap-1.5 shrink-0 mr-1">
@@ -360,13 +360,13 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
               </span>
             </div>
 
-            {/* クイック距離ボタン（一瞬で切り替え） */}
+            {/* ユーザー指定の5つの距離ボタン */}
             {[
-              { label: '全距離', min: 0, max: 250 },
-              { label: 'ショート (〜30km)', min: 0, max: 30 },
-              { label: 'ミドル (30〜70km)', min: 30, max: 70 },
-              { label: 'ロング (70〜120km)', min: 70, max: 120 },
-              { label: '👑 100マイル (155km+)', min: 155, max: 250 },
+              { label: '全距離', min: 0, max: 999 },
+              { label: '0-30まで', min: 0, max: 30 },
+              { label: '30-70まで', min: 30, max: 70 },
+              { label: '70-100まで', min: 70, max: 100 },
+              { label: '100以上', min: 100, max: 999 },
             ].map((p) => {
               const isActive = filters.minDistance === p.min && filters.maxDistance === p.max;
               return (
@@ -380,10 +380,10 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
                       maxDistance: p.max,
                     })
                   }
-                  className={`text-xs px-2.5 py-1 rounded-lg font-extrabold border transition-all cursor-pointer ${
+                  className={`text-xs px-3 py-1.5 rounded-lg font-black border transition-all cursor-pointer ${
                     isActive
                       ? 'bg-teal-700 text-white border-teal-700 shadow-2xs'
-                      : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-300 dark:border-slate-700 hover:bg-slate-200'
+                      : 'bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 border-slate-300 dark:border-slate-700 hover:bg-slate-200'
                   }`}
                 >
                   {p.label}
@@ -393,14 +393,17 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
           </div>
 
           <div className="shrink-0">
-            <span className="text-xs sm:text-sm font-mono font-black text-teal-950 dark:text-teal-200 bg-teal-100 dark:bg-slate-800 px-3 py-1 rounded-full border border-teal-300 dark:border-slate-700">
-              {filters.minDistance}km 〜{' '}
-              {filters.maxDistance >= 200 ? '200km+ (上限なし)' : `${filters.maxDistance}km`}
+            <span className="text-xs sm:text-sm font-mono font-black text-teal-950 dark:text-teal-200 bg-teal-100 dark:bg-slate-800 px-3.5 py-1 rounded-full border border-teal-300 dark:border-slate-700">
+              {filters.minDistance === 0 && filters.maxDistance >= 900
+                ? '全距離 (すべて)'
+                : filters.minDistance >= 100 && filters.maxDistance >= 900
+                ? '100km以上'
+                : `${filters.minDistance}km 〜 ${filters.maxDistance >= 900 ? '上限なし' : `${filters.maxDistance}km`}`}
             </span>
           </div>
         </div>
 
-        {/* 2行目：数値ドロップダウン詳細 ＋ 受付状態 */}
+        {/* 2行目：数値ドロップダウン（矛盾ゼロ連動） ＋ 受付状態 */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-1">
           <div className="flex items-center gap-2">
             <span className="text-xs font-bold text-slate-600 dark:text-slate-400">
@@ -411,42 +414,46 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
                 value={filters.minDistance}
                 onChange={(e) => {
                   const val = Number(e.target.value);
+                  let nextMax = filters.maxDistance;
+                  if (nextMax < 900 && val > nextMax) {
+                    nextMax = 999; // 矛盾回避：下限が上限を超えたら上限なしにする
+                  }
                   onFilterChange({
                     ...filters,
                     minDistance: val,
-                    maxDistance: Math.max(val, filters.maxDistance),
+                    maxDistance: nextMax,
                   });
                 }}
                 className="bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg px-2.5 py-1 text-xs font-bold text-slate-900 dark:text-slate-100 cursor-pointer"
                 title="下限距離"
               >
                 <option value={0}>0km〜</option>
-                <option value={20}>20km〜</option>
-                <option value={40}>40km〜</option>
+                <option value={30}>30km〜</option>
                 <option value={70}>70km〜</option>
                 <option value={100}>100km〜</option>
-                <option value={155}>155km(100マイル)〜</option>
               </select>
               <span className="text-xs text-slate-500 font-bold px-0.5">〜</span>
               <select
-                value={filters.maxDistance >= 200 ? 250 : filters.maxDistance}
+                value={filters.maxDistance >= 900 ? 999 : filters.maxDistance}
                 onChange={(e) => {
                   const val = Number(e.target.value);
+                  let nextMin = filters.minDistance;
+                  if (val < 900 && val < nextMin) {
+                    nextMin = 0; // 矛盾回避：上限が下限を下回ったら下限を0kmにする
+                  }
                   onFilterChange({
                     ...filters,
                     maxDistance: val,
-                    minDistance: Math.min(val, filters.minDistance),
+                    minDistance: nextMin,
                   });
                 }}
                 className="bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg px-2.5 py-1 text-xs font-bold text-slate-900 dark:text-slate-100 cursor-pointer"
                 title="上限距離"
               >
                 <option value={30}>〜30km</option>
-                <option value={50}>〜50km</option>
                 <option value={70}>〜70km</option>
                 <option value={100}>〜100km</option>
-                <option value={155}>〜155km</option>
-                <option value={250}>上限なし (200km+)</option>
+                <option value={999}>上限なし (100km+)</option>
               </select>
             </div>
           </div>

@@ -6362,5 +6362,784 @@
         "category": "ウェア"
       }
     ]
+  },
+  {
+    "id": "niseko-ar-2026",
+    "category": "adventure",
+    "subCategory": "アドベンチャーレース",
+    "elements": [
+      "読図",
+      "MTB",
+      "パドル",
+      "トレック",
+      "日帰り"
+    ],
+    "title": "ニセコアドベンチャーレース 2026",
+    "date": "2026-08-22",
+    "month": 8,
+    "region": "北海道",
+    "prefecture": "北海道",
+    "distance_km": 65,
+    "elevation_m": 2300,
+    "entry_fee": "16,000円",
+    "entry_status": "closed",
+    "entry_deadline": "2026-07-31",
+    "links": {
+      "official": "https://niseko-adventure.jp/",
+      "entry": "https://www.sportsentry.ne.jp/",
+      "review": null,
+      "sns": "https://www.facebook.com/nisekoadventure/"
+    },
+    "mandatory_gear": [
+      {
+        "name": "マウンテンバイク＆ヘルメット",
+        "category": "ギア"
+      },
+      {
+        "name": "シルバコンパス＆国土地理院地図用マップケース",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "PFD（ライフジャケット）＆パドル",
+        "category": "ギア"
+      },
+      {
+        "name": "ファーストエイドキット＆エマージェンシーシート",
+        "category": "エイド"
+      }
+    ]
+  },
+  {
+    "id": "michinoku-ar-2026",
+    "category": "adventure",
+    "subCategory": "アドベンチャーゲーム",
+    "elements": [
+      "読図",
+      "MTB",
+      "パドル",
+      "日帰り"
+    ],
+    "title": "みちのくアドベンチャーレース 2026",
+    "date": "2026-07-25",
+    "month": 7,
+    "region": "東北",
+    "prefecture": "岩手県",
+    "distance_km": 55,
+    "elevation_m": 1800,
+    "entry_fee": "14,000円",
+    "entry_status": "closed",
+    "entry_deadline": "2026-06-30",
+    "links": {
+      "official": "https://michinoku-ar.com/",
+      "entry": "https://www.sportsentry.ne.jp/",
+      "review": null,
+      "sns": "https://www.facebook.com/michinoku.ar/"
+    },
+    "mandatory_gear": [
+      {
+        "name": "MTB＆ヘルメット",
+        "category": "ギア"
+      },
+      {
+        "name": "プレートコンパス＆防水マップケース",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "リペア工具＆予備チューブ",
+        "category": "リペア"
+      },
+      {
+        "name": "救急包帯＆サバイバルシート",
+        "category": "エイド"
+      }
+    ]
+  },
+  {
+    "id": "boso-rogaining-2026",
+    "category": "adventure",
+    "subCategory": "フォレストロゲイニング",
+    "elements": [
+      "読図",
+      "オリエンテーリング",
+      "日帰り"
+    ],
+    "title": "房総丘陵フォレストロゲイニング 2026",
+    "date": "2026-11-15",
+    "month": 11,
+    "region": "関東",
+    "prefecture": "千葉県",
+    "distance_km": 30,
+    "elevation_m": 850,
+    "entry_fee": "5,000円",
+    "entry_status": "closed",
+    "entry_deadline": "2026-10-25",
+    "links": {
+      "official": "https://boso-rogaining.jp/",
+      "entry": "https://moshicom.com/",
+      "review": null,
+      "sns": null
+    },
+    "mandatory_gear": [
+      {
+        "name": "方位磁石（シルバコンパス推奨）",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "緊急用ホイッスル＆携帯電話",
+        "category": "エイド"
+      },
+      {
+        "name": "筆記用具（大会地図チェック用）",
+        "category": "ナビゲーション"
+      }
+    ]
+  },
+  {
+    "id": "azumino-rogaining-2026",
+    "category": "adventure",
+    "subCategory": "信州ロゲイニング",
+    "elements": [
+      "読図",
+      "オリエンテーリング",
+      "日帰り"
+    ],
+    "title": "信州安曇野ロゲイニングフェスティバル 2026",
+    "date": "2026-09-26",
+    "month": 9,
+    "region": "中部",
+    "prefecture": "長野県",
+    "distance_km": 35,
+    "elevation_m": 600,
+    "entry_fee": "5,500円",
+    "entry_status": "closed",
+    "entry_deadline": "2026-08-31",
+    "links": {
+      "official": "https://azumino-rogaining.com/",
+      "entry": "https://moshicom.com/",
+      "review": null,
+      "sns": "https://www.facebook.com/azuminorogaining/"
+    },
+    "mandatory_gear": [
+      {
+        "name": "コンパス（方位磁石）",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "デジタルカメラまたはスマートフォン（通過証明用）",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "健康保険証＆雨具",
+        "category": "エイド"
+      }
+    ]
+  },
+  {
+    "id": "kirishima-ebino-trail-2026",
+    "category": "trail",
+    "subCategory": "火山群ロングトレイル",
+    "elements": [
+      "トレラン",
+      "山岳トレック",
+      "日帰り"
+    ],
+    "title": "霧島・えびの高原エクストリームトレイル 2026",
+    "date": "2026-07-19",
+    "month": 7,
+    "region": "九州・沖縄",
+    "prefecture": "宮崎県",
+    "distance_km": 63,
+    "elevation_m": 3200,
+    "entry_fee": "18,000円",
+    "entry_status": "closed",
+    "entry_deadline": "2026-05-31",
+    "links": {
+      "official": "https://universal-field.com/event/kirishima-ebino-extr/",
+      "entry": "https://runnet.jp/",
+      "review": null,
+      "sns": "https://www.facebook.com/kirishima.ebino.trail/"
+    },
+    "mandatory_gear": [
+      {
+        "name": "レインウェア（耐水圧20,000mm以上）",
+        "category": "ウェア"
+      },
+      {
+        "name": "水分1L以上＆携帯コップ",
+        "category": "補給"
+      },
+      {
+        "name": "ポイズンリムーバー＆エマージェンシーブランケット",
+        "category": "エイド"
+      },
+      {
+        "name": "コースマップ＆健康保険証",
+        "category": "ナビゲーション"
+      }
+    ]
+  },
+  {
+    "id": "yakushima-adventure-2026",
+    "category": "adventure",
+    "subCategory": "世界自然遺産アドベンチャー",
+    "elements": [
+      "読図",
+      "パドル",
+      "トレック",
+      "日帰り"
+    ],
+    "title": "屋久島アイランドアドベンチャー 2026",
+    "date": "2026-10-24",
+    "month": 10,
+    "region": "九州・沖縄",
+    "prefecture": "鹿児島県",
+    "distance_km": 48,
+    "elevation_m": 1900,
+    "entry_fee": "18,000円",
+    "entry_status": "closed",
+    "entry_deadline": "2026-09-15",
+    "links": {
+      "official": "https://yakushima-adventure.org/",
+      "entry": "https://www.sportsentry.ne.jp/",
+      "review": null,
+      "sns": "https://www.facebook.com/yakushima.adventure/"
+    },
+    "mandatory_gear": [
+      {
+        "name": "トレッキングシューズ＆雨具（屋久島豪雨対応）",
+        "category": "ウェア"
+      },
+      {
+        "name": "シルバコンパス＆防水マップケース",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "ファーストエイド＆ヘッドランプ",
+        "category": "ライト"
+      }
+    ]
+  },
+  {
+    "id": "amami-jungle-trail-2026",
+    "category": "trail",
+    "subCategory": "亜熱帯原生林トレイル",
+    "elements": [
+      "トレラン",
+      "日帰り"
+    ],
+    "title": "奄美大島マングローブジャングルトレイル 2026",
+    "date": "2026-12-06",
+    "month": 12,
+    "region": "九州・沖縄",
+    "prefecture": "鹿児島県",
+    "distance_km": 50,
+    "elevation_m": 1850,
+    "entry_fee": "14,000円",
+    "entry_status": "closing_soon",
+    "entry_deadline": "2026-10-31",
+    "links": {
+      "official": "https://amami-trail.jp/",
+      "entry": "https://runnet.jp/",
+      "review": null,
+      "sns": "https://www.facebook.com/amamitrail/"
+    },
+    "mandatory_gear": [
+      {
+        "name": "ハブ対策スパッツまたはゲイター",
+        "category": "ウェア"
+      },
+      {
+        "name": "ポイズンリムーバー＆救急包帯",
+        "category": "エイド"
+      },
+      {
+        "name": "給水ボトル1L以上",
+        "category": "補給"
+      }
+    ]
+  },
+  {
+    "id": "tobishima-blue-ride-2026",
+    "category": "cycling",
+    "subCategory": "せとうち島巡りライド",
+    "elements": [
+      "MTB",
+      "日帰り"
+    ],
+    "title": "とびしま海道安芸灘アイランドライド 2026",
+    "date": "2026-10-25",
+    "month": 10,
+    "region": "中国",
+    "prefecture": "広島県",
+    "distance_km": 90,
+    "elevation_m": 650,
+    "entry_fee": "8,500円",
+    "entry_status": "closed",
+    "entry_deadline": "2026-09-30",
+    "links": {
+      "official": "https://tobishima-cycling.jp/",
+      "entry": "https://moshicom.com/",
+      "review": null,
+      "sns": "https://www.facebook.com/tobishimaride/"
+    },
+    "mandatory_gear": [
+      {
+        "name": "ロードバイク/クロスバイク＆ヘルメット",
+        "category": "ギア"
+      },
+      {
+        "name": "フロントライト＆テール点滅ライト",
+        "category": "ライト"
+      },
+      {
+        "name": "予備チューブ＆携帯マルチツール",
+        "category": "リペア"
+      }
+    ]
+  },
+  {
+    "id": "gonokawa-canoe-bike-2026",
+    "category": "adventure",
+    "subCategory": "清流カヌー＆MTBフェス",
+    "elements": [
+      "パドル",
+      "MTB",
+      "読図",
+      "日帰り"
+    ],
+    "title": "江の川カヌー＆バイクアドベンチャーフェス 2026",
+    "date": "2026-09-13",
+    "month": 9,
+    "region": "中国",
+    "prefecture": "島根県",
+    "distance_km": 45,
+    "elevation_m": 750,
+    "entry_fee": "9,000円",
+    "entry_status": "closed",
+    "entry_deadline": "2026-08-20",
+    "links": {
+      "official": "https://gonokawa-adventure.com/",
+      "entry": "https://moshicom.com/",
+      "review": null,
+      "sns": null
+    },
+    "mandatory_gear": [
+      {
+        "name": "MTBまたはグラベルバイク＆ヘルメット",
+        "category": "ギア"
+      },
+      {
+        "name": "ライフジャケット（PFD）",
+        "category": "ギア"
+      },
+      {
+        "name": "防水バッグ＆携帯工具",
+        "category": "リペア"
+      }
+    ]
+  },
+  {
+    "id": "daisen-hillclimb-2026",
+    "category": "cycling",
+    "subCategory": "名峰大山ヒルクライム",
+    "elements": [
+      "日帰り"
+    ],
+    "title": "伯耆大山高原ヒルクライム＆サイクリング 2026",
+    "date": "2026-06-21",
+    "month": 6,
+    "region": "中国",
+    "prefecture": "鳥取県",
+    "distance_km": 85,
+    "elevation_m": 1650,
+    "entry_fee": "9,500円",
+    "entry_status": "closed",
+    "entry_deadline": "2026-05-20",
+    "links": {
+      "official": "https://daisen-ride.net/",
+      "entry": "https://www.sportsentry.ne.jp/",
+      "review": null,
+      "sns": "https://twitter.com/daisen_ride"
+    },
+    "mandatory_gear": [
+      {
+        "name": "スポーツバイク＆JCF公認ヘルメット",
+        "category": "ギア"
+      },
+      {
+        "name": "前照灯・後部反射材",
+        "category": "ライト"
+      },
+      {
+        "name": "パンク修理キット＆携帯ポンプ",
+        "category": "リペア"
+      }
+    ]
+  },
+  {
+    "id": "hiruzen-green-rally-2026",
+    "category": "cycling",
+    "subCategory": "蒜山高原サイクリングラリー",
+    "elements": [
+      "MTB",
+      "日帰り"
+    ],
+    "title": "蒜山高原グリーンサイクリングラリー 2026",
+    "date": "2026-07-05",
+    "month": 7,
+    "region": "中国",
+    "prefecture": "岡山県",
+    "distance_km": 60,
+    "elevation_m": 800,
+    "entry_fee": "6,500円",
+    "entry_status": "closed",
+    "entry_deadline": "2026-06-10",
+    "links": {
+      "official": "https://hiruzen-cycling.jp/",
+      "entry": "https://moshicom.com/",
+      "review": null,
+      "sns": null
+    },
+    "mandatory_gear": [
+      {
+        "name": "自転車＆ヘルメット",
+        "category": "ギア"
+      },
+      {
+        "name": "水分補給ボトル",
+        "category": "補給"
+      }
+    ]
+  },
+  {
+    "id": "yoshinogawa-cycle-fest-2026",
+    "category": "cycling",
+    "subCategory": "吉野川清流センチュリーライド",
+    "elements": [
+      "日帰り"
+    ],
+    "title": "吉野川リバーサイドサイクルフェスティバル 2026",
+    "date": "2026-10-11",
+    "month": 10,
+    "region": "四国",
+    "prefecture": "徳島県",
+    "distance_km": 100,
+    "elevation_m": 450,
+    "entry_fee": "8,000円",
+    "entry_status": "closed",
+    "entry_deadline": "2026-09-15",
+    "links": {
+      "official": "https://yoshinogawa-ride.com/",
+      "entry": "https://www.sportsentry.ne.jp/",
+      "review": null,
+      "sns": null
+    },
+    "mandatory_gear": [
+      {
+        "name": "ロードバイク＆ヘルメット",
+        "category": "ギア"
+      },
+      {
+        "name": "前後ライト＆ベル",
+        "category": "ライト"
+      },
+      {
+        "name": "予備チューブ2本",
+        "category": "リペア"
+      }
+    ]
+  },
+  {
+    "id": "shodoshima-mameichi-2026",
+    "category": "cycling",
+    "subCategory": "小豆島一周マメイチ",
+    "elements": [
+      "日帰り"
+    ],
+    "title": "小豆島一周オリーブサイクリング（マメイチ）2026",
+    "date": "2026-11-01",
+    "month": 11,
+    "region": "四国",
+    "prefecture": "香川県",
+    "distance_km": 100,
+    "elevation_m": 1350,
+    "entry_fee": "9,000円",
+    "entry_status": "closed",
+    "entry_deadline": "2026-10-05",
+    "links": {
+      "official": "https://shodoshima-mameichi.jp/",
+      "entry": "https://moshicom.com/",
+      "review": null,
+      "sns": "https://www.facebook.com/mameichi.shodoshima/"
+    },
+    "mandatory_gear": [
+      {
+        "name": "自転車点検済証＆ヘルメット",
+        "category": "ギア"
+      },
+      {
+        "name": "高輝度ライト（トンネル走行必須）",
+        "category": "ライト"
+      },
+      {
+        "name": "携帯ツール＆CO2インフレーター",
+        "category": "リペア"
+      }
+    ]
+  },
+  {
+    "id": "ishizuchi-hillclimb-2026",
+    "category": "cycling",
+    "subCategory": "四国最高峰ヒルクライム",
+    "elements": [
+      "日帰り"
+    ],
+    "title": "第14回 石鎚山ヒルクライム 2026",
+    "date": "2026-09-06",
+    "month": 9,
+    "region": "四国",
+    "prefecture": "愛媛県",
+    "distance_km": 22,
+    "elevation_m": 920,
+    "entry_fee": "8,500円",
+    "entry_status": "closed",
+    "entry_deadline": "2026-07-20",
+    "links": {
+      "official": "http://ishizuchi-hillclimb.com/",
+      "entry": "https://www.sportsentry.ne.jp/",
+      "review": null,
+      "sns": "https://www.facebook.com/ishizuchihillclimb/"
+    },
+    "mandatory_gear": [
+      {
+        "name": "ロードバイク＆公認ヘルメット",
+        "category": "ギア"
+      },
+      {
+        "name": "下山用防寒着（山頂冷え込み対応）",
+        "category": "ウェア"
+      }
+    ]
+  },
+  {
+    "id": "okusimanto-adventure-ride-2026",
+    "category": "cycling",
+    "subCategory": "奥四万十源流フォレストライド",
+    "elements": [
+      "MTB",
+      "日帰り"
+    ],
+    "title": "奥四万十アドベンチャーフォレストライド 2026",
+    "date": "2026-10-04",
+    "month": 10,
+    "region": "四国",
+    "prefecture": "高知県",
+    "distance_km": 75,
+    "elevation_m": 1400,
+    "entry_fee": "8,000円",
+    "entry_status": "closed",
+    "entry_deadline": "2026-09-05",
+    "links": {
+      "official": "https://okusimanto-ride.com/",
+      "entry": "https://moshicom.com/",
+      "review": null,
+      "sns": null
+    },
+    "mandatory_gear": [
+      {
+        "name": "グラベル/MTBまたはロードバイク",
+        "category": "ギア"
+      },
+      {
+        "name": "ヘルメット＆グローブ",
+        "category": "ウェア"
+      },
+      {
+        "name": "パンク修理キット",
+        "category": "リペア"
+      }
+    ]
+  },
+  {
+    "id": "shiwai-marathon-88k-2026",
+    "category": "marathon",
+    "subCategory": "名物激坂しわいウルトラ",
+    "elements": [
+      "70km+",
+      "日帰り"
+    ],
+    "title": "第15回 安芸太田しわいマラソン 2026（酷道激坂88km）",
+    "date": "2026-09-20",
+    "month": 9,
+    "region": "中国",
+    "prefecture": "広島県",
+    "distance_km": 88,
+    "elevation_m": 2150,
+    "entry_fee": "16,000円",
+    "entry_status": "closed",
+    "entry_deadline": "2026-07-31",
+    "links": {
+      "official": "https://shiwai-m.jp/",
+      "entry": "https://runnet.jp/",
+      "review": null,
+      "sns": "https://www.facebook.com/shiwai.marathon/"
+    },
+    "mandatory_gear": [
+      {
+        "name": "給水用マイカップ＆ウエストポーチ",
+        "category": "補給"
+      },
+      {
+        "name": "足攣り対策電解質サプリ（Mag-on等）",
+        "category": "補給"
+      },
+      {
+        "name": "点滅テールランプ（トンネル走行用）",
+        "category": "ライト"
+      }
+    ]
+  },
+  {
+    "id": "muroto-geopark-trail-2026",
+    "category": "trail",
+    "subCategory": "ユネスコ世界ジオパーク",
+    "elements": [
+      "トレラン",
+      "日帰り"
+    ],
+    "title": "室戸ユネスコ世界ジオパークトレイル＆ラン 2026",
+    "date": "2026-11-22",
+    "month": 11,
+    "region": "四国",
+    "prefecture": "高知県",
+    "distance_km": 35,
+    "elevation_m": 1250,
+    "entry_fee": "8,000円",
+    "entry_status": "closed",
+    "entry_deadline": "2026-10-20",
+    "links": {
+      "official": "https://muroto-trail.com/",
+      "entry": "https://moshicom.com/",
+      "review": null,
+      "sns": null
+    },
+    "mandatory_gear": [
+      {
+        "name": "トレランザック＆水分1L以上",
+        "category": "補給"
+      },
+      {
+        "name": "ウィンドシェルまたはレインジャケット",
+        "category": "ウェア"
+      },
+      {
+        "name": "ファーストエイドシート",
+        "category": "エイド"
+      }
+    ]
+  },
+  {
+    "id": "tottori-sanddune-run-2026",
+    "category": "marathon",
+    "subCategory": "鳥取砂丘エンデュランス",
+    "elements": [
+      "日帰り"
+    ],
+    "title": "鳥取砂丘サンドデューンエンデュランスラン 2026",
+    "date": "2026-10-18",
+    "month": 10,
+    "region": "中国",
+    "prefecture": "鳥取県",
+    "distance_km": 21,
+    "elevation_m": 450,
+    "entry_fee": "6,500円",
+    "entry_status": "closed",
+    "entry_deadline": "2026-09-20",
+    "links": {
+      "official": "https://tottori-sand-run.jp/",
+      "entry": "https://moshicom.com/",
+      "review": null,
+      "sns": null
+    },
+    "mandatory_gear": [
+      {
+        "name": "砂侵入防止ゲイター（砂丘走行推奨）",
+        "category": "ウェア"
+      },
+      {
+        "name": "携帯ボトル＆サングラス",
+        "category": "補給"
+      }
+    ]
+  },
+  {
+    "id": "hagi-oukan-run-2026",
+    "category": "trail",
+    "subCategory": "歴史街道マラニック",
+    "elements": [
+      "トレラン",
+      "日帰り"
+    ],
+    "title": "萩往還歴史街道探訪マラニック 2026",
+    "date": "2026-05-04",
+    "month": 5,
+    "region": "中国",
+    "prefecture": "山口県",
+    "distance_km": 33,
+    "elevation_m": 780,
+    "entry_fee": "7,000円",
+    "entry_status": "closed",
+    "entry_deadline": "2026-03-15",
+    "links": {
+      "official": "https://hagi-oukan.com/",
+      "entry": "https://runnet.jp/",
+      "review": null,
+      "sns": null
+    },
+    "mandatory_gear": [
+      {
+        "name": "マイカップ＆水分500ml以上",
+        "category": "補給"
+      },
+      {
+        "name": "健康保険証＆小銭",
+        "category": "エイド"
+      }
+    ]
+  },
+  {
+    "id": "okutsu-onsen-trail-2026",
+    "category": "trail",
+    "subCategory": "奥津温泉渓谷トレイル",
+    "elements": [
+      "トレラン",
+      "日帰り"
+    ],
+    "title": "鏡野町奥津温泉渓谷ハイク＆トレイル 2026",
+    "date": "2026-06-07",
+    "month": 6,
+    "region": "中国",
+    "prefecture": "岡山県",
+    "distance_km": 24,
+    "elevation_m": 950,
+    "entry_fee": "6,000円",
+    "entry_status": "closed",
+    "entry_deadline": "2026-05-15",
+    "links": {
+      "official": "https://okutsu-trail.jp/",
+      "entry": "https://moshicom.com/",
+      "review": null,
+      "sns": null
+    },
+    "mandatory_gear": [
+      {
+        "name": "トレランシューズ＆水分1L",
+        "category": "補給"
+      },
+      {
+        "name": "レインウェア",
+        "category": "ウェア"
+      }
+    ]
   }
 ]

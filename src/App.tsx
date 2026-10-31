@@ -326,7 +326,7 @@ export const App: React.FC = () => {
         if (event.distance_km < filters.minDistance) {
           return false;
         }
-        if (filters.maxDistance < 200 && event.distance_km > filters.maxDistance) {
+        if (filters.maxDistance < 900 && event.distance_km > filters.maxDistance) {
           return false;
         }
 
