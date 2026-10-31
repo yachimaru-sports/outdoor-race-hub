@@ -26,6 +26,7 @@ const ROOT_DIR = path.resolve(__dirname, '..');
 
 const EVENTS_PATH = path.join(ROOT_DIR, 'src', 'data', 'events.json');
 const DEALS_PATH = path.join(ROOT_DIR, 'src', 'data', 'deals.json');
+const WATCHLIST_CSV_PATH = path.join(ROOT_DIR, 'outdoor_race_hub_gear_watchlist.csv');
 
 // ユーザーの楽天アフィリエイトID
 const RAKUTEN_AFFILIATE_ID = '58fb598b.0ed2da59.58fb598c.27018da5';
@@ -832,11 +833,70 @@ async function fetchBestRakutenDeal(target) {
 }
 
 /**
+ * 特価ギア監視リストCSV（outdoor_race_hub_gear_watchlist.csv）から監視対象を動的読み込み
+ */
+function loadGearWatchlist() {
+  if (!fs.existsSync(WATCHLIST_CSV_PATH)) {
+    return GEAR_TARGETS;
+  }
+  try {
+    const raw = fs.readFileSync(WATCHLIST_CSV_PATH, 'utf-8').replace(/^\uFEFF/, '');
+    const lines = raw.split(/\r?\n/).filter(l => l.trim().length > 0);
+    if (lines.length < 2) return GEAR_TARGETS;
+
+    const headers = lines[0].split(',').map(h => h.trim());
+    const items = [];
+
+    for (let i = 1; i < lines.length; i++) {
+      const parts = lines[i].match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g) || lines[i].split(',');
+      const cleanParts = parts.map(p => p.replace(/^"|"$/g, '').trim());
+      if (cleanParts.length < 5) continue;
+
+      const id = cleanParts[0];
+      const keyword = cleanParts[1];
+      const title = cleanParts[2];
+      const category = cleanParts[3];
+      const original_price = Number(cleanParts[4]) || 20000;
+      const minValidPrice = cleanParts[5] ? Number(cleanParts[5]) : Math.round(original_price * 0.4);
+      const point_rate = cleanParts[6] ? Number(cleanParts[6]) : 10;
+
+      // 既存のフォールバック情報があれば引き継ぐ
+      const existing = GEAR_TARGETS.find(t => t.id === id);
+
+      items.push({
+        id,
+        keyword,
+        title,
+        category,
+        mustInclude: keyword.split(/\s+/).slice(0, 2),
+        original_price,
+        minValidPrice,
+        point_rate,
+        fallback: existing?.fallback || {
+          price: Math.round(original_price * 0.75),
+          image_url: 'https://tshop.r10s.jp/usbonline/cabinet/pic-2/ns40180j-main.jpg?fitin=275:275',
+          item_url: `https://search.rakuten.co.jp/search/mall/${encodeURIComponent(keyword)}/`
+        }
+      });
+    }
+
+    return items.length > 0 ? items : GEAR_TARGETS;
+  } catch (err) {
+    console.warn('  [警告] 特価ギア監視CSV読み込みエラー。固定リストで代替します:', err.message);
+    return GEAR_TARGETS;
+  }
+}
+
+/**
  * 3. 楽天特価ギア情報（deals.json）の自動調査＆更新（15%以上OFFのみ・新規登録日時追跡）
  */
 async function updateDealsData(isoNow) {
   console.log(`[3/3] 楽天市場のアウトドア・必携ギア特価情報（最低${MIN_DISCOUNT_RATE}%OFF以上）の調査を開始...`);
   
+  // 特価ギア監視マスターCSVから最新の監視対象を動的取得
+  const targetList = loadGearWatchlist();
+  console.log(`  => 監視対象ギア: 全 ${targetList.length} 品目（スプレッドシート・CSV連動）`);
+
   // 既存のdealsデータを読み込み、以前のregistered_atを引き継ぐ
   const existingDealsMap = new Map();
   if (fs.existsSync(DEALS_PATH)) {
@@ -848,7 +908,7 @@ async function updateDealsData(isoNow) {
 
   const updatedDeals = [];
 
-  for (const target of GEAR_TARGETS) {
+  for (const target of targetList) {
     const result = await fetchBestRakutenDeal(target);
 
     if (result.discount_rate >= MIN_DISCOUNT_RATE) {

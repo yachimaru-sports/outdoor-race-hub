@@ -33,4 +33,9 @@
 20. elements（特徴タグ スラッシュ区切り）
 21. mandatory_gear（必携装備リスト スラッシュ区切り）
 
+## ギア監視リクエスト時の出力（全7列）
+おすすめ必携ギアやセール監視対象の追加を依頼された場合は、以下のCSV/表形式で出力してください：
+id, keyword, title, category, original_price, min_price, point_rate
+例: deal-salomon-adv-skin-12, "サロモン ADV SKIN 12", "SALOMON ADV SKIN 12 レースベスト", ギア, 22000, 13000, 10
+
 ※ユーザーから「Googleスプレッドシートに追加して」と指示された場合、Google Workspace連携（Googleスプレッドシート拡張機能）を使用して指定のシートに直接行を追加してください。
