@@ -15,6 +15,7 @@ import {
   Square,
   RotateCcw,
   X,
+  ChevronDown,
   Trophy,
   BookmarkCheck,
   Ruler,
@@ -45,6 +46,9 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
   totalFilteredCount,
   favoriteIds = [],
 }) => {
+  // スマホ表示用の詳細フィルター開閉トグル
+  const [isMobileFiltersOpen, setIsMobileFiltersOpen] = React.useState(false);
+
   const isOnlyOpen = filters.entryStatus === 'open_or_closing';
 
   const toggleOnlyOpen = () => {
@@ -359,7 +363,7 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
             )}
           </button>
 
-          <div className="flex items-center bg-slate-100 dark:bg-slate-800 p-0.5 rounded-xl border border-slate-300 dark:border-slate-700">
+          <div className="hidden md:flex items-center bg-slate-100 dark:bg-slate-800 p-0.5 rounded-xl border border-slate-300 dark:border-slate-700">
             <button
               onClick={() => onViewModeChange('table')}
               className={`flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs sm:text-sm font-black transition-all cursor-pointer ${
@@ -420,8 +424,50 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
           </div>
         </div>
 
-        {/* 5大ジャンルのリッチカード（★1行表示＆コンパクトに約1行サイズ縮小！） */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5">
+        {/* スマホ専用：横スクロール可能なピル型タブ（片手でサクサク切り替え） */}
+        <div className="flex md:hidden overflow-x-auto no-scrollbar gap-2 pb-1.5 snap-x">
+          {genreDefinitions.map((genre) => {
+            const isChecked = selectedGenres.includes(genre.id);
+            const Icon = genre.icon;
+            return (
+              <button
+                key={genre.id}
+                type="button"
+                onClick={() => handleToggleGenre(genre.id)}
+                className={`flex items-center gap-2 px-3 py-2 rounded-xl border-2 shrink-0 snap-start transition-all cursor-pointer select-none min-h-[44px] ${
+                  isChecked
+                    ? `${genre.activeColor} shadow-xs font-black`
+                    : 'border-slate-300 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 text-slate-500 opacity-60'
+                }`}
+              >
+                <div
+                  className={`w-6 h-6 rounded-lg flex items-center justify-center shrink-0 ${
+                    isChecked ? genre.activeIconBg : genre.iconBg
+                  }`}
+                >
+                  <Icon className="w-3.5 h-3.5 stroke-[2.2]" />
+                </div>
+                <div className="text-left">
+                  <div className="text-xs font-black whitespace-nowrap">
+                    {genre.label.split('・')[0]}
+                  </div>
+                </div>
+                <span
+                  className={`text-[10px] font-mono font-black px-1.5 py-0.2 rounded-full leading-none shrink-0 ${
+                    isChecked
+                      ? 'bg-slate-950 text-white dark:bg-white dark:text-slate-950'
+                      : 'bg-slate-200 text-slate-400 dark:bg-slate-700'
+                  }`}
+                >
+                  {genre.count}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* PC表示：5大ジャンルのリッチカードグリッド */}
+        <div className="hidden md:grid md:grid-cols-3 lg:grid-cols-5 gap-2.5">
           {genreDefinitions.map((genre) => {
             const isChecked = selectedGenres.includes(genre.id);
             const Icon = genre.icon;
@@ -511,10 +557,35 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
         </div>
       </div>
 
-      {/* ========================================================
-          2. 距離範囲（★一列・1行でスマートに集約！）
-          ======================================================== */}
-      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3 p-3 rounded-xl bg-slate-50 dark:bg-slate-850/80 border border-slate-250 dark:border-slate-750">
+      {/* スマホ用：詳細フィルター開閉トグルボタン（高さ44px以上で親指タップしやすい） */}
+      <div className="block md:hidden">
+        <button
+          type="button"
+          onClick={() => setIsMobileFiltersOpen(!isMobileFiltersOpen)}
+          className="w-full min-h-[44px] px-4 py-2.5 rounded-xl border-2 border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-850 dark:text-slate-100 font-black text-xs sm:text-sm flex items-center justify-between shadow-2xs cursor-pointer select-none"
+        >
+          <div className="flex items-center gap-2">
+            <SlidersHorizontal className="w-4 h-4 text-teal-600 dark:text-teal-400" />
+            <span>詳細絞り込み（距離・エリア・キーワード）</span>
+            {activeChips.length > 0 && (
+              <span className="text-[11px] font-mono font-black px-2 py-0.5 rounded-full bg-teal-600 text-white leading-none">
+                {activeChips.length}件適用
+              </span>
+            )}
+          </div>
+          <div className="flex items-center gap-1 text-slate-500 text-xs">
+            <span>{isMobileFiltersOpen ? '閉じる' : '開く'}</span>
+            <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isMobileFiltersOpen ? 'rotate-180' : ''}`} />
+          </div>
+        </button>
+      </div>
+
+      {/* 詳細フィルター本体（PCでは常時block、スマホでは isMobileFiltersOpen のときだけ表示） */}
+      <div className={`${isMobileFiltersOpen ? 'block' : 'hidden'} md:block space-y-4`}>
+        {/* ========================================================
+            2. 距離範囲（★一列・1行でスマートに集約！）
+            ======================================================== */}
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3 p-3 rounded-xl bg-slate-50 dark:bg-slate-850/80 border border-slate-250 dark:border-slate-750">
         <div className="flex flex-wrap items-center gap-2">
           <div className="flex items-center gap-1.5 font-black text-xs sm:text-sm text-slate-900 dark:text-white shrink-0 mr-1">
             <Ruler className="w-4 h-4 text-teal-600 dark:text-teal-400" />
@@ -714,6 +785,7 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
             ))}
           </select>
         </div>
+      </div>
       </div>
 
       {/* ========================================================

@@ -120,18 +120,18 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({
             {/* 上段：HP名称を大きく堂々と目立たせる */}
             <a
               href="#"
-              className="flex items-center gap-2 group cursor-pointer"
+              className="flex items-center gap-1.5 sm:gap-2 group cursor-pointer"
               title="OUTDOOR RACE HUB トップへ"
             >
-              <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-teal-600 text-white flex items-center justify-center shadow-md shrink-0 group-hover:bg-teal-500 transition-colors">
-                <Mountain className="w-5 h-5 stroke-[2.4]" />
+              <div className="w-7 h-7 sm:w-9 sm:h-9 rounded-xl bg-teal-600 text-white flex items-center justify-center shadow-md shrink-0 group-hover:bg-teal-500 transition-colors">
+                <Mountain className="w-4 h-4 sm:w-5 sm:h-5 stroke-[2.4]" />
               </div>
               <div className="leading-none">
-                <div className="text-base sm:text-lg font-black tracking-tight text-white flex items-center gap-1 drop-shadow-xs">
+                <div className="text-sm sm:text-lg font-black tracking-tight text-white flex items-center gap-1 drop-shadow-xs">
                   <span>OUTDOOR</span>
                   <span className="text-teal-400">RACE HUB</span>
                 </div>
-                <span className="text-[10px] text-slate-400 font-bold tracking-wide mt-0.5 inline-block">
+                <span className="text-[9px] sm:text-[10px] text-slate-400 font-bold tracking-wide mt-0.5 inline-block">
                   2026-2027 全国＆中四国
                 </span>
               </div>
@@ -174,7 +174,7 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({
                     href={deal.affiliate_url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group relative flex items-center gap-2 bg-slate-900 hover:bg-slate-850 border border-slate-750 hover:border-amber-400 rounded-xl p-1.5 w-[290px] sm:w-[310px] shrink-0 transition-all shadow-xs"
+                    className="group relative flex items-center gap-1.5 sm:gap-2 bg-slate-900 hover:bg-slate-850 border border-slate-750 hover:border-amber-400 rounded-xl p-1 sm:p-1.5 w-[240px] sm:w-[310px] shrink-0 transition-all shadow-xs"
                     title={`楽天市場で見る: ${deal.title}`}
                   >
                     {/* 商品画像 + 割引リボン + 新規登録マーク */}
@@ -182,7 +182,7 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({
                       <img
                         src={deal.image_url}
                         alt={deal.title}
-                        className="w-12 h-12 object-cover rounded-lg bg-slate-950 border border-slate-700 shadow-2xs"
+                        className="w-10 h-10 sm:w-12 sm:h-12 object-cover rounded-lg bg-slate-950 border border-slate-700 shadow-2xs"
                         loading="lazy"
                       />
                       <div className="absolute -top-1.5 -left-1.5 bg-red-600 text-white font-black text-[10px] px-1.5 py-0.2 rounded shadow border border-white/80 tracking-tight leading-none">

@@ -8,6 +8,7 @@ import { ToretoreBanner } from './components/ToretoreBanner';
 import { FilterSection } from './components/FilterSection';
 import { EventTableView } from './components/EventTableView';
 import { EventCardView } from './components/EventCardView';
+import { MobileEventCardList } from './components/MobileEventCardList';
 import { UpdateTicker } from './components/UpdateTicker';
 import { Footer } from './components/Footer';
 
@@ -424,24 +425,37 @@ export const App: React.FC = () => {
           />
         </div>
 
-        {/* 5. 大会情報一覧（テーブルビュー vs カードビュー） */}
+        {/* 5. 大会情報一覧（PC: テーブル/カード切替 ＆ スマホ: 視認性抜群の縦積み最適化カード常時表示） */}
         <div id="events-section">
-          {viewMode === 'table' ? (
-            <EventTableView
+          {/* PC・タブレット表示（md:block） */}
+          <div className="hidden md:block">
+            {viewMode === 'table' ? (
+              <EventTableView
+                events={filteredEvents}
+                deals={deals}
+                favoriteIds={favoriteIds}
+                sortBy={filters.sortBy}
+                onSortChange={(newSort) => setFilters((prev) => ({ ...prev, sortBy: newSort }))}
+                onToggleFavorite={handleToggleFavorite}
+              />
+            ) : (
+              <EventCardView
+                events={filteredEvents}
+                favoriteIds={favoriteIds}
+                onToggleFavorite={handleToggleFavorite}
+              />
+            )}
+          </div>
+
+          {/* スマホ表示（block md:hidden）：親指一本でタップしやすい縦積みカード形式 */}
+          <div className="block md:hidden">
+            <MobileEventCardList
               events={filteredEvents}
               deals={deals}
               favoriteIds={favoriteIds}
-              sortBy={filters.sortBy}
-              onSortChange={(newSort) => setFilters((prev) => ({ ...prev, sortBy: newSort }))}
               onToggleFavorite={handleToggleFavorite}
             />
-          ) : (
-            <EventCardView
-              events={filteredEvents}
-              favoriteIds={favoriteIds}
-              onToggleFavorite={handleToggleFavorite}
-            />
-          )}
+          </div>
         </div>
       </main>
 
