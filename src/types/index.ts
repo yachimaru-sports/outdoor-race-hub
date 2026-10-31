@@ -65,6 +65,7 @@ export interface DealItem {
   affiliate_url: string;
   badge: string;
   updated_at: string;
+  registered_at?: string; // 新規登録日時（登録後1〜2日間のNEWバッジ判定用）
 }
 
 export type SortOption =

@@ -832,10 +832,20 @@ async function fetchBestRakutenDeal(target) {
 }
 
 /**
- * 3. 楽天特価ギア情報（deals.json）の自動調査＆更新（15%以上OFFのみ）
+ * 3. 楽天特価ギア情報（deals.json）の自動調査＆更新（15%以上OFFのみ・新規登録日時追跡）
  */
 async function updateDealsData(isoNow) {
   console.log(`[3/3] 楽天市場のアウトドア・必携ギア特価情報（最低${MIN_DISCOUNT_RATE}%OFF以上）の調査を開始...`);
+  
+  // 既存のdealsデータを読み込み、以前のregistered_atを引き継ぐ
+  const existingDealsMap = new Map();
+  if (fs.existsSync(DEALS_PATH)) {
+    try {
+      const prev = JSON.parse(fs.readFileSync(DEALS_PATH, 'utf-8'));
+      prev.forEach((d) => existingDealsMap.set(d.id, d));
+    } catch {}
+  }
+
   const updatedDeals = [];
 
   for (const target of GEAR_TARGETS) {
@@ -843,6 +853,10 @@ async function updateDealsData(isoNow) {
 
     if (result.discount_rate >= MIN_DISCOUNT_RATE) {
       const affiliateUrl = buildAffiliateUrl(result.item_url);
+      const prevItem = existingDealsMap.get(target.id);
+      
+      // 新規登録なら現在日時を付与、既存品なら初出登録日時を引き継ぐ
+      const registeredAt = prevItem?.registered_at || isoNow;
 
       const dealItem = {
         id: target.id,
@@ -855,7 +869,8 @@ async function updateDealsData(isoNow) {
         image_url: result.image_url,
         affiliate_url: affiliateUrl,
         badge: `${result.discount_rate}%OFF 特価`,
-        updated_at: isoNow
+        updated_at: isoNow,
+        registered_at: registeredAt
       };
 
       updatedDeals.push(dealItem);

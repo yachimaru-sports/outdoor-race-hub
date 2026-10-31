@@ -164,6 +164,10 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({
             >
               {tripleDeals.map((deal, idx) => {
                 const savedYen = deal.original_price - deal.price;
+                const isNew = Boolean(
+                  deal.registered_at &&
+                    Date.now() - new Date(deal.registered_at).getTime() <= 48 * 60 * 60 * 1000
+                );
                 return (
                   <a
                     key={`${deal.id}-${idx}`}
@@ -173,7 +177,7 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({
                     className="group relative flex items-center gap-2 bg-slate-900 hover:bg-slate-850 border border-slate-750 hover:border-amber-400 rounded-xl p-1.5 w-[290px] sm:w-[310px] shrink-0 transition-all shadow-xs"
                     title={`楽天市場で見る: ${deal.title}`}
                   >
-                    {/* 商品画像 + 割引リボン */}
+                    {/* 商品画像 + 割引リボン + 新規登録マーク */}
                     <div className="relative shrink-0">
                       <img
                         src={deal.image_url}
@@ -184,11 +188,21 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({
                       <div className="absolute -top-1.5 -left-1.5 bg-red-600 text-white font-black text-[10px] px-1.5 py-0.2 rounded shadow border border-white/80 tracking-tight leading-none">
                         {deal.discount_rate}%OFF
                       </div>
+                      {isNew && (
+                        <div className="absolute -bottom-1 -left-1 bg-gradient-to-r from-emerald-500 to-teal-400 text-slate-950 font-black text-[9px] px-1 py-0.2 rounded shadow border border-white/90 leading-none">
+                          新着NEW
+                        </div>
+                      )}
                     </div>
 
                     {/* 商品情報 */}
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center gap-1 mb-0.5 whitespace-nowrap">
+                        {isNew && (
+                          <span className="text-[9px] font-black px-1.5 py-0.2 rounded bg-emerald-500 text-slate-950 leading-none shadow-xs">
+                            🆕 新規登録
+                          </span>
+                        )}
                         <span className="text-[10px] font-black px-1.5 py-0.2 rounded bg-red-600 text-white leading-none">
                           🔥 ¥{savedYen.toLocaleString()}引
                         </span>

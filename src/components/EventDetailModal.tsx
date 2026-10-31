@@ -144,7 +144,7 @@ export const EventDetailModal: React.FC<EventDetailModalProps> = ({ event, deals
             <div className="text-center sm:text-left">
               <span className="text-xs text-slate-600 dark:text-slate-400 font-bold">コース総距離</span>
               <div className="text-xl sm:text-2xl font-black text-slate-950 dark:text-white font-mono mt-0.5">
-                {event.distance_km} <span className="text-xs font-bold text-slate-600">km</span>
+                {Math.round(event.distance_km)} <span className="text-xs font-bold text-slate-600">km</span>
               </div>
             </div>
 
@@ -340,13 +340,17 @@ export const EventDetailModal: React.FC<EventDetailModalProps> = ({ event, deals
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-1">
               {recommendedDeals.map((deal) => {
                 const savedYen = deal.original_price - deal.price;
+                const isNew = Boolean(
+                  deal.registered_at &&
+                    Date.now() - new Date(deal.registered_at).getTime() <= 48 * 60 * 60 * 1000
+                );
                 return (
                   <a
                     key={deal.id}
                     href={deal.affiliate_url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex gap-3.5 bg-slate-800 hover:bg-slate-750 border-2 border-slate-700 hover:border-amber-400 rounded-xl p-3.5 transition-all shadow-sm"
+                    className="group flex gap-3.5 bg-slate-800 hover:bg-slate-750 border-2 border-slate-700 hover:border-amber-400 rounded-xl p-3.5 transition-all shadow-sm relative"
                   >
                     <div className="relative shrink-0">
                       <img
@@ -358,10 +362,20 @@ export const EventDetailModal: React.FC<EventDetailModalProps> = ({ event, deals
                       <span className="absolute -top-2 -left-2 bg-red-600 text-white font-black text-xs px-2 py-0.5 rounded-md border border-white/80 shadow-sm">
                         {deal.discount_rate}%OFF
                       </span>
+                      {isNew && (
+                        <span className="absolute -bottom-2 -left-2 bg-emerald-500 text-slate-950 font-black text-[10px] px-2 py-0.5 rounded-md border border-white/90 shadow-sm leading-none">
+                          新着
+                        </span>
+                      )}
                     </div>
                     <div className="min-w-0 flex-1 flex flex-col justify-between">
                       <div>
                         <div className="flex flex-wrap items-center gap-1.5 mb-1">
+                          {isNew && (
+                            <span className="text-[10px] font-black px-2 py-0.5 rounded bg-emerald-500 text-slate-950 leading-none shadow-xs">
+                              🆕 新規登録
+                            </span>
+                          )}
                           <span className="text-xs font-black px-2 py-0.5 rounded bg-red-600 text-white">
                             🔥 {deal.discount_rate}%OFF (¥{savedYen.toLocaleString()}引)
                           </span>

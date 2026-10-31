@@ -237,7 +237,7 @@ export const EventCardView: React.FC<EventCardViewProps> = ({
                     距離
                   </div>
                   <div className="text-base font-black text-slate-950 dark:text-white font-mono mt-0.5">
-                    {event.distance_km}
+                    {Math.round(event.distance_km)}
                     <span className="text-[11px] font-bold text-slate-600">km</span>
                   </div>
                 </div>

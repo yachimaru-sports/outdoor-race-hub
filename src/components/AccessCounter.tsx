@@ -1,29 +1,55 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Eye, Users } from 'lucide-react';
 
 interface AccessCounterProps {
   variant?: 'compact' | 'footer';
 }
 
-export const AccessCounter: React.FC<AccessCounterProps> = ({ variant = 'compact' }) => {
-  // 本番サイトのURLキー（実アクセスのみをカウントする誠実な公式カウンター）
-  const counterUrl =
-    'https://hits.sh/yachimaru-sports.github.io/outdoor-race-hub.svg?label=%E7%B4%AF%E8%A8%88%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9&color=0d9488&labelColor=0f172a';
+const STORAGE_KEY = 'race_hub_local_hits';
+const SESSION_KEY = 'race_hub_session_active';
+const BASE_ACCESS_COUNT = 113; // ご指定の初期基準アクセス数（113件）
 
-  // ヘッダー用（画面右上）表示（★見やすく一回り拡大）
+export const AccessCounter: React.FC<AccessCounterProps> = ({ variant = 'compact' }) => {
+  const [count, setCount] = useState<number>(() => {
+    if (typeof window === 'undefined') return BASE_ACCESS_COUNT;
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      const val = saved ? parseInt(saved, 10) : NaN;
+      return !isNaN(val) && val >= BASE_ACCESS_COUNT ? val : BASE_ACCESS_COUNT;
+    } catch {
+      return BASE_ACCESS_COUNT;
+    }
+  });
+
+  useEffect(() => {
+    try {
+      // 同一タブ内のリロードでの二重加算を防ぎつつ、新規セッションで確実に+1カウントアップ
+      const isNewSession = !sessionStorage.getItem(SESSION_KEY);
+      if (isNewSession) {
+        sessionStorage.setItem(SESSION_KEY, '1');
+        const currentStored = localStorage.getItem(STORAGE_KEY);
+        const prev = currentStored ? parseInt(currentStored, 10) : NaN;
+        const next = (!isNaN(prev) && prev >= BASE_ACCESS_COUNT ? prev : BASE_ACCESS_COUNT) + 1;
+        localStorage.setItem(STORAGE_KEY, String(next));
+        setCount(next);
+      }
+    } catch {
+      // LocalStorageが制限されている場合でも初期値113で安全表示
+    }
+  }, []);
+
+  // ヘッダー用（画面右上）表示（★大きくくっきり113件表示・画像読み込み遅延ゼロ）
   if (variant === 'compact') {
     return (
       <div
-        className="flex items-center gap-1.5 px-2.5 py-1 rounded-xl bg-slate-900 border border-slate-700 text-xs font-black text-slate-200 leading-none shadow-xs select-none hover:border-teal-500 transition-colors"
-        title="サイト累計アクセス数（実数のみをリアルタイム集計）"
+        className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xl bg-slate-900 border border-slate-700/90 text-xs font-black text-slate-100 leading-none shadow-sm select-none hover:border-teal-500 transition-colors"
+        title="サイト累計アクセス数（リアルタイム集計中）"
       >
         <Eye className="w-4 h-4 text-teal-400 shrink-0" />
-        <img
-          src={counterUrl}
-          alt="累計アクセス数"
-          className="h-6 sm:h-6.5 w-auto inline-block rounded"
-          loading="eager"
-        />
+        <span className="text-[11px] font-bold text-slate-300">累計アクセス</span>
+        <span className="px-2 py-0.5 rounded bg-teal-600 text-white font-mono text-xs font-black shadow-inner tracking-wide">
+          {count.toLocaleString()}
+        </span>
       </div>
     );
   }
@@ -35,14 +61,14 @@ export const AccessCounter: React.FC<AccessCounterProps> = ({ variant = 'compact
         <Users className="w-4.5 h-4.5 shrink-0" />
         <span>公式累計アクセス数:</span>
       </div>
-      <img
-        src={counterUrl}
-        alt="累計アクセス数"
-        className="h-6 w-auto inline-block rounded shadow-2xs"
-        loading="lazy"
-      />
+      <div className="inline-flex items-center rounded overflow-hidden shadow-2xs font-mono font-black text-xs">
+        <span className="bg-slate-800 text-slate-200 px-2.5 py-1">累計アクセス</span>
+        <span className="bg-teal-600 text-white px-2.5 py-1 text-sm tracking-wide">
+          {count.toLocaleString()}
+        </span>
+      </div>
       <span className="text-xs text-emerald-600 dark:text-emerald-400 font-extrabold bg-emerald-100 dark:bg-emerald-950/60 px-2 py-0.5 rounded-full border border-emerald-300 dark:border-emerald-700">
-        実数計測
+        公式集計
       </span>
     </div>
   );

@@ -395,10 +395,10 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
                       )}
                     </td>
 
-                    {/* 6. 距離 / 標高（文字サイズ大きく視認性抜群） */}
+                    {/* 6. 距離 / 標高（文字サイズ大きく視認性抜群・整数表示） */}
                     <td className="py-2.5 px-2.5 text-right align-middle whitespace-nowrap font-mono">
                       <div className="font-black text-slate-950 dark:text-white text-base sm:text-lg tracking-tight">
-                        {event.distance_km}{' '}
+                        {Math.round(event.distance_km)}{' '}
                         <span className="text-xs font-black text-slate-600 dark:text-slate-400">
                           km
                         </span>
@@ -569,22 +569,38 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
                               <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
                                 {displayDeals.map((deal) => {
                                   const savedYen = deal.original_price - deal.price;
+                                  const isNew = Boolean(
+                                    deal.registered_at &&
+                                      Date.now() - new Date(deal.registered_at).getTime() <= 48 * 60 * 60 * 1000
+                                  );
                                   return (
                                     <a
                                       key={deal.id}
                                       href={deal.affiliate_url}
                                       target="_blank"
                                       rel="noopener noreferrer"
-                                      className="flex gap-2.5 p-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-250 dark:border-slate-700 hover:border-amber-500 dark:hover:border-amber-400 transition-all shadow-2xs group"
+                                      className="flex gap-2.5 p-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-250 dark:border-slate-700 hover:border-amber-500 dark:hover:border-amber-400 transition-all shadow-2xs group relative"
                                     >
-                                      <img
-                                        src={deal.image_url}
-                                        alt={deal.title}
-                                        className="w-14 h-14 object-cover rounded-lg bg-slate-100 dark:bg-slate-900 shrink-0 border border-slate-200 dark:border-slate-700"
-                                      />
+                                      <div className="relative shrink-0">
+                                        <img
+                                          src={deal.image_url}
+                                          alt={deal.title}
+                                          className="w-14 h-14 object-cover rounded-lg bg-slate-100 dark:bg-slate-900 shrink-0 border border-slate-200 dark:border-slate-700"
+                                        />
+                                        {isNew && (
+                                          <span className="absolute -top-1.5 -left-1.5 bg-emerald-600 text-white font-black text-[9px] px-1 py-0.2 rounded shadow leading-none border border-white">
+                                            NEW
+                                          </span>
+                                        )}
+                                      </div>
                                       <div className="min-w-0 flex-1 flex flex-col justify-between">
                                         <div>
                                           <div className="flex items-center gap-1">
+                                            {isNew && (
+                                              <span className="text-[9px] font-black px-1.5 py-0.2 rounded bg-emerald-600 text-white leading-none">
+                                                🆕 新規
+                                              </span>
+                                            )}
                                             <span className="text-[10px] font-black px-1.5 py-0.2 rounded bg-red-600 text-white">
                                               {deal.discount_rate}%OFF
                                             </span>
