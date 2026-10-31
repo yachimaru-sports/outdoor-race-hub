@@ -49,72 +49,83 @@ export const CATEGORY_LABELS: Record<
   },
 };
 
-export const ELEMENT_BADGES: Record<string, { icon: string; label: string; style: string }> = {
+export const ELEMENT_BADGES: Record<string, { icon: string; label: string; style: string; desc?: string }> = {
   '100マイル': {
     icon: '👑',
     label: '100マイル(160km)',
     style:
       'bg-rose-100 text-rose-950 border-rose-300 dark:bg-rose-950/70 dark:text-rose-200 dark:border-rose-700',
+    desc: '全長100マイル（約160km）超の最高峰ウルトラトレイルレース',
   },
   '100km+': {
     icon: '🔥',
     label: '100km級ウルトラ',
     style:
       'bg-orange-100 text-orange-950 border-orange-300 dark:bg-orange-950/70 dark:text-orange-200 dark:border-orange-700',
+    desc: '100kmを超える超長距離過酷コース',
   },
   '読図': {
     icon: '🧭',
     label: '2.5万図・読図',
     style:
       'bg-amber-100 text-amber-950 border-amber-300 dark:bg-amber-950/70 dark:text-amber-200 dark:border-amber-700',
+    desc: '地形図（国土地理院2.5万分の1地図）とコンパスによる自力ナビゲーション',
   },
   'MTB': {
     icon: '🚵',
     label: 'MTB必須',
     style:
       'bg-yellow-100 text-yellow-950 border-yellow-300 dark:bg-yellow-950/70 dark:text-yellow-200 dark:border-yellow-700',
+    desc: 'マウンテンバイク・ヘルメット・ライト等の機材が必要なセクション',
   },
   'パドル': {
     icon: '🚣',
     label: 'カヤック/ラフト',
     style:
       'bg-cyan-100 text-cyan-950 border-cyan-300 dark:bg-cyan-950/70 dark:text-cyan-200 dark:border-cyan-700',
+    desc: '川や海をパックラフト・カヤック・SUP等で進むウォーターセクション',
   },
   'ロゲイニング': {
     icon: '🗺️',
     label: 'ロゲイニング',
     style:
       'bg-emerald-100 text-emerald-950 border-emerald-300 dark:bg-emerald-950/70 dark:text-emerald-200 dark:border-emerald-700',
+    desc: '制限時間内にチェックポイントを巡り得点を競うナビゲーション競技',
   },
   'オリエンテーリング': {
     icon: '🚩',
     label: 'オリエンテーリング',
     style:
       'bg-lime-100 text-lime-950 border-lime-300 dark:bg-lime-950/70 dark:text-lime-200 dark:border-lime-700',
+    desc: '指定されたポイントを順番通りに正確・迅速に通過する競技',
   },
   '夜間': {
     icon: '🔦',
     label: '夜間行動あり',
     style:
       'bg-purple-100 text-purple-950 border-purple-300 dark:bg-purple-950/70 dark:text-purple-200 dark:border-purple-700',
+    desc: '日没後の山岳・原野を行動するためヘッドライト（予備含む）が必携',
   },
   'トレック': {
     icon: '⛰️',
     label: '山岳トレック',
     style:
       'bg-teal-100 text-teal-950 border-teal-300 dark:bg-teal-950/70 dark:text-teal-200 dark:border-teal-700',
+    desc: '登山道や道なき山林を走破する本格マウンテンステージ',
   },
   'ロード': {
     icon: '🛣️',
     label: 'オンロード',
     style:
       'bg-slate-200 text-slate-900 border-slate-300 dark:bg-slate-800 dark:text-slate-200 dark:border-slate-700',
+    desc: '舗装路区間を含むスピードコース',
   },
   '日帰り': {
     icon: '☀️',
     label: '1日完結',
     style:
       'bg-sky-100 text-sky-950 border-sky-300 dark:bg-sky-950/60 dark:text-sky-200 dark:border-sky-700',
+    desc: '当日中にフィニッシュ可能な日帰りフォーマット',
   },
 };
 
@@ -218,3 +229,19 @@ export function formatPrice(num: number): string {
     maximumFractionDigits: 0,
   }).format(num);
 }
+
+/**
+ * 必携装備名やギア名から、楽天アフィリエイトID付きの楽天市場検索URLを生成
+ */
+export function buildRakutenSearchAffiliateUrl(gearName: string): string {
+  const RAKUTEN_AFFILIATE_ID = '58fb598b.0ed2da59.58fb598c.27018da5';
+  // 不要な記号や詳細な補足説明を削除して検索精度を高める
+  const cleanKeyword = gearName
+    .replace(/[（(][^）)]*[）)]/g, ' ')
+    .replace(/[&＆・/／]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+  const searchUrl = `https://search.rakuten.co.jp/search/mall/${encodeURIComponent(cleanKeyword)}/`;
+  return `https://hb.afl.rakuten.co.jp/ichiba/${RAKUTEN_AFFILIATE_ID}/?pc=${encodeURIComponent(searchUrl)}&link_type=picttext`;
+}
+

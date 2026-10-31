@@ -21,14 +21,13 @@ interface EventCardViewProps {
   events: RaceEvent[];
   favoriteIds: string[];
   onToggleFavorite: (id: string) => void;
-  onSelectEvent: (event: RaceEvent) => void;
+  onSelectEvent?: (event: RaceEvent) => void;
 }
 
 export const EventCardView: React.FC<EventCardViewProps> = ({
   events,
   favoriteIds,
   onToggleFavorite,
-  onSelectEvent,
 }) => {
   const getGearProgress = (event: RaceEvent) => {
     try {
@@ -73,8 +72,7 @@ export const EventCardView: React.FC<EventCardViewProps> = ({
         return (
           <div
             key={event.id}
-            onClick={() => onSelectEvent(event)}
-            className={`group relative bg-white dark:bg-slate-900 border-2 rounded-2xl p-5 shadow-sm hover:shadow-md transition-all flex flex-col justify-between cursor-pointer overflow-hidden ${
+            className={`group relative bg-white dark:bg-slate-900 border-2 rounded-2xl p-5 shadow-sm hover:shadow-md transition-all flex flex-col justify-between overflow-hidden ${
               isFav
                 ? 'border-rose-400 dark:border-rose-800 ring-2 ring-rose-300/40 bg-rose-50/20'
                 : 'border-slate-250 dark:border-slate-800 hover:border-teal-600 dark:hover:border-teal-500'
@@ -346,16 +344,6 @@ export const EventCardView: React.FC<EventCardViewProps> = ({
                   </div>
                 )}
               </div>
-
-              {/* 右端：詳細矢印ボタン */}
-              <button
-                type="button"
-                onClick={() => onSelectEvent(event)}
-                className="p-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 transition-colors cursor-pointer"
-                title="詳細・必携品リストを見る"
-              >
-                <ChevronRight className="w-4 h-4" />
-              </button>
             </div>
           </div>
         );

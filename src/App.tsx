@@ -11,7 +11,6 @@ import { ToretoreBanner } from './components/ToretoreBanner';
 import { FilterSection } from './components/FilterSection';
 import { EventTableView } from './components/EventTableView';
 import { EventCardView } from './components/EventCardView';
-import { EventDetailModal } from './components/EventDetailModal';
 import { Footer } from './components/Footer';
 
 export const App: React.FC = () => {
@@ -134,11 +133,6 @@ export const App: React.FC = () => {
   });
 
   const [activePresetId, setActivePresetId] = useState<string | null>(null);
-
-  // 選択された大会（モーダル用）
-  const [selectedEvent, setSelectedEvent] = useState<RaceEvent | null>(null);
-  // モーダル内で必携品チェックが更新された際に一覧を再描画するためのカウンタ
-  const [, setGearRefreshTick] = useState(0);
 
   // 大型スポーツ種目ナビバーからの選択ハンドラ
   const handleSelectSportNav = (
@@ -422,29 +416,18 @@ export const App: React.FC = () => {
         {viewMode === 'table' ? (
           <EventTableView
             events={filteredEvents}
+            deals={deals}
             favoriteIds={favoriteIds}
             onToggleFavorite={handleToggleFavorite}
-            onSelectEvent={(event) => setSelectedEvent(event)}
           />
         ) : (
           <EventCardView
             events={filteredEvents}
             favoriteIds={favoriteIds}
             onToggleFavorite={handleToggleFavorite}
-            onSelectEvent={(event) => setSelectedEvent(event)}
           />
         )}
       </main>
-
-      {/* 持ち物リスト & 特価ギア連動モーダル */}
-      <EventDetailModal
-        event={selectedEvent}
-        deals={deals}
-        onClose={() => {
-          setSelectedEvent(null);
-          setGearRefreshTick((t) => t + 1);
-        }}
-      />
 
       {/* フッター */}
       <Footer />

@@ -1,12 +1,17 @@
-import React from 'react';
-import { RaceEvent } from '../types';
-import { CATEGORY_LABELS, ELEMENT_BADGES, ENTRY_STATUS_CONFIG } from '../utils/helpers';
+import React, { useState } from 'react';
+import { RaceEvent, DealItem } from '../types';
+import {
+  CATEGORY_LABELS,
+  ELEMENT_BADGES,
+  ENTRY_STATUS_CONFIG,
+  buildRakutenSearchAffiliateUrl,
+  formatPrice,
+} from '../utils/helpers';
 import {
   Globe,
   FileEdit,
   MessageSquare,
   Share2,
-  ChevronRight,
   TrendingUp,
   MapPin,
   Bookmark,
@@ -14,30 +19,66 @@ import {
   Calendar,
   Clock,
   Coins,
+  Backpack,
+  ChevronDown,
+  ChevronUp,
+  ShoppingCart,
+  ExternalLink,
+  Flame,
+  CheckSquare,
+  Square,
+  Sparkles,
+  X,
 } from 'lucide-react';
 
 interface EventTableViewProps {
   events: RaceEvent[];
+  deals?: DealItem[];
   favoriteIds: string[];
   onToggleFavorite: (id: string) => void;
-  onSelectEvent: (event: RaceEvent) => void;
+  onSelectEvent?: (event: RaceEvent) => void;
 }
 
 export const EventTableView: React.FC<EventTableViewProps> = ({
   events,
+  deals = [],
   favoriteIds,
   onToggleFavorite,
-  onSelectEvent,
 }) => {
-  const getGearProgress = (event: RaceEvent) => {
+  // 必携品アコーディオン展開中の大会ID
+  const [expandedGearEventId, setExpandedGearEventId] = useState<string | null>(null);
+
+  // チェック済み必携品（localStorage連動）
+  const [checkedGears, setCheckedGears] = useState<Record<string, Record<string, boolean>>>(() => {
     try {
-      const saved = localStorage.getItem(`gear_check_${event.id}`);
-      if (!saved) return 0;
-      const parsed = JSON.parse(saved);
-      return event.mandatory_gear.filter((g) => parsed[g.name]).length;
+      const result: Record<string, Record<string, boolean>> = {};
+      events.forEach((ev) => {
+        const saved = localStorage.getItem(`gear_check_${ev.id}`);
+        if (saved) {
+          result[ev.id] = JSON.parse(saved);
+        }
+      });
+      return result;
     } catch {
-      return 0;
+      return {};
     }
+  });
+
+  const toggleGearCheck = (eventId: string, gearName: string) => {
+    setCheckedGears((prev) => {
+      const eventChecks = { ...(prev[eventId] || {}) };
+      eventChecks[gearName] = !eventChecks[gearName];
+      const updated = { ...prev, [eventId]: eventChecks };
+      try {
+        localStorage.setItem(`gear_check_${eventId}`, JSON.stringify(eventChecks));
+      } catch {}
+      return updated;
+    });
+  };
+
+  const getGearProgress = (event: RaceEvent) => {
+    const eventChecks = checkedGears[event.id] || {};
+    return event.mandatory_gear.filter((g) => eventChecks[g.name]).length;
   };
 
   if (events.length === 0) {
@@ -56,7 +97,7 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
   return (
     <div className="bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm">
       <div className="overflow-x-auto">
-        <table className="w-full text-left border-collapse table-fixed min-w-[1050px]">
+        <table className="w-full text-left border-collapse table-fixed min-w-[1100px]">
           <thead>
             <tr className="bg-slate-100 dark:bg-slate-850 text-slate-800 dark:text-slate-200 border-b-2 border-slate-300 dark:border-slate-700 text-xs font-extrabold tracking-wide">
               <th className="py-2.5 pl-3 pr-1 w-[46px] text-center" title="参戦予定ブックマーク">
@@ -68,9 +109,9 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
                   <span>開催日 / 締切</span>
                 </div>
               </th>
-              <th className="py-2.5 px-2.5 w-[130px]">種別</th>
+              <th className="py-2.5 px-2.5 w-[145px]">種別</th>
               <th className="py-2.5 px-3">大会名 / エリア / 競技特徴</th>
-              <th className="py-2.5 px-2.5 w-[110px] text-right">距離 / 標高</th>
+              <th className="py-2.5 px-2.5 w-[125px] text-right">距離 / 標高</th>
               <th className="py-2.5 px-2.5 w-[100px] text-right">
                 <div className="flex items-center justify-end gap-1 text-amber-800 dark:text-amber-300">
                   <Coins className="w-3.5 h-3.5" />
@@ -79,7 +120,7 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
               </th>
               <th className="py-2.5 px-2.5 w-[115px] text-center">受付状況</th>
               <th className="py-2.5 px-2.5 w-[220px] text-center">申込・公式・レポ・SNS</th>
-              <th className="py-2.5 px-2 w-[34px] text-center">詳細</th>
+              <th className="py-2.5 px-2 w-[85px] text-center">必携品</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-200 dark:divide-slate-800 text-xs sm:text-sm">
@@ -91,274 +132,486 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
               const status = ENTRY_STATUS_CONFIG[event.entry_status];
               const statusLabel = isPastRace ? '開催終了' : status.label;
               const isFav = favoriteIds.includes(event.id);
+              const totalGearCount = event.mandatory_gear?.length || 0;
               const checkedGearCount = getGearProgress(event);
-              const totalGearCount = event.mandatory_gear.length;
               const canEntry = !!event.links.entry && event.entry_status !== 'closed' && !isPastRace;
               const isClosingSoon = event.entry_status === 'closing_soon';
               const isOpen = event.entry_status === 'open';
+              const isGearExpanded = expandedGearEventId === event.id;
 
-              // エレメントバッジを最大2個に制限して残りは「+N」で1行にすっきり納める
-              const visibleElements = event.elements?.slice(0, 2) || [];
-              const hiddenElementCount = (event.elements?.length || 0) - visibleElements.length;
+              // この大会に関連する特価ギア
+              const eventGearCats = new Set((event.mandatory_gear || []).map((g) => g.category));
+              const matchedDeals = deals.filter((d) => eventGearCats.has(d.category));
+              const displayDeals = matchedDeals.length > 0 ? matchedDeals.slice(0, 3) : deals.slice(0, 3);
 
               return (
-                <tr
-                  key={event.id}
-                  onClick={() => onSelectEvent(event)}
-                  className={`transition-colors cursor-pointer group ${
-                    isFav
-                      ? 'bg-rose-50/40 dark:bg-rose-950/20 hover:bg-rose-50/80 dark:hover:bg-rose-950/30'
-                      : 'bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800/60'
-                  }`}
-                >
-                  {/* 1. 参戦予定ブックマークボタン */}
-                  <td
-                    className="py-2.5 pl-3 pr-1 text-center align-middle"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      onToggleFavorite(event.id);
-                    }}
+                <React.Fragment key={event.id}>
+                  {/* メインレース行（行クリックによる画面遷移を完全撤廃） */}
+                  <tr
+                    className={`transition-colors ${
+                      isFav
+                        ? 'bg-rose-50/40 dark:bg-rose-950/20'
+                        : isGearExpanded
+                        ? 'bg-teal-50/50 dark:bg-slate-850'
+                        : 'bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800/60'
+                    }`}
                   >
-                    <button
-                      type="button"
-                      className={`p-1.5 rounded-lg transition-all cursor-pointer ${
-                        isFav
-                          ? 'text-rose-600 dark:text-rose-400 bg-rose-100 dark:bg-rose-950/60 border border-rose-300'
-                          : 'text-slate-400 dark:text-slate-500 hover:text-rose-600 hover:bg-slate-100 dark:hover:bg-slate-800 border border-transparent'
-                      }`}
-                      title={isFav ? '参戦予定リストから外す' : '参戦予定リストに登録する'}
-                    >
-                      <Bookmark className={`w-3.5 h-3.5 ${isFav ? 'fill-current' : ''}`} />
-                    </button>
-                  </td>
-
-                  {/* 2. 開催日 / 締切（2行でスッキリ整列） */}
-                  <td className="py-2.5 px-3 align-middle whitespace-nowrap">
-                    <div className="flex items-center gap-1 font-mono">
-                      <Calendar className="w-3.5 h-3.5 text-teal-700 dark:text-teal-400 shrink-0" />
-                      <span className="text-sm font-black text-slate-950 dark:text-white tracking-tight">
-                        {event.date}
-                      </span>
-                    </div>
-
-                    {/* 締切日表示 */}
-                    <div className="mt-0.5">
-                      {isClosingSoon ? (
-                        <span className="inline-flex items-center gap-0.5 px-1.5 py-0.2 rounded text-[11px] font-extrabold bg-red-100 text-red-700 dark:bg-red-950/60 dark:text-red-300 border border-red-300 animate-pulse font-mono">
-                          <Clock className="w-2.5 h-2.5 text-red-600" />
-                          締切:{event.entry_deadline ? event.entry_deadline.slice(5) : '間近'}
-                        </span>
-                      ) : isOpen ? (
-                        <span className="inline-flex items-center gap-0.5 px-1.5 py-0.2 rounded text-[11px] font-bold bg-amber-50 text-amber-800 dark:bg-amber-950/40 dark:text-amber-200 border border-amber-300 font-mono">
-                          <Clock className="w-2.5 h-2.5 text-amber-600" />
-                          締切:{event.entry_deadline ? event.entry_deadline.slice(5) : '受付中'}
-                        </span>
-                      ) : (
-                        <span className="text-[11px] text-slate-500 font-bold font-mono pl-0.5">
-                          締切:{event.entry_deadline ? event.entry_deadline.slice(5) : '終了'}
-                        </span>
-                      )}
-                    </div>
-                  </td>
-
-                  {/* 3. スポーツ種別 & サブカテゴリ（2行でスッキリ整列） */}
-                  <td className="py-2.5 px-2.5 align-middle whitespace-nowrap">
-                    <span
-                      className={`inline-block px-2 py-0.5 rounded-full text-[11px] font-extrabold border ${cat.badgeBg}`}
-                    >
-                      {cat.shortLabel}
-                    </span>
-                    {event.subCategory && (
-                      <div className="text-[11px] text-slate-600 dark:text-slate-400 font-bold mt-0.5 truncate max-w-[115px]">
-                        {event.subCategory}
-                      </div>
-                    )}
-                  </td>
-
-                  {/* 4. 大会名 / エリア / 競技特徴（★2行表示 ＋ ホバーで全文字吹き出しポップアップ） */}
-                  <td className="py-2.5 px-3 align-middle">
-                    {/* 1〜2行目：大会タイトル（2行でしっかり表示 ＋ マウスホバーで全文字吹き出し表示） */}
-                    <div className="relative group/title">
-                      <div
-                        className="font-black text-slate-950 dark:text-white group-hover:text-teal-700 dark:group-hover:text-teal-400 transition-colors text-sm leading-snug line-clamp-2"
-                        title={event.title}
+                    {/* 1. 参戦予定ブックマークボタン */}
+                    <td className="py-2.5 pl-3 pr-1 text-center align-middle">
+                      <button
+                        type="button"
+                        onClick={() => onToggleFavorite(event.id)}
+                        className={`p-1.5 rounded-lg transition-all cursor-pointer ${
+                          isFav
+                            ? 'text-rose-600 dark:text-rose-400 bg-rose-100 dark:bg-rose-950/60 border border-rose-300'
+                            : 'text-slate-400 dark:text-slate-500 hover:text-rose-600 hover:bg-slate-100 dark:hover:bg-slate-800 border border-transparent'
+                        }`}
+                        title={isFav ? '参戦予定リストから外す' : '参戦予定リストに登録する'}
                       >
-                        {event.title}
+                        <Bookmark className={`w-3.5 h-3.5 ${isFav ? 'fill-current' : ''}`} />
+                      </button>
+                    </td>
+
+                    {/* 2. 開催日 / 締切（2行でスッキリ整列） */}
+                    <td className="py-2.5 px-3 align-middle whitespace-nowrap">
+                      <div className="flex items-center gap-1 font-mono">
+                        <Calendar className="w-3.5 h-3.5 text-teal-700 dark:text-teal-400 shrink-0" />
+                        <span className="text-sm font-black text-slate-950 dark:text-white tracking-tight">
+                          {event.date}
+                        </span>
                       </div>
 
-                      {/* マウスを乗せると全文字が表示されるフローティング吹き出し */}
-                      <div className="absolute left-0 bottom-full mb-1.5 hidden group-hover/title:block z-50 bg-slate-950/95 text-white text-xs font-extrabold px-3 py-2 rounded-xl shadow-2xl border border-teal-500/40 max-w-md pointer-events-none whitespace-normal leading-relaxed backdrop-blur-xs">
-                        <div className="text-[10px] text-teal-300 font-bold mb-0.5">大会名（全文）:</div>
-                        {event.title}
-                      </div>
-                    </div>
-
-                    {/* 3行目：開催都道府県 ＋ 主要タグ ＋ 必携品数（1行でコンパクトに横並び） */}
-                    <div className="flex items-center gap-1.5 mt-1 text-xs whitespace-nowrap overflow-hidden">
-                      <span className="inline-flex items-center gap-0.5 text-[11px] font-extrabold text-slate-700 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded border border-slate-300 dark:border-slate-700 shrink-0">
-                        <MapPin className="w-3 h-3 text-teal-700 dark:text-teal-400" />
-                        {event.prefecture}
-                      </span>
-
-                      {/* 主要エレメント（最大2つ） */}
-                      {visibleElements.map((el) => {
-                        const badge = ELEMENT_BADGES[el];
-                        if (!badge) return null;
-                        return (
-                          <span
-                            key={el}
-                            className={`inline-flex items-center gap-0.5 text-[11px] font-bold px-1.5 py-0.5 rounded border ${badge.style} shrink-0`}
-                          >
-                            <span>{badge.icon}</span>
-                            <span>{badge.label}</span>
+                      {/* 締切日表示 */}
+                      <div className="mt-0.5">
+                        {isClosingSoon ? (
+                          <span className="inline-flex items-center gap-0.5 px-1.5 py-0.2 rounded text-[11px] font-extrabold bg-red-100 text-red-700 dark:bg-red-950/60 dark:text-red-300 border border-red-300 animate-pulse font-mono">
+                            <Clock className="w-2.5 h-2.5 text-red-600" />
+                            締切:{event.entry_deadline ? event.entry_deadline.slice(5) : '間近'}
                           </span>
-                        );
-                      })}
-
-                      {hiddenElementCount > 0 && (
-                        <span className="text-[10px] text-slate-500 font-bold px-1 rounded bg-slate-100 dark:bg-slate-800 shrink-0">
-                          +{hiddenElementCount}
-                        </span>
-                      )}
-
-                      {/* 必携品 */}
-                      {totalGearCount > 0 && (
-                        <span
-                          className={`inline-flex items-center gap-0.5 text-[10px] font-bold px-1.5 py-0.5 rounded border shrink-0 ${
-                            checkedGearCount > 0
-                              ? 'bg-emerald-100 text-emerald-950 border-emerald-400 dark:bg-emerald-950/60 dark:text-emerald-200'
-                              : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border-slate-300 dark:border-slate-700'
-                          }`}
-                        >
-                          {checkedGearCount > 0 && (
-                            <CheckCircle2 className="w-2.5 h-2.5 text-emerald-700 dark:text-emerald-400" />
-                          )}
-                          必携{totalGearCount}点
-                        </span>
-                      )}
-                    </div>
-                  </td>
-
-                  {/* 5. 距離 / 標高（2行でスッキリ整列） */}
-                  <td className="py-2.5 px-2.5 text-right align-middle whitespace-nowrap font-mono">
-                    <div className="font-black text-slate-950 dark:text-white text-sm">
-                      {event.distance_km} <span className="text-[10px] font-bold text-slate-600">km</span>
-                    </div>
-                    {event.elevation_m > 0 ? (
-                      <div className="text-[11px] text-amber-800 dark:text-amber-400 font-extrabold flex items-center justify-end gap-0.5">
-                        <TrendingUp className="w-3 h-3 text-amber-600 dark:text-amber-400" />
-                        +{event.elevation_m.toLocaleString()}m
+                        ) : isOpen ? (
+                          <span className="inline-flex items-center gap-0.5 px-1.5 py-0.2 rounded text-[11px] font-bold bg-amber-50 text-amber-800 dark:bg-amber-950/40 dark:text-amber-200 border border-amber-300 font-mono">
+                            <Clock className="w-2.5 h-2.5 text-amber-600" />
+                            締切:{event.entry_deadline ? event.entry_deadline.slice(5) : '受付中'}
+                          </span>
+                        ) : (
+                          <span className="text-[11px] text-slate-500 font-bold font-mono pl-0.5">
+                            締切:{event.entry_deadline ? event.entry_deadline.slice(5) : '終了'}
+                          </span>
+                        )}
                       </div>
-                    ) : (
-                      <div className="text-[11px] text-slate-400 font-bold">平坦</div>
-                    )}
-                  </td>
+                    </td>
 
-                  {/* 6. エントリー費用（参加費） */}
-                  <td className="py-2.5 px-2.5 text-right align-middle whitespace-nowrap font-mono">
-                    <span className="text-xs font-black text-slate-900 dark:text-slate-100 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded border border-slate-250 dark:border-slate-700">
-                      {event.entry_fee || '—'}
-                    </span>
-                  </td>
+                    {/* 3. スポーツ種別 & サブカテゴリ（見切れ防止＆ホバーで全文ポップアップ） */}
+                    <td className="py-2.5 px-2.5 align-middle">
+                      <span
+                        className={`inline-block px-2 py-0.5 rounded-full text-[11px] font-extrabold border ${cat.badgeBg}`}
+                      >
+                        {cat.shortLabel}
+                      </span>
+                      {event.subCategory && (
+                        <div className="relative group/subcat mt-0.5">
+                          <div
+                            className="text-[11px] text-slate-700 dark:text-slate-300 font-bold truncate max-w-[130px] cursor-help"
+                            title={event.subCategory}
+                          >
+                            {event.subCategory}
+                          </div>
+                          {/* ホバー時にサブカテゴリ全文がポップアップ表示 */}
+                          <div className="absolute left-0 bottom-full mb-1 hidden group-hover/subcat:block z-50 bg-slate-950/95 text-white text-xs font-bold px-2.5 py-1.5 rounded-lg shadow-xl border border-teal-500/40 pointer-events-none whitespace-normal leading-tight max-w-[200px] backdrop-blur-xs">
+                            <div className="text-[10px] text-teal-300 font-bold mb-0.5">種別詳細:</div>
+                            {event.subCategory}
+                          </div>
+                        </div>
+                      )}
+                    </td>
 
-                  {/* 7. 受付状況 */}
-                  <td className="py-2.5 px-2.5 text-center align-middle whitespace-nowrap">
-                    <span
-                      className={`inline-flex items-center justify-center gap-1 w-[100px] py-0.5 rounded-full text-xs border ${
-                        status.badge
-                      } ${status.pulse ? 'animate-pulse' : ''}`}
-                    >
-                      <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${status.dot}`} />
-                      <span>{statusLabel}</span>
-                    </span>
-                  </td>
-
-                  {/* 8. 右端アクション列（4つの固定スロット） */}
-                  <td
-                    className="py-2.5 px-2.5 align-middle whitespace-nowrap"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <div className="grid grid-cols-[68px_58px_30px_30px] items-center justify-end gap-1">
-                      {/* スロット1: 申込ボタン */}
-                      {canEntry ? (
-                        <a
-                          href={event.links.entry!}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="w-[68px] py-1 rounded-lg bg-teal-700 hover:bg-teal-800 text-white text-xs font-bold flex items-center justify-center gap-1 transition-colors shadow-2xs cursor-pointer select-none"
-                          title="エントリー申込ページを開く"
-                        >
-                          <FileEdit className="w-3 h-3 shrink-0" />
-                          <span>申込</span>
-                        </a>
-                      ) : (
+                    {/* 4. 大会名 / エリア / 競技特徴（クリック無効化・テキスト選択可・ホバー全文表示・バッジ見切れ解消） */}
+                    <td className="py-2.5 px-3 align-middle">
+                      {/* 大会タイトル（クリックしても画面が白くならず、安全に閲覧） */}
+                      <div className="relative group/title">
                         <div
-                          className="w-[68px] py-1 rounded-lg bg-slate-150 dark:bg-slate-800/50 text-slate-500 dark:text-slate-500 text-xs font-bold text-center border border-slate-250 dark:border-slate-800 select-none cursor-not-allowed"
-                          title="現在エントリーは受け付けていません"
+                          className="font-black text-slate-950 dark:text-white text-sm leading-snug line-clamp-2 select-text"
+                          title={event.title}
                         >
-                          受付無
+                          {event.title}
                         </div>
-                      )}
 
-                      {/* スロット2: 公式サイト */}
-                      {event.links.official ? (
-                        <a
-                          href={event.links.official}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="w-[58px] py-1 rounded-lg bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 text-xs font-bold flex items-center justify-center gap-1 transition-colors shadow-2xs cursor-pointer select-none"
-                          title="大会公式サイトを開く"
-                        >
-                          <Globe className="w-3 h-3 text-teal-700 dark:text-teal-400 shrink-0" />
-                          <span>公式</span>
-                        </a>
+                        {/* ホバー時に大会名全文がポップアップ表示 */}
+                        <div className="absolute left-0 bottom-full mb-1.5 hidden group-hover/title:block z-50 bg-slate-950/95 text-white text-xs font-extrabold px-3 py-2 rounded-xl shadow-2xl border border-teal-500/40 max-w-md pointer-events-none whitespace-normal leading-relaxed backdrop-blur-xs">
+                          <div className="text-[10px] text-teal-300 font-bold mb-0.5">大会名（全文）:</div>
+                          {event.title}
+                        </div>
+                      </div>
+
+                      {/* 開催都道府県 ＋ 特徴バッジ ＋ 必携品ボタン（折り返しで隠れず全表示） */}
+                      <div className="flex flex-wrap items-center gap-1.5 mt-1.5 text-xs">
+                        <span className="inline-flex items-center gap-0.5 text-[11px] font-extrabold text-slate-700 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded border border-slate-300 dark:border-slate-700 shrink-0">
+                          <MapPin className="w-3 h-3 text-teal-700 dark:text-teal-400" />
+                          {event.prefecture}
+                        </span>
+
+                        {/* すべての競技エレメントバッジ（隠さずに表示 ＆ ホバーで詳細説明） */}
+                        {(event.elements || []).map((el) => {
+                          const badge = ELEMENT_BADGES[el];
+                          if (!badge) return null;
+                          return (
+                            <div key={el} className="relative group/elem shrink-0">
+                              <span
+                                className={`inline-flex items-center gap-0.5 text-[11px] font-bold px-1.5 py-0.5 rounded border cursor-help ${badge.style}`}
+                                title={badge.desc || badge.label}
+                              >
+                                <span>{badge.icon}</span>
+                                <span>{badge.label}</span>
+                              </span>
+                              {badge.desc && (
+                                <div className="absolute left-0 bottom-full mb-1 hidden group-hover/elem:block z-50 bg-slate-950/95 text-white text-[11px] font-bold px-2.5 py-1 rounded-lg shadow-xl border border-teal-500/40 pointer-events-none whitespace-nowrap backdrop-blur-xs">
+                                  {badge.desc}
+                                </div>
+                              )}
+                            </div>
+                          );
+                        })}
+
+                        {/* 必携品ボタン（クリックで直下の必携品＆楽天購入パネルを展開） */}
+                        {totalGearCount > 0 && (
+                          <button
+                            type="button"
+                            onClick={() =>
+                              setExpandedGearEventId(isGearExpanded ? null : event.id)
+                            }
+                            className={`inline-flex items-center gap-1 text-[11px] font-black px-2 py-0.5 rounded-md border transition-all cursor-pointer shadow-2xs ${
+                              isGearExpanded
+                                ? 'bg-teal-700 text-white border-teal-700 ring-2 ring-teal-500/40'
+                                : checkedGearCount > 0
+                                ? 'bg-emerald-100 text-emerald-950 border-emerald-400 dark:bg-emerald-950/60 dark:text-emerald-200 hover:bg-emerald-200'
+                                : 'bg-amber-100 text-amber-950 border-amber-300 dark:bg-amber-950/60 dark:text-amber-200 hover:bg-amber-200'
+                            }`}
+                            title="クリックで必携品リストと楽天購入リンクを開閉"
+                          >
+                            <Backpack className="w-3 h-3" />
+                            <span>必携{totalGearCount}点</span>
+                            {checkedGearCount > 0 && (
+                              <span className="text-[10px] bg-emerald-600 text-white px-1 rounded-full">
+                                {checkedGearCount}/{totalGearCount}
+                              </span>
+                            )}
+                            {isGearExpanded ? (
+                              <ChevronUp className="w-3 h-3 ml-0.5" />
+                            ) : (
+                              <ChevronDown className="w-3 h-3 ml-0.5" />
+                            )}
+                          </button>
+                        )}
+                      </div>
+                    </td>
+
+                    {/* 5. 距離 / 標高（★文字サイズを大きく・視認性大幅アップ） */}
+                    <td className="py-2.5 px-2.5 text-right align-middle whitespace-nowrap font-mono">
+                      <div className="font-black text-slate-950 dark:text-white text-base sm:text-lg tracking-tight">
+                        {event.distance_km}{' '}
+                        <span className="text-xs font-black text-slate-600 dark:text-slate-400">
+                          km
+                        </span>
+                      </div>
+                      {event.elevation_m > 0 ? (
+                        <div className="text-xs sm:text-sm text-amber-800 dark:text-amber-400 font-black flex items-center justify-end gap-0.5 mt-0.5">
+                          <TrendingUp className="w-3.5 h-3.5 text-amber-600 dark:text-amber-400" />
+                          <span>+{event.elevation_m.toLocaleString()}m</span>
+                        </div>
                       ) : (
-                        <div className="w-[58px] py-1 rounded-lg bg-slate-100 dark:bg-slate-850 text-slate-400 dark:text-slate-600 text-xs font-bold text-center border border-slate-200 dark:border-slate-800 select-none">
-                          —
-                        </div>
+                        <div className="text-xs text-slate-400 font-bold mt-0.5">平坦</div>
                       )}
+                    </td>
 
-                      {/* スロット3: 大会レポ */}
-                      {event.links.review ? (
-                        <a
-                          href={event.links.review}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="w-[30px] h-[26px] rounded-lg bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 flex items-center justify-center transition-colors shadow-2xs cursor-pointer select-none"
-                          title="大会レポート・口コミを見る"
+                    {/* 6. エントリー費用（参加費） */}
+                    <td className="py-2.5 px-2.5 text-right align-middle whitespace-nowrap font-mono">
+                      <span className="text-xs font-black text-slate-900 dark:text-slate-100 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded border border-slate-300 dark:border-slate-700">
+                        {event.entry_fee || '—'}
+                      </span>
+                    </td>
+
+                    {/* 7. 受付状況 */}
+                    <td className="py-2.5 px-2.5 text-center align-middle whitespace-nowrap">
+                      <span
+                        className={`inline-flex items-center justify-center gap-1 w-[100px] py-0.5 rounded-full text-xs border ${
+                          status.badge
+                        } ${status.pulse ? 'animate-pulse' : ''}`}
+                      >
+                        <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${status.dot}`} />
+                        <span>{statusLabel}</span>
+                      </span>
+                    </td>
+
+                    {/* 8. 右端アクション列（4つの固定スロット） */}
+                    <td className="py-2.5 px-2.5 align-middle whitespace-nowrap">
+                      <div className="grid grid-cols-[68px_58px_30px_30px] items-center justify-end gap-1">
+                        {/* スロット1: 申込ボタン */}
+                        {canEntry ? (
+                          <a
+                            href={event.links.entry!}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-[68px] py-1 rounded-lg bg-teal-700 hover:bg-teal-800 text-white text-xs font-bold flex items-center justify-center gap-1 transition-colors shadow-2xs cursor-pointer select-none"
+                            title="エントリー申込ページを開く"
+                          >
+                            <FileEdit className="w-3 h-3 shrink-0" />
+                            <span>申込</span>
+                          </a>
+                        ) : (
+                          <div
+                            className="w-[68px] py-1 rounded-lg bg-slate-150 dark:bg-slate-800/50 text-slate-500 dark:text-slate-500 text-xs font-bold text-center border border-slate-250 dark:border-slate-800 select-none cursor-not-allowed"
+                            title="現在エントリーは受け付けていません"
+                          >
+                            受付無
+                          </div>
+                        )}
+
+                        {/* スロット2: 公式サイト */}
+                        {event.links.official ? (
+                          <a
+                            href={event.links.official}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-[58px] py-1 rounded-lg bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 text-xs font-bold flex items-center justify-center gap-1 transition-colors shadow-2xs cursor-pointer select-none"
+                            title="大会公式サイトを開く"
+                          >
+                            <Globe className="w-3 h-3 text-teal-700 dark:text-teal-400 shrink-0" />
+                            <span>公式</span>
+                          </a>
+                        ) : (
+                          <div className="w-[58px] py-1 rounded-lg bg-slate-100 dark:bg-slate-850 text-slate-400 dark:text-slate-600 text-xs font-bold text-center border border-slate-200 dark:border-slate-800 select-none">
+                            —
+                          </div>
+                        )}
+
+                        {/* スロット3: 大会レポ */}
+                        {event.links.review ? (
+                          <a
+                            href={event.links.review}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-[30px] h-[26px] rounded-lg bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 flex items-center justify-center transition-colors shadow-2xs cursor-pointer select-none"
+                            title="大会レポート・口コミを見る"
+                          >
+                            <MessageSquare className="w-3 h-3 text-amber-600 shrink-0" />
+                          </a>
+                        ) : (
+                          <div className="w-[30px] h-[26px] rounded-lg bg-slate-100 dark:bg-slate-850 text-slate-400 dark:text-slate-600 text-xs font-bold flex items-center justify-center border border-slate-200 dark:border-slate-800 select-none">
+                            —
+                          </div>
+                        )}
+
+                        {/* スロット4: 公式SNS */}
+                        {event.links.sns ? (
+                          <a
+                            href={event.links.sns}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-[30px] h-[26px] rounded-lg bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 flex items-center justify-center transition-colors shadow-2xs cursor-pointer select-none"
+                            title="公式SNS・Facebookを見る"
+                          >
+                            <Share2 className="w-3 h-3 text-sky-600 shrink-0" />
+                          </a>
+                        ) : (
+                          <div className="w-[30px] h-[26px] rounded-lg bg-slate-100 dark:bg-slate-850 text-slate-400 dark:text-slate-600 text-xs font-bold flex items-center justify-center border border-slate-200 dark:border-slate-800 select-none">
+                            —
+                          </div>
+                        )}
+                      </div>
+                    </td>
+
+                    {/* 9. 必携品アコーディオン開閉ボタン */}
+                    <td className="py-2.5 px-2 text-center align-middle">
+                      {totalGearCount > 0 ? (
+                        <button
+                          type="button"
+                          onClick={() =>
+                            setExpandedGearEventId(isGearExpanded ? null : event.id)
+                          }
+                          className={`p-1.5 rounded-lg border text-xs font-extrabold flex items-center justify-center gap-0.5 mx-auto transition-all cursor-pointer ${
+                            isGearExpanded
+                              ? 'bg-teal-700 text-white border-teal-700 shadow-2xs'
+                              : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-300 dark:border-slate-700 hover:bg-teal-50 dark:hover:bg-slate-750'
+                          }`}
+                          title="必携品リスト＆楽天購入リンクを展開"
                         >
-                          <MessageSquare className="w-3 h-3 text-amber-600 shrink-0" />
-                        </a>
+                          <Backpack className="w-3.5 h-3.5" />
+                          {isGearExpanded ? (
+                            <ChevronUp className="w-3 h-3" />
+                          ) : (
+                            <ChevronDown className="w-3 h-3" />
+                          )}
+                        </button>
                       ) : (
-                        <div className="w-[30px] h-[26px] rounded-lg bg-slate-100 dark:bg-slate-850 text-slate-400 dark:text-slate-600 text-xs font-bold flex items-center justify-center border border-slate-200 dark:border-slate-800 select-none">
-                          —
-                        </div>
+                        <span className="text-slate-300 dark:text-slate-700 text-xs">—</span>
                       )}
+                    </td>
+                  </tr>
 
-                      {/* スロット4: 公式SNS */}
-                      {event.links.sns ? (
-                        <a
-                          href={event.links.sns}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="w-[30px] h-[26px] rounded-lg bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 flex items-center justify-center transition-colors shadow-2xs cursor-pointer select-none"
-                          title="公式SNS・Facebookを見る"
-                        >
-                          <Share2 className="w-3 h-3 text-sky-600 shrink-0" />
-                        </a>
-                      ) : (
-                        <div className="w-[30px] h-[26px] rounded-lg bg-slate-100 dark:bg-slate-850 text-slate-400 dark:text-slate-600 text-xs font-bold flex items-center justify-center border border-slate-200 dark:border-slate-800 select-none">
-                          —
+                  {/* ★ 必携品の具体的な情報 ＆ 楽天市場アフィリエイト購入パネル（インライン展開） */}
+                  {isGearExpanded && (
+                    <tr className="bg-gradient-to-b from-teal-50/60 to-slate-50/80 dark:from-slate-850 dark:to-slate-900 border-b-2 border-teal-600/30">
+                      <td colSpan={9} className="p-4 sm:p-5">
+                        <div className="max-w-5xl mx-auto space-y-4">
+                          {/* ヘッダー情報バー */}
+                          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-teal-200 dark:border-slate-700 pb-3">
+                            <div className="flex items-center gap-2">
+                              <div className="p-1.5 rounded-lg bg-teal-700 text-white">
+                                <Backpack className="w-4 h-4" />
+                              </div>
+                              <div>
+                                <h4 className="font-black text-slate-950 dark:text-white text-sm sm:text-base flex items-center gap-2">
+                                  <span>【{event.title}】の大会必携装備リスト</span>
+                                  <span className="text-xs font-bold text-teal-800 dark:text-teal-300 bg-teal-100 dark:bg-teal-950/70 px-2 py-0.5 rounded-full border border-teal-300 dark:border-teal-700">
+                                    全{totalGearCount}点
+                                  </span>
+                                </h4>
+                                <p className="text-xs text-slate-600 dark:text-slate-400 font-medium mt-0.5">
+                                  ※ 装備不足は出走不可・ペナルティ対象となります。各アイテム横のボタンから楽天市場の最安・特価商品を即座に検索できます。
+                                </p>
+                              </div>
+                            </div>
+
+                            <div className="flex items-center gap-2 shrink-0">
+                              <button
+                                type="button"
+                                onClick={() => setExpandedGearEventId(null)}
+                                className="p-1.5 rounded-lg bg-white dark:bg-slate-800 hover:bg-slate-150 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 border border-slate-300 dark:border-slate-700 cursor-pointer flex items-center gap-1 text-xs font-bold"
+                              >
+                                <X className="w-3.5 h-3.5" />
+                                <span>閉じる</span>
+                              </button>
+                            </div>
+                          </div>
+
+                          {/* 必携品アイテムリスト ＆ 楽天購入ボタン */}
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5">
+                            {event.mandatory_gear.map((gear) => {
+                              const isChecked = !!(checkedGears[event.id] || {})[gear.name];
+                              const rakutenSearchUrl = buildRakutenSearchAffiliateUrl(gear.name);
+
+                              return (
+                                <div
+                                  key={gear.name}
+                                  className={`flex items-center justify-between gap-3 p-3 rounded-xl border transition-all ${
+                                    isChecked
+                                      ? 'bg-emerald-50/80 dark:bg-emerald-950/20 border-emerald-300 dark:border-emerald-800/50'
+                                      : 'bg-white dark:bg-slate-800 border-slate-250 dark:border-slate-700 hover:border-teal-400'
+                                  }`}
+                                >
+                                  {/* チェックボタン ＆ アイテム名 */}
+                                  <div
+                                    className="flex items-center gap-2.5 min-w-0 flex-1 cursor-pointer select-none"
+                                    onClick={() => toggleGearCheck(event.id, gear.name)}
+                                  >
+                                    <button
+                                      type="button"
+                                      className="shrink-0 text-teal-700 dark:text-teal-400"
+                                      aria-label={isChecked ? '準備済み' : '未準備'}
+                                    >
+                                      {isChecked ? (
+                                        <CheckSquare className="w-5 h-5 fill-teal-700 text-white dark:text-slate-900" />
+                                      ) : (
+                                        <Square className="w-5 h-5 text-slate-400 dark:text-slate-500" />
+                                      )}
+                                    </button>
+                                    <div className="min-w-0 flex-1">
+                                      <div
+                                        className={`text-xs sm:text-sm font-black truncate ${
+                                          isChecked
+                                            ? 'line-through text-slate-500 dark:text-slate-400'
+                                            : 'text-slate-900 dark:text-slate-100'
+                                        }`}
+                                        title={gear.name}
+                                      >
+                                        {gear.name}
+                                      </div>
+                                      <span className="inline-block text-[10px] font-extrabold text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-750 px-1.5 py-0.2 rounded mt-0.5">
+                                        区分: {gear.category}
+                                      </span>
+                                    </div>
+                                  </div>
+
+                                  {/* 楽天市場での購入ボタン（アフィリエイト付き） */}
+                                  <a
+                                    href={rakutenSearchUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-gradient-to-r from-red-600 to-amber-600 hover:from-red-700 hover:to-amber-700 text-white text-xs font-black shadow-xs hover:shadow transition-all cursor-pointer select-none group"
+                                    title={`楽天市場で「${gear.name}」のセール・特価商品を検索する`}
+                                  >
+                                    <ShoppingCart className="w-3.5 h-3.5 group-hover:scale-110 transition-transform" />
+                                    <span>楽天で探す</span>
+                                    <ExternalLink className="w-3 h-3 opacity-80" />
+                                  </a>
+                                </div>
+                              );
+                            })}
+                          </div>
+
+                          {/* 楽天市場 特価セールギアの連動レコメンド（deals.json） */}
+                          {displayDeals.length > 0 && (
+                            <div className="mt-3 pt-3 border-t border-slate-200 dark:border-slate-800">
+                              <div className="flex items-center justify-between mb-2">
+                                <div className="flex items-center gap-1.5 text-xs font-black text-slate-900 dark:text-white">
+                                  <Sparkles className="w-4 h-4 text-amber-500" />
+                                  <span>この大会におすすめの楽天市場 特価セールギア（15%〜53%OFF）</span>
+                                </div>
+                                <span className="text-[10px] font-extrabold text-red-600 dark:text-red-400">
+                                  🔥 特価厳選
+                                </span>
+                              </div>
+
+                              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                                {displayDeals.map((deal) => {
+                                  const savedYen = deal.original_price - deal.price;
+                                  return (
+                                    <a
+                                      key={deal.id}
+                                      href={deal.affiliate_url}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className="flex gap-2.5 p-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-250 dark:border-slate-700 hover:border-amber-500 dark:hover:border-amber-400 transition-all shadow-2xs group"
+                                    >
+                                      <img
+                                        src={deal.image_url}
+                                        alt={deal.title}
+                                        className="w-14 h-14 object-cover rounded-lg bg-slate-100 dark:bg-slate-900 shrink-0 border border-slate-200 dark:border-slate-700"
+                                      />
+                                      <div className="min-w-0 flex-1 flex flex-col justify-between">
+                                        <div>
+                                          <div className="flex items-center gap-1">
+                                            <span className="text-[10px] font-black px-1.5 py-0.2 rounded bg-red-600 text-white">
+                                              {deal.discount_rate}%OFF
+                                            </span>
+                                            <span className="text-[10px] font-bold text-amber-600 dark:text-amber-400">
+                                              (¥{savedYen.toLocaleString()}引)
+                                            </span>
+                                          </div>
+                                          <p className="text-xs font-bold text-slate-800 dark:text-slate-200 line-clamp-1 group-hover:text-teal-700 dark:group-hover:text-teal-300 mt-0.5">
+                                            {deal.title}
+                                          </p>
+                                        </div>
+                                        <div className="flex items-center justify-between text-xs mt-1">
+                                          <span className="font-mono font-black text-amber-800 dark:text-amber-300">
+                                            {formatPrice(deal.price)}
+                                          </span>
+                                          <span className="text-[10px] text-teal-700 dark:text-teal-400 font-extrabold flex items-center gap-0.5">
+                                            楽天で購入 →
+                                          </span>
+                                        </div>
+                                      </div>
+                                    </a>
+                                  );
+                                })}
+                              </div>
+                            </div>
+                          )}
                         </div>
-                      )}
-                    </div>
-                  </td>
-
-                  {/* 9. 詳細モーダル展開アイコン */}
-                  <td className="py-2.5 px-2 text-center align-middle">
-                    <ChevronRight className="w-3.5 h-3.5 text-slate-400 dark:text-slate-500 group-hover:text-teal-700 dark:group-hover:text-teal-400 group-hover:translate-x-0.5 transition-all" />
-                  </td>
-                </tr>
+                      </td>
+                    </tr>
+                  )}
+                </React.Fragment>
               );
             })}
           </tbody>
