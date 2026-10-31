@@ -35,15 +35,17 @@ export interface RaceEvent {
   subCategory?: string; // 例: "MTBラリー", "アドベンチャーゲーム", "ロゲイニング", "100マイル" 等
   elements?: string[];  // 例: ["読図", "MTB", "パドル", "トレラン", "夜間"]
   title: string;
-  date: string;
+  date: string;         // 開始日（例: "2026-06-06"）
+  end_date?: string;    // 終了日（2日間以上の大会用、例: "2026-06-07"）
   month: number;
   region: string;
   prefecture: string;
   distance_km: number;
   elevation_m: number;
-  entry_fee: string;    // 例: "18,000円", "8,000円", "38,000円"
+  entry_fee: string;    // 例: "8,000円〜9,200円", "18,000円"
   entry_status: EntryStatus;
   entry_deadline: string;
+  entry_start_date?: string; // エントリー受付開始日（例: "2026-04-01"）
   links: EventLinks;
   review?: EventReview | null;
   mandatory_gear: MandatoryGear[];

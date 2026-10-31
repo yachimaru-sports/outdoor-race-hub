@@ -471,12 +471,14 @@
     ],
     "title": "保津峡ミニアドベンチャーゲーム2026",
     "date": "2026-06-06",
+    "end_date": "2026-06-07",
     "month": 6,
     "region": "近畿",
     "prefecture": "京都府",
     "distance_km": 35,
     "elevation_m": 1100,
     "entry_status": "closed",
+    "entry_start_date": "2026-04-01",
     "entry_deadline": "2026-05-20",
     "links": {
       "official": "http://toretore.web.fc2.com/hozukyou/HMAG2026.htm",
@@ -508,9 +510,14 @@
         "category": "エイド"
       }
     ],
-    "entry_fee": "7,000円",
+    "entry_fee": "9,400円〜11,200円",
+    "venue": {
+      "name": "京都府亀岡市（保津峡エリア）",
+      "address": "京都府亀岡市保津町",
+      "mapQuery": "京都府亀岡市 保津峡"
+    },
     "source": {
-      "portalName": "公式サイト",
+      "portalName": "AR関西",
       "portalUrl": "http://toretore.web.fc2.com/hozukyou/HMAG2026.htm"
     }
   },
@@ -526,12 +533,14 @@
     ],
     "title": "奈良吉野川アドベンチャーゲーム2026",
     "date": "2026-10-17",
+    "end_date": "2026-10-18",
     "month": 10,
     "region": "近畿",
     "prefecture": "奈良県",
     "distance_km": 55,
     "elevation_m": 1650,
     "entry_status": "closed",
+    "entry_start_date": "2026-09-01",
     "entry_deadline": "2026-10-07",
     "links": {
       "official": "http://toretore.web.fc2.com/narayoshi/NYAG2026.html",
@@ -563,9 +572,14 @@
         "category": "エイド"
       }
     ],
-    "entry_fee": "8,500円",
+    "entry_fee": "15,700円〜17,800円",
+    "venue": {
+      "name": "奈良吉野川 五條市近郊",
+      "address": "奈良県五條市",
+      "mapQuery": "奈良県五條市 吉野川"
+    },
     "source": {
-      "portalName": "公式サイト",
+      "portalName": "AR関西",
       "portalUrl": "http://toretore.web.fc2.com/narayoshi/NYAG2026.html"
     }
   },
@@ -580,14 +594,14 @@
       "オリエンテーリング"
     ],
     "title": "富栖ミニアドベンチャーゲーム2026",
-    "date": "2026-12-06",
+    "date": "2026-12-05",
     "month": 12,
     "region": "近畿",
     "prefecture": "兵庫県",
     "distance_km": 32,
     "elevation_m": 980,
     "entry_status": "open",
-    "entry_deadline": "2026-11-26",
+    "entry_deadline": "2026-11-24",
     "links": {
       "official": "http://toretore.web.fc2.com/",
       "entry": "http://toretore.web.fc2.com/",
@@ -622,9 +636,14 @@
         "category": "補給"
       }
     ],
-    "entry_fee": "7,000円",
+    "entry_fee": "8,000円〜9,200円",
+    "venue": {
+      "name": "兵庫県姫路市安富町富栖エリア",
+      "address": "兵庫県姫路市安富町皆河",
+      "mapQuery": "兵庫県姫路市安富町皆河 富栖の里"
+    },
     "source": {
-      "portalName": "公式サイト",
+      "portalName": "AR関西",
       "portalUrl": "http://toretore.web.fc2.com/"
     }
   },
@@ -875,6 +894,7 @@
     ],
     "title": "OMM JAPAN 2026",
     "date": "2026-11-14",
+    "end_date": "2026-11-15",
     "month": 11,
     "region": "甲信越",
     "prefecture": "長野県",
@@ -930,6 +950,7 @@
     ],
     "title": "OMM LITE / BIKE HAKUBA OTARI 2026",
     "date": "2026-07-18",
+    "end_date": "2026-07-19",
     "month": 7,
     "region": "甲信越",
     "prefecture": "長野県",

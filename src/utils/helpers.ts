@@ -210,6 +210,21 @@ export const PREFECTURES = [
   '北海道',
 ];
 
+const WEEKDAYS = ['日', '月', '火', '水', '木', '金', '土'];
+
+export function getDayOfWeek(dateStr: string): string {
+  try {
+    const parts = dateStr.split('-');
+    if (parts.length === 3) {
+      const d = new Date(parseInt(parts[0], 10), parseInt(parts[1], 10) - 1, parseInt(parts[2], 10));
+      return WEEKDAYS[d.getDay()] || '';
+    }
+  } catch {
+    // ignore
+  }
+  return '';
+}
+
 export function formatDate(dateStr: string): string {
   try {
     const parts = dateStr.split('-');
@@ -220,6 +235,68 @@ export function formatDate(dateStr: string): string {
   } catch {
     return dateStr;
   }
+}
+
+/**
+ * 開催日レンジをフォーマット（例: "2026年6月6日(土)〜7日(日)" または "2026年12月5日(土)"）
+ */
+export function formatEventDateRange(startDateStr: string, endDateStr?: string, withWeekday = true): string {
+  if (!startDateStr) return '';
+  const sDay = withWeekday ? getDayOfWeek(startDateStr) : '';
+  const sDayStr = sDay ? `(${sDay})` : '';
+
+  if (!endDateStr || startDateStr === endDateStr) {
+    return `${formatDate(startDateStr)}${sDayStr}`;
+  }
+
+  const eDay = withWeekday ? getDayOfWeek(endDateStr) : '';
+  const eDayStr = eDay ? `(${eDay})` : '';
+
+  try {
+    const sParts = startDateStr.split('-');
+    const eParts = endDateStr.split('-');
+    if (sParts.length === 3 && eParts.length === 3) {
+      // 同年・同月の場合: 2026年6月6日(土)〜7日(日)
+      if (sParts[0] === eParts[0] && sParts[1] === eParts[1]) {
+        return `${sParts[0]}年${parseInt(sParts[1], 10)}月${parseInt(sParts[2], 10)}日${sDayStr}〜${parseInt(eParts[2], 10)}日${eDayStr}`;
+      }
+      // 同年・異月の場合: 2026年5月31日(日)〜6月1日(月)
+      if (sParts[0] === eParts[0]) {
+        return `${sParts[0]}年${parseInt(sParts[1], 10)}月${parseInt(sParts[2], 10)}日${sDayStr}〜${parseInt(eParts[1], 10)}月${parseInt(eParts[2], 10)}日${eDayStr}`;
+      }
+      // 異年の場合
+      return `${formatDate(startDateStr)}${sDayStr}〜${formatDate(endDateStr)}${eDayStr}`;
+    }
+  } catch {
+    // fallback
+  }
+  return `${startDateStr}〜${endDateStr}`;
+}
+
+/**
+ * テーブル表示用の短縮日付レンジ（例: "2026-06-06〜07" または "2026-12-05"）
+ */
+export function formatTableDateRange(startDateStr: string, endDateStr?: string): { text: string; isMultiDay: boolean } {
+  if (!startDateStr) return { text: '', isMultiDay: false };
+  if (!endDateStr || startDateStr === endDateStr) {
+    return { text: startDateStr, isMultiDay: false };
+  }
+
+  try {
+    const sParts = startDateStr.split('-');
+    const eParts = endDateStr.split('-');
+    if (sParts.length === 3 && eParts.length === 3) {
+      if (sParts[0] === eParts[0] && sParts[1] === eParts[1]) {
+        return { text: `${startDateStr}〜${eParts[2]}`, isMultiDay: true };
+      }
+      if (sParts[0] === eParts[0]) {
+        return { text: `${startDateStr}〜${eParts[1]}-${eParts[2]}`, isMultiDay: true };
+      }
+    }
+  } catch {
+    // fallback
+  }
+  return { text: `${startDateStr}〜${endDateStr}`, isMultiDay: true };
 }
 
 export function formatPrice(num: number): string {

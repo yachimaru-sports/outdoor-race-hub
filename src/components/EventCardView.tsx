@@ -1,6 +1,6 @@
 import React from 'react';
 import { RaceEvent } from '../types';
-import { CATEGORY_LABELS, ELEMENT_BADGES, ENTRY_STATUS_CONFIG, formatDate, getGoogleMapsUrl } from '../utils/helpers';
+import { CATEGORY_LABELS, ELEMENT_BADGES, ENTRY_STATUS_CONFIG, formatDate, formatEventDateRange, getGoogleMapsUrl } from '../utils/helpers';
 import { LinkButton } from './LinkButton';
 import {
   Calendar,
@@ -146,12 +146,17 @@ export const EventCardView: React.FC<EventCardViewProps> = ({
               {/* 開催日 ＆ 締切日ハイライトバナー（重要情報として大幅強調） */}
               <div className="mt-3 p-3 bg-slate-50 dark:bg-slate-850/80 rounded-xl border border-slate-200 dark:border-slate-750 space-y-1.5">
                 <div className="flex items-center justify-between gap-2">
-                  <div className="flex items-center gap-1.5">
+                  <div className="flex items-center gap-1.5 flex-wrap">
                     <Calendar className="w-4 h-4 text-teal-700 dark:text-teal-400 shrink-0" />
                     <span className="text-xs font-bold text-slate-600 dark:text-slate-400">開催日:</span>
                     <span className="text-sm font-black text-slate-950 dark:text-white font-mono">
-                      {formatDate(event.date)}
+                      {formatEventDateRange(event.date, event.end_date, true)}
                     </span>
+                    {event.end_date && event.end_date !== event.date && (
+                      <span className="inline-block px-1.5 py-0.5 text-[10px] font-sans font-black bg-amber-500 text-white rounded-md tracking-tight shadow-xs">
+                        2Days開催
+                      </span>
+                    )}
                   </div>
                 </div>
 
