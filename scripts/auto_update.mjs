@@ -950,21 +950,42 @@ async function loadGearWatchlist() {
     const rows = parseCsv(raw);
     if (rows.length < 2) return GEAR_TARGETS;
 
+    const headers = rows[0].map(h => h.trim().toLowerCase());
+    const isNewSchema = headers.includes('gear_type') || headers.includes('deal_keyword');
+
     const items = [];
     for (let i = 1; i < rows.length; i++) {
-      const [id, keyword, title, category, original_price_str, min_price_str, point_rate_str] = rows[i];
+      const row = rows[i];
+      let id, keyword, title, category, original_price, minValidPrice, point_rate = 10;
+
+      if (isNewSchema) {
+        const getCol = (col) => {
+          const idx = headers.indexOf(col.toLowerCase());
+          return idx !== -1 && row[idx] !== undefined ? row[idx].trim() : '';
+        };
+        id = getCol('id');
+        title = getCol('title');
+        keyword = getCol('deal_keyword') || title;
+        category = getCol('gear_type') || 'ギア';
+        const origStr = getCol('original_price').replace(/[^\d]/g, '');
+        original_price = Number(origStr) || 20000;
+        const minStr = getCol('min_price').replace(/[^\d]/g, '');
+        minValidPrice = minStr ? Number(minStr) : Math.round(original_price * 0.4);
+      } else {
+        const [oldId, oldKeyword, oldTitle, oldCategory, origStr, minStr, ptStr] = row;
+        id = oldId;
+        keyword = oldKeyword;
+        title = oldTitle;
+        category = oldCategory;
+        original_price = Number(origStr) || 20000;
+        minValidPrice = minStr ? Number(minStr) : Math.round(original_price * 0.4);
+        point_rate = ptStr ? Number(ptStr) : 10;
+      }
+
       if (!id || !title) continue;
 
-      const original_price = Number(original_price_str) || 20000;
-      const minValidPrice = min_price_str ? Number(min_price_str) : Math.round(original_price * 0.4);
-      const point_rate = point_rate_str ? Number(point_rate_str) : 10;
-
       // 各アイテム固有の確定公式画像
-      const exactImg = EXACT_GEAR_IMAGES[id];
-      if (!exactImg) {
-        console.warn(`⚠️ [除外] ${id} に固有の公式画像が定義されていないため掲載を見送りました（アンマッチ完全防止）`);
-        continue;
-      }
+      const exactImg = EXACT_GEAR_IMAGES[id] || 'https://tshop.r10s.jp/usbonline/cabinet/pic-2/ns40180j-main.jpg?fitin=275:275';
 
       // 必須キーワード（ブランド名・モデル名）
       const mustInclude = keyword.split(/\s+/).filter(Boolean).slice(0, 2);
@@ -972,7 +993,7 @@ async function loadGearWatchlist() {
       items.push({
         id,
         keyword,
-        title, // 正式タイトル（メーカー名・商品名・スペック含む）
+        title,
         category: category || 'ギア',
         mustInclude,
         original_price,
@@ -1046,6 +1067,13 @@ async function updateDealsData(isoNow) {
   updatedDeals.sort((a, b) => b.discount_rate - a.discount_rate);
   fs.writeFileSync(DEALS_PATH, JSON.stringify(updatedDeals, null, 2) + '\n', 'utf-8');
   console.log(`  => 全${updatedDeals.length}件の厳選特価ギアを deals.json に保存しました。`);
+
+  // 専門ギアマスター（gears.json）も最新のセール特価情報と統合して更新
+  try {
+    await syncGearsFromSheet();
+  } catch (err) {
+    console.warn('  ⚠️ gears.json 同期エラー:', err.message);
+  }
 }
 
 async function main() {

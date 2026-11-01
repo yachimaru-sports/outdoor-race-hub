@@ -40,6 +40,7 @@ export const EventCardView: React.FC<EventCardViewProps> = ({
   events,
   favoriteIds,
   onToggleFavorite,
+  onSelectEvent,
 }) => {
   const getGearProgress = (event: RaceEvent) => {
     try {

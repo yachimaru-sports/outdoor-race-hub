@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { RaceEvent, DealItem } from '../types';
+import { RaceEvent, DealItem, GearItem } from '../types';
+import { matchMandatoryGear } from '../utils/gearMatcher';
+import { MandatoryGearLinks } from './MandatoryGearLinks';
 import {
   CATEGORY_LABELS,
   ENTRY_STATUS_CONFIG,
@@ -30,11 +32,12 @@ import {
 interface EventDetailModalProps {
   event: RaceEvent | null;
   deals: DealItem[];
+  gears?: GearItem[];
   isFavorite?: boolean;
   onClose: () => void;
 }
 
-export const EventDetailModal: React.FC<EventDetailModalProps> = ({ event, deals, isFavorite = false, onClose }) => {
+export const EventDetailModal: React.FC<EventDetailModalProps> = ({ event, deals, gears = [], isFavorite = false, onClose }) => {
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
@@ -82,11 +85,23 @@ export const EventDetailModal: React.FC<EventDetailModalProps> = ({ event, deals
   const progressPercent = totalCount > 0 ? Math.round((completedCount / totalCount) * 100) : 0;
 
   const eventGearCategories = new Set(event.mandatory_gear.map((g) => g.category));
-  const matchedDeals = deals.filter((deal) => eventGearCategories.has(deal.category));
-  const recommendedDeals =
-    matchedDeals.length >= 2
-      ? matchedDeals
-      : [...matchedDeals, ...deals.filter((d) => !matchedDeals.includes(d))].slice(0, 4);
+  // 必携品テキストとギアマスターを厳格照合し、直結するセール商品を優先抽出
+  const strictlyMatchedGears = event.mandatory_gear
+    .map((g) => matchMandatoryGear(g.name, event.category, gears))
+    .filter((g): g is GearItem => Boolean(g));
+
+  const matchedDealIds = new Set(strictlyMatchedGears.map((g) => g.id));
+  const priorityDeals = deals.filter((d) => {
+    // ギアIDの一致またはタイトルに含まれるブランド・キーワード照合
+    return strictlyMatchedGears.some((sg) => 
+      d.id.includes(sg.id.replace('gear-', 'deal-')) ||
+      (sg.brand && d.title.includes(sg.brand)) ||
+      (sg.gearType && d.title.includes(sg.gearType))
+    );
+  });
+
+  const remainingDeals = deals.filter((d) => !priorityDeals.some((pd) => pd.id === d.id));
+  const recommendedDeals = [...priorityDeals, ...remainingDeals].slice(0, 4);
 
   const cat = CATEGORY_LABELS[event.category];
   const now = new Date();
@@ -286,40 +301,57 @@ export const EventDetailModal: React.FC<EventDetailModalProps> = ({ event, deals
               ) : (
                 event.mandatory_gear.map((gear) => {
                   const isChecked = !!checkedItems[gear.name];
+                  const matchedGear = matchMandatoryGear(gear.name, event.category, gears);
                   return (
                     <div
                       key={gear.name}
                       onClick={() => toggleCheck(gear.name)}
-                      className={`flex items-center gap-3 p-3 rounded-xl border transition-all cursor-pointer select-none shadow-2xs ${
+                      className={`flex flex-col gap-1.5 p-3 rounded-xl border transition-all cursor-pointer select-none shadow-2xs ${
                         isChecked
                           ? 'bg-emerald-50/50 dark:bg-slate-800/40 border-emerald-200 dark:border-slate-700/40 text-slate-500'
                           : 'bg-white dark:bg-slate-800/80 border-slate-250 dark:border-slate-700/80 text-slate-900 dark:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-750'
                       }`}
                     >
-                      <button
-                        type="button"
-                        className="shrink-0 text-teal-700 dark:text-teal-400 focus:outline-none"
-                      >
-                        {isChecked ? (
-                          <CheckSquare className="w-5 h-5 fill-teal-700 text-white dark:text-slate-900" />
-                        ) : (
-                          <Square className="w-5 h-5 text-slate-400 dark:text-slate-500" />
-                        )}
-                      </button>
-                      <div className="flex-1 min-w-0">
-                        <span
-                          className={`text-sm font-bold block ${
-                            isChecked
-                              ? 'line-through text-slate-500 dark:text-slate-500'
-                              : 'text-slate-900 dark:text-slate-100'
-                          }`}
-                        >
-                          {gear.name}
-                        </span>
+                      <div className="flex items-center justify-between gap-3">
+                        <div className="flex items-center gap-2.5 min-w-0 flex-1">
+                          <button
+                            type="button"
+                            className="shrink-0 text-teal-700 dark:text-teal-400 focus:outline-none"
+                          >
+                            {isChecked ? (
+                              <CheckSquare className="w-5 h-5 fill-teal-700 text-white dark:text-slate-900" />
+                            ) : (
+                              <Square className="w-5 h-5 text-slate-400 dark:text-slate-500" />
+                            )}
+                          </button>
+                          <div className="flex-1 min-w-0">
+                            <span
+                              className={`text-sm font-bold block ${
+                                isChecked
+                                  ? 'line-through text-slate-500 dark:text-slate-500'
+                                  : 'text-slate-900 dark:text-slate-100'
+                              }`}
+                            >
+                              {gear.name}
+                            </span>
+                          </div>
+                        </div>
+
+                        <div className="flex items-center gap-2 shrink-0">
+                          <span className="text-xs font-bold px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-750 text-slate-600 dark:text-slate-300 border border-slate-250 dark:border-slate-700">
+                            {gear.category}
+                          </span>
+                          {matchedGear && (
+                            <MandatoryGearLinks gear={matchedGear} size="md" />
+                          )}
+                        </div>
                       </div>
-                      <span className="text-xs font-bold px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-750 text-slate-700 dark:text-slate-300 border border-slate-250 dark:border-slate-700 shrink-0">
-                        {gear.category}
-                      </span>
+
+                      {matchedGear && matchedGear.standardTitle && (
+                        <div className="text-xs text-slate-500 dark:text-slate-400 font-medium pl-8 border-l-2 border-teal-500/50 ml-1">
+                          💡 定番: {matchedGear.brand ? matchedGear.brand + ' ' : ''}{matchedGear.standardTitle}
+                        </div>
+                      )}
                     </div>
                   );
                 })

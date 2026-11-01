@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { RaceEvent, DealItem, SortOption } from '../types';
+import { RaceEvent, DealItem, GearItem, SortOption } from '../types';
+import { matchMandatoryGear } from '../utils/gearMatcher';
+import { MandatoryGearLinks } from './MandatoryGearLinks';
 import {
   CATEGORY_LABELS,
   ELEMENT_BADGES,
@@ -38,6 +40,7 @@ import {
 interface EventTableViewProps {
   events: RaceEvent[];
   deals?: DealItem[];
+  gears?: GearItem[];
   favoriteIds: string[];
   sortBy?: SortOption;
   onSortChange?: (newSort: SortOption) => void;
@@ -48,10 +51,12 @@ interface EventTableViewProps {
 export const EventTableView: React.FC<EventTableViewProps> = ({
   events,
   deals = [],
+  gears = [],
   favoriteIds,
   sortBy,
   onSortChange,
   onToggleFavorite,
+  onSelectEvent,
 }) => {
   // 必携品アコーディオン展開中の大会ID
   const [expandedGearEventId, setExpandedGearEventId] = useState<string | null>(null);
@@ -322,10 +327,12 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
 
                     {/* 4. 大会名 / エリア / 競技特徴（★ホバーポップアップ復活 ＆ 必携バッジは次列へ移動） */}
                     <td className="py-2.5 px-3 align-middle">
-                      {/* 大会タイトル（画面幅で見切れてもホバーで全文確認可能） */}
+                      {/* 大会タイトル（クリックで大会詳細モーダルを開く） */}
                       <div className="relative group/title">
                         <div
-                          className="font-black text-slate-950 dark:text-white text-sm leading-snug line-clamp-2 select-text cursor-default"
+                          onClick={() => onSelectEvent?.(event)}
+                          className="font-black text-slate-950 dark:text-white hover:text-teal-700 dark:hover:text-teal-400 transition-colors text-sm leading-snug line-clamp-2 select-text cursor-pointer"
+                          title="クリックして必携品・詳細情報を開く"
                         >
                           {event.title}
                         </div>
@@ -499,7 +506,7 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5">
                             {event.mandatory_gear.map((gear) => {
                               const isChecked = !!(checkedGears[event.id] || {})[gear.name];
-                              const rakutenSearchUrl = buildRakutenSearchAffiliateUrl(gear.name);
+                              const matchedGear = matchMandatoryGear(gear.name, event.category, gears);
 
                               return (
                                 <div
@@ -517,7 +524,7 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
                                   >
                                     <button
                                       type="button"
-                                      className="shrink-0 text-teal-700 dark:text-teal-400"
+                                      className="shrink-0 text-teal-700 dark:text-teal-400 focus:outline-none"
                                       aria-label={isChecked ? '準備済み' : '未準備'}
                                     >
                                       {isChecked ? (
@@ -537,24 +544,23 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
                                       >
                                         {gear.name}
                                       </div>
-                                      <span className="inline-block text-[10px] font-extrabold text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-750 px-1.5 py-0.2 rounded mt-0.5">
-                                        区分: {gear.category}
-                                      </span>
+                                      <div className="flex items-center gap-2 mt-0.5">
+                                        <span className="inline-block text-[10px] font-extrabold text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-750 px-1.5 py-0.2 rounded">
+                                          区分: {gear.category}
+                                        </span>
+                                        {matchedGear && matchedGear.standardTitle && (
+                                          <span className="text-[10px] text-teal-700 dark:text-teal-400 font-medium truncate max-w-[280px]" title={matchedGear.standardTitle}>
+                                            定番: {matchedGear.brand ? matchedGear.brand + ' ' : ''}{matchedGear.standardTitle}
+                                          </span>
+                                        )}
+                                      </div>
                                     </div>
                                   </div>
 
-                                  {/* 楽天市場での購入ボタン（アフィリエイト付き） */}
-                                  <a
-                                    href={rakutenSearchUrl}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-gradient-to-r from-red-600 to-amber-600 hover:from-red-700 hover:to-amber-700 text-white text-xs font-black shadow-xs hover:shadow transition-all cursor-pointer select-none group"
-                                    title={`楽天市場で「${gear.name}」のセール・特価商品を検索する`}
-                                  >
-                                    <ShoppingCart className="w-3.5 h-3.5 group-hover:scale-110 transition-transform" />
-                                    <span>楽天で探す</span>
-                                    <ExternalLink className="w-3 h-3 opacity-80" />
-                                  </a>
+                                  {/* 定番・特価2系統リンク（マッチした専門ギアのみ表示） */}
+                                  {matchedGear && (
+                                    <MandatoryGearLinks gear={matchedGear} size="md" />
+                                  )}
                                 </div>
                               );
                             })}

@@ -60,6 +60,12 @@ function parseCsv(csvText) {
 /**
  * CSV行から RaceEvent オブジェクトを構築
  */
+function parseNumberClean(str) {
+  if (!str) return 0;
+  const cleaned = String(str).replace(/[^\d.]/g, '');
+  return Number(cleaned) || 0;
+}
+
 function rowToEvent(headers, row) {
   const getVal = (name) => {
     const idx = headers.indexOf(name);
@@ -98,8 +104,8 @@ function rowToEvent(headers, row) {
     month: Number(getVal('month')) || 1,
     region: getVal('region') || '全国',
     prefecture: getVal('prefecture') || '',
-    distance_km: Number(getVal('distance_km')) || 0,
-    elevation_m: Number(getVal('elevation_m')) || 0,
+    distance_km: parseNumberClean(getVal('distance_km')),
+    elevation_m: parseNumberClean(getVal('elevation_m')),
     entry_status: getVal('entry_status') || 'open',
     entry_start_date: getVal('entry_start_date') || undefined,
     entry_deadline: getVal('entry_deadline') || undefined,

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { RaceEvent, DealItem } from '../types';
+import { RaceEvent, DealItem, GearItem } from '../types';
+import { matchMandatoryGear } from '../utils/gearMatcher';
+import { MandatoryGearLinks } from './MandatoryGearLinks';
 import {
   CATEGORY_LABELS,
   ELEMENT_BADGES,
@@ -27,6 +29,7 @@ import {
 interface MobileEventCardListProps {
   events: RaceEvent[];
   deals: DealItem[];
+  gears?: GearItem[];
   favoriteIds: string[];
   onToggleFavorite: (id: string) => void;
 }
@@ -34,6 +37,7 @@ interface MobileEventCardListProps {
 export const MobileEventCardList: React.FC<MobileEventCardListProps> = ({
   events,
   deals,
+  gears = [],
   favoriteIds,
   onToggleFavorite,
 }) => {
@@ -259,32 +263,31 @@ export const MobileEventCardList: React.FC<MobileEventCardListProps> = ({
                     <div className="p-3 border-t border-slate-200 dark:border-slate-750 bg-white dark:bg-slate-900 space-y-2">
                       <div className="space-y-1.5">
                         {event.mandatory_gear.map((gear, idx) => {
-                          const deal = getRelatedDeal(gear.category);
+                          const matchedGear = matchMandatoryGear(gear.name, event.category, gears);
                           return (
                             <div
                               key={idx}
-                              className="flex items-start justify-between gap-2 text-xs p-2 rounded-lg bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700"
+                              className="flex flex-col gap-1.5 p-2.5 rounded-lg bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 transition-colors"
                             >
-                              <div className="flex items-start gap-1.5 min-w-0">
-                                <span className="text-[10px] font-black px-1.5 py-0.5 rounded bg-teal-100 text-teal-800 dark:bg-teal-950 dark:text-teal-300 shrink-0 mt-0.5">
-                                  {gear.category}
-                                </span>
-                                <span className="font-bold text-slate-800 dark:text-slate-200 leading-snug">
-                                  {gear.name}
-                                </span>
+                              <div className="flex items-center justify-between gap-2 text-xs">
+                                <div className="flex items-center gap-1.5 min-w-0 flex-1">
+                                  <span className="text-[10px] font-black px-1.5 py-0.5 rounded bg-teal-100 text-teal-800 dark:bg-teal-950 dark:text-teal-300 shrink-0">
+                                    {gear.category}
+                                  </span>
+                                  <span className="font-bold text-slate-900 dark:text-slate-100 leading-snug truncate" title={gear.name}>
+                                    {gear.name}
+                                  </span>
+                                </div>
+
+                                {matchedGear && (
+                                  <MandatoryGearLinks gear={matchedGear} size="sm" />
+                                )}
                               </div>
 
-                              {deal && (
-                                <a
-                                  href={deal.affiliate_url}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="shrink-0 inline-flex items-center gap-0.5 text-[10px] font-black bg-red-50 text-red-700 dark:bg-red-950 dark:text-red-300 px-1.5 py-0.5 rounded border border-red-200 dark:border-red-800"
-                                  title={`楽天セール品: ${deal.title}`}
-                                >
-                                  <span>{deal.discount_rate}%OFF</span>
-                                  <ExternalLink className="w-2.5 h-2.5" />
-                                </a>
+                              {matchedGear && matchedGear.standardTitle && (
+                                <div className="text-[10px] text-slate-500 dark:text-slate-400 font-medium pl-1 line-clamp-1 border-l-2 border-teal-500/50">
+                                  💡 {matchedGear.brand ? matchedGear.brand + ': ' : ''}{matchedGear.standardTitle}
+                                </div>
                               )}
                             </div>
                           );

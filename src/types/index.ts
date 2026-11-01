@@ -53,6 +53,24 @@ export interface RaceEvent {
   source?: EventSource; // 大会情報の入手元ポータルデータ
 }
 
+export interface GearItem {
+  id: string;
+  sports: string[];        // ["trail", "adventure", "rogaining"] 等
+  gearType: string;        // "レインジャケット", "ベースレイヤー" 等
+  matchKeywords: string[]; // ["レインジャケット", "ゴアテックス", "レインウェア", "雨具"]
+  title: string;           // 正式商品名
+  brand?: string;          // ブランド
+  standardTitle: string;   // 定番おすすめの解説
+  standardUrl: string;     // 公式/定番サイトURL
+  dealKeyword: string;     // 楽天セール検索ワード
+  originalPrice?: number;
+  minPrice?: number;
+  price?: number;
+  discountRate?: number;
+  dealUrl?: string;
+  imageUrl?: string;
+}
+
 export interface DealItem {
   id: string;
   title: string;

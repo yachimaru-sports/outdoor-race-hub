@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import eventsData from './data/events.json';
 import dealsData from './data/deals.json';
-import { RaceEvent, DealItem, FilterState, ViewMode } from './types';
+import gearsData from './data/gears.json';
+import { RaceEvent, DealItem, GearItem, FilterState, ViewMode } from './types';
 import { INITIAL_FILTERS } from './utils/presets';
 import { DealsTicker } from './components/DealsTicker';
 import { ToretoreBanner } from './components/ToretoreBanner';
@@ -9,6 +10,7 @@ import { FilterSection } from './components/FilterSection';
 import { EventTableView } from './components/EventTableView';
 import { EventCardView } from './components/EventCardView';
 import { MobileEventCardList } from './components/MobileEventCardList';
+import { EventDetailModal } from './components/EventDetailModal';
 import { UpdateTicker, UPDATE_NEWS_DATA } from './components/UpdateTicker';
 import { Footer } from './components/Footer';
 
@@ -49,6 +51,12 @@ export const App: React.FC = () => {
     () => (dealsData as DealItem[]).filter((d) => d.discount_rate >= 15),
     []
   );
+
+  // 専門ギアマスター（定番おすすめ＆特価セール情報）
+  const gears = useMemo(() => gearsData as GearItem[], []);
+
+  // 大会詳細モーダルの選択状態
+  const [selectedEvent, setSelectedEvent] = useState<RaceEvent | null>(null);
 
   // テーマ管理（デフォルト: 'light'）
   const [theme, setTheme] = useState<'light' | 'dark'>(() => {

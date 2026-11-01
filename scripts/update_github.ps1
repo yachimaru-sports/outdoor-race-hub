@@ -27,6 +27,7 @@ Write-Host ""
 
 Write-Host "[2/4] Googleスプレッドシートから最新大会データを直接同期中..." -ForegroundColor Yellow
 node scripts/sync_from_sheets.mjs
+node scripts/sync_gears.mjs
 Write-Host ""
 
 Write-Host "[3/4] 大会データの重複チェックを実行中..." -ForegroundColor Yellow
@@ -39,7 +40,7 @@ if ($LASTEXITCODE -ne 0) {
 Write-Host ""
 
 Write-Host "[4/4] 変更内容をGitHubへプッシュ中..." -ForegroundColor Yellow
-git add src/data/events.json src/data/deals.json src/components/UpdateTicker.tsx
+git add src/data/events.json src/data/deals.json src/data/gears.json src/components/UpdateTicker.tsx
 git diff --cached --quiet
 if ($LASTEXITCODE -ne 0) {
     git commit -m "chore(manual): デスクトップ手動バッチによる最新データ同期・本番反映"
