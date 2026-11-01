@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import {
   Bell,
   ChevronLeft,
@@ -22,18 +22,86 @@ export interface UpdateNewsItem {
   targetLabel: string;
 }
 
+/**
+ * アップデート情報最大保持件数（最新10件を維持し、古い情報は順次自動押し出し）
+ */
+export const MAX_UPDATE_NEWS_COUNT = 10;
+
+/**
+ * 大会更新情報マスター（新着大会の追加情報を中心に最新10件を常時表示）
+ */
 export const UPDATE_NEWS_DATA: UpdateNewsItem[] = [
   {
-    id: 'update-auto-sync-20261101',
+    id: 'update-shimanto-ar-20261101',
     date: '2026.11.01',
-    time: '12:45',
-    tag: '定期巡回更新',
+    time: '20:50',
+    tag: '新着アドベンチャー',
     tagStyle: 'bg-emerald-100 text-emerald-900 border-emerald-300 dark:bg-emerald-950/70 dark:text-emerald-200',
-    title: '11月度 全国大会ステータス巡回・楽天15%以上特価ギア情報を自動更新！',
+    title: '四万十清流アドベンチャーレース 2026（高知・四万十川 42km）公式登録！',
     description:
-      '2026-2027年開催大会の受付状況、Googleスプレッドシート連携データ、および楽天市場の最新特価・割引率（15%OFF以上）を自動巡回・更新完了しました。',
+      '日本最後の清流・四万十川を舞台にしたパックラフト＆MTB＆トレッキング＆ナビゲーションレースの詳細スペック・直通リンクを登録しました。',
     targetId: 'events-section',
-    targetLabel: '大会一覧を見る',
+    targetLabel: '四万十ARを見る',
+  },
+  {
+    id: 'update-yamanami-kaido-20261101',
+    date: '2026.11.01',
+    time: '20:45',
+    tag: '新着サイクル',
+    tagStyle: 'bg-cyan-100 text-cyan-900 border-cyan-300 dark:bg-cyan-950/70 dark:text-cyan-200',
+    title: 'やまなみ街道チャレンジライド 2027（尾道〜松江 縦断140km）公式登録！',
+    description:
+      '瀬戸内・尾道から山陰・松江まで中国山地を一気に駆け抜ける大人気縦断ロングライドイベントを収録しました。',
+    targetId: 'events-section',
+    targetLabel: 'やまなみ街道を見る',
+  },
+  {
+    id: 'update-osj-shinshiro-20261101',
+    date: '2026.11.01',
+    time: '20:40',
+    tag: '新着トレラン',
+    tagStyle: 'bg-amber-100 text-amber-900 border-amber-300 dark:bg-amber-950/70 dark:text-amber-200',
+    title: 'OSJ新城トレイル 32K / ダブル64K 2027（愛知県民の森）公式登録！',
+    description:
+      '屈指の岩稜と激坂で知られるOSJシリーズ開幕戦、32kmおよび過酷なダブル64kmレースの詳細情報を掲載しました。',
+    targetId: 'events-section',
+    targetLabel: '新城トレイルを見る',
+  },
+  {
+    id: 'update-inachiku-longride-20261101',
+    date: '2026.11.01',
+    time: '20:35',
+    tag: '新着サイクル',
+    tagStyle: 'bg-blue-100 text-blue-900 border-blue-300 dark:bg-blue-950/70 dark:text-blue-200',
+    title: '因幡街道・千種川ロングライド in 佐用 2026（兵庫・岡山 92km）公式登録！',
+    description:
+      '宿場町情緒と清流千種川の自然美を駆け抜ける晩秋の92kmサイクリング大会を追加しました。',
+    targetId: 'events-section',
+    targetLabel: '千種川ライドを見る',
+  },
+  {
+    id: 'update-taiki-seaside-20261101',
+    date: '2026.11.01',
+    time: '20:30',
+    tag: '新着トレラン',
+    tagStyle: 'bg-teal-100 text-teal-900 border-teal-300 dark:bg-teal-950/70 dark:text-teal-200',
+    title: '大紀町シーサイドトレイル 2027（三重・熊野灘 23km/14km）公式登録！',
+    description:
+      '熊野灘のオーシャンビューとテクニカルな海岸シングルトラックが魅力の早春大会を追加しました。',
+    targetId: 'events-section',
+    targetLabel: '大紀町トレイルを見る',
+  },
+  {
+    id: 'update-mariko-alps-20261101',
+    date: '2026.11.01',
+    time: '20:25',
+    tag: '新着トレラン',
+    tagStyle: 'bg-violet-100 text-violet-900 border-violet-300 dark:bg-violet-950/70 dark:text-violet-200',
+    title: '丸子アルプストレイルラン 2027（静岡・宿場町 22km）公式登録！',
+    description:
+      '東海道の歴史ある宿場町・丸子宿から稜線の絶景パノラマを走る22kmレースを新規収録しました。',
+    targetId: 'events-section',
+    targetLabel: '丸子アルプスを見る',
   },
   {
     id: 'update-hiroshima-wangan-trail-20261031',
@@ -53,7 +121,7 @@ export const UPDATE_NEWS_DATA: UpdateNewsItem[] = [
     time: '10:30',
     tag: 'リンク直通化',
     tagStyle: 'bg-emerald-100 text-emerald-900 border-emerald-300 dark:bg-emerald-950/70 dark:text-emerald-200',
-    title: '全158大会の申込直通URL＆公式情報源を全面刷新！',
+    title: '全大会の申込直通URL＆公式情報源を全面刷新！',
     description:
       'ポータルトップではなく、該当大会の申込・検索画面へワンクリックで直行できるよう全リンクを精査・直通化しました。',
     targetId: 'events-section',
@@ -65,23 +133,11 @@ export const UPDATE_NEWS_DATA: UpdateNewsItem[] = [
     time: '10:25',
     tag: '新機能',
     tagStyle: 'bg-amber-100 text-amber-900 border-amber-300 dark:bg-amber-950/70 dark:text-amber-200',
-    title: '大会必携装備リスト ＆ 楽天市場アフィリエイト購入直通機能を新設！',
+    title: '大会必携装備リスト ＆ 必携品直通検索機能を新設！',
     description:
-      '大会名横の「必携○点」ボタンから、公式必携品リスト（チェック機能付き）と楽天市場の最安・特価検索を即座に利用できます。',
+      '大会名横の「必携○点」ボタンから、公式必携品リスト（チェック機能付き）と必携ギア検索を即座に利用できます。',
     targetId: 'events-section',
     targetLabel: '必携品機能へジャンプ',
-  },
-  {
-    id: 'update-distance-filter-20261031',
-    date: '2026.10.31',
-    time: '10:15',
-    tag: 'UI改善',
-    tagStyle: 'bg-sky-100 text-sky-900 border-sky-300 dark:bg-sky-950/70 dark:text-sky-200',
-    title: '距離フィルターを5段階クイック指定（全距離・0-30・30-70・70-100・100以上）に統一！',
-    description:
-      'レイアウトを2行に固定し、距離と累積標高の文字サイズを大型化して視認性を高めました。',
-    targetId: 'filter-section',
-    targetLabel: '検索フィルターへジャンプ',
   },
   {
     id: 'update-events-expand-20261031',
@@ -89,23 +145,11 @@ export const UPDATE_NEWS_DATA: UpdateNewsItem[] = [
     time: '10:05',
     tag: 'データ拡充',
     tagStyle: 'bg-purple-100 text-purple-900 border-purple-300 dark:bg-purple-950/70 dark:text-purple-200',
-    title: '全国のアドベンチャー/ロゲ/100マイル＆中四国サイクルなど全158大会へ拡大！',
+    title: '全国のアドベンチャー/ロゲ/100マイル＆中四国サイクルなど全157大会へ拡大！',
     description:
       'ニセコAR・屋久島AR・彩の国100mileや、しまなみ・とびしま・石鎚山など注目大会を追加収録しました。',
     targetId: 'events-section',
     targetLabel: '大会一覧へジャンプ',
-  },
-  {
-    id: 'update-deals-sync-20261031',
-    date: '2026.10.31',
-    time: '09:50',
-    tag: '自動更新',
-    tagStyle: 'bg-rose-100 text-rose-900 border-rose-300 dark:bg-rose-950/70 dark:text-rose-200',
-    title: '楽天市場のアウトドア特価ギア（15%〜53%OFF厳選）自動更新稼働中！',
-    description:
-      'ペツル スイフトRLやネイサン、ブラックダイヤモンドなど大会必携ギアの実在セール情報を1日3回自動更新しています。',
-    targetId: 'deals-carousel',
-    targetLabel: '特価カルーセルへジャンプ',
   },
 ];
 
@@ -118,7 +162,8 @@ export const UpdateTicker: React.FC<UpdateTickerProps> = ({ onJumpToTarget }) =>
   const [isPaused, setIsPaused] = useState(false);
   const [showHistoryModal, setShowHistoryModal] = useState(false);
 
-  const items = UPDATE_NEWS_DATA;
+  // 常に最新10件のみを保証（古い情報は順次自動押し出し）
+  const items = useMemo(() => UPDATE_NEWS_DATA.slice(0, MAX_UPDATE_NEWS_COUNT), []);
   const currentItem = items[currentIndex];
 
   // 自動スライド（5秒間隔、マウスホバーで停止）
@@ -150,162 +195,150 @@ export const UpdateTicker: React.FC<UpdateTickerProps> = ({ onJumpToTarget }) =>
         element.classList.add('ring-4', 'ring-teal-500', 'transition-all');
         setTimeout(() => {
           element.classList.remove('ring-4', 'ring-teal-500');
-        }, 2200);
+        }, 2000);
       }
     }
   };
 
+  if (!currentItem) return null;
+
   return (
-    <div
-      className="bg-slate-900 text-slate-100 border-b border-slate-800 transition-colors"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-    >
-      <div className="max-w-7xl mx-auto px-4 py-2 sm:py-2.5 flex items-center justify-between gap-3">
-        {/* 左端バッジ */}
-        <div className="flex items-center gap-2 shrink-0">
-          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-teal-500/20 text-teal-300 border border-teal-500/40 text-xs font-black tracking-wide">
-            <Bell className="w-3.5 h-3.5 text-teal-400 animate-bounce" />
-            <span className="hidden sm:inline">アップデート情報</span>
-            <span className="sm:hidden">UPDATE</span>
-          </span>
-          <span className="text-[11px] font-mono text-slate-400 hidden md:inline">
-            ({currentIndex + 1}/{items.length})
-          </span>
-        </div>
+    <>
+      <div
+        className="w-full bg-slate-900/95 dark:bg-[#070b14]/95 border-b border-slate-800 text-xs text-slate-300 py-1 px-3 sm:px-4 backdrop-blur-xs select-none transition-colors"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+      >
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-2">
+          {/* 左側：ベルアイコン ＆ 「アップデート情報」バッジ ＆ 件数インジケーター */}
+          <div className="flex items-center gap-1.5 shrink-0">
+            <div className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-teal-950/80 border border-teal-500/40 text-[11px] font-bold text-teal-300 shadow-xs">
+              <Bell className="w-3 h-3 text-teal-400 shrink-0 animate-pulse" />
+              <span>アップデート情報</span>
+            </div>
+            <span className="text-[10px] text-slate-400 font-mono hidden sm:inline">
+              ({currentIndex + 1}/{items.length})
+            </span>
+          </div>
 
-        {/* 中央スライド可能ウィンドウ（クリックで該当箇所へスクロール） */}
-        <div
-          onClick={() => handleItemClick(currentItem.targetId)}
-          className="flex-1 min-w-0 flex items-center gap-2.5 cursor-pointer group py-0.5 select-none"
-          title={`クリックすると「${currentItem.targetLabel}」`}
-        >
-          {/* 日時バッジ */}
-          <span className="font-mono text-xs font-bold text-slate-400 shrink-0">
-            {currentItem.date}
-          </span>
-
-          {/* タグ */}
-          <span
-            className={`text-[11px] font-black px-2 py-0.5 rounded border shrink-0 ${currentItem.tagStyle}`}
+          {/* 中央：最新更新ニュース内容（スライド表示） */}
+          <div
+            className="flex-1 min-w-0 flex items-center gap-2 cursor-pointer group hover:text-white transition-colors"
+            onClick={() => handleItemClick(currentItem.targetId)}
           >
-            {currentItem.tag}
-          </span>
+            <span className="text-[11px] font-mono text-slate-400 shrink-0 hidden md:inline">
+              {currentItem.date}
+            </span>
+            <span
+              className={`text-[10px] font-bold px-1.5 py-0.2 rounded border shrink-0 ${currentItem.tagStyle}`}
+            >
+              {currentItem.tag}
+            </span>
+            <p className="text-[11px] sm:text-xs font-medium truncate text-slate-200 group-hover:text-teal-300 transition-colors">
+              {currentItem.title}
+            </p>
+            <span className="hidden lg:inline-flex items-center gap-0.5 text-[10px] text-teal-400 font-bold shrink-0 bg-teal-950/50 px-2 py-0.5 rounded border border-teal-800/60 hover:bg-teal-900 transition-colors">
+              <span>{currentItem.targetLabel}</span>
+              <ArrowRight className="w-2.5 h-2.5" />
+            </span>
+          </div>
 
-          {/* タイトル（ホバーで強調） */}
-          <p className="text-xs sm:text-sm font-bold text-slate-100 group-hover:text-teal-300 transition-colors truncate">
-            {currentItem.title}
-          </p>
-
-          {/* 誘導矢印ピル */}
-          <span className="hidden lg:inline-flex items-center gap-1 text-[11px] font-extrabold text-teal-400 bg-teal-950/60 px-2 py-0.5 rounded-full border border-teal-800/80 group-hover:bg-teal-900 transition-colors shrink-0">
-            <span>{currentItem.targetLabel}</span>
-            <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
-          </span>
-        </div>
-
-        {/* 右端コントローラー（前へ・次へ・全履歴ボタン） */}
-        <div className="flex items-center gap-1.5 shrink-0">
-          <button
-            type="button"
-            onClick={handlePrev}
-            className="p-1 rounded-md bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors cursor-pointer"
-            aria-label="前のアップデート"
-            title="前のアップデート"
-          >
-            <ChevronLeft className="w-3.5 h-3.5" />
-          </button>
-          <button
-            type="button"
-            onClick={handleNext}
-            className="p-1 rounded-md bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors cursor-pointer"
-            aria-label="次のアップデート"
-            title="次のアップデート"
-          >
-            <ChevronRight className="w-3.5 h-3.5" />
-          </button>
-
-          <button
-            type="button"
-            onClick={() => setShowHistoryModal(true)}
-            className="ml-1 inline-flex items-center gap-1 px-2 py-1 rounded-md bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-teal-300 text-xs font-bold transition-colors cursor-pointer border border-slate-700"
-            title="全アップデート履歴一覧を見る"
-          >
-            <History className="w-3 h-3" />
-            <span className="hidden sm:inline">全履歴</span>
-          </button>
+          {/* 右側：前へ・次へコントロール ＆ 全履歴モーダル呼び出しボタン */}
+          <div className="flex items-center gap-1 shrink-0">
+            <button
+              onClick={handlePrev}
+              className="p-1 rounded hover:bg-slate-800 text-slate-400 hover:text-white transition-colors cursor-pointer"
+              title="前のアップデート"
+            >
+              <ChevronLeft className="w-3.5 h-3.5" />
+            </button>
+            <button
+              onClick={handleNext}
+              className="p-1 rounded hover:bg-slate-800 text-slate-400 hover:text-white transition-colors cursor-pointer"
+              title="次のアップデート"
+            >
+              <ChevronRight className="w-3.5 h-3.5" />
+            </button>
+            <button
+              onClick={() => setShowHistoryModal(true)}
+              className="flex items-center gap-1 px-1.5 py-0.5 ml-1 rounded bg-slate-800/80 hover:bg-slate-700 text-[10px] text-slate-300 hover:text-white border border-slate-700 transition-colors cursor-pointer"
+              title="過去のアップデート履歴をすべて見る"
+            >
+              <History className="w-3 h-3 text-slate-400" />
+              <span className="hidden sm:inline">全履歴</span>
+            </button>
+          </div>
         </div>
       </div>
 
-      {/* 全アップデート履歴モーダル */}
+      {/* 全履歴閲覧モーダル（最大最新10件のアーカイブを一覧表示） */}
       {showHistoryModal && (
-        <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/80 backdrop-blur-xs flex items-center justify-center p-3 sm:p-5 animate-fadeIn">
-          <div
-            className="relative bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 rounded-2xl max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl flex flex-col text-slate-900 dark:text-slate-100"
-            onClick={(e) => e.stopPropagation()}
-          >
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-xs animate-in fade-in duration-150">
+          <div className="bg-slate-900 border border-slate-700 rounded-2xl max-w-2xl w-full max-h-[85vh] flex flex-col shadow-2xl overflow-hidden">
             {/* モーダルヘッダー */}
-            <div className="sticky top-0 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md px-6 py-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between z-10">
+            <div className="flex items-center justify-between px-5 py-3.5 border-b border-slate-800 bg-slate-950/60">
               <div className="flex items-center gap-2">
-                <div className="p-1.5 rounded-lg bg-teal-700 text-white">
-                  <Sparkles className="w-4 h-4" />
-                </div>
-                <div>
-                  <h3 className="font-black text-slate-950 dark:text-white text-base">
-                    OUTDOOR RACE HUB アップデート履歴
-                  </h3>
-                  <p className="text-xs text-slate-500 font-medium">
-                    最新のシステム改善・機能追加・大会データ更新一覧
-                  </p>
-                </div>
+                <Sparkles className="w-4 h-4 text-teal-400" />
+                <h3 className="text-sm font-bold text-white">大会アップデート履歴（最新10件）</h3>
               </div>
               <button
-                type="button"
                 onClick={() => setShowHistoryModal(false)}
-                className="p-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500 hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer"
+                className="p-1 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 transition-colors cursor-pointer"
               >
                 <X className="w-5 h-5" />
               </button>
             </div>
 
-            {/* 履歴リスト */}
-            <div className="p-6 space-y-4">
-              {items.map((item, idx) => (
+            {/* モーダル一覧リスト */}
+            <div className="flex-1 overflow-y-auto p-4 space-y-3 divide-y divide-slate-800/60">
+              {items.map((news, idx) => (
                 <div
-                  key={item.id}
+                  key={news.id}
+                  className={`pt-3 first:pt-0 group cursor-pointer hover:bg-slate-800/40 p-2 rounded-xl transition-colors ${
+                    idx === currentIndex ? 'bg-teal-950/30 border border-teal-800/40' : ''
+                  }`}
                   onClick={() => {
                     setShowHistoryModal(false);
-                    handleItemClick(item.targetId);
+                    handleItemClick(news.targetId);
                   }}
-                  className="p-4 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-teal-500 dark:hover:border-teal-400 bg-slate-50/60 dark:bg-slate-850/60 hover:bg-teal-50/40 dark:hover:bg-slate-800 transition-all cursor-pointer group shadow-2xs"
                 >
-                  <div className="flex flex-wrap items-center justify-between gap-2 mb-1.5">
+                  <div className="flex items-center justify-between gap-2 mb-1">
                     <div className="flex items-center gap-2">
-                      <span className="font-mono text-xs font-black text-slate-500 dark:text-slate-400">
-                        {item.date} {item.time}
+                      <span className="text-[11px] font-mono text-slate-400">
+                        {news.date} {news.time}
                       </span>
-                      <span className={`text-[11px] font-black px-2 py-0.5 rounded border ${item.tagStyle}`}>
-                        {item.tag}
+                      <span className={`text-[10px] font-bold px-1.5 py-0.2 rounded border ${news.tagStyle}`}>
+                        {news.tag}
                       </span>
                     </div>
-                    <span className="text-xs font-bold text-teal-700 dark:text-teal-400 flex items-center gap-0.5 group-hover:translate-x-0.5 transition-transform">
-                      <span>{item.targetLabel}</span>
-                      <ExternalLink className="w-3 h-3" />
+                    <span className="text-[10px] text-teal-400 font-bold flex items-center gap-0.5 group-hover:translate-x-0.5 transition-transform">
+                      <span>{news.targetLabel}</span>
+                      <ArrowRight className="w-3 h-3" />
                     </span>
                   </div>
-
-                  <h4 className="font-black text-sm text-slate-950 dark:text-white group-hover:text-teal-700 dark:group-hover:text-teal-400 transition-colors leading-snug">
-                    {item.title}
+                  <h4 className="text-xs sm:text-sm font-bold text-white mb-1 group-hover:text-teal-300 transition-colors">
+                    {news.title}
                   </h4>
-                  <p className="text-xs text-slate-600 dark:text-slate-400 mt-1 font-medium leading-relaxed">
-                    {item.description}
+                  <p className="text-[11px] text-slate-400 leading-relaxed">
+                    {news.description}
                   </p>
                 </div>
               ))}
             </div>
+
+            {/* モーダルフッター */}
+            <div className="px-5 py-3 border-t border-slate-800 bg-slate-950/60 flex items-center justify-between text-xs text-slate-400">
+              <span>※最新の大会追加情報を常時最新10件まで保持しています</span>
+              <button
+                onClick={() => setShowHistoryModal(false)}
+                className="px-3 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs transition-colors cursor-pointer"
+              >
+                閉じる
+              </button>
+            </div>
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 };

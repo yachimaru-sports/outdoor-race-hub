@@ -68,7 +68,7 @@
     "prefecture": "和歌山県",
     "distance_km": 125,
     "elevation_m": 1600,
-    "entry_status": "closing_soon",
+    "entry_status": "open",
     "entry_start_date": "2026-09-21",
     "entry_deadline": "2026-11-20",
     "entry_fee": "10,000円",
@@ -1221,7 +1221,7 @@
     "prefecture": "山梨県",
     "distance_km": 166,
     "elevation_m": 7574,
-    "entry_status": "upcoming",
+    "entry_status": "closing_soon",
     "entry_start_date": "2026-09-16",
     "entry_deadline": "2026-11-15",
     "entry_fee": "48,000円",
@@ -5738,7 +5738,7 @@
     "prefecture": "山梨県",
     "distance_km": 118,
     "elevation_m": 1250,
-    "entry_status": "open",
+    "entry_status": "upcoming",
     "entry_start_date": "2026-12-02",
     "entry_deadline": "2027-01-31",
     "entry_fee": "24,000円",
@@ -6454,7 +6454,7 @@
     "prefecture": "香川県",
     "distance_km": 28,
     "elevation_m": 1600,
-    "entry_status": "closing_soon",
+    "entry_status": "open",
     "entry_start_date": "2026-09-21",
     "entry_deadline": "2026-11-20",
     "entry_fee": "6,500円",
@@ -6781,7 +6781,7 @@
     "prefecture": "三重県",
     "distance_km": 50,
     "elevation_m": 2800,
-    "entry_status": "closing_soon",
+    "entry_status": "closed",
     "entry_start_date": "2026-09-01",
     "entry_deadline": "2026-10-31",
     "entry_fee": "13,500円",
@@ -6993,7 +6993,7 @@
     "prefecture": "愛知県",
     "distance_km": 70,
     "elevation_m": 4000,
-    "entry_status": "open",
+    "entry_status": "upcoming",
     "entry_start_date": "2026-12-17",
     "entry_deadline": "2027-02-15",
     "entry_fee": "19,000円",
@@ -7094,7 +7094,7 @@
     "prefecture": "香川県",
     "distance_km": 45,
     "elevation_m": 3900,
-    "entry_status": "open",
+    "entry_status": "upcoming",
     "entry_start_date": "2026-11-26",
     "entry_deadline": "2027-01-25",
     "entry_fee": "10,000円",
@@ -7452,7 +7452,7 @@
     "prefecture": "鹿児島県",
     "distance_km": 50,
     "elevation_m": 1850,
-    "entry_status": "closing_soon",
+    "entry_status": "closed",
     "entry_start_date": "2026-09-01",
     "entry_deadline": "2026-10-31",
     "entry_fee": "14,000円",
@@ -7736,7 +7736,7 @@
     "prefecture": "香川県",
     "distance_km": 100,
     "elevation_m": 1350,
-    "entry_status": "closing_soon",
+    "entry_status": "open",
     "entry_start_date": "2026-09-21",
     "entry_deadline": "2026-11-20",
     "entry_fee": "9,000円",
@@ -8308,28 +8308,28 @@
   {
     "id": "wake-alps-trail-2027",
     "category": "trail",
-    "subCategory": "和気アルプス / 鏑木毅アドバイザー",
+    "subCategory": "和気アルプス一周・鏑木毅アドバイザー",
     "elements": [
-      "トレラン",
-      "50km+",
       "和気アルプス",
-      "ITRAポイント",
-      "片鉄ロマン街道"
+      "岩稜帯",
+      "鏑木毅",
+      "50km",
+      "ITRAポイント"
     ],
-    "title": "WAKE ALPS TRAIL 2027（第2回 和気町一周トレイルランニングレース 50K/21K/14K）",
+    "title": "WAKE ALPS TRAIL 2027 第2回和気町一周トレイルランニングレース（岡山・50km/21km/14km）",
     "date": "2027-03-22",
     "month": 3,
     "region": "中国",
     "prefecture": "岡山県",
     "distance_km": 50,
-    "elevation_m": 3000,
+    "elevation_m": 2537,
     "entry_status": "open",
     "entry_start_date": "2026-09-06",
-    "entry_deadline": "2027-01-15",
+    "entry_deadline": "2027-01-31",
     "entry_fee": "14,000円",
     "links": {
       "official": "https://wakealpstrail50.jp/",
-      "entry": "https://runnet.jp/entry/runtes/smp/racedetail.do?raceId=398254",
+      "entry": "https://runnet.jp/entry/runtes/smp/commendationselectbefore.do?raceId=398254",
       "review": null,
       "sns": null,
       "verified": true,
@@ -8337,33 +8337,49 @@
     },
     "mandatory_gear": [
       {
-        "name": "防水透湿レインジャケット（シームテープ加工・止水ファスナー）",
-        "category": "ウェア"
-      },
-      {
-        "name": "トレラン専用ザック",
+        "name": "両肩ザック",
         "category": "ギア"
       },
       {
-        "name": "ソフトカップ（マイカップ）",
+        "name": "携帯電話",
         "category": "ギア"
       },
       {
-        "name": "水分・行動食",
+        "name": "携帯コップ(150cc以上)",
+        "category": "ギア"
+      },
+      {
+        "name": "水分1000ml以上",
         "category": "補給"
+      },
+      {
+        "name": "行動食",
+        "category": "ギア"
+      },
+      {
+        "name": "ゼッケン",
+        "category": "ギア"
+      },
+      {
+        "name": "サバイバルブランケット",
+        "category": "エイド"
       },
       {
         "name": "ファーストエイドキット",
         "category": "エイド"
       },
       {
-        "name": "健康保険証",
+        "name": "ホイッスル",
         "category": "エイド"
+      },
+      {
+        "name": "レインウェア(上)",
+        "category": "ウェア"
       }
     ],
     "venue": {
-      "name": "和気ドーム（岡山県和気郡和気町益原681-1）",
-      "mapQuery": "岡山県 和気郡和気町 和気ドーム"
+      "name": "和気ドーム",
+      "mapQuery": "岡山県 和気郡和気町 益原 和気ドーム"
     },
     "source": {
       "portalName": "RUNNET"
@@ -8424,65 +8440,6 @@
     "venue": {
       "name": "備前国総社宮",
       "mapQuery": "岡山県 岡山市中区 祇園 備前国総社宮"
-    },
-    "source": {
-      "portalName": "モシコム"
-    }
-  },
-  {
-    "id": "urban-trail-tatsunokuchi-2027",
-    "category": "trail",
-    "subCategory": "アーバントレイル / 龍ノ口山",
-    "elements": [
-      "トレラン",
-      "都市近郊里山",
-      "10回記念大会",
-      "ナビゲーション"
-    ],
-    "title": "備前国総社宮杯！アーバントレイル龍ノ口 2027（UTMT 16km/12km/8km）",
-    "date": "2027-02-13",
-    "month": 2,
-    "region": "中国",
-    "prefecture": "岡山県",
-    "distance_km": 16,
-    "elevation_m": 1100,
-    "entry_status": "open",
-    "entry_start_date": "2026-10-01",
-    "entry_deadline": "2027-01-15",
-    "entry_fee": "6,000円",
-    "links": {
-      "official": "https://racinvan.com/2027%E5%A4%A7%E4%BC%9A%E6%A6%82%E8%A6%81/",
-      "entry": "https://moshicom.com/153592",
-      "review": null,
-      "sns": null,
-      "verified": true,
-      "verified_at": "2026-11-01"
-    },
-    "mandatory_gear": [
-      {
-        "name": "携帯電話（事務局TEL登録）",
-        "category": "ギア"
-      },
-      {
-        "name": "マイカップ",
-        "category": "ギア"
-      },
-      {
-        "name": "水分500ml以上",
-        "category": "補給"
-      },
-      {
-        "name": "サバイバルブランケット",
-        "category": "エイド"
-      },
-      {
-        "name": "健康保険証",
-        "category": "エイド"
-      }
-    ],
-    "venue": {
-      "name": "備前国総社宮（岡山県岡山市中区祇園）",
-      "mapQuery": "岡山県 岡山市中区 備前国総社宮"
     },
     "source": {
       "portalName": "モシコム"
@@ -8550,6 +8507,352 @@
     },
     "source": {
       "portalName": "大会公式"
+    }
+  },
+  {
+    "id": "inachiku-longride-2026",
+    "category": "cycling",
+    "subCategory": "因幡街道・千種川ロングライド",
+    "elements": [
+      "ロード",
+      "1日",
+      "晩秋ロングライド"
+    ],
+    "title": "因幡街道・千種川ロングライド in 佐用 2026（兵庫・岡山 92km）",
+    "date": "2026-11-08",
+    "month": 11,
+    "region": "近畿",
+    "prefecture": "兵庫県",
+    "distance_km": 92,
+    "elevation_m": 850,
+    "entry_status": "closing_soon",
+    "entry_start_date": "2026-08-01",
+    "entry_deadline": "2026-11-03",
+    "entry_fee": "8,000円",
+    "links": {
+      "official": "https://inachiku-longride.com/",
+      "entry": "https://inachiku-longride.com/",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-01"
+    },
+    "mandatory_gear": [
+      {
+        "name": "ヘルメット・グローブ",
+        "category": "ウェア"
+      },
+      {
+        "name": "前後ライト",
+        "category": "ライト"
+      },
+      {
+        "name": "ボトル",
+        "category": "補給"
+      },
+      {
+        "name": "パンク修理キット",
+        "category": "ギア"
+      }
+    ],
+    "venue": {
+      "name": "佐用町役場・南光自然観察村",
+      "mapQuery": "兵庫県佐用郡佐用町 佐用町役場"
+    },
+    "source": {
+      "portalName": "大会公式"
+    }
+  },
+  {
+    "id": "yamanami-kaido-challenge-ride-2027",
+    "category": "cycling",
+    "subCategory": "中国横断やまなみ街道",
+    "elements": [
+      "ロード",
+      "1日",
+      "中国やまなみ横断"
+    ],
+    "title": "やまなみ街道チャレンジライド 2027（尾道〜松江 縦断ロングライド）",
+    "date": "2027-03-21",
+    "month": 3,
+    "region": "中国",
+    "prefecture": "広島県",
+    "distance_km": 140,
+    "elevation_m": 1850,
+    "entry_status": "upcoming",
+    "entry_start_date": "2026-12-01",
+    "entry_deadline": "2027-02-28",
+    "entry_fee": "12,000円",
+    "links": {
+      "official": "http://www.plusvalue.co.jp/michinoekiden/entry.html",
+      "entry": "https://cycle.spoen.jp/",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-01"
+    },
+    "mandatory_gear": [
+      {
+        "name": "JCF公認ヘルメット＆グローブ",
+        "category": "ウェア"
+      },
+      {
+        "name": "高輝度フロントライト＆点滅テールライト",
+        "category": "ライト"
+      },
+      {
+        "name": "予備チューブ・携帯ポンプ",
+        "category": "ギア"
+      },
+      {
+        "name": "サイクルボトル2本",
+        "category": "補給"
+      }
+    ],
+    "venue": {
+      "name": "尾道市総合福祉センター / 尾道駅前港湾駐車場",
+      "mapQuery": "広島県尾道市 尾道駅前"
+    },
+    "source": {
+      "portalName": "スポエンCYCLE"
+    }
+  },
+  {
+    "id": "shimanto-adventure-race-2026",
+    "category": "adventure",
+    "subCategory": "清流四万十アドベンチャー",
+    "elements": [
+      "読図",
+      "パドル",
+      "MTB",
+      "トレック",
+      "四万十川"
+    ],
+    "title": "四万十清流アドベンチャーレース 2026（高知・四万十川 パックラフト＆MTB＆トレック）",
+    "date": "2026-11-28",
+    "month": 11,
+    "region": "四国",
+    "prefecture": "高知県",
+    "distance_km": 42,
+    "elevation_m": 1200,
+    "entry_status": "closing_soon",
+    "entry_start_date": "2026-09-01",
+    "entry_deadline": "2026-11-15",
+    "entry_fee": "15,000円",
+    "links": {
+      "official": "https://40010as.com/",
+      "entry": "https://40010as.com/",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-01"
+    },
+    "mandatory_gear": [
+      {
+        "name": "パックラフトまたはカヤック＆パドル・PFD（ライフジャケット）",
+        "category": "ウェア"
+      },
+      {
+        "name": "MTB＆JCF公認ヘルメット",
+        "category": "ギア"
+      },
+      {
+        "name": "シルバコンパス＆防水マップケース",
+        "category": "補給"
+      },
+      {
+        "name": "エマージェンシーヴィヴィ・ホイッスル",
+        "category": "エイド"
+      },
+      {
+        "name": "ファーストエイドキット",
+        "category": "エイド"
+      }
+    ],
+    "venue": {
+      "name": "四万十市 カヌーの里すりき",
+      "mapQuery": "高知県四万十市 カヌーの里すりき"
+    },
+    "source": {
+      "portalName": "大会公式"
+    }
+  },
+  {
+    "id": "taiki-seaside-trail-2027",
+    "category": "trail",
+    "subCategory": "熊野灘シーサイドトレイル",
+    "elements": [
+      "トレラン",
+      "海岸絶景",
+      "シングル・テクニカル"
+    ],
+    "title": "大紀町シーサイドトレイル 2027（三重・熊野灘オーシャントレイル 23km/14km）",
+    "date": "2027-02-13",
+    "month": 2,
+    "region": "近畿",
+    "prefecture": "三重県",
+    "distance_km": 23,
+    "elevation_m": 1450,
+    "entry_status": "open",
+    "entry_start_date": "2026-11-01",
+    "entry_deadline": "2027-01-20",
+    "entry_fee": "7,500円",
+    "links": {
+      "official": "https://www.nature-scene.net/taiki/",
+      "entry": "https://runnet.jp/cgi-bin/?id=383113",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-01"
+    },
+    "mandatory_gear": [
+      {
+        "name": "水分500ml以上",
+        "category": "補給"
+      },
+      {
+        "name": "携帯コップ",
+        "category": "ギア"
+      },
+      {
+        "name": "レインジャケットまたはウインドシェル",
+        "category": "ウェア"
+      },
+      {
+        "name": "エマージェンシーブランケット・ホイッスル",
+        "category": "エイド"
+      },
+      {
+        "name": "健康保険証",
+        "category": "エイド"
+      }
+    ],
+    "venue": {
+      "name": "錦向井ヶ浜遊パークトロピカルガーデン",
+      "mapQuery": "三重県度会郡大紀町錦 錦向井ヶ浜遊パークトロピカルガーデン"
+    },
+    "source": {
+      "portalName": "大会公式"
+    }
+  },
+  {
+    "id": "osj-shinshiro-trail-2027",
+    "category": "trail",
+    "subCategory": "OSJトレイルランニングシリーズ",
+    "elements": [
+      "トレラン",
+      "岩稜・激坂",
+      "OSJ開幕戦"
+    ],
+    "title": "OSJ新城トレイル 32K＆ダブル64K 2027（愛知・新城市 愛知県民の森）",
+    "date": "2027-03-20",
+    "month": 3,
+    "region": "中部",
+    "prefecture": "愛知県",
+    "distance_km": 64,
+    "elevation_m": 4800,
+    "entry_status": "open",
+    "entry_start_date": "2026-10-15",
+    "entry_deadline": "2027-02-15",
+    "entry_fee": "16,000円 (64K) / 10,000円 (32K)",
+    "links": {
+      "official": "https://www.outdoorsportsjapan.com/trail/shinshiro_32/",
+      "entry": "https://runnet.jp/entry/runtes/smp/competitiondetail.do?raceId=101863&div=1",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-01"
+    },
+    "mandatory_gear": [
+      {
+        "name": "透湿防水レインウェア",
+        "category": "ウェア"
+      },
+      {
+        "name": "水分1.0L以上（ボトルまたはハイドレーション）",
+        "category": "補給"
+      },
+      {
+        "name": "行動食",
+        "category": "ギア"
+      },
+      {
+        "name": "エマージェンシーシート＆ホイッスル",
+        "category": "エイド"
+      },
+      {
+        "name": "コースマップ",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "マイカップ",
+        "category": "ギア"
+      }
+    ],
+    "venue": {
+      "name": "愛知県民の森（新城市門谷）",
+      "mapQuery": "愛知県新城市門谷 愛知県民の森"
+    },
+    "source": {
+      "portalName": "大会公式"
+    }
+  },
+  {
+    "id": "mariko-alps-trail-2027",
+    "category": "trail",
+    "subCategory": "東海道丸子宿・山岳トレイル",
+    "elements": [
+      "トレラン",
+      "宿場町",
+      "稜線パノラマ"
+    ],
+    "title": "丸子アルプストレイルラン 2027（静岡・宿場町トレイル 22km）",
+    "date": "2027-02-14",
+    "month": 2,
+    "region": "中部",
+    "prefecture": "静岡県",
+    "distance_km": 22,
+    "elevation_m": 1350,
+    "entry_status": "open",
+    "entry_start_date": "2026-10-15",
+    "entry_deadline": "2027-01-15",
+    "entry_fee": "6,500円",
+    "links": {
+      "official": "https://runnet.jp/entry/runtes/user/smp/RaceSearchZZSDetailAction.do?command=search&rankingFlg=1&dummy_available=1&dummy_distanceClass=6",
+      "entry": "https://runnet.jp/entry/runtes/user/smp/RaceSearchZZSDetailAction.do?command=search&rankingFlg=1&dummy_available=1&dummy_distanceClass=6",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-01"
+    },
+    "mandatory_gear": [
+      {
+        "name": "トレイルランニングシューズ",
+        "category": "ギア"
+      },
+      {
+        "name": "水分500ml以上",
+        "category": "補給"
+      },
+      {
+        "name": "携帯電話",
+        "category": "ギア"
+      },
+      {
+        "name": "保険証",
+        "category": "エイド"
+      },
+      {
+        "name": "ウィンドブレーカー",
+        "category": "ギア"
+      }
+    ],
+    "venue": {
+      "name": "駿府匠宿・丸子宿エリア",
+      "mapQuery": "静岡県静岡市駿河区丸子 駿府匠宿"
+    },
+    "source": {
+      "portalName": "RUNNET"
     }
   }
 ]
