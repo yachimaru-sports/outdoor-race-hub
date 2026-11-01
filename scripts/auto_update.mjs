@@ -39,6 +39,33 @@ const RAKUTEN_AFFILIATE_ID = '58fb598b.0ed2da59.58fb598c.27018da5';
 const MIN_DISCOUNT_RATE = 15;
 
 /**
+ * 各ギア固有の確定公式画像マッピング（名称と画像のアンマッチを100%防止）
+ */
+const EXACT_GEAR_IMAGES = {
+  'deal-petzl-swift-rl': 'https://tshop.r10s.jp/yoshikip2/cabinet/sukeneko9/e095bc_01.jpg?fitin=275:275',
+  'deal-petzl-nao-rl': 'https://tshop.r10s.jp/rakuzanso/cabinet/trekking/headlamp/ptz-e106aa00.jpg?fitin=275:275',
+  'deal-bd-spot400r': 'https://tshop.r10s.jp/canpanera/cabinet/item230/item_b17466_0.jpg?fitin=275:275',
+  'deal-salomon-adv-skin-12': 'https://tshop.r10s.jp/free-sports/cabinet/300818/salomon-2383.jpg?fitin=275:275',
+  'deal-nathan-pinnacle-12l': 'https://tshop.r10s.jp/usbonline/cabinet/pic-2/ns40180j-main.jpg?fitin=275:275',
+  'deal-tnf-tr6-vest': 'https://tshop.r10s.jp/sakaiya/cabinet/10636268/62513-1.jpg?fitin=275:275',
+  'deal-coros-pace-3': 'https://tshop.r10s.jp/coros/cabinet/img/product_img/pace4/imgrc0122201590.jpg?fitin=275:275',
+  'deal-leki-ultratrail-fx-one-sl': 'https://tshop.r10s.jp/sakaiya/cabinet/leki/1300542_2.jpg?fitin=275:275',
+  'deal-black-diamond-carbon-poles': 'https://tshop.r10s.jp/canpanera/cabinet/item243/item_b17031_0.jpg?fitin=275:275',
+  'deal-mil-drynamic-mesh': 'https://tshop.r10s.jp/millet-online/cabinet/24ss_3/miv01248.jpg?fitin=275:275',
+  'deal-c3fit-compression-tight': 'https://tshop.r10s.jp/kojitu/cabinet/0609bn/4549397876110_1.jpg?fitin=275:275',
+  'deal-tnf-strike-trail-hoodie': 'https://tshop.r10s.jp/yoshikip2/cabinet/ir20250629/fam1411_25fw_1.jpg?fitin=275:275',
+  'deal-montbell-versalite-jkt': 'https://tshop.r10s.jp/riverall/cabinet/variation/riv772.jpg?fitin=275:275',
+  'deal-hoka-speedgoat-6': 'https://tshop.r10s.jp/apworld/cabinet/cm/2608c/1171928_01.jpg?fitin=275:275',
+  'deal-salomon-slab-genesis': 'https://tshop.r10s.jp/yanosp-fineplay/cabinet/a201601/l45459100_1.jpg?fitin=275:275',
+  'deal-silva-compass-no3': 'https://tshop.r10s.jp/shop-senjin/cabinet/other/imgrc0089499110.jpg?fitin=275:275',
+  'deal-sol-escape-bivvy': 'https://tshop.r10s.jp/arkham/cabinet/item4/ark0048150-500.jpg?fitin=275:275',
+  'deal-magon-energy-gel-12': 'https://tshop.r10s.jp/ishikawasports/cabinet/4/magonenergygel.jpg?fitin=275:275',
+  'deal-altra-lone-peak-8': 'https://tshop.r10s.jp/glv/cabinet/newsingle202607/ala-3rak.jpg?fitin=275:275',
+  'deal-ledlenser-neo9r': 'https://tshop.r10s.jp/gramsky/cabinet/yuragipic/systempic196/b0bgkzbz2y-00.jpg?fitin=275:275',
+};
+
+
+/**
  * 任意の楽天市場商品ページURLをユーザーの正規アフィリエイトリンクに変換
  */
 function buildAffiliateUrl(itemUrl) {
@@ -888,6 +915,11 @@ async function loadGearWatchlist() {
       // 既存のフォールバック情報があれば引き継ぐ
       const existing = GEAR_TARGETS.find(t => t.id === id);
 
+      const exactImg = EXACT_GEAR_IMAGES[id] || existing?.fallback?.image_url;
+      if (!exactImg) {
+        console.warn(`⚠️ [除外] ${id} に固有の画像URLが定義されていないため掲載を見送りました（アンマッチ完全防止）`);
+        continue;
+      }
       items.push({
         id,
         keyword,
@@ -897,10 +929,10 @@ async function loadGearWatchlist() {
         original_price,
         minValidPrice,
         point_rate,
-        fallback: existing?.fallback || {
-          price: Math.round(original_price * 0.75),
-          image_url: 'https://tshop.r10s.jp/usbonline/cabinet/pic-2/ns40180j-main.jpg?fitin=275:275',
-          item_url: `https://search.rakuten.co.jp/search/mall/${encodeURIComponent(keyword)}/`
+        fallback: {
+          price: existing?.fallback?.price || Math.round(original_price * 0.75),
+          image_url: exactImg,
+          item_url: existing?.fallback?.item_url || `https://search.rakuten.co.jp/search/mall/${encodeURIComponent(keyword)}/`
         }
       });
     }
