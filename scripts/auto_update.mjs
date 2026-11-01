@@ -24,6 +24,45 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const ROOT_DIR = path.resolve(__dirname, '..');
 
+/**
+ * 簡易CSVパーサー（カンマ区切り・ダブルクォートエスケープ対応・空白混在タイトル完全保持）
+ */
+function parseCsv(csvText) {
+  const lines = csvText.replace(/\r\n/g, '\n').replace(/\r/g, '\n').split('\n');
+  const result = [];
+  
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i].trim();
+    if (!line) continue;
+    
+    const row = [];
+    let insideQuote = false;
+    let field = '';
+    
+    for (let c = 0; c < line.length; c++) {
+      const char = line[c];
+      if (char === '"') {
+        if (insideQuote && line[c + 1] === '"') {
+          field += '"';
+          c++;
+        } else {
+          insideQuote = !insideQuote;
+        }
+      } else if (char === ',' && !insideQuote) {
+        row.push(field);
+        field = '';
+      } else {
+        field += char;
+      }
+    }
+    row.push(field);
+    result.push(row);
+  }
+  
+  return result;
+}
+
+
 const EVENTS_PATH = path.join(ROOT_DIR, 'src', 'data', 'events.json');
 const DEALS_PATH = path.join(ROOT_DIR, 'src', 'data', 'deals.json');
 const WATCHLIST_CSV_PATH = path.join(ROOT_DIR, 'outdoor_race_hub_gear_watchlist.csv');
@@ -803,6 +842,8 @@ const GEAR_TARGETS = [
  */
 async function fetchBestRakutenDeal(target) {
   const searchUrl = `https://search.rakuten.co.jp/search/mall/${encodeURIComponent(target.keyword)}/`;
+  const exactImg = EXACT_GEAR_IMAGES[target.id] || target.fallback.image_url;
+
   try {
     const res = await fetch(searchUrl, {
       headers: {
@@ -825,23 +866,34 @@ async function fetchBestRakutenDeal(target) {
       const alt = chunk.match(/alt="([^"]+)"/)?.[1] || '';
       const priceStr = chunk.match(/data-track-price="([0-9]+)"/)?.[1];
 
-      if (!link || !img || !priceStr) continue;
+      if (!link || !priceStr) continue;
 
       const price = parseInt(priceStr, 10);
       if (price < target.minValidPrice || price >= target.original_price) continue;
 
       const upperAlt = alt.toUpperCase();
+
+      // ふるさと納税・米・食品・無関係なノイズを100%除外
+      const NG_WORDS = ['ふるさと納税', '米', 'コシヒカリ', '精米', '食品', '訳あり', '中古', 'ジャンク', '返礼品'];
+      if (NG_WORDS.some(ng => upperAlt.includes(ng.toUpperCase()) || link.includes(ng))) {
+        continue;
+      }
+
+      // ブランド名・モデル名が確実に含まれているか検証
       const matchesAll = target.mustInclude.every((kw) => upperAlt.includes(kw.toUpperCase()));
       if (!matchesAll) continue;
 
       const discountRate = Math.round((1 - price / target.original_price) * 100);
       if (discountRate < MIN_DISCOUNT_RATE) continue;
 
+      // 画像は常に各アイテム固有の確定公式画像（exactImg）を最優先にしてアンマッチを根絶
+      const finalImg = exactImg || img;
+
       if (!bestCandidate || price < bestCandidate.price) {
         bestCandidate = {
           price,
           discount_rate: discountRate,
-          image_url: img,
+          image_url: finalImg,
           item_url: link
         };
       }
@@ -858,11 +910,14 @@ async function fetchBestRakutenDeal(target) {
   return {
     price: target.fallback.price,
     discount_rate: fbDiscount,
-    image_url: target.fallback.image_url,
+    image_url: exactImg,
     item_url: target.fallback.item_url
   };
 }
 
+/**
+ * 特価ギア監視リスト（GoogleスプレッドシートまたはローカルCSV）から監視対象を動的読み込み
+ */
 /**
  * 特価ギア監視リスト（GoogleスプレッドシートまたはローカルCSV）から監視対象を動的読み込み
  */
@@ -876,11 +931,10 @@ async function loadGearWatchlist() {
       const res = await fetch(sheetUrl);
       if (res.ok) {
         raw = (await res.text()).replace(/^\uFEFF/, '');
-        // 取得した最新キーワードCSVをローカルキャッシュに保存
-        console.log('  ✅ ギア監視キーワードを最新化して保存しました');
+        console.log('  ✅ ギア監視キーワードを最新化して取得完了');
       }
     } catch (err) {
-      console.warn('  ⚠️ スプレッドシートからの取得失敗。ローカルキャッシュを使用します:', err.message);
+      console.warn('  ⚠️ スプレッドシートからの取得失敗。基本リストを使用します:', err.message);
     }
   }
 
@@ -893,46 +947,41 @@ async function loadGearWatchlist() {
   }
 
   try {
-    const lines = raw.split(/\r?\n/).filter(l => l.trim().length > 0);
-    if (lines.length < 2) return GEAR_TARGETS;
+    const rows = parseCsv(raw);
+    if (rows.length < 2) return GEAR_TARGETS;
 
-    const headers = lines[0].split(',').map(h => h.trim());
     const items = [];
+    for (let i = 1; i < rows.length; i++) {
+      const [id, keyword, title, category, original_price_str, min_price_str, point_rate_str] = rows[i];
+      if (!id || !title) continue;
 
-    for (let i = 1; i < lines.length; i++) {
-      const parts = lines[i].match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g) || lines[i].split(',');
-      const cleanParts = parts.map(p => p.replace(/^"|"$/g, '').trim());
-      if (cleanParts.length < 5) continue;
+      const original_price = Number(original_price_str) || 20000;
+      const minValidPrice = min_price_str ? Number(min_price_str) : Math.round(original_price * 0.4);
+      const point_rate = point_rate_str ? Number(point_rate_str) : 10;
 
-      const id = cleanParts[0];
-      const keyword = cleanParts[1];
-      const title = cleanParts[2];
-      const category = cleanParts[3];
-      const original_price = Number(cleanParts[4]) || 20000;
-      const minValidPrice = cleanParts[5] ? Number(cleanParts[5]) : Math.round(original_price * 0.4);
-      const point_rate = cleanParts[6] ? Number(cleanParts[6]) : 10;
-
-      // 既存のフォールバック情報があれば引き継ぐ
-      const existing = GEAR_TARGETS.find(t => t.id === id);
-
-      const exactImg = EXACT_GEAR_IMAGES[id] || existing?.fallback?.image_url;
+      // 各アイテム固有の確定公式画像
+      const exactImg = EXACT_GEAR_IMAGES[id];
       if (!exactImg) {
-        console.warn(`⚠️ [除外] ${id} に固有の画像URLが定義されていないため掲載を見送りました（アンマッチ完全防止）`);
+        console.warn(`⚠️ [除外] ${id} に固有の公式画像が定義されていないため掲載を見送りました（アンマッチ完全防止）`);
         continue;
       }
+
+      // 必須キーワード（ブランド名・モデル名）
+      const mustInclude = keyword.split(/\s+/).filter(Boolean).slice(0, 2);
+
       items.push({
         id,
         keyword,
-        title,
-        category,
-        mustInclude: keyword.split(/\s+/).slice(0, 2),
+        title, // 正式タイトル（メーカー名・商品名・スペック含む）
+        category: category || 'ギア',
+        mustInclude,
         original_price,
         minValidPrice,
         point_rate,
         fallback: {
-          price: existing?.fallback?.price || Math.round(original_price * 0.75),
+          price: Math.round(original_price * 0.75),
           image_url: exactImg,
-          item_url: existing?.fallback?.item_url || `https://search.rakuten.co.jp/search/mall/${encodeURIComponent(keyword)}/`
+          item_url: `https://search.rakuten.co.jp/search/mall/${encodeURIComponent(keyword)}/`
         }
       });
     }
@@ -944,9 +993,6 @@ async function loadGearWatchlist() {
   }
 }
 
-/**
- * 3. 楽天特価ギア情報（deals.json）の自動調査＆更新（15%以上OFFのみ・新規登録日時追跡）
- */
 async function updateDealsData(isoNow) {
   console.log(`[3/3] 楽天市場のアウトドア・必携ギア特価情報（最低${MIN_DISCOUNT_RATE}%OFF以上）の調査を開始...`);
   
