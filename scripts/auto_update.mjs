@@ -28,6 +28,10 @@ const EVENTS_PATH = path.join(ROOT_DIR, 'src', 'data', 'events.json');
 const DEALS_PATH = path.join(ROOT_DIR, 'src', 'data', 'deals.json');
 const WATCHLIST_CSV_PATH = path.join(ROOT_DIR, 'outdoor_race_hub_gear_watchlist.csv');
 
+// Googleスプレッドシート公開URL（ギア監視キーワード一覧）
+const DEFAULT_GEAR_SHEET_URL =
+  'https://docs.google.com/spreadsheets/d/e/2PACX-1vRJ_Lf9xZGKcAuj3MooTmlKprv3rQjsM0hmwV4hl_OoseVY7CdDH2t_9gXABT5Erddw-Jj9ucuvkNFJ/pub?output=csv';
+
 // ユーザーの楽天アフィリエイトID
 const RAKUTEN_AFFILIATE_ID = '58fb598b.0ed2da59.58fb598c.27018da5';
 
@@ -833,14 +837,36 @@ async function fetchBestRakutenDeal(target) {
 }
 
 /**
- * 特価ギア監視リストCSV（outdoor_race_hub_gear_watchlist.csv）から監視対象を動的読み込み
+ * 特価ギア監視リスト（GoogleスプレッドシートまたはローカルCSV）から監視対象を動的読み込み
  */
-function loadGearWatchlist() {
-  if (!fs.existsSync(WATCHLIST_CSV_PATH)) {
+async function loadGearWatchlist() {
+  const sheetUrl = process.env.GOOGLE_SHEET_GEAR_CSV_URL || DEFAULT_GEAR_SHEET_URL;
+  let raw = '';
+
+  if (sheetUrl) {
+    try {
+      console.log('  🌐 Googleスプレッドシートから最新ギア監視キーワードを取得中...');
+      const res = await fetch(sheetUrl);
+      if (res.ok) {
+        raw = (await res.text()).replace(/^\uFEFF/, '');
+        // 取得した最新キーワードCSVをローカルキャッシュに保存
+        fs.writeFileSync(WATCHLIST_CSV_PATH, '\uFEFF' + raw, 'utf-8');
+        console.log('  ✅ ギア監視キーワードを最新化して保存しました');
+      }
+    } catch (err) {
+      console.warn('  ⚠️ スプレッドシートからの取得失敗。ローカルキャッシュを使用します:', err.message);
+    }
+  }
+
+  if (!raw && fs.existsSync(WATCHLIST_CSV_PATH)) {
+    raw = fs.readFileSync(WATCHLIST_CSV_PATH, 'utf-8').replace(/^\uFEFF/, '');
+  }
+
+  if (!raw) {
     return GEAR_TARGETS;
   }
+
   try {
-    const raw = fs.readFileSync(WATCHLIST_CSV_PATH, 'utf-8').replace(/^\uFEFF/, '');
     const lines = raw.split(/\r?\n/).filter(l => l.trim().length > 0);
     if (lines.length < 2) return GEAR_TARGETS;
 
@@ -882,7 +908,7 @@ function loadGearWatchlist() {
 
     return items.length > 0 ? items : GEAR_TARGETS;
   } catch (err) {
-    console.warn('  [警告] 特価ギア監視CSV読み込みエラー。固定リストで代替します:', err.message);
+    console.warn('  [警告] 特価ギア監視CSV解析エラー。固定リストで代替します:', err.message);
     return GEAR_TARGETS;
   }
 }
@@ -893,8 +919,8 @@ function loadGearWatchlist() {
 async function updateDealsData(isoNow) {
   console.log(`[3/3] 楽天市場のアウトドア・必携ギア特価情報（最低${MIN_DISCOUNT_RATE}%OFF以上）の調査を開始...`);
   
-  // 特価ギア監視マスターCSVから最新の監視対象を動的取得
-  const targetList = loadGearWatchlist();
+  // 特価ギア監視マスター（Googleスプレッドシート連動）から最新の監視対象を動的取得
+  const targetList = await loadGearWatchlist();
   console.log(`  => 監視対象ギア: 全 ${targetList.length} 品目（スプレッドシート・CSV連動）`);
 
   // 既存のdealsデータを読み込み、以前のregistered_atを引き継ぐ

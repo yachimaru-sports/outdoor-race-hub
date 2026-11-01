@@ -128,10 +128,8 @@
     "links": {
       "official": "https://www.htv.jp/grandtour/index.html",
       "entry": "https://cycle.spoen.jp/",
-      "review": null,
-      "sns": null,
-      "verified": true,
-      "verified_at": "2026-11-01"
+      "review": "https://runnet.jp/",
+      "sns": "https://www.facebook.com/grandtoursetouchi/"
     },
     "mandatory_gear": [
       {
@@ -173,6 +171,14 @@
       {
         "name": "携帯マルチツール（六角レンチ各種）",
         "category": "ギア"
+      },
+      {
+        "name": "ロードバイク/クロスバイク（点検済）＆ヘルメット",
+        "category": "ギア"
+      },
+      {
+        "name": "パンク修理キット＆携帯ポンプ/CO2ボンベ",
+        "category": "リペア"
       }
     ],
     "venue": {
@@ -8195,6 +8201,353 @@
     },
     "source": {
       "portalName": "モシコム"
+    }
+  },
+  {
+    "id": "bitchu-totomichi-trailrun-2027",
+    "category": "trail",
+    "subCategory": "歴史古道・ワンウェイトレイル",
+    "elements": [
+      "歴史街道",
+      "魚仲仕のとと道",
+      "ワンウェイ",
+      "50km+",
+      "吹屋ふるさと村"
+    ],
+    "title": "備中とと道トレイルラン 2027（岡山・笠岡〜吹屋 57km/32km）",
+    "date": "2027-01-24",
+    "month": 1,
+    "region": "中国",
+    "prefecture": "岡山県",
+    "distance_km": 57,
+    "elevation_m": 1365,
+    "entry_status": "open",
+    "entry_start_date": "2026-09-14",
+    "entry_deadline": "2026-12-27",
+    "entry_fee": "17,000円",
+    "links": {
+      "official": "https://totomichi-trailrun.com/",
+      "entry": "https://runnet.jp/cgi-bin/?id=396918",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-01"
+    },
+    "mandatory_gear": [
+      {
+        "name": "両肩ザック",
+        "category": "ギア"
+      },
+      {
+        "name": "エマージェンシーブランケット",
+        "category": "エイド"
+      },
+      {
+        "name": "ライト＋予備電池",
+        "category": "ライト"
+      },
+      {
+        "name": "反射板・点滅ライト",
+        "category": "ライト"
+      },
+      {
+        "name": "ホイッスル",
+        "category": "エイド"
+      },
+      {
+        "name": "フード付きレインジャケット",
+        "category": "ウェア"
+      },
+      {
+        "name": "保温ミッドウェア",
+        "category": "ウェア"
+      },
+      {
+        "name": "水分1000ml以上",
+        "category": "補給"
+      },
+      {
+        "name": "行動食",
+        "category": "ギア"
+      },
+      {
+        "name": "コースマップ",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "ファーストエイド",
+        "category": "エイド"
+      },
+      {
+        "name": "マイカップ",
+        "category": "ギア"
+      },
+      {
+        "name": "ナンバーカード",
+        "category": "ギア"
+      },
+      {
+        "name": "携帯電話",
+        "category": "ギア"
+      },
+      {
+        "name": "保険証",
+        "category": "エイド"
+      }
+    ],
+    "venue": {
+      "name": "金浦小学校（ロング発）／中世夢が原（ショート発）／旧吹屋小学校（共通着）",
+      "mapQuery": "岡山県 笠岡市 吉浜 金浦小学校"
+    },
+    "source": {
+      "portalName": "RUNNET"
+    }
+  },
+  {
+    "id": "wake-alps-trail-2027",
+    "category": "trail",
+    "subCategory": "和気アルプス / 鏑木毅アドバイザー",
+    "elements": [
+      "トレラン",
+      "50km+",
+      "和気アルプス",
+      "ITRAポイント",
+      "片鉄ロマン街道"
+    ],
+    "title": "WAKE ALPS TRAIL 2027（第2回 和気町一周トレイルランニングレース 50K/21K/14K）",
+    "date": "2027-03-22",
+    "month": 3,
+    "region": "中国",
+    "prefecture": "岡山県",
+    "distance_km": 50,
+    "elevation_m": 3000,
+    "entry_status": "open",
+    "entry_start_date": "2026-09-06",
+    "entry_deadline": "2027-01-15",
+    "entry_fee": "14,000円",
+    "links": {
+      "official": "https://wakealpstrail50.jp/",
+      "entry": "https://runnet.jp/entry/runtes/smp/racedetail.do?raceId=398254",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-01"
+    },
+    "mandatory_gear": [
+      {
+        "name": "防水透湿レインジャケット（シームテープ加工・止水ファスナー）",
+        "category": "ウェア"
+      },
+      {
+        "name": "トレラン専用ザック",
+        "category": "ギア"
+      },
+      {
+        "name": "ソフトカップ（マイカップ）",
+        "category": "ギア"
+      },
+      {
+        "name": "水分・行動食",
+        "category": "補給"
+      },
+      {
+        "name": "ファーストエイドキット",
+        "category": "エイド"
+      },
+      {
+        "name": "健康保険証",
+        "category": "エイド"
+      }
+    ],
+    "venue": {
+      "name": "和気ドーム（岡山県和気郡和気町益原681-1）",
+      "mapQuery": "岡山県 和気郡和気町 和気ドーム"
+    },
+    "source": {
+      "portalName": "RUNNET"
+    }
+  },
+  {
+    "id": "utmt-urban-trail-tatsunokuchi-2027",
+    "category": "trail",
+    "subCategory": "アーバントレイル・備前国総社宮",
+    "elements": [
+      "アーバントレイル",
+      "龍ノ口山",
+      "神事祈願",
+      "カレー＆コーヒー",
+      "初心者・中級者"
+    ],
+    "title": "UTMT／アーバントレイル龍ノ口2027（岡山・龍ノ口山域 16km/12km/8km）",
+    "date": "2027-02-13",
+    "month": 2,
+    "region": "中国",
+    "prefecture": "岡山県",
+    "distance_km": 16,
+    "elevation_m": 1000,
+    "entry_status": "open",
+    "entry_start_date": "2026-10-01",
+    "entry_deadline": "2027-01-13",
+    "entry_fee": "6,000円",
+    "links": {
+      "official": "https://racinvan.com/",
+      "entry": "https://moshicom.com/153592",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-01"
+    },
+    "mandatory_gear": [
+      {
+        "name": "携帯電話",
+        "category": "ギア"
+      },
+      {
+        "name": "マイカップ",
+        "category": "ギア"
+      },
+      {
+        "name": "水分500ml以上",
+        "category": "補給"
+      },
+      {
+        "name": "サバイバルブランケット",
+        "category": "エイド"
+      },
+      {
+        "name": "保険証",
+        "category": "エイド"
+      }
+    ],
+    "venue": {
+      "name": "備前国総社宮",
+      "mapQuery": "岡山県 岡山市中区 祇園 備前国総社宮"
+    },
+    "source": {
+      "portalName": "モシコム"
+    }
+  },
+  {
+    "id": "urban-trail-tatsunokuchi-2027",
+    "category": "trail",
+    "subCategory": "アーバントレイル / 龍ノ口山",
+    "elements": [
+      "トレラン",
+      "都市近郊里山",
+      "10回記念大会",
+      "ナビゲーション"
+    ],
+    "title": "備前国総社宮杯！アーバントレイル龍ノ口 2027（UTMT 16km/12km/8km）",
+    "date": "2027-02-13",
+    "month": 2,
+    "region": "中国",
+    "prefecture": "岡山県",
+    "distance_km": 16,
+    "elevation_m": 1100,
+    "entry_status": "open",
+    "entry_start_date": "2026-10-01",
+    "entry_deadline": "2027-01-15",
+    "entry_fee": "6,000円",
+    "links": {
+      "official": "https://racinvan.com/2027%E5%A4%A7%E4%BC%9A%E6%A6%82%E8%A6%81/",
+      "entry": "https://moshicom.com/153592",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-01"
+    },
+    "mandatory_gear": [
+      {
+        "name": "携帯電話（事務局TEL登録）",
+        "category": "ギア"
+      },
+      {
+        "name": "マイカップ",
+        "category": "ギア"
+      },
+      {
+        "name": "水分500ml以上",
+        "category": "補給"
+      },
+      {
+        "name": "サバイバルブランケット",
+        "category": "エイド"
+      },
+      {
+        "name": "健康保険証",
+        "category": "エイド"
+      }
+    ],
+    "venue": {
+      "name": "備前国総社宮（岡山県岡山市中区祇園）",
+      "mapQuery": "岡山県 岡山市中区 備前国総社宮"
+    },
+    "source": {
+      "portalName": "モシコム"
+    }
+  },
+  {
+    "id": "hiei-international-trail-2027",
+    "category": "trail",
+    "subCategory": "比叡山延暦寺 / 関西屈指ウルトラトレイル",
+    "elements": [
+      "トレラン",
+      "50マイル",
+      "山岳耐久",
+      "比叡山延暦寺",
+      "関西屈指"
+    ],
+    "title": "第13回 比叡山インターナショナルトレイルラン 2027（50mile / 50km / 23km）",
+    "date": "2027-03-13",
+    "month": 3,
+    "region": "近畿",
+    "prefecture": "滋賀県",
+    "distance_km": 80,
+    "elevation_m": 5500,
+    "entry_status": "upcoming",
+    "entry_start_date": "2026-12-01",
+    "entry_deadline": "2027-01-31",
+    "entry_fee": "24,000円",
+    "links": {
+      "official": "https://www.mthiei.com/",
+      "entry": "https://www.mthiei.com/raceinfo",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-01"
+    },
+    "mandatory_gear": [
+      {
+        "name": "透湿防水レインウェア上下",
+        "category": "ウェア"
+      },
+      {
+        "name": "高輝度ヘッドランプ（予備電池含む）",
+        "category": "ライト"
+      },
+      {
+        "name": "水分1.5L以上＆補給食",
+        "category": "補給"
+      },
+      {
+        "name": "サバイバルブランケット",
+        "category": "エイド"
+      },
+      {
+        "name": "携帯コップ",
+        "category": "ギア"
+      },
+      {
+        "name": "保険証",
+        "category": "エイド"
+      }
+    ],
+    "venue": {
+      "name": "比叡山延暦寺（滋賀県大津市坂本本町）",
+      "mapQuery": "滋賀県 大津市 比叡山延暦寺"
+    },
+    "source": {
+      "portalName": "大会公式"
     }
   }
 ]

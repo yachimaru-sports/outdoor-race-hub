@@ -36,9 +36,10 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
-      - name: Sync Events from Google Sheets
+      - name: Sync Events & Gear Watchlist from Google Sheets
         env:
           GOOGLE_SHEET_CSV_URL: ${{ secrets.GOOGLE_SHEET_CSV_URL }}
+          GOOGLE_SHEET_GEAR_CSV_URL: ${{ secrets.GOOGLE_SHEET_GEAR_CSV_URL }}
         run: node scripts/sync_from_sheets.mjs
 
       - name: Check Duplicates
@@ -48,7 +49,7 @@ jobs:
         run: |
           git config user.name "sheets-sync-bot"
           git config user.email "sheets-sync-bot@users.noreply.github.com"
-          git add src/data/events.json outdoor_race_hub_events_master.csv
+          git add src/data/events.json outdoor_race_hub_events_master.csv outdoor_race_hub_gear_watchlist.csv
           if ! git diff --staged --quiet; then
             git commit -m "chore(sheets): Googleスプレッドシートからの最新大会データ自動同期"
             git push origin main
