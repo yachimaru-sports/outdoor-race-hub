@@ -128,8 +128,10 @@
     "links": {
       "official": "https://www.htv.jp/grandtour/index.html",
       "entry": "https://cycle.spoen.jp/",
-      "review": "https://runnet.jp/",
-      "sns": "https://www.facebook.com/grandtoursetouchi/"
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-01"
     },
     "mandatory_gear": [
       {
@@ -171,14 +173,6 @@
       {
         "name": "携帯マルチツール（六角レンチ各種）",
         "category": "ギア"
-      },
-      {
-        "name": "ロードバイク/クロスバイク（点検済）＆ヘルメット",
-        "category": "ギア"
-      },
-      {
-        "name": "パンク修理キット＆携帯ポンプ/CO2ボンベ",
-        "category": "リペア"
       }
     ],
     "venue": {
@@ -1234,8 +1228,10 @@
     "links": {
       "official": "https://mtfuji100.com/",
       "entry": "https://mtfuji100.com/",
-      "review": "https://runnet.jp/",
-      "sns": "https://twitter.com/mtfuji100"
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-01"
     },
     "mandatory_gear": [
       {
@@ -4789,8 +4785,10 @@
     "links": {
       "official": "https://shimanto-ultra.jp/",
       "entry": "https://shimanto-ultra.jp/",
-      "review": "https://runnet.jp/",
-      "sns": "https://twitter.com/shimanto_ultra"
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-01"
     },
     "mandatory_gear": [
       {
@@ -5747,8 +5745,10 @@
     "links": {
       "official": "https://www.r-wellness.com/fuji5/",
       "entry": "https://www.r-wellness.com/fuji5/",
-      "review": "https://runnet.jp/",
-      "sns": "https://www.facebook.com/fuji5lakes/"
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-01"
     },
     "mandatory_gear": [
       {
@@ -5781,10 +5781,6 @@
       },
       {
         "name": "エナジージェル・電解質タブレット",
-        "category": "補給"
-      },
-      {
-        "name": "給水用マイボトル/マイカップ",
         "category": "補給"
       }
     ],
@@ -6576,8 +6572,10 @@
     "links": {
       "official": "https://moshicom.com/search/?keyword=%E6%97%A5%E5%85%89%E5%9B%BD%E7%AB%8B%E5%85%AC%E5%9C%92%E3%83%9E%E3%82%A6%E3%83%B3%E3%83%86%E3%83%B3%E3%83%A9%E3%83%B3%E3%83%8B%E3%83%B3%E3%82%B0",
       "entry": "https://moshicom.com/search/?keyword=%E6%97%A5%E5%85%89%E5%9B%BD%E7%AB%8B%E5%85%AC%E5%9C%92%E3%83%9E%E3%82%A6%E3%83%B3%E3%83%86%E3%83%B3%E3%83%A9%E3%83%B3%E3%83%8B%E3%83%B3%E3%82%B0",
-      "review": "https://runnet.jp/",
-      "sns": "https://www.facebook.com/nikkomountainrunning/"
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-01"
     },
     "mandatory_gear": [
       {
@@ -6628,8 +6626,10 @@
     "links": {
       "official": "https://nature-scene.net/shiga100/",
       "entry": "https://nature-scene.net/shiga100/",
-      "review": "https://runnet.jp/",
-      "sns": "https://www.instagram.com/shigakogen100/"
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-01"
     },
     "mandatory_gear": [
       {
@@ -6781,7 +6781,7 @@
     "prefecture": "三重県",
     "distance_km": 50,
     "elevation_m": 2800,
-    "entry_status": "closed",
+    "entry_status": "closing_soon",
     "entry_start_date": "2026-09-01",
     "entry_deadline": "2026-10-31",
     "entry_fee": "13,500円",
@@ -6943,8 +6943,10 @@
     "links": {
       "official": "https://moshicom.com/search/?keyword=%E9%98%BF%E8%98%87%E3%83%A9%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB",
       "entry": "https://moshicom.com/search/?keyword=%E9%98%BF%E8%98%87%E3%83%A9%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB",
-      "review": "https://runnet.jp/",
-      "sns": "https://www.facebook.com/asoroundtrail/"
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-01"
     },
     "mandatory_gear": [
       {
@@ -7450,7 +7452,7 @@
     "prefecture": "鹿児島県",
     "distance_km": 50,
     "elevation_m": 1850,
-    "entry_status": "closed",
+    "entry_status": "closing_soon",
     "entry_start_date": "2026-09-01",
     "entry_deadline": "2026-10-31",
     "entry_fee": "14,000円",

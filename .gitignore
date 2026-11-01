@@ -20,6 +20,8 @@ dist-ssr
 .tmp.driveupload
 *.gsheet
 *.gdoc
+*.csv
+*.zip
 *.suo
 *.ntvs*
 *.njsproj

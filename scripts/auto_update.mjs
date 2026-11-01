@@ -850,7 +850,6 @@ async function loadGearWatchlist() {
       if (res.ok) {
         raw = (await res.text()).replace(/^\uFEFF/, '');
         // 取得した最新キーワードCSVをローカルキャッシュに保存
-        fs.writeFileSync(WATCHLIST_CSV_PATH, '\uFEFF' + raw, 'utf-8');
         console.log('  ✅ ギア監視キーワードを最新化して保存しました');
       }
     } catch (err) {

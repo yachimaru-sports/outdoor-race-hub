@@ -56,7 +56,7 @@ jobs:
         run: |
           git config user.name "yachimaru-sports-bot"
           git config user.email "yachimaru-sports@users.noreply.github.com"
-          git add src/data/events.json src/data/deals.json outdoor_race_hub_gear_watchlist.csv
+          git add src/data/events.json src/data/deals.json
           if ! git diff --staged --quiet; then
             git commit -m "chore(auto): 定期自動調査による大会ステータス・楽天15%以上特価ギア情報の更新"
             git push origin main

@@ -49,7 +49,7 @@ jobs:
         run: |
           git config user.name "sheets-sync-bot"
           git config user.email "sheets-sync-bot@users.noreply.github.com"
-          git add src/data/events.json outdoor_race_hub_events_master.csv outdoor_race_hub_gear_watchlist.csv
+          git add src/data/events.json
           if ! git diff --staged --quiet; then
             git commit -m "chore(sheets): Googleスプレッドシートからの最新大会データ自動同期"
             git push origin main
