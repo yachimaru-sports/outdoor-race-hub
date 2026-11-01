@@ -1,14 +1,10 @@
-name: Auto Update Race Events & Rakuten Deals (3x Daily)
+name: Daily Auto Sync & Update (Every Morning 8:00 JST)
 
 on:
   schedule:
-    # 日本時間（JST）朝 08:00（UTC 23:00）
+    # 日本時間（JST）毎朝 08:00（UTC 23:00）に1日1回だけ自動実行
     - cron: '0 23 * * *'
-    # 日本時間（JST）昼 12:00（UTC 03:00）
-    - cron: '0 3 * * *'
-    # 日本時間（JST）夜 20:00（UTC 11:00）
-    - cron: '0 11 * * *'
-  workflow_dispatch: # GitHub Actions 画面からいつでも手動で即時実行も可能
+  workflow_dispatch: # GitHub画面から「Run workflow」ボタンでいつでも手動即時実行可能
 
 permissions:
   contents: write
@@ -40,43 +36,48 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
-      - name: Run Auto Investigation & Data Update (Events & >=15% Rakuten Deals)
+      - name: Step 1: Sync Events from Google Sheets
+        env:
+          GOOGLE_SHEET_CSV_URL: ${{ secrets.GOOGLE_SHEET_CSV_URL }}
+        run: node scripts/sync_from_sheets.mjs
+
+      - name: Step 2: Auto Update Deals & Validate Event Status
         env:
           GOOGLE_SHEET_GEAR_CSV_URL: ${{ secrets.GOOGLE_SHEET_GEAR_CSV_URL }}
         run: node scripts/auto_update.mjs
 
-      - name: Assert Zero Duplicates in Race Database
+      - name: Step 3: Assert Zero Duplicates in Race Database
         run: npm run check:duplicates
 
-      - name: Assert All Links Live via HTTP Verification
+      - name: Step 4: Assert All Links Live via HTTP Verification
         run: npm run check:links
         continue-on-error: true
 
-      - name: Commit & Push Updated Data to Repository
+      - name: Step 5: Commit & Push Updated Data to Repository
         run: |
-          git config user.name "yachimaru-sports-bot"
-          git config user.email "yachimaru-sports@users.noreply.github.com"
+          git config user.name "outdoor-race-hub-bot"
+          git config user.email "bot@outdoor-race-hub.local"
           git add src/data/events.json src/data/deals.json
           if ! git diff --staged --quiet; then
-            git commit -m "chore(auto): 定期自動調査による大会ステータス・楽天15%以上特価ギア情報の更新"
+            git commit -m "chore(auto): 毎朝8時定期同期（Googleスプレッドシート大会取込＆楽天特価ギア更新）"
             git push origin main
           else
             echo "データ変更なし（ビルド・デプロイへ進みます）"
           fi
 
-      - name: Build SPA for GitHub Pages
+      - name: Step 6: Build SPA for GitHub Pages
         run: |
           npm run build
           cp dist/index.html dist/404.html
 
-      - name: Setup Pages
+      - name: Step 7: Setup Pages
         uses: actions/configure-pages@v4
 
-      - name: Upload Artifact
+      - name: Step 8: Upload Artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: './dist'
 
-      - name: Deploy to GitHub Pages
+      - name: Step 9: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
