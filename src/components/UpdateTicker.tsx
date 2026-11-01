@@ -24,6 +24,18 @@ export interface UpdateNewsItem {
 
 export const UPDATE_NEWS_DATA: UpdateNewsItem[] = [
   {
+    id: 'update-auto-sync-20261101',
+    date: '2026.11.01',
+    time: '12:45',
+    tag: '定期巡回更新',
+    tagStyle: 'bg-emerald-100 text-emerald-900 border-emerald-300 dark:bg-emerald-950/70 dark:text-emerald-200',
+    title: '11月度 全国大会ステータス巡回・楽天15%以上特価ギア情報を自動更新！',
+    description:
+      '2026-2027年開催大会の受付状況、Googleスプレッドシート連携データ、および楽天市場の最新特価・割引率（15%OFF以上）を自動巡回・更新完了しました。',
+    targetId: 'events-section',
+    targetLabel: '大会一覧を見る',
+  },
+  {
     id: 'update-hiroshima-wangan-trail-20261031',
     date: '2026.10.31',
     time: '22:05',

@@ -391,7 +391,29 @@ export const App: React.FC = () => {
   }, [events, filters, favoriteIds]);
 
   const latestNews = UPDATE_NEWS_DATA[0];
-  const lastUpdated = latestNews ? `${latestNews.date} ${latestNews.time}` : '2026.10.31 10:30';
+  const lastUpdated = (() => {
+    try {
+      const timestamps = (dealsData as Array<{ updated_at?: string }>)
+        .map((d) => (d.updated_at ? new Date(d.updated_at).getTime() : 0))
+        .filter((t) => !isNaN(t) && t > 0);
+      if (timestamps.length > 0) {
+        const latestTime = new Date(Math.max(...timestamps));
+        const formatter = new Intl.DateTimeFormat('ja-JP', {
+          timeZone: 'Asia/Tokyo',
+          year: 'numeric',
+          month: '2-digit',
+          day: '2-digit',
+          hour: '2-digit',
+          minute: '2-digit',
+          hour12: false,
+        });
+        const parts = formatter.formatToParts(latestTime);
+        const getPart = (type: string) => parts.find((p) => p.type === type)?.value || '';
+        return `${getPart('year')}.${getPart('month')}.${getPart('day')} ${getPart('hour')}:${getPart('minute')}`;
+      }
+    } catch {}
+    return latestNews ? `${latestNews.date} ${latestNews.time}` : '2026.11.01 12:45';
+  })();
 
   // 固定ヘッダーの高さ分を考慮したスムーズジャンプハンドラ
   const handleJumpToSection = (targetId: string) => {
