@@ -3915,7 +3915,7 @@
     "prefecture": "兵庫県",
     "distance_km": 92,
     "elevation_m": 850,
-    "entry_status": "closing_soon",
+    "entry_status": "closed",
     "entry_start_date": "2026-08-01",
     "entry_deadline": "2026-11-03",
     "entry_fee": "8,000円",
@@ -3946,8 +3946,8 @@
       }
     ],
     "venue": {
-      "name": "南光自然観察村（兵庫県佐用郡佐用町船越222）",
-      "mapQuery": "兵庫県佐用郡佐用町 南光自然観察村"
+      "name": "南光スポーツ公園 若あゆランド（兵庫県佐用郡佐用町林崎839）",
+      "mapQuery": "兵庫県佐用郡佐用町 南光スポーツ公園"
     },
     "source": {
       "portalName": "大会公式"
@@ -4321,16 +4321,16 @@
       "四万十川"
     ],
     "title": "四万十清流アドベンチャーレース 2026（高知・四万十川 パックラフト＆MTB＆トレック）",
-    "date": "2026-11-28",
-    "month": 11,
+    "date": "2026-10-10 ~ 2026-10-11",
+    "month": 10,
     "region": "四国",
     "prefecture": "高知県",
     "distance_km": 42,
     "elevation_m": 1200,
-    "entry_status": "closing_soon",
-    "entry_start_date": "2026-09-01",
-    "entry_deadline": "2026-11-15",
-    "entry_fee": "15,000円",
+    "entry_status": "closed",
+    "entry_start_date": "2026-07-01",
+    "entry_deadline": "2026-09-20",
+    "entry_fee": "60,000円 (エクストリーム) / 5,000円 (チャレンジ)",
     "links": {
       "official": "https://40010as.com/",
       "entry": "https://40010as.com/",
@@ -4362,8 +4362,8 @@
       }
     ],
     "venue": {
-      "name": "カヌーの里すりき（高知県四万十市西土佐用井1111-11）",
-      "mapQuery": "高知県四万十市 カヌーの里すりき"
+      "name": "四万十町内（高知県高岡郡四万十町）",
+      "mapQuery": "高知県高岡郡四万十町"
     },
     "source": {
       "portalName": "大会公式"
@@ -5181,7 +5181,7 @@
     "prefecture": "三重県",
     "distance_km": 23,
     "elevation_m": 1450,
-    "entry_status": "open",
+    "entry_status": "upcoming",
     "entry_start_date": "2026-11-01",
     "entry_deadline": "2027-01-20",
     "entry_fee": "7,500円",
@@ -5338,11 +5338,11 @@
     "region": "中部",
     "prefecture": "静岡県",
     "distance_km": 22,
-    "elevation_m": 1350,
+    "elevation_m": 1600,
     "entry_status": "open",
     "entry_start_date": "2026-10-15",
-    "entry_deadline": "2027-01-15",
-    "entry_fee": "6,500円",
+    "entry_deadline": "2026-11-30",
+    "entry_fee": "7,500円（駐車場無） / 8,000円（駐車場有）",
     "links": {
       "official": "https://marikoalps.com/",
       "entry": "https://runnet.jp/entry/runtes/smp/racedetail.do?raceId=398349",
@@ -5672,7 +5672,7 @@
     "prefecture": "愛知県",
     "distance_km": 64,
     "elevation_m": 4800,
-    "entry_status": "open",
+    "entry_status": "upcoming",
     "entry_start_date": "2026-10-15",
     "entry_deadline": "2027-02-15",
     "entry_fee": "16,000円 (64K) / 10,000円 (32K)",
@@ -5776,16 +5776,16 @@
       "中国やまなみ横断"
     ],
     "title": "やまなみ街道チャレンジライド 2027（尾道〜松江 縦断ロングライド）",
-    "date": "2027-03-21",
+    "date": "2027-03-20",
     "month": 3,
     "region": "中国",
     "prefecture": "広島県",
-    "distance_km": 140,
+    "distance_km": 192,
     "elevation_m": 1850,
     "entry_status": "upcoming",
     "entry_start_date": "2026-12-01",
     "entry_deadline": "2027-02-28",
-    "entry_fee": "12,000円",
+    "entry_fee": "13,000円（ソロ192km） / 12,000円（ソロ160km）",
     "links": {
       "official": "http://www.plusvalue.co.jp/michinoekiden/entry.html",
       "entry": "https://cycle.spoen.jp/",
@@ -5813,8 +5813,8 @@
       }
     ],
     "venue": {
-      "name": "尾道駅前港湾駐車場（広島県尾道市東御所町11-1）",
-      "mapQuery": "広島県尾道市 尾道駅前港湾駐車場"
+      "name": "尾道U2横オリーブ広場（広島県尾道市西御所町5-11）",
+      "mapQuery": "広島県尾道市 尾道U2"
     },
     "source": {
       "portalName": "スポエンCYCLE"
