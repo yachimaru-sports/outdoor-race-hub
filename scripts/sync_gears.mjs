@@ -16,6 +16,7 @@ const ROOT_DIR = path.resolve(__dirname, '..');
 
 const GEARS_JSON_PATH = path.join(ROOT_DIR, 'src', 'data', 'gears.json');
 const DEALS_JSON_PATH = path.join(ROOT_DIR, 'src', 'data', 'deals.json');
+const META_JSON_PATH = path.join(ROOT_DIR, 'src', 'data', 'meta.json');
 
 // Googleスプレッドシート公開CSV URL
 const DEFAULT_GEAR_SHEET_URL =
@@ -200,6 +201,21 @@ export async function syncGearsFromSheet() {
   console.log(`🎉 合計 ${gearItems.length} 件のギアマスターデータを構築しました`);
   fs.writeFileSync(GEARS_JSON_PATH, JSON.stringify(gearItems, null, 2) + '\n', 'utf-8');
   console.log(`💾 ${GEARS_JSON_PATH} に保存完了！`);
+
+  // meta.json 更新
+  try {
+    let meta = {};
+    if (fs.existsSync(META_JSON_PATH)) {
+      meta = JSON.parse(fs.readFileSync(META_JSON_PATH, 'utf-8'));
+    }
+    meta.last_updated_at = new Date().toISOString();
+    meta.gears_count = gearItems.length;
+    fs.writeFileSync(META_JSON_PATH, JSON.stringify(meta, null, 2) + '\n', 'utf-8');
+    console.log(`⏱️ 最新更新日時 (${meta.last_updated_at}) を meta.json に記録しました。`);
+  } catch (err) {
+    console.warn('meta.json 更新スキップ:', err);
+  }
+
   return gearItems;
 }
 

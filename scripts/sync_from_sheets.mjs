@@ -14,6 +14,7 @@ const __dirname = path.dirname(__filename);
 const ROOT_DIR = path.resolve(__dirname, '..');
 
 const EVENTS_JSON_PATH = path.join(ROOT_DIR, 'src', 'data', 'events.json');
+const META_JSON_PATH = path.join(ROOT_DIR, 'src', 'data', 'meta.json');
 
 // デフォルトのGoogleスプレッドシート公開CSV URL
 const DEFAULT_EVENTS_SHEET_URL =
@@ -173,6 +174,20 @@ async function main() {
   // events.json へ保存
   fs.writeFileSync(EVENTS_JSON_PATH, JSON.stringify(newEvents, null, 2) + '\n', 'utf-8');
   console.log(`🎉 正常に ${EVENTS_JSON_PATH} へ書き込みを完了しました！`);
+
+  // meta.json 更新（最新巡回日時・件数を記録）
+  try {
+    let meta = {};
+    if (fs.existsSync(META_JSON_PATH)) {
+      meta = JSON.parse(fs.readFileSync(META_JSON_PATH, 'utf-8'));
+    }
+    meta.last_updated_at = new Date().toISOString();
+    meta.events_count = newEvents.length;
+    fs.writeFileSync(META_JSON_PATH, JSON.stringify(meta, null, 2) + '\n', 'utf-8');
+    console.log(`⏱️ 最新更新日時 (${meta.last_updated_at}) を meta.json に記録しました。`);
+  } catch (err) {
+    console.warn('meta.json 更新スキップ:', err);
+  }
 }
 
 main().catch(err => {

@@ -40,7 +40,7 @@ if ($LASTEXITCODE -ne 0) {
 Write-Host ""
 
 Write-Host "[4/4] 変更内容をGitHubへプッシュ中..." -ForegroundColor Yellow
-git add src/data/events.json src/data/deals.json src/data/gears.json src/components/UpdateTicker.tsx
+git add src/data/events.json src/data/deals.json src/data/gears.json src/data/meta.json src/components/UpdateTicker.tsx
 git diff --cached --quiet
 if ($LASTEXITCODE -ne 0) {
     git commit -m "chore(manual): デスクトップ手動バッチによる最新データ同期・本番反映"

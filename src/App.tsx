@@ -2,6 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import eventsData from './data/events.json';
 import dealsData from './data/deals.json';
 import gearsData from './data/gears.json';
+import metaData from './data/meta.json';
 import { RaceEvent, DealItem, GearItem, FilterState, ViewMode } from './types';
 import { INITIAL_FILTERS } from './utils/presets';
 import { DealsTicker } from './components/DealsTicker';
@@ -401,11 +402,19 @@ export const App: React.FC = () => {
   const latestNews = UPDATE_NEWS_DATA[0];
   const lastUpdated = (() => {
     try {
-      const timestamps = (dealsData as Array<{ updated_at?: string }>)
-        .map((d) => (d.updated_at ? new Date(d.updated_at).getTime() : 0))
-        .filter((t) => !isNaN(t) && t > 0);
-      if (timestamps.length > 0) {
-        const latestTime = new Date(Math.max(...timestamps));
+      const candidates: number[] = [];
+      if (metaData && (metaData as { last_updated_at?: string }).last_updated_at) {
+        const t = new Date((metaData as { last_updated_at: string }).last_updated_at).getTime();
+        if (!isNaN(t) && t > 0) candidates.push(t);
+      }
+      for (const d of dealsData as Array<{ updated_at?: string }>) {
+        if (d.updated_at) {
+          const t = new Date(d.updated_at).getTime();
+          if (!isNaN(t) && t > 0) candidates.push(t);
+        }
+      }
+      if (candidates.length > 0) {
+        const latestTime = new Date(Math.max(...candidates));
         const formatter = new Intl.DateTimeFormat('ja-JP', {
           timeZone: 'Asia/Tokyo',
           year: 'numeric',

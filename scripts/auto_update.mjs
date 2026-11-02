@@ -65,6 +65,7 @@ function parseCsv(csvText) {
 
 const EVENTS_PATH = path.join(ROOT_DIR, 'src', 'data', 'events.json');
 const DEALS_PATH = path.join(ROOT_DIR, 'src', 'data', 'deals.json');
+const META_PATH = path.join(ROOT_DIR, 'src', 'data', 'meta.json');
 const WATCHLIST_CSV_PATH = path.join(ROOT_DIR, 'outdoor_race_hub_gear_watchlist.csv');
 
 // Googleスプレッドシート公開URL（ギア監視キーワード一覧）
@@ -1161,6 +1162,17 @@ async function verifyAndHealEventLinks() {
 
   fs.writeFileSync(EVENTS_PATH, JSON.stringify(events, null, 2) + '\n', 'utf-8');
   console.log(`  => 全${events.length}件の大会リンク健全性を検証完了（修復: ${fixedCount}件）`);
+
+  // meta.json 更新
+  try {
+    let meta = {};
+    if (fs.existsSync(META_PATH)) {
+      meta = JSON.parse(fs.readFileSync(META_PATH, 'utf-8'));
+    }
+    meta.last_updated_at = new Date().toISOString();
+    fs.writeFileSync(META_PATH, JSON.stringify(meta, null, 2) + '\n', 'utf-8');
+    console.log(`  => 最新更新日時 (${meta.last_updated_at}) を meta.json に保存しました。`);
+  } catch (err) {}
 }
 
 main().catch((err) => {
