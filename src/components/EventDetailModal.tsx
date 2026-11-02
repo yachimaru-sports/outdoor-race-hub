@@ -1,3 +1,4 @@
+import { handleImageError } from '../utils/imageFallback';
 import React, { useState, useEffect } from 'react';
 import { RaceEvent, DealItem, GearItem } from '../types';
 import { matchMandatoryGear } from '../utils/gearMatcher';

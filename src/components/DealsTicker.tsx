@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { DealItem } from '../types';
 import { AccessCounter } from './AccessCounter';
+import { handleImageError } from '../utils/imageFallback';
 import {
   ChevronLeft,
   ChevronRight,
