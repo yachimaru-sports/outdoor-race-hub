@@ -23,7 +23,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -44,8 +44,8 @@
       }
     ],
     "venue": {
-      "name": "三原市白竜湖スポーツ村公園",
-      "mapQuery": "広島県 三原市"
+      "name": "白竜湖スポーツ村公園（広島県三原市大和町和木1026-3）",
+      "mapQuery": "広島県三原市 白竜湖スポーツ村公園"
     },
     "source": {
       "portalName": "モシコム"
@@ -77,7 +77,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -110,8 +110,8 @@
       }
     ],
     "venue": {
-      "name": "岐阜県加茂郡東白川村",
-      "mapQuery": "岐阜県"
+      "name": "東白川村はなのき会館（岐阜県加茂郡東白川村神土653-1）",
+      "mapQuery": "岐阜県加茂郡東白川村 はなのき会館"
     },
     "source": {
       "portalName": "とれとれバイク"
@@ -144,7 +144,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -177,8 +177,8 @@
       }
     ],
     "venue": {
-      "name": "",
-      "mapQuery": "岡山県"
+      "name": "美作市上山集落・大芦高原（岡山県美作市上山）",
+      "mapQuery": "岡山県美作市上山"
     },
     "source": {
       "portalName": "とれとれバイク"
@@ -208,7 +208,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -233,8 +233,8 @@
       }
     ],
     "venue": {
-      "name": "嵐山公園亀山地区〜山科毘沙門堂",
-      "mapQuery": "京都府 東山 北山 60km"
+      "name": "嵐山公園亀山地区（京都府京都市右京区嵯峨亀ノ尾町）",
+      "mapQuery": "京都府京都市右京区 嵐山公園亀山地区"
     },
     "source": {
       "portalName": "モシコム"
@@ -265,7 +265,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -286,8 +286,8 @@
       }
     ],
     "venue": {
-      "name": "秋川渓谷五日市広場",
-      "mapQuery": "東京都"
+      "name": "秋川渓谷五日市広場（東京都あきる野市舘谷220-4）",
+      "mapQuery": "東京都あきる野市 秋川渓谷五日市広場"
     },
     "source": {
       "portalName": "モシコム"
@@ -321,7 +321,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -350,8 +350,8 @@
       }
     ],
     "venue": {
-      "name": "ひろしまスタジアムパーク（エディオンピースウイング広島隣接 / 広島湾岸トレイル）",
-      "mapQuery": "広島県 広島市中区 ひろしまスタジアムパーク"
+      "name": "ひろしまスタジアムパーク（広島県広島市中区基町15-1）",
+      "mapQuery": "広島県広島市中区 ひろしまスタジアムパーク"
     },
     "source": {
       "portalName": "スポエン"
@@ -382,7 +382,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -427,8 +427,8 @@
       }
     ],
     "venue": {
-      "name": "尾道〜今治 往復",
-      "mapQuery": "広島県 尾道〜今治 往復"
+      "name": "尾道駅前港湾駐車場（広島県尾道市東御所町11-1）",
+      "mapQuery": "広島県尾道市 尾道駅前港湾駐車場"
     },
     "source": {
       "portalName": "スポエンCYCLE"
@@ -460,7 +460,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -481,8 +481,8 @@
       }
     ],
     "venue": {
-      "name": "片添ヶ浜海浜公園（周防大島町）",
-      "mapQuery": "周防大島町 片添ヶ浜海浜公園"
+      "name": "片添ヶ浜海浜公園（山口県大島郡周防大島町平野1191-54）",
+      "mapQuery": "山口県周防大島町 片添ヶ浜海浜公園"
     },
     "source": {
       "portalName": "大会公式"
@@ -512,7 +512,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -533,8 +533,8 @@
       }
     ],
     "venue": {
-      "name": "福岡 北九州市 40km",
-      "mapQuery": "福岡県 福岡 北九州市 40km"
+      "name": "平尾台自然の郷（福岡県北九州市小倉南区平尾台1-1-1）",
+      "mapQuery": "福岡県北九州市小倉南区 平尾台自然の郷"
     },
     "source": {
       "portalName": "大会公式"
@@ -564,7 +564,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -585,8 +585,8 @@
       }
     ],
     "venue": {
-      "name": "廿日市",
-      "mapQuery": "広島県 廿日市"
+      "name": "女鹿平温泉めがひらスキー場（広島県廿日市市吉和4291）",
+      "mapQuery": "広島県廿日市市 女鹿平温泉めがひらスキー場"
     },
     "source": {
       "portalName": "大会公式"
@@ -618,7 +618,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -651,8 +651,8 @@
       }
     ],
     "venue": {
-      "name": "岐阜県恵那市岩村町",
-      "mapQuery": "岐阜県"
+      "name": "岩村振興事務所・コミュニティセンター（岐阜県恵那市岩村町634-1）",
+      "mapQuery": "岐阜県恵那市岩村町 岩村振興事務所"
     },
     "source": {
       "portalName": "とれとれバイク"
@@ -684,7 +684,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -717,8 +717,8 @@
       }
     ],
     "venue": {
-      "name": "阿蘇ボルケーノトレイル 112km",
-      "mapQuery": "熊本県 阿蘇ボルケーノトレイル 112km"
+      "name": "阿蘇市農村公園あぴか（熊本県阿蘇市黒川1417）",
+      "mapQuery": "熊本県阿蘇市 農村公園あぴか"
     },
     "source": {
       "portalName": "大会公式"
@@ -750,7 +750,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -775,8 +775,8 @@
       }
     ],
     "venue": {
-      "name": "あそ望の郷くぎの",
-      "mapQuery": "熊本県 ART"
+      "name": "あそ望の郷くぎの（熊本県阿蘇郡南阿蘇村久石2807）",
+      "mapQuery": "熊本県南阿蘇村 あそ望の郷くぎの"
     },
     "source": {
       "portalName": "モシコム"
@@ -808,7 +808,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -841,8 +841,8 @@
       }
     ],
     "venue": {
-      "name": "",
-      "mapQuery": "埼玉県"
+      "name": "ニューサンピア埼玉おごせ（埼玉県入間郡越生町古池700）",
+      "mapQuery": "埼玉県入間郡越生町 ニューサンピア埼玉おごせ"
     },
     "source": {
       "portalName": "RUNNET"
@@ -872,7 +872,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -897,8 +897,8 @@
       }
     ],
     "venue": {
-      "name": "大山槇原駐車場",
-      "mapQuery": "鳥取県 名峰大山一周ヒルクライム＆ロングライド"
+      "name": "大山槇原駐車場（鳥取県西伯郡大山町大山槇原40-2）",
+      "mapQuery": "鳥取県大山町 大山槇原駐車場"
     },
     "source": {
       "portalName": "スポエンCYCLE"
@@ -929,7 +929,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -950,8 +950,8 @@
       }
     ],
     "venue": {
-      "name": "長野",
-      "mapQuery": "長野県 長野"
+      "name": "南牧村社会体育館（長野県南佐久郡南牧村野辺山175-1）",
+      "mapQuery": "長野県南牧村 南牧村社会体育館"
     },
     "source": {
       "portalName": "大会公式"
@@ -981,7 +981,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -1006,8 +1006,8 @@
       }
     ],
     "venue": {
-      "name": "新潟 佐渡島一周 210km",
-      "mapQuery": "新潟県 新潟 佐渡島一周 210km"
+      "name": "佐和田海岸・佐渡市河原田諏訪町（新潟県佐渡市河原田諏訪町80）",
+      "mapQuery": "新潟県佐渡市 佐和田海岸"
     },
     "source": {
       "portalName": "スポエンCYCLE"
@@ -1038,7 +1038,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -1055,8 +1055,8 @@
       }
     ],
     "venue": {
-      "name": "",
-      "mapQuery": "福井県"
+      "name": "小浜市まちの駅広場（福井県小浜市一番町4-1）",
+      "mapQuery": "福井県小浜市 まちの駅広場"
     },
     "source": {
       "portalName": "スポエン"
@@ -1087,7 +1087,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -1112,8 +1112,8 @@
       }
     ],
     "venue": {
-      "name": "ユートピアサイオト",
-      "mapQuery": "ユートピアサイオト"
+      "name": "ユートピアサイオト（広島県山県郡北広島町才乙144）",
+      "mapQuery": "広島県北広島町 ユートピアサイオト"
     },
     "source": {
       "portalName": "モシコム"
@@ -1143,7 +1143,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -1168,8 +1168,8 @@
       }
     ],
     "venue": {
-      "name": "奈義町那岐山",
-      "mapQuery": "岡山県 奈義町那岐山"
+      "name": "奈義町総合運動公園（岡山県勝田郡奈義町豊沢327-1）",
+      "mapQuery": "岡山県勝田郡奈義町 奈義町総合運動公園"
     },
     "source": {
       "portalName": "大会公式"
@@ -1199,7 +1199,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -1224,8 +1224,8 @@
       }
     ],
     "venue": {
-      "name": "下関あるかぽーと",
-      "mapQuery": "山口県"
+      "name": "あるかぽーと（山口県下関市あるかぽーと1-1）",
+      "mapQuery": "山口県下関市 あるかぽーと"
     },
     "source": {
       "portalName": "スポエンCYCLE"
@@ -1255,7 +1255,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -1272,8 +1272,8 @@
       }
     ],
     "venue": {
-      "name": "京都府綾部市総合運動公園",
-      "mapQuery": "京都府"
+      "name": "綾部市総合運動公園（京都府綾部市上杉町大宝下1）",
+      "mapQuery": "京都府綾部市 綾部市総合運動公園"
     },
     "source": {
       "portalName": "スポエンCYCLE"
@@ -1305,7 +1305,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -1330,8 +1330,8 @@
       }
     ],
     "venue": {
-      "name": "神鍋高原 高原亭 体育館",
-      "mapQuery": "兵庫県 日高神鍋観光"
+      "name": "神鍋高原 高原亭体育館（兵庫県豊岡市日高町万劫118）",
+      "mapQuery": "兵庫県豊岡市神鍋高原 高原亭体育館"
     },
     "source": {
       "portalName": "モシコム"
@@ -1363,7 +1363,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -1396,8 +1396,8 @@
       }
     ],
     "venue": {
-      "name": "丹波100マイル",
-      "mapQuery": "兵庫県 丹波100マイル"
+      "name": "丹波悠々の森（兵庫県丹波市柏原町大新屋1153-2）",
+      "mapQuery": "兵庫県丹波市 丹波悠々の森"
     },
     "source": {
       "portalName": "大会公式"
@@ -1430,7 +1430,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -1455,8 +1455,8 @@
       }
     ],
     "venue": {
-      "name": "京都府亀岡市（保津峡エリア）",
-      "mapQuery": "京都府亀岡市 保津峡"
+      "name": "保津川水辺公園（京都府亀岡市保津町西ノ辻）",
+      "mapQuery": "京都府亀岡市 保津川水辺公園"
     },
     "source": {
       "portalName": "とれとれバイク"
@@ -1486,7 +1486,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -1511,8 +1511,8 @@
       }
     ],
     "venue": {
-      "name": "富士スバルライン 24km D+1255m",
-      "mapQuery": "山梨県 富士スバルライン 24km D+1255m"
+      "name": "富士北麓公園陸上競技場（山梨県富士吉田市上吉田立石5000）",
+      "mapQuery": "山梨県富士吉田市 富士北麓公園"
     },
     "source": {
       "portalName": "スポエンCYCLE"
@@ -1542,7 +1542,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -1563,8 +1563,8 @@
       }
     ],
     "venue": {
-      "name": "滋賀県高島市黒谷 朽木スキー場",
-      "mapQuery": "滋賀県"
+      "name": "グリーンパーク想い出の森・朽木スキー場（滋賀県高島市朽木柏341-3）",
+      "mapQuery": "滋賀県高島市 グリーンパーク想い出の森"
     },
     "source": {
       "portalName": "モシコム"
@@ -1594,7 +1594,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -1615,8 +1615,8 @@
       }
     ],
     "venue": {
-      "name": "むかつく",
-      "mapQuery": "山口県 むかつく"
+      "name": "油谷総合運動公園（山口県長門市油谷河原2016）",
+      "mapQuery": "山口県長門市 油谷総合運動公園"
     },
     "source": {
       "portalName": "大会公式"
@@ -1647,7 +1647,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -1668,8 +1668,8 @@
       }
     ],
     "venue": {
-      "name": "岐阜 高山市 D+2500m",
-      "mapQuery": "岐阜県 岐阜 高山市 D+2500m"
+      "name": "飛騨高山ビッグアリーナ（岐阜県高山市中山町600）",
+      "mapQuery": "岐阜県高山市 飛騨高山ビッグアリーナ"
     },
     "source": {
       "portalName": "大会公式"
@@ -1699,7 +1699,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -1724,8 +1724,8 @@
       }
     ],
     "venue": {
-      "name": "ニセコクラシック 150km / UCI GFWS",
-      "mapQuery": "北海道 ニセコクラシック 150km / UCI GFWS"
+      "name": "ニセコ東急 グラン・ヒラフ（北海道虻田郡倶知安町ニセコひらふ1条2-9-1）",
+      "mapQuery": "北海道倶知安町 ニセコ グラン・ヒラフ"
     },
     "source": {
       "portalName": "スポエンCYCLE"
@@ -1759,7 +1759,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -1784,8 +1784,8 @@
       }
     ],
     "venue": {
-      "name": "",
-      "mapQuery": "北海道"
+      "name": "ニセコ中央倉庫群（北海道虻田郡ニセコ町本通25-1）",
+      "mapQuery": "北海道ニセコ町 ニセコ中央倉庫群"
     },
     "source": {
       "portalName": "ナビゲーム"
@@ -1817,7 +1817,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -1850,8 +1850,8 @@
       }
     ],
     "venue": {
-      "name": "石川 加賀温泉郷 100km",
-      "mapQuery": "石川県 石川 加賀温泉郷 100km"
+      "name": "山中温泉 山中座前広場（石川県加賀市山中温泉薬師町1）",
+      "mapQuery": "石川県加賀市山中温泉 山中座"
     },
     "source": {
       "portalName": "UTMB公式"
@@ -1882,7 +1882,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -1903,8 +1903,8 @@
       }
     ],
     "venue": {
-      "name": "隠岐の島町 100km",
-      "mapQuery": "島根県 隠岐の島町 100km"
+      "name": "隠岐ポートプラザ・西郷港（島根県隠岐郡隠岐の島町中町）",
+      "mapQuery": "島根県隠岐の島町 隠岐ポートプラザ"
     },
     "source": {
       "portalName": "大会公式"
@@ -1937,7 +1937,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -1970,8 +1970,8 @@
       }
     ],
     "venue": {
-      "name": "ディープジャパン166km 新潟 群馬",
-      "mapQuery": "新潟県 ディープジャパン166km 新潟 群馬"
+      "name": "浅草山麓エコミュージアム（新潟県魚沼市大白川1737-251）",
+      "mapQuery": "新潟県魚沼市 浅草山麓エコミュージアム"
     },
     "source": {
       "portalName": "大会公式"
@@ -2002,7 +2002,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -2023,8 +2023,8 @@
       }
     ],
     "venue": {
-      "name": "北海道 湧別〜北見〜佐呂間",
-      "mapQuery": "北海道 北海道 湧別〜北見〜佐呂間"
+      "name": "湧別町総合体育館（北海道紋別郡湧別町中湧別中町3020-1）",
+      "mapQuery": "北海道湧別町 湧別町総合体育館"
     },
     "source": {
       "portalName": "大会公式"
@@ -2056,7 +2056,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -2081,8 +2081,8 @@
       }
     ],
     "venue": {
-      "name": "",
-      "mapQuery": "長野県"
+      "name": "志賀高原サンバレースキー場（長野県下高井郡山ノ内町平穏7148）",
+      "mapQuery": "長野県山ノ内町 志賀高原サンバレー"
     },
     "source": {
       "portalName": "大会公式"
@@ -2115,7 +2115,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -2148,8 +2148,8 @@
       }
     ],
     "venue": {
-      "name": "長野県白馬村・小谷村",
-      "mapQuery": "長野県"
+      "name": "白馬岩岳マウンテンリゾート（長野県北安曇郡白馬村北城12056）",
+      "mapQuery": "長野県白馬村 白馬岩岳マウンテンリゾート"
     },
     "source": {
       "portalName": "OMM公式"
@@ -2181,7 +2181,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -2214,8 +2214,8 @@
       }
     ],
     "venue": {
-      "name": "御嶽100マイル 100km",
-      "mapQuery": "長野県 御嶽100マイル 100km"
+      "name": "松原スポーツ公園（長野県木曽郡王滝村松原3437）",
+      "mapQuery": "長野県王滝村 松原スポーツ公園"
     },
     "source": {
       "portalName": "大会公式"
@@ -2246,7 +2246,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -2267,8 +2267,8 @@
       }
     ],
     "venue": {
-      "name": "えびの高原ピクニック広場",
-      "mapQuery": "えびの高原ピクニック広場"
+      "name": "えびの高原ピクニック広場（宮崎県えびの市末永1495-5）",
+      "mapQuery": "宮崎県えびの市 えびの高原ピクニック広場"
     },
     "source": {
       "portalName": "モシコム"
@@ -2298,7 +2298,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -2319,8 +2319,8 @@
       }
     ],
     "venue": {
-      "name": "市役所〜富士山頂 21km D+3000m",
-      "mapQuery": "山梨県 市役所〜富士山頂 21km D+3000m"
+      "name": "富士吉田市役所前（山梨県富士吉田市下吉田6-1-1）",
+      "mapQuery": "山梨県富士吉田市 富士吉田市役所"
     },
     "source": {
       "portalName": "大会公式"
@@ -2351,7 +2351,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -2376,8 +2376,8 @@
       }
     ],
     "venue": {
-      "name": "長野 長和町 90kmロング",
-      "mapQuery": "長野県 長野 長和町 90kmロング"
+      "name": "長和町立和田中学校グラウンド（長野県小県郡長和町和田2934）",
+      "mapQuery": "長野県長和町 和田中グラウンド"
     },
     "source": {
       "portalName": "大会公式"
@@ -2407,7 +2407,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -2432,8 +2432,8 @@
       }
     ],
     "venue": {
-      "name": "恐羅漢エコロジーキャンプ場",
-      "mapQuery": "広島県 エキスパート65km 広島最高峰"
+      "name": "恐羅漢エコロジーキャンプ場（広島県山県郡安芸太田町横川740-1）",
+      "mapQuery": "広島県安芸太田町 恐羅漢エコロジーキャンプ場"
     },
     "source": {
       "portalName": "モシコム"
@@ -2463,7 +2463,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -2484,8 +2484,8 @@
       }
     ],
     "venue": {
-      "name": "蔵王温泉スキー場上の台ゲレンデ",
-      "mapQuery": "山形県 ZAO SKYRUN お釜 熊野岳"
+      "name": "蔵王温泉スキー場 上の台ゲレンデ（山形県山形市蔵王温泉）",
+      "mapQuery": "山形県山形市 蔵王温泉上の台ゲレンデ"
     },
     "source": {
       "portalName": "モシコム"
@@ -2513,7 +2513,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -2526,8 +2526,8 @@
       }
     ],
     "venue": {
-      "name": "面河渓特設会場",
-      "mapQuery": "愛媛県"
+      "name": "面河渓特設会場・おもごふるさとの駅（愛媛県上浮穴郡久万高原町相坂34）",
+      "mapQuery": "愛媛県久万高原町 おもごふるさとの駅"
     },
     "source": {
       "portalName": "スポエンCYCLE"
@@ -2560,7 +2560,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -2585,8 +2585,8 @@
       }
     ],
     "venue": {
-      "name": "小国森林公園",
-      "mapQuery": "新潟県"
+      "name": "おぐに森林公園（新潟県長岡市小国町上岩田208）",
+      "mapQuery": "新潟県長岡市 おぐに森林公園"
     },
     "source": {
       "portalName": "モシコム"
@@ -2618,7 +2618,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -2651,8 +2651,8 @@
       }
     ],
     "venue": {
-      "name": "",
-      "mapQuery": "長野県"
+      "name": "斑尾高原レストランハイジ前（長野県飯山市斑尾高原）",
+      "mapQuery": "長野県飯山市 斑尾高原 レストランハイジ"
     },
     "source": {
       "portalName": "大会公式"
@@ -2683,7 +2683,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -2704,8 +2704,8 @@
       }
     ],
     "venue": {
-      "name": "春のプレミアムアワイチ",
-      "mapQuery": "兵庫県 春のプレミアムアワイチ"
+      "name": "国営明石海峡公園（兵庫県淡路市夢舞台8-10）",
+      "mapQuery": "兵庫県淡路市 国営明石海峡公園"
     },
     "source": {
       "portalName": "スポエン"
@@ -2736,7 +2736,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -2757,8 +2757,8 @@
       }
     ],
     "venue": {
-      "name": "京丹後市",
-      "mapQuery": "京都府 京丹後市"
+      "name": "アミティ丹後（京都府京丹後市網野町網野367）",
+      "mapQuery": "京都府京丹後市 アミティ丹後"
     },
     "source": {
       "portalName": "大会公式"
@@ -2788,7 +2788,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -2805,8 +2805,8 @@
       }
     ],
     "venue": {
-      "name": "安芸太田町役場本庁舎前",
-      "mapQuery": "広島県 酷道激坂88km"
+      "name": "安芸太田町役場本庁舎前（広島県山県郡安芸太田町勝光寺60）",
+      "mapQuery": "広島県安芸太田町 安芸太田町役場本庁舎"
     },
     "source": {
       "portalName": "モシコム"
@@ -2837,7 +2837,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -2858,8 +2858,8 @@
       }
     ],
     "venue": {
-      "name": "仙北市角館〜北秋田市鷹巣",
-      "mapQuery": "秋田県"
+      "name": "角館武家屋敷館前（秋田県仙北市角館町表町上丁35）",
+      "mapQuery": "秋田県仙北市 角館武家屋敷館"
     },
     "source": {
       "portalName": "モシコム"
@@ -2892,7 +2892,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -2925,8 +2925,8 @@
       }
     ],
     "venue": {
-      "name": "びわ湖100マイル トレイルラン 2026",
-      "mapQuery": "滋賀県 びわ湖100マイル トレイルラン 2026"
+      "name": "皇子山総合運動公園陸上競技場（滋賀県大津市御陵町4-1）",
+      "mapQuery": "滋賀県大津市 皇子山総合運動公園"
     },
     "source": {
       "portalName": "大会公式"
@@ -2956,7 +2956,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -2981,8 +2981,8 @@
       }
     ],
     "venue": {
-      "name": "米原駅東口特設会場",
-      "mapQuery": "滋賀県 ビワイチ 160km センチュリー"
+      "name": "米原駅東口特設会場（滋賀県米原市米原1016）",
+      "mapQuery": "滋賀県米原市 米原駅東口"
     },
     "source": {
       "portalName": "スポエンCYCLE"
@@ -3014,7 +3014,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -3047,8 +3047,8 @@
       }
     ],
     "venue": {
-      "name": "小海100マイル トレイルランニング 2026",
-      "mapQuery": "長野県 小海100マイル トレイルランニング 2026"
+      "name": "小海町高原美術館・八峰の湯（長野県南佐久郡小海町豊里5918-2）",
+      "mapQuery": "長野県小海町 小海町高原美術館"
     },
     "source": {
       "portalName": "大会公式"
@@ -3080,7 +3080,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -3105,8 +3105,8 @@
       }
     ],
     "venue": {
-      "name": "24時間以内",
-      "mapQuery": "東京都 24時間以内"
+      "name": "あきる野市立五日市中学校（東京都あきる野市五日市388）",
+      "mapQuery": "東京都あきる野市 五日市中学校"
     },
     "source": {
       "portalName": "大会公式"
@@ -3139,7 +3139,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -3164,8 +3164,8 @@
       }
     ],
     "venue": {
-      "name": "奈良吉野川 五條市近郊",
-      "mapQuery": "奈良県五條市 吉野川"
+      "name": "五條カルチャーセンター（奈良県五條市五條1-12-1）",
+      "mapQuery": "奈良県五條市 五條カルチャーセンター"
     },
     "source": {
       "portalName": "とれとれバイク"
@@ -3195,7 +3195,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -3220,8 +3220,8 @@
       }
     ],
     "venue": {
-      "name": "美祢市 エクストリーム60km",
-      "mapQuery": "山口県 美祢市 エクストリーム60km"
+      "name": "秋吉台家族旅行村（山口県美祢市秋芳町秋吉1237-553）",
+      "mapQuery": "山口県美祢市 秋吉台家族旅行村"
     },
     "source": {
       "portalName": "大会公式"
@@ -3251,7 +3251,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -3276,8 +3276,8 @@
       }
     ],
     "venue": {
-      "name": "土庄港特設会場",
-      "mapQuery": "香川県"
+      "name": "土庄港フェリーターミナル（香川県小豆郡土庄町甲5165-201）",
+      "mapQuery": "香川県土庄町 土庄港フェリーターミナル"
     },
     "source": {
       "portalName": "スポエンCYCLE"
@@ -3308,7 +3308,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -3341,8 +3341,8 @@
       }
     ],
     "venue": {
-      "name": "四万十市",
-      "mapQuery": "高知県 四万十市"
+      "name": "蕨岡中学校グラウンド（高知県四万十市蕨岡甲4721）",
+      "mapQuery": "高知県四万十市 蕨岡中学校"
     },
     "source": {
       "portalName": "大会公式"
@@ -3373,7 +3373,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -3394,8 +3394,8 @@
       }
     ],
     "venue": {
-      "name": "スイス村 スキー場",
-      "mapQuery": "京都府"
+      "name": "スイス村スキー場（京都府京丹後市弥栄町野中2562）",
+      "mapQuery": "京都府京丹後市 スイス村スキー場"
     },
     "source": {
       "portalName": "モシコム"
@@ -3427,7 +3427,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -3460,8 +3460,8 @@
       }
     ],
     "venue": {
-      "name": "甲州市勝沼ぶどうの丘",
-      "mapQuery": "山梨県 甲州アルプスオートルート 100mile"
+      "name": "甲州市勝沼中央公園（山梨県甲州市勝沼町勝沼756-1）",
+      "mapQuery": "山梨県甲州市 勝沼中央公園"
     },
     "source": {
       "portalName": "モシコム"
@@ -3493,7 +3493,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -3518,8 +3518,8 @@
       }
     ],
     "venue": {
-      "name": "おおい町プレーパーク大島",
-      "mapQuery": "福井県 福井"
+      "name": "プレーパーク大島（福井県大飯郡おおい町大島13-1-1）",
+      "mapQuery": "福井県おおい町 プレーパーク大島"
     },
     "source": {
       "portalName": "モシコム"
@@ -3549,7 +3549,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -3574,8 +3574,8 @@
       }
     ],
     "venue": {
-      "name": "",
-      "mapQuery": "愛媛県"
+      "name": "今治新都市第1地区・にぎわい広場（愛媛県今治市にぎわい広場1-1）",
+      "mapQuery": "愛媛県今治市 今治新都市にぎわい広場"
     },
     "source": {
       "portalName": "スポエンCYCLE"
@@ -3605,7 +3605,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -3622,8 +3622,8 @@
       }
     ],
     "venue": {
-      "name": "下関市 関門海峡コース",
-      "mapQuery": "山口県 下関市 関門海峡コース"
+      "name": "海峡メッセ下関（山口県下関市豊前田町3-3-1）",
+      "mapQuery": "山口県下関市 海峡メッセ下関"
     },
     "source": {
       "portalName": "大会公式"
@@ -3656,7 +3656,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -3681,8 +3681,8 @@
       }
     ],
     "venue": {
-      "name": "滋賀県高島市特設会場",
-      "mapQuery": "滋賀県"
+      "name": "高島市今津B&G海洋センター（滋賀県高島市今津町日置前3110）",
+      "mapQuery": "滋賀県高島市 今津B&G海洋センター"
     },
     "source": {
       "portalName": "OMM公式"
@@ -3712,7 +3712,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -3729,8 +3729,8 @@
       }
     ],
     "venue": {
-      "name": "岡山市 フルマラソン",
-      "mapQuery": "岡山県 岡山市 フルマラソン"
+      "name": "ジップアリーナ岡山（岡山県岡山市北区いずみ町2-1-3）",
+      "mapQuery": "岡山県岡山市北区 ジップアリーナ岡山"
     },
     "source": {
       "portalName": "大会公式"
@@ -3760,7 +3760,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -3781,8 +3781,8 @@
       }
     ],
     "venue": {
-      "name": "松葉川温泉周辺特設会場",
-      "mapQuery": "高知県 四万十町"
+      "name": "松葉川温泉前広場（高知県高岡郡四万十町日野地605-1）",
+      "mapQuery": "高知県四万十町 松葉川温泉"
     },
     "source": {
       "portalName": "モシコム"
@@ -3813,7 +3813,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -3834,8 +3834,8 @@
       }
     ],
     "venue": {
-      "name": "日光東照宮・日光二荒山神社",
-      "mapQuery": "栃木県"
+      "name": "日光東照宮・日光二荒山神社（栃木県日光市山内2301）",
+      "mapQuery": "栃木県日光市 日光東照宮"
     },
     "source": {
       "portalName": "モシコム"
@@ -3867,7 +3867,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -3892,8 +3892,8 @@
       }
     ],
     "venue": {
-      "name": "ユートピアサイオト",
-      "mapQuery": "ユートピアサイオト"
+      "name": "ユートピアサイオト（広島県山県郡北広島町才乙144）",
+      "mapQuery": "広島県北広島町 ユートピアサイオト"
     },
     "source": {
       "portalName": "モシコム"
@@ -3925,7 +3925,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -3946,8 +3946,8 @@
       }
     ],
     "venue": {
-      "name": "佐用町役場・南光自然観察村",
-      "mapQuery": "兵庫県佐用郡佐用町 佐用町役場"
+      "name": "南光自然観察村（兵庫県佐用郡佐用町船越222）",
+      "mapQuery": "兵庫県佐用郡佐用町 南光自然観察村"
     },
     "source": {
       "portalName": "大会公式"
@@ -3979,7 +3979,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -4012,8 +4012,8 @@
       }
     ],
     "venue": {
-      "name": "八代城跡公園〜球磨川流域",
-      "mapQuery": "熊本県 KRT 167km"
+      "name": "八代城跡公園（熊本県八代市松江城町7-34）",
+      "mapQuery": "熊本県八代市 八代城跡公園"
     },
     "source": {
       "portalName": "モシコム"
@@ -4045,7 +4045,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -4070,8 +4070,8 @@
       }
     ],
     "venue": {
-      "name": "道の駅ことなみ（エナガ荘前広場）",
-      "mapQuery": "道の駅ことなみ"
+      "name": "道の駅ことなみ エピアみかど（香川県仲多度郡まんのう町川東2070-67）",
+      "mapQuery": "香川県まんのう町 道の駅ことなみ"
     },
     "source": {
       "portalName": "ナビゲーム"
@@ -4101,7 +4101,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -4126,8 +4126,8 @@
       }
     ],
     "venue": {
-      "name": "沖縄 名護市 市民レース200km",
-      "mapQuery": "沖縄県 沖縄 名護市 市民レース200km"
+      "name": "21世紀の森体育館（沖縄県名護市大南2-1-1）",
+      "mapQuery": "沖縄県名護市 21世紀の森体育館"
     },
     "source": {
       "portalName": "スポエンCYCLE"
@@ -4159,7 +4159,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -4192,8 +4192,8 @@
       }
     ],
     "venue": {
-      "name": "FTR100",
-      "mapQuery": "埼玉県 FTR100"
+      "name": "羊山公園（埼玉県秩父市大宮6360）",
+      "mapQuery": "埼玉県秩父市 羊山公園"
     },
     "source": {
       "portalName": "大会公式"
@@ -4225,7 +4225,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -4246,8 +4246,8 @@
       }
     ],
     "venue": {
-      "name": "みろくの里",
-      "mapQuery": "広島県 福山"
+      "name": "みろくの里（広島県福山市藤江町638-1）",
+      "mapQuery": "広島県福山市 みろくの里"
     },
     "source": {
       "portalName": "スポエンCYCLE"
@@ -4277,7 +4277,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -4302,8 +4302,8 @@
       }
     ],
     "venue": {
-      "name": "清流四万十川＆足摺岬 ロングライド 135km",
-      "mapQuery": "高知県 清流四万十川＆足摺岬 ロングライド 135km"
+      "name": "四万十市安並運動公園（高知県四万十市安並4231）",
+      "mapQuery": "高知県四万十市 安並運動公園"
     },
     "source": {
       "portalName": "スポエンCYCLE"
@@ -4337,7 +4337,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -4362,7 +4362,7 @@
       }
     ],
     "venue": {
-      "name": "四万十市 カヌーの里すりき",
+      "name": "カヌーの里すりき（高知県四万十市西土佐用井1111-11）",
       "mapQuery": "高知県四万十市 カヌーの里すりき"
     },
     "source": {
@@ -4394,7 +4394,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -4411,8 +4411,8 @@
       }
     ],
     "venue": {
-      "name": "呉市役所下蒲刈市民センター",
-      "mapQuery": "広島県 呉市"
+      "name": "呉市役所下蒲刈市民センター（広島県呉市下蒲刈町下島2364）",
+      "mapQuery": "広島県呉市 下蒲刈市民センター"
     },
     "source": {
       "portalName": "スポエンCYCLE"
@@ -4443,7 +4443,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -4464,8 +4464,8 @@
       }
     ],
     "venue": {
-      "name": "",
-      "mapQuery": "三重県"
+      "name": "熊野市鬼ヶ城センター（三重県熊野市木本町1835-7）",
+      "mapQuery": "三重県熊野市 鬼ヶ城センター"
     },
     "source": {
       "portalName": "大会公式"
@@ -4493,7 +4493,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -4510,8 +4510,8 @@
       }
     ],
     "venue": {
-      "name": "マメイチ",
-      "mapQuery": "香川県 マメイチ"
+      "name": "土庄港フェリーターミナル（香川県小豆郡土庄町甲5165-201）",
+      "mapQuery": "香川県土庄町 土庄港フェリーターミナル"
     },
     "source": {
       "portalName": "スポエンCYCLE"
@@ -4544,7 +4544,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -4577,8 +4577,8 @@
       }
     ],
     "venue": {
-      "name": "兵庫県姫路市安富町富栖の里",
-      "mapQuery": "兵庫県姫路市安富町皆河 富栖の里"
+      "name": "富栖の里（兵庫県姫路市安富町皆河50-54）",
+      "mapQuery": "兵庫県姫路市安富町 富栖の里"
     },
     "source": {
       "portalName": "とれとれバイク"
@@ -4610,7 +4610,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -4631,8 +4631,8 @@
       }
     ],
     "venue": {
-      "name": "",
-      "mapQuery": "和歌山県"
+      "name": "すさみ町総合運動公園（和歌山県西牟婁郡すさみ町周参見4110）",
+      "mapQuery": "和歌山県すさみ町 すさみ町総合運動公園"
     },
     "source": {
       "portalName": "スポエンCYCLE"
@@ -4662,7 +4662,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -4679,8 +4679,8 @@
       }
     ],
     "venue": {
-      "name": "松江城大手前",
-      "mapQuery": "島根県 松江市 フルマラソン"
+      "name": "松江城大手前（島根県松江市殿町）",
+      "mapQuery": "島根県松江市 松江城大手前"
     },
     "source": {
       "portalName": "モシコム"
@@ -4710,7 +4710,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -4735,8 +4735,8 @@
       }
     ],
     "venue": {
-      "name": "熊野市鬼ヶ城センター",
-      "mapQuery": "三重県 世界遺産 熊野古道トレイルラン 50km"
+      "name": "熊野市鬼ヶ城センター（三重県熊野市木本町1835-7）",
+      "mapQuery": "三重県熊野市 鬼ヶ城センター"
     },
     "source": {
       "portalName": "モシコム"
@@ -4767,7 +4767,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -4792,8 +4792,8 @@
       }
     ],
     "venue": {
-      "name": "ITJ 70km 松崎〜修善寺",
-      "mapQuery": "静岡県 ITJ 70km 松崎〜修善寺"
+      "name": "松崎新港（静岡県賀茂郡松崎町松崎）",
+      "mapQuery": "静岡県松崎町 松崎新港"
     },
     "source": {
       "portalName": "大会公式"
@@ -4825,7 +4825,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -4850,8 +4850,8 @@
       }
     ],
     "venue": {
-      "name": "",
-      "mapQuery": "高知県"
+      "name": "高知市中央公園（高知県高知市帯屋町1-11-27）",
+      "mapQuery": "高知県高知市 中央公園"
     },
     "source": {
       "portalName": "ナビゲーム"
@@ -4881,7 +4881,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -4902,8 +4902,8 @@
       }
     ],
     "venue": {
-      "name": "美波町立由岐中学校",
-      "mapQuery": "徳島県 せんばかいがい"
+      "name": "美波町立由岐中学校体育館（徳島県海部郡美波町西由岐山際1）",
+      "mapQuery": "徳島県美波町 由岐中学校"
     },
     "source": {
       "portalName": "モシコム"
@@ -4937,7 +4937,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -5002,8 +5002,8 @@
       }
     ],
     "venue": {
-      "name": "金浦小学校（ロング発）／中世夢が原（ショート発）／旧吹屋小学校（共通着）",
-      "mapQuery": "岡山県 笠岡市 吉浜 金浦小学校"
+      "name": "笠岡市立金浦小学校（岡山県笠岡市吉浜1599）",
+      "mapQuery": "岡山県笠岡市 金浦小学校"
     },
     "source": {
       "portalName": "RUNNET"
@@ -5033,7 +5033,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -5050,8 +5050,8 @@
       }
     ],
     "venue": {
-      "name": "松山市 坊っちゃんスタジアム",
-      "mapQuery": "愛媛県 松山市 坊っちゃんスタジアム"
+      "name": "松山中央公園 坊っちゃんスタジアム（愛媛県松山市市坪西町625-1）",
+      "mapQuery": "愛媛県松山市 坊っちゃんスタジアム"
     },
     "source": {
       "portalName": "大会公式"
@@ -5081,7 +5081,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -5098,8 +5098,8 @@
       }
     ],
     "venue": {
-      "name": "日本屈指の高速コース",
-      "mapQuery": "香川県 日本屈指の高速コース"
+      "name": "香川県立丸亀競技場 Pikaraスタジアム（香川県丸亀市金倉町830）",
+      "mapQuery": "香川県丸亀市 Pikaraスタジアム"
     },
     "source": {
       "portalName": "大会公式"
@@ -5133,7 +5133,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -5158,8 +5158,8 @@
       }
     ],
     "venue": {
-      "name": "備前国総社宮",
-      "mapQuery": "岡山県 岡山市中区 祇園 備前国総社宮"
+      "name": "備前国総社宮（岡山県岡山市中区祇園852）",
+      "mapQuery": "岡山県岡山市中区 備前国総社宮"
     },
     "source": {
       "portalName": "モシコム"
@@ -5191,7 +5191,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -5216,8 +5216,8 @@
       }
     ],
     "venue": {
-      "name": "錦向井ヶ浜遊パークトロピカルガーデン",
-      "mapQuery": "三重県度会郡大紀町錦 錦向井ヶ浜遊パークトロピカルガーデン"
+      "name": "錦向井ヶ浜遊パーク トロピカルガーデン（三重県度会郡大紀町錦17-6）",
+      "mapQuery": "三重県大紀町 錦向井ヶ浜遊パーク"
     },
     "source": {
       "portalName": "大会公式"
@@ -5247,7 +5247,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -5268,8 +5268,8 @@
       }
     ],
     "venue": {
-      "name": "下松市 笠戸島国民宿舎大城",
-      "mapQuery": "山口県 下松市"
+      "name": "笠戸島国民宿舎大城（山口県下松市笠戸島14-1）",
+      "mapQuery": "山口県下松市 笠戸島国民宿舎大城"
     },
     "source": {
       "portalName": "モシコム"
@@ -5299,7 +5299,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -5316,8 +5316,8 @@
       }
     ],
     "venue": {
-      "name": "桂浜〜仁淀川河口大橋",
-      "mapQuery": "高知県 桂浜〜仁淀川河口大橋"
+      "name": "高知県庁前（高知県高知市丸ノ内1-2-20）",
+      "mapQuery": "高知県高知市 高知県庁前"
     },
     "source": {
       "portalName": "大会公式"
@@ -5349,7 +5349,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -5374,8 +5374,8 @@
       }
     ],
     "venue": {
-      "name": "駿府匠宿第二駐車場",
-      "mapQuery": "静岡県静岡市駿河区丸子 駿府匠宿"
+      "name": "駿府匠宿 第二駐車場（静岡県静岡市駿河区丸子3240-1）",
+      "mapQuery": "静岡県静岡市駿河区 駿府匠宿"
     },
     "source": {
       "portalName": "RUNNET"
@@ -5408,7 +5408,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -5441,8 +5441,8 @@
       }
     ],
     "venue": {
-      "name": "ホシアカリ山びこ",
-      "mapQuery": "広島県呉市倉橋町 桂浜"
+      "name": "ホシアカリ山びこ（広島県呉市倉橋町才ノ木）",
+      "mapQuery": "広島県呉市倉橋町 ホシアカリ山びこ"
     },
     "source": {
       "portalName": "モシコム"
@@ -5472,7 +5472,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -5489,8 +5489,8 @@
       }
     ],
     "venue": {
-      "name": "善通寺五岳の里（市民集いの丘公園）",
-      "mapQuery": "善通寺五岳の里 市民集いの丘公園"
+      "name": "善通寺五岳の里 市民集いの丘公園（香川県善通寺市吉原町918-1）",
+      "mapQuery": "香川県善通寺市 善通寺五岳の里"
     },
     "source": {
       "portalName": "モシコム"
@@ -5520,7 +5520,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -5537,8 +5537,8 @@
       }
     ],
     "venue": {
-      "name": "総社市 フル＆ハーフ",
-      "mapQuery": "岡山県 総社市 フル＆ハーフ"
+      "name": "総社市スポーツセンター（岡山県総社市三輪1300）",
+      "mapQuery": "岡山県総社市 総社市スポーツセンター"
     },
     "source": {
       "portalName": "大会公式"
@@ -5572,7 +5572,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -5601,8 +5601,8 @@
       }
     ],
     "venue": {
-      "name": "比叡山延暦寺（滋賀県大津市坂本本町）",
-      "mapQuery": "滋賀県 大津市 比叡山延暦寺"
+      "name": "比叡山延暦寺 一乗止観院前（滋賀県大津市坂本本町4220）",
+      "mapQuery": "滋賀県大津市 比叡山延暦寺"
     },
     "source": {
       "portalName": "大会公式"
@@ -5632,7 +5632,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -5649,8 +5649,8 @@
       }
     ],
     "venue": {
-      "name": "鳥取砂丘オアシス広場〜ヤマタスポーツパーク",
-      "mapQuery": "鳥取県 鳥取砂丘〜鳥取城跡 ワンウェイ公認フル"
+      "name": "鳥取砂丘オアシス広場（鳥取県鳥取市福部町湯山2164-806）",
+      "mapQuery": "鳥取県鳥取市 鳥取砂丘オアシス広場"
     },
     "source": {
       "portalName": "モシコム"
@@ -5682,7 +5682,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -5711,8 +5711,8 @@
       }
     ],
     "venue": {
-      "name": "愛知県民の森（新城市門谷）",
-      "mapQuery": "愛知県新城市門谷 愛知県民の森"
+      "name": "愛知県民の森（愛知県新城市門谷字鳳来寺7-60）",
+      "mapQuery": "愛知県新城市 愛知県民の森"
     },
     "source": {
       "portalName": "大会公式"
@@ -5742,7 +5742,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -5759,8 +5759,8 @@
       }
     ],
     "venue": {
-      "name": "吉野川ブルーライン公認コース",
-      "mapQuery": "徳島県 吉野川ブルーライン公認コース"
+      "name": "徳島県庁前（徳島県徳島市万代町1-1）",
+      "mapQuery": "徳島県徳島市 徳島県庁前"
     },
     "source": {
       "portalName": "大会公式"
@@ -5792,7 +5792,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -5813,8 +5813,8 @@
       }
     ],
     "venue": {
-      "name": "尾道市総合福祉センター / 尾道駅前港湾駐車場",
-      "mapQuery": "広島県尾道市 尾道駅前"
+      "name": "尾道駅前港湾駐車場（広島県尾道市東御所町11-1）",
+      "mapQuery": "広島県尾道市 尾道駅前港湾駐車場"
     },
     "source": {
       "portalName": "スポエンCYCLE"
@@ -5848,7 +5848,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -5893,8 +5893,8 @@
       }
     ],
     "venue": {
-      "name": "和気ドーム",
-      "mapQuery": "岡山県 和気郡和気町 益原 和気ドーム"
+      "name": "和気ドーム（岡山県和気郡和気町益原681-1）",
+      "mapQuery": "岡山県和気郡和気町 和気ドーム"
     },
     "source": {
       "portalName": "RUNNET"
@@ -5929,7 +5929,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -5978,8 +5978,8 @@
       }
     ],
     "venue": {
-      "name": "ひろしまゲートパーク・ひろしまスタジアムパーク（広島市中区・エディオンピースウイング広島隣接 / 広島湾岸トレイル）",
-      "mapQuery": "広島県 広島市中区 ひろしまゲートパーク"
+      "name": "ひろしまゲートパーク（広島県広島市中区基町5-25）",
+      "mapQuery": "広島県広島市中区 ひろしまゲートパーク"
     },
     "source": {
       "portalName": "UTMB公式"
@@ -6010,7 +6010,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -6031,8 +6031,8 @@
       }
     ],
     "venue": {
-      "name": "ふれあいパークほうらい",
-      "mapQuery": "愛知県"
+      "name": "ふれあいパークほうらい（愛知県新城市長篠字東谷下56-2）",
+      "mapQuery": "愛知県新城市 ふれあいパークほうらい"
     },
     "source": {
       "portalName": "モシコム"
@@ -6063,7 +6063,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -6100,8 +6100,8 @@
       }
     ],
     "venue": {
-      "name": "富士北麓公園陸上競技場",
-      "mapQuery": "富士北麓公園"
+      "name": "富士北麓公園陸上競技場（山梨県富士吉田市上吉田立石5000）",
+      "mapQuery": "山梨県富士吉田市 富士北麓公園"
     },
     "source": {
       "portalName": "大会公式"
@@ -6133,7 +6133,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-01"
+      "verified_at": "2026-11-02"
     },
     "mandatory_gear": [
       {
@@ -6186,8 +6186,8 @@
       }
     ],
     "venue": {
-      "name": "",
-      "mapQuery": "山梨県"
+      "name": "富士山パーキング（山梨県富士吉田市上吉田字剣丸尾5597-1）",
+      "mapQuery": "山梨県富士吉田市 富士山パーキング"
     },
     "source": {
       "portalName": "大会公式"
