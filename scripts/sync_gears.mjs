@@ -1,14 +1,14 @@
 /**
- * ギアマスター自動同期スクリプト (scripts/sync_gears.mjs)
+ * ギアマスター自動同期＆画像自動取得スクリプト (scripts/sync_gears.mjs)
  * 
- * Googleスプレッドシート（新スキーマ）から最新の専門ギアデータを取得し、
- * deals.json（楽天市場の特価セール情報）と結合して
- * src/data/gears.json を完全生成します。
+ * Googleスプレッドシートから最新の専門ギアデータを取得し、
+ * 各商品の購入ページ（item.rakuten.co.jp等）から公式商品画像（og:image）を
+ * リアルタイムに自動抽出し、gears.json / deals.json を完全同期します。
  * 
- * 【重要方針】
- * - 特価品リンク（dealUrl）は、楽天市場の「検索結果一覧」ではなく、
- *   必ず各商品の「個別直接購入ページ (item.rakuten.co.jp)」に直通ジャンプさせます。
- * - タイトル・型番・商品内容とリンク先が100%合致することを保証します。
+ * 【画像処理・リンク方針】
+ * 1. スプレッドシートの deal_url / standard_url を解析し、商品個別ページの og:image を自動取得
+ * 2. スプレッドシートに image_url 列が存在する場合は最優先で採用
+ * 3. リンク先は常に個別商品購入ページ (item.rakuten.co.jp) に直通
  */
 
 import fs from 'node:fs';
@@ -30,14 +30,14 @@ const DEFAULT_GEAR_SHEET_URL =
 const RAKUTEN_AFFILIATE_ID = '58fb598b.0ed2da59.58fb598c.27018da5';
 
 /**
- * 楽天市場の商品個別直通URLマッピングテーブル（検索一覧ではなく直接購入ページへ直通）
+ * 楽天市場の商品個別直通URLマッピングテーブル（スプレッドシートにURLがない場合のフォールバック）
  */
 const EXACT_ITEM_DIRECT_URLS = {
   'gear-trail-rain-tnf-strike': 'https://item.rakuten.co.jp/canpanera/n17-2287/',
   'gear-trail-rain-montbell': 'https://webshop.montbell.jp/goods/disp.php?product_id=1128590',
-  'gear-trail-pack-salomon-advskin12': 'https://item.rakuten.co.jp/free-sports/salomon-2383/',
+  'gear-trail-pack-salomon-advskin12': 'https://item.rakuten.co.jp/vitaliser/salomon-2568/',
   'gear-trail-pack-nathan-pinnacle': 'https://item.rakuten.co.jp/usbonline/ns40180j/',
-  'gear-trail-shoes-hoka-speedgoat6': 'https://item.rakuten.co.jp/sports-diary/hka-1147791-bblc/',
+  'gear-trail-shoes-hoka-speedgoat6': 'https://item.rakuten.co.jp/sports-diary/hka-1147791-swrd/',
   'gear-trail-shoes-altra-lonepeak8': 'https://item.rakuten.co.jp/glv/ala-3/',
   'gear-trail-poles-leki-fx-one': 'https://item.rakuten.co.jp/sakaiya/202610211933/',
   'gear-trail-light-petzl-swift': 'https://item.rakuten.co.jp/alpine-rose/2545/',
@@ -57,6 +57,36 @@ const EXACT_ITEM_DIRECT_URLS = {
   'gear-ar-compass-silva-no3': 'https://item.rakuten.co.jp/shop-senjin/73010000/',
   'gear-ar-mapcase-sealline': 'https://item.rakuten.co.jp/aila/59587/',
   'gear-ar-drybag-seatosummit': 'https://item.rakuten.co.jp/yoshikip2/ss-brdb20/'
+};
+
+/**
+ * 確定公式画像フォールバックテーブル
+ */
+const FALLBACK_GEAR_IMAGES = {
+  'gear-trail-rain-tnf-strike': 'https://tshop.r10s.jp/canpanera/cabinet/item210/item_n172287_0.jpg?fitin=275:275',
+  'gear-trail-rain-montbell': 'https://webshop.montbell.jp/common/images/product/prod_k/k_1128590_wt.jpg',
+  'gear-trail-pack-salomon-advskin12': 'https://shop.r10s.jp/vitaliser/cabinet/300606/salomon-2568.jpg',
+  'gear-trail-pack-nathan-pinnacle': 'https://tshop.r10s.jp/usbonline/cabinet/pic-2/ns40180j-main.jpg?fitin=275:275',
+  'gear-trail-shoes-hoka-speedgoat6': 'https://shop.r10s.jp/sports-diary/cabinet/16/hka-1147791-swrd_1.jpg',
+  'gear-trail-shoes-altra-lonepeak8': 'https://tshop.r10s.jp/glv/cabinet/al/ala-3_1.jpg?fitin=275:275',
+  'gear-trail-poles-leki-fx-one': 'https://tshop.r10s.jp/sakaiya/cabinet/00109726/1300542_1.jpg?fitin=275:275',
+  'gear-trail-light-petzl-swift': 'https://tshop.r10s.jp/alpine-rose/cabinet/petzl/e095bc.jpg?fitin=275:275',
+  'gear-trail-sublight-bd-spot': 'https://tshop.r10s.jp/canpanera/cabinet/item180/item_b17466_0.jpg?fitin=275:275',
+  'gear-trail-wear-mil-drynamic': 'https://tshop.r10s.jp/sportsmario2/cabinet/item/i06/i06mjmiv01248.jpg?fitin=275:275',
+  'gear-trail-wear-c3fit-tights': 'https://tshop.r10s.jp/auc-bestsports/cabinet/goldwin/3fw14127-1.jpg?fitin=275:275',
+  'gear-trail-bivvy-sol-escape': 'https://tshop.r10s.jp/canpanera/cabinet/item179/item_s23005_0.jpg?fitin=275:275',
+  'gear-cycle-helmet-ogk-vitt': 'https://tshop.r10s.jp/phalconcycle/cabinet/07626918/07626920/imgrc0107384488.jpg?fitin=275:275',
+  'gear-cycle-light-cateye-ampp': 'https://tshop.r10s.jp/cycle-shop-eggs/cabinet/07026577/imgrc0091873775.jpg?fitin=275:275',
+  'gear-cycle-tool-topeak-mini': 'https://tshop.r10s.jp/aris/cabinet/00244673/0651y.jpg?fitin=275:275',
+  'gear-cycle-bottle-camelbak': 'https://tshop.r10s.jp/amical/cabinet/item/z00359-001.jpg?fitin=275:275',
+  'gear-cycle-wear-pearl-wind': 'https://tshop.r10s.jp/bebike/cabinet/new_item/pearlizumi/2300.jpg?fitin=275:275',
+  'gear-marathon-shoes-asics-s4': 'https://tshop.r10s.jp/alpen/cabinet/img/678/4302610436_1.jpg?fitin=275:275',
+  'gear-marathon-pouch-yurenikui': 'https://yurenikui.jp/wp-content/uploads/2021/04/standard_bk.jpg',
+  'gear-nutrition-magon-gel': 'https://tshop.r10s.jp/lafitte/cabinet/item270/magon-energygel-set_1.jpg?fitin=275:275',
+  'gear-marathon-socks-tabio': 'https://tshop.r10s.jp/alpen/cabinet/img/560/3888990001_1.jpg?fitin=275:275',
+  'gear-ar-compass-silva-no3': 'https://tshop.r10s.jp/shop-senjin/cabinet/02856641/img59092823.jpg?fitin=275:275',
+  'gear-ar-mapcase-sealline': 'https://tshop.r10s.jp/aila/cabinet/00100/59587_1.jpg?fitin=275:275',
+  'gear-ar-drybag-seatosummit': 'https://tshop.r10s.jp/yoshikip2/cabinet/07198126/imgrc0084318357.jpg?fitin=275:275'
 };
 
 function parseCsv(csvText) {
@@ -100,9 +130,6 @@ function parseNumber(str) {
   return Number(cleaned) || 0;
 }
 
-/**
- * URLを楽天アフィリエイト直通リンクに変換
- */
 function buildDirectAffiliateUrl(rawUrl) {
   if (!rawUrl) return '';
   if (rawUrl.includes('hb.afl.rakuten.co.jp')) {
@@ -113,6 +140,39 @@ function buildDirectAffiliateUrl(rawUrl) {
     return `https://hb.afl.rakuten.co.jp/ichiba/${RAKUTEN_AFFILIATE_ID}/?pc=${encodeURIComponent(cleanUrl)}&link_type=picttext`;
   }
   return rawUrl;
+}
+
+/**
+ * 商品購入ページから公式出品画像 (og:image) をリアルタイム自動抽出
+ */
+async function extractProductImage(itemUrl) {
+  if (!itemUrl || !itemUrl.startsWith('http')) return null;
+
+  try {
+    const res = await fetch(itemUrl, {
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36'
+      },
+      signal: AbortSignal.timeout(4000)
+    });
+    if (!res.ok) return null;
+    const html = await res.text();
+
+    // 1. og:image を抽出
+    const ogMatch = html.match(/<meta\s+property=["']og:image["']\s+content=["']([^"']+)["']/i);
+    if (ogMatch && ogMatch[1] && ogMatch[1].startsWith('http') && !ogMatch[1].includes('noimage')) {
+      return ogMatch[1];
+    }
+
+    // 2. 楽天のメイン商品画像 (tshop / shop.r10s.jp) を抽出
+    const r10Match = html.match(/https:\/\/(tshop|shop)\.r10s\.jp\/[a-zA-Z0-9_\-\/]+\.(jpg|png|webp)/i);
+    if (r10Match && r10Match[0]) {
+      return r10Match[0];
+    }
+  } catch (err) {
+    // タイムアウトやアクセス制限時はフォールバックへ
+  }
+  return null;
 }
 
 // ギアIDと旧deals IDのマッピング
@@ -135,7 +195,7 @@ const GEAR_TO_DEAL_MAP = {
 
 export async function syncGearsFromSheet() {
   console.log('========================================================');
-  console.log(' ギアマスター（新スキーマ）同期処理 開始');
+  console.log(' ギアマスター自動同期＆商品画像自動抽出処理 開始');
   console.log('========================================================');
 
   const sheetUrl = process.env.GOOGLE_SHEET_GEAR_CSV_URL || DEFAULT_GEAR_SHEET_URL;
@@ -202,20 +262,15 @@ export async function syncGearsFromSheet() {
     const dealKeyword = getCol(row, 'deal_keyword') || title;
     const originalPrice = parseNumber(getCol(row, 'original_price'));
     const minPrice = parseNumber(getCol(row, 'min_price'));
+    const dealPrice = parseNumber(getCol(row, 'deal_price'));
     const csvDealUrl = getCol(row, 'deal_url');
+    const csvImageUrl = getCol(row, 'image_url'); // スプレッドシート側で画像URL指定がある場合に対応
 
     // 対応するセール特価情報を探索
     const mappedDealId = GEAR_TO_DEAL_MAP[id] || id;
     let matchedDeal = dealsMap.get(mappedDealId);
 
-    const discountRate = matchedDeal ? matchedDeal.discount_rate : undefined;
-    const dealPrice = matchedDeal ? matchedDeal.price : undefined;
-    const imageUrl = matchedDeal ? matchedDeal.image_url : undefined;
-
-    // 【最重要】購入直通リンクの決定ロジック
-    // 1. スプレッドシート(CSV)の deal_url に商品直接ページ (item.rakuten.co.jp) または公式直営サイトが書かれている場合 -> 最優先
-    // 2. deals.json に商品直接ページ (item.rakuten.co.jp) がある場合 -> 採用
-    // 3. 確定商品個別URLテーブル (EXACT_ITEM_DIRECT_URLS) -> 採用
+    // 【1. 購入直通リンクの決定】
     let finalRawDealUrl = '';
     if (csvDealUrl && (csvDealUrl.includes('item.rakuten.co.jp') || (!csvDealUrl.includes('search.rakuten.co.jp') && !csvDealUrl.includes('rakuten.co.jp')))) {
       finalRawDealUrl = csvDealUrl;
@@ -223,13 +278,35 @@ export async function syncGearsFromSheet() {
       finalRawDealUrl = matchedDeal.affiliate_url;
     } else if (EXACT_ITEM_DIRECT_URLS[id]) {
       finalRawDealUrl = EXACT_ITEM_DIRECT_URLS[id];
-    } else if (matchedDeal && matchedDeal.affiliate_url) {
-      finalRawDealUrl = matchedDeal.affiliate_url;
     } else {
       finalRawDealUrl = standardUrl;
     }
 
     const dealUrl = buildDirectAffiliateUrl(finalRawDealUrl);
+
+    // 【2. 商品画像の決定：自動抽出エンジン】
+    // 優先順位：
+    // ① スプレッドシートの image_url
+    // ② 出品ページ (finalRawDealUrl) からの og:image 自動取得
+    // ③ matchedDeal の image_url
+    // ④ FALLBACK_GEAR_IMAGES テーブル
+    let finalImageUrl = csvImageUrl;
+    if (!finalImageUrl && finalRawDealUrl.includes('item.rakuten.co.jp')) {
+      finalImageUrl = await extractProductImage(finalRawDealUrl);
+      if (finalImageUrl) {
+        console.log(`  📸 [画像自動抽出成功] ${id}: ${finalImageUrl.slice(0, 70)}...`);
+      }
+    }
+    if (!finalImageUrl && matchedDeal && matchedDeal.image_url) {
+      finalImageUrl = matchedDeal.image_url;
+    }
+    if (!finalImageUrl && FALLBACK_GEAR_IMAGES[id]) {
+      finalImageUrl = FALLBACK_GEAR_IMAGES[id];
+    }
+
+    const discountRate = (originalPrice > 0 && dealPrice > 0 && dealPrice < originalPrice)
+      ? Math.round((1 - dealPrice / originalPrice) * 100)
+      : (matchedDeal ? matchedDeal.discount_rate : undefined);
 
     const gearItem = {
       id,
@@ -243,18 +320,33 @@ export async function syncGearsFromSheet() {
       dealKeyword,
       originalPrice: originalPrice || undefined,
       minPrice: minPrice || undefined,
-      price: dealPrice,
+      price: dealPrice || (matchedDeal ? matchedDeal.price : undefined),
       discountRate,
       dealUrl,
-      imageUrl
+      imageUrl: finalImageUrl
     };
 
     gearItems.push(gearItem);
+
+    // deals.json 側の対応する商品画像やURLも連動して最新化
+    if (matchedDeal && finalImageUrl) {
+      matchedDeal.image_url = finalImageUrl;
+      if (finalRawDealUrl.includes('item.rakuten.co.jp')) {
+        matchedDeal.affiliate_url = dealUrl;
+      }
+    }
   }
 
   console.log(`🎉 合計 ${gearItems.length} 件のギアマスターデータを構築しました`);
   fs.writeFileSync(GEARS_JSON_PATH, JSON.stringify(gearItems, null, 2) + '\n', 'utf-8');
   console.log(`💾 ${GEARS_JSON_PATH} に保存完了！`);
+
+  // deals.json も更新
+  if (dealsMap.size > 0) {
+    const updatedDeals = Array.from(dealsMap.values());
+    fs.writeFileSync(DEALS_JSON_PATH, JSON.stringify(updatedDeals, null, 2) + '\n', 'utf-8');
+    console.log(`💾 ${DEALS_JSON_PATH} も最新画像・リンクで同期完了！`);
+  }
 
   // meta.json 更新
   try {
