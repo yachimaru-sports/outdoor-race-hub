@@ -750,10 +750,10 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
             }
             className="w-full bg-white dark:bg-slate-800 border-2 border-slate-300 dark:border-slate-700 rounded-xl pl-9 pr-3 py-2 text-xs sm:text-sm text-slate-950 dark:text-white focus:outline-none focus:ring-2 focus:ring-teal-500/20 focus:border-teal-700 transition-all appearance-none cursor-pointer font-black"
           >
-            <option value="all">エリア：全国すべて</option>
+            <option value="all">エリア：すべて（国内・海外）</option>
             {REGIONS.map((r) => (
               <option key={r} value={r}>
-                {r}地方
+                {r === '海外' ? '海外（ARWS・世界選手権）' : `${r}地方`}
               </option>
             ))}
           </select>

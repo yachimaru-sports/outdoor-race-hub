@@ -8,7 +8,7 @@ export const INITIAL_FILTERS: FilterState = {
   region: 'all',
   prefecture: 'all',
   minDistance: 0,
-  maxDistance: 250,
+  maxDistance: 999, // 初期状態は全距離（国内・海外・100マイル・ARWSまで全レース同列表示）
   entryStatus: 'open_or_closing', // デフォルトで「申込可能（エントリー受付中＋締切間近）」を表示
   searchKeyword: '',
   sortBy: 'date-asc',

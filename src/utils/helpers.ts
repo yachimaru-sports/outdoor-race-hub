@@ -160,7 +160,7 @@ export const ENTRY_STATUS_CONFIG: Record<
   },
 };
 
-export const REGIONS = ['中国', '四国', '近畿', '中部', '関東', '甲信越', '九州', '東北', '北海道'];
+export const REGIONS = ['中国', '四国', '近畿', '中部', '関東', '甲信越', '九州', '東北', '北海道', '海外'];
 
 export const PREFECTURES = [
   // 中国地方（全5県）
