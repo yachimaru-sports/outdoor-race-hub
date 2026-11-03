@@ -22,8 +22,9 @@
     "dealKeyword": "THE NORTH FACE ストライクトレイルフーディ メンズ (NP12372/NP62071)",
     "originalPrice": 20900,
     "price": 20900,
+    "discountRate": 42,
     "dealUrl": "https://www.goldwin.co.jp/tnf/",
-    "imageUrl": "https://shop.r10s.jp/canpanera/cabinet/item240/item_n17-2287_0.jpg"
+    "imageUrl": "https://goldwin.scene7.com/is/image/goldwin/NP12372_K_01?$large$"
   },
   {
     "id": "gear-trail-rain-montbell",
@@ -47,8 +48,9 @@
     "dealKeyword": "mont-bell バーサライト ジャケット Men's (1128590)",
     "originalPrice": 20900,
     "price": 20900,
+    "discountRate": 28,
     "dealUrl": "https://webshop.montbell.jp/goods/disp.php?product_id=1128590",
-    "imageUrl": "https://tshop.r10s.jp/airwel/cabinet/shohin13/13162527/imgrc0141194038.jpg"
+    "imageUrl": "https://webshop.montbell.jp/common/images/goods/product/1128590_BLBL.jpg"
   },
   {
     "id": "gear-trail-pack-salomon-advskin12",
@@ -73,7 +75,7 @@
     "price": 17600,
     "discountRate": 20,
     "dealUrl": "https://hb.afl.rakuten.co.jp/ichiba/58fb598b.0ed2da59.58fb598c.27018da5/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fvitaliser%2Fsalomon-2568%2F&link_type=picttext",
-    "imageUrl": "https://shop.r10s.jp/vitaliser/cabinet/300606/salomon-2568.jpg"
+    "imageUrl": "https://thumbnail.image.rakuten.co.jp/@0_mall/vitaliser/cabinet/300207/salomon-2568.jpg"
   },
   {
     "id": "gear-trail-pack-nathan-pinnacle",
@@ -97,7 +99,7 @@
     "price": 14960,
     "discountRate": 20,
     "dealUrl": "https://www.united-sports.jp/nathan/",
-    "imageUrl": "https://shop.r10s.jp/usbonline/cabinet/pic-2/ns40180j-main.jpg"
+    "imageUrl": "https://thumbnail.image.rakuten.co.jp/@0_mall/vitaliser/cabinet/300199/nathan-1065.jpg"
   },
   {
     "id": "gear-trail-shoes-hoka-speedgoat6",
@@ -119,7 +121,7 @@
     "price": 19360,
     "discountRate": 20,
     "dealUrl": "https://hb.afl.rakuten.co.jp/ichiba/58fb598b.0ed2da59.58fb598c.27018da5/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsports-diary%2Fhka-1147791-swrd%2F&link_type=picttext",
-    "imageUrl": "https://shop.r10s.jp/sports-diary/cabinet/16/hka-1147791-swrd_1.jpg"
+    "imageUrl": "https://thumbnail.image.rakuten.co.jp/@0_mall/sports-diary/cabinet/img23/hka-1147791-swrd.jpg"
   },
   {
     "id": "gear-trail-shoes-altra-lonepeak8",
@@ -144,7 +146,7 @@
     "price": 17820,
     "discountRate": 10,
     "dealUrl": "https://altrafootwear.jp/products/lone-peak-8",
-    "imageUrl": "https://shop.r10s.jp/glv/cabinet/newsingle202607/ala-3rak.jpg"
+    "imageUrl": "https://thumbnail.image.rakuten.co.jp/@0_mall/kompas/cabinet/item95/al0a85ne000-1.jpg"
   },
   {
     "id": "gear-trail-poles-leki-fx-one",
@@ -167,7 +169,7 @@
     "price": 24640,
     "discountRate": 20,
     "dealUrl": "https://www.caravan-web.com/brand_leki/",
-    "imageUrl": "https://shop.r10s.jp/sakaiya/cabinet/leki/1300542_1.jpg"
+    "imageUrl": "https://thumbnail.image.rakuten.co.jp/@0_mall/vitaliser/cabinet/300192/leki-1205.jpg"
   },
   {
     "id": "gear-trail-light-petzl-swift",
@@ -192,7 +194,7 @@
     "price": 17820,
     "discountRate": 25,
     "dealUrl": "https://hb.afl.rakuten.co.jp/ichiba/58fb598b.0ed2da59.58fb598c.27018da5/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fkompas%2F10200321%2F&link_type=picttext",
-    "imageUrl": "https://shop.r10s.jp/kompas/cabinet/item83/e095bb_01.jpg"
+    "imageUrl": "https://thumbnail.image.rakuten.co.jp/@0_mall/kompas/cabinet/item88/10200321-1.jpg"
   },
   {
     "id": "gear-trail-sublight-bd-spot",
@@ -217,7 +219,7 @@
     "price": 9980,
     "discountRate": 23,
     "dealUrl": "https://www.lostarrow.co.jp/store/g/gBD81308001/",
-    "imageUrl": "https://shop.r10s.jp/canpanera/cabinet/item230/item_b17466_0.jpg"
+    "imageUrl": "https://thumbnail.image.rakuten.co.jp/@0_mall/kompas/cabinet/item87/10199994-1.jpg"
   },
   {
     "id": "gear-trail-wear-mil-drynamic",
@@ -245,7 +247,7 @@
     "price": 5190,
     "discountRate": 20,
     "dealUrl": "https://www.millet.jp/c/men/underwear/MIV01248",
-    "imageUrl": "https://shop.r10s.jp/sportsmario2/cabinet/evidence_20250822/i06mjmiv01248_1.jpg"
+    "imageUrl": "https://thumbnail.image.rakuten.co.jp/@0_mall/vitaliser/cabinet/2012-3/millet-1375.jpg"
   },
   {
     "id": "gear-trail-wear-c3fit-tights",
@@ -269,7 +271,7 @@
     "price": 11137,
     "discountRate": 25,
     "dealUrl": "https://hb.afl.rakuten.co.jp/ichiba/58fb598b.0ed2da59.58fb598c.27018da5/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2F2-kobeya%2F3f14127%2F&link_type=picttext",
-    "imageUrl": "https://shop.r10s.jp/2-kobeya/cabinet/goldwin/3f14127.jpg"
+    "imageUrl": "https://thumbnail.image.rakuten.co.jp/@0_mall/2-kobeya/cabinet/08129758/3f14127_k_1.jpg"
   },
   {
     "id": "gear-trail-bivvy-sol-escape",
@@ -296,7 +298,7 @@
     "price": 9980,
     "discountRate": 23,
     "dealUrl": "https://highmount.jp/list/product/escape-bivvy/",
-    "imageUrl": "https://shop.r10s.jp/canpanera/cabinet/item209/item_s23005_0.jpg"
+    "imageUrl": "https://thumbnail.image.rakuten.co.jp/@0_mall/kompas/cabinet/item40/10041289-1.jpg"
   },
   {
     "id": "gear-cycle-helmet-ogk-vitt",
@@ -318,7 +320,7 @@
     "price": 12870,
     "discountRate": 22,
     "dealUrl": "https://www.ogkkabuto.co.jp/bicycle/products/cycling/vitt/vitt.html",
-    "imageUrl": "https://shop.r10s.jp/phalconcycle/cabinet/07626918/07626920/imgrc0107384488.jpg"
+    "imageUrl": "https://thumbnail.image.rakuten.co.jp/@0_mall/bebike/cabinet/new_08/vitt-kabuto-1.jpg"
   },
   {
     "id": "gear-cycle-light-cateye-ampp",
@@ -342,7 +344,7 @@
     "price": 4950,
     "discountRate": 25,
     "dealUrl": "https://www.cateye.com/jp/products/headlights/HL-EL085RC/",
-    "imageUrl": "https://shop.r10s.jp/cycle-shop-eggs/cabinet/07026577/imgrc0091873775.jpg"
+    "imageUrl": "https://thumbnail.image.rakuten.co.jp/@0_mall/bebike/cabinet/new_08/hl-el085rc-set.jpg"
   },
   {
     "id": "gear-cycle-tool-topeak-mini",
@@ -366,7 +368,7 @@
     "price": 4290,
     "discountRate": 22,
     "dealUrl": "https://topeak.jp/products/mini-20-pro/",
-    "imageUrl": "https://shop.r10s.jp/aris/cabinet/00244673/0651y.jpg"
+    "imageUrl": "https://thumbnail.image.rakuten.co.jp/@0_mall/bebike/cabinet/topeak/tol21800-1.jpg"
   },
   {
     "id": "gear-cycle-bottle-camelbak",
@@ -389,7 +391,7 @@
     "price": 1980,
     "discountRate": 25,
     "dealUrl": "https://www.riteway-jp.com/pa/camelbak/",
-    "imageUrl": "https://shop.r10s.jp/amical/cabinet/item/z00359-001.jpg"
+    "imageUrl": "https://thumbnail.image.rakuten.co.jp/@0_mall/bebike/cabinet/new_08/18892153-1.jpg"
   },
   {
     "id": "gear-cycle-wear-pearl-wind",
@@ -412,7 +414,7 @@
     "price": 9480,
     "discountRate": 25,
     "dealUrl": "https://www.pearlizumi.co.jp/",
-    "imageUrl": "https://shop.r10s.jp/bebike/cabinet/new_item/pearlizumi/2300.jpg"
+    "imageUrl": "https://thumbnail.image.rakuten.co.jp/@0_mall/bebike/cabinet/pearlizumi02/2300-1.jpg"
   },
   {
     "id": "gear-marathon-shoes-asics-s4",
@@ -434,7 +436,7 @@
     "price": 14455,
     "discountRate": 34,
     "dealUrl": "https://www.asics.com/jp/ja-jp/s4/p/1013A129-100.html",
-    "imageUrl": "https://shop.r10s.jp/alpen/cabinet/img/678/4302610436_1.jpg"
+    "imageUrl": "https://thumbnail.image.rakuten.co.jp/@0_mall/step-sports/cabinet/shoes36/1013a129-100.jpg"
   },
   {
     "id": "gear-marathon-pouch-yurenikui",
@@ -457,7 +459,7 @@
     "price": 5980,
     "discountRate": 25,
     "dealUrl": "https://yurenikui.jp/",
-    "imageUrl": "https://shop.r10s.jp/yurenikui/cabinet/compass1620286780.jpg"
+    "imageUrl": "https://yurenikui.jp/wp-content/uploads/2021/04/std_black.jpg"
   },
   {
     "id": "gear-nutrition-magon-gel",
@@ -485,7 +487,7 @@
     "price": 3880,
     "discountRate": 12,
     "dealUrl": "https://mag-on.net/products.html",
-    "imageUrl": "https://shop.r10s.jp/lafitte/cabinet/19ss_keleme_01/1baa78ee55d355a8dc_1.jpg"
+    "imageUrl": "https://thumbnail.image.rakuten.co.jp/@0_mall/vitaliser/cabinet/300188/magon-1002.jpg"
   },
   {
     "id": "gear-marathon-socks-tabio",
@@ -509,7 +511,7 @@
     "price": 2200,
     "discountRate": 25,
     "dealUrl": "https://tabio.com/jp/racingrun/",
-    "imageUrl": "https://shop.r10s.jp/alpen/cabinet/img/560/3888990001_1.jpg"
+    "imageUrl": "https://thumbnail.image.rakuten.co.jp/@0_mall/tabio/cabinet/07700000/071120038_1.jpg"
   },
   {
     "id": "gear-ar-compass-silva-no3",
@@ -533,7 +535,7 @@
     "price": 3960,
     "discountRate": 20,
     "dealUrl": "https://outdoor.evernew.co.jp/products/detail/631",
-    "imageUrl": "https://shop.r10s.jp/shop-senjin/cabinet/other/imgrc0089499110.jpg"
+    "imageUrl": "https://thumbnail.image.rakuten.co.jp/@0_mall/kompas/cabinet/item88/10200835-1.jpg"
   },
   {
     "id": "gear-ar-mapcase-sealline",
@@ -556,7 +558,7 @@
     "price": 4400,
     "discountRate": 25,
     "dealUrl": "https://www.e-mot.co.jp/sealline/",
-    "imageUrl": "https://shop.r10s.jp/aila/cabinet/00100/59587_1.jpg"
+    "imageUrl": "https://thumbnail.image.rakuten.co.jp/@0_mall/kompas/cabinet/item55/10072045-1.jpg"
   },
   {
     "id": "gear-ar-drybag-seatosummit",
@@ -579,6 +581,6 @@
     "price": 5940,
     "discountRate": 28,
     "dealUrl": "https://www.lostarrow.co.jp/seatosummit/",
-    "imageUrl": "https://shop.r10s.jp/yoshikip2/cabinet/07198126/imgrc0084318357.jpg"
+    "imageUrl": "https://thumbnail.image.rakuten.co.jp/@0_mall/kompas/cabinet/item98/st83074001-1.jpg"
   }
 ]
