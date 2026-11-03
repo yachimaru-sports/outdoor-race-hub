@@ -320,7 +320,7 @@
     "price": 12870,
     "discountRate": 22,
     "dealUrl": "https://www.ogkkabuto.co.jp/bicycle/products/cycling/vitt/vitt.html",
-    "imageUrl": "https://tshop.r10s.jp/phalconcycle/cabinet/07626918/07626920/imgrc0107384488.jpg?fitin=275:275"
+    "imageUrl": "https://shop.r10s.jp/phalconcycle/cabinet/07626918/07626920/imgrc0107384488.jpg"
   },
   {
     "id": "gear-cycle-light-cateye-ampp",
@@ -344,7 +344,7 @@
     "price": 4950,
     "discountRate": 25,
     "dealUrl": "https://www.cateye.com/jp/products/headlights/HL-EL085RC/",
-    "imageUrl": "https://tshop.r10s.jp/cycle-shop-eggs/cabinet/07026577/imgrc0091873775.jpg?fitin=275:275"
+    "imageUrl": "https://shop.r10s.jp/cycle-shop-eggs/cabinet/07026577/imgrc0091873775.jpg"
   },
   {
     "id": "gear-cycle-tool-topeak-mini",
@@ -368,7 +368,7 @@
     "price": 4290,
     "discountRate": 22,
     "dealUrl": "https://topeak.jp/products/mini-20-pro/",
-    "imageUrl": "https://tshop.r10s.jp/aris/cabinet/00244673/0651y.jpg?fitin=275:275"
+    "imageUrl": "https://shop.r10s.jp/aris/cabinet/00244673/0651y.jpg"
   },
   {
     "id": "gear-cycle-bottle-camelbak",
@@ -391,7 +391,7 @@
     "price": 1980,
     "discountRate": 25,
     "dealUrl": "https://www.riteway-jp.com/pa/camelbak/",
-    "imageUrl": "https://tshop.r10s.jp/amical/cabinet/item/z00359-001.jpg?fitin=275:275"
+    "imageUrl": "https://shop.r10s.jp/amical/cabinet/item/z00359-001.jpg"
   },
   {
     "id": "gear-cycle-wear-pearl-wind",
@@ -414,7 +414,7 @@
     "price": 9480,
     "discountRate": 25,
     "dealUrl": "https://www.pearlizumi.co.jp/",
-    "imageUrl": "https://tshop.r10s.jp/bebike/cabinet/new_item/pearlizumi/2300.jpg?fitin=275:275"
+    "imageUrl": "https://shop.r10s.jp/bebike/cabinet/new_item/pearlizumi/2300.jpg"
   },
   {
     "id": "gear-marathon-shoes-asics-s4",
@@ -436,7 +436,7 @@
     "price": 14455,
     "discountRate": 34,
     "dealUrl": "https://www.asics.com/jp/ja-jp/s4/p/1013A129-100.html",
-    "imageUrl": "https://tshop.r10s.jp/alpen/cabinet/img/678/4302610436_1.jpg?fitin=275:275"
+    "imageUrl": "https://shop.r10s.jp/alpen/cabinet/img/678/4302610436_1.jpg"
   },
   {
     "id": "gear-marathon-pouch-yurenikui",
@@ -458,7 +458,7 @@
     "originalPrice": 5980,
     "price": 5980,
     "dealUrl": "https://yurenikui.jp/",
-    "imageUrl": "https://yurenikui.jp/wp-content/uploads/2021/04/standard_bk.jpg"
+    "imageUrl": "https://shop.r10s.jp/yurenikui/cabinet/compass1620286780.jpg"
   },
   {
     "id": "gear-nutrition-magon-gel",
@@ -509,7 +509,7 @@
     "originalPrice": 2200,
     "price": 2200,
     "dealUrl": "https://tabio.com/jp/racingrun/",
-    "imageUrl": "https://tshop.r10s.jp/alpen/cabinet/img/560/3888990001_1.jpg?fitin=275:275"
+    "imageUrl": "https://shop.r10s.jp/alpen/cabinet/img/560/3888990001_1.jpg"
   },
   {
     "id": "gear-ar-compass-silva-no3",
@@ -555,7 +555,7 @@
     "originalPrice": 4400,
     "price": 4400,
     "dealUrl": "https://www.e-mot.co.jp/sealline/",
-    "imageUrl": "https://tshop.r10s.jp/aila/cabinet/00100/59587_1.jpg?fitin=275:275"
+    "imageUrl": "https://shop.r10s.jp/aila/cabinet/00100/59587_1.jpg"
   },
   {
     "id": "gear-ar-drybag-seatosummit",
@@ -577,6 +577,6 @@
     "originalPrice": 5940,
     "price": 5940,
     "dealUrl": "https://www.lostarrow.co.jp/seatosummit/",
-    "imageUrl": "https://tshop.r10s.jp/yoshikip2/cabinet/07198126/imgrc0084318357.jpg?fitin=275:275"
+    "imageUrl": "https://shop.r10s.jp/yoshikip2/cabinet/07198126/imgrc0084318357.jpg"
   }
 ]
