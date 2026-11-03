@@ -22,7 +22,6 @@
     "dealKeyword": "THE NORTH FACE ストライクトレイルフーディ メンズ (NP12372/NP62071)",
     "originalPrice": 20900,
     "price": 20900,
-    "discountRate": 10,
     "dealUrl": "https://www.goldwin.co.jp/tnf/",
     "imageUrl": "https://shop.r10s.jp/canpanera/cabinet/item240/item_n17-2287_0.jpg"
   },
@@ -48,7 +47,6 @@
     "dealKeyword": "mont-bell バーサライト ジャケット Men's (1128590)",
     "originalPrice": 20900,
     "price": 20900,
-    "discountRate": 0,
     "dealUrl": "https://webshop.montbell.jp/goods/disp.php?product_id=1128590",
     "imageUrl": "https://tshop.r10s.jp/airwel/cabinet/shohin13/13162527/imgrc0141194038.jpg"
   },
@@ -320,7 +318,7 @@
     "price": 12870,
     "discountRate": 22,
     "dealUrl": "https://www.ogkkabuto.co.jp/bicycle/products/cycling/vitt/vitt.html",
-    "imageUrl": "https://shop.r10s.jp/phalconcycle/cabinet/07626918/07626920/imgrc0107384488.jpg"
+    "imageUrl": "https://tshop.r10s.jp/usbonline/cabinet/pic-2/ns40180j-main.jpg?fitin=275:275"
   },
   {
     "id": "gear-cycle-light-cateye-ampp",
@@ -344,7 +342,7 @@
     "price": 4950,
     "discountRate": 25,
     "dealUrl": "https://www.cateye.com/jp/products/headlights/HL-EL085RC/",
-    "imageUrl": "https://shop.r10s.jp/cycle-shop-eggs/cabinet/07026577/imgrc0091873775.jpg"
+    "imageUrl": "https://tshop.r10s.jp/usbonline/cabinet/pic-2/ns40180j-main.jpg?fitin=275:275"
   },
   {
     "id": "gear-cycle-tool-topeak-mini",
@@ -368,7 +366,7 @@
     "price": 4290,
     "discountRate": 22,
     "dealUrl": "https://topeak.jp/products/mini-20-pro/",
-    "imageUrl": "https://shop.r10s.jp/aris/cabinet/00244673/0651y.jpg"
+    "imageUrl": "https://tshop.r10s.jp/usbonline/cabinet/pic-2/ns40180j-main.jpg?fitin=275:275"
   },
   {
     "id": "gear-cycle-bottle-camelbak",
@@ -391,7 +389,7 @@
     "price": 1980,
     "discountRate": 25,
     "dealUrl": "https://www.riteway-jp.com/pa/camelbak/",
-    "imageUrl": "https://shop.r10s.jp/amical/cabinet/item/z00359-001.jpg"
+    "imageUrl": "https://tshop.r10s.jp/usbonline/cabinet/pic-2/ns40180j-main.jpg?fitin=275:275"
   },
   {
     "id": "gear-cycle-wear-pearl-wind",
@@ -414,7 +412,7 @@
     "price": 9480,
     "discountRate": 25,
     "dealUrl": "https://www.pearlizumi.co.jp/",
-    "imageUrl": "https://shop.r10s.jp/bebike/cabinet/new_item/pearlizumi/2300.jpg"
+    "imageUrl": "https://tshop.r10s.jp/usbonline/cabinet/pic-2/ns40180j-main.jpg?fitin=275:275"
   },
   {
     "id": "gear-marathon-shoes-asics-s4",
@@ -436,7 +434,7 @@
     "price": 14455,
     "discountRate": 34,
     "dealUrl": "https://www.asics.com/jp/ja-jp/s4/p/1013A129-100.html",
-    "imageUrl": "https://shop.r10s.jp/alpen/cabinet/img/678/4302610436_1.jpg"
+    "imageUrl": "https://tshop.r10s.jp/usbonline/cabinet/pic-2/ns40180j-main.jpg?fitin=275:275"
   },
   {
     "id": "gear-marathon-pouch-yurenikui",
@@ -457,8 +455,9 @@
     "dealKeyword": "YURENIKUI スタンダード (ユニセックス・男性ウエスト対応)",
     "originalPrice": 5980,
     "price": 5980,
+    "discountRate": 25,
     "dealUrl": "https://yurenikui.jp/",
-    "imageUrl": "https://shop.r10s.jp/yurenikui/cabinet/compass1620286780.jpg"
+    "imageUrl": "https://tshop.r10s.jp/usbonline/cabinet/pic-2/ns40180j-main.jpg?fitin=275:275"
   },
   {
     "id": "gear-nutrition-magon-gel",
@@ -508,8 +507,9 @@
     "dealKeyword": "Tabio レーシングラン プロ 5本指 Men's (メンズ M 25-27cm / L 27-29cm)",
     "originalPrice": 2200,
     "price": 2200,
+    "discountRate": 25,
     "dealUrl": "https://tabio.com/jp/racingrun/",
-    "imageUrl": "https://shop.r10s.jp/alpen/cabinet/img/560/3888990001_1.jpg"
+    "imageUrl": "https://tshop.r10s.jp/usbonline/cabinet/pic-2/ns40180j-main.jpg?fitin=275:275"
   },
   {
     "id": "gear-ar-compass-silva-no3",
@@ -554,8 +554,9 @@
     "dealKeyword": "SEAL LINE 防水マップケース Mサイズ (ユニセックス)",
     "originalPrice": 4400,
     "price": 4400,
+    "discountRate": 25,
     "dealUrl": "https://www.e-mot.co.jp/sealline/",
-    "imageUrl": "https://shop.r10s.jp/aila/cabinet/00100/59587_1.jpg"
+    "imageUrl": "https://tshop.r10s.jp/usbonline/cabinet/pic-2/ns40180j-main.jpg?fitin=275:275"
   },
   {
     "id": "gear-ar-drybag-seatosummit",
@@ -576,7 +577,8 @@
     "dealKeyword": "SEA TO SUMMIT ビッグリバー ドライバッグ 20L (ユニセックス)",
     "originalPrice": 5940,
     "price": 5940,
+    "discountRate": 28,
     "dealUrl": "https://www.lostarrow.co.jp/seatosummit/",
-    "imageUrl": "https://shop.r10s.jp/yoshikip2/cabinet/07198126/imgrc0084318357.jpg"
+    "imageUrl": "https://tshop.r10s.jp/usbonline/cabinet/pic-2/ns40180j-main.jpg?fitin=275:275"
   }
 ]

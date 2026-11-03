@@ -1,5 +1,131 @@
 [
   {
+    "id": "arwc-ecuador-2024",
+    "category": "adventure",
+    "subCategory": "ARWC世界選手権",
+    "elements": [
+      "ARWS",
+      "ARWC世界選手権",
+      "アドベンチャー",
+      "読図",
+      "MTB",
+      "パドル",
+      "トレック",
+      "4日以上"
+    ],
+    "title": "Huairasinchi 2024（エクアドル ARWC世界選手権 700km・6日間）",
+    "date": "2024-11-13",
+    "month": 11,
+    "region": "海外",
+    "prefecture": "エクアドル",
+    "distance_km": 700,
+    "elevation_m": 14000,
+    "entry_status": "closed",
+    "entry_start_date": "2024-01-01",
+    "entry_deadline": "2024-09-30",
+    "entry_fee": "4人チーム (世界選手権枠)",
+    "links": {
+      "official": "https://arworldseries.com/races/huairasinchi-arwc-2024",
+      "entry": "https://arworldseries.com/races/huairasinchi-arwc-2024",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-03"
+    },
+    "mandatory_gear": [
+      {
+        "name": "マウンテンバイク＆ヘルメット",
+        "category": "ギア"
+      },
+      {
+        "name": "パックラフト＆PFD",
+        "category": "ギア"
+      },
+      {
+        "name": "2.5万分の1地形図＆コンパス",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "完全防水レインウェア",
+        "category": "ウェア"
+      },
+      {
+        "name": "エマージェンシーキット",
+        "category": "ギア"
+      }
+    ],
+    "venue": {
+      "name": "Cuenca, Andes Mountains",
+      "mapQuery": "Cuenca Ecuador"
+    },
+    "source": {
+      "portalName": "ARWS公式"
+    }
+  },
+  {
+    "id": "arwc-canada-2025",
+    "category": "adventure",
+    "subCategory": "ARWC世界選手権",
+    "elements": [
+      "ARWS",
+      "ARWC世界選手権",
+      "アドベンチャー",
+      "読図",
+      "MTB",
+      "パドル",
+      "トレック",
+      "4日以上"
+    ],
+    "title": "Expedition Canada 2025（カナダ ARWC世界選手権 700km・6日間）",
+    "date": "2025-09-22",
+    "month": 9,
+    "region": "海外",
+    "prefecture": "カナダ",
+    "distance_km": 700,
+    "elevation_m": 15000,
+    "entry_status": "closed",
+    "entry_start_date": "2024-11-01",
+    "entry_deadline": "2025-06-30",
+    "entry_fee": "4人チーム (世界選手権枠)",
+    "links": {
+      "official": "https://arworldseries.com/races/expedition-canada-2025",
+      "entry": "https://arworldseries.com/races/expedition-canada-2025",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-03"
+    },
+    "mandatory_gear": [
+      {
+        "name": "マウンテンバイク＆ヘルメット",
+        "category": "ギア"
+      },
+      {
+        "name": "パックラフト＆PFD",
+        "category": "ギア"
+      },
+      {
+        "name": "2.5万分の1地形図＆コンパス",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "完全防水レインウェア",
+        "category": "ウェア"
+      },
+      {
+        "name": "エマージェンシーキット",
+        "category": "ギア"
+      }
+    ],
+    "venue": {
+      "name": "Penticton, British Columbia",
+      "mapQuery": "Penticton British Columbia Canada"
+    },
+    "source": {
+      "portalName": "ARWS公式"
+    }
+  },
+  {
     "id": "mihara-hakuryuko-trail-2026",
     "category": "trail",
     "subCategory": "ミドル・ショートトレイル",
@@ -783,6 +909,69 @@
     }
   },
   {
+    "id": "arws-legend-poland-2026",
+    "category": "adventure",
+    "subCategory": "ARWS世界選手権予選",
+    "elements": [
+      "ARWS",
+      "世界選手権予選",
+      "アドベンチャー",
+      "読図",
+      "MTB",
+      "パドル",
+      "トレック",
+      "4日以上"
+    ],
+    "title": "The Legend Expeditions 2026（ポーランド ARWS Qualifier 500km・5日間）",
+    "date": "2026-05-15",
+    "month": 5,
+    "region": "海外",
+    "prefecture": "ポーランド",
+    "distance_km": 500,
+    "elevation_m": 11000,
+    "entry_status": "closed",
+    "entry_start_date": "2025-10-01",
+    "entry_deadline": "2026-03-31",
+    "entry_fee": "4人チーム (世界選手権枠)",
+    "links": {
+      "official": "https://arworldseries.com/races/the-legend-expedition-race-2026",
+      "entry": "https://arworldseries.com/races/the-legend-expedition-race-2026",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-03"
+    },
+    "mandatory_gear": [
+      {
+        "name": "マウンテンバイク＆ヘルメット",
+        "category": "ギア"
+      },
+      {
+        "name": "パックラフト＆PFD",
+        "category": "ギア"
+      },
+      {
+        "name": "2.5万分の1地形図＆コンパス",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "完全防水レインウェア",
+        "category": "ウェア"
+      },
+      {
+        "name": "エマージェンシーキット",
+        "category": "ギア"
+      }
+    ],
+    "venue": {
+      "name": "Bieszczady Mountains",
+      "mapQuery": "Bieszczady Poland"
+    },
+    "source": {
+      "portalName": "ARWS公式"
+    }
+  },
+  {
     "id": "sainokuni-100mile-2026",
     "category": "trail",
     "subCategory": "100マイル トレイル",
@@ -1117,6 +1306,132 @@
     },
     "source": {
       "portalName": "スポエンCYCLE"
+    }
+  },
+  {
+    "id": "arws-expedition-oregon-2026",
+    "category": "adventure",
+    "subCategory": "ARWS世界選手権予選",
+    "elements": [
+      "ARWS",
+      "世界選手権予選",
+      "アドベンチャー",
+      "読図",
+      "MTB",
+      "パドル",
+      "トレック",
+      "4日以上"
+    ],
+    "title": "Expedition Oregon 2026（アメリカ ARWS Qualifier 500km・5日間）",
+    "date": "2026-05-20",
+    "month": 5,
+    "region": "海外",
+    "prefecture": "アメリカ",
+    "distance_km": 500,
+    "elevation_m": 12000,
+    "entry_status": "closed",
+    "entry_start_date": "2025-11-01",
+    "entry_deadline": "2026-04-15",
+    "entry_fee": "4人チーム (世界選手権枠)",
+    "links": {
+      "official": "https://arworldseries.com/races/expedition-oregon-2026",
+      "entry": "https://arworldseries.com/races/expedition-oregon-2026",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-03"
+    },
+    "mandatory_gear": [
+      {
+        "name": "マウンテンバイク＆ヘルメット",
+        "category": "ギア"
+      },
+      {
+        "name": "パックラフト＆PFD",
+        "category": "ギア"
+      },
+      {
+        "name": "2.5万分の1地形図＆コンパス",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "完全防水レインウェア",
+        "category": "ウェア"
+      },
+      {
+        "name": "エマージェンシーキット",
+        "category": "ギア"
+      }
+    ],
+    "venue": {
+      "name": "Central Oregon, Bend",
+      "mapQuery": "Bend Oregon USA"
+    },
+    "source": {
+      "portalName": "ARWS公式"
+    }
+  },
+  {
+    "id": "arws-expedition-africa-2026",
+    "category": "adventure",
+    "subCategory": "ARWS世界選手権予選",
+    "elements": [
+      "ARWS",
+      "世界選手権予選",
+      "アドベンチャー",
+      "読図",
+      "MTB",
+      "パドル",
+      "トレック",
+      "4日以上"
+    ],
+    "title": "Expedition Africa 2026（ナミビア ARWS Qualifier 550km・5日間）",
+    "date": "2026-05-22",
+    "month": 5,
+    "region": "海外",
+    "prefecture": "ナミビア",
+    "distance_km": 550,
+    "elevation_m": 8000,
+    "entry_status": "closed",
+    "entry_start_date": "2025-10-15",
+    "entry_deadline": "2026-04-01",
+    "entry_fee": "4人チーム (世界選手権枠)",
+    "links": {
+      "official": "https://arworldseries.com/races/expedition-africa-2026",
+      "entry": "https://arworldseries.com/races/expedition-africa-2026",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-03"
+    },
+    "mandatory_gear": [
+      {
+        "name": "マウンテンバイク＆ヘルメット",
+        "category": "ギア"
+      },
+      {
+        "name": "パックラフト＆PFD",
+        "category": "ギア"
+      },
+      {
+        "name": "2.5万分の1地形図＆コンパス",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "完全防水レインウェア",
+        "category": "ウェア"
+      },
+      {
+        "name": "エマージェンシーキット",
+        "category": "ギア"
+      }
+    ],
+    "venue": {
+      "name": "Swakopmund, Namib Desert",
+      "mapQuery": "Swakopmund Namibia"
+    },
+    "source": {
+      "portalName": "ARWS公式"
     }
   },
   {
@@ -2384,6 +2699,69 @@
     }
   },
   {
+    "id": "arws-iterra-expedition-2026",
+    "category": "adventure",
+    "subCategory": "ARWS世界選手権予選",
+    "elements": [
+      "ARWS",
+      "世界選手権予選",
+      "アドベンチャー",
+      "読図",
+      "MTB",
+      "パドル",
+      "トレック",
+      "4日以上"
+    ],
+    "title": "ITERRA Expedition Race 2026（イギリス ARWS Qualifier 600km・5日間）",
+    "date": "2026-08-08",
+    "month": 8,
+    "region": "海外",
+    "prefecture": "イギリス",
+    "distance_km": 600,
+    "elevation_m": 14000,
+    "entry_status": "closed",
+    "entry_start_date": "2025-12-01",
+    "entry_deadline": "2026-06-30",
+    "entry_fee": "4人チーム (世界選手権枠)",
+    "links": {
+      "official": "https://arworldseries.com/races/iterra-2026",
+      "entry": "https://arworldseries.com/races/iterra-2026",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-03"
+    },
+    "mandatory_gear": [
+      {
+        "name": "マウンテンバイク＆ヘルメット",
+        "category": "ギア"
+      },
+      {
+        "name": "パックラフト＆PFD",
+        "category": "ギア"
+      },
+      {
+        "name": "2.5万分の1地形図＆コンパス",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "完全防水レインウェア",
+        "category": "ウェア"
+      },
+      {
+        "name": "エマージェンシーキット",
+        "category": "ギア"
+      }
+    ],
+    "venue": {
+      "name": "Scottish Highlands, Fort William",
+      "mapQuery": "Fort William Scotland UK"
+    },
+    "source": {
+      "portalName": "ARWS公式"
+    }
+  },
+  {
     "id": "osorakan-ekiden-trail-2026",
     "category": "trail",
     "subCategory": "中国最高峰ロングトレイル",
@@ -2437,6 +2815,69 @@
     },
     "source": {
       "portalName": "モシコム"
+    }
+  },
+  {
+    "id": "arws-raid-in-france-2026",
+    "category": "adventure",
+    "subCategory": "ARWS世界選手権予選",
+    "elements": [
+      "ARWS",
+      "世界選手権予選",
+      "アドベンチャー",
+      "読図",
+      "MTB",
+      "パドル",
+      "トレック",
+      "4日以上"
+    ],
+    "title": "Raid in France 2026（フランス ARWS Qualifier 450km・5日間）",
+    "date": "2026-09-05",
+    "month": 9,
+    "region": "海外",
+    "prefecture": "フランス",
+    "distance_km": 450,
+    "elevation_m": 16000,
+    "entry_status": "closed",
+    "entry_start_date": "2026-01-15",
+    "entry_deadline": "2026-07-31",
+    "entry_fee": "4人チーム (世界選手権枠)",
+    "links": {
+      "official": "https://arworldseries.com/races/raid-in-france-2026",
+      "entry": "https://arworldseries.com/races/raid-in-france-2026",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-03"
+    },
+    "mandatory_gear": [
+      {
+        "name": "マウンテンバイク＆ヘルメット",
+        "category": "ギア"
+      },
+      {
+        "name": "パックラフト＆PFD",
+        "category": "ギア"
+      },
+      {
+        "name": "2.5万分の1地形図＆コンパス",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "完全防水レインウェア",
+        "category": "ウェア"
+      },
+      {
+        "name": "エマージェンシーキット",
+        "category": "ギア"
+      }
+    ],
+    "venue": {
+      "name": "French Alps / Pyrenees",
+      "mapQuery": "French Alps France"
+    },
+    "source": {
+      "portalName": "ARWS公式"
     }
   },
   {
@@ -4315,6 +4756,69 @@
     }
   },
   {
+    "id": "arws-vulcania-2026",
+    "category": "adventure",
+    "subCategory": "ARWS世界選手権予選",
+    "elements": [
+      "ARWS",
+      "世界選手権予選",
+      "アドベンチャー",
+      "読図",
+      "MTB",
+      "パドル",
+      "トレック",
+      "4日以上"
+    ],
+    "title": "Vulcania Expedition Race 2026（チリ ARWS Qualifier 500km・5日間）",
+    "date": "2026-11-20",
+    "month": 11,
+    "region": "海外",
+    "prefecture": "チリ",
+    "distance_km": 500,
+    "elevation_m": 13000,
+    "entry_status": "open",
+    "entry_start_date": "2026-03-01",
+    "entry_deadline": "2026-10-31",
+    "entry_fee": "4人チーム (世界選手権枠)",
+    "links": {
+      "official": "https://arworldseries.com/races/vulcania-2026",
+      "entry": "https://arworldseries.com/races/vulcania-2026",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-03"
+    },
+    "mandatory_gear": [
+      {
+        "name": "マウンテンバイク＆ヘルメット",
+        "category": "ギア"
+      },
+      {
+        "name": "パックラフト＆PFD",
+        "category": "ギア"
+      },
+      {
+        "name": "2.5万分の1地形図＆コンパス",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "完全防水レインウェア",
+        "category": "ウェア"
+      },
+      {
+        "name": "エマージェンシーキット",
+        "category": "ギア"
+      }
+    ],
+    "venue": {
+      "name": "Pucon, Araucania",
+      "mapQuery": "Pucon Chile"
+    },
+    "source": {
+      "portalName": "ARWS公式"
+    }
+  },
+  {
     "id": "ftr-chichibu-okumusashi-100mile-2026",
     "category": "trail",
     "subCategory": "100マイル トレイル",
@@ -5625,6 +6129,69 @@
     }
   },
   {
+    "id": "arws-magnificent-2027",
+    "category": "adventure",
+    "subCategory": "ARWS世界選手権予選",
+    "elements": [
+      "ARWS",
+      "世界選手権予選",
+      "アドベンチャー",
+      "読図",
+      "MTB",
+      "パドル",
+      "トレック",
+      "4日以上"
+    ],
+    "title": "The MAGNIficent 2027（ニュージーランド ARWS Qualifier 500km・6日間）",
+    "date": "2027-02-20",
+    "month": 2,
+    "region": "海外",
+    "prefecture": "ニュージーランド",
+    "distance_km": 500,
+    "elevation_m": 12000,
+    "entry_status": "open",
+    "entry_start_date": "2026-06-01",
+    "entry_deadline": "2026-12-31",
+    "entry_fee": "4人チーム (世界選手権枠)",
+    "links": {
+      "official": "https://arworldseries.com/races/the-magnificent-2027",
+      "entry": "https://arworldseries.com/races/the-magnificent-2027",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-03"
+    },
+    "mandatory_gear": [
+      {
+        "name": "マウンテンバイク＆ヘルメット",
+        "category": "ギア"
+      },
+      {
+        "name": "パックラフト＆PFD",
+        "category": "ギア"
+      },
+      {
+        "name": "2.5万分の1地形図＆コンパス",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "完全防水レインウェア",
+        "category": "ウェア"
+      },
+      {
+        "name": "エマージェンシーキット",
+        "category": "ギア"
+      }
+    ],
+    "venue": {
+      "name": "Fiordland, South Island",
+      "mapQuery": "Fiordland New Zealand"
+    },
+    "source": {
+      "portalName": "ARWS公式"
+    }
+  },
+  {
     "id": "ggr-ishikiriba-100-2027",
     "category": "trail",
     "subCategory": "周回ウルトラトレイル・GRIPDROP",
@@ -6853,11 +7420,10 @@
   {
     "id": "arwc-croatia-2027",
     "category": "adventure",
-    "subCategory": "ARWC世界選手権 (World Championship)",
+    "subCategory": "ARWC世界選手権",
     "elements": [
-      "ARWC",
       "ARWS",
-      "世界選手権",
+      "ARWC世界選手権",
       "アドベンチャー",
       "読図",
       "MTB",
@@ -6865,20 +7431,20 @@
       "トレック",
       "4日以上"
     ],
-    "title": "ADVENTURE RACE CROATIA - ARWC 2027（クロアチア 世界選手権 700km・6日間）",
-    "date": "2027-09-14",
+    "title": "Adventure Race Croatia 2027（クロアチア ARWC世界選手権 600km・6日間）",
+    "date": "2027-09-18",
     "month": 9,
     "region": "海外",
     "prefecture": "クロアチア",
-    "distance_km": 700,
-    "elevation_m": 18000,
-    "entry_status": "open",
-    "entry_start_date": "2026-12-01",
-    "entry_deadline": "2027-08-15",
-    "entry_fee": "4人選抜チーム (世界選手権)",
+    "distance_km": 600,
+    "elevation_m": 13500,
+    "entry_status": "upcoming",
+    "entry_start_date": "2026-11-01",
+    "entry_deadline": "2027-06-30",
+    "entry_fee": "4人チーム (世界選手権枠)",
     "links": {
-      "official": "https://arworldseries.com/races/adventure-race-croatia-arwc-2027-2027-croatia",
-      "entry": "https://arworldseries.com/races/adventure-race-croatia-arwc-2027-2027-croatia",
+      "official": "https://arworldseries.com/races/adventure-race-croatia-arwc-2027",
+      "entry": "https://arworldseries.com/races/adventure-race-croatia-arwc-2027",
       "review": null,
       "sns": null,
       "verified": true,
@@ -6886,25 +7452,29 @@
     },
     "mandatory_gear": [
       {
-        "name": "シーカヤック・パドル・PFD・セルフレスキューキット",
+        "name": "マウンテンバイク＆ヘルメット",
         "category": "ギア"
       },
       {
-        "name": "MTB・ヘルメット・リペアキット",
+        "name": "パックラフト＆PFD",
         "category": "ギア"
       },
       {
-        "name": "ロープアクティビティ用ハーネス＆カラビナ",
-        "category": "ギア"
+        "name": "2.5万分の1地形図＆コンパス",
+        "category": "ナビゲーション"
       },
       {
-        "name": "GPSトラッカー・国際救急キット・ビバークシェル",
-        "category": "エイド"
+        "name": "完全防水レインウェア",
+        "category": "ウェア"
+      },
+      {
+        "name": "エマージェンシーキット",
+        "category": "ギア"
       }
     ],
     "venue": {
-      "name": "Dalmatian Coast & Dinaric Alps",
-      "mapQuery": "Dalmatia Croatia"
+      "name": "Dalmatia Coast, Zadar",
+      "mapQuery": "Zadar Croatia"
     },
     "source": {
       "portalName": "ARWS公式"
