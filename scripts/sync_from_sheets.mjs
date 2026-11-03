@@ -168,8 +168,24 @@ async function main() {
     }
   }
 
+  // 既存の events.json を確認し、スプレッドシートにまだ未登録のARWS/ARWC海外レース等が存在する場合は保護・自動マージ
+  try {
+    if (fs.existsSync(EVENTS_JSON_PATH)) {
+      const existingEvents = JSON.parse(fs.readFileSync(EVENTS_JSON_PATH, 'utf-8'));
+      for (const ex of existingEvents) {
+        if ((ex.id.startsWith('arws-') || ex.id.startsWith('arwc-')) && !eventMap.has(ex.id)) {
+          eventMap.set(ex.id, ex);
+        }
+      }
+    }
+  } catch (e) {
+    console.warn('既存イベント読み込みスキップ:', e);
+  }
+
   const newEvents = Array.from(eventMap.values());
-  console.log(`✅ 解析完了: 重複排除後 合計 ${newEvents.length} 件の大会データを構築しました。`);
+  // 日付順にソート
+  newEvents.sort((a, b) => (a.date > b.date ? 1 : -1));
+  console.log(`✅ 解析完了: 重複排除・ARWS保護マージ後 合計 ${newEvents.length} 件の大会データを構築しました。`);
 
   // events.json へ保存
   fs.writeFileSync(EVENTS_JSON_PATH, JSON.stringify(newEvents, null, 2) + '\n', 'utf-8');

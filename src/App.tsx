@@ -161,8 +161,25 @@ export const App: React.FC = () => {
     }
   };
 
-  // ピックアップカード2・3からの絞り込みショートカット（オン/オフトグル）
+  // ピックアップカード2・3・4からの絞り込みショートカット（オン/オフトグル）
   const handleFilterFeature = (category: string, featureTag: string, region = 'all') => {
+    // ARWS & ARWC（世界アドベンチャーレース）カードの場合
+    if (featureTag === 'arws') {
+      if (filters.featureTag === 'arws') {
+        setFilters(INITIAL_FILTERS);
+        return;
+      }
+      setFilters({
+        ...INITIAL_FILTERS,
+        category: 'adventure',
+        selectedCategories: ['adventure'],
+        featureTag: 'arws',
+        maxDistance: 1000,
+        entryStatus: 'all',
+      });
+      return;
+    }
+
     // 100マイルカードの場合
     if (featureTag === '100mile') {
       if (filters.featureTag === '100mile') {
@@ -338,16 +355,25 @@ export const App: React.FC = () => {
               if (!event.elements?.includes('ロゲイニング')) return false;
             } else if (featureTag === 'night') {
               if (!event.elements?.includes('夜間')) return false;
+            } else if (featureTag === 'arws') {
+              const isArws =
+                event.elements?.some((e) => /arws|arwc|世界選手権|ワールドシリーズ/i.test(e)) ||
+                /arws|arwc|magnificent|qualifier/i.test(event.title) ||
+                event.id.startsWith('arws-') ||
+                event.id.startsWith('arwc-');
+              if (!isArws) return false;
             }
           }
         }
 
-        // 距離レンジ
-        if (event.distance_km < filters.minDistance) {
-          return false;
-        }
-        if (filters.maxDistance < 900 && event.distance_km > filters.maxDistance) {
-          return false;
+        // 距離レンジ（ARWS選択時は世界遠征レースのため距離上限チェックをバイパス）
+        if (filters.featureTag !== 'arws') {
+          if (event.distance_km < filters.minDistance) {
+            return false;
+          }
+          if (filters.maxDistance < 900 && event.distance_km > filters.maxDistance) {
+            return false;
+          }
         }
 
         // キーワード検索

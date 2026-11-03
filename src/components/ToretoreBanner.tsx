@@ -1,5 +1,5 @@
 import React from 'react';
-import { Compass, ExternalLink, Bike, ArrowRight, Mountain, Sparkles, Crown, Check, X } from 'lucide-react';
+import { Compass, ExternalLink, Bike, ArrowRight, Mountain, Sparkles, Crown, Check, X, Globe } from 'lucide-react';
 import { FilterState } from '../types';
 
 interface ToretoreBannerProps {
@@ -13,7 +13,7 @@ export const ToretoreBanner: React.FC<ToretoreBannerProps> = ({
   onFilterAdventure,
   onFilterFeature,
 }) => {
-  // 3つのカードの適用状態判定（オン・オフ）
+  // 4つのカードの適用状態判定（オン・オフ）
   const isAdventureActive =
     filters?.category === 'adventure' &&
     (filters?.featureTag === 'toretore' || filters?.featureTag === 'nav');
@@ -23,6 +23,8 @@ export const ToretoreBanner: React.FC<ToretoreBannerProps> = ({
   const isChugokuActive = filters?.region === '中国';
   const isShikokuActive = filters?.region === '四国';
   const isRegionCardActive = isChugokuActive || isShikokuActive;
+
+  const isArwsActive = filters?.featureTag === 'arws';
 
   return (
     <div className="space-y-4">
@@ -34,7 +36,7 @@ export const ToretoreBanner: React.FC<ToretoreBannerProps> = ({
             注目の競技カテゴリー・主要大会クイック抽出
           </h2>
           <span className="text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-300 hidden sm:inline">
-            — アドベンチャー・国内100マイル・中国＆四国エリア（※再度押すと解除）
+            — 国内外主要アドベンチャー・100マイル・中四国エリア（※再度押すと解除）
           </span>
         </div>
 
@@ -42,6 +44,18 @@ export const ToretoreBanner: React.FC<ToretoreBannerProps> = ({
           <span className="text-xs font-black text-slate-500 dark:text-slate-400 shrink-0 mr-0.5">
             情報元・ポータル:
           </span>
+
+          <a
+            href="https://arworldseries.com/races"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 text-xs font-black text-indigo-900 dark:text-indigo-200 bg-indigo-50 dark:bg-indigo-950/60 px-2.5 py-1 rounded-full border border-indigo-300 dark:border-indigo-700 shadow-2xs hover:bg-indigo-100 transition-all shrink-0"
+            title="ARWS (Adventure Racing World Series) 公式"
+          >
+            <Globe className="w-3 h-3 text-indigo-600 dark:text-indigo-400" />
+            <span>ARWS公式</span>
+            <ExternalLink className="w-2.5 h-2.5 opacity-60" />
+          </a>
 
           <a
             href="https://runnet.jp/"
@@ -117,7 +131,7 @@ export const ToretoreBanner: React.FC<ToretoreBannerProps> = ({
         </div>
       </div>
 
-      {/* スマホ専用：黄色・赤・緑の文字のみの縦型表示（右スライド廃止・画面幅ピッタリ） */}
+      {/* スマホ専用：4つのボタン（縦並び） */}
       <div className="flex flex-col gap-2.5 lg:hidden w-full">
         {/* 黄色: とれとれバイク・読図・AR */}
         <button
@@ -196,64 +210,90 @@ export const ToretoreBanner: React.FC<ToretoreBannerProps> = ({
             <span className="text-xs font-mono font-black opacity-70 shrink-0">抽出 ➔</span>
           )}
         </button>
+
+        {/* 藍色: ARWS & ARWC 世界のアドベンチャーレース（4日以上） */}
+        <button
+          type="button"
+          onClick={() => onFilterFeature && onFilterFeature('adventure', 'arws')}
+          className={`w-full min-h-[48px] px-3.5 py-2.5 rounded-xl border-2 flex items-center justify-between text-left transition-all cursor-pointer select-none ${
+            isArwsActive
+              ? 'bg-indigo-600 text-white border-indigo-700 shadow-md ring-2 ring-indigo-400/50 font-black'
+              : 'bg-indigo-50 dark:bg-indigo-950/30 text-indigo-900 dark:text-indigo-200 border-indigo-300 dark:border-indigo-800 hover:bg-indigo-100 font-bold'
+          }`}
+        >
+          <div className="flex items-center gap-2">
+            <span className="w-2.5 h-2.5 rounded-full bg-indigo-500 shrink-0" />
+            <div className="leading-snug">
+              <span className="font-black text-xs sm:text-sm">🌍 ARWS・ARWC 世界最高峰レース</span>
+              <span className="text-[11px] opacity-80 ml-2">（4日以上・500km〜遠征型）</span>
+            </div>
+          </div>
+          {isArwsActive ? (
+            <span className="text-[10px] font-black bg-white text-indigo-800 px-2 py-0.5 rounded-full shrink-0">
+              適用中 ✕
+            </span>
+          ) : (
+            <span className="text-xs font-mono font-black opacity-70 shrink-0">抽出 ➔</span>
+          )}
+        </button>
       </div>
 
-      {/* PC表示：3連ビジュアルピックアップカード */}
-      <div className="hidden lg:grid grid-cols-3 gap-5">
+      {/* PC表示：4連ビジュアルピックアップカード */}
+      <div className="hidden lg:grid grid-cols-4 gap-4">
         {/* カード1: とれとれバイク＆AR関西・全国アドベンチャー特集 */}
         <div
           onClick={onFilterAdventure}
-          className={`group relative rounded-2xl overflow-hidden border-2 transition-all cursor-pointer bg-gradient-to-br from-slate-900 via-slate-850 to-amber-950 text-white p-5 sm:p-6 flex flex-col justify-between min-h-[205px] select-none ${
+          className={`group relative rounded-2xl overflow-hidden border-2 transition-all cursor-pointer bg-gradient-to-br from-slate-900 via-slate-850 to-amber-950 text-white p-5 flex flex-col justify-between min-h-[225px] select-none ${
             isAdventureActive
               ? 'border-amber-400 ring-4 ring-amber-500/40 shadow-xl scale-[1.01]'
               : 'border-slate-800 shadow-sm hover:shadow-md hover:border-slate-700'
           }`}
           title={isAdventureActive ? 'クリックでアドベンチャー絞り込みを解除' : 'クリックでアドベンチャー＆読図大会を抽出'}
         >
-          <div className="absolute -right-8 -bottom-8 w-36 h-36 bg-amber-500/20 rounded-full blur-2xl pointer-events-none group-hover:scale-125 transition-transform" />
+          <div className="absolute -right-8 -bottom-8 w-32 h-32 bg-amber-500/20 rounded-full blur-2xl pointer-events-none group-hover:scale-125 transition-transform" />
 
           <div>
-            <div className="flex items-center justify-between gap-2 mb-2.5">
+            <div className="flex items-center justify-between gap-1.5 mb-2">
               <span
-                className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-black transition-colors ${
+                className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-black transition-colors ${
                   isAdventureActive ? 'bg-amber-300 text-slate-950 shadow-xs' : 'bg-amber-400 text-slate-950'
                 }`}
               >
-                {isAdventureActive ? <Check className="w-3.5 h-3.5 stroke-[3]" /> : <Sparkles className="w-3.5 h-3.5 fill-current" />}
-                とれとれバイク・読図・AR
+                {isAdventureActive ? <Check className="w-3 h-3 stroke-[3]" /> : <Sparkles className="w-3 h-3 fill-current" />}
+                とれとれ・AR
               </span>
 
               {isAdventureActive ? (
-                <span className="text-[11px] font-black bg-amber-500 text-slate-950 px-2 py-0.5 rounded-full flex items-center gap-1 shadow-xs animate-pulse">
+                <span className="text-[10px] font-black bg-amber-500 text-slate-950 px-1.5 py-0.5 rounded-full flex items-center gap-0.5 shadow-xs animate-pulse">
                   <span>適用中</span>
-                  <X className="w-3 h-3 stroke-[3]" />
+                  <X className="w-2.5 h-2.5 stroke-[3]" />
                 </span>
               ) : (
-                <span className="text-xs font-mono text-amber-300 font-extrabold">2.5万図必携</span>
+                <span className="text-[11px] font-mono text-amber-300 font-extrabold">2.5万図必携</span>
               )}
             </div>
 
-            <h3 className="text-base sm:text-lg font-black text-white group-hover:text-amber-300 transition-colors leading-snug">
-              2.5万分の1地形図で挑む！<br />アドベンチャー＆ロゲイニング・OMM
+            <h3 className="text-sm sm:text-base font-black text-white group-hover:text-amber-300 transition-colors leading-snug">
+              2.5万分の1地形図で挑む！<br />アドベンチャー＆ロゲイニング
             </h3>
 
-            <p className="text-xs sm:text-[13px] text-slate-200 font-medium mt-2 line-clamp-2 leading-relaxed">
-              上山棚田・保津峡・奈良吉野川・富栖・レイドオブシディアン・岩村ラリー・神鍋高原・まんのう・OMM JAPAN等を完全網羅。
+            <p className="text-[12px] text-slate-200 font-medium mt-1.5 line-clamp-2 leading-relaxed">
+              上山棚田・保津峡・奈良吉野川・富栖・レイドオブシディアン・まんのう等を完全網羅。
             </p>
           </div>
 
-          <div className="flex items-center justify-between mt-4 pt-3 border-t border-white/15">
+          <div className="flex items-center justify-between mt-3 pt-2.5 border-t border-white/15">
             <span
-              className={`text-xs sm:text-sm font-extrabold flex items-center gap-1 transition-colors ${
-                isAdventureActive ? 'text-white bg-amber-600/60 px-2.5 py-1 rounded-lg border border-amber-400/60' : 'text-amber-300'
+              className={`text-xs font-extrabold flex items-center gap-1 transition-colors ${
+                isAdventureActive ? 'text-white bg-amber-600/60 px-2 py-0.5 rounded-lg border border-amber-400/60' : 'text-amber-300'
               }`}
             >
-              <Bike className="w-4 h-4" />
-              <span>{isAdventureActive ? '✔ 絞り込み中（クリックで解除）' : 'アドベンチャー・読図一覧へ'}</span>
+              <Bike className="w-3.5 h-3.5" />
+              <span>{isAdventureActive ? '解除' : '一覧へ'}</span>
               {isAdventureActive ? (
-                <X className="w-3.5 h-3.5 ml-0.5" />
+                <X className="w-3 h-3 ml-0.5" />
               ) : (
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
               )}
             </span>
 
@@ -262,10 +302,10 @@ export const ToretoreBanner: React.FC<ToretoreBannerProps> = ({
               target="_blank"
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
-              className="text-xs font-extrabold px-3 py-1 rounded-lg bg-white/15 hover:bg-white/25 text-white flex items-center gap-1 transition-colors"
+              className="text-[11px] font-extrabold px-2 py-0.5 rounded bg-white/15 hover:bg-white/25 text-white flex items-center gap-0.5 transition-colors"
             >
               <span>公式HP</span>
-              <ExternalLink className="w-3.5 h-3.5" />
+              <ExternalLink className="w-3 h-3" />
             </a>
           </div>
         </div>
@@ -273,57 +313,57 @@ export const ToretoreBanner: React.FC<ToretoreBannerProps> = ({
         {/* カード2: 国内100マイル（160km）レース完全網羅 */}
         <div
           onClick={() => onFilterFeature && onFilterFeature('all', '100mile')}
-          className={`group relative rounded-2xl overflow-hidden border-2 transition-all cursor-pointer bg-gradient-to-br from-rose-950 via-slate-900 to-amber-950 text-white p-5 sm:p-6 flex flex-col justify-between min-h-[205px] select-none ${
+          className={`group relative rounded-2xl overflow-hidden border-2 transition-all cursor-pointer bg-gradient-to-br from-rose-950 via-slate-900 to-amber-950 text-white p-5 flex flex-col justify-between min-h-[225px] select-none ${
             is100MileActive
               ? 'border-rose-400 ring-4 ring-rose-500/40 shadow-xl scale-[1.01]'
               : 'border-slate-800 shadow-sm hover:shadow-md hover:border-slate-700'
           }`}
           title={is100MileActive ? 'クリックで100マイル絞り込みを解除' : 'クリックで国内100マイルレースを抽出'}
         >
-          <div className="absolute -right-8 -bottom-8 w-36 h-36 bg-rose-500/20 rounded-full blur-2xl pointer-events-none group-hover:scale-125 transition-transform" />
+          <div className="absolute -right-8 -bottom-8 w-32 h-32 bg-rose-500/20 rounded-full blur-2xl pointer-events-none group-hover:scale-125 transition-transform" />
 
           <div>
-            <div className="flex items-center justify-between gap-2 mb-2.5">
+            <div className="flex items-center justify-between gap-1.5 mb-2">
               <span
-                className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-black transition-colors ${
+                className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-black transition-colors ${
                   is100MileActive ? 'bg-rose-300 text-slate-950 shadow-xs' : 'bg-rose-400 text-slate-950'
                 }`}
               >
-                {is100MileActive ? <Check className="w-3.5 h-3.5 stroke-[3]" /> : <Crown className="w-3.5 h-3.5 fill-current" />}
-                国内100マイルレース一覧
+                {is100MileActive ? <Check className="w-3 h-3 stroke-[3]" /> : <Crown className="w-3 h-3 fill-current" />}
+                国内100マイル一覧
               </span>
 
               {is100MileActive ? (
-                <span className="text-[11px] font-black bg-rose-500 text-white px-2 py-0.5 rounded-full flex items-center gap-1 shadow-xs animate-pulse">
+                <span className="text-[10px] font-black bg-rose-500 text-white px-1.5 py-0.5 rounded-full flex items-center gap-0.5 shadow-xs animate-pulse">
                   <span>適用中</span>
-                  <X className="w-3 h-3 stroke-[3]" />
+                  <X className="w-2.5 h-2.5 stroke-[3]" />
                 </span>
               ) : (
-                <span className="text-xs font-mono text-rose-300 font-extrabold">160km級 網羅</span>
+                <span className="text-[11px] font-mono text-rose-300 font-extrabold">160km級</span>
               )}
             </div>
 
-            <h3 className="text-base sm:text-lg font-black text-white group-hover:text-rose-300 transition-colors leading-snug">
-              Mt.FUJI 100・Hiroshima UTMB・信越五岳・GGR石切場・球磨川・FTR ほか
+            <h3 className="text-sm sm:text-base font-black text-white group-hover:text-rose-300 transition-colors leading-snug">
+              Mt.FUJI 100・Hiroshima UTMB・信越五岳・FTR ほか
             </h3>
 
-            <p className="text-xs sm:text-[13px] text-slate-200 font-medium mt-2 line-clamp-2 leading-relaxed">
-              全国の主要100マイラー憧れの舞台から、彩の国・KOUMI100・DEEP JAPAN・OSJ ONTAKE100まで国内100マイル戦を完全収録！
+            <p className="text-[12px] text-slate-200 font-medium mt-1.5 line-clamp-2 leading-relaxed">
+              全国の主要100マイラー憧れの舞台から、彩の国・KOUMI100・DEEP JAPANまで完全収録！
             </p>
           </div>
 
-          <div className="flex items-center justify-between mt-4 pt-3 border-t border-white/15">
+          <div className="flex items-center justify-between mt-3 pt-2.5 border-t border-white/15">
             <span
-              className={`text-xs sm:text-sm font-extrabold flex items-center gap-1 transition-colors ${
-                is100MileActive ? 'text-white bg-rose-600/60 px-2.5 py-1 rounded-lg border border-rose-400/60' : 'text-rose-300'
+              className={`text-xs font-extrabold flex items-center gap-1 transition-colors ${
+                is100MileActive ? 'text-white bg-rose-600/60 px-2 py-0.5 rounded-lg border border-rose-400/60' : 'text-rose-300'
               }`}
             >
-              <Crown className="w-4 h-4" />
-              <span>{is100MileActive ? '✔ 絞り込み中（クリックで解除）' : '「100マイルレース」をすべて表示'}</span>
+              <Crown className="w-3.5 h-3.5" />
+              <span>{is100MileActive ? '解除' : '100マイル表示'}</span>
               {is100MileActive ? (
-                <X className="w-3.5 h-3.5 ml-0.5" />
+                <X className="w-3 h-3 ml-0.5" />
               ) : (
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
               )}
             </span>
           </div>
@@ -332,61 +372,60 @@ export const ToretoreBanner: React.FC<ToretoreBannerProps> = ({
         {/* カード3: 中国地方＆四国地方 徹底網羅 */}
         <div
           onClick={() => onFilterFeature && onFilterFeature('all', 'all', '中国')}
-          className={`group relative rounded-2xl overflow-hidden border-2 transition-all cursor-pointer bg-gradient-to-br from-teal-950 via-slate-900 to-sky-950 text-white p-5 sm:p-6 flex flex-col justify-between min-h-[205px] select-none ${
+          className={`group relative rounded-2xl overflow-hidden border-2 transition-all cursor-pointer bg-gradient-to-br from-teal-950 via-slate-900 to-sky-950 text-white p-5 flex flex-col justify-between min-h-[225px] select-none ${
             isRegionCardActive
               ? 'border-emerald-400 ring-4 ring-emerald-500/40 shadow-xl scale-[1.01]'
               : 'border-slate-800 shadow-sm hover:shadow-md hover:border-slate-700'
           }`}
           title="クリックで中国地方または四国地方を抽出（再度クリックで解除）"
         >
-          <div className="absolute -right-8 -bottom-8 w-36 h-36 bg-teal-500/20 rounded-full blur-2xl pointer-events-none group-hover:scale-125 transition-transform" />
+          <div className="absolute -right-8 -bottom-8 w-32 h-32 bg-teal-500/20 rounded-full blur-2xl pointer-events-none group-hover:scale-125 transition-transform" />
 
           <div>
-            <div className="flex items-center justify-between gap-2 mb-2.5">
-              <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-black bg-emerald-400 text-slate-950">
-                ⛰️ 中国5県 ＆ 四国4県 地域別一覧
+            <div className="flex items-center justify-between gap-1.5 mb-2">
+              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-black bg-emerald-400 text-slate-950">
+                ⛰️ 中国＆四国
               </span>
 
               {isChugokuActive ? (
-                <span className="text-[11px] font-black bg-emerald-500 text-slate-950 px-2 py-0.5 rounded-full flex items-center gap-1 shadow-xs animate-pulse">
-                  <span>中国 適用中</span>
-                  <X className="w-3 h-3 stroke-[3]" />
+                <span className="text-[10px] font-black bg-emerald-500 text-slate-950 px-1.5 py-0.5 rounded-full flex items-center gap-0.5 shadow-xs animate-pulse">
+                  <span>中国中</span>
+                  <X className="w-2.5 h-2.5 stroke-[3]" />
                 </span>
               ) : isShikokuActive ? (
-                <span className="text-[11px] font-black bg-sky-400 text-slate-950 px-2 py-0.5 rounded-full flex items-center gap-1 shadow-xs animate-pulse">
-                  <span>四国 適用中</span>
-                  <X className="w-3 h-3 stroke-[3]" />
+                <span className="text-[10px] font-black bg-sky-400 text-slate-950 px-1.5 py-0.5 rounded-full flex items-center gap-0.5 shadow-xs animate-pulse">
+                  <span>四国中</span>
+                  <X className="w-2.5 h-2.5 stroke-[3]" />
                 </span>
               ) : (
-                <span className="text-xs font-mono text-emerald-300 font-extrabold">地元密着</span>
+                <span className="text-[11px] font-mono text-emerald-300 font-extrabold">中四国密着</span>
               )}
             </div>
 
-            <h3 className="text-base sm:text-lg font-black text-white group-hover:text-emerald-300 transition-colors leading-snug">
-              中国地方（広島・岡山・山口・島根・鳥取）＆ 四国（愛媛・香川・徳島・高知）
+            <h3 className="text-sm sm:text-base font-black text-white group-hover:text-emerald-300 transition-colors leading-snug">
+              中国5県 ＆ 四国4県<br />地域別主要大会一覧
             </h3>
 
-            <p className="text-xs sm:text-[13px] text-slate-200 font-medium mt-2 line-clamp-2 leading-relaxed">
-              恐羅漢・比婆山・もみじ・那岐・摩利支天・秋吉台・剣山・石鎚山・千羽海崖・四万十川・しまなみ海道など中四国の名大会を網羅。
+            <p className="text-[12px] text-slate-200 font-medium mt-1.5 line-clamp-2 leading-relaxed">
+              恐羅漢・比婆山・もみじ・那岐・秋吉台・石鎚山・千羽海崖・四万十川などを網羅。
             </p>
           </div>
 
-          <div className="flex items-center justify-between gap-2 mt-4 pt-3 border-t border-white/15">
+          <div className="flex items-center justify-between gap-1.5 mt-3 pt-2.5 border-t border-white/15">
             <button
               type="button"
               onClick={(e) => {
                 e.stopPropagation();
                 onFilterFeature && onFilterFeature('all', 'all', '中国');
               }}
-              className={`text-xs font-extrabold px-3 py-1.5 rounded-lg flex items-center gap-1 transition-all cursor-pointer shadow-xs ${
+              className={`text-[11px] font-extrabold px-2 py-1 rounded flex items-center gap-0.5 transition-all cursor-pointer ${
                 isChugokuActive
-                  ? 'bg-white text-emerald-950 font-black ring-2 ring-emerald-400 shadow-md scale-105'
+                  ? 'bg-white text-emerald-950 font-black ring-2 ring-emerald-400 shadow-sm'
                   : 'bg-emerald-500 hover:bg-emerald-400 text-slate-950'
               }`}
-              title={isChugokuActive ? 'クリックで中国地方の絞り込みを解除' : '中国地方の大会を抽出'}
             >
-              {isChugokuActive ? <Check className="w-3.5 h-3.5 stroke-[3]" /> : <Mountain className="w-3.5 h-3.5" />}
-              <span>{isChugokuActive ? '中国地方 [解除]' : '中国地方を見る'}</span>
+              {isChugokuActive ? <Check className="w-3 h-3 stroke-[3]" /> : <Mountain className="w-3 h-3" />}
+              <span>{isChugokuActive ? '中国解除' : '中国地方'}</span>
             </button>
 
             <button
@@ -395,16 +434,85 @@ export const ToretoreBanner: React.FC<ToretoreBannerProps> = ({
                 e.stopPropagation();
                 onFilterFeature && onFilterFeature('all', 'all', '四国');
               }}
-              className={`text-xs font-extrabold px-3 py-1.5 rounded-lg flex items-center gap-1 transition-all cursor-pointer shadow-xs ${
+              className={`text-[11px] font-extrabold px-2 py-1 rounded flex items-center gap-0.5 transition-all cursor-pointer ${
                 isShikokuActive
-                  ? 'bg-white text-sky-950 font-black ring-2 ring-sky-400 shadow-md scale-105'
+                  ? 'bg-white text-sky-950 font-black ring-2 ring-sky-400 shadow-sm'
                   : 'bg-sky-400 hover:bg-sky-300 text-slate-950'
               }`}
-              title={isShikokuActive ? 'クリックで四国地方の絞り込みを解除' : '四国地方の大会を抽出'}
             >
-              {isShikokuActive ? <Check className="w-3.5 h-3.5 stroke-[3]" /> : <Mountain className="w-3.5 h-3.5" />}
-              <span>{isShikokuActive ? '四国地方 [解除]' : '四国地方を見る'}</span>
+              {isShikokuActive ? <Check className="w-3 h-3 stroke-[3]" /> : <Mountain className="w-3 h-3" />}
+              <span>{isShikokuActive ? '四国解除' : '四国地方'}</span>
             </button>
+          </div>
+        </div>
+
+        {/* カード4: ARWS & ARWC 世界のアドベンチャーレース（4日以上・世界選手権予選＆世界選手権） */}
+        <div
+          onClick={() => onFilterFeature && onFilterFeature('adventure', 'arws')}
+          className={`group relative rounded-2xl overflow-hidden border-2 transition-all cursor-pointer bg-gradient-to-br from-indigo-950 via-slate-900 to-blue-950 text-white p-5 flex flex-col justify-between min-h-[225px] select-none ${
+            isArwsActive
+              ? 'border-indigo-400 ring-4 ring-indigo-500/40 shadow-xl scale-[1.01]'
+              : 'border-slate-800 shadow-sm hover:shadow-md hover:border-slate-700'
+          }`}
+          title={isArwsActive ? 'クリックでARWS/ARWC絞り込みを解除' : 'クリックでARWS/ARWC 4日以上の世界最高峰レースを抽出'}
+        >
+          <div className="absolute -right-8 -bottom-8 w-32 h-32 bg-indigo-500/20 rounded-full blur-2xl pointer-events-none group-hover:scale-125 transition-transform" />
+
+          <div>
+            <div className="flex items-center justify-between gap-1.5 mb-2">
+              <span
+                className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-black transition-colors ${
+                  isArwsActive ? 'bg-indigo-300 text-slate-950 shadow-xs' : 'bg-indigo-400 text-slate-950'
+                }`}
+              >
+                <Globe className="w-3 h-3" />
+                ARWS & ARWC
+              </span>
+
+              {isArwsActive ? (
+                <span className="text-[10px] font-black bg-indigo-500 text-white px-1.5 py-0.5 rounded-full flex items-center gap-0.5 shadow-xs animate-pulse">
+                  <span>適用中</span>
+                  <X className="w-2.5 h-2.5 stroke-[3]" />
+                </span>
+              ) : (
+                <span className="text-[11px] font-mono text-indigo-300 font-extrabold">4日以上・世界戦</span>
+              )}
+            </div>
+
+            <h3 className="text-sm sm:text-base font-black text-white group-hover:text-indigo-300 transition-colors leading-snug">
+              世界最高峰アドベンチャー！<br />ワールドシリーズ＆世界選手権
+            </h3>
+
+            <p className="text-[12px] text-slate-200 font-medium mt-1.5 line-clamp-2 leading-relaxed">
+              MAGNIficent(NZ)・パタゴニア・クロアチア世界選手権など4日以上の極限遠征レース！
+            </p>
+          </div>
+
+          <div className="flex items-center justify-between mt-3 pt-2.5 border-t border-white/15">
+            <span
+              className={`text-xs font-extrabold flex items-center gap-1 transition-colors ${
+                isArwsActive ? 'text-white bg-indigo-600/60 px-2 py-0.5 rounded-lg border border-indigo-400/60' : 'text-indigo-300'
+              }`}
+            >
+              <Globe className="w-3.5 h-3.5" />
+              <span>{isArwsActive ? '解除' : 'ARWS一覧へ'}</span>
+              {isArwsActive ? (
+                <X className="w-3 h-3 ml-0.5" />
+              ) : (
+                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+              )}
+            </span>
+
+            <a
+              href="https://arworldseries.com/races"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="text-[11px] font-extrabold px-2 py-0.5 rounded bg-white/15 hover:bg-white/25 text-white flex items-center gap-0.5 transition-colors"
+            >
+              <span>公式HP</span>
+              <ExternalLink className="w-3 h-3" />
+            </a>
           </div>
         </div>
       </div>
