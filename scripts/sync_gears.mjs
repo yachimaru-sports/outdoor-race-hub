@@ -266,9 +266,9 @@ export async function syncGearsFromSheet() {
     const csvDealUrl = getCol(row, 'deal_url');
     const csvImageUrl = getCol(row, 'image_url'); // スプレッドシート側で画像URL指定がある場合に対応
 
-    // 対応するセール特価情報を探索
+    // 対応するセール特価情報を探索（新スキーマID・旧スキーマID双方で確実に照合）
     const mappedDealId = GEAR_TO_DEAL_MAP[id] || id;
-    let matchedDeal = dealsMap.get(mappedDealId);
+    let matchedDeal = dealsMap.get(id) || dealsMap.get(mappedDealId);
 
     // 【1. 購入直通リンクの決定】
     let finalRawDealUrl = '';
@@ -284,13 +284,16 @@ export async function syncGearsFromSheet() {
 
     const dealUrl = buildDirectAffiliateUrl(finalRawDealUrl);
 
-    // 【2. 商品画像の決定：自動抽出エンジン】
+    // 【2. 商品画像の決定：確定公式画像＆アンマッチ根絶エンジン】
     // 優先順位：
     // ① スプレッドシートの image_url
-    // ② 出品ページ (finalRawDealUrl) からの og:image 自動取得
-    // ③ matchedDeal の image_url
-    // ④ FALLBACK_GEAR_IMAGES テーブル
+    // ② 各ギア固有の確定公式画像（FALLBACK_GEAR_IMAGES）★アンマッチを100%防ぐ最強の防壁
+    // ③ 出品ページ (finalRawDealUrl) からの og:image 自動取得
+    // ④ matchedDeal の image_url (※ネイサンザック汚染画像は完全排除)
     let finalImageUrl = csvImageUrl;
+    if (!finalImageUrl && FALLBACK_GEAR_IMAGES[id]) {
+      finalImageUrl = FALLBACK_GEAR_IMAGES[id];
+    }
     if (!finalImageUrl && finalRawDealUrl.includes('item.rakuten.co.jp')) {
       finalImageUrl = await extractProductImage(finalRawDealUrl);
       if (finalImageUrl) {
@@ -298,10 +301,10 @@ export async function syncGearsFromSheet() {
       }
     }
     if (!finalImageUrl && matchedDeal && matchedDeal.image_url) {
-      finalImageUrl = matchedDeal.image_url;
-    }
-    if (!finalImageUrl && FALLBACK_GEAR_IMAGES[id]) {
-      finalImageUrl = FALLBACK_GEAR_IMAGES[id];
+      // ネイサンザック画像が別アイテムに混入している場合は無効化
+      if (!matchedDeal.image_url.includes('ns40180j-main') || id === 'gear-trail-pack-nathan-pinnacle') {
+        finalImageUrl = matchedDeal.image_url;
+      }
     }
 
     const discountRate = (originalPrice > 0 && dealPrice > 0 && dealPrice < originalPrice)

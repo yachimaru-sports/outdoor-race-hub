@@ -80,8 +80,36 @@ const MIN_DISCOUNT_RATE = 15;
 
 /**
  * 各ギア固有の確定公式画像マッピング（名称と画像のアンマッチを100%防止）
+ * gear-...（新スキーマ）および deal-...（旧スキーマ）の双方に完全対応
  */
 const EXACT_GEAR_IMAGES = {
+  // 新スキーマ（gear-プレフィックス：全24品目の正規公式画像URL）
+  'gear-trail-rain-tnf-strike': 'https://shop.r10s.jp/canpanera/cabinet/item240/item_n17-2287_0.jpg',
+  'gear-trail-rain-montbell': 'https://tshop.r10s.jp/airwel/cabinet/shohin13/13162527/imgrc0141194038.jpg',
+  'gear-trail-pack-salomon-advskin12': 'https://shop.r10s.jp/vitaliser/cabinet/300606/salomon-2568.jpg',
+  'gear-trail-pack-nathan-pinnacle': 'https://shop.r10s.jp/usbonline/cabinet/pic-2/ns40180j-main.jpg',
+  'gear-trail-shoes-hoka-speedgoat6': 'https://shop.r10s.jp/sports-diary/cabinet/16/hka-1147791-swrd_1.jpg',
+  'gear-trail-shoes-altra-lonepeak8': 'https://shop.r10s.jp/glv/cabinet/newsingle202607/ala-3rak.jpg',
+  'gear-trail-poles-leki-fx-one': 'https://shop.r10s.jp/sakaiya/cabinet/leki/1300542_1.jpg',
+  'gear-trail-light-petzl-swift': 'https://shop.r10s.jp/kompas/cabinet/item83/e095bb_01.jpg',
+  'gear-trail-sublight-bd-spot': 'https://shop.r10s.jp/canpanera/cabinet/item230/item_b17466_0.jpg',
+  'gear-trail-wear-mil-drynamic': 'https://shop.r10s.jp/sportsmario2/cabinet/evidence_20250822/i06mjmiv01248_1.jpg',
+  'gear-trail-wear-c3fit-tights': 'https://shop.r10s.jp/2-kobeya/cabinet/goldwin/3f14127.jpg',
+  'gear-trail-bivvy-sol-escape': 'https://shop.r10s.jp/canpanera/cabinet/item209/item_s23005_0.jpg',
+  'gear-cycle-helmet-ogk-vitt': 'https://shop.r10s.jp/phalconcycle/cabinet/07626918/07626920/imgrc0107384488.jpg',
+  'gear-cycle-light-cateye-ampp': 'https://shop.r10s.jp/cycle-shop-eggs/cabinet/07026577/imgrc0091873775.jpg',
+  'gear-cycle-tool-topeak-mini': 'https://shop.r10s.jp/aris/cabinet/00244673/0651y.jpg',
+  'gear-cycle-bottle-camelbak': 'https://shop.r10s.jp/amical/cabinet/item/z00359-001.jpg',
+  'gear-cycle-wear-pearl-wind': 'https://shop.r10s.jp/bebike/cabinet/new_item/pearlizumi/2300.jpg',
+  'gear-marathon-shoes-asics-s4': 'https://shop.r10s.jp/alpen/cabinet/img/678/4302610436_1.jpg',
+  'gear-marathon-pouch-yurenikui': 'https://shop.r10s.jp/yurenikui/cabinet/compass1620286780.jpg',
+  'gear-nutrition-magon-gel': 'https://shop.r10s.jp/lafitte/cabinet/19ss_keleme_01/1baa78ee55d355a8dc_1.jpg',
+  'gear-marathon-socks-tabio': 'https://shop.r10s.jp/alpen/cabinet/img/560/3888990001_1.jpg',
+  'gear-ar-compass-silva-no3': 'https://shop.r10s.jp/shop-senjin/cabinet/other/imgrc0089499110.jpg',
+  'gear-ar-mapcase-sealline': 'https://shop.r10s.jp/aila/cabinet/00100/59587_1.jpg',
+  'gear-ar-drybag-seatosummit': 'https://shop.r10s.jp/yoshikip2/cabinet/07198126/imgrc0084318357.jpg',
+
+  // 旧スキーマ（deal-プレフィックス後方互換）
   'deal-nathan-pinnacle-12l': 'https://shop.r10s.jp/usbonline/cabinet/pic-2/ns40180j-main.jpg',
   'deal-bd-spot400r': 'https://shop.r10s.jp/canpanera/cabinet/item230/item_b17466_0.jpg',
   'deal-black-diamond-carbon-poles': 'https://shop.r10s.jp/canpanera/cabinet/item257/item_b17031-1_0.jpg',
@@ -985,8 +1013,8 @@ async function loadGearWatchlist() {
 
       if (!id || !title) continue;
 
-      // 各アイテム固有の確定公式画像
-      const exactImg = EXACT_GEAR_IMAGES[id] || 'https://tshop.r10s.jp/usbonline/cabinet/pic-2/ns40180j-main.jpg?fitin=275:275';
+      // 各アイテム固有の確定公式画像（※絶対に他アイテムに特定商品の画像を流用しない）
+      const exactImg = EXACT_GEAR_IMAGES[id] || '';
 
       // 必須キーワード（ブランド名・モデル名）
       const mustInclude = keyword.split(/\s+/).filter(Boolean).slice(0, 2);

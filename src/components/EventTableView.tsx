@@ -599,6 +599,7 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
                                         <img
                                           src={deal.image_url}
                                           alt={deal.title}
+                                          onError={(e) => handleImageError(e, deal.category)}
                                           className="w-14 h-14 object-cover rounded-lg bg-slate-100 dark:bg-slate-900 shrink-0 border border-slate-200 dark:border-slate-700"
                                         />
                                         {isNew && (
