@@ -1,4 +1,4 @@
-name: Daily Auto Sync & Update (Every Morning 8:00 JST)
+name: "Daily Auto Sync & Update (Every Morning 8:00 JST)"
 
 on:
   schedule:
@@ -12,7 +12,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: 'pages-and-auto-update'
+  group: 'pages'
   cancel-in-progress: false
 
 jobs:
@@ -22,38 +22,38 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
+      - name: "Checkout Repository"
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Set up Node.js
+      - name: "Set up Node.js"
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'npm'
 
-      - name: Install Dependencies
+      - name: "Install Dependencies"
         run: npm ci
 
-      - name: Step 1: Sync Events from Google Sheets
+      - name: "Step 1: Sync Events from Google Sheets"
         env:
           GOOGLE_SHEET_CSV_URL: ${{ secrets.GOOGLE_SHEET_CSV_URL }}
         run: node scripts/sync_from_sheets.mjs
 
-      - name: Step 2: Auto Update Deals & Validate Event Status
+      - name: "Step 2: Auto Update Deals & Validate Event Status"
         env:
           GOOGLE_SHEET_GEAR_CSV_URL: ${{ secrets.GOOGLE_SHEET_GEAR_CSV_URL }}
         run: node scripts/auto_update.mjs
 
-      - name: Step 3: Assert Zero Duplicates in Race Database
+      - name: "Step 3: Assert Zero Duplicates in Race Database"
         run: npm run check:duplicates
 
-      - name: Step 4: Assert All Links Live via HTTP Verification
+      - name: "Step 4: Assert All Links Live via HTTP Verification"
         run: npm run check:links
         continue-on-error: true
 
-      - name: Step 5: Commit & Push Updated Data to Repository
+      - name: "Step 5: Commit & Push Updated Data to Repository"
         run: |
           git config user.name "outdoor-race-hub-bot"
           git config user.email "bot@outdoor-race-hub.local"
@@ -65,19 +65,19 @@ jobs:
             echo "データ変更なし（ビルド・デプロイへ進みます）"
           fi
 
-      - name: Step 6: Build SPA for GitHub Pages
+      - name: "Step 6: Build SPA for GitHub Pages"
         run: |
           npm run build
           cp dist/index.html dist/404.html
 
-      - name: Step 7: Setup Pages
+      - name: "Step 7: Setup Pages"
         uses: actions/configure-pages@v4
 
-      - name: Step 8: Upload Artifact
+      - name: "Step 8: Upload Artifact"
         uses: actions/upload-pages-artifact@v3
         with:
           path: './dist'
 
-      - name: Step 9: Deploy to GitHub Pages
+      - name: "Step 9: Deploy to GitHub Pages"
         id: deployment
         uses: actions/deploy-pages@v4

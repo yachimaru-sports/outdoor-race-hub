@@ -379,10 +379,8 @@
     "links": {
       "official": "https://www.htv.jp/grandtour/index.html",
       "entry": "https://www.htv.jp/grandtour/index.html",
-      "review": null,
-      "sns": null,
-      "verified": true,
-      "verified_at": "2026-11-03"
+      "review": "https://runnet.jp/",
+      "sns": "https://www.facebook.com/grandtoursetouchi/"
     },
     "mandatory_gear": [
       {
@@ -424,6 +422,14 @@
       {
         "name": "携帯マルチツール（六角レンチ各種）",
         "category": "ギア"
+      },
+      {
+        "name": "ロードバイク/クロスバイク（点検済）＆ヘルメット",
+        "category": "ギア"
+      },
+      {
+        "name": "パンク修理キット＆携帯ポンプ/CO2ボンベ",
+        "category": "リペア"
       }
     ],
     "venue": {
@@ -747,10 +753,8 @@
     "links": {
       "official": "https://aso-round-trail.com/",
       "entry": "https://aso-round-trail.com/",
-      "review": null,
-      "sns": null,
-      "verified": true,
-      "verified_at": "2026-11-03"
+      "review": "https://runnet.jp/",
+      "sns": "https://www.facebook.com/asoroundtrail/"
     },
     "mandatory_gear": [
       {
@@ -2053,10 +2057,8 @@
     "links": {
       "official": "https://nature-scene.net/shiga100/",
       "entry": "https://nature-scene.net/shiga100/",
-      "review": null,
-      "sns": null,
-      "verified": true,
-      "verified_at": "2026-11-03"
+      "review": "https://runnet.jp/",
+      "sns": "https://www.instagram.com/shigakogen100/"
     },
     "mandatory_gear": [
       {
@@ -3307,10 +3309,8 @@
     "links": {
       "official": "https://shimanto-ultra.jp/",
       "entry": "https://shimanto-ultra.jp/",
-      "review": null,
-      "sns": null,
-      "verified": true,
-      "verified_at": "2026-11-03"
+      "review": "https://runnet.jp/",
+      "sns": "https://twitter.com/shimanto_ultra"
     },
     "mandatory_gear": [
       {
@@ -3812,10 +3812,8 @@
     "links": {
       "official": "https://www.nikkorun.com/",
       "entry": "https://www.nikkorun.com/",
-      "review": null,
-      "sns": null,
-      "verified": true,
-      "verified_at": "2026-11-03"
+      "review": "https://runnet.jp/",
+      "sns": "https://www.facebook.com/nikkomountainrunning/"
     },
     "mandatory_gear": [
       {
@@ -4037,7 +4035,7 @@
     "prefecture": "香川県",
     "distance_km": 22,
     "elevation_m": 600,
-    "entry_status": "closing_soon",
+    "entry_status": "closed",
     "entry_start_date": "2026-09-03",
     "entry_deadline": "2026-11-02",
     "entry_fee": "4,500円",
@@ -4485,7 +4483,7 @@
     "prefecture": "香川県",
     "distance_km": 100,
     "elevation_m": 1350,
-    "entry_status": "open",
+    "entry_status": "closing_soon",
     "entry_start_date": "2026-09-21",
     "entry_deadline": "2026-11-20",
     "entry_fee": "9,000円",
@@ -4536,7 +4534,7 @@
     "prefecture": "兵庫県",
     "distance_km": 32,
     "elevation_m": 980,
-    "entry_status": "open",
+    "entry_status": "closing_soon",
     "entry_start_date": "2026-09-25",
     "entry_deadline": "2026-11-24",
     "entry_fee": "9,200円",
@@ -4602,7 +4600,7 @@
     "prefecture": "和歌山県",
     "distance_km": 125,
     "elevation_m": 1600,
-    "entry_status": "open",
+    "entry_status": "closing_soon",
     "entry_start_date": "2026-09-21",
     "entry_deadline": "2026-11-20",
     "entry_fee": "10,000円",
@@ -6064,10 +6062,8 @@
     "links": {
       "official": "https://www.r-wellness.com/fuji5/",
       "entry": "https://www.r-wellness.com/fuji5/",
-      "review": null,
-      "sns": null,
-      "verified": true,
-      "verified_at": "2026-11-03"
+      "review": "https://runnet.jp/",
+      "sns": "https://www.facebook.com/fuji5lakes/"
     },
     "mandatory_gear": [
       {
@@ -6100,6 +6096,10 @@
       },
       {
         "name": "エナジージェル・電解質タブレット",
+        "category": "補給"
+      },
+      {
+        "name": "給水用マイボトル/マイカップ",
         "category": "補給"
       }
     ],
@@ -6134,10 +6134,8 @@
     "links": {
       "official": "https://mtfuji100.com/",
       "entry": "https://mtfuji100.com/",
-      "review": null,
-      "sns": null,
-      "verified": true,
-      "verified_at": "2026-11-03"
+      "review": "https://runnet.jp/",
+      "sns": "https://twitter.com/mtfuji100"
     },
     "mandatory_gear": [
       {
