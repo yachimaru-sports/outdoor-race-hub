@@ -807,10 +807,8 @@
     "links": {
       "official": "https://universal-field.com/event/asoroundtrail/",
       "entry": "https://universal-field.com/event/asoroundtrail/",
-      "review": null,
-      "sns": null,
-      "verified": true,
-      "verified_at": "2026-11-03"
+      "review": "https://runnet.jp/",
+      "sns": "https://www.facebook.com/asoroundtrail/"
     },
     "mandatory_gear": [
       {
@@ -2368,10 +2366,8 @@
     "links": {
       "official": "https://nature-scene.net/shiga100/",
       "entry": "https://nature-scene.net/shiga100/",
-      "review": null,
-      "sns": null,
-      "verified": true,
-      "verified_at": "2026-11-03"
+      "review": "https://runnet.jp/",
+      "sns": "https://www.instagram.com/shigakogen100/"
     },
     "mandatory_gear": [
       {
@@ -3616,15 +3612,13 @@
     }
   },
   {
-    "id": "hasetsune-cup-2026",
+    "id": "trail-hasetsune-2026",
     "category": "trail",
-    "subCategory": "日本山岳耐久レース本戦",
+    "subCategory": "100km・ロングトレイル",
     "elements": [
-      "ハセツネ",
-      "70km+",
-      "山岳耐久",
-      "夜間",
-      "トレラン"
+      "トレイルランニング",
+      "ナビゲーション",
+      "夜間走"
     ],
     "title": "第34回 日本山岳耐久レース（長谷川恒男CUP / ハセツネCUP 2026）",
     "date": "2026-10-11",
@@ -3635,17 +3629,39 @@
     "elevation_m": 4582,
     "entry_status": "closed",
     "entry_start_date": "2026-06-01",
-    "entry_deadline": "2026-06-15",
-    "entry_fee": "24,000円",
+    "entry_deadline": "2026-07-15",
+    "entry_fee": "25,000円",
     "links": {
-      "official": "https://www.hasetsune.jp/",
-      "entry": "https://www.hasetsune.jp/",
-      "review": null,
-      "sns": null,
-      "verified": true,
-      "verified_at": "2026-11-03"
+      "official": "https://www.hasetsune.com/",
+      "entry": "https://runnet.jp/",
+      "review": "",
+      "sns": ""
     },
     "mandatory_gear": [
+      {
+        "name": "ヘッドランプ2灯＆予備電池",
+        "category": "ライト"
+      },
+      {
+        "name": "水2L以上",
+        "category": "補給"
+      },
+      {
+        "name": "サバイバルシート",
+        "category": "エイド"
+      },
+      {
+        "name": "ココヘリ",
+        "category": "ギア"
+      },
+      {
+        "name": "レインジャケット・パンツ",
+        "category": "ウェア"
+      },
+      {
+        "name": "ファーストエイドキット",
+        "category": "エイド"
+      },
       {
         "name": "水・補給食2.0L以上",
         "category": "補給"
@@ -3668,8 +3684,75 @@
       }
     ],
     "venue": {
-      "name": "あきる野市立五日市中学校（東京都あきる野市五日市337）",
-      "mapQuery": "東京都あきる野市 五日市中学校"
+      "name": "あきる野市五日市会館（東京都あきる野市五日市411）",
+      "mapQuery": "東京都あきる野市五日市411"
+    },
+    "source": {
+      "portalName": "大会公式"
+    }
+  },
+  {
+    "id": "adv-shimanto-2026",
+    "category": "adventure",
+    "subCategory": "アドベンチャーレース",
+    "elements": [
+      "トレック",
+      "カヤック",
+      "MTB",
+      "ナビゲーション"
+    ],
+    "title": "四万十川リバー＆トレイルアドベンチャー 2026",
+    "date": "2026-10-17",
+    "month": 10,
+    "region": "四国",
+    "prefecture": "高知県",
+    "distance_km": 65,
+    "elevation_m": 1800,
+    "entry_status": "closed",
+    "entry_start_date": "2026-06-01",
+    "entry_deadline": "2026-08-31",
+    "entry_fee": "36,000円",
+    "links": {
+      "official": "https://www.shimanto-adventure.com/",
+      "entry": "https://runnet.jp/",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-03"
+    },
+    "mandatory_gear": [
+      {
+        "name": "マウンテンバイク＆ヘルメット",
+        "category": "ギア"
+      },
+      {
+        "name": "ライフジャケット(PFD)",
+        "category": "ウェア"
+      },
+      {
+        "name": "パドル",
+        "category": "ギア"
+      },
+      {
+        "name": "磁気コンパス",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "地形図",
+        "category": "ギア"
+      },
+      {
+        "name": "ファーストエイドキット",
+        "category": "エイド"
+      },
+      {
+        "name": "防水ライト",
+        "category": "ライト"
+      }
+    ],
+    "venue": {
+      "name": "四万十川 カヌーとキャンプの里 かわらっこ（高知県四万十市田出ノ川24）",
+      "mapQuery": "高知県四万十市田出ノ川24"
     },
     "source": {
       "portalName": "大会公式"
@@ -3809,10 +3892,8 @@
     "links": {
       "official": "https://shimanto-ultra.jp/",
       "entry": "https://shimanto-ultra.jp/",
-      "review": null,
-      "sns": null,
-      "verified": true,
-      "verified_at": "2026-11-03"
+      "review": "https://runnet.jp/",
+      "sns": "https://twitter.com/shimanto_ultra"
     },
     "mandatory_gear": [
       {
@@ -4385,10 +4466,8 @@
     "links": {
       "official": "https://www.nikkorun.com/",
       "entry": "https://www.nikkorun.com/",
-      "review": null,
-      "sns": null,
-      "verified": true,
-      "verified_at": "2026-11-03"
+      "review": "https://runnet.jp/",
+      "sns": "https://www.facebook.com/nikkomountainrunning/"
     },
     "mandatory_gear": [
       {
@@ -4603,7 +4682,7 @@
     "prefecture": "インド",
     "distance_km": 450,
     "elevation_m": 15000,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_start_date": "2026-01-15",
     "entry_deadline": "2026-10-31",
     "entry_fee": "4人チーム",
@@ -4713,7 +4792,7 @@
     "prefecture": "香川県",
     "distance_km": 22,
     "elevation_m": 600,
-    "entry_status": "closing_soon",
+    "entry_status": "closed",
     "entry_start_date": "2026-09-03",
     "entry_deadline": "2026-11-02",
     "entry_fee": "4,500円",
@@ -4776,7 +4855,7 @@
     "prefecture": "チリ",
     "distance_km": 500,
     "elevation_m": 13000,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_start_date": "2026-03-01",
     "entry_deadline": "2026-10-31",
     "entry_fee": "650,000円",
@@ -5015,7 +5094,7 @@
     "prefecture": "アルゼンチン",
     "distance_km": 500,
     "elevation_m": 11000,
-    "entry_status": "open",
+    "entry_status": "closed",
     "entry_start_date": "2026-02-01",
     "entry_deadline": "2026-11-01",
     "entry_fee": "4人チーム",
@@ -5065,7 +5144,7 @@
     "prefecture": "香川県",
     "distance_km": 100,
     "elevation_m": 1350,
-    "entry_status": "open",
+    "entry_status": "closing_soon",
     "entry_start_date": "2026-09-21",
     "entry_deadline": "2026-11-20",
     "entry_fee": "9,000円",
@@ -5218,7 +5297,7 @@
     "prefecture": "兵庫県",
     "distance_km": 32,
     "elevation_m": 980,
-    "entry_status": "open",
+    "entry_status": "closing_soon",
     "entry_start_date": "2026-09-25",
     "entry_deadline": "2026-11-24",
     "entry_fee": "9,200円",
@@ -5289,7 +5368,7 @@
     "prefecture": "ニュージーランド",
     "distance_km": 500,
     "elevation_m": 12000,
-    "entry_status": "open",
+    "entry_status": "closing_soon",
     "entry_start_date": "2026-03-01",
     "entry_deadline": "2026-11-15",
     "entry_fee": "4人チーム (世界選手権予選枠)",
@@ -5451,7 +5530,7 @@
     "prefecture": "和歌山県",
     "distance_km": 125,
     "elevation_m": 1600,
-    "entry_status": "open",
+    "entry_status": "closing_soon",
     "entry_start_date": "2026-09-21",
     "entry_deadline": "2026-11-20",
     "entry_fee": "10,000円",
@@ -6135,27 +6214,26 @@
     "elements": [
       "ARWS",
       "世界選手権予選",
-      "アドベンチャー",
-      "読図",
-      "MTB",
-      "パドル",
       "トレック",
-      "4日以上"
+      "MTB",
+      "パックラフト",
+      "読図",
+      "6日間"
     ],
     "title": "The MAGNIficent 2027（ニュージーランド ARWS Qualifier 500km・6日間）",
-    "date": "2027-02-20",
+    "date": "2027-02-15",
     "month": 2,
     "region": "海外",
     "prefecture": "ニュージーランド",
     "distance_km": 500,
-    "elevation_m": 12000,
-    "entry_status": "open",
-    "entry_start_date": "2026-06-01",
+    "elevation_m": 13500,
+    "entry_status": "upcoming",
+    "entry_start_date": "2026-08-01",
     "entry_deadline": "2026-12-31",
-    "entry_fee": "750,000円",
+    "entry_fee": "780,000円",
     "links": {
-      "official": "https://themagnificent.co.nz/",
-      "entry": "https://themagnificent.co.nz/",
+      "official": "https://arworldseries.com/races",
+      "entry": "https://arworldseries.com/races",
       "review": null,
       "sns": null,
       "verified": true,
@@ -6171,20 +6249,24 @@
         "category": "ギア"
       },
       {
-        "name": "2.5万分の1地形図＆コンパス",
+        "name": "地形図＆プレートコンパス",
         "category": "ナビゲーション"
       },
       {
-        "name": "完全防水レインウェア",
+        "name": "完全防水透湿ウェア",
         "category": "ウェア"
       },
       {
         "name": "エマージェンシーキット",
         "category": "ギア"
+      },
+      {
+        "name": "GPSトラッカー",
+        "category": "ナビゲーション"
       }
     ],
     "venue": {
-      "name": "Fiordland, South Island",
+      "name": "Fiordland National Park, South Island",
       "mapQuery": "Fiordland New Zealand"
     },
     "source": {
@@ -6990,10 +7072,8 @@
     "links": {
       "official": "https://www.r-wellness.com/fuji5/",
       "entry": "https://www.r-wellness.com/fuji5/",
-      "review": null,
-      "sns": null,
-      "verified": true,
-      "verified_at": "2026-11-03"
+      "review": "https://runnet.jp/",
+      "sns": "https://www.facebook.com/fuji5lakes/"
     },
     "mandatory_gear": [
       {
@@ -7026,6 +7106,10 @@
       },
       {
         "name": "エナジージェル・電解質タブレット",
+        "category": "補給"
+      },
+      {
+        "name": "給水用マイボトル/マイカップ",
         "category": "補給"
       }
     ],
@@ -7060,10 +7144,8 @@
     "links": {
       "official": "https://mtfuji100.com/",
       "entry": "https://mtfuji100.com/",
-      "review": null,
-      "sns": null,
-      "verified": true,
-      "verified_at": "2026-11-03"
+      "review": "https://runnet.jp/",
+      "sns": "https://twitter.com/mtfuji100"
     },
     "mandatory_gear": [
       {
@@ -7422,29 +7504,29 @@
     "category": "adventure",
     "subCategory": "ARWC世界選手権",
     "elements": [
-      "ARWS",
-      "ARWC世界選手権",
-      "アドベンチャー",
-      "読図",
-      "MTB",
-      "パドル",
+      "ARWC",
+      "世界選手権",
       "トレック",
-      "4日以上"
+      "MTB",
+      "カヤック",
+      "ロープ",
+      "読図",
+      "7日間"
     ],
-    "title": "Adventure Race Croatia 2027（クロアチア ARWC世界選手権 600km・6日間）",
-    "date": "2027-09-18",
-    "month": 9,
+    "title": "ARWC 2027 Croatia（クロアチア ARWC世界選手権 600km・7日間）",
+    "date": "2027-10-04",
+    "month": 10,
     "region": "海外",
     "prefecture": "クロアチア",
     "distance_km": 600,
-    "elevation_m": 13500,
+    "elevation_m": 15000,
     "entry_status": "upcoming",
     "entry_start_date": "2026-11-01",
     "entry_deadline": "2027-06-30",
-    "entry_fee": "950,000円",
+    "entry_fee": "980,000円",
     "links": {
-      "official": "https://arc.adventureracecroatia.com/",
-      "entry": "https://arc.adventureracecroatia.com/",
+      "official": "https://arworldseries.com/races",
+      "entry": "https://arworldseries.com/races",
       "review": null,
       "sns": null,
       "verified": true,
@@ -7452,28 +7534,28 @@
     },
     "mandatory_gear": [
       {
-        "name": "マウンテンバイク＆ヘルメット",
+        "name": "MTB＆輪行プロテクター",
         "category": "ギア"
       },
       {
-        "name": "パックラフト＆PFD",
+        "name": "シーカヤック・PFD",
         "category": "ギア"
       },
       {
-        "name": "2.5万分の1地形図＆コンパス",
-        "category": "ナビゲーション"
-      },
-      {
-        "name": "完全防水レインウェア",
-        "category": "ウェア"
-      },
-      {
-        "name": "エマージェンシーキット",
+        "name": "クライミングハーネス＆ディセンダー",
         "category": "ギア"
+      },
+      {
+        "name": "防水ビバークバッグ",
+        "category": "補給"
+      },
+      {
+        "name": "サテライトメッセンジャー",
+        "category": "ライト"
       }
     ],
     "venue": {
-      "name": "Dalmatia Coast, Zadar",
+      "name": "Zadar & Velebit National Park, Croatia",
       "mapQuery": "Zadar Croatia"
     },
     "source": {
