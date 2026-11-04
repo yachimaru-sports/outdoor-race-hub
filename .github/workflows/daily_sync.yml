@@ -1,0 +1,84 @@
+name: "Daily Auto Sync & Update (Every Morning 8:00 JST)"
+
+on:
+  schedule:
+    # 毎朝 08:00 JST（UTC 23:00）に定期自動実行
+    - cron: '0 23 * * *'
+  workflow_dispatch: # GitHub管理画面から手動即時実行可能
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: 'pages'
+  cancel-in-progress: false
+
+jobs:
+  daily-sync-and-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout Repository"
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: "Set up Python 3.11"
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: "Set up Node.js 20"
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: "Install Python & Node Dependencies"
+        run: |
+          pip install -r requirements.txt
+          npm ci
+
+      - name: "Step 1: Execute High-Precision Data Sync & Verification"
+        env:
+          RAKUTEN_APP_ID: ${{ secrets.RAKUTEN_APP_ID }}
+          RAKUTEN_AFFILIATE_ID: ${{ secrets.RAKUTEN_AFFILIATE_ID }}
+          GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
+        run: python scripts/sync_hub.py
+
+      - name: "Step 2: Assert Zero Duplicates in Race Database"
+        run: npm run check:duplicates
+
+      - name: "Step 3: Commit and Push Updated Data"
+        run: |
+          git config user.name "outdoor-race-hub-bot"
+          git config user.email "bot@outdoor-race-hub.local"
+          git add src/data/events.json src/data/deals.json src/data/gears.json src/data/meta.json outdoor_race_hub_events_master.csv
+          if ! git diff --staged --quiet; then
+            git commit -m "chore(auto): 毎朝8時定期同期（楽天API高精度ギア＆大会リンクHTTP検証）"
+            git push origin main
+          else
+            echo "データ変更なし（差分なしのためプッシュをスキップします）"
+          fi
+
+      - name: "Step 4: Build SPA for GitHub Pages"
+        run: |
+          npm run build
+          cp dist/index.html dist/404.html
+
+      - name: "Step 5: Setup Pages"
+        uses: actions/configure-pages@v4
+
+      - name: "Step 6: Upload Artifact"
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist'
+
+      - name: "Step 7: Deploy to GitHub Pages"
+        id: deployment
+        uses: actions/deploy-pages@v4

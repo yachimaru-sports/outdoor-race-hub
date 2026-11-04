@@ -1,10 +1,9 @@
-name: "Daily Auto Sync & Update (Every Morning 8:00 JST)"
+name: "Legacy Auto Sync (Node.js - Manual Only)"
 
 on:
-  schedule:
-    # 日本時間（JST）毎朝 08:00（UTC 23:00）に1日1回だけ自動実行
-    - cron: '0 23 * * *'
-  workflow_dispatch: # GitHub画面から「Run workflow」ボタンでいつでも手動即時実行可能
+  # schedule:
+  #   - cron: '0 23 * * *'
+  workflow_dispatch: # 手動実行専用（新パイプラインは daily_sync.yml で稼働）
 
 permissions:
   contents: write

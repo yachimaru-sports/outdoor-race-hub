@@ -30,7 +30,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -88,12 +88,12 @@
     "entry_deadline": "2025-06-30",
     "entry_fee": "920,000円",
     "links": {
-      "official": "https://www.expeditioncanada.ca/",
-      "entry": "https://www.expeditioncanada.ca/",
+      "official": null,
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -149,7 +149,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -203,7 +203,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -270,7 +270,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -334,7 +334,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -386,12 +386,12 @@
     "entry_deadline": "2026-02-10",
     "entry_fee": "11,000円",
     "links": {
-      "official": "https://www.hasetsune.jp/30k/",
-      "entry": "https://www.hasetsune.jp/30k/",
+      "official": null,
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -447,7 +447,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -507,7 +507,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -561,7 +561,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -614,7 +614,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -690,7 +690,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -744,7 +744,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -807,8 +807,10 @@
     "links": {
       "official": "https://universal-field.com/event/asoroundtrail/",
       "entry": "https://universal-field.com/event/asoroundtrail/",
-      "review": "https://runnet.jp/",
-      "sns": "https://www.facebook.com/asoroundtrail/"
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -866,7 +868,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -932,12 +934,12 @@
     "entry_deadline": "2026-03-31",
     "entry_fee": "580,000円",
     "links": {
-      "official": "https://thelegend.pl/",
-      "entry": "https://thelegend.pl/",
+      "official": null,
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -995,7 +997,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -1060,7 +1062,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -1117,7 +1119,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -1165,7 +1167,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -1222,7 +1224,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -1274,7 +1276,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -1337,7 +1339,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -1395,12 +1397,12 @@
     "entry_deadline": "2026-04-01",
     "entry_fee": "620,000円",
     "links": {
-      "official": "https://expeditionafrica.co.za/",
-      "entry": "https://expeditionafrica.co.za/",
+      "official": null,
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -1456,7 +1458,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -1504,7 +1506,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -1560,7 +1562,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -1618,7 +1620,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -1676,7 +1678,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -1743,7 +1745,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -1799,7 +1801,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -1850,12 +1852,12 @@
     "entry_deadline": "2026-05-18",
     "entry_fee": "12,000円",
     "links": {
-      "official": "https://www.actrep-sports.com/fairy-trail/",
+      "official": null,
       "entry": "https://moshicom.com/135201",
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -1907,7 +1909,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -1964,7 +1966,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -2016,7 +2018,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -2072,7 +2074,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -2130,7 +2132,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -2195,7 +2197,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -2250,7 +2252,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -2315,7 +2317,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -2366,8 +2368,10 @@
     "links": {
       "official": "https://nature-scene.net/shiga100/",
       "entry": "https://nature-scene.net/shiga100/",
-      "review": "https://runnet.jp/",
-      "sns": "https://www.instagram.com/shigakogen100/"
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -2425,7 +2429,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -2487,12 +2491,12 @@
     "entry_deadline": "2026-06-20",
     "entry_fee": "6,500円",
     "links": {
-      "official": "https://theomm.jp/event/omm-lite-bike-hakuba-otari-2026/",
-      "entry": "https://theomm.jp/event/omm-lite-bike-hakuba-otari-2026/",
+      "official": null,
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -2552,12 +2556,12 @@
     "entry_deadline": "2026-05-31",
     "entry_fee": "18,000円",
     "links": {
-      "official": "https://universal-field.com/event/kirishima-ebino-extream/",
-      "entry": "https://universal-field.com/event/kirishima-ebino-extream/",
+      "official": null,
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -2609,7 +2613,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -2662,7 +2666,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -2725,7 +2729,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -2776,12 +2780,12 @@
     "entry_deadline": "2026-07-20",
     "entry_fee": "16,000円",
     "links": {
-      "official": "https://osorakan-trail.com/",
-      "entry": "https://osorakan-trail.com/",
+      "official": null,
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -2844,7 +2848,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -2895,12 +2899,12 @@
     "entry_deadline": "2026-08-05",
     "entry_fee": "6,500円",
     "links": {
-      "official": "https://zaoskyrun.com/",
-      "entry": "https://zaoskyrun.com/",
+      "official": null,
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -2945,12 +2949,12 @@
     "entry_deadline": "2026-07-20",
     "entry_fee": "8,500円",
     "links": {
-      "official": "https://cycle-ishizuchi.jp/",
-      "entry": "https://cycle-ishizuchi.jp/",
+      "official": null,
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -2996,7 +3000,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -3058,12 +3062,12 @@
     "entry_deadline": "2026-08-25",
     "entry_fee": "12,000円",
     "links": {
-      "official": "https://echigocountrytrail.com/",
-      "entry": "https://echigocountrytrail.com/",
+      "official": null,
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -3114,12 +3118,12 @@
     "entry_deadline": "2026-07-31",
     "entry_fee": "16,000円",
     "links": {
-      "official": "https://shiwai-m.com/",
-      "entry": "https://shiwai-m.com/",
+      "official": null,
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -3168,7 +3172,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -3216,12 +3220,12 @@
     "entry_deadline": "2027-03-31",
     "entry_fee": "13,000円",
     "links": {
-      "official": "https://www.awajishima-longride.jp/",
-      "entry": "https://www.awajishima-longride.jp/",
+      "official": null,
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -3281,7 +3285,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -3329,12 +3333,12 @@
     "entry_deadline": "2026-07-15",
     "entry_fee": "22,000円",
     "links": {
-      "official": "https://www.100km.jp/",
-      "entry": "https://www.100km.jp/",
+      "official": null,
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -3389,7 +3393,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -3453,7 +3457,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -3511,7 +3515,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -3579,7 +3583,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -3612,13 +3616,15 @@
     }
   },
   {
-    "id": "trail-hasetsune-2026",
+    "id": "hasetsune-cup-2026",
     "category": "trail",
-    "subCategory": "100km・ロングトレイル",
+    "subCategory": "日本山岳耐久レース本戦",
     "elements": [
-      "トレイルランニング",
-      "ナビゲーション",
-      "夜間走"
+      "ハセツネ",
+      "70km+",
+      "山岳耐久",
+      "夜間",
+      "トレラン"
     ],
     "title": "第34回 日本山岳耐久レース（長谷川恒男CUP / ハセツネCUP 2026）",
     "date": "2026-10-11",
@@ -3629,39 +3635,17 @@
     "elevation_m": 4582,
     "entry_status": "closed",
     "entry_start_date": "2026-06-01",
-    "entry_deadline": "2026-07-15",
-    "entry_fee": "25,000円",
+    "entry_deadline": "2026-06-15",
+    "entry_fee": "24,000円",
     "links": {
-      "official": "https://www.hasetsune.com/",
-      "entry": "https://runnet.jp/",
-      "review": "",
-      "sns": ""
+      "official": "https://www.hasetsune.jp/",
+      "entry": "https://www.hasetsune.jp/",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
-      {
-        "name": "ヘッドランプ2灯＆予備電池",
-        "category": "ライト"
-      },
-      {
-        "name": "水2L以上",
-        "category": "補給"
-      },
-      {
-        "name": "サバイバルシート",
-        "category": "エイド"
-      },
-      {
-        "name": "ココヘリ",
-        "category": "ギア"
-      },
-      {
-        "name": "レインジャケット・パンツ",
-        "category": "ウェア"
-      },
-      {
-        "name": "ファーストエイドキット",
-        "category": "エイド"
-      },
       {
         "name": "水・補給食2.0L以上",
         "category": "補給"
@@ -3684,75 +3668,8 @@
       }
     ],
     "venue": {
-      "name": "あきる野市五日市会館（東京都あきる野市五日市411）",
-      "mapQuery": "東京都あきる野市五日市411"
-    },
-    "source": {
-      "portalName": "大会公式"
-    }
-  },
-  {
-    "id": "adv-shimanto-2026",
-    "category": "adventure",
-    "subCategory": "アドベンチャーレース",
-    "elements": [
-      "トレック",
-      "カヤック",
-      "MTB",
-      "ナビゲーション"
-    ],
-    "title": "四万十川リバー＆トレイルアドベンチャー 2026",
-    "date": "2026-10-17",
-    "month": 10,
-    "region": "四国",
-    "prefecture": "高知県",
-    "distance_km": 65,
-    "elevation_m": 1800,
-    "entry_status": "closed",
-    "entry_start_date": "2026-06-01",
-    "entry_deadline": "2026-08-31",
-    "entry_fee": "36,000円",
-    "links": {
-      "official": "https://www.shimanto-adventure.com/",
-      "entry": "https://runnet.jp/",
-      "review": null,
-      "sns": null,
-      "verified": true,
-      "verified_at": "2026-11-03"
-    },
-    "mandatory_gear": [
-      {
-        "name": "マウンテンバイク＆ヘルメット",
-        "category": "ギア"
-      },
-      {
-        "name": "ライフジャケット(PFD)",
-        "category": "ウェア"
-      },
-      {
-        "name": "パドル",
-        "category": "ギア"
-      },
-      {
-        "name": "磁気コンパス",
-        "category": "ナビゲーション"
-      },
-      {
-        "name": "地形図",
-        "category": "ギア"
-      },
-      {
-        "name": "ファーストエイドキット",
-        "category": "エイド"
-      },
-      {
-        "name": "防水ライト",
-        "category": "ライト"
-      }
-    ],
-    "venue": {
-      "name": "四万十川 カヌーとキャンプの里 かわらっこ（高知県四万十市田出ノ川24）",
-      "mapQuery": "高知県四万十市田出ノ川24"
+      "name": "あきる野市立五日市中学校（東京都あきる野市五日市337）",
+      "mapQuery": "東京都あきる野市 五日市中学校"
     },
     "source": {
       "portalName": "大会公式"
@@ -3785,7 +3702,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -3842,7 +3759,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -3892,8 +3809,10 @@
     "links": {
       "official": "https://shimanto-ultra.jp/",
       "entry": "https://shimanto-ultra.jp/",
-      "review": "https://runnet.jp/",
-      "sns": "https://twitter.com/shimanto_ultra"
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -3957,7 +3876,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -4013,7 +3932,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -4066,12 +3985,12 @@
     "entry_deadline": "2026-09-15",
     "entry_fee": "24,000円",
     "links": {
-      "official": "https://wakasaji-st.com/",
-      "entry": "https://wakasaji-st.com/",
+      "official": null,
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -4124,12 +4043,12 @@
     "entry_deadline": "2026-09-10",
     "entry_fee": "38,000円",
     "links": {
-      "official": "https://www.outdoorsportsjapan.com/trail/koushu/",
-      "entry": "https://www.outdoorsportsjapan.com/trail/koushu/",
+      "official": null,
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -4193,7 +4112,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -4249,7 +4168,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -4295,12 +4214,12 @@
     "entry_deadline": "2026-09-30",
     "entry_fee": "44,000円",
     "links": {
-      "official": "https://theomm.jp/event/omm-japan-2026/",
-      "entry": "https://theomm.jp/event/omm-japan-2026/",
+      "official": null,
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -4358,7 +4277,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -4407,12 +4326,12 @@
     "entry_deadline": "2026-10-15",
     "entry_fee": "15,400円",
     "links": {
-      "official": "https://saioto-colors.com/",
-      "entry": "https://saioto-colors.com/",
+      "official": null,
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -4466,8 +4385,10 @@
     "links": {
       "official": "https://www.nikkorun.com/",
       "entry": "https://www.nikkorun.com/",
-      "review": "https://runnet.jp/",
-      "sns": "https://www.facebook.com/nikkomountainrunning/"
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -4514,12 +4435,12 @@
     "entry_deadline": "2026-10-05",
     "entry_fee": "11,000円",
     "links": {
-      "official": "https://okushimanto-trail.com/",
-      "entry": "https://okushimanto-trail.com/",
+      "official": null,
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -4571,7 +4492,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -4616,12 +4537,12 @@
     "entry_deadline": "2026-09-25",
     "entry_fee": "39,000円",
     "links": {
-      "official": "https://universal-field.com/event/krt/",
-      "entry": "https://universal-field.com/event/krt/",
+      "official": null,
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -4692,7 +4613,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -4744,7 +4665,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -4802,7 +4723,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -4860,12 +4781,12 @@
     "entry_deadline": "2026-10-31",
     "entry_fee": "650,000円",
     "links": {
-      "official": "https://arworldseries.com/races/vulcania",
-      "entry": "https://arworldseries.com/races/vulcania",
+      "official": null,
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -4923,7 +4844,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -4987,7 +4908,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -5040,12 +4961,12 @@
     "entry_deadline": "2026-11-15",
     "entry_fee": "6,000円",
     "links": {
-      "official": "https://www.fukufuku-ride.com/",
-      "entry": "https://www.fukufuku-ride.com/",
+      "official": null,
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -5104,7 +5025,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -5154,7 +5075,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -5203,7 +5124,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -5251,12 +5172,12 @@
     "entry_deadline": "2026-11-10",
     "entry_fee": "8,500円",
     "links": {
-      "official": "https://orange-ride.com/",
-      "entry": "https://orange-ride.com/",
+      "official": null,
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -5307,7 +5228,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -5378,7 +5299,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -5434,7 +5355,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -5485,12 +5406,12 @@
     "entry_deadline": "2026-09-15",
     "entry_fee": "15,000円",
     "links": {
-      "official": "https://matsue-marathon.jp/",
-      "entry": "https://matsue-marathon.jp/",
+      "official": null,
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -5540,7 +5461,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -5594,7 +5515,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -5651,7 +5572,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -5711,7 +5632,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -5802,12 +5723,12 @@
     "entry_deadline": "2026-12-05",
     "entry_fee": "11,000円",
     "links": {
-      "official": "https://1000ba-trail.jimdofree.com/",
-      "entry": "https://1000ba-trail.jimdofree.com/",
+      "official": null,
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -5859,7 +5780,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -5907,7 +5828,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -5957,7 +5878,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -6017,7 +5938,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -6075,7 +5996,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -6131,7 +6052,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -6179,7 +6100,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -6214,30 +6135,31 @@
     "elements": [
       "ARWS",
       "世界選手権予選",
-      "トレック",
-      "MTB",
-      "パックラフト",
+      "アドベンチャー",
       "読図",
-      "6日間"
+      "MTB",
+      "パドル",
+      "トレック",
+      "4日以上"
     ],
     "title": "The MAGNIficent 2027（ニュージーランド ARWS Qualifier 500km・6日間）",
-    "date": "2027-02-15",
+    "date": "2027-02-20",
     "month": 2,
     "region": "海外",
     "prefecture": "ニュージーランド",
     "distance_km": 500,
-    "elevation_m": 13500,
-    "entry_status": "upcoming",
-    "entry_start_date": "2026-08-01",
+    "elevation_m": 12000,
+    "entry_status": "open",
+    "entry_start_date": "2026-06-01",
     "entry_deadline": "2026-12-31",
-    "entry_fee": "780,000円",
+    "entry_fee": "750,000円",
     "links": {
-      "official": "https://arworldseries.com/races",
-      "entry": "https://arworldseries.com/races",
+      "official": null,
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -6249,24 +6171,20 @@
         "category": "ギア"
       },
       {
-        "name": "地形図＆プレートコンパス",
+        "name": "2.5万分の1地形図＆コンパス",
         "category": "ナビゲーション"
       },
       {
-        "name": "完全防水透湿ウェア",
+        "name": "完全防水レインウェア",
         "category": "ウェア"
       },
       {
         "name": "エマージェンシーキット",
         "category": "ギア"
-      },
-      {
-        "name": "GPSトラッカー",
-        "category": "ナビゲーション"
       }
     ],
     "venue": {
-      "name": "Fiordland National Park, South Island",
+      "name": "Fiordland, South Island",
       "mapQuery": "Fiordland New Zealand"
     },
     "source": {
@@ -6300,7 +6218,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -6364,7 +6282,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -6412,7 +6330,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -6467,7 +6385,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -6526,7 +6444,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -6582,7 +6500,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -6644,7 +6562,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -6694,7 +6612,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -6748,7 +6666,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -6808,7 +6726,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -6860,7 +6778,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -6941,7 +6859,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -7017,12 +6935,12 @@
     "entry_deadline": "2027-02-15",
     "entry_fee": "19,000円",
     "links": {
-      "official": "http://okumikawapt.com/",
-      "entry": "http://okumikawapt.com/",
+      "official": null,
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -7072,8 +6990,10 @@
     "links": {
       "official": "https://www.r-wellness.com/fuji5/",
       "entry": "https://www.r-wellness.com/fuji5/",
-      "review": "https://runnet.jp/",
-      "sns": "https://www.facebook.com/fuji5lakes/"
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -7106,10 +7026,6 @@
       },
       {
         "name": "エナジージェル・電解質タブレット",
-        "category": "補給"
-      },
-      {
-        "name": "給水用マイボトル/マイカップ",
         "category": "補給"
       }
     ],
@@ -7144,8 +7060,10 @@
     "links": {
       "official": "https://mtfuji100.com/",
       "entry": "https://mtfuji100.com/",
-      "review": "https://runnet.jp/",
-      "sns": "https://twitter.com/mtfuji100"
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -7236,7 +7154,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -7295,7 +7213,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -7353,7 +7271,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -7402,7 +7320,7 @@
     "prefecture": "フランス",
     "distance_km": 350,
     "elevation_m": 16000,
-    "entry_status": "open",
+    "entry_status": "upcoming",
     "entry_start_date": "2026-11-15",
     "entry_deadline": "2027-06-15",
     "entry_fee": "4人チーム",
@@ -7412,7 +7330,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -7461,7 +7379,7 @@
     "prefecture": "フィンランド",
     "distance_km": 500,
     "elevation_m": 4500,
-    "entry_status": "open",
+    "entry_status": "upcoming",
     "entry_start_date": "2026-12-01",
     "entry_deadline": "2027-07-15",
     "entry_fee": "4人チーム",
@@ -7471,7 +7389,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
@@ -7504,58 +7422,58 @@
     "category": "adventure",
     "subCategory": "ARWC世界選手権",
     "elements": [
-      "ARWC",
-      "世界選手権",
-      "トレック",
-      "MTB",
-      "カヤック",
-      "ロープ",
+      "ARWS",
+      "ARWC世界選手権",
+      "アドベンチャー",
       "読図",
-      "7日間"
+      "MTB",
+      "パドル",
+      "トレック",
+      "4日以上"
     ],
-    "title": "ARWC 2027 Croatia（クロアチア ARWC世界選手権 600km・7日間）",
-    "date": "2027-10-04",
-    "month": 10,
+    "title": "Adventure Race Croatia 2027（クロアチア ARWC世界選手権 600km・6日間）",
+    "date": "2027-09-18",
+    "month": 9,
     "region": "海外",
     "prefecture": "クロアチア",
     "distance_km": 600,
-    "elevation_m": 15000,
+    "elevation_m": 13500,
     "entry_status": "upcoming",
     "entry_start_date": "2026-11-01",
     "entry_deadline": "2027-06-30",
-    "entry_fee": "980,000円",
+    "entry_fee": "950,000円",
     "links": {
-      "official": "https://arworldseries.com/races",
-      "entry": "https://arworldseries.com/races",
+      "official": null,
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-03"
+      "verified_at": "2026-11-04"
     },
     "mandatory_gear": [
       {
-        "name": "MTB＆輪行プロテクター",
+        "name": "マウンテンバイク＆ヘルメット",
         "category": "ギア"
       },
       {
-        "name": "シーカヤック・PFD",
+        "name": "パックラフト＆PFD",
         "category": "ギア"
       },
       {
-        "name": "クライミングハーネス＆ディセンダー",
+        "name": "2.5万分の1地形図＆コンパス",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "完全防水レインウェア",
+        "category": "ウェア"
+      },
+      {
+        "name": "エマージェンシーキット",
         "category": "ギア"
-      },
-      {
-        "name": "防水ビバークバッグ",
-        "category": "補給"
-      },
-      {
-        "name": "サテライトメッセンジャー",
-        "category": "ライト"
       }
     ],
     "venue": {
-      "name": "Zadar & Velebit National Park, Croatia",
+      "name": "Dalmatia Coast, Zadar",
       "mapQuery": "Zadar Croatia"
     },
     "source": {

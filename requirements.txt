@@ -1,0 +1,5 @@
+# OUTDOOR RACE HUB 自動同期パイプライン依存パッケージ
+requests>=2.31.0
+gspread>=6.1.0
+google-auth>=2.29.0
+urllib3>=2.0.0
