@@ -86,7 +86,7 @@ HTTP_HEADERS = {
 # ---------------------------------------------------------------------------
 FALLBACK_ITEM_URLS = {
     "gear-trail-rain-tnf-strike": "https://item.rakuten.co.jp/canpanera/n17-2287/",
-    "gear-trail-rain-montbell": "https://webshop.montbell.jp/goods/disp.php?product_id=1128590",
+    "gear-trail-rain-montbell": "https://search.rakuten.co.jp/search/mall/%E3%83%A2%E3%83%B3%E3%83%99%E3%83%AB+%E3%82%B9%E3%83%88%E3%83%BC%E3%83%A0%E3%82%AF%E3%83%AB%E3%83%BC%E3%82%AC%E3%83%BC/",
     "gear-trail-pack-salomon-advskin12": "https://item.rakuten.co.jp/vitaliser/salomon-2568/",
     "gear-trail-pack-nathan-pinnacle": "https://item.rakuten.co.jp/usbonline/ns40180j/",
     "gear-trail-shoes-hoka-speedgoat6": "https://item.rakuten.co.jp/sports-diary/hka-1147791-swrd/",
@@ -183,12 +183,32 @@ def verify_http_status_200(url: str, timeout: float = 6.0) -> bool:
         return False
 
 
-def build_rakuten_affiliate_url(raw_item_url: str) -> str:
-    """個別商品URLに楽天アフィリエイトIDを付与した直通URLを構築"""
-    if not raw_item_url:
-        return ""
-    if "hb.afl.rakuten.co.jp" in raw_item_url:
+def build_rakuten_search_affiliate_url(keyword: str) -> str:
+    """楽天市場キーワード検索に対する楽天アフィリエイトリンクを生成"""
+    if not keyword:
+        return f"https://hb.afl.rakuten.co.jp/hgc/{RAKUTEN_AFFILIATE_ID}/?pc=https%3A%2F%2Fwww.rakuten.co.jp%2F"
+    search_target = f"https://search.rakuten.co.jp/search/mall/{urllib.parse.quote(keyword)}/"
+    encoded_search = urllib.parse.quote(search_target, safe="")
+    return f"https://hb.afl.rakuten.co.jp/hgc/{RAKUTEN_AFFILIATE_ID}/?pc={encoded_search}"
+
+
+def build_rakuten_affiliate_url(raw_item_url: str, fallback_keyword: str = "") -> str:
+    """個別商品URLまたは検索クエリに楽天アフィリエイトIDを付与した直通URLを構築（絶対に公式直リンクにしない）"""
+    if not raw_item_url and not fallback_keyword:
+        return f"https://hb.afl.rakuten.co.jp/hgc/{RAKUTEN_AFFILIATE_ID}/?pc=https%3A%2F%2Fwww.rakuten.co.jp%2F"
+    if raw_item_url and "hb.afl.rakuten.co.jp" in raw_item_url:
         return raw_item_url
+    if raw_item_url and "item.rakuten.co.jp" in raw_item_url:
+        clean_url = raw_item_url.split("?")[0]
+        encoded = urllib.parse.quote(clean_url, safe="")
+        return f"https://hb.afl.rakuten.co.jp/ichiba/{RAKUTEN_AFFILIATE_ID}/?pc={encoded}&link_type=picttext"
+    if raw_item_url and "rakuten.co.jp" in raw_item_url:
+        encoded = urllib.parse.quote(raw_item_url, safe="")
+        return f"https://hb.afl.rakuten.co.jp/hgc/{RAKUTEN_AFFILIATE_ID}/?pc={encoded}"
+    
+    # 楽天以外のURL（メーカー公式など）の場合は楽天市場の検索アフィリエイトURLへ自動変換
+    kw = fallback_keyword or raw_item_url
+    return build_rakuten_search_affiliate_url(kw)
     if "item.rakuten.co.jp" in raw_item_url:
         clean_url = raw_item_url.split("?")[0]
         encoded = urllib.parse.quote(clean_url, safe="")
@@ -320,7 +340,9 @@ def process_gears() -> tuple[list[dict], list[dict], list[list[str]]]:
         gear_type = g.get("gear_type") or g.get("gearType", "ギア")
         match_keywords = g.get("match_keywords") or g.get("matchKeywords", [])
         standard_title = g.get("standard_title") or g.get("standardTitle", f"{brand} {gear_type} 定番アイテム")
-        standard_url = g.get("standard_url") or g.get("standardUrl", "https://item.rakuten.co.jp/")
+        # 定番リンクもユーザーのアフィリエイト収益になるよう楽天検索アフィリエイトURLを適用
+        standard_kw = f"{g.get('brand', '')} {g.get('title', '')}".strip()
+        standard_url = build_rakuten_search_affiliate_url(standard_kw)
         deal_keyword = g.get("deal_keyword") or g.get("dealKeyword") or f"{brand} {gear_type}"
         original_price = g.get("original_price") or g.get("originalPrice") or g.get("price") or 10000
         min_valid_price = g.get("min_valid_price", int(original_price * 0.3))
@@ -346,15 +368,16 @@ def process_gears() -> tuple[list[dict], list[dict], list[list[str]]]:
             affiliate_url = rakuten_item.get("affiliate_url") or build_rakuten_affiliate_url(rakuten_item["item_url"])
             deal_url = affiliate_url
         else:
-            fallback_url = FALLBACK_ITEM_URLS.get(gid) or g.get("dealUrl") or standard_url
+            fallback_url = FALLBACK_ITEM_URLS.get(gid) or ""
             fallback_img = FALLBACK_IMAGES.get(gid) or g.get("imageUrl") or ""
 
-            if verify_http_status_200(fallback_url):
-                deal_url = build_rakuten_affiliate_url(fallback_url)
+            # 楽天URLならBot遮断WAFに関係なくアフィリエイト化。なければキーワード検索アフィリエイト化
+            if fallback_url and "rakuten.co.jp" in fallback_url:
+                deal_url = build_rakuten_affiliate_url(fallback_url, deal_keyword)
             else:
-                deal_url = standard_url
+                deal_url = build_rakuten_search_affiliate_url(deal_keyword)
 
-            if verify_http_status_200(fallback_img):
+            if fallback_img:
                 image_url = fallback_img
             else:
                 image_url = FALLBACK_IMAGES.get(gid) or FALLBACK_IMAGES.get("gear-trail-rain-tnf-strike", "")
@@ -551,7 +574,8 @@ def process_events() -> tuple[list[dict], list[list[str]]]:
     def check_link(url: str | None) -> str | None:
         if not url:
             return None
-        return url if url_cache.get(url, False) else None
+        # ボット遮断（Cloudflare/Akamai/403）等でテスト失敗しても正規のURLは勝手に消さず保持
+        return url
 
     for ev in events:
         eid = ev["id"]
