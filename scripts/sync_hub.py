@@ -596,23 +596,25 @@ def search_official_url_with_gemini(title: str, prefecture: str = "", region: st
         "contents": [{"parts": [{"text": prompt}]}],
         "tools": [{"google_search": {}}],
         "generationConfig": {
-            "temperature": 0.1,
-            "responseMimeType": "application/json"
+            "temperature": 0.1
         }
     }
 
     try:
-        res = requests.post(url, json=payload, headers={"Content-Type": "application/json"}, timeout=15)
+        res = requests.post(url, json=payload, headers={"Content-Type": "application/json"}, timeout=20)
         if res.status_code == 200:
             data = res.json()
             candidates = data.get("candidates", [])
             if candidates:
-                content_text = candidates[0].get("content", {}).get("parts", [{}])[0].get("text", "")
-                parsed = json.loads(content_text)
-                return {
-                    "official_url": (parsed.get("official_url") or "").strip(),
-                    "entry_url": (parsed.get("entry_url") or "").strip(),
-                }
+                parts = candidates[0].get("content", {}).get("parts", [])
+                raw_text = "".join(p.get("text", "") for p in parts)
+                match = re.search(r"\{[\s\S]*?\}", raw_text)
+                if match:
+                    parsed = json.loads(match.group(0))
+                    return {
+                        "official_url": (parsed.get("official_url") or "").strip(),
+                        "entry_url": (parsed.get("entry_url") or "").strip(),
+                    }
     except Exception as e:
         logger.warning(f"⚠️ Gemini公式URL検索失敗 ({title}): {e}")
     return {}
