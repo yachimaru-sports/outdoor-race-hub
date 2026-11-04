@@ -19,7 +19,7 @@
     "brand": "THE NORTH FACE",
     "standardTitle": "【メンズ定番】UTMB必携基準クリア（耐水圧20,000mm・実測110g）の男性用防水シェル",
     "standardUrl": "https://www.goldwin.co.jp/tnf/",
-    "dealKeyword": "THE NORTH FACE ストライクトレイルフーディ メンズ (NP12372/NP62071)",
+    "dealKeyword": "THE NORTH FACE ストライクトレイルフーディ メンズ",
     "originalPrice": 20900,
     "price": 20900,
     "discountRate": 0,
@@ -45,7 +45,7 @@
     "brand": "mont-bell",
     "standardTitle": "【メンズ定番】超軽量134g＆耐水圧30,000mm。国内山岳レースで男性ランナー支持率No.1",
     "standardUrl": "https://webshop.montbell.jp/goods/disp.php?product_id=1128590",
-    "dealKeyword": "mont-bell バーサライト ジャケット Men's (1128590)",
+    "dealKeyword": "モンベル バーサライト ジャケット メンズ 1128590",
     "originalPrice": 20900,
     "price": 20900,
     "discountRate": 0,
@@ -53,28 +53,53 @@
     "imageUrl": "https://tshop.r10s.jp/airwel/cabinet/shohin13/13162527/imgrc0141194038.jpg"
   },
   {
+    "id": "gear-trail-rain-pants-tnf",
+    "sports": [
+      "trail",
+      "adventure",
+      "rogaining"
+    ],
+    "gearType": "レインパンツ",
+    "matchKeywords": [
+      "レインパンツ",
+      "防水パンツ",
+      "雨具",
+      "ストライクトレイルパンツ"
+    ],
+    "title": "THE NORTH FACE ストライクトレイルパンツ (NP12373)",
+    "brand": "THE NORTH FACE",
+    "standardTitle": "【必携レインボトム】超軽量コンパクト・耐水圧20,000mmの完全防水トレイルパンツ",
+    "standardUrl": "https://www.goldwin.co.jp/tnf/",
+    "dealKeyword": "ノースフェイス ストライクトレイルパンツ NP12373",
+    "originalPrice": 15400,
+    "price": 15400,
+    "discountRate": 0,
+    "dealUrl": "https://www.goldwin.co.jp/tnf/",
+    "imageUrl": "https://shop.r10s.jp/sportsmario2/cabinet/evidence_20230818/e08najnp12373k.jpg"
+  },
+  {
     "id": "gear-trail-pack-salomon-advskin12",
     "sports": [
-      "trail"
+      "trail",
+      "adventure"
     ],
     "gearType": "トレランザック",
     "matchKeywords": [
       "トレランザック",
-      "ザック",
-      "ハイドレーション",
-      "ソフトフラスク",
       "レースベスト",
-      "両肩ザック"
+      "ハイドレーションベスト",
+      "サロモン ザック",
+      "12L"
     ],
-    "title": "SALOMON ADV SKIN 12 ユニセックス (フラスク2本付属 / メンズM・L対応)",
+    "title": "SALOMON ADV SKIN 12 ユニセックス (フラスク2本付属 / 男性用M・L対応)",
     "brand": "SALOMON",
-    "standardTitle": "【ユニセックス定番】100マイル・ロングトレイル着用率トップ。男性体型にフィットするM/L展開",
-    "standardUrl": "https://salomon.jp/products/adv-skin-12-lc20120",
-    "dealKeyword": "SALOMON ADV SKIN 12 ユニセックス (フラスク2本付属 / メンズM・L対応)",
+    "standardTitle": "【長距離定番】100マイル対応の揺れないフィット感。500mlソフトフラスク2本付属の男性向け標準サイズ",
+    "standardUrl": "https://salomon.jp/",
+    "dealKeyword": "サロモン ADV SKIN 12",
     "originalPrice": 22000,
-    "price": 17600,
-    "discountRate": 20,
-    "dealUrl": "https://salomon.jp/products/adv-skin-12-lc20120",
+    "price": 22000,
+    "discountRate": 0,
+    "dealUrl": "https://salomon.jp/",
     "imageUrl": "https://shop.r10s.jp/vitaliser/cabinet/300606/salomon-2568.jpg"
   },
   {
@@ -85,21 +110,45 @@
     "gearType": "トレランザック",
     "matchKeywords": [
       "トレランザック",
-      "ザック",
+      "レースベスト",
+      "ネイサン",
       "ピナクル",
-      "10L",
       "12L"
     ],
     "title": "NATHAN ピナクル 12L JP ユニセックス (メンズ対応サイズ)",
     "brand": "NATHAN",
-    "standardTitle": "【ユニセックス定番】揺れない日本人専用設計。※旧型XS女性特価ではなく適正サイズを提案",
-    "standardUrl": "https://www.united-sports.jp/nathan/",
-    "dealKeyword": "NATHAN ピナクル 12L JP ユニセックス (メンズ対応サイズ)",
+    "standardTitle": "【フィット感抜群】体幹に吸い付く設計で荷物の揺れを極限まで排除。国内トレイルレースに最適な12L",
+    "standardUrl": "https://www.united-sports.co.jp/nathan/",
+    "dealKeyword": "NATHAN ピナクル 12L JP",
     "originalPrice": 18700,
-    "price": 14960,
-    "discountRate": 20,
-    "dealUrl": "https://www.united-sports.jp/nathan/",
+    "price": 18700,
+    "discountRate": 0,
+    "dealUrl": "https://www.united-sports.co.jp/nathan/",
     "imageUrl": "https://shop.r10s.jp/usbonline/cabinet/pic-2/ns40180j-main.jpg"
+  },
+  {
+    "id": "gear-trail-pack-salomon-active8",
+    "sports": [
+      "trail",
+      "marathon"
+    ],
+    "gearType": "トレランザック",
+    "matchKeywords": [
+      "トレランザック",
+      "ショートレース",
+      "ハイドレーションベスト",
+      "アクティブスキン"
+    ],
+    "title": "SALOMON ACTIVE SKIN 8 (フラスク2本付属 / 8L)",
+    "brand": "SALOMON",
+    "standardTitle": "【中距離・入門定番】30km〜50kmのミドルレースやウルトラマラソンに最適な8Lベスト",
+    "standardUrl": "https://salomon.jp/",
+    "dealKeyword": "サロモン ACTIVE SKIN 8",
+    "originalPrice": 16500,
+    "price": 16500,
+    "discountRate": 0,
+    "dealUrl": "https://salomon.jp/",
+    "imageUrl": "https://shop.r10s.jp/vitaliser/cabinet/300606/salomon-2566.jpg"
   },
   {
     "id": "gear-trail-shoes-hoka-speedgoat6",
@@ -109,67 +158,95 @@
     "gearType": "トレランシューズ",
     "matchKeywords": [
       "トレランシューズ",
-      "トレイルランニングシューズ",
-      "シューズ"
+      "トレイルシューズ",
+      "ホカ",
+      "スピードゴート",
+      "厚底"
     ],
     "title": "HOKA SPEEDGOAT 6 Men's (メンズ 25.5〜28.5cm)",
     "brand": "HOKA",
-    "standardTitle": "【メンズ定番】100km超の足を守る厚底メガグリップ。男性用レギュラー・ワイド展開",
-    "standardUrl": "https://www.hoka.com/jp/speedgoat-6/1147791.html",
-    "dealKeyword": "HOKA SPEEDGOAT 6 Men's (メンズ 25.5〜28.5cm)",
+    "standardTitle": "【厚底グリップ定番】抜群のクッション性とメガグリップで過酷なロングトレイルでも足を守る名作",
+    "standardUrl": "https://www.hoka.com/jp/",
+    "dealKeyword": "HOKA SPEEDGOAT 6 メンズ",
     "originalPrice": 24200,
-    "price": 19360,
-    "discountRate": 20,
-    "dealUrl": "https://www.hoka.com/jp/speedgoat-6/1147791.html",
+    "price": 24200,
+    "discountRate": 0,
+    "dealUrl": "https://www.hoka.com/jp/",
     "imageUrl": "https://shop.r10s.jp/sports-diary/cabinet/16/hka-1147791-swrd_1.jpg"
   },
   {
     "id": "gear-trail-shoes-altra-lonepeak8",
     "sports": [
       "trail",
-      "adventure",
-      "rogaining"
+      "adventure"
     ],
     "gearType": "トレランシューズ",
     "matchKeywords": [
       "トレランシューズ",
-      "トレイルランニングシューズ",
-      "シューズ",
-      "ゼロドロップ"
+      "ゼロドロップ",
+      "アルトラ",
+      "ローンピーク",
+      "足幅広め"
     ],
     "title": "ALTRA LONE PEAK 8 Men's (メンズ 25.5〜28.5cm)",
     "brand": "ALTRA",
-    "standardTitle": "【メンズ定番】幅広・足指開放のゼロドロップ。※レディース特価と混同せず男性用を掲載",
-    "standardUrl": "https://altrafootwear.jp/products/lone-peak-8",
-    "dealKeyword": "ALTRA LONE PEAK 8 Men's (メンズ 25.5〜28.5cm)",
-    "originalPrice": 19800,
-    "price": 17820,
-    "discountRate": 10,
-    "dealUrl": "https://altrafootwear.jp/products/lone-peak-8",
+    "standardTitle": "【ゼロドロップ定番】自然な足指の広がりを促すフットシェイプ設計。長距離山岳走で疲れにくい人気モデル",
+    "standardUrl": "https://altrafootwear.jp/",
+    "dealKeyword": "アルトラ ローンピーク 8 メンズ",
+    "originalPrice": 22000,
+    "price": 22000,
+    "discountRate": 0,
+    "dealUrl": "https://altrafootwear.jp/",
     "imageUrl": "https://shop.r10s.jp/glv/cabinet/newsingle202607/ala-3rak.jpg"
   },
   {
     "id": "gear-trail-poles-leki-fx-one",
     "sports": [
-      "trail"
+      "trail",
+      "adventure"
     ],
-    "gearType": "山岳ポール",
+    "gearType": "トレッキングポール",
     "matchKeywords": [
-      "ポール",
-      "ストック",
-      "トレッキングポール",
-      "カーボンポール"
+      "トレランポール",
+      "カーボンポール",
+      "Zポール",
+      "折りたたみポール",
+      "レキ"
     ],
-    "title": "LEKI ウルトラトレイル FX.ONE スーパーライト (ユニセックス・男性サイズ115/120cm)",
+    "title": "LEKI ウルトラトレイル FX.ONE スーパーライト (115cm/120cm 男性用推奨)",
     "brand": "LEKI",
-    "standardTitle": "【ユニセックス定番】ワンタッチ着脱の軽量折りたたみカーボンポール。男性標準115〜120cm対応",
+    "standardTitle": "【カーボンZポール】ワンアクションで展開・収納。急登・ロングレースで登攀力を劇的向上させる超軽量仕様",
     "standardUrl": "https://www.caravan-web.com/brand_leki/",
-    "dealKeyword": "LEKI ウルトラトレイル FX.ONE スーパーライト (ユニセックス・男性サイズ115/120cm)",
-    "originalPrice": 30800,
-    "price": 24640,
-    "discountRate": 20,
+    "dealKeyword": "LEKI ウルトラトレイル FX ONE スーパーライト",
+    "originalPrice": 31900,
+    "price": 31900,
+    "discountRate": 0,
     "dealUrl": "https://www.caravan-web.com/brand_leki/",
     "imageUrl": "https://shop.r10s.jp/sakaiya/cabinet/leki/1300542_1.jpg"
+  },
+  {
+    "id": "gear-trail-poles-bd-distance-z",
+    "sports": [
+      "trail",
+      "adventure"
+    ],
+    "gearType": "トレッキングポール",
+    "matchKeywords": [
+      "トレランポール",
+      "ディスタンスZ",
+      "ブラックダイヤモンド",
+      "折りたたみポール"
+    ],
+    "title": "Black Diamond ディスタンスカーボンZ (折りたたみポール)",
+    "brand": "Black Diamond",
+    "standardTitle": "【山岳100マイル必携】フルカーボン構造で驚異的な軽さと高剛性を両立した定番ポール",
+    "standardUrl": "https://www.lostarrow.co.jp/blackdiamond/",
+    "dealKeyword": "ブラックダイヤモンド ディスタンスカーボンZ",
+    "originalPrice": 32340,
+    "price": 32340,
+    "discountRate": 0,
+    "dealUrl": "https://www.lostarrow.co.jp/blackdiamond/",
+    "imageUrl": "https://shop.r10s.jp/canpanera/cabinet/item218/item_b17235_0.jpg"
   },
   {
     "id": "gear-trail-light-petzl-swift",
@@ -179,21 +256,22 @@
     ],
     "gearType": "ヘッドライト",
     "matchKeywords": [
-      "ヘッドライト",
       "ヘッドランプ",
-      "ライト2灯",
-      "高光量ヘッドライト",
-      "メインライト"
+      "メインライト",
+      "ペツル",
+      "スイフトRL",
+      "充電式",
+      "1000ルーメン"
     ],
-    "title": "PETZL スイフト RL 1200lm (E095BC ユニセックス)",
+    "title": "PETZL スイフト RL 1200lm (E095BC 充電式リアクティブライティング)",
     "brand": "PETZL",
-    "standardTitle": "【ユニセックス定番】自動調光リアクティブライティング搭載。男女共用フラッグシップ機",
-    "standardUrl": "https://www.alteria.co.jp/headlamp/swift-rl/",
-    "dealKeyword": "PETZL スイフト RL 1200lm (E095BC ユニセックス)",
+    "standardTitle": "【メインライト定番】1200ルーメンの圧倒的光量と周囲の明るさに応じて自動調光する夜間トレラン必携品",
+    "standardUrl": "https://www.alteria.co.jp/petzl/",
+    "dealKeyword": "ペツル スイフト RL E095BC",
     "originalPrice": 23760,
-    "price": 17820,
-    "discountRate": 25,
-    "dealUrl": "https://www.alteria.co.jp/headlamp/swift-rl/",
+    "price": 23760,
+    "discountRate": 0,
+    "dealUrl": "https://www.alteria.co.jp/petzl/",
     "imageUrl": "https://shop.r10s.jp/kompas/cabinet/item83/e095bb_01.jpg"
   },
   {
@@ -205,48 +283,48 @@
     ],
     "gearType": "予備ヘッドライト",
     "matchKeywords": [
-      "予備ライト",
-      "サブライト",
       "ヘッドランプ",
-      "防水ライト"
+      "サブライト",
+      "予備ライト",
+      "ブラックダイヤモンド",
+      "スポット400"
     ],
     "title": "Black Diamond スポット400-R 防水LED (BD81308 ユニセックス)",
     "brand": "Black Diamond",
-    "standardTitle": "【ユニセックス定番】完全防水IP67＆400lm。予備機必携チェックを余裕でクリアする軽量モデル",
-    "standardUrl": "https://www.lostarrow.co.jp/store/g/gBD81308001/",
-    "dealKeyword": "Black Diamond スポット400-R 防水LED (BD81308 ユニセックス)",
+    "standardTitle": "【予備ライト定番】IP67完全防水＆400ルーメン。夜間走行義務レースの予備灯基準を余裕で満たす信頼の相棒",
+    "standardUrl": "https://www.lostarrow.co.jp/blackdiamond/",
+    "dealKeyword": "Black Diamond スポット400-R",
     "originalPrice": 12980,
-    "price": 9980,
-    "discountRate": 23,
-    "dealUrl": "https://www.lostarrow.co.jp/store/g/gBD81308001/",
+    "price": 12980,
+    "discountRate": 0,
+    "dealUrl": "https://www.lostarrow.co.jp/blackdiamond/",
     "imageUrl": "https://shop.r10s.jp/canpanera/cabinet/item230/item_b17466_0.jpg"
   },
   {
     "id": "gear-trail-wear-mil-drynamic",
     "sports": [
       "trail",
-      "cycling",
-      "marathon",
       "adventure",
-      "rogaining"
+      "cycling",
+      "marathon"
     ],
-    "gearType": "ベースレイヤー",
+    "gearType": "アンダーウェア",
     "matchKeywords": [
-      "ベースレイヤー",
       "アンダーウェア",
+      "メッシュインナー",
+      "汗冷え防止",
       "ドライナミック",
-      "インナー",
-      "防寒長袖"
+      "ベースレイヤー"
     ],
-    "title": "MILLET ドライナミック メッシュ NS クルー Men's (メンズ S-M/L-XL/XXL)",
+    "title": "MILLET ドライナミック メッシュ NS クルー Men's (MIV01248 / メンズ S-M/L-XL)",
     "brand": "MILLET",
-    "standardTitle": "【メンズ定番】汗冷えを完全に遮断する男性用疎水性メッシュアンダーウェア",
-    "standardUrl": "https://www.millet.jp/c/men/underwear/MIV01248",
-    "dealKeyword": "MILLET ドライナミック メッシュ NS クルー Men's (メンズ S-M/L-XL/XXL)",
+    "standardTitle": "【汗冷え防止定番】汗を素早く吸い上げて肌面を常にドライに保つ網シャツ。過酷な気象での低体温症を防ぐ",
+    "standardUrl": "https://www.millet.jp/",
+    "dealKeyword": "ミレー ドライナミックメッシュ ノースリーブ メンズ",
     "originalPrice": 6490,
-    "price": 5190,
-    "discountRate": 20,
-    "dealUrl": "https://www.millet.jp/c/men/underwear/MIV01248",
+    "price": 6490,
+    "discountRate": 0,
+    "dealUrl": "https://www.millet.jp/",
     "imageUrl": "https://shop.r10s.jp/sportsmario2/cabinet/evidence_20250822/i06mjmiv01248_1.jpg"
   },
   {
@@ -257,19 +335,20 @@
     ],
     "gearType": "サポートタイツ",
     "matchKeywords": [
-      "タイツ",
-      "ロングタイツ",
       "コンプレッションタイツ",
-      "サポートタイツ"
+      "サポートタイツ",
+      "インパクトエアー",
+      "ロングタイツ",
+      "膝腰サポート"
     ],
     "title": "C3fit インパクトエアー ロングタイツ メンズ (3F14127 / 男性用 S/M/L/XL)",
     "brand": "Goldwin",
-    "standardTitle": "【メンズ定番】腰・太もも・膝を強力サポートする男性専用設計の軽量サポートタイツ",
+    "standardTitle": "【膝腰サポート定番】着心地の軽さと強力なテーピングサポートを両立。後半の下り坂でも脚が残る",
     "standardUrl": "https://www.goldwin.co.jp/c3fit/",
-    "dealKeyword": "C3fit インパクトエアー ロングタイツ メンズ (3F14127 / 男性用 S/M/L/XL)",
+    "dealKeyword": "C3fit インパクトエアー ロングタイツ 3F14127",
     "originalPrice": 14850,
-    "price": 11137,
-    "discountRate": 25,
+    "price": 14850,
+    "discountRate": 0,
     "dealUrl": "https://www.goldwin.co.jp/c3fit/",
     "imageUrl": "https://shop.r10s.jp/2-kobeya/cabinet/goldwin/3f14127.jpg"
   },
@@ -280,139 +359,147 @@
       "adventure",
       "rogaining"
     ],
-    "gearType": "エマージェンシーヴィヴィ",
+    "gearType": "エマージェンシー用品",
     "matchKeywords": [
-      "エマージェンシーシート",
-      "サバイバルシート",
       "サバイバルブランケット",
-      "保温シート",
+      "エマージェンシーシート",
+      "ビバークザック",
       "エスケープヴィヴィ",
-      "ツエルト"
+      "SOL"
     ],
     "title": "SOL エスケープヴィヴィ (12416 / 成人男性対応サイズ)",
     "brand": "SOL",
-    "standardTitle": "【ユニセックス定番】体熱70%反射・結露しない透湿性ビバーク。国内100マイル必携指定No.1",
-    "standardUrl": "https://highmount.jp/list/product/escape-bivvy/",
-    "dealKeyword": "SOL エスケープヴィヴィ (12416 / 成人男性対応サイズ)",
-    "originalPrice": 12980,
-    "price": 9980,
-    "discountRate": 23,
-    "dealUrl": "https://highmount.jp/list/product/escape-bivvy/",
+    "standardTitle": "【ビバーク必携定番】体熱の70%を反射し結露しない透湿性素材。多くのトレラン大会で「推奨・必携」指定",
+    "standardUrl": "https://www.star-corp.co.jp/product/brand/sol/",
+    "dealKeyword": "SOL エスケープヴィヴィ 12416",
+    "originalPrice": 9900,
+    "price": 9900,
+    "discountRate": 0,
+    "dealUrl": "https://www.star-corp.co.jp/product/brand/sol/",
     "imageUrl": "https://shop.r10s.jp/canpanera/cabinet/item209/item_s23005_0.jpg"
   },
   {
     "id": "gear-cycle-helmet-ogk-vitt",
     "sports": [
-      "cycling"
+      "cycling",
+      "adventure"
     ],
     "gearType": "サイクルヘルメット",
     "matchKeywords": [
-      "ヘルメット",
-      "JCF公認ヘルメット",
-      "サイクルヘルメット"
+      "サイクルヘルメット",
+      "JCF公認",
+      "シールド付き",
+      "ロードバイク",
+      "OGK"
     ],
-    "title": "OGK KABUTO VITT (JCF公認 / メンズ・ユニセックス S/M・L・XL/XXL)",
+    "title": "OGK KABUTO VITT (JCF公認 / 男性用・標準サイズ)",
     "brand": "OGK KABUTO",
-    "standardTitle": "【メンズ定番】眼鏡の上から使えるシールド付。日本人の頭に合うJCF公認ロングライド定番",
-    "standardUrl": "https://www.ogkkabuto.co.jp/bicycle/products/cycling/vitt/vitt.html",
-    "dealKeyword": "OGK KABUTO VITT (JCF公認 / メンズ・ユニセックス S/M・L・XL/XXL)",
-    "originalPrice": 16500,
-    "price": 12870,
-    "discountRate": 22,
-    "dealUrl": "https://www.ogkkabuto.co.jp/bicycle/products/cycling/vitt/vitt.html",
+    "standardTitle": "【JCF公認定番】眼鏡をかけたままでも装着できるマグネットシールド付属。ロングライドやアドベンチャーに",
+    "standardUrl": "https://www.ogkkabuto.co.jp/",
+    "dealKeyword": "OGK KABUTO VITT ヘルメット",
+    "originalPrice": 17600,
+    "price": 17600,
+    "discountRate": 0,
+    "dealUrl": "https://www.ogkkabuto.co.jp/",
     "imageUrl": "https://shop.r10s.jp/phalconcycle/cabinet/07626918/07626920/imgrc0107384488.jpg"
   },
   {
     "id": "gear-cycle-light-cateye-ampp",
     "sports": [
-      "cycling"
+      "cycling",
+      "adventure"
     ],
-    "gearType": "高輝度前後ライト",
+    "gearType": "自転車ライト",
     "matchKeywords": [
-      "前後ライト",
+      "自転車ライト",
       "フロントライト",
-      "高輝度ライト",
-      "リアライト",
-      "赤色点滅灯"
+      "キャットアイ",
+      "AMPP500",
+      "高輝度ライト"
     ],
-    "title": "CAT EYE AMPP500 ＆ RAPID micro セット (ユニセックス)",
+    "title": "CAT EYE AMPP500 ＋ RAPID micro 前後ライトセット",
     "brand": "CAT EYE",
-    "standardTitle": "【ユニセックス定番】トンネル通過・夜間必須の500ルーメン高輝度。国内定番ライトセット",
-    "standardUrl": "https://www.cateye.com/jp/products/headlights/HL-EL085RC/",
-    "dealKeyword": "CAT EYE AMPP500 ＆ RAPID micro セット (ユニセックス)",
-    "originalPrice": 6600,
-    "price": 4950,
-    "discountRate": 25,
-    "dealUrl": "https://www.cateye.com/jp/products/headlights/HL-EL085RC/",
+    "standardTitle": "【前後灯セット定番】夜間走行必須のロングライドレース基準を満たすワイド配光500lm充電式ヘッド＆テール",
+    "standardUrl": "https://www.cateye.com/jp/",
+    "dealKeyword": "キャットアイ AMPP500 ラピッドマイクロ セット",
+    "originalPrice": 9350,
+    "price": 9350,
+    "discountRate": 0,
+    "dealUrl": "https://www.cateye.com/jp/",
     "imageUrl": "https://shop.r10s.jp/cycle-shop-eggs/cabinet/07026577/imgrc0091873775.jpg"
   },
   {
     "id": "gear-cycle-tool-topeak-mini",
     "sports": [
-      "cycling"
+      "cycling",
+      "adventure"
     ],
-    "gearType": "携帯マルチツール",
+    "gearType": "携帯ツール",
     "matchKeywords": [
-      "携帯工具",
       "携帯マルチツール",
       "六角レンチ",
-      "パンク修理キット",
-      "リペア工具"
+      "チェーンカッター",
+      "トピーク",
+      "ミニ20プロ"
     ],
     "title": "TOPEAK ミニ 20 プロ (携帯マルチツール・ユニセックス)",
     "brand": "TOPEAK",
-    "standardTitle": "【ユニセックス定番】チェーン切り内蔵20機能。手のひらサイズでセルフリペア必携の名品",
-    "standardUrl": "https://topeak.jp/products/mini-20-pro/",
-    "dealKeyword": "TOPEAK ミニ 20 プロ (携帯マルチツール・ユニセックス)",
-    "originalPrice": 5500,
-    "price": 4290,
-    "discountRate": 22,
-    "dealUrl": "https://topeak.jp/products/mini-20-pro/",
+    "standardTitle": "【携帯工具の決定版】20機能凝縮・チェーンツール付き。山奥のトラブルでも確実に自走復帰できる鍛造アルミボディ",
+    "standardUrl": "https://topeak.jp/",
+    "dealKeyword": "トピーク ミニ 20 プロ",
+    "originalPrice": 6050,
+    "price": 6050,
+    "discountRate": 0,
+    "dealUrl": "https://topeak.jp/",
     "imageUrl": "https://shop.r10s.jp/aris/cabinet/00244673/0651y.jpg"
   },
   {
     "id": "gear-cycle-bottle-camelbak",
     "sports": [
-      "cycling"
+      "cycling",
+      "trail"
     ],
-    "gearType": "サイクルボトル",
+    "gearType": "保冷ボトル",
     "matchKeywords": [
-      "ボトル",
       "サイクルボトル",
-      "ボトル2本",
-      "水分補給"
+      "保冷ボトル",
+      "キャメルバック",
+      "ポディウムチル",
+      "弁付きボトル"
     ],
-    "title": "CAMELBAK ポディウム チル 21oz 620ml (保冷ボトル・ユニセックス)",
+    "title": "CAMELBAK ポディウム チル 21oz 620ml (保冷サイクルボトル)",
     "brand": "CAMELBAK",
-    "standardTitle": "【ユニセックス定番】弁開閉不要の保冷ボトル。サイクリストの定番スタンダード",
-    "standardUrl": "https://www.riteway-jp.com/pa/camelbak/",
-    "dealKeyword": "CAMELBAK ポディウム チル 21oz 620ml (保冷ボトル・ユニセックス)",
-    "originalPrice": 2640,
-    "price": 1980,
-    "discountRate": 25,
-    "dealUrl": "https://www.riteway-jp.com/pa/camelbak/",
+    "standardTitle": "【保冷ボトル定番】通常のボトルの2倍の保冷力。自動開閉バルブで漏れず、片手で素早く水分補給が可能",
+    "standardUrl": "https://www.riteway-jp.com/bicycle/camelbak/",
+    "dealKeyword": "キャメルバック ポディウム チル 21oz",
+    "originalPrice": 3300,
+    "price": 3300,
+    "discountRate": 0,
+    "dealUrl": "https://www.riteway-jp.com/bicycle/camelbak/",
     "imageUrl": "https://shop.r10s.jp/amical/cabinet/item/z00359-001.jpg"
   },
   {
     "id": "gear-cycle-wear-pearl-wind",
     "sports": [
-      "cycling"
+      "cycling",
+      "adventure"
     ],
-    "gearType": "防風シェル・ジレ",
+    "gearType": "防風シェル",
     "matchKeywords": [
-      "ウインドブレーカー",
-      "レインジレ",
       "ウィンドシェル",
-      "防風着"
+      "サイクルジレ",
+      "防風ベスト",
+      "パールイズミ",
+      "ストレッチウィンドシェル"
     ],
     "title": "パールイズミ ストレッチ ウィンドシェル Men's (2300 / メンズ M/L/XL)",
     "brand": "PEARL IZUMI",
-    "standardTitle": "【メンズ定番】下りの冷え込み対策。男性用カッティングで背中メッシュのポケッタブル防風着",
+    "standardTitle": "【体温調整定番】背面の撥水ストレッチメッシュがバタつきを防ぎ、ダウンヒル時の急激な冷えをシャットアウト",
     "standardUrl": "https://www.pearlizumi.co.jp/",
-    "dealKeyword": "パールイズミ ストレッチ ウィンドシェル Men's (2300 / メンズ M/L/XL)",
+    "dealKeyword": "パールイズミ ストレッチ ウィンドシェル 2300",
     "originalPrice": 12650,
-    "price": 9480,
-    "discountRate": 25,
+    "price": 12650,
+    "discountRate": 0,
     "dealUrl": "https://www.pearlizumi.co.jp/",
     "imageUrl": "https://shop.r10s.jp/bebike/cabinet/new_item/pearlizumi/2300.jpg"
   },
@@ -421,42 +508,45 @@
     "sports": [
       "marathon"
     ],
-    "gearType": "ロードランニングシューズ",
+    "gearType": "ランニングシューズ",
     "matchKeywords": [
       "ランニングシューズ",
-      "シューズ",
-      "マラソンシューズ"
+      "カーボンシューズ",
+      "サブ4",
+      "アシックス",
+      "S4"
     ],
     "title": "ASICS S4 Men's (メンズ 25.5〜28.5cm)",
     "brand": "ASICS",
-    "standardTitle": "【メンズ定番】サブ4ランナー専用の安定性＋カーボン厚底。長距離ウルトラでも最後まで足が残る",
-    "standardUrl": "https://www.asics.com/jp/ja-jp/s4/p/1013A129-100.html",
-    "dealKeyword": "ASICS S4 Men's (メンズ 25.5〜28.5cm)",
+    "standardTitle": "【サブ4専用カーボン】フルマラソン4時間切りを目指すランナーのために最適化された安定厚底カーボン",
+    "standardUrl": "https://www.asics.com/jp/ja-jp/",
+    "dealKeyword": "アシックス S4 メンズ ランニングシューズ",
     "originalPrice": 22000,
-    "price": 14455,
-    "discountRate": 34,
-    "dealUrl": "https://www.asics.com/jp/ja-jp/s4/p/1013A129-100.html",
+    "price": 22000,
+    "discountRate": 0,
+    "dealUrl": "https://www.asics.com/jp/ja-jp/",
     "imageUrl": "https://shop.r10s.jp/alpen/cabinet/img/678/4302610436_1.jpg"
   },
   {
     "id": "gear-marathon-pouch-yurenikui",
     "sports": [
-      "marathon"
+      "marathon",
+      "trail"
     ],
     "gearType": "ウエストポーチ",
     "matchKeywords": [
       "ウエストポーチ",
-      "ランニングポーチ",
       "ボトルポーチ",
-      "マイカップ"
+      "ユレニクイ",
+      "揺れないポーチ"
     ],
-    "title": "YURENIKUI スタンダード (ユニセックス・男性ウエスト対応)",
+    "title": "YURENIKUI スタンダード (ユニセックス・男女兼用)",
     "brand": "YURENIKUI",
-    "standardTitle": "【ユニセックス定番】フル・ウルトラでスマホやボトルが一切揺れない専売ボトルポーチ",
+    "standardTitle": "【揺れないボトルポーチ】ボトルを入れても驚くほど揺れない特許構造。ウルトラマラソンの必携品",
     "standardUrl": "https://yurenikui.jp/",
-    "dealKeyword": "YURENIKUI スタンダード (ユニセックス・男性ウエスト対応)",
-    "originalPrice": 5980,
-    "price": 5980,
+    "dealKeyword": "YURENIKUI スタンダード ボトルポーチ",
+    "originalPrice": 6500,
+    "price": 6500,
     "discountRate": 0,
     "dealUrl": "https://yurenikui.jp/",
     "imageUrl": "https://shop.r10s.jp/yurenikui/cabinet/compass1620286780.jpg"
@@ -464,29 +554,28 @@
   {
     "id": "gear-nutrition-magon-gel",
     "sports": [
-      "trail",
       "marathon",
+      "trail",
       "cycling",
       "adventure"
     ],
     "gearType": "補給食",
     "matchKeywords": [
-      "行動食",
       "エナジージェル",
       "補給食",
-      "サプリメント",
-      "マグネシウム",
+      "マグオン",
+      "水溶性マグネシウム",
       "足攣り防止"
     ],
     "title": "Mag-on エナジージェル 12個セット (水溶性マグネシウム配合)",
     "brand": "Mag-on",
-    "standardTitle": "【補給定番】高エネルギー＋マグネシウム50mg配合。足攣り対策の絶対的必須アイテム",
-    "standardUrl": "https://mag-on.net/products.html",
-    "dealKeyword": "Mag-on エナジージェル 12個セット (水溶性マグネシウム配合)",
-    "originalPrice": 4400,
-    "price": 3880,
-    "discountRate": 12,
-    "dealUrl": "https://mag-on.net/products.html",
+    "standardTitle": "【足攣り防止定番】レース中の脚攣りトラブルを予防する水溶性マグネシウム50mg配合の即効エナジー",
+    "standardUrl": "https://mag-on.net/",
+    "dealKeyword": "マグオン エナジージェル 12個 セット",
+    "originalPrice": 4147,
+    "price": 4147,
+    "discountRate": 0,
+    "dealUrl": "https://mag-on.net/",
     "imageUrl": "https://shop.r10s.jp/lafitte/cabinet/19ss_keleme_01/1baa78ee55d355a8dc_1.jpg"
   },
   {
@@ -498,19 +587,20 @@
     "gearType": "ランニングソックス",
     "matchKeywords": [
       "ランニングソックス",
-      "ソックス",
-      "靴下",
-      "5本指ソックス"
+      "5本指ソックス",
+      "タビオ",
+      "レーシングプロ",
+      "アーチサポート"
     ],
-    "title": "Tabio レーシングラン プロ 5本指 Men's (メンズ M 25-27cm / L 27-29cm)",
+    "title": "Tabio レーシングラン プロ 5本指 Men's (メンズ M/L)",
     "brand": "Tabio",
-    "standardTitle": "【メンズ定番】立体製法とシリコンラバーでマメを徹底予防する男性用5本指ソックス",
-    "standardUrl": "https://tabio.com/jp/racingrun/",
-    "dealKeyword": "Tabio レーシングラン プロ 5本指 Men's (メンズ M 25-27cm / L 27-29cm)",
+    "standardTitle": "【靴擦れ防止定番】指の間の摩擦を防ぎ、土踏まずのアーチを強力に押し上げて後半の失速を防ぐ高機能靴下",
+    "standardUrl": "https://tabio.com/jp/",
+    "dealKeyword": "タビオ レーシングラン プロ 5本指 メンズ",
     "originalPrice": 2200,
     "price": 2200,
     "discountRate": 0,
-    "dealUrl": "https://tabio.com/jp/racingrun/",
+    "dealUrl": "https://tabio.com/jp/",
     "imageUrl": "https://shop.r10s.jp/alpen/cabinet/img/560/3888990001_1.jpg"
   },
   {
@@ -519,22 +609,23 @@
       "adventure",
       "rogaining"
     ],
-    "gearType": "ベースプレートコンパス",
+    "gearType": "コンパス",
     "matchKeywords": [
-      "プレートコンパス",
-      "シルバコンパス",
+      "コンパス",
       "方位磁石",
-      "コンパス"
+      "ベースプレートコンパス",
+      "シルバ",
+      "読図"
     ],
-    "title": "SILVA No.3 Black ベースプレートコンパス (ECH137 ユニセックス)",
+    "title": "SILVA No.3 Black ベースプレートコンパス (磁針偏差対応)",
     "brand": "SILVA",
-    "standardTitle": "【ユニセックス定番】世界中のオリエンテーリング・読図競技の原点にして完成形",
-    "standardUrl": "https://outdoor.evernew.co.jp/products/detail/631",
-    "dealKeyword": "SILVA No.3 Black ベースプレートコンパス (ECH137 ユニセックス)",
+    "standardTitle": "【読図競技の世界標準】アドベンチャーレース・ロゲイニングの全競技者が信頼する最高精度の定番磁石",
+    "standardUrl": "https://www.silva.se/",
+    "dealKeyword": "シルバ コンパス No 3 Black",
     "originalPrice": 4950,
-    "price": 3960,
-    "discountRate": 20,
-    "dealUrl": "https://outdoor.evernew.co.jp/products/detail/631",
+    "price": 4950,
+    "discountRate": 0,
+    "dealUrl": "https://www.silva.se/",
     "imageUrl": "https://shop.r10s.jp/shop-senjin/cabinet/other/imgrc0089499110.jpg"
   },
   {
@@ -545,17 +636,19 @@
     ],
     "gearType": "防水マップケース",
     "matchKeywords": [
-      "防水マップケース",
       "マップケース",
-      "マップボード"
+      "防水ケース",
+      "シールライン",
+      "地図ケース",
+      "防滴"
     ],
-    "title": "SEAL LINE 防水マップケース Mサイズ (ユニセックス)",
+    "title": "SEAL LINE シールパック Mサイズ (ユニセックス・完全防水マップケース)",
     "brand": "SEAL LINE",
-    "standardTitle": "【ユニセックス定番】国土地理院2万5千分の1地形図が収まる完全防水マップケース",
+    "standardTitle": "【地図保護定番】大雨や渡渉でも地形図を完全にドライに保つポリウレタン製。タッチスクリーン対応でGPS端末も入る",
     "standardUrl": "https://www.e-mot.co.jp/sealline/",
-    "dealKeyword": "SEAL LINE 防水マップケース Mサイズ (ユニセックス)",
-    "originalPrice": 4400,
-    "price": 4400,
+    "dealKeyword": "シールライン シールパック マップケース",
+    "originalPrice": 6380,
+    "price": 6380,
     "discountRate": 0,
     "dealUrl": "https://www.e-mot.co.jp/sealline/",
     "imageUrl": "https://shop.r10s.jp/aila/cabinet/00100/59587_1.jpg"
@@ -563,24 +656,53 @@
   {
     "id": "gear-ar-drybag-seatosummit",
     "sports": [
-      "adventure"
+      "adventure",
+      "trail"
     ],
-    "gearType": "完全防水ドライバッグ",
+    "gearType": "防水スタッフバッグ",
     "matchKeywords": [
-      "完全防水ドライバッグ",
       "ドライバッグ",
       "防水バッグ",
-      "20L"
+      "シートゥサミット",
+      "ビッグリバー",
+      "ロールトップ"
     ],
-    "title": "SEA TO SUMMIT ビッグリバー ドライバッグ 20L (ユニセックス)",
+    "title": "SEA TO SUMMIT ビッグリバー ドライバッグ 20L (耐久・完全防水)",
     "brand": "SEA TO SUMMIT",
-    "standardTitle": "【ユニセックス定番】パドルセクションや急流カヤックでも浸水をゼロにする420D高耐久バッグ",
+    "standardTitle": "【完全防水バッグ】420D高強度ナイロン採用。アドベンチャーレースのパドリングや水没セクションでも必携品を死守",
     "standardUrl": "https://www.lostarrow.co.jp/seatosummit/",
-    "dealKeyword": "SEA TO SUMMIT ビッグリバー ドライバッグ 20L (ユニセックス)",
-    "originalPrice": 5940,
-    "price": 5940,
+    "dealKeyword": "シートゥサミット ビッグリバー ドライバッグ 20L",
+    "originalPrice": 6820,
+    "price": 6820,
     "discountRate": 0,
     "dealUrl": "https://www.lostarrow.co.jp/seatosummit/",
     "imageUrl": "https://shop.r10s.jp/yoshikip2/cabinet/07198126/imgrc0084318357.jpg"
+  },
+  {
+    "id": "gear-firstaid-kit-lifesystems",
+    "sports": [
+      "trail",
+      "adventure",
+      "rogaining",
+      "cycling"
+    ],
+    "gearType": "エイドキット",
+    "matchKeywords": [
+      "ファーストエイドキット",
+      "救急セット",
+      "エイド用品",
+      "ポイズンリムーバー",
+      "絆創膏"
+    ],
+    "title": "LIFESYSTEMS アウトドア エイドキット ポータブル",
+    "brand": "LIFESYSTEMS",
+    "standardTitle": "【必携救急セット】包帯・滅菌ガーゼ・サージカルテープ・ホイッスル等を防水ポーチに凝縮したレース必携品",
+    "standardUrl": "https://www.lifesystems.co.uk/",
+    "dealKeyword": "ファーストエイドキット アウトドア 救急セット 登山",
+    "originalPrice": 4400,
+    "price": 4400,
+    "discountRate": 0,
+    "dealUrl": "https://www.lifesystems.co.uk/",
+    "imageUrl": "https://shop.r10s.jp/canpanera/cabinet/item248/item_l37001_0.jpg"
   }
 ]

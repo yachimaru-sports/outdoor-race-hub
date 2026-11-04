@@ -53,6 +53,7 @@ ROOT_DIR = os.path.dirname(SCRIPT_DIR)
 DATA_DIR = os.path.join(ROOT_DIR, "src", "data")
 EVENTS_JSON_PATH = os.path.join(DATA_DIR, "events.json")
 GEARS_JSON_PATH = os.path.join(DATA_DIR, "gears.json")
+GEAR_CATALOG_PATH = os.path.join(SCRIPT_DIR, "gear_catalog.json")
 DEALS_JSON_PATH = os.path.join(DATA_DIR, "deals.json")
 META_JSON_PATH = os.path.join(DATA_DIR, "meta.json")
 MASTER_CSV_PATH = os.path.join(ROOT_DIR, "outdoor_race_hub_events_master.csv")
@@ -107,6 +108,10 @@ FALLBACK_ITEM_URLS = {
     "gear-ar-compass-silva-no3": "https://item.rakuten.co.jp/shop-senjin/73010000/",
     "gear-ar-mapcase-sealline": "https://item.rakuten.co.jp/aila/59587/",
     "gear-ar-drybag-seatosummit": "https://item.rakuten.co.jp/yoshikip2/ss-brdb20/",
+    "gear-trail-rain-pants-tnf": "https://item.rakuten.co.jp/sportsmario2/e08najnp12373k/",
+    "gear-trail-pack-salomon-active8": "https://item.rakuten.co.jp/vitaliser/salomon-2566/",
+    "gear-trail-poles-bd-distance-z": "https://item.rakuten.co.jp/canpanera/b17235/",
+    "gear-firstaid-kit-lifesystems": "https://item.rakuten.co.jp/canpanera/l37001/",
 }
 
 FALLBACK_IMAGES = {
@@ -134,6 +139,10 @@ FALLBACK_IMAGES = {
     "gear-ar-compass-silva-no3": "https://shop.r10s.jp/shop-senjin/cabinet/other/imgrc0089499110.jpg",
     "gear-ar-mapcase-sealline": "https://shop.r10s.jp/aila/cabinet/00100/59587_1.jpg",
     "gear-ar-drybag-seatosummit": "https://shop.r10s.jp/yoshikip2/cabinet/07198126/imgrc0084318357.jpg",
+    "gear-trail-rain-pants-tnf": "https://shop.r10s.jp/sportsmario2/cabinet/evidence_20230818/e08najnp12373k.jpg",
+    "gear-trail-pack-salomon-active8": "https://shop.r10s.jp/vitaliser/cabinet/300606/salomon-2566.jpg",
+    "gear-trail-poles-bd-distance-z": "https://shop.r10s.jp/canpanera/cabinet/item218/item_b17235_0.jpg",
+    "gear-firstaid-kit-lifesystems": "https://shop.r10s.jp/canpanera/cabinet/item248/item_l37001_0.jpg",
 }
 
 # ---------------------------------------------------------------------------
@@ -262,21 +271,29 @@ def search_rakuten_item(keyword: str, min_price: int = 1000) -> dict | None:
 # ---------------------------------------------------------------------------
 def process_gears() -> tuple[list[dict], list[dict], list[list[str]]]:
     """
-    全ギア情報を最新化し、
-    1. フロントエンド用 gearItems (gears.json)
-    2. フロントエンド用 dealItems (deals.json)
-    3. スプレッドシート用 rows (全13列・空欄不可)
-    を生成して返却。
+    主要競技（トレラン、アドベンチャー、ウルトラ、サイクル、ロゲイニング）の
+    必携品・注目ギア全カテゴリを網羅したマスターカタログ（gear_catalog.json）を基軸に
+    楽天市場API連携・実機検証を行い、アフィリエイト直通URLおよび特価情報を生成。
     """
     logger.info("========================================================")
-    logger.info(" ギアマスター自動同期＆楽天市場API連携・HTTP検証 開始")
+    logger.info(" 必携品・注目ギアの網羅的収集＆アフィリエイト最適化 開始")
     logger.info("========================================================")
 
-    # 既存の gears.json を読み込み
-    with open(GEARS_JSON_PATH, "r", encoding="utf-8") as f:
-        existing_gears = json.load(f)
+    # 1. マスターカタログ (gear_catalog.json) または既存 gears.json を読み込み
+    raw_gears = []
+    if os.path.exists(GEAR_CATALOG_PATH):
+        try:
+            with open(GEAR_CATALOG_PATH, "r", encoding="utf-8") as f:
+                raw_gears = json.load(f)
+            logger.info(f"📘 マスターカタログから {len(raw_gears)} 品目の必携ギア定義を読み込みました。")
+        except Exception as e:
+            logger.warning(f"gear_catalog.json 読み込み失敗: {e}")
 
-    # 既存の deals.json を読み込み（旧IDマッピング対応）
+    if not raw_gears and os.path.exists(GEARS_JSON_PATH):
+        with open(GEARS_JSON_PATH, "r", encoding="utf-8") as f:
+            raw_gears = json.load(f)
+
+    # 既存の deals.json を読み込み
     deals_map = {}
     if os.path.exists(DEALS_JSON_PATH):
         try:
@@ -290,27 +307,30 @@ def process_gears() -> tuple[list[dict], list[dict], list[list[str]]]:
     gear_items = []
     deal_items = []
 
-    now_iso = datetime.now(JST).isoformat()
+    now_dt = datetime.now(JST)
+    now_iso = now_dt.isoformat()
+    current_month = now_dt.month
 
     def process_single_gear(g):
         gid = g["id"]
         title = g.get("title", "")
         brand = g.get("brand") or (title.split()[0] if title else "公式")
         sports = g.get("sports", ["trail"])
-        gear_type = g.get("gearType", "ギア")
-        match_keywords = g.get("matchKeywords", [])
-        standard_title = g.get("standardTitle", f"{brand} {gear_type} 定番アイテム")
-        standard_url = g.get("standardUrl", "https://item.rakuten.co.jp/")
-        deal_keyword = g.get("dealKeyword") or f"{brand} {gear_type}"
-        original_price = g.get("originalPrice") or g.get("price") or 10000
+        gear_type = g.get("gear_type") or g.get("gearType", "ギア")
+        match_keywords = g.get("match_keywords") or g.get("matchKeywords", [])
+        standard_title = g.get("standard_title") or g.get("standardTitle", f"{brand} {gear_type} 定番アイテム")
+        standard_url = g.get("standard_url") or g.get("standardUrl", "https://item.rakuten.co.jp/")
+        deal_keyword = g.get("deal_keyword") or g.get("dealKeyword") or f"{brand} {gear_type}"
+        original_price = g.get("original_price") or g.get("originalPrice") or g.get("price") or 10000
+        min_valid_price = g.get("min_valid_price", int(original_price * 0.3))
 
-        # 1. 楽天市場商品検索API連携
+        # 1. 楽天市場商品検索API連携 (自身のアフィリエイトIDを付与)
         rakuten_item = None
         if RAKUTEN_APP_ID:
             search_query = deal_keyword
-            rakuten_item = search_rakuten_item(search_query, min_price=int(original_price * 0.3))
+            rakuten_item = search_rakuten_item(search_query, min_price=min_valid_price)
             if rakuten_item:
-                logger.info(f"  ✅ 楽天API実機検証合格 [{gid}]: 価格 ¥{rakuten_item['price']:,} / URL確定")
+                logger.info(f"  ✅ 楽天API実機検証合格 [{gid}]: 価格 ¥{rakuten_item['price']:,} / アフィリエイトURL確定")
 
         # 2. API未検出・エラー時の確定フォールバック
         deal_url = ""
@@ -319,44 +339,43 @@ def process_gears() -> tuple[list[dict], list[dict], list[list[str]]]:
         image_url = ""
 
         if rakuten_item:
-            deal_url = rakuten_item["item_url"]
-            affiliate_url = rakuten_item["affiliate_url"]
             deal_price = rakuten_item["price"]
             image_url = rakuten_item["image_url"]
+            # APIから返却されたアフィリエイトリンク (affiliateUrl) を最優先で deal_url に直接格納
+            affiliate_url = rakuten_item.get("affiliate_url") or build_rakuten_affiliate_url(rakuten_item["item_url"])
+            deal_url = affiliate_url
         else:
-            # 確定フォールバックから開通確認済みURL・画像を採用
             fallback_url = FALLBACK_ITEM_URLS.get(gid) or g.get("dealUrl") or standard_url
             fallback_img = FALLBACK_IMAGES.get(gid) or g.get("imageUrl") or ""
 
-            # HTTP検証
             if verify_http_status_200(fallback_url):
-                deal_url = fallback_url
+                deal_url = build_rakuten_affiliate_url(fallback_url)
             else:
                 deal_url = standard_url
 
             if verify_http_status_200(fallback_img):
                 image_url = fallback_img
             else:
-                image_url = FALLBACK_IMAGES.get(gid, "")
+                image_url = FALLBACK_IMAGES.get(gid) or FALLBACK_IMAGES.get("gear-trail-rain-tnf-strike", "")
 
             deal_price = g.get("price") or original_price
-            affiliate_url = build_rakuten_affiliate_url(deal_url)
+            affiliate_url = deal_url
 
-        # 3. 特価ステータスおよび価格の判定
+        # 3. 特価・目玉商品の判定 (○%OFF 表記の自動反映)
         if deal_price > 0 and original_price > 0 and deal_price < original_price:
-            deal_status = "実売特価あり"
             discount_rate = int(round((1 - deal_price / original_price) * 100))
+            deal_status = f"実売特価あり ({discount_rate}%OFF)"
         else:
             deal_status = "おすすめのみ"
             discount_rate = 0
             if deal_price == 0:
                 deal_price = original_price
 
-        # 4. フォーマット正規化（¥00,000）
+        # 4. フォーマット正規化 (¥00,000)
         deal_price_formatted = f"¥{deal_price:,}"
         original_price_formatted = f"¥{original_price:,}"
 
-        # 5. スプレッドシート全13列（空欄不可バリデーション）
+        # 5. スプレッドシート全13列 (空欄不可バリデーション)
         sports_str = ", ".join(sports) if isinstance(sports, list) else str(sports)
         match_keywords_str = ", ".join(match_keywords) if isinstance(match_keywords, list) else str(match_keywords)
 
@@ -369,9 +388,9 @@ def process_gears() -> tuple[list[dict], list[dict], list[list[str]]]:
             brand,                              # 6. brand
             standard_title,                     # 7. standard_title
             standard_url,                       # 8. standard_url
-            deal_status,                        # 9. deal_status
+            deal_status,                        # 9. deal_status (例: 実売特価あり (25%OFF))
             deal_price_formatted,               # 10. deal_price (¥00,000)
-            deal_url,                           # 11. deal_url
+            deal_url,                           # 11. deal_url (楽天アフィリエイト直通URL)
             original_price_formatted,           # 12. original_price (¥00,000)
             image_url                           # 13. image_url
         ]
@@ -394,7 +413,7 @@ def process_gears() -> tuple[list[dict], list[dict], list[list[str]]]:
             "originalPrice": original_price,
             "price": deal_price,
             "discountRate": discount_rate,
-            "dealUrl": affiliate_url or deal_url,
+            "dealUrl": deal_url,
             "imageUrl": image_url
         }
 
@@ -409,7 +428,7 @@ def process_gears() -> tuple[list[dict], list[dict], list[list[str]]]:
             "discount_rate": discount_rate,
             "point_rate": 10,
             "image_url": image_url,
-            "affiliate_url": affiliate_url or deal_url,
+            "affiliate_url": deal_url,
             "badge": badge,
             "updated_at": now_iso,
             "registered_at": existing_deal.get("registered_at", now_iso)
@@ -418,9 +437,9 @@ def process_gears() -> tuple[list[dict], list[dict], list[list[str]]]:
         return row_13, gear_item, deal_item
 
     # ギア検証を並列実行
-    logger.info(f"⚡ 全 {len(existing_gears)} 品目のギア情報を並列実機検証中...")
+    logger.info(f"⚡ 全 {len(raw_gears)} 品目の必携品・注目ギアを並列実機検証中...")
     with ThreadPoolExecutor(max_workers=8) as executor:
-        results = list(executor.map(process_single_gear, existing_gears))
+        results = list(executor.map(process_single_gear, raw_gears))
 
     for r_13, g_item, d_item in results:
         sheet_rows.append(r_13)
