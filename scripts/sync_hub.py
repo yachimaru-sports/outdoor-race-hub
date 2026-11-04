@@ -531,47 +531,6 @@ def compute_entry_status(date_str: str, deadline_str: str, start_str: str, curre
     return current_status or "open"
 
 
-def process_events() -> tuple[list[dict], list[list[str]]]:
-    """
-    全大会データを最新化し、
-    1. フロントエンド用 events (events.json)
-    2. スプレッドシート用 rows (全21列)
-    を生成して返却。
-    """
-    logger.info("========================================================")
-    logger.info(" 大会マスター精度向上＆リンク実機HTTP検証 開始")
-    logger.info("========================================================")
-
-    with open(EVENTS_JSON_PATH, "r", encoding="utf-8") as f:
-        events = json.load(f)
-
-    sheet_rows = []
-    verified_events = []
-    today_str = datetime.now(JST).strftime("%Y-%m-%d")
-
-    # 全URLを収集して並列実機検証（高速化＆高精度化）
-    all_urls = set()
-    for ev in events:
-        links = ev.get("links", {})
-        if links.get("official"):
-            all_urls.add(links["official"])
-        if links.get("entry"):
-            all_urls.add(links["entry"])
-
-    logger.info(f"🌐 合計 {len(all_urls)} 件の大会関連URLを並列実機検証中...")
-    url_cache = {}
-
-    def test_url(u):
-        return u, verify_http_status_200(u)
-
-    with ThreadPoolExecutor(max_workers=15) as executor:
-        futures = {executor.submit(test_url, u): u for u in all_urls}
-        for fut in as_completed(futures):
-            u, is_ok = fut.result()
-            url_cache[u] = is_ok
-            if not is_ok:
-                logger.info(f"  ❌ 死にリンク除外: {u}")
-
 
 # ---------------------------------------------------------------------------
 # Gemini AI (Google Search Grounding) による大会公式URL自動リサーチ
@@ -618,6 +577,52 @@ def search_official_url_with_gemini(title: str, prefecture: str = "", region: st
     except Exception as e:
         logger.warning(f"⚠️ Gemini公式URL検索失敗 ({title}): {e}")
     return {}
+
+
+def process_events() -> tuple[list[dict], list[list[str]]]:
+    """
+    全大会データを最新化し、
+    1. フロントエンド用 events (events.json)
+    2. スプレッドシート用 rows (全21列)
+    を生成して返却。
+    """
+    logger.info("========================================================")
+    logger.info(" 大会マスター精度向上＆リンク実機HTTP検証 開始")
+    logger.info("========================================================")
+
+    with open(EVENTS_JSON_PATH, "r", encoding="utf-8") as f:
+        events = json.load(f)
+
+    sheet_rows = []
+    verified_events = []
+    today_str = datetime.now(JST).strftime("%Y-%m-%d")
+
+    # 全URLを収集して並列実機検証（高速化＆高精度化）
+    all_urls = set()
+    for ev in events:
+        links = ev.get("links", {})
+        if links.get("official"):
+            all_urls.add(links["official"])
+        if links.get("entry"):
+            all_urls.add(links["entry"])
+
+    logger.info(f"🌐 合計 {len(all_urls)} 件の大会関連URLを並列実機検証中...")
+    url_cache = {}
+
+    def test_url(u):
+        return u, verify_http_status_200(u)
+
+    with ThreadPoolExecutor(max_workers=15) as executor:
+        futures = {executor.submit(test_url, u): u for u in all_urls}
+        for fut in as_completed(futures):
+            u, is_ok = fut.result()
+            url_cache[u] = is_ok
+            if not is_ok:
+                logger.info(f"  ❌ 死にリンク除外: {u}")
+
+
+
+
 
     def check_link(url: str | None) -> str | None:
         if not url:
