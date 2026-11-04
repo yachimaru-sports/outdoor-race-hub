@@ -30,6 +30,7 @@ from datetime import datetime, timezone, timedelta
 import logging
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import requests
+from weekly_trend_updater import update_catalog_with_season_and_trends
 
 # ---------------------------------------------------------------------------
 # ロギング設定
@@ -776,6 +777,16 @@ def save_local_files(events: list[dict], gears: list[dict], deals: list[dict], e
 def main():
     logger.info("🚀 OUTDOOR RACE HUB 高精度自動更新パイプライン 起動")
     start_time = datetime.now()
+
+    # 週次トレンド・季節自動適応（毎週月曜日、または環境変数・引数で明示指定時）
+    is_monday = datetime.now(JST).weekday() == 0
+    force_trend = os.environ.get("UPDATE_WEEKLY_TREND", "").lower() in ["1", "true", "yes"] or "--trend" in sys.argv
+    if is_monday or force_trend:
+        logger.info("📅 【週次更新】季節動的適応＆楽天市場ランキングトレンド巡回を実行します...")
+        try:
+            update_catalog_with_season_and_trends()
+        except Exception as e:
+            logger.warning(f"週次トレンド更新例外（スキップして同期を続行）: {e}")
 
     # 1. ギア情報の更新・確定データ化
     gears, deals, gear_sheet_rows = process_gears()
