@@ -737,7 +737,8 @@ def save_local_files(events: list[dict], gears: list[dict], deals: list[dict], e
     def escape_csv_cell(val):
         s = "" if val is None else str(val)
         if any(c in s for c in [",", '"', "\n", "\r"]):
-            return f'"{s.replace("\"", "\"\"")}"'
+            escaped = s.replace('"', '""')
+            return f'"{escaped}"'
         return s
 
     csv_lines = [",".join(event_headers)]
