@@ -47,11 +47,12 @@ export const App: React.FC = () => {
     });
   }, []);
 
-  // 割引率15%以上の実在特価商品のみを厳選して表示（15%未満の低割引商品は除外）
-  const deals = useMemo(
-    () => (dealsData as DealItem[]).filter((d) => d.discount_rate >= 15),
-    []
-  );
+  // 厳選特価・おすすめギア商品（常時最上段カルーセルに表示）
+  const deals = useMemo(() => {
+    const list = dealsData as DealItem[];
+    const discounted = list.filter((d) => (d.discount_rate || 0) >= 15);
+    return discounted.length > 0 ? discounted : list;
+  }, []);
 
   // 専門ギアマスター（定番おすすめ＆特価セール情報）
   const gears = useMemo(() => gearsData as GearItem[], []);

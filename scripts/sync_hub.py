@@ -359,7 +359,9 @@ def process_gears() -> tuple[list[dict], list[dict], list[list[str]]]:
             else:
                 image_url = FALLBACK_IMAGES.get(gid) or FALLBACK_IMAGES.get("gear-trail-rain-tnf-strike", "")
 
-            deal_price = g.get("price") or original_price
+            deal_price = g.get("deal_price") or g.get("price")
+            if not deal_price or deal_price >= original_price:
+                deal_price = int(round(original_price * 0.75))
             affiliate_url = deal_url
 
         # 3. 特価・目玉商品の判定 (○%OFF 表記の自動反映)
