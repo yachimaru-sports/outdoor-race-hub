@@ -1271,8 +1271,8 @@
     "entry_deadline": "2027-04-15",
     "entry_fee": "10,000円",
     "links": {
-      "official": "https://tca-web-1.jimdosite.com/",
-      "entry": "https://www.sportsentry.ne.jp/event/t/95315",
+      "official": null,
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
@@ -1334,8 +1334,8 @@
     "entry_deadline": "2026-04-15",
     "entry_fee": "740,000円",
     "links": {
-      "official": "https://www.expeditionoregon.com/",
-      "entry": "https://www.expeditionoregon.com/",
+      "official": null,
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
@@ -1454,7 +1454,7 @@
     "entry_fee": "11,000円",
     "links": {
       "official": "https://kyotosyaren.com/granfondo/",
-      "entry": "https://www.sportsentry.ne.jp/event/t/95460",
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
