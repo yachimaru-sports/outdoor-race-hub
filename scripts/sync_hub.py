@@ -70,6 +70,7 @@ RAKUTEN_API_ENDPOINT = "https://app.rakuten.co.jp/services/api/IchibaItem/Search
 
 # Google Cloud サービスアカウントJSON
 GCP_SA_KEY = os.environ.get("GCP_SA_KEY", "").strip()
+GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "").strip()
 
 # HTTPリクエスト用共通ヘッダー（ボット遮断防止のための実ブラウザUser-Agent）
 HTTP_HEADERS = {
@@ -571,6 +572,51 @@ def process_events() -> tuple[list[dict], list[list[str]]]:
             if not is_ok:
                 logger.info(f"  ❌ 死にリンク除外: {u}")
 
+
+# ---------------------------------------------------------------------------
+# Gemini AI (Google Search Grounding) による大会公式URL自動リサーチ
+# ---------------------------------------------------------------------------
+def search_official_url_with_gemini(title: str, prefecture: str = "", region: str = "") -> dict:
+    """Gemini API (Google Search Grounding) を使用して大会の公式サイト・申込URLを自動検索・特定"""
+    if not GEMINI_API_KEY:
+        return {}
+
+    json_sample = '{"official_url": "https://...", "entry_url": "https://..."}'
+    prompt = (
+        "以下のスポーツ・アウトドア大会の【公式サイトURL】および【申込・エントリーURL（モシコム/RUNNET/スポーツエントリー等）】をGoogle検索して特定してください。\n"
+        f"大会名: {title}\n"
+        f"開催地: {prefecture} {region}\n\n"
+        f"出力は以下のJSONのみで行ってください（説明文やMarkdownコードブロックは不要）:\n"
+        f"{json_sample}\n"
+        "どうしても見つからない項目は空文字 \"\" にしてください。"
+    )
+
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={GEMINI_API_KEY}"
+    payload = {
+        "contents": [{"parts": [{"text": prompt}]}],
+        "tools": [{"google_search": {}}],
+        "generationConfig": {
+            "temperature": 0.1,
+            "responseMimeType": "application/json"
+        }
+    }
+
+    try:
+        res = requests.post(url, json=payload, headers={"Content-Type": "application/json"}, timeout=15)
+        if res.status_code == 200:
+            data = res.json()
+            candidates = data.get("candidates", [])
+            if candidates:
+                content_text = candidates[0].get("content", {}).get("parts", [{}])[0].get("text", "")
+                parsed = json.loads(content_text)
+                return {
+                    "official_url": (parsed.get("official_url") or "").strip(),
+                    "entry_url": (parsed.get("entry_url") or "").strip(),
+                }
+    except Exception as e:
+        logger.warning(f"⚠️ Gemini公式URL検索失敗 ({title}): {e}")
+    return {}
+
     def check_link(url: str | None) -> str | None:
         if not url:
             return None
@@ -592,10 +638,21 @@ def process_events() -> tuple[list[dict], list[list[str]]]:
         deadline = normalize_date(ev.get("entry_deadline", ""))
         entry_fee = normalize_fee(ev.get("entry_fee", ""))
 
-        # リンクの実機検証
+        # リンクの実機検証＆Gemini AI自動検索
         links = ev.get("links", {})
         raw_official = links.get("official")
         raw_entry = links.get("entry")
+
+        # 公式URLが空でGEMINI_API_KEYが設定されている場合、AIがWeb検索して自動特定
+        if (not raw_official or raw_official.strip() == "") and GEMINI_API_KEY:
+            logger.info(f"🤖 Gemini AI が未登録公式URLを自動検索中: {title}")
+            ai_links = search_official_url_with_gemini(title, prefecture, region)
+            if ai_links.get("official_url"):
+                raw_official = ai_links["official_url"]
+                logger.info(f"  ✨ Geminiが公式サイトを特定: {raw_official}")
+            if (not raw_entry or raw_entry.strip() == "") and ai_links.get("entry_url"):
+                raw_entry = ai_links["entry_url"]
+                logger.info(f"  ✨ Geminiが申込ページを特定: {raw_entry}")
 
         verified_official = check_link(raw_official)
         verified_entry = check_link(raw_entry)
