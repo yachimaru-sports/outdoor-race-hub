@@ -61,7 +61,7 @@ export const GearCatalogPage: React.FC<GearCatalogPageProps> = ({
   const [searchQuery, setSearchQuery] = useState<string>('');
 
   // 特価品（20%OFF以上）のみ絞り込み
-  const [onlyHighDiscount, setOnlyHighDiscount] = useState<boolean>(false);
+  const [onlySuperDeals, setOnlySuperDeals] = useState<boolean>(false);
 
   // ソート順
   const [sortBy, setSortBy] = useState<SortOption>('discount_desc');
@@ -101,6 +101,11 @@ export const GearCatalogPage: React.FC<GearCatalogPageProps> = ({
       };
     });
   }, [gears, dealsMap]);
+
+  // 40%OFF以上の商品数
+  const superDealsCount = useMemo(() => {
+    return combinedGears.filter((g) => g.discountRate >= 40).length;
+  }, [combinedGears]);
 
   // 利用可能なギア種別（gearType）一覧とその件数
   const gearTypeOptions = useMemo(() => {
@@ -160,8 +165,8 @@ export const GearCatalogPage: React.FC<GearCatalogPageProps> = ({
         if (item.gearType !== selectedGearType) return false;
       }
 
-      // 3. 高割引率（20%OFF以上）
-      if (onlyHighDiscount && item.discountRate < 20) {
+      // 3. 超高割引率（40%OFF以上）
+      if (onlySuperDeals && item.discountRate < 40) {
         return false;
       }
 
@@ -180,7 +185,7 @@ export const GearCatalogPage: React.FC<GearCatalogPageProps> = ({
 
       return true;
     });
-  }, [combinedGears, selectedSport, selectedGearType, onlyHighDiscount, searchQuery]);
+  }, [combinedGears, selectedSport, selectedGearType, onlySuperDeals, searchQuery]);
 
   // ソート処理
   const sortedGears = useMemo(() => {
@@ -210,7 +215,7 @@ export const GearCatalogPage: React.FC<GearCatalogPageProps> = ({
     setSelectedSport('all');
     setSelectedGearType('all');
     setSearchQuery('');
-    setOnlyHighDiscount(false);
+    setOnlySuperDeals(false);
     setSortBy('discount_desc');
   };
 
@@ -448,16 +453,31 @@ export const GearCatalogPage: React.FC<GearCatalogPageProps> = ({
 
             {/* フィルター＆ソートコントロール群 */}
             <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
-              {/* 20%OFF以上特価チェック */}
-              <label className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-red-200 dark:border-red-900/60 bg-red-50/80 dark:bg-red-950/30 text-red-900 dark:text-red-200 text-xs font-bold cursor-pointer transition-colors hover:bg-red-100 dark:hover:bg-red-900/40 select-none">
+              {/* 40%OFF以上超目玉特価チェック */}
+              <label className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border text-xs font-black cursor-pointer transition-all select-none shadow-xs ${
+                onlySuperDeals
+                  ? 'border-red-500 bg-red-600 text-white shadow-md ring-2 ring-red-400/40'
+                  : 'border-red-300 dark:border-red-900/60 bg-red-50/90 dark:bg-red-950/40 text-red-900 dark:text-red-200 hover:bg-red-100 dark:hover:bg-red-900/50'
+              }`}>
                 <input
                   type="checkbox"
-                  checked={onlyHighDiscount}
-                  onChange={(e) => setOnlyHighDiscount(e.target.checked)}
-                  className="rounded text-red-600 focus:ring-red-500 w-3.5 h-3.5"
+                  checked={onlySuperDeals}
+                  onChange={(e) => {
+                    const checked = e.target.checked;
+                    setOnlySuperDeals(checked);
+                    if (checked) {
+                      setSortBy('discount_desc');
+                    }
+                  }}
+                  className="rounded text-red-600 focus:ring-red-500 w-3.5 h-3.5 cursor-pointer"
                 />
-                <Flame className="w-3.5 h-3.5 text-red-600 fill-red-600" />
-                <span>20%OFF以上の特価品のみ</span>
+                <Flame className={`w-3.5 h-3.5 ${onlySuperDeals ? 'text-amber-300 fill-amber-300 animate-bounce' : 'text-red-600 fill-red-600'}`} />
+                <span>40%OFF以上の超特価品のみ</span>
+                <span className={`text-[10px] px-1.5 py-0.2 rounded-full font-bold ${
+                  onlySuperDeals ? 'bg-white/25 text-white' : 'bg-red-200 dark:bg-red-900/80 text-red-900 dark:text-red-200'
+                }`}>
+                  {superDealsCount}件
+                </span>
               </label>
 
               {/* ソート順セレクタ */}
@@ -476,7 +496,7 @@ export const GearCatalogPage: React.FC<GearCatalogPageProps> = ({
               </div>
 
               {/* リセットボタン */}
-              {(selectedSport !== 'all' || selectedGearType !== 'all' || searchQuery || onlyHighDiscount) && (
+              {(selectedSport !== 'all' || selectedGearType !== 'all' || searchQuery || onlySuperDeals) && (
                 <button
                   onClick={handleResetFilters}
                   className="px-2.5 py-1.5 rounded-xl border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 text-xs text-slate-600 dark:text-slate-400 font-bold transition-all flex items-center gap-1 cursor-pointer"
