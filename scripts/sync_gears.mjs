@@ -45,24 +45,28 @@ const EXACT_ITEM_DIRECT_URLS = {
   'gear-trail-wear-mil-drynamic': 'https://item.rakuten.co.jp/sportsmario2/i06mjmiv01248/',
   'gear-trail-wear-c3fit-tights': 'https://item.rakuten.co.jp/auc-bestsports/3fw14127/',
   'gear-trail-bivvy-sol-escape': 'https://item.rakuten.co.jp/canpanera/s23005/',
-  'gear-cycle-helmet-ogk-vitt': 'https://item.rakuten.co.jp/phalconcycle/ogkk-004090/',
-  'gear-cycle-light-cateye-ampp': 'https://item.rakuten.co.jp/cycle-shop-eggs/10000022/',
-  'gear-cycle-tool-topeak-mini': 'https://item.rakuten.co.jp/aris/topmini20p/',
-  'gear-cycle-bottle-camelbak': 'https://item.rakuten.co.jp/amical/z00359/',
-  'gear-cycle-wear-pearl-wind': 'https://item.rakuten.co.jp/bebike/pearlizumi-2300/',
-  'gear-marathon-shoes-asics-s4': 'https://item.rakuten.co.jp/alpen/4302610436/',
-  'gear-marathon-pouch-yurenikui': 'https://yurenikui.jp/',
+  'gear-cycle-helmet-ogk-vitt': 'https://shop.r10s.jp/bebike/cabinet/new-img1/ogk/ogk-vitt.jpg',
+  'gear-cycle-light-cateye-ampp': 'https://shop.r10s.jp/bebike/cabinet/new-img1/cateye/cateye-hl-el085rc.jpg',
+  'gear-cycle-tool-topeak-mini': 'https://shop.r10s.jp/trycycle/cabinet/topeak/top-tol21800.jpg',
+  'gear-cycle-bottle-camelbak': 'https://shop.r10s.jp/worldcycle/cabinet/itiran142/cml-u-065941.jpg',
+  'gear-cycle-wear-pearl-wind': 'https://shop.r10s.jp/phalconcycle/cabinet/item_02/4582680427583-1.jpg',
+  'gear-marathon-shoes-asics-s4': 'https://shop.r10s.jp/himaraya/cabinet/0000001166a/0000001166132_r1_01.jpg',
+  'gear-marathon-pouch-yurenikui': 'https://shop.r10s.jp/runwalk/cabinet/biiino/item/main-image/20220923191309_1.jpg',
   'gear-nutrition-magon-gel': 'https://item.rakuten.co.jp/lafitte/magon-energygel-set/',
-  'gear-marathon-socks-tabio': 'https://item.rakuten.co.jp/alpen/3888990001/',
+  'gear-marathon-socks-tabio': 'https://shop.r10s.jp/kemari87/cabinet/other5/072120037-8.jpg',
   'gear-ar-compass-silva-no3': 'https://item.rakuten.co.jp/shop-senjin/73010000/',
-  'gear-ar-mapcase-sealline': 'https://item.rakuten.co.jp/aila/59587/',
-  'gear-ar-drybag-seatosummit': 'https://item.rakuten.co.jp/yoshikip2/ss-brdb20/'
+  'gear-ar-mapcase-sealline': 'https://makeshop-multi-images.akamaized.net/odkompas/itemimages/000000006586_x4yqjkH.jpg',
+  'gear-ar-drybag-seatosummit': 'https://shop.r10s.jp/kompas/cabinet/item78/st83059_01.jpg'
 };
 
 /**
  * 確定公式画像フォールバックテーブル
  */
 const FALLBACK_GEAR_IMAGES = {
+  'gear-firstaid-kit-lifesystems': 'https://shop.r10s.jp/reweb/cabinet/kenko2/deu39712269007.jpg',
+  'gear-trail-poles-bd-distance-z': 'https://shop.r10s.jp/canpanera/cabinet/item243/item_b17031_0.jpg',
+  'gear-trail-rain-pants-tnf': 'https://shop.r10s.jp/rampjack/cabinet/26fw_tnf_2/np62577-262_1.jpg',
+  'gear-trail-pack-salomon-active8': 'https://shop.r10s.jp/violal-m/cabinet/sal/sal-lc2177-800.jpg',
   'gear-trail-rain-tnf-strike': 'https://shop.r10s.jp/canpanera/cabinet/item240/item_n17-2287_0.jpg',
   'gear-trail-rain-montbell': 'https://tshop.r10s.jp/airwel/cabinet/shohin13/13162527/imgrc0141194038.jpg',
   'gear-trail-pack-salomon-advskin12': 'https://shop.r10s.jp/vitaliser/cabinet/300606/salomon-2568.jpg',
@@ -75,18 +79,18 @@ const FALLBACK_GEAR_IMAGES = {
   'gear-trail-wear-mil-drynamic': 'https://shop.r10s.jp/sportsmario2/cabinet/evidence_20250822/i06mjmiv01248_1.jpg',
   'gear-trail-wear-c3fit-tights': 'https://shop.r10s.jp/2-kobeya/cabinet/goldwin/3f14127.jpg',
   'gear-trail-bivvy-sol-escape': 'https://shop.r10s.jp/canpanera/cabinet/item209/item_s23005_0.jpg',
-  'gear-cycle-helmet-ogk-vitt': 'https://shop.r10s.jp/phalconcycle/cabinet/07626918/07626920/imgrc0107384488.jpg',
-  'gear-cycle-light-cateye-ampp': 'https://shop.r10s.jp/cycle-shop-eggs/cabinet/07026577/imgrc0091873775.jpg',
-  'gear-cycle-tool-topeak-mini': 'https://shop.r10s.jp/aris/cabinet/00244673/0651y.jpg',
-  'gear-cycle-bottle-camelbak': 'https://shop.r10s.jp/amical/cabinet/item/z00359-001.jpg',
-  'gear-cycle-wear-pearl-wind': 'https://shop.r10s.jp/bebike/cabinet/new_item/pearlizumi/2300.jpg',
-  'gear-marathon-shoes-asics-s4': 'https://shop.r10s.jp/alpen/cabinet/img/678/4302610436_1.jpg',
-  'gear-marathon-pouch-yurenikui': 'https://shop.r10s.jp/yurenikui/cabinet/compass1620286780.jpg',
+  'gear-cycle-helmet-ogk-vitt': 'https://shop.r10s.jp/bebike/cabinet/new-img1/ogk/ogk-vitt.jpg',
+  'gear-cycle-light-cateye-ampp': 'https://shop.r10s.jp/bebike/cabinet/new-img1/cateye/cateye-hl-el085rc.jpg',
+  'gear-cycle-tool-topeak-mini': 'https://shop.r10s.jp/trycycle/cabinet/topeak/top-tol21800.jpg',
+  'gear-cycle-bottle-camelbak': 'https://shop.r10s.jp/worldcycle/cabinet/itiran142/cml-u-065941.jpg',
+  'gear-cycle-wear-pearl-wind': 'https://shop.r10s.jp/phalconcycle/cabinet/item_02/4582680427583-1.jpg',
+  'gear-marathon-shoes-asics-s4': 'https://shop.r10s.jp/himaraya/cabinet/0000001166a/0000001166132_r1_01.jpg',
+  'gear-marathon-pouch-yurenikui': 'https://shop.r10s.jp/runwalk/cabinet/biiino/item/main-image/20220923191309_1.jpg',
   'gear-nutrition-magon-gel': 'https://shop.r10s.jp/lafitte/cabinet/19ss_keleme_01/1baa78ee55d355a8dc_1.jpg',
-  'gear-marathon-socks-tabio': 'https://shop.r10s.jp/alpen/cabinet/img/560/3888990001_1.jpg',
+  'gear-marathon-socks-tabio': 'https://shop.r10s.jp/kemari87/cabinet/other5/072120037-8.jpg',
   'gear-ar-compass-silva-no3': 'https://shop.r10s.jp/shop-senjin/cabinet/other/imgrc0089499110.jpg',
-  'gear-ar-mapcase-sealline': 'https://shop.r10s.jp/aila/cabinet/00100/59587_1.jpg',
-  'gear-ar-drybag-seatosummit': 'https://shop.r10s.jp/yoshikip2/cabinet/07198126/imgrc0084318357.jpg'
+  'gear-ar-mapcase-sealline': 'https://makeshop-multi-images.akamaized.net/odkompas/itemimages/000000006586_x4yqjkH.jpg',
+  'gear-ar-drybag-seatosummit': 'https://shop.r10s.jp/kompas/cabinet/item78/st83059_01.jpg'
 };
 
 function parseCsv(csvText) {

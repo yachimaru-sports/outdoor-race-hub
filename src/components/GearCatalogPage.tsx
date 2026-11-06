@@ -327,6 +327,9 @@ export const GearCatalogPage: React.FC<GearCatalogPageProps> = ({
               <h3 className="text-xs sm:text-sm font-black text-slate-900 dark:text-slate-100 flex items-center gap-1.5">
                 <Tag className="w-4 h-4 text-teal-600 dark:text-teal-400" />
                 <span>1. 参戦競技から選ぶ</span>
+                <span className="text-[10px] text-slate-500 dark:text-slate-400 font-bold hidden sm:inline">
+                  （※選択中のボタンをもう一度押すと解除・全表示）
+                </span>
               </h3>
               <span className="text-[11px] text-slate-500 dark:text-slate-400 font-bold">
                 該当: {filteredGears.length} 件
@@ -341,7 +344,11 @@ export const GearCatalogPage: React.FC<GearCatalogPageProps> = ({
                   <button
                     key={tab.id}
                     onClick={() => {
-                      setSelectedSport(tab.id);
+                      if (isSelected) {
+                        setSelectedSport('all');
+                      } else {
+                        setSelectedSport(tab.id);
+                      }
                       setSelectedGearType('all'); // スポーツ切り替え時はギア種別をリセット
                     }}
                     className={`flex items-center gap-2 p-2.5 rounded-xl border text-left transition-all cursor-pointer ${
