@@ -9,6 +9,7 @@ import {
   ExternalLink,
   Flame,
   Mountain,
+  ShoppingBag,
   Sun,
   Moon,
 } from 'lucide-react';
@@ -21,6 +22,7 @@ interface DealsTickerProps {
   lastUpdated?: string;
   theme?: 'light' | 'dark';
   onToggleTheme?: () => void;
+  onOpenCatalog?: () => void;
 }
 
 export const DealsTicker: React.FC<DealsTickerProps> = ({
@@ -30,6 +32,7 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({
   lastUpdated = '2026.10.31 10:30',
   theme = 'light',
   onToggleTheme,
+  onOpenCatalog,
 }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [isPaused, setIsPaused] = useState(false);
@@ -188,7 +191,7 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({
                       <img
                         src={deal.image_url}
                         alt={deal.title}
-                        className="w-10 h-10 sm:w-12 sm:h-12 object-cover rounded-lg bg-slate-950 border border-slate-700 shadow-2xs"
+                        className="w-10 h-10 sm:w-12 sm:h-12 object-contain bg-white rounded-lg p-0.5 border border-slate-700 shadow-2xs"
                         loading="lazy"
                       />
                       <div className="absolute -top-1.5 -left-1.5 bg-red-600 text-white font-black text-[10px] px-1.5 py-0.2 rounded shadow border border-white/80 tracking-tight leading-none">
@@ -244,7 +247,20 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({
           {/* 右端：2段構成（上段：累計アクセス数 / 下段：＜ ＞ 月マーク） */}
           <div className="flex flex-col items-end justify-center gap-1 shrink-0">
             {/* 上段：アクセス数 */}
-            <AccessCounter variant="compact" />
+            <div className="flex items-center gap-1.5">
+              {onOpenCatalog && (
+                <button
+                  onClick={onOpenCatalog}
+                  className="group inline-flex items-center gap-1.5 px-2.5 py-1 sm:px-3 sm:py-1 rounded-lg bg-gradient-to-r from-amber-400 via-orange-400 to-amber-500 hover:from-amber-300 hover:to-orange-300 text-slate-950 font-black text-[11px] sm:text-xs shadow-md hover:shadow-lg transition-all cursor-pointer whitespace-nowrap border border-amber-300"
+                  title="おすすめ商品・必携品専用カタログページを開く"
+                >
+                  <ShoppingBag className="w-3 h-3 text-slate-950 shrink-0" />
+                  <span>🎒 おすすめ商品専用ページ</span>
+                  <ChevronRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform shrink-0" />
+                </button>
+              )}
+              <AccessCounter variant="compact" />
+            </div>
 
             {/* 下段：＜ ＞ 月マーク */}
             <div className="flex items-center gap-1">

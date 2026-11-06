@@ -6,8 +6,10 @@
  * 
  * 厳格基準:
  * 1. HTTP 200 OK であること（404, 500, 403, 401 等はすべて NG）
- * 2. ページ本文に「Page not found」「お探しのページは見つかりませんでした」
- *    等のソフト404文言が一切含まれていないこと
+ * 2. ソフト404（「ページが見つかりませんでした」等）の検知
+ * 3. 【未初期化・ダミーテンプレート検知】
+ *    FC2/Wix/Jimdo等の初期テンプレートのまま放置されたサイト
+ *    （「キャッチコピーなどが入ります」「この文章はダミーです」等）を完全検知・NG判定
  * 
  * 終了コード:
  * - 全リンク生存確認（NGゼロ）: 0 (正常終了)
@@ -23,6 +25,35 @@ const __dirname = path.dirname(__filename);
 const ROOT_DIR = path.resolve(__dirname, '..');
 const EVENTS_PATH = path.join(ROOT_DIR, 'src', 'data', 'events.json');
 
+// ソフト404判定キーワード（ページ本文およびタイトル）
+export const SOFT_404_KEYWORDS = [
+  'Page not found',
+  'お探しのページは見つかりませんでした',
+  '指定されたページは見つかりませんでした',
+  'ページが見つかりません',
+  'ご指定のページは見つかりません',
+  '404 Not Found',
+  'The requested URL was not found',
+  'このページは存在しません',
+  '404エラー',
+];
+
+// 未初期化・ダミーテンプレート判定キーワード（FC2, WordPress, Jimdo等のデフォルト未編集テンプレート）
+export const DUMMY_TEMPLATE_KEYWORDS = [
+  'キャッチコピーなどが入ります',
+  'この文章はダミーです',
+  'FC2ホームページ - 無料ホームページスペース',
+  'ホームページ名',
+  '記事の見出し',
+  'Lorem ipsum dolor sit amet',
+  'このドメインはお名前.comで取得されました',
+  'ドメインパーキング',
+  'Domain Parking',
+  'ムームードメインで取得したドメインです',
+  'このウェブサイトは販売用です',
+  'This domain may be for sale',
+];
+
 export async function checkUrlLive(url) {
   if (!url || !url.startsWith('http')) {
     return { ok: false, status: 0, reason: '不正なURL形式' };
@@ -35,7 +66,7 @@ export async function checkUrlLive(url) {
     const res = await fetch(url, {
       method: 'GET',
       headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
         'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
         'Accept-Language': 'ja,en-US;q=0.9,en;q=0.8'
       },
@@ -48,20 +79,35 @@ export async function checkUrlLive(url) {
       return { ok: false, status: res.status, reason: `HTTPエラー ${res.status}` };
     }
 
-    // 200 OK の場合でも、ソフト404（画面上は200だが本文に「見つかりませんでした」等と出るケース）を検知
-    const text = await res.text();
-    const notFoundKeywords = [
-      'Page not found',
-      'お探しのページは見つかりませんでした',
-      '指定されたページは見つかりませんでした',
-      'ページが見つかりません',
-      'ご指定のページは見つかりません',
-      '404 Not Found',
-      'The requested URL was not found'
-    ];
+    const html = await res.text();
 
-    for (const kw of notFoundKeywords) {
-      if (text.includes(kw)) {
+    // 1. タイトルの抽出と検証
+    const titleMatch = html.match(/<title[^>]*>([^<]+)<\/title>/i);
+    const title = titleMatch ? titleMatch[1].trim() : '';
+
+    if (title.includes('FC2ホームページ - 無料ホームページスペース')) {
+      return { ok: false, status: res.status, reason: '未初期化ダミーテンプレート検知 (FC2初期タイトル)' };
+    }
+    if (title.toLowerCase().includes('404') && (title.toLowerCase().includes('not found') || title.includes('見つかりません'))) {
+      return { ok: false, status: res.status, reason: `ソフト404タイトル検知 (${title})` };
+    }
+
+    // 2. 表示用テキスト（<script> や <style> タグ内のNuxt/SPAペイロード等を除外）
+    const visibleText = html
+      .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
+      .replace(/<style\b[^<]*(?:(?!<\/style>)<[^<]*)*<\/style>/gi, '')
+      .replace(/<[^>]+>/g, ' ');
+
+    // 未初期化ダミーテンプレートの本文検知
+    for (const kw of DUMMY_TEMPLATE_KEYWORDS) {
+      if (visibleText.includes(kw)) {
+        return { ok: false, status: res.status, reason: `未初期化ダミーテンプレート検知 (${kw})` };
+      }
+    }
+
+    // ソフト404の本文検知（「お探しのページは見つかりませんでした」等）
+    for (const kw of SOFT_404_KEYWORDS) {
+      if (visibleText.includes(kw)) {
         return { ok: false, status: res.status, reason: `ソフト404検知 (${kw})` };
       }
     }

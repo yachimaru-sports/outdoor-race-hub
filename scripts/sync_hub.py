@@ -123,7 +123,7 @@ FALLBACK_IMAGES = {
     "gear-trail-pack-nathan-pinnacle": "https://shop.r10s.jp/usbonline/cabinet/pic-2/ns40180j-main.jpg",
     "gear-trail-shoes-hoka-speedgoat6": "https://shop.r10s.jp/sports-diary/cabinet/16/hka-1147791-swrd_1.jpg",
     "gear-trail-shoes-altra-lonepeak8": "https://shop.r10s.jp/glv/cabinet/newsingle202607/ala-3rak.jpg",
-    "gear-trail-poles-leki-fx-one": "https://shop.r10s.jp/sakaiya/cabinet/leki/1300542_1.jpg",
+    "gear-trail-poles-leki-fx-one": "https://shop.r10s.jp/vitaliser/cabinet/300800/caravan-1647.jpg",
     "gear-trail-light-petzl-swift": "https://shop.r10s.jp/kompas/cabinet/item83/e095bb_01.jpg",
     "gear-trail-sublight-bd-spot": "https://shop.r10s.jp/canpanera/cabinet/item230/item_b17466_0.jpg",
     "gear-trail-wear-mil-drynamic": "https://shop.r10s.jp/sportsmario2/cabinet/evidence_20250822/i06mjmiv01248_1.jpg",

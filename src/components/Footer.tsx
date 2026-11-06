@@ -1,8 +1,12 @@
 import React from 'react';
-import { Mountain, ShieldCheck, Compass, ExternalLink } from 'lucide-react';
+import { Mountain, ShieldCheck, Compass, ExternalLink, ShoppingBag, ChevronRight } from 'lucide-react';
+
+interface FooterProps {
+  onOpenCatalog?: () => void;
+}
 import { AccessCounter } from './AccessCounter';
 
-export const Footer: React.FC = () => {
+export const Footer: React.FC<FooterProps> = ({ onOpenCatalog }) => {
   return (
     <footer className="mt-20 border-t border-slate-300 dark:border-slate-800 bg-white dark:bg-[#090d16] text-slate-600 dark:text-slate-400 text-xs py-12 transition-colors">
       <div className="max-w-7xl mx-auto px-4 space-y-6">
@@ -23,6 +27,16 @@ export const Footer: React.FC = () => {
 
           {/* 関連コミュニティ・活動紹介リンク（控えめで上品な配置） */}
           <div className="flex flex-wrap items-center gap-3 text-xs">
+            {onOpenCatalog && (
+              <button
+                onClick={onOpenCatalog}
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-slate-950 font-black text-xs shadow-md transition-all cursor-pointer whitespace-nowrap"
+              >
+                <ShoppingBag className="w-3.5 h-3.5 text-slate-950" />
+                <span>おすすめギア・必携品カタログ専用ページ</span>
+                <ChevronRight className="w-3.5 h-3.5" />
+              </button>
+            )}
             <span className="text-slate-500 dark:text-slate-400 font-bold">関連コミュニティ・活動リンク:</span>
             <a
               href="https://kochi-navigms.com/"

@@ -28,6 +28,8 @@ import {
   ExternalLink,
   ShieldCheck,
   Flame,
+  ShoppingBag,
+  ChevronRight,
 } from 'lucide-react';
 
 interface EventDetailModalProps {
@@ -36,9 +38,10 @@ interface EventDetailModalProps {
   gears?: GearItem[];
   isFavorite?: boolean;
   onClose: () => void;
+  onOpenCatalog?: () => void;
 }
 
-export const EventDetailModal: React.FC<EventDetailModalProps> = ({ event, deals, gears = [], isFavorite = false, onClose }) => {
+export const EventDetailModal: React.FC<EventDetailModalProps> = ({ event, deals, gears = [], isFavorite = false, onClose, onOpenCatalog }) => {
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
@@ -376,9 +379,24 @@ export const EventDetailModal: React.FC<EventDetailModalProps> = ({ event, deals
                   </p>
                 </div>
               </div>
-              <span className="text-xs font-extrabold px-2.5 py-1 rounded-md bg-red-600 text-white hidden sm:inline">
-                15%〜50%OFF厳選
-              </span>
+              <div className="flex items-center gap-2">
+                {onOpenCatalog && (
+                  <button
+                    onClick={() => {
+                      onClose();
+                      onOpenCatalog();
+                    }}
+                    className="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-xs transition-colors shadow cursor-pointer whitespace-nowrap"
+                  >
+                    <ShoppingBag className="w-3.5 h-3.5" />
+                    <span>ギアカタログで全品比較</span>
+                    <ChevronRight className="w-3.5 h-3.5" />
+                  </button>
+                )}
+                <span className="text-xs font-extrabold px-2.5 py-1 rounded-md bg-red-600 text-white hidden sm:inline">
+                  15%〜50%OFF厳選
+                </span>
+              </div>
             </div>
 
             {/* ギアグリッド */}

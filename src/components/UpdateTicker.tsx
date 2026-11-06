@@ -32,6 +32,18 @@ export const MAX_UPDATE_NEWS_COUNT = 10;
  */
 export const UPDATE_NEWS_DATA: UpdateNewsItem[] = [
   {
+    id: 'update-gears-page-20261106',
+    date: '2026.11.06',
+    time: '13:45',
+    tag: '新機能・専用ページ',
+    tagStyle: 'bg-amber-100 text-amber-900 border-amber-300 dark:bg-amber-950/70 dark:text-amber-200',
+    title: 'おすすめ商品・必須装備品専用カタログページをOPEN！＆全大会リンク点検完了',
+    description:
+      'トレイル・サイクル・アドベンチャー・ウルトラ別の装備品28選を比較できる専用ページを開設。全大会のリンク死活監視も完了しました。',
+    targetId: 'gears-catalog',
+    targetLabel: '専用カタログを見る',
+  },
+  {
     id: 'update-shimanto-ar-20261101',
     date: '2026.11.01',
     time: '20:50',

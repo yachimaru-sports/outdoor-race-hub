@@ -14,6 +14,8 @@ import { MobileEventCardList } from './components/MobileEventCardList';
 import { EventDetailModal } from './components/EventDetailModal';
 import { UpdateTicker, UPDATE_NEWS_DATA } from './components/UpdateTicker';
 import { Footer } from './components/Footer';
+import { GearCatalogPage } from './components/GearCatalogPage';
+import { ShoppingBag, ChevronRight } from 'lucide-react';
 
 export const App: React.FC = () => {
   // 現在日付を基準に、開催日や申込締切日が過ぎている大会は自動的に「closed（終了）」へリアルタイム補正
@@ -56,6 +58,38 @@ export const App: React.FC = () => {
 
   // 専門ギアマスター（定番おすすめ＆特価セール情報）
   const gears = useMemo(() => gearsData as GearItem[], []);
+
+  // 画面ルーティング管理 ('events': 大会一覧, 'gears': おすすめ商品専用ページ)
+  const [currentRoute, setCurrentRoute] = useState<'events' | 'gears'>(() => {
+    if (typeof window !== 'undefined') {
+      const hash = window.location.hash.toLowerCase();
+      if (hash.includes('gear')) return 'gears';
+    }
+    return 'events';
+  });
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.toLowerCase();
+      if (hash.includes('gear')) {
+        setCurrentRoute('gears');
+      } else {
+        setCurrentRoute('events');
+      }
+    };
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
+  const navigateTo = (route: 'events' | 'gears') => {
+    setCurrentRoute(route);
+    if (route === 'gears') {
+      window.location.hash = '#/gears';
+    } else {
+      window.location.hash = '#/';
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   // 大会詳細モーダルの選択状態
   const [selectedEvent, setSelectedEvent] = useState<RaceEvent | null>(null);
@@ -461,6 +495,10 @@ export const App: React.FC = () => {
 
   // 固定ヘッダーの高さ分を考慮したスムーズジャンプハンドラ
   const handleJumpToSection = (targetId: string) => {
+    if (targetId === 'gears-catalog' || targetId === 'gears-page') {
+      navigateTo('gears');
+      return;
+    }
     const element = document.getElementById(targetId);
     if (element) {
       const headerOffset = 115;
@@ -477,6 +515,18 @@ export const App: React.FC = () => {
     }
   };
 
+  if (currentRoute === 'gears') {
+    return (
+      <GearCatalogPage
+        gears={gears}
+        deals={deals}
+        theme={theme}
+        onToggleTheme={toggleTheme}
+        onBackToEvents={() => navigateTo('events')}
+      />
+    );
+  }
+
   return (
     <div className="min-h-screen flex flex-col bg-slate-100 dark:bg-[#0b0f19] text-slate-900 dark:text-slate-100 transition-colors duration-150 w-full">
       {/* 1. 常時固定統合ヘッダー：添付画像の2段ヘッダー（楽天特価カルーセル ＆ アップデート情報バー）を常時最上部に完全固定 */}
@@ -489,6 +539,7 @@ export const App: React.FC = () => {
             lastUpdated={lastUpdated}
             theme={theme}
             onToggleTheme={toggleTheme}
+            onOpenCatalog={() => navigateTo('gears')}
           />
         </div>
         <UpdateTicker onJumpToTarget={handleJumpToSection} />
@@ -496,6 +547,41 @@ export const App: React.FC = () => {
 
       {/* メインコンテンツ（ご要望順：注目の競技カテゴリー → すべての大会 → 条件にマッチする → 大会一覧） */}
       <main className="flex-1 max-w-7xl w-full mx-auto px-2.5 sm:px-4 py-4 sm:py-8 space-y-4 sm:space-y-8 overflow-x-hidden">
+        {/* ★ おすすめ商品専用カタログへのクイックジャンプバナー */}
+        <div
+          onClick={() => navigateTo('gears')}
+          className="group relative overflow-hidden rounded-2xl bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 dark:from-amber-600 dark:via-orange-600 dark:to-amber-700 p-3.5 sm:p-4.5 text-slate-950 shadow-md hover:shadow-xl hover:scale-[1.008] transition-all cursor-pointer border border-amber-300 dark:border-amber-500 select-none"
+        >
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-slate-950 text-amber-400 flex items-center justify-center shadow-md shrink-0 group-hover:scale-110 transition-transform">
+                <ShoppingBag className="w-5 h-5 sm:w-6 sm:h-6" />
+              </div>
+              <div>
+                <div className="flex items-center gap-1.5 flex-wrap">
+                  <span className="px-2 py-0.5 rounded bg-slate-950 text-white text-[10px] font-black tracking-wider uppercase">
+                    専用ページOPEN
+                  </span>
+                  <span className="text-[11px] font-black text-slate-900 bg-white/80 px-2 py-0.5 rounded shadow-2xs">
+                    最大25%OFF セール連動
+                  </span>
+                </div>
+                <h2 className="text-sm sm:text-base font-black tracking-tight text-slate-950 mt-0.5">
+                  大会必携品・おすすめギア攻略カタログ専用ページはこちら
+                </h2>
+                <p className="text-[11px] text-slate-900 font-bold hidden sm:block">
+                  トレイルラン・サイクル・アドベンチャー・ウルトラマラソンの必須装備28選を競技区分・種別ごとに徹底比較！
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-1.5 self-end sm:self-auto px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl bg-slate-950 text-white font-black text-xs sm:text-sm shadow-md group-hover:bg-slate-900 transition-colors whitespace-nowrap">
+              <span>専用カタログを開く</span>
+              <ChevronRight className="w-4 h-4 text-amber-400 group-hover:translate-x-1 transition-transform" />
+            </div>
+          </div>
+        </div>
+
         {/* 2. 注目の競技カテゴリー・主要大会クイック抽出 */}
         <ToretoreBanner
           filters={filters}
@@ -529,12 +615,14 @@ export const App: React.FC = () => {
                 sortBy={filters.sortBy}
                 onSortChange={(newSort) => setFilters((prev) => ({ ...prev, sortBy: newSort }))}
                 onToggleFavorite={handleToggleFavorite}
+                onSelectEvent={setSelectedEvent}
               />
             ) : (
               <EventCardView
                 events={filteredEvents}
                 favoriteIds={favoriteIds}
                 onToggleFavorite={handleToggleFavorite}
+                onSelectEvent={setSelectedEvent}
               />
             )}
           </div>
@@ -551,8 +639,23 @@ export const App: React.FC = () => {
         </div>
       </main>
 
+      {/* 大会詳細モーダル */}
+      {selectedEvent && (
+        <EventDetailModal
+          event={selectedEvent}
+          deals={deals}
+          gears={gears}
+          isFavorite={favoriteIds.includes(selectedEvent.id)}
+          onClose={() => setSelectedEvent(null)}
+          onOpenCatalog={() => {
+            setSelectedEvent(null);
+            navigateTo('gears');
+          }}
+        />
+      )}
+
       {/* フッター */}
-      <Footer />
+      <Footer onOpenCatalog={() => navigateTo('gears')} />
     </div>
   );
 };
