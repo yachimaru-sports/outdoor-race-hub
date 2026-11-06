@@ -616,13 +616,13 @@ export const GearCatalogPage: React.FC<GearCatalogPageProps> = ({
                           rel="noopener noreferrer"
                           className="w-full flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 hover:from-amber-600 hover:to-orange-600 text-slate-950 font-black text-xs shadow-md hover:shadow-lg transition-all cursor-pointer"
                         >
-                          <span>楽天市場で最安値を見る</span>
+                          <span>楽天市場の公式販売ページを開く</span>
                           <ExternalLink className="w-3.5 h-3.5" />
                         </a>
 
                         {item.standardUrl && (
                           <a
-                            href={item.standardUrl}
+                            href={`https://search.rakuten.co.jp/search/mall/${encodeURIComponent((item.brand ? item.brand + ' ' : '') + item.title)}/`}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="w-full flex items-center justify-center gap-1 py-1.5 px-3 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-750 text-slate-700 dark:text-slate-300 font-bold text-[11px] transition-colors border border-slate-250 dark:border-slate-700"
