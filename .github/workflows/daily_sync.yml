@@ -56,6 +56,7 @@ jobs:
         env:
           RAKUTEN_APP_ID: ${{ secrets.RAKUTEN_APP_ID }}
           RAKUTEN_AFFILIATE_ID: ${{ secrets.RAKUTEN_AFFILIATE_ID }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: node scripts/refresh_gears.mjs
 
       - name: "Step 2: 大会データ同期・正規化（Python / スプレッドシート連携 / Gemini AI）"
@@ -70,7 +71,9 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: node scripts/auto_heal_event_links.mjs
 
-      - name: "Step 4: 公開前ゲート（重複ゼロ・装備の全リンク/画像/割引率を検証）"
+      - name: "Step 4: 公開前ゲート＆自己修復（重複ゼロ・装備の全リンク/画像/割引率の検証＆AI自動修復）"
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
           npm run check:duplicates
           node scripts/validate_site_data.mjs

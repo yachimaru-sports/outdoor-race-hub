@@ -1,15 +1,18 @@
 /**
  * scripts/refresh_gears.mjs
- * 装備カタログ（src/data/gears.json）の完全自動更新スクリプト（APIキー不要で動作）
+ * 装備カタログ（src/data/gears.json）の完全自動更新スクリプト
  *
- * 方針（誤情報・リンク切れ・画像切れをサイトに出さない）:
+ * 方針（誤情報・リンク切れ・画像切れをサイトに出さない・完全自己修復）:
  *  1. 各商品ページ(item.rakuten.co.jp)を実際に取得して HTTP 200 を確認
  *  2. 価格・定価・商品画像は「商品ページの実データ」から取得（推測URLは使わない）
  *  3. 画像URLは実際に GET して image/* かつ HTTP 200 を確認
- *  4. 割引率は 定価 と 現在価格 から計算（ページで確認できた数値のみ）
- *  5. 各装備カテゴリ内の最大割引商品に isBestDeal を自動付与
- *  6. 商品ページ消滅・画像取得不能の商品は掲載から除外（RAKUTEN_APP_ID があれば代替商品を自動検索）
- *  7. 除外の結果カテゴリが3品未満になる場合は終了コード1で失敗 → デプロイを止め、昨日の正常なサイトを維持
+ *  4. 【自己修復】商品ページ消滅(404)・画像取得不能の場合:
+ *     - 第1層: 楽天API（RAKUTEN_APP_ID がある場合）
+ *     - 第2層: Gemini AI（Google Search Grounding で楽天市場の現在販売中URLを特定）
+ *     - 第3層: 楽天市場モール検索直接スクレイピング（APIキー完全不要で生きた item.rakuten.co.jp を抽出）
+ *  5. 割引率は 定価 と 現在価格 から計算（ページで確認できた数値のみ）
+ *  6. 各装備カテゴリ内の最大割引商品に isBestDeal を自動付与
+ *  7. 修復後もカテゴリが3品未満になる場合は終了コード1で失敗 → デプロイを止め、前日の正常なサイトを維持
  */
 import fs from 'node:fs';
 
@@ -22,6 +25,7 @@ const DEALS_PATH = 'src/data/deals.json';
 const META_PATH = 'src/data/meta.json';
 const RAKUTEN_APP_ID = (process.env.RAKUTEN_APP_ID || '').trim();
 const AFFILIATE_ID = (process.env.RAKUTEN_AFFILIATE_ID || '').trim();
+const GEMINI_API_KEY = (process.env.GEMINI_API_KEY || '').trim();
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -65,25 +69,32 @@ function decodeHtml(buffer, contentType = '') {
 }
 
 /** 商品ページから 価格・定価・画像候補 を抽出 */
-async function scrapeItem(url) {
+export async function scrapeItem(url) {
   const res = await fetchRetry(url);
   if (!res) return { ok: false, reason: 'network' };
   if (res.status !== 200) return { ok: false, reason: `HTTP ${res.status}` };
   if (!/item\.rakuten\.co\.jp/.test(res.url)) return { ok: false, reason: `redirected to ${res.url}` };
   const html = decodeHtml(Buffer.from(await res.arrayBuffer()), res.headers.get('content-type') || '');
 
+  let title = '';
   let price = 0;
   const imageCandidates = [];
   for (const s of html.matchAll(/<script[^>]*type=["']application\/(?:json|ld\+json)["'][^>]*>([\s\S]*?)<\/script>/gi)) {
     try {
       const j = JSON.parse(s[1]);
       const sku = j?.api?.data?.itemInfoSku;
+      if (sku?.title) title = sku.title;
       if (sku?.sku?.[0]) {
         price = price || sku.sku[0].taxIncludedPrice || 0;
         for (const im of sku.sku[0].images || []) if (im.location) imageCandidates.push(im.location);
       }
     } catch { /* skip */ }
   }
+  if (!title) {
+    const tm = html.match(/<title>([^<]+)<\/title>/i);
+    if (tm) title = tm[1].split('【楽天市場】')[0].split('：')[0].trim();
+  }
+
   const og = html.match(/<meta[^>]+property=["']og:image["'][^>]+content=["']([^"']+)["']/i) || html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:image["']/i);
   if (og && !/noimage/i.test(og[1])) imageCandidates.unshift(og[1]);
   for (const m of html.matchAll(/https?:\/\/(?:tshop|shop|image)\.r10s\.jp\/[^"'\s\\<>)]+\.(?:jpg|jpeg|png)/gi)) imageCandidates.push(m[0]);
@@ -92,11 +103,58 @@ async function scrapeItem(url) {
   const lp = html.match(/メーカー希望小売価格[^\d]{0,30}([0-9,]+)\s*円/) || html.match(/希望小売価格[^\d]{0,30}([0-9,]+)\s*円/) || html.match(/定価[^\d]{0,30}([0-9,]+)\s*円/);
   if (lp) listPrice = Number(lp[1].replace(/,/g, ''));
 
-  return { ok: true, price, listPrice, images: [...new Set(imageCandidates.map(cleanImage))].filter(Boolean).slice(0, 8) };
+  // タイトルクリーンアップ
+  title = (title || '')
+    .replace(/【[^】]*】/g, ' ')
+    .replace(/\[[^\]]*\]/g, ' ')
+    .replace(/<br\s*\/?>/gi, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+  return { ok: true, title, price, listPrice, images: [...new Set(imageCandidates.map(cleanImage))].filter(Boolean).slice(0, 8) };
 }
 
-/** 楽天APIで代替商品を探す（RAKUTEN_APP_ID がある場合のみ） */
-async function findReplacement(gear) {
+/** 1. 楽天モール検索スクレイピング（APIキー完全不要で生きた item.rakuten.co.jp を抽出） */
+export async function searchRakutenDirect(keyword) {
+  const url = `https://search.rakuten.co.jp/search/mall/${encodeURIComponent(keyword)}/`;
+  try {
+    const res = await fetchRetry(url, {}, 2);
+    if (!res || !res.ok) return [];
+    const html = await res.text();
+    const matches = [...html.matchAll(/href=["'](https:\/\/item\.rakuten\.co\.jp\/[a-zA-Z0-9_\-]+\/[a-zA-Z0-9_\-]+(?:\/|\?)[^"']*)["']/g)];
+    return [...new Set(matches.map((m) => m[1].split('?')[0]))];
+  } catch {
+    return [];
+  }
+}
+
+/** 2. Gemini AI による Google Search Grounding での楽天市場商品URL探索 */
+export async function searchWithGemini(keyword) {
+  if (!GEMINI_API_KEY) return null;
+  const prompt = `楽天市場（rakuten.co.jp）で現在販売中の「${keyword}」の個別商品ページURL（https://item.rakuten.co.jp/...）を1つGoogle検索で特定し、URLのみを出力してください。見つからなければ空文字。`;
+  try {
+    const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        contents: [{ parts: [{ text: prompt }] }],
+        tools: [{ google_search: {} }],
+        generationConfig: { temperature: 0.1 }
+      }),
+      signal: AbortSignal.timeout(15000)
+    });
+    if (!res.ok) return null;
+    const data = await res.json();
+    const text = (data.candidates?.[0]?.content?.parts || []).map((p) => p.text || '').join('');
+    const m = text.match(/https:\/\/item\.rakuten\.co\.jp\/[a-zA-Z0-9_\-]+\/[a-zA-Z0-9_\-]+(?:\/)?/);
+    return m ? m[0] : null;
+  } catch {
+    return null;
+  }
+}
+
+/** 3. 楽天公式API検索（RAKUTEN_APP_ID がある場合） */
+export async function searchRakutenApi(gear) {
   if (!RAKUTEN_APP_ID) return null;
   const params = new URLSearchParams({
     applicationId: RAKUTEN_APP_ID, keyword: gear.dealKeyword || gear.title, availability: '1',
@@ -110,8 +168,45 @@ async function findReplacement(gear) {
     if (!it.itemUrl || !it.itemUrl.includes('item.rakuten.co.jp')) continue;
     const url = it.itemUrl.split('?')[0];
     const s = await scrapeItem(url);
-    if (s.ok) return { url, title: it.itemName, scraped: s };
+    if (s.ok) return { url, title: it.itemName, scraped: s, source: '楽天API' };
   }
+  return null;
+}
+
+/** 3重自己修復（Self-Healing）エンジン: 楽天API → 楽天モール直接検索 → Gemini AI */
+export async function findReplacement(gear) {
+  const query = `${gear.brand || ''} ${gear.gearType || ''} ${gear.dealKeyword || gear.title || ''}`.trim();
+
+  // 第1層: 楽天API（キーがある場合）
+  if (RAKUTEN_APP_ID) {
+    const apiRes = await searchRakutenApi(gear);
+    if (apiRes) return apiRes;
+  }
+
+  // 第2層: 楽天モール検索スクレイピング（APIキー完全不要で生きた個別商品URLを抽出）
+  const directUrls = await searchRakutenDirect(query);
+  for (const u of directUrls.slice(0, 5)) {
+    const s = await scrapeItem(u);
+    if (s.ok) {
+      let hasImg = false;
+      for (const im of s.images) { if (await imageIsAlive(im)) { hasImg = true; break; } }
+      if (hasImg) return { url: u, title: s.title || gear.title, scraped: s, source: '楽天モール直接検索' };
+    }
+  }
+
+  // 第3層: Gemini AI (Google Search Grounding)
+  if (GEMINI_API_KEY) {
+    const geminiUrl = await searchWithGemini(query);
+    if (geminiUrl) {
+      const s = await scrapeItem(geminiUrl);
+      if (s.ok) {
+        let hasImg = false;
+        for (const im of s.images) { if (await imageIsAlive(im)) { hasImg = true; break; } }
+        if (hasImg) return { url: geminiUrl, title: s.title || gear.title, scraped: s, source: 'Gemini AI' };
+      }
+    }
+  }
+
   return null;
 }
 
@@ -129,25 +224,39 @@ async function refreshOne(g) {
   let scraped = await scrapeItem(g.dealUrl);
   let url = g.dealUrl;
   let replaced = false;
+
+  // 1. 商品ページ自体の死活確認＆自己修復
   if (!scraped.ok) {
     log.push(`商品ページ不通(${scraped.reason})`);
     const rep = await findReplacement(g);
     if (!rep) return { gear: g, status: 'dead', log };
     scraped = rep.scraped; url = rep.url; replaced = true;
-    log.push(`楽天APIで代替商品に自動置換: ${url}`);
+    log.push(`【自己修復】${rep.source}で代替商品を特定: ${url}`);
   }
 
+  // 2. 画像の死活確認＆自己修復
   let image = '';
   for (const c of scraped.images) { if (await imageIsAlive(c)) { image = c; break; } }
-  if (!image) return { gear: g, status: 'noimage', log: [...log, '商品画像を取得できず'] };
+  if (!image) {
+    log.push('元ページで画像取得不能');
+    const rep = await findReplacement(g);
+    if (rep) {
+      for (const c of rep.scraped.images) { if (await imageIsAlive(c)) { image = c; break; } }
+      if (image) {
+        scraped = rep.scraped; url = rep.url; replaced = true;
+        log.push(`【自己修復】${rep.source}で生きた画像付き商品に置換: ${url}`);
+      }
+    }
+  }
+  if (!image) return { gear: g, status: 'noimage', log: [...log, '商品画像をどうしても取得できず除外'] };
 
-  // 価格: ページ実測値。取得不能 or 異常値は「前回確認値」を維持して注記
+  // 価格: ページ実測値
   let originalPrice = g.originalPrice || 0;
   if (scraped.listPrice > 0) originalPrice = scraped.listPrice;
   let price = scraped.price;
   let stale = false;
   if (replaced) {
-    originalPrice = scraped.listPrice || price; // 代替品は定価不明なら割引表示しない
+    originalPrice = scraped.listPrice || price;
   } else if (!price || price < originalPrice * 0.2) {
     price = g.price; stale = true; log.push('価格を確認できず前回値を維持');
   }
@@ -160,7 +269,7 @@ async function refreshOne(g) {
     imageUrl: image, price, originalPrice, discountRate,
     priceVerifiedAt: stale ? g.priceVerifiedAt : new Date().toISOString(),
   };
-  if (replaced) next.title = `${g.brand || ''} ${g.gearType}（自動選定）`.trim();
+  if (replaced && scraped.title) next.title = scraped.title;
   return { gear: next, status: 'ok', log };
 }
 
@@ -168,7 +277,7 @@ function stripTag(s) { return (s || '').replace(/^【[^】]*(?:最安|OFF|目玉
 
 async function main() {
   const gears = JSON.parse(fs.readFileSync(GEARS_PATH, 'utf-8'));
-  console.log(`対象 ${gears.length} 品を実機検証します（商品ページ・画像・価格）`);
+  console.log(`対象 ${gears.length} 品を実機検証＆自己修復します（商品ページ・画像・価格）`);
   const results = await pool(gears, 4, async (g) => {
     const r = await refreshOne(g);
     console.log(`${r.status === 'ok' ? '✅' : '❌'} ${g.id} ${r.log.join(' / ')}`);
@@ -187,7 +296,6 @@ async function main() {
     const best = [...list].sort((a, b) => b.discountRate - a.discountRate || a.price - b.price)[0];
     if (best && best.discountRate > 0) best.isBestDeal = true;
   }
-  // 元に存在したカテゴリが消えた場合も異常
   for (const t of new Set(gears.map((g) => g.gearType))) if (!byType.has(t)) problems.push(`${t}: 0品`);
 
   for (const g of alive) {
@@ -196,7 +304,7 @@ async function main() {
     g.badge = g.isBestDeal ? `🔥 ${g.discountRate}%OFF 最安特価` : g.discountRate >= 15 ? `${g.discountRate}%OFF 特価` : '定番おすすめ';
   }
 
-  // 厳格検証（失敗時はファイルを書き換えずに終了＝公開サイトは前回の正常状態を維持）
+  // 厳格検証
   const bad = alive.filter((g) => !g.imageUrl || !/item\.rakuten\.co\.jp/.test(g.dealUrl) || g.price <= 0);
   if (bad.length) problems.push(`不正データ ${bad.length} 件`);
   if (problems.length) {
@@ -208,6 +316,7 @@ async function main() {
   let oldDeals = [];
   try { oldDeals = JSON.parse(fs.readFileSync(DEALS_PATH, 'utf-8')); } catch { /* none */ }
   const registeredAt = new Map(oldDeals.map((d) => [d.gear_id || d.id, d.registered_at]));
+
   const deals = alive.filter((g) => g.discountRate >= DEAL_THRESHOLD).map((g) => ({
     id: `deal-${g.id}`, gear_id: g.id, title: g.title, category: g.gearType,
     price: g.price, original_price: g.originalPrice, discount_rate: g.discountRate, point_rate: g.pointRate || 10,
@@ -222,7 +331,7 @@ async function main() {
   try { meta = JSON.parse(fs.readFileSync(META_PATH, 'utf-8')); } catch { /* new */ }
   Object.assign(meta, {
     last_updated_at: now, deals_count: deals.length, gears_count: alive.length,
-    gear_sync_source: 'refresh_gears.mjs (商品ページ実測・画像HTTP200検証済)',
+    gear_sync_source: 'refresh_gears.mjs (自己修復・商品ページ実測・画像HTTP200検証済)',
     gear_removed: removed,
   });
   fs.writeFileSync(META_PATH, JSON.stringify(meta, null, 2) + '\n');
@@ -230,4 +339,7 @@ async function main() {
   for (const r of removed) console.log(` 除外: ${r.id} ${r.reason}`);
 }
 
-main().catch((e) => { console.error(e); process.exit(1); });
+// CLI直接実行時
+if (process.argv[1]?.endsWith('refresh_gears.mjs')) {
+  main().catch((e) => { console.error(e); process.exit(1); });
+}
