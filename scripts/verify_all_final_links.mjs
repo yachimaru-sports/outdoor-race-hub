@@ -1,6 +1,5 @@
 import fs from 'node:fs';
 
-const deals = JSON.parse(fs.readFileSync('src/data/deals.json', 'utf-8'));
 const gears = JSON.parse(fs.readFileSync('src/data/gears.json', 'utf-8'));
 
 async function testUrl(url) {
@@ -19,41 +18,20 @@ async function testUrl(url) {
 }
 
 async function verifyAll() {
-  console.log('======================================================');
-  console.log(' 全商品リンク・画像URL 最終アクセス検証（HTTP 200検査）');
-  console.log('======================================================');
-
-  let failedCount = 0;
-
-  // 1. deals のURL検査
-  console.log(`\n--- deals.json (${deals.length}件) リンク検証 ---`);
-  for (const d of deals) {
-    const res = await testUrl(d.affiliate_url);
+  console.log(`--- 全 ${gears.length} 件のURL生存確認 ---`);
+  let failed = 0;
+  for (let i = 0; i < gears.length; i++) {
+    const g = gears[i];
+    const url = g.dealUrl || g.standardUrl;
+    const res = await testUrl(url);
     if (!res.ok) {
-      console.log(`❌ 失敗: [${d.id}] ${d.title} -> ${d.affiliate_url} (${res.status || res.error})`);
-      failedCount++;
+      console.log(`❌ 失敗 [${i + 1}/${gears.length}]: ${g.title} -> ${url} (${res.status || res.error})`);
+      failed++;
     } else {
-      console.log(`✅ OK (HTTP ${res.status}): [${d.discount_rate}%OFF] ${d.title.slice(0, 30)}`);
+      console.log(`✅ OK (${res.status}) [${i + 1}/${gears.length}]: [${g.gearType}] ${g.title.slice(0, 30)}`);
     }
   }
-
-  // 2. gears の dealUrl / standardUrl 検査
-  console.log(`\n--- gears.json (${gears.length}件) リンク検証 ---`);
-  for (const g of gears) {
-    const targetUrl = g.dealUrl || g.standardUrl;
-    const res = await testUrl(targetUrl);
-    if (!res.ok) {
-      console.log(`❌ 失敗: [${g.id}] ${g.title} -> ${targetUrl} (${res.status || res.error})`);
-      failedCount++;
-    } else {
-      const rateLabel = g.discountRate > 0 ? `${g.discountRate}%OFF` : '定番品';
-      console.log(`✅ OK (HTTP ${res.status}): [${rateLabel}] ${g.title.slice(0, 30)}`);
-    }
-  }
-
-  console.log('======================================================');
-  console.log(`検証完了: 失敗 ${failedCount} 件 / 総検査数 ${deals.length + gears.length} 件`);
-  console.log('======================================================');
+  console.log(`\n検証結果: 失敗 ${failed} 件 / 合計 ${gears.length} 件`);
 }
 
 verifyAll();

@@ -97,6 +97,7 @@ export const GearCatalogPage: React.FC<GearCatalogPageProps> = ({
         imageUrl,
         savedAmount,
         isNew,
+        isBestDeal: Boolean(gear.isBestDeal || deal?.isBestDeal),
       };
     });
   }, [gears, dealsMap]);
@@ -186,7 +187,8 @@ export const GearCatalogPage: React.FC<GearCatalogPageProps> = ({
     const list = [...filteredGears];
     switch (sortBy) {
       case 'discount_desc':
-        list.sort((a, b) => b.discountRate - a.discountRate || (b.savedAmount - a.savedAmount));
+        // カテゴリ最安No.1を先頭、次に割引率
+        list.sort((a, b) => (b.isBestDeal ? 1 : 0) - (a.isBestDeal ? 1 : 0) || b.discountRate - a.discountRate || (b.savedAmount - a.savedAmount));
         break;
       case 'price_asc':
         list.sort((a, b) => a.price - b.price);
@@ -196,8 +198,8 @@ export const GearCatalogPage: React.FC<GearCatalogPageProps> = ({
         break;
       case 'recommended':
       default:
-        // 新着優先、次に割引率
-        list.sort((a, b) => (b.isNew ? 1 : 0) - (a.isNew ? 1 : 0) || b.discountRate - a.discountRate);
+        // カテゴリ最安No.1特価品を最優先、次に新着、割引率順
+        list.sort((a, b) => (b.isBestDeal ? 1 : 0) - (a.isBestDeal ? 1 : 0) || (b.isNew ? 1 : 0) - (a.isNew ? 1 : 0) || b.discountRate - a.discountRate);
         break;
     }
     return list;
@@ -512,8 +514,24 @@ export const GearCatalogPage: React.FC<GearCatalogPageProps> = ({
               return (
                 <div
                   key={item.id}
-                  className="group flex flex-col bg-white dark:bg-slate-900 rounded-2xl border border-slate-250 dark:border-slate-800 hover:border-amber-400 dark:hover:border-amber-400 shadow-sm hover:shadow-xl transition-all duration-200 overflow-hidden relative"
+                  className={`group flex flex-col rounded-2xl transition-all duration-200 overflow-hidden relative ${
+                    item.isBestDeal
+                      ? 'bg-gradient-to-b from-amber-500/10 via-white to-white dark:from-amber-500/15 dark:via-slate-900 dark:to-slate-900 border-2 border-amber-400 dark:border-amber-400 shadow-lg hover:shadow-2xl ring-2 ring-amber-400/30'
+                      : 'bg-white dark:bg-slate-900 border border-slate-250 dark:border-slate-800 hover:border-amber-400 dark:hover:border-amber-400 shadow-xs hover:shadow-xl'
+                  }`}
                 >
+                  {/* 最安No.1特価品専用ハイライトトップバー */}
+                  {item.isBestDeal && (
+                    <div className="bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 text-slate-950 font-black text-[11px] py-1 px-3 flex items-center justify-between shadow-xs">
+                      <span className="flex items-center gap-1">
+                        <span>👑</span>
+                        <span>カテゴリ最大値引き！No.1 目玉特価</span>
+                      </span>
+                      <span className="text-[10px] bg-slate-950 text-amber-300 px-1.5 py-0.2 rounded font-extrabold">
+                        BEST DEAL
+                      </span>
+                    </div>
+                  )}
                   {/* カード上部：画像 ＆ 各種セールバッジ */}
                   <div className="relative w-full aspect-square bg-white dark:bg-slate-950 p-4 flex items-center justify-center border-b border-slate-150 dark:border-slate-800 overflow-hidden">
                     <img
@@ -526,7 +544,12 @@ export const GearCatalogPage: React.FC<GearCatalogPageProps> = ({
 
                     {/* 左上バッジ群：割引率 ＆ 定番 ＆ 新着 */}
                     <div className="absolute top-2.5 left-2.5 flex flex-col items-start gap-1">
-                      {item.discountRate > 0 ? (
+                      {item.isBestDeal ? (
+                        <span className="bg-gradient-to-r from-red-600 via-rose-600 to-amber-600 text-white font-black text-xs px-2.5 py-1 rounded-md shadow-lg border border-amber-300 leading-tight flex items-center gap-1">
+                          <Flame className="w-3.5 h-3.5 fill-amber-300 text-amber-300" />
+                          <span>{item.discountRate}% OFF 最安</span>
+                        </span>
+                      ) : item.discountRate > 0 ? (
                         <span className="bg-red-600 text-white font-black text-xs px-2 py-0.5 rounded-md shadow-md border border-white/80 leading-tight">
                           {item.discountRate}% OFF
                         </span>

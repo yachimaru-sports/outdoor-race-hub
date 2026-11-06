@@ -15,7 +15,7 @@
     ],
     "title": "スポルティバ ミュータント (MUTANT / 悪路・急登グリップ最強)",
     "brand": "LA SPORTIVA",
-    "standardTitle": "過酷な泥・岩稜帯で圧倒的なグリップ力を発揮するスパイラルタング採用の名作山岳トレランシューズ。",
+    "standardTitle": "【カテゴリ最安No.1】過酷な泥・岩稜帯で圧倒的なグリップ力を発揮するスパイラルタング採用の名作山岳トレランシューズ。",
     "standardUrl": "https://item.rakuten.co.jp/sakaiya/10132293",
     "dealKeyword": "スポルティバ ミュータント",
     "price": 16940,
@@ -24,7 +24,8 @@
     "pointRate": 10,
     "dealUrl": "https://item.rakuten.co.jp/sakaiya/10132293",
     "imageUrl": "https://tshop.r10s.jp/sakaiya/cabinet/05449151/07483255/56f99910002.jpg",
-    "badge": "30%OFF 目玉特価"
+    "badge": "🔥 30%OFF 最安特価",
+    "isBestDeal": true
   },
   {
     "id": "gear-trail-shoes-speedgoat2",
@@ -51,7 +52,7 @@
     "pointRate": 10,
     "dealUrl": "https://item.rakuten.co.jp/beacle/523-1162710-dcbk",
     "imageUrl": "https://tshop.r10s.jp/beacle/cabinet/523/523-1162710-dcbk_1.jpg",
-    "badge": "30%OFF 目玉特価"
+    "badge": "30%OFF 特価"
   },
   {
     "id": "gear-trail-shoes-montblanc",
@@ -78,7 +79,7 @@
     "pointRate": 10,
     "dealUrl": "https://item.rakuten.co.jp/stridelab/p_7407589032102",
     "imageUrl": "https://tshop.r10s.jp/stridelab/cabinet/shoes/altra/mens/al0a5482343-f.jpg",
-    "badge": "30%OFF 目玉特価"
+    "badge": "30%OFF 特価"
   },
   {
     "id": "gear-trail-shoes-mesa2",
@@ -104,7 +105,7 @@
     "pointRate": 10,
     "dealUrl": "https://item.rakuten.co.jp/sakaiya/202607071859",
     "imageUrl": "https://tshop.r10s.jp/sakaiya/cabinet/shoes_kan/xeroshoes/memfkbk01.jpg",
-    "badge": "30%OFF 目玉特価"
+    "badge": "30%OFF 特価"
   },
   {
     "id": "gear-marathon-shoes-nike-juniper",
@@ -131,7 +132,7 @@
     "pointRate": 10,
     "dealUrl": "https://item.rakuten.co.jp/nike-official/dm0822-301",
     "imageUrl": "https://tshop.r10s.jp/nike-official/cabinet/fa2601/dm0822-301_a.jpg",
-    "badge": "30%OFF 目玉特価"
+    "badge": "30%OFF 特価"
   },
   {
     "id": "gear-trail-pack-salomon-actskin4",
@@ -150,7 +151,7 @@
     ],
     "title": "SALOMON ACTIVE SKIN 4 (ソフトフラスク2本付属 / 軽量ベスト)",
     "brand": "SALOMON",
-    "standardTitle": "SensiFit設計でブレを徹底排除。ミドルレースやフルマラソンの水分補給にベストセラーのランニングベスト。",
+    "standardTitle": "【カテゴリ最安半額以下】SensiFit設計でブレを徹底排除。ミドルレースやフルマラソンの水分補給にベストセラーのランニングベスト。",
     "standardUrl": "https://item.rakuten.co.jp/apworld/actskn4set",
     "dealKeyword": "サロモン アクティブスキン4",
     "price": 13200,
@@ -159,7 +160,8 @@
     "pointRate": 10,
     "dealUrl": "https://item.rakuten.co.jp/apworld/actskn4set",
     "imageUrl": "https://tshop.r10s.jp/apworld/cabinet/salomon/actskn4set-1.jpg",
-    "badge": "60%OFF 半額以下"
+    "badge": "🔥 60%OFF 半額以下",
+    "isBestDeal": true
   },
   {
     "id": "gear-trail-pack-salomon-actskin12",
@@ -217,6 +219,60 @@
     "badge": "30%OFF 特価"
   },
   {
+    "id": "gear-trail-pack-nathan-pinnacle",
+    "sports": [
+      "trail"
+    ],
+    "gearType": "トレランザック",
+    "matchKeywords": [
+      "トレランザック",
+      "ネイサン",
+      "NATHAN",
+      "ピナクル",
+      "軽量"
+    ],
+    "title": "NATHAN ピナクル 12L JP ユニセックス (メンズ対応サイズ)",
+    "brand": "NATHAN (ネイサン)",
+    "standardTitle": "【体幹吸い付き設計】荷物の揺れを極限まで排除。国内トレイルレースに最適な超軽量フィットベスト。",
+    "standardUrl": "https://item.rakuten.co.jp/usbonline/ns40180j/",
+    "dealKeyword": "ネイサン ピナクル 12L",
+    "price": 8800,
+    "originalPrice": 8800,
+    "discountRate": 0,
+    "pointRate": 1,
+    "dealUrl": "https://item.rakuten.co.jp/usbonline/ns40180j/",
+    "imageUrl": "https://shop.r10s.jp/usbonline/cabinet/pic-2/ns40180j-main.jpg",
+    "badge": "必携定番"
+  },
+  {
+    "id": "gear-trail-poles-bd-distance-z",
+    "sports": [
+      "trail",
+      "adventure"
+    ],
+    "gearType": "トレッキングポール",
+    "matchKeywords": [
+      "トレッキングポール",
+      "ポール",
+      "ブラックダイヤモンド",
+      "BD",
+      "ディスタンスZ"
+    ],
+    "title": "Black Diamond ディスタンスZ ピューター (高剛性アルミ折畳みポール)",
+    "brand": "Black Diamond",
+    "standardTitle": "【カテゴリ最安40%OFF】岩場での突き刺しに強い高強度アルミ製3セクションZポール。耐久性重視の山岳アドベンチャーに最適。",
+    "standardUrl": "https://item.rakuten.co.jp/canpanera/b17227-1",
+    "dealKeyword": "ブラックダイヤモンド ディスタンスZ",
+    "price": 14322,
+    "originalPrice": 23870,
+    "discountRate": 40,
+    "pointRate": 10,
+    "dealUrl": "https://item.rakuten.co.jp/canpanera/b17227-1",
+    "imageUrl": "https://tshop.r10s.jp/canpanera/cabinet/item237/item_b17227_0.jpg",
+    "badge": "🔥 40%OFF 大特価",
+    "isBestDeal": true
+  },
+  {
     "id": "gear-trail-poles-leki-neotrail",
     "sports": [
       "trail",
@@ -242,34 +298,7 @@
     "pointRate": 10,
     "dealUrl": "https://item.rakuten.co.jp/sakaiya/202601281828",
     "imageUrl": "https://tshop.r10s.jp/sakaiya/cabinet/leki/1300538_2.jpg",
-    "badge": "30%OFF 目玉特価"
-  },
-  {
-    "id": "gear-trail-poles-bd-distance-z",
-    "sports": [
-      "trail",
-      "adventure"
-    ],
-    "gearType": "トレッキングポール",
-    "matchKeywords": [
-      "トレッキングポール",
-      "ポール",
-      "ブラックダイヤモンド",
-      "BD",
-      "ディスタンスZ"
-    ],
-    "title": "Black Diamond ディスタンスZ ピューター (高剛性アルミ折畳みポール)",
-    "brand": "Black Diamond",
-    "standardTitle": "岩場での突き刺しに強い高強度アルミ製3セクションZポール。耐久性重視の山岳アドベンチャーに最適。",
-    "standardUrl": "https://item.rakuten.co.jp/canpanera/b17227-1",
-    "dealKeyword": "ブラックダイヤモンド ディスタンスZ",
-    "price": 14322,
-    "originalPrice": 23870,
-    "discountRate": 40,
-    "pointRate": 10,
-    "dealUrl": "https://item.rakuten.co.jp/canpanera/b17227-1",
-    "imageUrl": "https://tshop.r10s.jp/canpanera/cabinet/item237/item_b17227_0.jpg",
-    "badge": "40%OFF 大特価"
+    "badge": "30%OFF 特価"
   },
   {
     "id": "gear-trail-poles-bd-pursuit",
@@ -296,7 +325,59 @@
     "pointRate": 10,
     "dealUrl": "https://item.rakuten.co.jp/canpanera/b17689",
     "imageUrl": "https://tshop.r10s.jp/canpanera/cabinet/item250/item_b17689_0.jpg",
-    "badge": "30%OFF 目玉特価"
+    "badge": "30%OFF 特価"
+  },
+  {
+    "id": "gear-trail-poles-leki-fx-one-std",
+    "sports": [
+      "trail"
+    ],
+    "gearType": "トレッキングポール",
+    "matchKeywords": [
+      "トレッキングポール",
+      "LEKI",
+      "ウルトラトレイル"
+    ],
+    "title": "LEKI ウルトラトレイル FX.ONE スーパーライト (115cm/120cm)",
+    "brand": "LEKI (レキ)",
+    "standardTitle": "【トップアスリート支持率No.1】トレイルシャークグリップで推進力を逃さない世界標準ポール。",
+    "standardUrl": "https://item.rakuten.co.jp/sakaiya/202610211933/",
+    "dealKeyword": "LEKI ウルトラトレイル FX.ONE",
+    "price": 36300,
+    "originalPrice": 36300,
+    "discountRate": 0,
+    "pointRate": 10,
+    "dealUrl": "https://item.rakuten.co.jp/sakaiya/202610211933/",
+    "imageUrl": "https://tshop.r10s.jp/sakaiya/cabinet/leki/1300542_2.jpg",
+    "badge": "公式定番 推奨"
+  },
+  {
+    "id": "gear-trail-rain-millet-tempete",
+    "sports": [
+      "trail",
+      "adventure"
+    ],
+    "gearType": "レインウェア",
+    "matchKeywords": [
+      "レインウェア",
+      "ミレー",
+      "MILLET",
+      "タンペート",
+      "防水ジャケット"
+    ],
+    "title": "MILLET タンペート ジャケット (防水透湿シェル / ストレッチ軽量)",
+    "brand": "MILLET",
+    "standardTitle": "【カテゴリ最安35%OFF】優れた防水透湿性とストレッチ性を両立。激しい腕振りを妨げないアルパインカッティング。",
+    "standardUrl": "https://item.rakuten.co.jp/esports/6000000141008",
+    "dealKeyword": "ミレー タンペート ジャケット",
+    "price": 18480,
+    "originalPrice": 28430,
+    "discountRate": 35,
+    "pointRate": 10,
+    "dealUrl": "https://item.rakuten.co.jp/esports/6000000141008",
+    "imageUrl": "https://tshop.r10s.jp/esports/cabinet/6000/6000000141008.jpg",
+    "badge": "🔥 35%OFF 最安特価",
+    "isBestDeal": true
   },
   {
     "id": "gear-trail-rain-tnf-venture",
@@ -325,306 +406,6 @@
     "pointRate": 10,
     "dealUrl": "https://item.rakuten.co.jp/e-lodge-2/gw-np62515-t",
     "imageUrl": "https://tshop.r10s.jp/e-lodge-2/cabinet/gw/gw-np62515-t.jpg",
-    "badge": "30%OFF 目玉特価"
-  },
-  {
-    "id": "gear-trail-light-petzl-actik",
-    "sports": [
-      "trail",
-      "adventure"
-    ],
-    "gearType": "ヘッドライト",
-    "matchKeywords": [
-      "ヘッドライト",
-      "ライト",
-      "ペツル",
-      "PETZL",
-      "アクティックコア",
-      "充電式"
-    ],
-    "title": "PETZL アクティックコア 600lm (E065AB 充電式ハイブリッド・予備灯兼用)",
-    "brand": "PETZL",
-    "standardTitle": "COREバッテリー付属でUSB充電可能。赤色光モード搭載で夜間レースの山小屋やテント内でも重宝。",
-    "standardUrl": "https://item.rakuten.co.jp/yoshikip2/e065ab0x",
-    "dealKeyword": "ペツル アクティックコア",
-    "price": 12177,
-    "originalPrice": 24354,
-    "discountRate": 50,
-    "pointRate": 10,
-    "dealUrl": "https://item.rakuten.co.jp/yoshikip2/e065ab0x",
-    "imageUrl": "https://tshop.r10s.jp/yoshikip2/cabinet/petzl/e065ab0x.jpg",
-    "badge": "50%OFF 半額目玉"
-  },
-  {
-    "id": "gear-trail-light-petzl-tikkina",
-    "sports": [
-      "trail",
-      "adventure"
-    ],
-    "gearType": "ヘッドライト",
-    "matchKeywords": [
-      "ヘッドライト",
-      "ライト",
-      "ペツル",
-      "PETZL",
-      "ティキナ",
-      "予備ライト"
-    ],
-    "title": "PETZL ティキナ 300lm (E060AB / 超軽量必携サブライト最適)",
-    "brand": "PETZL",
-    "standardTitle": "わずか92g。トレラン大会の『予備ヘッドランプ』必携チェックを最も低予算でクリアできる高信頼モデル。",
-    "standardUrl": "https://item.rakuten.co.jp/yoshikip2/e060ab0x",
-    "dealKeyword": "ペツル ティキナ",
-    "price": 3762,
-    "originalPrice": 7524,
-    "discountRate": 50,
-    "pointRate": 10,
-    "dealUrl": "https://item.rakuten.co.jp/yoshikip2/e060ab0x",
-    "imageUrl": "https://tshop.r10s.jp/yoshikip2/cabinet/petzl/e060ab0x.jpg",
-    "badge": "50%OFF 半額目玉"
-  },
-  {
-    "id": "gear-trail-wear-cwx-expert-mens",
-    "sports": [
-      "trail",
-      "marathon"
-    ],
-    "gearType": "サポートタイツ",
-    "matchKeywords": [
-      "サポートタイツ",
-      "タイツ",
-      "CW-X",
-      "ワコール",
-      "テーピング",
-      "ひざ"
-    ],
-    "title": "CW-X ワコール メンズ エキスパートモデル3.0 (ひざ・股関節サポート)",
-    "brand": "CW-X (ワコール)",
-    "standardTitle": "下り坂の着地衝撃から膝関節を守るテーピング構造。長距離の足の残りが劇的に変わる定番サポートタイツ。",
-    "standardUrl": "https://item.rakuten.co.jp/ranfan/cwx-hxo499",
-    "dealKeyword": "CW-X エキスパートモデル メンズ",
-    "price": 12870,
-    "originalPrice": 17392,
-    "discountRate": 26,
-    "pointRate": 10,
-    "dealUrl": "https://item.rakuten.co.jp/ranfan/cwx-hxo499",
-    "imageUrl": "https://tshop.r10s.jp/ranfan/cabinet/02856425/08272551/hxo499_main.jpg",
-    "badge": "26%OFF 特価"
-  },
-  {
-    "id": "gear-trail-wear-cwx-expert-ladies",
-    "sports": [
-      "trail",
-      "marathon"
-    ],
-    "gearType": "サポートタイツ",
-    "matchKeywords": [
-      "サポートタイツ",
-      "タイツ",
-      "CW-X",
-      "ワコール",
-      "レディース",
-      "女性用"
-    ],
-    "title": "CW-X ワコール レディース スポーツレギンス エキスパート (女性用)",
-    "brand": "CW-X (ワコール)",
-    "standardTitle": "女性の骨盤・大腿・膝をしっかり安定。長時間のウォーキング・トレランで脚運びを力強くアシスト。",
-    "standardUrl": "https://item.rakuten.co.jp/shirohato/40hxy499",
-    "dealKeyword": "CW-X エキスパート レディース",
-    "price": 8800,
-    "originalPrice": 14194,
-    "discountRate": 38,
-    "pointRate": 10,
-    "dealUrl": "https://item.rakuten.co.jp/shirohato/40hxy499",
-    "imageUrl": "https://tshop.r10s.jp/shirohato/cabinet/402008/40hxy499_1.jpg",
-    "badge": "38%OFF 特価"
-  },
-  {
-    "id": "gear-trail-wear-c3fit-goldwin",
-    "sports": [
-      "trail",
-      "marathon"
-    ],
-    "gearType": "サポートタイツ",
-    "matchKeywords": [
-      "サポートタイツ",
-      "タイツ",
-      "C3fit",
-      "ゴールドウイン",
-      "コンプレッション"
-    ],
-    "title": "Goldwin C3fit レディース スポーツタイツ (段階着圧コンプレッション)",
-    "brand": "Goldwin (C3fit)",
-    "standardTitle": "独自の立体設計と段階着圧で血行を促進しむくみ・疲労を軽減。肌あたりがフラットで擦れを防ぐ。",
-    "standardUrl": "https://item.rakuten.co.jp/auc-bestsports/c3fit-gcw04351",
-    "dealKeyword": "C3fit スポーツタイツ",
-    "price": 11440,
-    "originalPrice": 28600,
-    "discountRate": 60,
-    "pointRate": 10,
-    "dealUrl": "https://item.rakuten.co.jp/auc-bestsports/c3fit-gcw04351",
-    "imageUrl": "https://tshop.r10s.jp/auc-bestsports/cabinet/goldwin/gcw04351.jpg",
-    "badge": "60%OFF 半額以下"
-  },
-  {
-    "id": "gear-cycle-light-cateye-el145",
-    "sports": [
-      "cycling",
-      "adventure"
-    ],
-    "gearType": "サイクルライト",
-    "matchKeywords": [
-      "サイクルライト",
-      "自転車ライト",
-      "キャットアイ",
-      "CATEYE",
-      "LED"
-    ],
-    "title": "CAT EYE hl-el145 LEDフロントライト (JIS規格適合 / 長時間点灯)",
-    "brand": "CATEYE",
-    "standardTitle": "単3電池2本で点灯30時間、点滅250時間の圧倒的スタミナ。夜間走行やブルベ、アドベンチャーMTBのサブライトに最適。",
-    "standardUrl": "https://item.rakuten.co.jp/auc-bestsports/hl-el145",
-    "dealKeyword": "キャットアイ hl-el145",
-    "price": 1771,
-    "originalPrice": 4428,
-    "discountRate": 60,
-    "pointRate": 10,
-    "dealUrl": "https://item.rakuten.co.jp/auc-bestsports/hl-el145",
-    "imageUrl": "https://tshop.r10s.jp/auc-bestsports/cabinet/cateye/hl-el145.jpg",
-    "badge": "60%OFF 半額以下"
-  },
-  {
-    "id": "gear-cycle-helmet-road-light",
-    "sports": [
-      "cycling"
-    ],
-    "gearType": "ヘルメット",
-    "matchKeywords": [
-      "ヘルメット",
-      "自転車ヘルメット",
-      "ロードバイク",
-      "通気性",
-      "軽量"
-    ],
-    "title": "ロードバイク 自転車ヘルメット (高通気・一体成型 / 56〜63cm)",
-    "brand": "AIR-HELMET",
-    "standardTitle": "風抜けの良いエアロベンチレーション構造と超軽量設計。ダイヤル式アジャスターで頭部にジャストフィット。",
-    "standardUrl": "https://item.rakuten.co.jp/lifeideakan/m23",
-    "dealKeyword": "ロードバイク ヘルメット",
-    "price": 3580,
-    "originalPrice": 7956,
-    "discountRate": 55,
-    "pointRate": 10,
-    "dealUrl": "https://item.rakuten.co.jp/lifeideakan/m23",
-    "imageUrl": "https://tshop.r10s.jp/lifeideakan/cabinet/09618175/m23-1.jpg",
-    "badge": "55%OFF 半額以下"
-  },
-  {
-    "id": "gear-marathon-shoes-asics-hyper6",
-    "sports": [
-      "marathon"
-    ],
-    "gearType": "ランニングシューズ",
-    "matchKeywords": [
-      "ランニングシューズ",
-      "厚底",
-      "アシックス",
-      "ASICS",
-      "ハイパースピード",
-      "レーシング"
-    ],
-    "title": "ASICS HYPER SPEED 6 (超軽量レーシング / サブ3.5・インターバル対応)",
-    "brand": "ASICS",
-    "standardTitle": "優れた反発性と軽量性を両立。フルマラソン自己記録更新やスピード練習を支えるコストパフォーマンス抜群の一足。",
-    "standardUrl": "https://item.rakuten.co.jp/awaspo/xa-1013a237401",
-    "dealKeyword": "アシックス ハイパースピード",
-    "price": 10380,
-    "originalPrice": 20760,
-    "discountRate": 50,
-    "pointRate": 10,
-    "dealUrl": "https://item.rakuten.co.jp/awaspo/xa-1013a237401",
-    "imageUrl": "https://tshop.r10s.jp/awaspo/cabinet/item03/xa-1013a237401_1.jpg",
-    "badge": "50%OFF 半額目玉"
-  },
-  {
-    "id": "gear-marathon-shoes-asics-sonoma",
-    "sports": [
-      "marathon",
-      "trail"
-    ],
-    "gearType": "ランニングシューズ",
-    "matchKeywords": [
-      "ランニングシューズ",
-      "トレランシューズ",
-      "アシックス",
-      "GEL",
-      "ゲルソノマ"
-    ],
-    "title": "ASICS GEL-SONOMA (GEL搭載・ロード＆トレイル両用ハイブリッド厚底)",
-    "brand": "ASICS",
-    "standardTitle": "かかと部のGELが着地ショックを吸収。舗装路から土のグラベルロードまで快適に走り抜けられる万能シューズ。",
-    "standardUrl": "https://item.rakuten.co.jp/murasaki-sports/m00124101030011",
-    "dealKeyword": "アシックス ゲルソノマ",
-    "price": 13200,
-    "originalPrice": 26400,
-    "discountRate": 50,
-    "pointRate": 10,
-    "dealUrl": "https://item.rakuten.co.jp/murasaki-sports/m00124101030011",
-    "imageUrl": "https://tshop.r10s.jp/murasaki-sports/cabinet/item0124/m00124101030011-01.jpg",
-    "badge": "50%OFF 半額目玉"
-  },
-  {
-    "id": "gear-marathon-pouch-shakefree",
-    "sports": [
-      "marathon",
-      "trail"
-    ],
-    "gearType": "ウエストポーチ",
-    "matchKeywords": [
-      "ウエストポーチ",
-      "ポーチ",
-      "揺れない",
-      "ランニングポーチ",
-      "スマホ"
-    ],
-    "title": "揺れない ランニングウエストポーチ (大型スマホ・ジェル収納 / 防水防汗)",
-    "brand": "RUN-FIT",
-    "standardTitle": "体にピタッと密着し走っても上下に揺れない伸縮ベルト。補給食ジェルやスマホをスマートに携帯可能。",
-    "standardUrl": "https://item.rakuten.co.jp/funtastic/spbg002",
-    "dealKeyword": "揺れない ランニングポーチ",
-    "price": 1690,
-    "originalPrice": 2414,
-    "discountRate": 30,
-    "pointRate": 10,
-    "dealUrl": "https://item.rakuten.co.jp/funtastic/spbg002",
-    "imageUrl": "https://tshop.r10s.jp/funtastic/cabinet/compass1700632598.jpg",
-    "badge": "30%OFF 特価"
-  },
-  {
-    "id": "gear-ar-sacoche-waterproof",
-    "sports": [
-      "adventure",
-      "trail"
-    ],
-    "gearType": "防水スタッフバッグ",
-    "matchKeywords": [
-      "防水バッグ",
-      "ドライバッグ",
-      "サコッシュ",
-      "完全防水",
-      "IPX7"
-    ],
-    "title": "高密閉 完全防水サコッシュ＆ドライバッグ (IPX7水没耐性 / ロール密閉)",
-    "brand": "AQUA-SEAL",
-    "standardTitle": "雨天レース・渡渉・カヌーでも電子機器や地図、必携医療品を水濡れから100%保護する高気密ポーチ。",
-    "standardUrl": "https://item.rakuten.co.jp/hzll/fsb-m816",
-    "dealKeyword": "完全防水 サコッシュ ドライバッグ",
-    "price": 2580,
-    "originalPrice": 3686,
-    "discountRate": 30,
-    "pointRate": 10,
-    "dealUrl": "https://item.rakuten.co.jp/hzll/fsb-m816",
-    "imageUrl": "https://tshop.r10s.jp/hzll/cabinet/09689408/fsb-m816.jpg",
     "badge": "30%OFF 特価"
   },
   {
@@ -656,6 +437,84 @@
     "badge": "公式定番 推奨"
   },
   {
+    "id": "gear-trail-rain-millet-typhon",
+    "sports": [
+      "trail",
+      "adventure"
+    ],
+    "gearType": "レインウェア",
+    "matchKeywords": [
+      "レインウェア",
+      "ミレー",
+      "ティフォン50000"
+    ],
+    "title": "MILLET ティフォン 50000 ストレッチ ジャケット (超高透湿50,000g)",
+    "brand": "MILLET (ミレー)",
+    "standardTitle": "【蒸れ知らずの最高峰】透湿性50,000g/m²/24hで雨中の登りでも汗抜け抜群。まるでウインドブレーカーの着心地。",
+    "standardUrl": "https://item.rakuten.co.jp/millet-online/miv03168",
+    "dealKeyword": "ミレー ティフォン 50000 ジャケット",
+    "price": 36300,
+    "originalPrice": 36300,
+    "discountRate": 0,
+    "pointRate": 10,
+    "dealUrl": "https://item.rakuten.co.jp/millet-online/miv03168",
+    "imageUrl": "https://tshop.r10s.jp/millet-online/cabinet/09618175/miv03168-1.jpg",
+    "badge": "最高峰モデル"
+  },
+  {
+    "id": "gear-trail-rain-pants-stretch",
+    "sports": [
+      "trail",
+      "adventure"
+    ],
+    "gearType": "レインパンツ",
+    "matchKeywords": [
+      "レインパンツ",
+      "防水パンツ",
+      "軽量パンツ",
+      "ストレッチ"
+    ],
+    "title": "高機能ストレッチ 登山レインパンツ (耐水圧10,000mm / 立体裁断)",
+    "brand": "OUTDOOR-PRO",
+    "standardTitle": "【カテゴリ最安30%OFF】股関節の屈曲を妨げない立体裁断。急な豪雨でも靴を履いたまま着脱しやすい裾ファスナー仕様。",
+    "standardUrl": "https://item.rakuten.co.jp/benque/be119-r48",
+    "dealKeyword": "登山 レインパンツ ストレッチ",
+    "price": 3480,
+    "originalPrice": 4971,
+    "discountRate": 30,
+    "pointRate": 10,
+    "dealUrl": "https://item.rakuten.co.jp/benque/be119-r48",
+    "imageUrl": "https://tshop.r10s.jp/benque/cabinet/be119/be119-r48-1.jpg",
+    "badge": "🔥 30%OFF 最安特価",
+    "isBestDeal": true
+  },
+  {
+    "id": "gear-trail-rain-pants-millet-dry",
+    "sports": [
+      "trail",
+      "adventure"
+    ],
+    "gearType": "レインパンツ",
+    "matchKeywords": [
+      "レインパンツ",
+      "ミレー",
+      "MILLET",
+      "ドライナイロン"
+    ],
+    "title": "MILLET ドライナイロン トレッキングパンツ (撥水速乾 / MIV03204)",
+    "brand": "MILLET",
+    "standardTitle": "小雨や霧雨を弾き飛ばす高耐久撥水加工。タイツの上から履いてもゴワつかないスリムシルエット。",
+    "standardUrl": "https://item.rakuten.co.jp/millet-outlet/miv03204",
+    "dealKeyword": "ミレー ドライナイロン パンツ",
+    "price": 7920,
+    "originalPrice": 9900,
+    "discountRate": 20,
+    "pointRate": 10,
+    "dealUrl": "https://item.rakuten.co.jp/millet-outlet/miv03204",
+    "imageUrl": "https://tshop.r10s.jp/millet-outlet/cabinet/miv03204.jpg",
+    "badge": "20%OFF 特価"
+  },
+  {
     "id": "gear-trail-rain-pants-tnf",
     "sports": [
       "trail",
@@ -668,9 +527,9 @@
       "ノースフェイス",
       "ストライクトレイル"
     ],
-    "title": "THE NORTH FACE ストライクトレイル パンツ (NP12373 / 防水透湿)",
+    "title": "THE NORTH FACE ストライクトレイル パンツ (NP12373 / 完全防水)",
     "brand": "THE NORTH FACE",
-    "standardTitle": "【必携レインボトム】超軽量コンパクト・耐水圧20,000mmの完全防水トレイルパンツ。",
+    "standardTitle": "【必携レインボトム定番】超軽量コンパクト・耐水圧20,000mmの完全防水トレイルパンツ。",
     "standardUrl": "https://item.rakuten.co.jp/rampjack/np62577-262/",
     "dealKeyword": "THE NORTH FACE ストライクトレイルパンツ",
     "price": 18700,
@@ -682,12 +541,387 @@
     "badge": "必携定番"
   },
   {
+    "id": "gear-trail-light-petzl-actik",
+    "sports": [
+      "trail",
+      "adventure"
+    ],
+    "gearType": "ヘッドライト",
+    "matchKeywords": [
+      "ヘッドライト",
+      "ライト",
+      "ペツル",
+      "PETZL",
+      "アクティックコア",
+      "充電式"
+    ],
+    "title": "PETZL アクティックコア 600lm (E065AB 充電式ハイブリッド・予備灯兼用)",
+    "brand": "PETZL",
+    "standardTitle": "【カテゴリ最安半額】COREバッテリー付属でUSB充電可能。赤色光モード搭載で夜間レースの山小屋やテント内でも重宝。",
+    "standardUrl": "https://item.rakuten.co.jp/yoshikip2/e065ab0x",
+    "dealKeyword": "ペツル アクティックコア",
+    "price": 12177,
+    "originalPrice": 24354,
+    "discountRate": 50,
+    "pointRate": 10,
+    "dealUrl": "https://item.rakuten.co.jp/yoshikip2/e065ab0x",
+    "imageUrl": "https://tshop.r10s.jp/yoshikip2/cabinet/petzl/e065ab0x.jpg",
+    "badge": "🔥 50%OFF 半額最安",
+    "isBestDeal": true
+  },
+  {
+    "id": "gear-trail-light-petzl-tikkina",
+    "sports": [
+      "trail",
+      "adventure"
+    ],
+    "gearType": "ヘッドライト",
+    "matchKeywords": [
+      "ヘッドライト",
+      "ライト",
+      "ペツル",
+      "PETZL",
+      "ティキナ",
+      "予備ライト"
+    ],
+    "title": "PETZL ティキナ 300lm (E060AB / 超軽量必携サブライト最適)",
+    "brand": "PETZL",
+    "standardTitle": "わずか92g。トレラン大会の『予備ヘッドランプ』必携チェックを最も低予算でクリアできる高信頼モデル。",
+    "standardUrl": "https://item.rakuten.co.jp/yoshikip2/e060ab0x",
+    "dealKeyword": "ペツル ティキナ",
+    "price": 3762,
+    "originalPrice": 7524,
+    "discountRate": 50,
+    "pointRate": 10,
+    "dealUrl": "https://item.rakuten.co.jp/yoshikip2/e060ab0x",
+    "imageUrl": "https://tshop.r10s.jp/yoshikip2/cabinet/petzl/e060ab0x.jpg",
+    "badge": "50%OFF 半額"
+  },
+  {
+    "id": "gear-trail-light-bd-spot400",
+    "sports": [
+      "trail",
+      "adventure"
+    ],
+    "gearType": "ヘッドライト",
+    "matchKeywords": [
+      "ヘッドライト",
+      "ブラックダイヤモンド",
+      "スポット400"
+    ],
+    "title": "Black Diamond スポット400 (IPX8完全防水 / 光学レンズ搭載)",
+    "brand": "Black Diamond",
+    "standardTitle": "水深1.1mに30分耐える完全防水規格IPX8。豪雨や夜間渡渉でも一切トラブルを起こさない堅牢機。",
+    "standardUrl": "https://item.rakuten.co.jp/canpanera/b17001-1",
+    "dealKeyword": "ブラックダイヤモンド スポット400",
+    "price": 7620,
+    "originalPrice": 8466,
+    "discountRate": 10,
+    "pointRate": 10,
+    "dealUrl": "https://item.rakuten.co.jp/canpanera/b17001-1",
+    "imageUrl": "https://tshop.r10s.jp/canpanera/cabinet/item230/item_b17467_0.jpg",
+    "badge": "10%OFF 実売特価"
+  },
+  {
+    "id": "gear-trail-light-ledlenser-neo3",
+    "sports": [
+      "trail",
+      "adventure"
+    ],
+    "gearType": "ヘッドライト",
+    "matchKeywords": [
+      "ヘッドライト",
+      "レッドレンザー",
+      "LEDLENSER",
+      "NEO3"
+    ],
+    "title": "Ledlenser NEO3 トレイルランニングライト (単4電池×3 / 広角照射)",
+    "brand": "Ledlenser",
+    "standardTitle": "【ドイツ光学工学】ワイドビームで足元から遠方まで均一に照らし、夜間の下り坂でも段差を鮮明に見極められる。",
+    "standardUrl": "https://item.rakuten.co.jp/gramsky/b0bgkzbz2y",
+    "dealKeyword": "レッドレンザー NEO3",
+    "price": 12100,
+    "originalPrice": 12100,
+    "discountRate": 0,
+    "pointRate": 10,
+    "dealUrl": "https://item.rakuten.co.jp/gramsky/b0bgkzbz2y",
+    "imageUrl": "https://tshop.r10s.jp/gramsky/cabinet/09618175/b0bgkzbz2y.jpg",
+    "badge": "公式定番"
+  },
+  {
+    "id": "gear-trail-wear-c3fit-goldwin",
+    "sports": [
+      "trail",
+      "marathon"
+    ],
+    "gearType": "サポートタイツ",
+    "matchKeywords": [
+      "サポートタイツ",
+      "タイツ",
+      "C3fit",
+      "ゴールドウイン",
+      "コンプレッション"
+    ],
+    "title": "Goldwin C3fit レディース スポーツタイツ (段階着圧コンプレッション)",
+    "brand": "Goldwin (C3fit)",
+    "standardTitle": "【カテゴリ最安60%OFF】独自の立体設計と段階着圧で血行を促進しむくみ・疲労を軽減。肌あたりがフラットで擦れを防ぐ。",
+    "standardUrl": "https://item.rakuten.co.jp/auc-bestsports/c3fit-gcw04351",
+    "dealKeyword": "C3fit スポーツタイツ",
+    "price": 11440,
+    "originalPrice": 28600,
+    "discountRate": 60,
+    "pointRate": 10,
+    "dealUrl": "https://item.rakuten.co.jp/auc-bestsports/c3fit-gcw04351",
+    "imageUrl": "https://tshop.r10s.jp/auc-bestsports/cabinet/goldwin/gcw04351.jpg",
+    "badge": "🔥 60%OFF 半額以下",
+    "isBestDeal": true
+  },
+  {
+    "id": "gear-trail-wear-cwx-expert-ladies",
+    "sports": [
+      "trail",
+      "marathon"
+    ],
+    "gearType": "サポートタイツ",
+    "matchKeywords": [
+      "サポートタイツ",
+      "タイツ",
+      "CW-X",
+      "ワコール",
+      "レディース",
+      "女性用"
+    ],
+    "title": "CW-X ワコール レディース スポーツレギンス エキスパート (女性用)",
+    "brand": "CW-X (ワコール)",
+    "standardTitle": "女性の骨盤・大腿・膝をしっかり安定。長時間のウォーキング・トレランで脚運びを力強くアシスト。",
+    "standardUrl": "https://item.rakuten.co.jp/shirohato/40hxy499",
+    "dealKeyword": "CW-X エキスパート レディース",
+    "price": 8800,
+    "originalPrice": 14194,
+    "discountRate": 38,
+    "pointRate": 10,
+    "dealUrl": "https://item.rakuten.co.jp/shirohato/40hxy499",
+    "imageUrl": "https://tshop.r10s.jp/shirohato/cabinet/402008/40hxy499_1.jpg",
+    "badge": "38%OFF 特価"
+  },
+  {
+    "id": "gear-trail-wear-cwx-expert-mens",
+    "sports": [
+      "trail",
+      "marathon"
+    ],
+    "gearType": "サポートタイツ",
+    "matchKeywords": [
+      "サポートタイツ",
+      "タイツ",
+      "CW-X",
+      "ワコール",
+      "テーピング",
+      "ひざ"
+    ],
+    "title": "CW-X ワコール メンズ エキスパートモデル3.0 (ひざ・股関節サポート)",
+    "brand": "CW-X (ワコール)",
+    "standardTitle": "下り坂の着地衝撃から膝関節を守るテーピング構造。長距離の足の残りが劇的に変わる定番サポートタイツ。",
+    "standardUrl": "https://item.rakuten.co.jp/ranfan/cwx-hxo499",
+    "dealKeyword": "CW-X エキスパートモデル メンズ",
+    "price": 12870,
+    "originalPrice": 17392,
+    "discountRate": 26,
+    "pointRate": 10,
+    "dealUrl": "https://item.rakuten.co.jp/ranfan/cwx-hxo499",
+    "imageUrl": "https://tshop.r10s.jp/ranfan/cabinet/02856425/08272551/hxo499_main.jpg",
+    "badge": "26%OFF 特価"
+  },
+  {
+    "id": "gear-trail-wear-c3fit-tights",
+    "sports": [
+      "trail",
+      "marathon"
+    ],
+    "gearType": "サポートタイツ",
+    "matchKeywords": [
+      "サポートタイツ",
+      "C3fit",
+      "インパクトエアー"
+    ],
+    "title": "C3fit インパクトエアー ロングタイツ (3F14127 / 最軽量サポート)",
+    "brand": "C3fit",
+    "standardTitle": "【膝腰サポートの金字塔】着心地の軽さと強力なテーピングサポートを両立。後半の下り坂でも脚が残る。",
+    "standardUrl": "https://item.rakuten.co.jp/auc-bestsports/3fw14127/",
+    "dealKeyword": "C3fit インパクトエアー",
+    "price": 11880,
+    "originalPrice": 14850,
+    "discountRate": 20,
+    "pointRate": 10,
+    "dealUrl": "https://item.rakuten.co.jp/auc-bestsports/3fw14127/",
+    "imageUrl": "https://shop.r10s.jp/2-kobeya/cabinet/goldwin/3f14127.jpg",
+    "badge": "定番実売特価"
+  },
+  {
+    "id": "gear-trail-wear-tnf-drycrew",
+    "sports": [
+      "trail",
+      "marathon",
+      "adventure"
+    ],
+    "gearType": "アンダーウェア",
+    "matchKeywords": [
+      "アンダーウェア",
+      "ノースフェイス",
+      "ドライクルー",
+      "ベースレイヤー"
+    ],
+    "title": "THE NORTH FACE ロングスリーブ ドライクルー (NU62401 吸汗速乾)",
+    "brand": "THE NORTH FACE",
+    "standardTitle": "【カテゴリ最安30%OFF】疎水性ファイバー採用で汗を肌面から瞬時に外側へ放出。肌を常にサラサラに保ち汗冷えを徹底ブロック。",
+    "standardUrl": "https://item.rakuten.co.jp/sakaiya/202501271600-o-nu62401",
+    "dealKeyword": "ノースフェイス ロングスリーブドライクルー",
+    "price": 3696,
+    "originalPrice": 5280,
+    "discountRate": 30,
+    "pointRate": 10,
+    "dealUrl": "https://item.rakuten.co.jp/sakaiya/202501271600-o-nu62401",
+    "imageUrl": "https://tshop.r10s.jp/sakaiya/cabinet/northface/nu62401_1.jpg",
+    "badge": "🔥 30%OFF 最安特価",
+    "isBestDeal": true
+  },
+  {
+    "id": "gear-trail-wear-mil-drynamic",
+    "sports": [
+      "trail",
+      "cycling",
+      "adventure",
+      "marathon"
+    ],
+    "gearType": "アンダーウェア",
+    "matchKeywords": [
+      "アンダーウェア",
+      "ミレー",
+      "MILLET",
+      "ドライナミック"
+    ],
+    "title": "MILLET ドライナミック メッシュ NS クルー Men's (MIV01248)",
+    "brand": "MILLET (ミレー)",
+    "standardTitle": "【汗冷え根絶アンダー】網シャツ構造で汗を素早く吸い上げ肌を常にドライに維持。",
+    "standardUrl": "https://item.rakuten.co.jp/sportsmario2/i06mjmiv01248/",
+    "dealKeyword": "ミレー ドライナミック メッシュ",
+    "price": 4665,
+    "originalPrice": 5183,
+    "discountRate": 10,
+    "pointRate": 1,
+    "dealUrl": "https://item.rakuten.co.jp/sportsmario2/i06mjmiv01248/",
+    "imageUrl": "https://shop.r10s.jp/sportsmario2/cabinet/evidence_20250822/i06mjmiv01248_1.jpg",
+    "badge": "10%OFF 実売特価"
+  },
+  {
+    "id": "gear-trail-wear-finetrack-dry",
+    "sports": [
+      "trail",
+      "adventure"
+    ],
+    "gearType": "アンダーウェア",
+    "matchKeywords": [
+      "アンダーウェア",
+      "ファイントラック",
+      "ドライレイヤー"
+    ],
+    "title": "finetrack ドライレイヤー ベーシック ロングスリーブ (FUM0421)",
+    "brand": "finetrack",
+    "standardTitle": "【国内山岳の最高峰スキン】耐久撥水加工により汗の逆流を完全に防ぎ、低体温症のリスクを劇的に軽減する必携インナー。",
+    "standardUrl": "https://item.rakuten.co.jp/niche-express/ftr00000002827",
+    "dealKeyword": "ファイントラック ドライレイヤー ベーシック",
+    "price": 6127,
+    "originalPrice": 6127,
+    "discountRate": 0,
+    "pointRate": 1,
+    "dealUrl": "https://item.rakuten.co.jp/niche-express/ftr00000002827",
+    "imageUrl": "https://tshop.r10s.jp/niche-express/cabinet/ftr01/ftr00000002827_1.jpg",
+    "badge": "必携定番"
+  },
+  {
+    "id": "gear-marathon-socks-5toe-grip",
+    "sports": [
+      "marathon",
+      "trail"
+    ],
+    "gearType": "ランニングソックス",
+    "matchKeywords": [
+      "ソックス",
+      "靴下",
+      "5本指",
+      "グリップソックス"
+    ],
+    "title": "高グリップ 5本指 ランニングソックス (立体足底アーチサポート)",
+    "brand": "SPORT-RUN",
+    "standardTitle": "【カテゴリ最安30%OFF】足指が自由に動いて地面を強くグリップ。シリコン滑り止めでシューズ内のズレを解消。",
+    "standardUrl": "https://item.rakuten.co.jp/funtastic/sprz006",
+    "dealKeyword": "ランニングソックス 5本指 滑り止め",
+    "price": 1890,
+    "originalPrice": 2700,
+    "discountRate": 30,
+    "pointRate": 10,
+    "dealUrl": "https://item.rakuten.co.jp/funtastic/sprz006",
+    "imageUrl": "https://tshop.r10s.jp/funtastic/cabinet/compass1700632598.jpg",
+    "badge": "🔥 30%OFF 最安特価",
+    "isBestDeal": true
+  },
+  {
+    "id": "gear-marathon-socks-injinji-mini",
+    "sports": [
+      "trail",
+      "marathon"
+    ],
+    "gearType": "ランニングソックス",
+    "matchKeywords": [
+      "インジンジ",
+      "injinji",
+      "トレイルMW"
+    ],
+    "title": "injinji トレイル ミッドウェイト ミニクルー 5本指 (クールマックス)",
+    "brand": "injinji",
+    "standardTitle": "【トレイルランナー愛用率No.1】靴擦れとマメを完全に防ぐ独立指構造。足裏のクッションパイルで長距離でも疲れない。",
+    "standardUrl": "https://item.rakuten.co.jp/auroralodge-r/24ss-213130",
+    "dealKeyword": "インジンジ トレイル ミッドウェイト ミニクルー",
+    "price": 2200,
+    "originalPrice": 2200,
+    "discountRate": 0,
+    "pointRate": 1,
+    "dealUrl": "https://item.rakuten.co.jp/auroralodge-r/24ss-213130",
+    "imageUrl": "https://tshop.r10s.jp/auroralodge-r/cabinet/08852335/24ss-213130-1.jpg",
+    "badge": "トレイル定番"
+  },
+  {
+    "id": "gear-marathon-socks-injinji-crew",
+    "sports": [
+      "trail",
+      "adventure"
+    ],
+    "gearType": "ランニングソックス",
+    "matchKeywords": [
+      "インジンジ",
+      "クルー丈",
+      "砂利侵入防止"
+    ],
+    "title": "injinji トレイル ミッドウェイト クルー 5本指 (足首小石ガード)",
+    "brand": "injinji",
+    "standardTitle": "クルー丈でトレイルの小石や小枝の侵入をシャットアウト。ゲイターなしでも安心して山を駆け抜けられる。",
+    "standardUrl": "https://item.rakuten.co.jp/auroralodge-r/24ss-213170",
+    "dealKeyword": "インジンジ トレイル ミッドウェイト クルー",
+    "price": 2310,
+    "originalPrice": 2310,
+    "discountRate": 0,
+    "pointRate": 1,
+    "dealUrl": "https://item.rakuten.co.jp/auroralodge-r/24ss-213170",
+    "imageUrl": "https://tshop.r10s.jp/auroralodge-r/cabinet/08852335/24ss-213170-1.jpg",
+    "badge": "山岳定番"
+  },
+  {
     "id": "gear-marathon-socks-tabio",
     "sports": [
       "marathon",
       "trail"
     ],
-    "gearType": "ソックス",
+    "gearType": "ランニングソックス",
     "matchKeywords": [
       "ソックス",
       "靴下",
@@ -707,7 +941,61 @@
     "pointRate": 1,
     "dealUrl": "https://item.rakuten.co.jp/kemari87/072120037-8/",
     "imageUrl": "https://shop.r10s.jp/kemari87/cabinet/other5/072120037-8.jpg",
-    "badge": "必携定番"
+    "badge": "国内支持率No.1"
+  },
+  {
+    "id": "gear-nutrition-aminovital-pro",
+    "sports": [
+      "marathon",
+      "trail",
+      "cycling"
+    ],
+    "gearType": "補給食・エナジージェル",
+    "matchKeywords": [
+      "アミノバイタル",
+      "アミノ酸",
+      "BCAA",
+      "回復"
+    ],
+    "title": "味の素 アミノバイタル プロ 3800mg (BCAA配合・筋肉疲労軽減)",
+    "brand": "味の素",
+    "standardTitle": "【カテゴリ最安20%OFF】必須アミノ酸BCAA＋グルタミンを高配合。レース前後の摂取で翌日の筋肉痛を大幅に抑える定番サプリ。",
+    "standardUrl": "https://item.rakuten.co.jp/enigumachan22/4901001577538-7",
+    "dealKeyword": "アミノバイタル プロ 3800mg",
+    "price": 2168,
+    "originalPrice": 2710,
+    "discountRate": 20,
+    "pointRate": 10,
+    "dealUrl": "https://item.rakuten.co.jp/enigumachan22/4901001577538-7",
+    "imageUrl": "https://tshop.r10s.jp/enigumachan22/cabinet/compass1626248674.jpg",
+    "badge": "🔥 20%OFF 最安特価",
+    "isBestDeal": true
+  },
+  {
+    "id": "gear-nutrition-medalist-set",
+    "sports": [
+      "marathon",
+      "trail",
+      "cycling"
+    ],
+    "gearType": "補給食・エナジージェル",
+    "matchKeywords": [
+      "メダリスト",
+      "エナジージェル",
+      "クエン酸"
+    ],
+    "title": "MEDALIST エナジージェル 4種アソートパック (クエン酸・高カロリー)",
+    "brand": "MEDALIST (メダリスト)",
+    "standardTitle": "リンゴ・ブドウ・グレープフルーツ・コーヒーの4フレーバー。美味しく飲みやすい天然果汁配合の急速エネルギー補給。",
+    "standardUrl": "https://item.rakuten.co.jp/ishikawasports/medalist-energygel-4",
+    "dealKeyword": "メダリスト エナジージェル 4袋",
+    "price": 2300,
+    "originalPrice": 2300,
+    "discountRate": 0,
+    "pointRate": 1,
+    "dealUrl": "https://item.rakuten.co.jp/ishikawasports/medalist-energygel-4",
+    "imageUrl": "https://tshop.r10s.jp/ishikawasports/cabinet/09618175/medalist-4.jpg",
+    "badge": "補給食人気"
   },
   {
     "id": "gear-nutrition-magon-gel",
@@ -717,7 +1005,7 @@
       "cycling",
       "adventure"
     ],
-    "gearType": "補給食・ジェル",
+    "gearType": "補給食・エナジージェル",
     "matchKeywords": [
       "補給食",
       "エナジージェル",
@@ -736,7 +1024,244 @@
     "pointRate": 1,
     "dealUrl": "https://item.rakuten.co.jp/lafitte/magon-energygel-set/",
     "imageUrl": "https://shop.r10s.jp/lafitte/cabinet/19ss_keleme_01/1baa78ee55d355a8dc_1.jpg",
-    "badge": "公式定番 推奨"
+    "badge": "足攣り防止No.1"
+  },
+  {
+    "id": "gear-marathon-pouch-shakefree",
+    "sports": [
+      "marathon",
+      "trail"
+    ],
+    "gearType": "ウエストポーチ",
+    "matchKeywords": [
+      "ウエストポーチ",
+      "ポーチ",
+      "揺れない",
+      "ランニングポーチ",
+      "スマホ"
+    ],
+    "title": "揺れない ランニングウエストポーチ (大型スマホ・ジェル収納 / 防水防汗)",
+    "brand": "RUN-FIT",
+    "standardTitle": "【カテゴリ最安30%OFF】体にピタッと密着し走っても上下に揺れない伸縮ベルト。補給食ジェルやスマホをスマートに携帯可能。",
+    "standardUrl": "https://item.rakuten.co.jp/funtastic/spbg002",
+    "dealKeyword": "揺れない ランニングポーチ",
+    "price": 1690,
+    "originalPrice": 2414,
+    "discountRate": 30,
+    "pointRate": 10,
+    "dealUrl": "https://item.rakuten.co.jp/funtastic/spbg002",
+    "imageUrl": "https://tshop.r10s.jp/funtastic/cabinet/compass1700632598.jpg",
+    "badge": "🔥 30%OFF 最安特価",
+    "isBestDeal": true
+  },
+  {
+    "id": "gear-marathon-pouch-salomon-pulse",
+    "sports": [
+      "trail",
+      "marathon"
+    ],
+    "gearType": "ウエストポーチ",
+    "matchKeywords": [
+      "サロモン",
+      "パルスベルト",
+      "PULSE BELT"
+    ],
+    "title": "SALOMON PULSE Belt (通気メッシュ・フラスク500ml収納可)",
+    "brand": "SALOMON",
+    "standardTitle": "ウエスト周りを包み込むチューブ型ベルト。500mlソフトフラスクやウィンドシェルもすっぽり収まる。",
+    "standardUrl": "https://item.rakuten.co.jp/yanosp-fineplay/lc2179800",
+    "dealKeyword": "サロモン パルスベルト",
+    "price": 3850,
+    "originalPrice": 4277,
+    "discountRate": 10,
+    "pointRate": 10,
+    "dealUrl": "https://item.rakuten.co.jp/yanosp-fineplay/lc2179800",
+    "imageUrl": "https://tshop.r10s.jp/yanosp-fineplay/cabinet/salomon/lc2179800.jpg",
+    "badge": "10%OFF 特価"
+  },
+  {
+    "id": "gear-marathon-pouch-nathan-hip",
+    "sports": [
+      "marathon",
+      "trail"
+    ],
+    "gearType": "ウエストポーチ",
+    "matchKeywords": [
+      "ネイサン",
+      "ヒップスター",
+      "NATHAN"
+    ],
+    "title": "NATHAN ヒップスター (4ポケット仕様・スマホ＆キーホルダー)",
+    "brand": "NATHAN",
+    "standardTitle": "前後左右4箇所のポケットで小分け収納が完璧。段差でも中身が跳ねないタイトフィット。",
+    "standardUrl": "https://item.rakuten.co.jp/himaraya/0000000859362",
+    "dealKeyword": "ネイサン ヒップスター",
+    "price": 3663,
+    "originalPrice": 3663,
+    "discountRate": 0,
+    "pointRate": 1,
+    "dealUrl": "https://item.rakuten.co.jp/himaraya/0000000859362",
+    "imageUrl": "https://tshop.r10s.jp/himaraya/cabinet/0000000859a/0000000859362_r1_01.jpg",
+    "badge": "定番人気"
+  },
+  {
+    "id": "gear-marathon-pouch-yurenikui",
+    "sports": [
+      "marathon",
+      "trail"
+    ],
+    "gearType": "ウエストポーチ",
+    "matchKeywords": [
+      "YURENIKUI",
+      "ボトルポーチ",
+      "揺れない"
+    ],
+    "title": "YURENIKUI スタンダード (ボトルが揺れない独自立体ホールド)",
+    "brand": "YURENIKUI (ユレニクイ)",
+    "standardTitle": "【元祖揺れないボトルポーチ】背面にボトル、前面に大容量ポケット。フルマラソン完走ランナーの絶大な支持。",
+    "standardUrl": "https://item.rakuten.co.jp/runwalk/10000190/",
+    "dealKeyword": "YURENIKUI スタンダード",
+    "price": 7390,
+    "originalPrice": 7390,
+    "discountRate": 0,
+    "pointRate": 1,
+    "dealUrl": "https://item.rakuten.co.jp/runwalk/10000190/",
+    "imageUrl": "https://shop.r10s.jp/runwalk/cabinet/biiino/item/main-image/20220923191309_1.jpg",
+    "badge": "ボトル携帯定番"
+  },
+  {
+    "id": "gear-firstaid-kit-21set",
+    "sports": [
+      "trail",
+      "adventure"
+    ],
+    "gearType": "エマージェンシー・救急",
+    "matchKeywords": [
+      "ファーストエイド",
+      "エイドキット",
+      "救急セット",
+      "防水バッグ"
+    ],
+    "title": "アウトドア救急セット 防水エイドキット 21種類 (山岳レース必携品完全網羅)",
+    "brand": "SAFETY-MED",
+    "standardTitle": "【カテゴリ最安25%OFF】包帯、滅菌ガーゼ、テーピング、ピンセットなど大会必携救急品を防水ポーチに完全セット。",
+    "standardUrl": "https://item.rakuten.co.jp/multibox/lw6yf4yaiev4l7j3v3p545st2a",
+    "dealKeyword": "救急セット 防水 携帯用 エイドキット 21種類",
+    "price": 3175,
+    "originalPrice": 4233,
+    "discountRate": 25,
+    "pointRate": 10,
+    "dealUrl": "https://item.rakuten.co.jp/multibox/lw6yf4yaiev4l7j3v3p545st2a",
+    "imageUrl": "https://tshop.r10s.jp/multibox/cabinet/09618175/lw6yf4yaiev4l7j3v3p545st2a.jpg",
+    "badge": "🔥 25%OFF 最安特価",
+    "isBestDeal": true
+  },
+  {
+    "id": "gear-firstaid-poison-remover",
+    "sports": [
+      "trail",
+      "adventure"
+    ],
+    "gearType": "エマージェンシー・救急",
+    "matchKeywords": [
+      "ポイズンリムーバー",
+      "虫刺され",
+      "毒抜き",
+      "ブヨ",
+      "ハチ"
+    ],
+    "title": "吸引維持ロック付 ポイズンリムーバー SUCTION-X (片手操作可能)",
+    "brand": "SUCTION-X",
+    "standardTitle": "ハチ・アブ・ブヨ・毒虫に刺された際の緊急毒吸出し器。ロック機能付きで手を離しても強力吸引を持続。",
+    "standardUrl": "https://item.rakuten.co.jp/tokyo-tools/suction-x",
+    "dealKeyword": "ポイズンリムーバー 吸引維持",
+    "price": 1100,
+    "originalPrice": 1100,
+    "discountRate": 0,
+    "pointRate": 1,
+    "dealUrl": "https://item.rakuten.co.jp/tokyo-tools/suction-x",
+    "imageUrl": "https://tshop.r10s.jp/tokyo-tools/cabinet/09618175/suction-x.jpg",
+    "badge": "山岳必携"
+  },
+  {
+    "id": "gear-trail-bivvy-sol-escape",
+    "sports": [
+      "trail",
+      "adventure"
+    ],
+    "gearType": "エマージェンシー・救急",
+    "matchKeywords": [
+      "エマージェンシー",
+      "ヴィヴィ",
+      "SOL",
+      "エスケープヴィヴィ",
+      "サバイバルシート"
+    ],
+    "title": "SOL エスケープヴィヴィ (12416 / 成人男性対応サイズ)",
+    "brand": "SOL (ソル)",
+    "standardTitle": "【透湿エマージェンシー定番】内部の湿気を逃がし結露を防ぐ高機能アルミヴィヴィ。",
+    "standardUrl": "https://item.rakuten.co.jp/canpanera/s23005/",
+    "dealKeyword": "SOL エスケープヴィヴィ",
+    "price": 12870,
+    "originalPrice": 12870,
+    "discountRate": 0,
+    "pointRate": 1,
+    "dealUrl": "https://item.rakuten.co.jp/canpanera/s23005/",
+    "imageUrl": "https://shop.r10s.jp/canpanera/cabinet/item209/item_s23005_0.jpg",
+    "badge": "世界共通必携"
+  },
+  {
+    "id": "gear-ar-mapcase-sealline-std",
+    "sports": [
+      "adventure",
+      "rogaining"
+    ],
+    "gearType": "読図・コンパス・マップ",
+    "matchKeywords": [
+      "マップケース",
+      "シートゥサミット",
+      "読図",
+      "防水"
+    ],
+    "title": "SEA TO SUMMIT ウォータープルーフ マップケース (透明TPU・防塵防水)",
+    "brand": "SEA TO SUMMIT",
+    "standardTitle": "【カテゴリ最安読図ギア】紫外線にも強いクリアTPU素材。首掛けストラップ付きで走りながら瞬時に地図確認が可能。",
+    "standardUrl": "https://item.rakuten.co.jp/e-lodge-2/lst2-st83221",
+    "dealKeyword": "シートゥサミット マップケース",
+    "price": 3300,
+    "originalPrice": 3300,
+    "discountRate": 0,
+    "pointRate": 10,
+    "dealUrl": "https://item.rakuten.co.jp/e-lodge-2/lst2-st83221",
+    "imageUrl": "https://tshop.r10s.jp/e-lodge-2/cabinet/lst2/lst2-st83221.jpg",
+    "badge": "🔥 読図定番最安",
+    "isBestDeal": true
+  },
+  {
+    "id": "gear-ar-compass-suunto-sk8",
+    "sports": [
+      "adventure",
+      "rogaining"
+    ],
+    "gearType": "読図・コンパス・マップ",
+    "matchKeywords": [
+      "スント",
+      "SUUNTO",
+      "コンパス",
+      "リストコンパス"
+    ],
+    "title": "SUUNTO リストコンパス (腕時計バンド装着型・高速安定磁針)",
+    "brand": "SUUNTO (スント)",
+    "standardTitle": "腕に装着できるため両手をフリーにしてMTBハンドルやトレッキングポールを握ったまま方位角を確認できる。",
+    "standardUrl": "https://item.rakuten.co.jp/mic21/2410803001",
+    "dealKeyword": "スント リストコンパス",
+    "price": 12155,
+    "originalPrice": 12155,
+    "discountRate": 0,
+    "pointRate": 1,
+    "dealUrl": "https://item.rakuten.co.jp/mic21/2410803001",
+    "imageUrl": "https://tshop.r10s.jp/mic21/cabinet/compass1/1101032001.jpg",
+    "badge": "高機能モデル"
   },
   {
     "id": "gear-ar-compass-silva-no3",
@@ -745,7 +1270,7 @@
       "rogaining",
       "trail"
     ],
-    "gearType": "コンパス",
+    "gearType": "読図・コンパス・マップ",
     "matchKeywords": [
       "コンパス",
       "方位磁石",
@@ -765,61 +1290,165 @@
     "pointRate": 1,
     "dealUrl": "https://item.rakuten.co.jp/shop-senjin/73010000/",
     "imageUrl": "https://shop.r10s.jp/shop-senjin/cabinet/other/imgrc0089499110.jpg",
-    "badge": "必携定番"
+    "badge": "世界標準機"
   },
   {
-    "id": "gear-trail-bivvy-sol-escape",
+    "id": "gear-ar-sacoche-waterproof",
     "sports": [
-      "trail",
-      "adventure"
+      "adventure",
+      "trail"
     ],
-    "gearType": "エマージェンシー用品",
+    "gearType": "防水スタッフバッグ",
     "matchKeywords": [
-      "エマージェンシー",
-      "ヴィヴィ",
-      "SOL",
-      "エスケープヴィヴィ",
-      "サバイバルシート"
+      "防水バッグ",
+      "ドライバッグ",
+      "サコッシュ",
+      "完全防水",
+      "IPX7"
     ],
-    "title": "SOL エスケープヴィヴィ (12416 / 成人男性対応サイズ)",
-    "brand": "SOL (ソル)",
-    "standardTitle": "【透湿エマージェンシー定番】内部の湿気を逃がし結露を防ぐ高機能アルミヴィヴィ。",
-    "standardUrl": "https://item.rakuten.co.jp/canpanera/s23005/",
-    "dealKeyword": "SOL エスケープヴィヴィ",
-    "price": 12870,
-    "originalPrice": 12870,
+    "title": "高密閉 完全防水サコッシュ＆ドライバッグ (IPX7水没耐性 / ロール密閉)",
+    "brand": "AQUA-SEAL",
+    "standardTitle": "【カテゴリ最安30%OFF】雨天レース・渡渉・カヌーでも電子機器や地図、必携医療品を水濡れから100%保護する高気密ポーチ。",
+    "standardUrl": "https://item.rakuten.co.jp/hzll/fsb-m816",
+    "dealKeyword": "完全防水 サコッシュ ドライバッグ",
+    "price": 2580,
+    "originalPrice": 3686,
+    "discountRate": 30,
+    "pointRate": 10,
+    "dealUrl": "https://item.rakuten.co.jp/hzll/fsb-m816",
+    "imageUrl": "https://tshop.r10s.jp/hzll/cabinet/09689408/fsb-m816.jpg",
+    "badge": "🔥 30%OFF 最安特価",
+    "isBestDeal": true
+  },
+  {
+    "id": "gear-ar-drybag-seatosummit-ultra",
+    "sports": [
+      "adventure",
+      "trail"
+    ],
+    "gearType": "防水スタッフバッグ",
+    "matchKeywords": [
+      "シートゥサミット",
+      "ウルトラシル",
+      "ドライサック"
+    ],
+    "title": "SEA TO SUMMIT ウルトラシル ドライサック 8L (超軽量シリコンコーデュラ)",
+    "brand": "SEA TO SUMMIT",
+    "standardTitle": "わずか30g。着替えやダウンジャケットを圧縮してザック内のスペースを最大化する超軽量ドライバッグ。",
+    "standardUrl": "https://item.rakuten.co.jp/e-lodge-2/lst-st83372",
+    "dealKeyword": "シートゥサミット ウルトラシルドライバッグ",
+    "price": 4180,
+    "originalPrice": 4180,
     "discountRate": 0,
     "pointRate": 1,
-    "dealUrl": "https://item.rakuten.co.jp/canpanera/s23005/",
-    "imageUrl": "https://shop.r10s.jp/canpanera/cabinet/item209/item_s23005_0.jpg",
-    "badge": "必携定番"
+    "dealUrl": "https://item.rakuten.co.jp/e-lodge-2/lst-st83372",
+    "imageUrl": "https://tshop.r10s.jp/e-lodge-2/cabinet/lst/lst-st83372.jpg",
+    "badge": "超軽量必携"
   },
   {
-    "id": "gear-cycle-tool-topeak-mini",
+    "id": "gear-ar-drybag-seatosummit-20l",
+    "sports": [
+      "adventure",
+      "trail"
+    ],
+    "gearType": "防水スタッフバッグ",
+    "matchKeywords": [
+      "シートゥサミット",
+      "ビッグリバー",
+      "20L"
+    ],
+    "title": "SEA TO SUMMIT Evac ドライバッグ 20L (eVent透湿底部・空気抜け圧縮)",
+    "brand": "SEA TO SUMMIT",
+    "standardTitle": "底面にeVent防水透湿素材を使用。空気を外へ押し出しながらロールダウンできるバルブ不要の圧縮ドライバッグ。",
+    "standardUrl": "https://item.rakuten.co.jp/canpanera/s07062",
+    "dealKeyword": "シートゥサミット Evacドライバッグ",
+    "price": 5060,
+    "originalPrice": 5060,
+    "discountRate": 0,
+    "pointRate": 1,
+    "dealUrl": "https://item.rakuten.co.jp/canpanera/s07062",
+    "imageUrl": "https://tshop.r10s.jp/canpanera/cabinet/item237/item_s07062_0.jpg",
+    "badge": "大容量定番"
+  },
+  {
+    "id": "gear-cycle-light-cateye-el145",
     "sports": [
       "cycling",
       "adventure"
     ],
-    "gearType": "携帯工具",
+    "gearType": "サイクル用品",
     "matchKeywords": [
-      "携帯工具",
-      "マルチツール",
+      "サイクルライト",
+      "自転車ライト",
+      "キャットアイ",
+      "CATEYE",
+      "LED"
+    ],
+    "title": "CAT EYE hl-el145 LEDフロントライト (JIS規格適合 / 長時間点灯)",
+    "brand": "CATEYE",
+    "standardTitle": "【カテゴリ最安60%OFF】単3電池2本で点灯30時間、点滅250時間の圧倒的スタミナ。夜間走行やブルベ、アドベンチャーMTBのサブライトに最適。",
+    "standardUrl": "https://item.rakuten.co.jp/auc-bestsports/hl-el145",
+    "dealKeyword": "キャットアイ hl-el145",
+    "price": 1771,
+    "originalPrice": 4428,
+    "discountRate": 60,
+    "pointRate": 10,
+    "dealUrl": "https://item.rakuten.co.jp/auc-bestsports/hl-el145",
+    "imageUrl": "https://tshop.r10s.jp/auc-bestsports/cabinet/cateye/hl-el145.jpg",
+    "badge": "🔥 60%OFF 半額以下",
+    "isBestDeal": true
+  },
+  {
+    "id": "gear-cycle-helmet-road-light",
+    "sports": [
+      "cycling"
+    ],
+    "gearType": "サイクル用品",
+    "matchKeywords": [
+      "ヘルメット",
+      "自転車ヘルメット",
+      "ロードバイク",
+      "通気性",
+      "軽量"
+    ],
+    "title": "ロードバイク 自転車ヘルメット (高通気・一体成型 / 56〜63cm)",
+    "brand": "AIR-HELMET",
+    "standardTitle": "風抜けの良いエアロベンチレーション構造と超軽量設計。ダイヤル式アジャスターで頭部にジャストフィット。",
+    "standardUrl": "https://item.rakuten.co.jp/lifeideakan/m23",
+    "dealKeyword": "ロードバイク ヘルメット",
+    "price": 3580,
+    "originalPrice": 7956,
+    "discountRate": 55,
+    "pointRate": 10,
+    "dealUrl": "https://item.rakuten.co.jp/lifeideakan/m23",
+    "imageUrl": "https://tshop.r10s.jp/lifeideakan/cabinet/09618175/m23-1.jpg",
+    "badge": "55%OFF 半額以下"
+  },
+  {
+    "id": "gear-cycle-tool-topeak-xtool",
+    "sports": [
+      "cycling",
+      "adventure"
+    ],
+    "gearType": "サイクル用品",
+    "matchKeywords": [
       "トピーク",
       "TOPEAK",
-      "チェーンカッター"
+      "携帯ツール",
+      "六角レンチ"
     ],
-    "title": "TOPEAK ミニ 20 プロ (携帯マルチツール・高剛性20機能)",
-    "brand": "TOPEAK (トピーク)",
-    "standardTitle": "【サイクリング・MTB必携】チェーンツールまで備えた鍛造アルミボディの定番携帯マルチツール。",
-    "standardUrl": "https://item.rakuten.co.jp/trycycle/top-tol21800/",
-    "dealKeyword": "TOPEAK ミニ 20 プロ",
-    "price": 5500,
-    "originalPrice": 5500,
-    "discountRate": 0,
-    "pointRate": 1,
-    "dealUrl": "https://item.rakuten.co.jp/trycycle/top-tol21800/",
-    "imageUrl": "https://shop.r10s.jp/trycycle/cabinet/topeak/top-tol21800.jpg",
-    "badge": "必携定番"
+    "title": "TOPEAK X-Tool+ 11機能 携帯マルチツール (クロムバナジウム鋼)",
+    "brand": "TOPEAK",
+    "standardTitle": "【20%OFF特価】パンク修理やサドル調整に必要なアーレンキーとドライバーをコンパクトに集約した手のひらサイズ工具。",
+    "standardUrl": "https://item.rakuten.co.jp/powerpit/10005935",
+    "dealKeyword": "トピーク X-Tool+",
+    "price": 2035,
+    "originalPrice": 2543,
+    "discountRate": 20,
+    "pointRate": 10,
+    "dealUrl": "https://item.rakuten.co.jp/powerpit/10005935",
+    "imageUrl": "https://tshop.r10s.jp/powerpit/cabinet/03649534/10005935.jpg",
+    "badge": "20%OFF 特価"
   },
   {
     "id": "gear-cycle-bottle-camelbak",
@@ -827,7 +1456,7 @@
       "cycling",
       "trail"
     ],
-    "gearType": "ボトル",
+    "gearType": "サイクル用品",
     "matchKeywords": [
       "サイクルボトル",
       "ボトル",
@@ -837,7 +1466,7 @@
     ],
     "title": "CAMELBAK ポディウム チル 21oz 620ml (保冷サイクルボトル)",
     "brand": "CAMELBAK (キャメルバック)",
-    "standardTitle": "【夏場必携】通常の2倍の保冷力を誇る二重構造。軽く握るだけで素早く給水できるJetValve採用。",
+    "standardTitle": "【保冷ボトル定番】通常の2倍の保冷力を誇る二重構造。軽く握るだけで素早く給水できるJetValve採用。",
     "standardUrl": "https://item.rakuten.co.jp/worldcycle/cml-u-065941/",
     "dealKeyword": "CAMELBAK ポディウム チル",
     "price": 2970,
@@ -846,35 +1475,110 @@
     "pointRate": 1,
     "dealUrl": "https://item.rakuten.co.jp/worldcycle/cml-u-065941/",
     "imageUrl": "https://shop.r10s.jp/worldcycle/cabinet/itiran142/cml-u-065941.jpg",
-    "badge": "公式定番 推奨"
+    "badge": "保冷ボトル定番"
   },
   {
-    "id": "gear-trail-wear-mil-drynamic",
+    "id": "gear-marathon-shoes-asics-hyper6",
     "sports": [
-      "trail",
-      "cycling",
-      "adventure",
       "marathon"
     ],
-    "gearType": "ベースレイヤー",
+    "gearType": "ランニングシューズ",
     "matchKeywords": [
-      "ベースレイヤー",
-      "アンダーウェア",
-      "ミレー",
-      "MILLET",
-      "ドライナミック"
+      "ランニングシューズ",
+      "厚底",
+      "アシックス",
+      "ASICS",
+      "ハイパースピード",
+      "レーシング"
     ],
-    "title": "MILLET ドライナミック メッシュ NS クルー Men's (MIV01248)",
-    "brand": "MILLET (ミレー)",
-    "standardTitle": "【汗冷え根絶アンダー】網シャツ構造で汗を素早く吸い上げ肌を常にドライに維持。",
-    "standardUrl": "https://item.rakuten.co.jp/sportsmario2/i06mjmiv01248/",
-    "dealKeyword": "ミレー ドライナミック メッシュ",
-    "price": 4665,
-    "originalPrice": 5183,
+    "title": "ASICS HYPER SPEED 6 (超軽量レーシング / サブ3.5・インターバル対応)",
+    "brand": "ASICS",
+    "standardTitle": "【カテゴリ最安半額】優れた反発性と軽量性を両立。フルマラソン自己記録更新やスピード練習を支えるコストパフォーマンス抜群の一足。",
+    "standardUrl": "https://item.rakuten.co.jp/awaspo/xa-1013a237401",
+    "dealKeyword": "アシックス ハイパースピード",
+    "price": 10380,
+    "originalPrice": 20760,
+    "discountRate": 50,
+    "pointRate": 10,
+    "dealUrl": "https://item.rakuten.co.jp/awaspo/xa-1013a237401",
+    "imageUrl": "https://tshop.r10s.jp/awaspo/cabinet/item03/xa-1013a237401_1.jpg",
+    "badge": "🔥 50%OFF 半額最安",
+    "isBestDeal": true
+  },
+  {
+    "id": "gear-marathon-shoes-asics-sonoma",
+    "sports": [
+      "marathon",
+      "trail"
+    ],
+    "gearType": "ランニングシューズ",
+    "matchKeywords": [
+      "ランニングシューズ",
+      "トレランシューズ",
+      "アシックス",
+      "GEL",
+      "ゲルソノマ"
+    ],
+    "title": "ASICS GEL-SONOMA (GEL搭載・ロード＆トレイル両用ハイブリッド厚底)",
+    "brand": "ASICS",
+    "standardTitle": "かかと部のGELが着地ショックを吸収。舗装路から土のグラベルロードまで快適に走り抜けられる万能シューズ。",
+    "standardUrl": "https://item.rakuten.co.jp/murasaki-sports/m00124101030011",
+    "dealKeyword": "アシックス ゲルソノマ",
+    "price": 13200,
+    "originalPrice": 26400,
+    "discountRate": 50,
+    "pointRate": 10,
+    "dealUrl": "https://item.rakuten.co.jp/murasaki-sports/m00124101030011",
+    "imageUrl": "https://tshop.r10s.jp/murasaki-sports/cabinet/item0124/m00124101030011-01.jpg",
+    "badge": "50%OFF 半額"
+  },
+  {
+    "id": "gear-marathon-shoes-adizero",
+    "sports": [
+      "marathon"
+    ],
+    "gearType": "ランニングシューズ",
+    "matchKeywords": [
+      "アディダス",
+      "アディゼロ",
+      "ADIZERO",
+      "ランニング"
+    ],
+    "title": "adidas アディゼロ SL (Lightstrike Pro搭載 / テンポアップモデル)",
+    "brand": "adidas",
+    "standardTitle": "【10%OFF特価】トップモデルと同じLightstrike Proフォームを前足部に搭載。反発力と安定感を高いレベルで調和。",
+    "standardUrl": "https://item.rakuten.co.jp/step-sports/ki5716",
+    "dealKeyword": "アディダス アディゼロ SL",
+    "price": 7900,
+    "originalPrice": 8777,
     "discountRate": 10,
-    "pointRate": 1,
-    "dealUrl": "https://item.rakuten.co.jp/sportsmario2/i06mjmiv01248/",
-    "imageUrl": "https://shop.r10s.jp/sportsmario2/cabinet/evidence_20250822/i06mjmiv01248_1.jpg",
-    "badge": "10%OFF 実売特価"
+    "pointRate": 10,
+    "dealUrl": "https://item.rakuten.co.jp/step-sports/ki5716",
+    "imageUrl": "https://tshop.r10s.jp/step-sports/cabinet/shoes36/ki5716.jpg",
+    "badge": "10%OFF 特価"
+  },
+  {
+    "id": "gear-marathon-shoes-pegasus42",
+    "sports": [
+      "marathon"
+    ],
+    "gearType": "ランニングシューズ",
+    "matchKeywords": [
+      "ナイキ",
+      "ペガサス",
+      "ズーム"
+    ],
+    "title": "NIKE エア ズーム ペガサス 42 (ReactXフォーム搭載 / デイリートレーナー)",
+    "brand": "NIKE",
+    "standardTitle": "世界で最も売れているランニングシューズ。新ReactXフォームでエネルギーリターンが13%向上、耐久性も抜群。",
+    "standardUrl": "https://item.rakuten.co.jp/troishomme/pega42mns",
+    "dealKeyword": "ナイキ ペガサス 42",
+    "price": 21450,
+    "originalPrice": 21450,
+    "discountRate": 0,
+    "pointRate": 10,
+    "dealUrl": "https://item.rakuten.co.jp/troishomme/pega42mns",
+    "imageUrl": "https://tshop.r10s.jp/troishomme/cabinet/09618175/pega42mns.jpg",
+    "badge": "世界ベストセラー定番"
   }
 ]

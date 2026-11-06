@@ -70,6 +70,7 @@ export interface GearItem {
   dealUrl?: string;
   imageUrl?: string;
   badge?: string;
+  isBestDeal?: boolean;
 }
 
 export interface DealItem {
@@ -85,6 +86,7 @@ export interface DealItem {
   badge: string;
   updated_at: string;
   registered_at?: string; // 新規登録日時（登録後1〜2日間のNEWバッジ判定用）
+  isBestDeal?: boolean;
 }
 
 export type SortOption =
