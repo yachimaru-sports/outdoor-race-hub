@@ -84,7 +84,7 @@ jobs:
         run: |
           git config user.name "outdoor-race-hub-bot"
           git config user.email "bot@outdoor-race-hub.local"
-          git add src/data/events.json src/data/deals.json src/data/gears.json src/data/meta.json outdoor_race_hub_events_master.csv
+          git add src/data/events.json src/data/deals.json src/data/gears.json src/data/meta.json
           if ! git diff --staged --quiet; then
             git commit -m "chore(auto): 毎朝8時定期同期（装備は商品ページ実測・大会リンクはHTTP検証済み）"
             git pull --rebase origin main
