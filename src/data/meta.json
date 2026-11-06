@@ -1,7 +1,9 @@
 {
-  "last_updated_at": "2026-11-06T05:42:03.940Z",
+  "last_updated_at": "2026-11-06T15:04:12.435611+09:00",
   "events_count": 128,
   "deals_count": 32,
-  "gears_count": 59,
-  "sync_source": "Live Scraped 16 Full Categories (Verified 100% Direct Product Links)"
+  "gears_count": 58,
+  "sync_source": "Google Sheets & Rakuten API Automated Sync",
+  "gear_sync_source": "refresh_gears.mjs (商品ページ実測・画像HTTP200検証済)",
+  "gear_removed": []
 }

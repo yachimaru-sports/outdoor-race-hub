@@ -50,43 +50,62 @@ jobs:
           pip install -r requirements.txt
           npm ci
 
-      - name: "Step 1: Execute High-Precision Data Sync & Verification"
+      - name: "Step 1: 装備カタログ更新（商品ページ実測・画像/価格/割引率を実データで確定）"
+        id: gears
+        continue-on-error: true
         env:
           RAKUTEN_APP_ID: ${{ secrets.RAKUTEN_APP_ID }}
           RAKUTEN_AFFILIATE_ID: ${{ secrets.RAKUTEN_AFFILIATE_ID }}
+        run: node scripts/refresh_gears.mjs
+
+      - name: "Step 2: 大会データ同期・正規化（Python / スプレッドシート連携 / Gemini AI）"
+        env:
+          RAKUTEN_AFFILIATE_ID: ${{ secrets.RAKUTEN_AFFILIATE_ID }}
           GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          UPDATE_WEEKLY_TREND: ${{ github.event.inputs.update_trend || '' }}
         run: python scripts/sync_hub.py
 
-      - name: "Step 2: Assert Zero Duplicates in Race Database"
-        run: npm run check:duplicates
+      - name: "Step 3: 大会リンク自動修復（死リンクはAI再探索→不可なら非表示）"
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: node scripts/auto_heal_event_links.mjs
 
-      - name: "Step 3: Commit and Push Updated Data"
+      - name: "Step 4: 公開前ゲート（重複ゼロ・装備の全リンク/画像/割引率を検証）"
         run: |
-          git config user.name "outdoor-race-hub-bot"
-          git config user.email "bot@outdoor-race-hub.local"
-          git add src/data/events.json src/data/deals.json src/data/gears.json src/data/meta.json
-          if ! git diff --staged --quiet; then
-            git commit -m "chore(auto): 毎朝8時定期同期（楽天API高精度ギア＆大会リンクHTTP検証）"
-            git push origin main
-          else
-            echo "データ変更なし（差分なしのためプッシュをスキップします）"
-          fi
+          npm run check:duplicates
+          node scripts/validate_site_data.mjs
 
-      - name: "Step 4: Build SPA for GitHub Pages"
+      - name: "Step 5: ビルド（型チェック込み）"
         run: |
           npm run build
           cp dist/index.html dist/404.html
 
-      - name: "Step 5: Setup Pages"
+      - name: "Step 6: 検証済みデータをコミット＆プッシュ"
+        run: |
+          git config user.name "outdoor-race-hub-bot"
+          git config user.email "bot@outdoor-race-hub.local"
+          git add src/data/events.json src/data/deals.json src/data/gears.json src/data/meta.json outdoor_race_hub_events_master.csv
+          if ! git diff --staged --quiet; then
+            git commit -m "chore(auto): 毎朝8時定期同期（装備は商品ページ実測・大会リンクはHTTP検証済み）"
+            git pull --rebase origin main
+            git push origin main
+          else
+            echo "データ変更なし（差分なしのためプッシュをスキップします）"
+          fi
+      - name: "Step 7: Setup Pages"
         uses: actions/configure-pages@v4
 
-      - name: "Step 6: Upload Artifact"
+      - name: "Step 8: Upload Artifact"
         uses: actions/upload-pages-artifact@v3
         with:
           path: './dist'
 
-      - name: "Step 7: Deploy to GitHub Pages"
+      - name: "Step 9: Deploy to GitHub Pages"
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: "Step 10: 装備更新が失敗していた場合は実行を失敗扱いにして通知（サイトは前日の正常データで公開済み）"
+        if: ${{ steps.gears.outcome == 'failure' }}
+        run: |
+          echo "::error::装備カタログの自動更新が検証に失敗しました。前日の正常データで公開を継続しています。Step 1 のログを確認してください。"
+          exit 1

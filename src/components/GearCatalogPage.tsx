@@ -69,7 +69,7 @@ export const GearCatalogPage: React.FC<GearCatalogPageProps> = ({
   // deals データを id をキーとしたマップに変換（ポイント倍率・アフィリエイトURL補完用）
   const dealsMap = useMemo(() => {
     const map = new Map<string, DealItem>();
-    deals.forEach((d) => map.set(d.id, d));
+    deals.forEach((d) => map.set(d.gear_id ?? d.id, d));
     return map;
   }, [deals]);
 

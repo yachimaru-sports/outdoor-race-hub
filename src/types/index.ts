@@ -87,6 +87,8 @@ export interface DealItem {
   updated_at: string;
   registered_at?: string; // 新規登録日時（登録後1〜2日間のNEWバッジ判定用）
   isBestDeal?: boolean;
+    gear_id?: string;
+    description?: string;
 }
 
 export type SortOption =

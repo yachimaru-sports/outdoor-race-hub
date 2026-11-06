@@ -30,7 +30,6 @@ from datetime import datetime, timezone, timedelta
 import logging
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import requests
-from weekly_trend_updater import update_catalog_with_season_and_trends
 
 # ---------------------------------------------------------------------------
 # ロギング設定
@@ -732,6 +731,35 @@ def process_events() -> tuple[list[dict], list[list[str]]]:
     return verified_events, sheet_rows
 
 
+def build_gear_sheet_rows_from_json() -> list[list[str]]:
+    """現在の gears.json（商品ページ実測・検証済み）からスプレッドシート用13列の行を生成"""
+    rows: list[list[str]] = []
+    try:
+        with open(GEARS_JSON_PATH, "r", encoding="utf-8") as f:
+            gears = json.load(f)
+    except Exception as e:
+        logger.warning(f"gears.json 読み込み失敗（ギアシート更新をスキップ）: {e}")
+        return rows
+    for g in gears:
+        rate = g.get("discountRate", 0)
+        status = f"実売特価あり ({rate}%OFF)" if rate > 0 else "おすすめのみ"
+        rows.append([
+            g.get("id", ""),
+            ", ".join(g.get("sports", [])),
+            g.get("gearType", ""),
+            ", ".join(g.get("matchKeywords", [])),
+            g.get("title", ""),
+            g.get("brand", ""),
+            g.get("standardTitle", ""),
+            g.get("standardUrl", ""),
+            status,
+            f"¥{g.get('price', 0):,}",
+            g.get("dealUrl", ""),
+            f"¥{g.get('originalPrice', 0):,}",
+            g.get("imageUrl", ""),
+        ])
+    return rows
+
 # ---------------------------------------------------------------------------
 # Googleスプレッドシートへの一括書き込み
 # ---------------------------------------------------------------------------
@@ -771,6 +799,8 @@ def sync_google_sheets(gear_rows: list[list[str]], event_rows: list[list[str]]) 
             "deal_url", "original_price", "image_url"
         ]
         try:
+            if not gear_rows:
+                raise RuntimeError("ギア行が空のためシート更新をスキップ（既存データ保護）")
             gear_sheet = gc.open_by_key(GEAR_SHEET_ID).sheet1
             gear_data = [gear_headers] + gear_rows
             gear_sheet.clear()
@@ -805,7 +835,7 @@ def sync_google_sheets(gear_rows: list[list[str]], event_rows: list[list[str]]) 
 # ---------------------------------------------------------------------------
 # ローカル静的データの保存
 # ---------------------------------------------------------------------------
-def save_local_files(events: list[dict], gears: list[dict], deals: list[dict], event_rows: list[list[str]]):
+def save_local_files(events: list[dict], gears: list[dict] | None, deals: list[dict] | None, event_rows: list[list[str]]):
     """フロントエンド互換のJSONおよびCSVを上書き保存"""
     logger.info("💾 ローカル静的ファイル（src/data/*）へ上書き保存中...")
 
@@ -814,24 +844,15 @@ def save_local_files(events: list[dict], gears: list[dict], deals: list[dict], e
         json.dump(events, f, ensure_ascii=False, indent=2)
         f.write("\n")
 
-    # gears.json
-    with open(GEARS_JSON_PATH, "w", encoding="utf-8") as f:
-        json.dump(gears, f, ensure_ascii=False, indent=2)
-        f.write("\n")
-
-    # deals.json
-    with open(DEALS_JSON_PATH, "w", encoding="utf-8") as f:
-        json.dump(deals, f, ensure_ascii=False, indent=2)
-        f.write("\n")
-
-    # meta.json
-    meta = {
-        "last_updated_at": datetime.now(JST).isoformat(),
-        "events_count": len(events),
-        "deals_count": len(deals),
-        "gears_count": len(gears),
-        "sync_source": "Google Sheets & Rakuten API Automated Sync"
-    }
+    # meta.json（gears/deals は refresh_gears.mjs 管理のため既存値を引き継ぐ）
+    try:
+        with open(META_JSON_PATH, "r", encoding="utf-8") as f:
+            meta = json.load(f)
+    except Exception:
+        meta = {}
+    meta["last_updated_at"] = datetime.now(JST).isoformat()
+    meta["events_count"] = len(events)
+    meta["sync_source"] = "Google Sheets & Rakuten API Automated Sync"
     with open(META_JSON_PATH, "w", encoding="utf-8") as f:
         json.dump(meta, f, ensure_ascii=False, indent=2)
         f.write("\n")
@@ -865,30 +886,21 @@ def save_local_files(events: list[dict], gears: list[dict], deals: list[dict], e
 # メイン実行関数
 # ---------------------------------------------------------------------------
 def main():
-    logger.info("🚀 OUTDOOR RACE HUB 高精度自動更新パイプライン 起動")
+    logger.info("🚀 OUTDOOR RACE HUB 高精度自動更新パイプライン（大会データ担当）起動")
+    logger.info("ℹ️ 装備カタログ(gears/deals)は scripts/refresh_gears.mjs が商品ページ実測で更新します。ここでは上書きしません。")
     start_time = datetime.now()
 
-    # 週次トレンド・季節自動適応（毎週月曜日、または環境変数・引数で明示指定時）
-    is_monday = datetime.now(JST).weekday() == 0
-    force_trend = os.environ.get("UPDATE_WEEKLY_TREND", "").lower() in ["1", "true", "yes"] or "--trend" in sys.argv
-    if is_monday or force_trend:
-        logger.info("📅 【週次更新】季節動的適応＆楽天市場ランキングトレンド巡回を実行します...")
-        try:
-            update_catalog_with_season_and_trends()
-        except Exception as e:
-            logger.warning(f"週次トレンド更新例外（スキップして同期を続行）: {e}")
-
-    # 1. ギア情報の更新・確定データ化
-    gears, deals, gear_sheet_rows = process_gears()
-
-    # 2. 大会情報の更新・リンク検証
+    # 大会情報の更新・リンク検証
     events, event_sheet_rows = process_events()
 
-    # 3. Googleスプレッドシートへの反映
+    # 装備シート用の行は現在の gears.json から生成（スプレッドシートへの反映用）
+    gear_sheet_rows = build_gear_sheet_rows_from_json()
+
+    # Googleスプレッドシートへの反映
     sync_google_sheets(gear_sheet_rows, event_sheet_rows)
 
-    # 4. ローカル静的データの完全同期
-    save_local_files(events, gears, deals, event_sheet_rows)
+    # ローカル静的データの保存（events / meta / CSV のみ。gears・deals は触らない）
+    save_local_files(events, None, None, event_sheet_rows)
 
     elapsed = (datetime.now() - start_time).total_seconds()
     logger.info(f"✨ 全処理が正常に完了しました！（所要時間: {elapsed:.1f} 秒）")
