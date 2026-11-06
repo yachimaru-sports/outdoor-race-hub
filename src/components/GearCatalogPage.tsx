@@ -524,11 +524,15 @@ export const GearCatalogPage: React.FC<GearCatalogPageProps> = ({
                       loading="lazy"
                     />
 
-                    {/* 左上バッジ群：割引率 ＆ 新着 */}
+                    {/* 左上バッジ群：割引率 ＆ 定番 ＆ 新着 */}
                     <div className="absolute top-2.5 left-2.5 flex flex-col items-start gap-1">
-                      {item.discountRate > 0 && (
+                      {item.discountRate > 0 ? (
                         <span className="bg-red-600 text-white font-black text-xs px-2 py-0.5 rounded-md shadow-md border border-white/80 leading-tight">
                           {item.discountRate}% OFF
+                        </span>
+                      ) : (
+                        <span className="bg-slate-900/90 text-teal-300 font-extrabold text-[10px] px-2 py-0.5 rounded shadow border border-teal-500/30 leading-tight backdrop-blur-xs">
+                          {item.badge || '必携定番'}
                         </span>
                       )}
                       {item.isNew && (
@@ -589,7 +593,7 @@ export const GearCatalogPage: React.FC<GearCatalogPageProps> = ({
                     <div className="pt-2 border-t border-slate-150 dark:border-slate-800 space-y-1">
                       <div className="flex items-baseline justify-between gap-2">
                         <div>
-                          <div className="text-[10px] text-slate-400 font-bold">セール特価（税込）</div>
+                          <div className="text-[10px] text-slate-400 font-bold">{item.originalPrice > item.price ? 'セール特価（税込）' : '参考定価・実売（税込）'}</div>
                           <div className="text-xl font-black font-mono text-amber-600 dark:text-amber-400 tracking-tight">
                             {formatPrice(item.price)}
                           </div>

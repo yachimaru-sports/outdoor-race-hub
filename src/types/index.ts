@@ -69,6 +69,7 @@ export interface GearItem {
   discountRate?: number;
   dealUrl?: string;
   imageUrl?: string;
+  badge?: string;
 }
 
 export interface DealItem {
