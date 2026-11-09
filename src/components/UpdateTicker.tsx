@@ -32,6 +32,42 @@ export const MAX_UPDATE_NEWS_COUNT = 10;
  */
 export const UPDATE_NEWS_DATA: UpdateNewsItem[] = [
   {
+    id: 'update-wake-alps-20261109',
+    date: '2026.11.09',
+    time: '19:15',
+    tag: '新着トレラン',
+    tagStyle: 'bg-teal-100 text-teal-900 border-teal-300 dark:bg-teal-950/70 dark:text-teal-200',
+    title: 'WAKE ALPS TRAIL 2027（岡山・和気町一周 50km・鏑木毅監修）公式登録！',
+    description:
+      '和気アルプスを舞台にした中四国の本格50km山岳レース（ITRA 3pt認定）を公式登録。モシコム・公式サイトへの直通リンクを実通検証済みです。',
+    targetId: 'events-section',
+    targetLabel: '和気アルプスを見る',
+  },
+  {
+    id: 'update-kasadojima-20261109',
+    date: '2026.11.09',
+    time: '19:10',
+    tag: '新着トレラン',
+    tagStyle: 'bg-emerald-100 text-emerald-900 border-emerald-300 dark:bg-emerald-950/70 dark:text-emerald-200',
+    title: '第12回 くだまつ笠戸島アイランドトレイル 2027（山口・30km）公式登録！',
+    description:
+      '瀬戸内海の多島美を望む奥宮俊祐プロデュースの絶景アイランドトレイルを新規登録。RUNNETエントリー情報を検証完了しました。',
+    targetId: 'events-section',
+    targetLabel: '笠戸島トレイルを見る',
+  },
+  {
+    id: 'update-granfondo-kumano-20261109',
+    date: '2026.11.09',
+    time: '19:05',
+    tag: '新着サイクル',
+    tagStyle: 'bg-sky-100 text-sky-900 border-sky-300 dark:bg-sky-950/70 dark:text-sky-200',
+    title: '第5回 グランフォンド熊野 2027（三重・世界遺産山岳 120km）公式登録！',
+    description:
+      '熊野古道世界遺産の山海絶景を駆け抜ける獲得標高2,300m超の過酷ロングライド大会を登録。スポエンCYCLE実通検証済み。',
+    targetId: 'events-section',
+    targetLabel: '熊野ライドを見る',
+  },
+  {
     id: 'update-gears-page-20261106',
     date: '2026.11.06',
     time: '13:45',

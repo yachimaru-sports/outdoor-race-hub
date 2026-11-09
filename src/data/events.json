@@ -1,5 +1,242 @@
 [
   {
+    "id": "granfondo-kumano-2027",
+    "category": "cycling",
+    "subCategory": "山岳ロングライド",
+    "elements": [
+      "サイクル",
+      "ロングライド",
+      "獲得標高2000m+",
+      "絶景"
+    ],
+    "title": "第5回 グランフォンド熊野 2027（三重・熊野世界遺産山海ハード 120km）",
+    "date": "2027-01-31",
+    "month": 1,
+    "region": "東海",
+    "prefecture": "三重県",
+    "distance_km": 120,
+    "elevation_m": 2300,
+    "entry_status": "open",
+    "entry_start_date": "2026-10-01",
+    "entry_deadline": "2027-01-10",
+    "entry_fee": "10,000円",
+    "links": {
+      "official": "https://sportsentry.ne.jp/",
+      "entry": "https://cycle.spoen.jp/",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-09"
+    },
+    "mandatory_gear": [
+      {
+        "name": "ロードバイク / グラベルバイク（前後ライト必須）",
+        "category": "ギア"
+      },
+      {
+        "name": "ヘルメット・グローブ（JCF公認推奨）",
+        "category": "ギア"
+      },
+      {
+        "name": "パンク修理キット（予備チューブ2本・携帯ポンプ・CO2）",
+        "category": "ギア"
+      },
+      {
+        "name": "防寒ウインドブレーカー / レインウェア",
+        "category": "ウェア"
+      },
+      {
+        "name": "ボトル2本（水分補給用）",
+        "category": "ギア"
+      }
+    ],
+    "venue": {
+      "name": "熊野市立新鹿小中学校グラウンド（三重県熊野市）",
+      "address": "三重県熊野市新鹿町",
+      "mapQuery": "新鹿小学校 三重県熊野市"
+    },
+    "source": {
+      "portalName": "スポエンCYCLE",
+      "portalUrl": "https://cycle.spoen.jp/"
+    }
+  },
+  {
+    "id": "bitchu-totomichi-trail-2027",
+    "category": "trail",
+    "subCategory": "歴史古道トレイル",
+    "elements": [
+      "トレラン",
+      "歴史古道",
+      "ロングトレイル",
+      "中四国"
+    ],
+    "title": "第1回 備中とと道トレイルラン 2027（岡山・笠岡〜高梁吹屋 57km）",
+    "date": "2027-01-24",
+    "month": 1,
+    "region": "中国",
+    "prefecture": "岡山県",
+    "distance_km": 57,
+    "elevation_m": 2400,
+    "entry_status": "open",
+    "entry_start_date": "2026-10-15",
+    "entry_deadline": "2026-12-20",
+    "entry_fee": "17,000円",
+    "links": {
+      "official": "https://okayama-kanko.jp/",
+      "entry": "https://runnet.jp/",
+      "review": "",
+      "sns": ""
+    },
+    "mandatory_gear": [
+      {
+        "name": "トレランザック",
+        "category": "ギア"
+      },
+      {
+        "name": "ヘッドライト＆予備電池（早朝スタート用）",
+        "category": "ギア"
+      },
+      {
+        "name": "水分1.0L以上",
+        "category": "ギア"
+      },
+      {
+        "name": "防寒着・レインウェア",
+        "category": "ウェア"
+      },
+      {
+        "name": "エマージェンシーブランケット",
+        "category": "ギア"
+      },
+      {
+        "name": "両肩ザック",
+        "category": "ギア"
+      },
+      {
+        "name": "ライト＋予備電池",
+        "category": "ライト"
+      },
+      {
+        "name": "反射板・点滅ライト",
+        "category": "ライト"
+      },
+      {
+        "name": "ホイッスル",
+        "category": "エイド"
+      },
+      {
+        "name": "フード付きレインジャケット",
+        "category": "ウェア"
+      },
+      {
+        "name": "保温ミッドウェア",
+        "category": "ウェア"
+      },
+      {
+        "name": "水分1000ml以上",
+        "category": "補給"
+      },
+      {
+        "name": "行動食",
+        "category": "ギア"
+      },
+      {
+        "name": "コースマップ",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "ファーストエイド",
+        "category": "エイド"
+      },
+      {
+        "name": "マイカップ",
+        "category": "ギア"
+      },
+      {
+        "name": "ナンバーカード",
+        "category": "ギア"
+      },
+      {
+        "name": "携帯電話",
+        "category": "ギア"
+      },
+      {
+        "name": "保険証",
+        "category": "エイド"
+      }
+    ],
+    "venue": {
+      "name": "ゴール：旧吹屋小学校 / スタート：金浦小学校",
+      "address": "岡山県高梁市成羽町吹屋",
+      "mapQuery": "旧吹屋小学校 岡山県高梁市成羽町吹屋"
+    },
+    "source": {
+      "portalName": "RUNNET",
+      "portalUrl": "https://runnet.jp/"
+    }
+  },
+  {
+    "id": "kasadojima-island-trail-2027",
+    "category": "trail",
+    "subCategory": "アイランドトレイル",
+    "elements": [
+      "トレラン",
+      "絶景",
+      "アイランド",
+      "中四国"
+    ],
+    "title": "第12回 くだまつ笠戸島アイランドトレイル 2027（山口・笠戸島 30km）",
+    "date": "2027-02-07",
+    "month": 2,
+    "region": "中国",
+    "prefecture": "山口県",
+    "distance_km": 30,
+    "elevation_m": 1600,
+    "entry_status": "open",
+    "entry_start_date": "2026-10-01",
+    "entry_deadline": "2026-12-25",
+    "entry_fee": "9,700円",
+    "links": {
+      "official": "https://kasadojima-islandtrail.com/",
+      "entry": "https://runnet.jp/",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-09"
+    },
+    "mandatory_gear": [
+      {
+        "name": "トレランシューズ（グリップ力重視）",
+        "category": "フットウェア"
+      },
+      {
+        "name": "水分500ml以上",
+        "category": "ギア"
+      },
+      {
+        "name": "ウインドブレーカー / レインウェア",
+        "category": "ウェア"
+      },
+      {
+        "name": "マイカップ（エイド給水用）",
+        "category": "ギア"
+      },
+      {
+        "name": "携帯電話・健康保険証",
+        "category": "ギア"
+      }
+    ],
+    "venue": {
+      "name": "笠戸島ハイツ・公民館周辺（山口県下松市）",
+      "address": "山口県下松市笠戸島",
+      "mapQuery": "笠戸島 山口県下松市"
+    },
+    "source": {
+      "portalName": "RUNNET",
+      "portalUrl": "https://runnet.jp/"
+    }
+  },
+  {
     "id": "arwc-ecuador-2024",
     "category": "adventure",
     "subCategory": "ARWC世界選手権",
@@ -5602,106 +5839,6 @@
     },
     "source": {
       "portalName": "大会公式"
-    }
-  },
-  {
-    "id": "bitchu-totomichi-trailrun-2027",
-    "category": "trail",
-    "subCategory": "歴史古道・ワンウェイトレイル",
-    "elements": [
-      "歴史街道",
-      "魚仲仕のとと道",
-      "ワンウェイ",
-      "50km+",
-      "吹屋ふるさと村"
-    ],
-    "title": "備中とと道トレイルラン 2027（岡山・笠岡〜吹屋 57km/32km）",
-    "date": "2027-01-24",
-    "month": 1,
-    "region": "中国",
-    "prefecture": "岡山県",
-    "distance_km": 57,
-    "elevation_m": 1365,
-    "entry_status": "open",
-    "entry_start_date": "2026-09-14",
-    "entry_deadline": "2026-12-27",
-    "entry_fee": "17,000円",
-    "links": {
-      "official": "https://totomichi-trailrun.com/",
-      "entry": "https://runnet.jp/cgi-bin/?id=396918",
-      "review": null,
-      "sns": null,
-      "verified": true,
-      "verified_at": "2026-11-09"
-    },
-    "mandatory_gear": [
-      {
-        "name": "両肩ザック",
-        "category": "ギア"
-      },
-      {
-        "name": "エマージェンシーブランケット",
-        "category": "エイド"
-      },
-      {
-        "name": "ライト＋予備電池",
-        "category": "ライト"
-      },
-      {
-        "name": "反射板・点滅ライト",
-        "category": "ライト"
-      },
-      {
-        "name": "ホイッスル",
-        "category": "エイド"
-      },
-      {
-        "name": "フード付きレインジャケット",
-        "category": "ウェア"
-      },
-      {
-        "name": "保温ミッドウェア",
-        "category": "ウェア"
-      },
-      {
-        "name": "水分1000ml以上",
-        "category": "補給"
-      },
-      {
-        "name": "行動食",
-        "category": "ギア"
-      },
-      {
-        "name": "コースマップ",
-        "category": "ナビゲーション"
-      },
-      {
-        "name": "ファーストエイド",
-        "category": "エイド"
-      },
-      {
-        "name": "マイカップ",
-        "category": "ギア"
-      },
-      {
-        "name": "ナンバーカード",
-        "category": "ギア"
-      },
-      {
-        "name": "携帯電話",
-        "category": "ギア"
-      },
-      {
-        "name": "保険証",
-        "category": "エイド"
-      }
-    ],
-    "venue": {
-      "name": "笠岡市立金浦小学校（岡山県笠岡市吉浜1599）",
-      "mapQuery": "岡山県笠岡市 金浦小学校"
-    },
-    "source": {
-      "portalName": "RUNNET"
     }
   },
   {
