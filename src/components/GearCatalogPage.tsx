@@ -360,134 +360,44 @@ export const GearCatalogPage: React.FC<GearCatalogPageProps> = ({
               </span>
               <span className="flex items-center gap-1 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-lg bg-slate-800/80 border border-slate-700 text-slate-200">
                 <CheckCircle2 className="w-3 h-3 text-emerald-400 shrink-0" />
-                提携プロショップ＆公式通販対応
+                実戦仕様ギア＆公式通販
               </span>
               <span className="flex items-center gap-1 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-lg bg-slate-800/80 border border-slate-700 text-slate-200">
                 <CheckCircle2 className="w-3 h-3 text-emerald-400 shrink-0" />
                 楽天ポイント還元＆セール連動
               </span>
             </div>
+
+            {/* おすすめショップ・ブランドへのスマートリンク */}
+            <div className="pt-2 flex flex-wrap items-center gap-2 text-xs border-t border-slate-800/70 mt-2">
+              <span className="text-slate-400 font-bold text-[11px]">おすすめストア:</span>
+              <a
+                href="https://inner-fact.co.jp/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-slate-800/90 hover:bg-slate-700 text-amber-300 border border-amber-500/30 text-[11px] font-bold transition-colors cursor-pointer"
+                title="インナーファクト 公式サイト"
+              >
+                <span>INNER FACT (インナーファクト) 公式HP</span>
+                <ExternalLink className="w-3 h-3 text-slate-400" />
+              </a>
+              <a
+                href="https://runplus.shopselect.net/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-slate-800/90 hover:bg-slate-700 text-teal-300 border border-teal-500/30 text-[11px] font-bold transition-colors cursor-pointer"
+                title="ランプラス 公式通販"
+              >
+                <span>RUNPLUS (ランプラス) 公式通販</span>
+                <ExternalLink className="w-3 h-3 text-slate-400" />
+              </a>
+            </div>
+
+
           </div>
         </section>
 
-        {/* ======================================================== */}
-        {/* ★【新設】公式提携プロショップ＆ブランド 特設セクション★ */}
-        {/* ======================================================== */}
-        <section className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900 via-slate-900 to-teal-950 border-2 border-teal-500/50 p-4 sm:p-6 text-white shadow-xl space-y-4">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-teal-500/30 pb-3">
-            <div className="flex items-center gap-2">
-              <span className="w-8 h-8 rounded-lg bg-teal-500 text-slate-950 flex items-center justify-center font-black">
-                <Store className="w-4.5 h-4.5" />
-              </span>
-              <div>
-                <h3 className="text-base sm:text-lg font-black text-white flex items-center gap-2">
-                  <span>厳選プロショップ ＆ ブランドパートナー</span>
-                  <span className="text-[10px] bg-teal-500/20 text-teal-300 border border-teal-400/40 px-2 py-0.5 rounded-full font-bold">
-                    公式提携
-                  </span>
-                </h3>
-                <p className="text-[11px] text-slate-300 font-medium">
-                  中四国・全国のトレイルランナーを支える実力派専門店と、アスリート御用達の国産ブランドをご紹介
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {/* パートナー1：INNER FACT */}
-            <div className="rounded-xl bg-slate-950/70 border border-amber-500/40 p-4 space-y-3 flex flex-col justify-between hover:border-amber-400 transition-all shadow-md">
-              <div className="space-y-2">
-                <div className="flex items-center justify-between gap-2">
-                  <div className="flex items-center gap-2">
-                    <span className="px-2 py-0.5 rounded-md bg-amber-500 text-slate-950 text-[10px] font-black">
-                      BRAND
-                    </span>
-                    <h4 className="text-base font-black text-amber-300">
-                      INNER FACT（インナーファクト）
-                    </h4>
-                  </div>
-                  <span className="text-[10px] text-slate-400 font-bold">国産アスリートブランド</span>
-                </div>
-                <p className="text-xs text-slate-300 leading-relaxed">
-                  天然ラミー（麻）素材が生み出す**「マメ・靴擦れゼロ」「股擦れゼロ」**の圧倒的実力。過酷な100マイルやウルトラマラソンを走破するトップランナーから絶大な支持を集める必携ギア。
-                </p>
-                <div className="flex flex-wrap gap-1.5 text-[10px] font-bold text-slate-300 pt-1">
-                  <span className="px-2 py-0.5 rounded bg-slate-800 border border-slate-700">ラミー五本指ソックス</span>
-                  <span className="px-2 py-0.5 rounded bg-slate-800 border border-slate-700">足袋型ソックス</span>
-                  <span className="px-2 py-0.5 rounded bg-slate-800 border border-slate-700">無縫製インナーパンツ</span>
-                </div>
-              </div>
-
-              <div className="pt-2 flex flex-col sm:flex-row gap-2 border-t border-slate-800">
-                <a
-                  href="https://inner-fact.co.jp/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-slate-950 font-black text-xs shadow-md transition-all cursor-pointer text-center"
-                >
-                  <Globe className="w-3.5 h-3.5" />
-                  <span>公式サイトを見る（全商品・最新情報）</span>
-                  <ExternalLink className="w-3 h-3" />
-                </a>
-                <button
-                  type="button"
-                  onClick={() => handleRakutenSearch(undefined, 'インナーファクト')}
-                  className="flex items-center justify-center gap-1 py-2 px-3 rounded-lg bg-slate-800 hover:bg-slate-750 text-slate-200 border border-slate-700 text-xs font-bold transition-all cursor-pointer text-center"
-                >
-                  <Search className="w-3 h-3 text-slate-400" />
-                  <span>楽天で探す</span>
-                </button>
-              </div>
-            </div>
-
-            {/* パートナー2：RUNPLUS */}
-            <div className="rounded-xl bg-slate-950/70 border border-teal-500/40 p-4 space-y-3 flex flex-col justify-between hover:border-teal-400 transition-all shadow-md">
-              <div className="space-y-2">
-                <div className="flex items-center justify-between gap-2">
-                  <div className="flex items-center gap-2">
-                    <span className="px-2 py-0.5 rounded-md bg-teal-500 text-slate-950 text-[10px] font-black">
-                      PRO SHOP
-                    </span>
-                    <h4 className="text-base font-black text-teal-300">
-                      RUNPLUS（ランプラス）
-                    </h4>
-                  </div>
-                  <span className="text-[10px] text-slate-400 font-bold">広島市実店舗 ＆ 公式通販</span>
-                </div>
-                <p className="text-xs text-slate-300 leading-relaxed">
-                  広島市にある**マウンテンランニング（トレイルランニング / 軽ハイキング）専門店**。Teton Bros.やOMMなど、山岳レースで真に役立つ実戦ギアを厳選セレクト。中四国のアウトドアシーンを支える拠点。
-                </p>
-                <div className="flex flex-wrap gap-1.5 text-[10px] font-bold text-slate-300 pt-1">
-                  <span className="px-2 py-0.5 rounded bg-slate-800 border border-slate-700">Teton Bros. 取扱</span>
-                  <span className="px-2 py-0.5 rounded bg-slate-800 border border-slate-700">OMM 厳選ギア</span>
-                  <span className="px-2 py-0.5 rounded bg-slate-800 border border-slate-700">実店舗・装備相談</span>
-                </div>
-              </div>
-
-              <div className="pt-2 flex flex-col sm:flex-row gap-2 border-t border-slate-800">
-                <a
-                  href="https://runplus.shopselect.net/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-gradient-to-r from-teal-500 to-emerald-500 hover:from-teal-400 hover:to-emerald-400 text-slate-950 font-black text-xs shadow-md transition-all cursor-pointer text-center"
-                >
-                  <Store className="w-3.5 h-3.5" />
-                  <span>RUNPLUS 公式通販ストアを見る</span>
-                  <ExternalLink className="w-3 h-3" />
-                </a>
-                <a
-                  href="https://www.facebook.com/runplus.hiroshima/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-1 py-2 px-3 rounded-lg bg-slate-800 hover:bg-slate-750 text-slate-200 border border-slate-700 text-xs font-bold transition-all cursor-pointer text-center"
-                >
-                  <span>実店舗情報</span>
-                  <ExternalLink className="w-2.5 h-2.5 text-slate-400" />
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
+        
 
         {/* ======================================================== */}
         {/* ★楽天市場 公式ギア＆補給食 最安値検索バナー★ */}
@@ -870,7 +780,7 @@ export const GearCatalogPage: React.FC<GearCatalogPageProps> = ({
                     <div className="bg-gradient-to-r from-teal-600 via-emerald-600 to-teal-700 text-white font-black text-[10px] sm:text-[11px] py-1 px-2.5 sm:px-3 flex items-center justify-between shadow-xs">
                       <span className="flex items-center gap-1 truncate">
                         <span>⭐</span>
-                        <span>{isInnerFact ? '公式ブランドパートナー（INNER FACT）' : '提携専門店 RUNPLUS 厳選取扱'}</span>
+                        <span>{isInnerFact ? 'おすすめブランド：INNER FACT' : 'おすすめショップ：RUNPLUS（広島）'}</span>
                       </span>
                       <span className="text-[9px] bg-slate-950 text-teal-300 px-1.5 py-0.2 rounded font-black shrink-0">
                         OFFICIAL
@@ -998,7 +908,7 @@ export const GearCatalogPage: React.FC<GearCatalogPageProps> = ({
                               className="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-gradient-to-r from-teal-500 via-emerald-500 to-teal-600 hover:from-teal-600 hover:to-emerald-600 text-slate-950 font-black text-xs sm:text-sm shadow-md hover:shadow-lg transition-all cursor-pointer text-center"
                             >
                               <Store className="w-3.5 h-3.5 shrink-0" />
-                              <span>提携専門店 RUNPLUS 公式通販で購入</span>
+                              <span>RUNPLUS 公式通販で購入</span>
                               <ExternalLink className="w-3 h-3 shrink-0" />
                             </a>
                             <a
@@ -1137,3 +1047,4 @@ export const GearCatalogPage: React.FC<GearCatalogPageProps> = ({
     </div>
   );
 };
+
