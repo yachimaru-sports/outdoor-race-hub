@@ -71,6 +71,8 @@ export interface GearItem {
   imageUrl?: string;
   badge?: string;
   isBestDeal?: boolean;
+  officialUrl?: string; // 公式ブランドHPまたは専門ショップURL
+  shopName?: string;    // 販売店名（例: "INNER FACT 公式", "提携専門店 RUNPLUS"）
 }
 
 export interface DealItem {
@@ -89,6 +91,8 @@ export interface DealItem {
   isBestDeal?: boolean;
     gear_id?: string;
     description?: string;
+    official_url?: string;
+    shop_name?: string;
 }
 
 export type SortOption =

@@ -13,7 +13,7 @@
     "badge": "🔥 60%OFF 最安特価",
     "description": "【カテゴリ最安60%OFF】SensiFit設計でブレを徹底排除。ミドルレースやフルマラソンの水分補給にベストセラーのランニングベスト。",
     "isBestDeal": true,
-    "updated_at": "2026-11-06T06:44:51.902Z",
+    "updated_at": "2026-11-09T09:41:08.778Z",
     "registered_at": "2026-11-06T06:03:31.340Z"
   },
   {
@@ -30,7 +30,7 @@
     "badge": "60%OFF 特価",
     "description": "12Lの大容量で防寒具や必携装備を余裕で収納。ロングトレイル・100マイルにも対応する高機能パック。",
     "isBestDeal": false,
-    "updated_at": "2026-11-06T06:44:51.902Z",
+    "updated_at": "2026-11-09T09:41:08.778Z",
     "registered_at": "2026-11-06T06:03:31.340Z"
   },
   {
@@ -47,7 +47,24 @@
     "badge": "🔥 60%OFF 最安特価",
     "description": "【カテゴリ最安60%OFF】独自の立体設計と段階着圧で血行を促進しむくみ・疲労を軽減。肌あたりがフラットで擦れを防ぐ。",
     "isBestDeal": true,
-    "updated_at": "2026-11-06T06:44:51.902Z",
+    "updated_at": "2026-11-09T09:41:08.778Z",
+    "registered_at": "2026-11-06T06:03:31.340Z"
+  },
+  {
+    "id": "deal-gear-trail-wear-c3fit-tights",
+    "gear_id": "gear-trail-wear-c3fit-tights",
+    "title": "C3fit インパクトエアー ロングタイツ (3F14127 / 最軽量サポート)",
+    "category": "サポートタイツ",
+    "price": 11880,
+    "original_price": 29700,
+    "discount_rate": 60,
+    "point_rate": 10,
+    "image_url": "https://shop.r10s.jp/gold/auc-bestsports/img/c3fit/impactairlongtights/airlongtights_w_main.jpg",
+    "affiliate_url": "https://item.rakuten.co.jp/auc-bestsports/3fw14127/",
+    "badge": "60%OFF 特価",
+    "description": "【膝腰サポートの金字塔】着心地の軽さと強力なテーピングサポートを両立。後半の下り坂でも脚が残る。",
+    "isBestDeal": false,
+    "updated_at": "2026-11-09T09:41:08.778Z",
     "registered_at": "2026-11-06T06:03:31.340Z"
   },
   {
@@ -64,7 +81,7 @@
     "badge": "🔥 60%OFF 最安特価",
     "description": "【カテゴリ最安60%OFF】単3電池2本で点灯30時間、点滅250時間の圧倒的スタミナ。夜間走行やブルベ、アドベンチャーMTBのサブライトに最適。",
     "isBestDeal": true,
-    "updated_at": "2026-11-06T06:44:51.902Z",
+    "updated_at": "2026-11-09T09:41:08.778Z",
     "registered_at": "2026-11-06T06:03:31.340Z"
   },
   {
@@ -81,8 +98,59 @@
     "badge": "55%OFF 特価",
     "description": "風抜けの良いエアロベンチレーション構造と超軽量設計。ダイヤル式アジャスターで頭部にジャストフィット。",
     "isBestDeal": false,
-    "updated_at": "2026-11-06T06:44:51.902Z",
+    "updated_at": "2026-11-09T09:41:08.778Z",
     "registered_at": "2026-11-06T06:03:31.340Z"
+  },
+  {
+    "id": "deal-gear-deal-mw92kbug-bwek",
+    "gear_id": "gear-deal-mw92kbug-bwek",
+    "title": "サロモン エアロブレイズ3グラベル メンズ SALOMON AERO BLAZE 3 GRVL 靴 スニーカー ランニング おしゃれ キャンプ アウトドア",
+    "category": "トレランシューズ",
+    "price": 16500,
+    "original_price": 33000,
+    "discount_rate": 50,
+    "point_rate": 10,
+    "image_url": "https://shop.r10s.jp/canpanera/cabinet/item242/item_s22182_0.jpg",
+    "affiliate_url": "https://item.rakuten.co.jp/canpanera/s22182-1/",
+    "badge": "🔥 50%OFF 最安特価",
+    "description": "【カテゴリ最安50%OFF】【最新セール発掘】定価より50%OFF（¥16,500引き）。楽天市場の本日更新目玉特価品。",
+    "isBestDeal": true,
+    "updated_at": "2026-11-09T09:41:08.778Z",
+    "registered_at": "2026-11-09T09:41:08.778Z"
+  },
+  {
+    "id": "deal-gear-deal-mw92kizw-0ap8",
+    "gear_id": "gear-deal-mw92kizw-0ap8",
+    "title": "ホカ スピードゴート2 ユニセックス HOKA SPEEDGOAT 2 メンズ レディース 1162710 靴 スニーカー シューズ ランニング トレイル トレラン ロード フェス 黒 おしゃれ キャンプ アウトドア ホカオネオネ HOKA ONE ONE",
+    "category": "トレランシューズ",
+    "price": 27500,
+    "original_price": 55000,
+    "discount_rate": 50,
+    "point_rate": 10,
+    "image_url": "https://shop.r10s.jp/canpanera/cabinet/item239/item_h20098_0.jpg",
+    "affiliate_url": "https://item.rakuten.co.jp/canpanera/h20098/",
+    "badge": "50%OFF 特価",
+    "description": "【最新セール発掘】定価より50%OFF（¥27,500引き）。楽天市場の本日更新目玉特価品。",
+    "isBestDeal": false,
+    "updated_at": "2026-11-09T09:41:08.778Z",
+    "registered_at": "2026-11-09T09:41:08.778Z"
+  },
+  {
+    "id": "deal-gear-trail-pack-nathan-pinnacle",
+    "gear_id": "gear-trail-pack-nathan-pinnacle",
+    "title": "NATHAN ピナクル 12L JP ユニセックス (メンズ対応サイズ)",
+    "category": "トレランザック",
+    "price": 8800,
+    "original_price": 17600,
+    "discount_rate": 50,
+    "point_rate": 1,
+    "image_url": "https://shop.r10s.jp/usbonline/cabinet/pic-2/ns40180j-main.jpg",
+    "affiliate_url": "https://item.rakuten.co.jp/usbonline/ns40180j/",
+    "badge": "50%OFF 特価",
+    "description": "【体幹吸い付き設計】荷物の揺れを極限まで排除。国内トレイルレースに最適な超軽量フィットベスト。",
+    "isBestDeal": false,
+    "updated_at": "2026-11-09T09:41:08.778Z",
+    "registered_at": "2026-11-09T09:41:08.778Z"
   },
   {
     "id": "deal-gear-trail-light-petzl-actik",
@@ -98,7 +166,7 @@
     "badge": "50%OFF 特価",
     "description": "COREバッテリー付属でUSB充電可能。赤色光モード搭載で夜間レースの山小屋やテント内でも重宝。",
     "isBestDeal": false,
-    "updated_at": "2026-11-06T06:44:51.902Z",
+    "updated_at": "2026-11-09T09:41:08.778Z",
     "registered_at": "2026-11-06T06:03:31.340Z"
   },
   {
@@ -115,8 +183,25 @@
     "badge": "🔥 50%OFF 最安特価",
     "description": "【カテゴリ最安50%OFF】わずか92g。トレラン大会の『予備ヘッドランプ』必携チェックを最も低予算でクリアできる高信頼モデル。",
     "isBestDeal": true,
-    "updated_at": "2026-11-06T06:44:51.902Z",
+    "updated_at": "2026-11-09T09:41:08.778Z",
     "registered_at": "2026-11-06T06:03:31.340Z"
+  },
+  {
+    "id": "deal-gear-deal-mw92lbi5-vzlm",
+    "gear_id": "gear-deal-mw92lbi5-vzlm",
+    "title": "2025FW ペツル アクティックコア E065AB0x 国内正規品 ヘッドライト LED 充電式 登山 ランニング",
+    "category": "ヘッドライト",
+    "price": 12177,
+    "original_price": 24354,
+    "discount_rate": 50,
+    "point_rate": 10,
+    "image_url": "https://shop.r10s.jp/yoshikip2/cabinet/sukeneko8/e065ab0x_01.jpg",
+    "affiliate_url": "https://item.rakuten.co.jp/yoshikip2/e065ab0x/",
+    "badge": "50%OFF 特価",
+    "description": "【最新セール発掘】定価より50%OFF（¥12,177引き）。楽天市場の本日更新目玉特価品。",
+    "isBestDeal": false,
+    "updated_at": "2026-11-09T09:41:08.778Z",
+    "registered_at": "2026-11-09T09:41:08.778Z"
   },
   {
     "id": "deal-gear-marathon-shoes-asics-hyper6",
@@ -132,7 +217,7 @@
     "badge": "🔥 50%OFF 最安特価",
     "description": "【カテゴリ最安50%OFF】優れた反発性と軽量性を両立。フルマラソン自己記録更新やスピード練習を支えるコストパフォーマンス抜群の一足。",
     "isBestDeal": true,
-    "updated_at": "2026-11-06T06:44:51.902Z",
+    "updated_at": "2026-11-09T09:41:08.778Z",
     "registered_at": "2026-11-06T06:03:31.340Z"
   },
   {
@@ -149,7 +234,7 @@
     "badge": "50%OFF 特価",
     "description": "かかと部のGELが着地ショックを吸収。舗装路から土のグラベルロードまで快適に走り抜けられる万能シューズ。",
     "isBestDeal": false,
-    "updated_at": "2026-11-06T06:44:51.902Z",
+    "updated_at": "2026-11-09T09:41:08.778Z",
     "registered_at": "2026-11-06T06:03:31.340Z"
   },
   {
@@ -166,8 +251,25 @@
     "badge": "🔥 40%OFF 最安特価",
     "description": "【カテゴリ最安40%OFF】岩場での突き刺しに強い高強度アルミ製3セクションZポール。耐久性重視の山岳アドベンチャーに最適。",
     "isBestDeal": true,
-    "updated_at": "2026-11-06T06:44:51.902Z",
+    "updated_at": "2026-11-09T09:41:08.778Z",
     "registered_at": "2026-11-06T06:03:31.340Z"
+  },
+  {
+    "id": "deal-gear-deal-mw92miiy-j7ad",
+    "gear_id": "gear-deal-mw92miiy-j7ad",
+    "title": "ブラックダイヤモンド ディスタンス15 Black Diamond DISTANCE 15 BD56614 メンズ バッグ バックパック リュック トレランザック ランニング ファストハイク トレイルランニング 登山 通勤ラン トラベル おしゃれ キャンプ アウトドア",
+    "category": "トレッキングポール",
+    "price": 21483,
+    "original_price": 35805,
+    "discount_rate": 40,
+    "point_rate": 10,
+    "image_url": "https://shop.r10s.jp/canpanera/cabinet/item215/item_b17263_0.jpg",
+    "affiliate_url": "https://item.rakuten.co.jp/canpanera/b17263-1/",
+    "badge": "40%OFF 特価",
+    "description": "【最新セール発掘】定価より40%OFF（¥14,322引き）。楽天市場の本日更新目玉特価品。",
+    "isBestDeal": false,
+    "updated_at": "2026-11-09T09:41:08.778Z",
+    "registered_at": "2026-11-09T09:41:08.778Z"
   },
   {
     "id": "deal-gear-trail-wear-cwx-expert-ladies",
@@ -183,7 +285,7 @@
     "badge": "38%OFF 特価",
     "description": "女性の骨盤・大腿・膝をしっかり安定。長時間のウォーキング・トレランで脚運びを力強くアシスト。",
     "isBestDeal": false,
-    "updated_at": "2026-11-06T06:44:51.902Z",
+    "updated_at": "2026-11-09T09:41:08.778Z",
     "registered_at": "2026-11-06T06:03:31.340Z"
   },
   {
@@ -192,7 +294,7 @@
     "title": "MILLET タンペート ジャケット (防水透湿シェル / ストレッチ軽量)",
     "category": "レインウェア",
     "price": 18480,
-    "original_price": 28430,
+    "original_price": 28431,
     "discount_rate": 35,
     "point_rate": 10,
     "image_url": "https://shop.r10s.jp/esports/cabinet/6000-221/6000000141008.jpg",
@@ -200,7 +302,7 @@
     "badge": "🔥 35%OFF 最安特価",
     "description": "【カテゴリ最安35%OFF】優れた防水透湿性とストレッチ性を両立。激しい腕振りを妨げないアルパインカッティング。",
     "isBestDeal": true,
-    "updated_at": "2026-11-06T06:44:51.902Z",
+    "updated_at": "2026-11-09T09:41:08.778Z",
     "registered_at": "2026-11-06T06:03:31.340Z"
   },
   {
@@ -217,7 +319,7 @@
     "badge": "30%OFF 特価",
     "description": "過酷な泥・岩稜帯で圧倒的なグリップ力を発揮するスパイラルタング採用の名作山岳トレランシューズ。",
     "isBestDeal": false,
-    "updated_at": "2026-11-06T06:44:51.902Z",
+    "updated_at": "2026-11-09T09:41:08.778Z",
     "registered_at": "2026-11-06T06:03:31.340Z"
   },
   {
@@ -234,7 +336,7 @@
     "badge": "30%OFF 特価",
     "description": "HOKAの代名詞・メガグリップ採用。100マイルやロングトレイルの疲労を大幅に軽減するクッションモデル。",
     "isBestDeal": false,
-    "updated_at": "2026-11-06T06:44:51.902Z",
+    "updated_at": "2026-11-09T09:41:08.778Z",
     "registered_at": "2026-11-06T06:03:31.340Z"
   },
   {
@@ -251,41 +353,7 @@
     "badge": "30%OFF 特価",
     "description": "BOAフィットシステムをダブル搭載。足の自然な動きを妨げず長距離を快適に疾走できるアルトラ最上位レーシング。",
     "isBestDeal": false,
-    "updated_at": "2026-11-06T06:44:51.902Z",
-    "registered_at": "2026-11-06T06:03:31.340Z"
-  },
-  {
-    "id": "deal-gear-trail-shoes-mesa2",
-    "gear_id": "gear-trail-shoes-mesa2",
-    "title": "ゼロシューズ メサトレイル2 メンズ (超軽量ベアフット・足裏感覚重視)",
-    "category": "トレランシューズ",
-    "price": 11550,
-    "original_price": 16500,
-    "discount_rate": 30,
-    "point_rate": 10,
-    "image_url": "https://shop.r10s.jp/sakaiya/cabinet/kenko/xeroshoes/imgrc0131156406.jpg",
-    "affiliate_url": "https://item.rakuten.co.jp/sakaiya/202607071859",
-    "badge": "🔥 30%OFF 最安特価",
-    "description": "【カテゴリ最安30%OFF】裸足感覚で走るベアフットトレランの決定版。足本来のバネと腱を鍛え、路面をダイレクトに掴むフィーリング。",
-    "isBestDeal": true,
-    "updated_at": "2026-11-06T06:44:51.902Z",
-    "registered_at": "2026-11-06T06:03:31.340Z"
-  },
-  {
-    "id": "deal-gear-marathon-shoes-nike-juniper",
-    "gear_id": "gear-marathon-shoes-nike-juniper",
-    "title": "NIKE ジュニパー トレイル 2 (エントリー＆ロング練習対応)",
-    "category": "トレランシューズ",
-    "price": 11880,
-    "original_price": 16971,
-    "discount_rate": 30,
-    "point_rate": 10,
-    "image_url": "https://shop.r10s.jp/nike-official/cabinet/fa2601/dm0822-301_a.jpg",
-    "affiliate_url": "https://item.rakuten.co.jp/nike-official/dm0822-301",
-    "badge": "30%OFF 特価",
-    "description": "ナイキ公式。高い通気性と耐久ラバーグリップで林道から不整地まで軽快にカバーする万能モデル。",
-    "isBestDeal": false,
-    "updated_at": "2026-11-06T06:44:51.902Z",
+    "updated_at": "2026-11-09T09:41:08.778Z",
     "registered_at": "2026-11-06T06:03:31.340Z"
   },
   {
@@ -302,24 +370,7 @@
     "badge": "30%OFF 特価",
     "description": "耐水圧10,000mm。突然の豪雨や渡渉があるアドベンチャーレースでも荷物をドライに保つ防水アタックパック。",
     "isBestDeal": false,
-    "updated_at": "2026-11-06T06:44:51.902Z",
-    "registered_at": "2026-11-06T06:03:31.340Z"
-  },
-  {
-    "id": "deal-gear-trail-poles-leki-neotrail",
-    "gear_id": "gear-trail-poles-leki-neotrail",
-    "title": "LEKI ネオトレイル プロ FX.One Superlite (超軽量カーボンポール)",
-    "category": "トレッキングポール",
-    "price": 21175,
-    "original_price": 30250,
-    "discount_rate": 30,
-    "point_rate": 10,
-    "image_url": "https://shop.r10s.jp/sakaiya/cabinet/evidence6/imgrc0126015752.jpg",
-    "affiliate_url": "https://item.rakuten.co.jp/sakaiya/202601281828",
-    "badge": "30%OFF 特価",
-    "description": "LEKI最高峰のトレラン専用超軽量カーボンポール。ボタン1つで一瞬展開・折りたたみ可能。",
-    "isBestDeal": false,
-    "updated_at": "2026-11-06T06:44:51.902Z",
+    "updated_at": "2026-11-09T09:41:08.778Z",
     "registered_at": "2026-11-06T06:03:31.340Z"
   },
   {
@@ -336,8 +387,25 @@
     "badge": "30%OFF 特価",
     "description": "フリックロックプロ搭載で登り・下りに応じて瞬時に長さ調節が可能。コルクグリップで汗を吸い快適。",
     "isBestDeal": false,
-    "updated_at": "2026-11-06T06:44:51.902Z",
+    "updated_at": "2026-11-09T09:41:08.778Z",
     "registered_at": "2026-11-06T06:03:31.340Z"
+  },
+  {
+    "id": "deal-gear-trail-poles-leki-fx-one-std",
+    "gear_id": "gear-trail-poles-leki-fx-one-std",
+    "title": "LEKI ウルトラトレイル FX.ONE スーパーライト (115cm/120cm)",
+    "category": "トレッキングポール",
+    "price": 36300,
+    "original_price": 51857,
+    "discount_rate": 30,
+    "point_rate": 10,
+    "image_url": "https://shop.r10s.jp/sakaiya/cabinet/leki/1300542_1.jpg",
+    "affiliate_url": "https://item.rakuten.co.jp/sakaiya/202610211933/",
+    "badge": "30%OFF 特価",
+    "description": "【トップアスリート支持率No.1】トレイルシャークグリップで推進力を逃さない世界標準ポール。",
+    "isBestDeal": false,
+    "updated_at": "2026-11-09T09:41:08.778Z",
+    "registered_at": "2026-11-09T09:41:08.778Z"
   },
   {
     "id": "deal-gear-trail-rain-tnf-venture",
@@ -353,7 +421,7 @@
     "badge": "30%OFF 特価",
     "description": "HYVENT-D 2.5層採用。非常にしなやかで軽量、レースの防寒・雨具必携基準を確実に満たす定番シェル。",
     "isBestDeal": false,
-    "updated_at": "2026-11-06T06:44:51.902Z",
+    "updated_at": "2026-11-09T09:41:08.778Z",
     "registered_at": "2026-11-06T06:03:31.340Z"
   },
   {
@@ -370,7 +438,7 @@
     "badge": "🔥 30%OFF 最安特価",
     "description": "【カテゴリ最安30%OFF】股関節の屈曲を妨げない立体裁断。急な豪雨でも靴を履いたまま着脱しやすい裾ファスナー仕様。",
     "isBestDeal": true,
-    "updated_at": "2026-11-06T06:44:51.902Z",
+    "updated_at": "2026-11-09T09:41:08.778Z",
     "registered_at": "2026-11-06T06:03:31.340Z"
   },
   {
@@ -384,10 +452,10 @@
     "point_rate": 10,
     "image_url": "https://shop.r10s.jp/sakaiya/cabinet/tnf18/imgrc0114707711.jpg",
     "affiliate_url": "https://item.rakuten.co.jp/sakaiya/202501271600-o-nu62401",
-    "badge": "🔥 30%OFF 最安特価",
-    "description": "【カテゴリ最安30%OFF】疎水性ファイバー採用で汗を肌面から瞬時に外側へ放出。肌を常にサラサラに保ち汗冷えを徹底ブロック。",
-    "isBestDeal": true,
-    "updated_at": "2026-11-06T06:44:51.902Z",
+    "badge": "30%OFF 特価",
+    "description": "疎水性ファイバー採用で汗を肌面から瞬時に外側へ放出。肌を常にサラサラに保ち汗冷えを徹底ブロック。",
+    "isBestDeal": false,
+    "updated_at": "2026-11-09T09:41:08.778Z",
     "registered_at": "2026-11-06T06:03:31.340Z"
   },
   {
@@ -404,7 +472,7 @@
     "badge": "🔥 30%OFF 最安特価",
     "description": "【カテゴリ最安30%OFF】足指が自由に動いて地面を強くグリップ。シリコン滑り止めでシューズ内のズレを解消。",
     "isBestDeal": true,
-    "updated_at": "2026-11-06T06:44:51.902Z",
+    "updated_at": "2026-11-09T09:41:08.778Z",
     "registered_at": "2026-11-06T06:03:31.340Z"
   },
   {
@@ -421,7 +489,7 @@
     "badge": "🔥 30%OFF 最安特価",
     "description": "【カテゴリ最安30%OFF】体にピタッと密着し走っても上下に揺れない伸縮ベルト。補給食ジェルやスマホをスマートに携帯可能。",
     "isBestDeal": true,
-    "updated_at": "2026-11-06T06:44:51.902Z",
+    "updated_at": "2026-11-09T09:41:08.778Z",
     "registered_at": "2026-11-06T06:03:31.340Z"
   },
   {
@@ -438,8 +506,44 @@
     "badge": "🔥 30%OFF 最安特価",
     "description": "【カテゴリ最安30%OFF】雨天レース・渡渉・カヌーでも電子機器や地図、必携医療品を水濡れから100%保護する高気密ポーチ。",
     "isBestDeal": true,
-    "updated_at": "2026-11-06T06:44:51.902Z",
+    "updated_at": "2026-11-09T09:41:08.778Z",
     "registered_at": "2026-11-06T06:03:31.340Z"
+  },
+  {
+    "id": "deal-gear-innerfact-seamless-pant",
+    "gear_id": "gear-innerfact-seamless-pant",
+    "title": "INNER FACT Men's シームレスインナーパンツ (無縫製 / 股擦れゼロ)",
+    "category": "アンダーウェア",
+    "price": 1460,
+    "original_price": 2090,
+    "discount_rate": 30,
+    "point_rate": 3,
+    "image_url": "https://shop.r10s.jp/heimat-berg/cabinet/innerfact2/inf239002_1.jpg",
+    "affiliate_url": "https://item.rakuten.co.jp/heimat-berg/inf239002/",
+    "badge": "🔥 30%OFF 最安特価",
+    "description": "【カテゴリ最安30%OFF】【股擦れゼロの感動】無縫製シームレス加工により、過酷な100マイルや雨天レースでも肌への摩擦・痛みを完全排除。吸汗速乾性に優れサラサラが持続。",
+    "official_url": "https://inner-fact.co.jp/",
+    "shop_name": "INNER FACT 公式ストア / 楽天市場",
+    "isBestDeal": true,
+    "updated_at": "2026-11-09T09:41:08.778Z",
+    "registered_at": "2026-11-09T09:28:09.186Z"
+  },
+  {
+    "id": "deal-gear-deal-mw92koce-wagd",
+    "gear_id": "gear-deal-mw92koce-wagd",
+    "title": "asics/アシックス トレイルランニング シューズ ランシュー_スニーカー_運動靴",
+    "category": "トレランシューズ",
+    "price": 10780,
+    "original_price": 15400,
+    "discount_rate": 30,
+    "point_rate": 10,
+    "image_url": "https://shop.r10s.jp/kumasupo/cabinet/asics26ss/1011c086-400_1.jpg",
+    "affiliate_url": "https://item.rakuten.co.jp/kumasupo/1011c086-400/",
+    "badge": "30%OFF 特価",
+    "description": "【最新セール発掘】定価より30%OFF（¥4,620引き）。楽天市場の本日更新目玉特価品。",
+    "isBestDeal": false,
+    "updated_at": "2026-11-09T09:41:08.778Z",
+    "registered_at": "2026-11-09T09:41:08.778Z"
   },
   {
     "id": "deal-gear-trail-wear-cwx-expert-mens",
@@ -455,7 +559,7 @@
     "badge": "26%OFF 特価",
     "description": "下り坂の着地衝撃から膝関節を守るテーピング構造。長距離の足の残りが劇的に変わる定番サポートタイツ。",
     "isBestDeal": false,
-    "updated_at": "2026-11-06T06:44:51.902Z",
+    "updated_at": "2026-11-09T09:41:08.778Z",
     "registered_at": "2026-11-06T06:03:31.340Z"
   },
   {
@@ -472,8 +576,63 @@
     "badge": "🔥 25%OFF 最安特価",
     "description": "【カテゴリ最安25%OFF】包帯、滅菌ガーゼ、テーピング、ピンセットなど大会必携救急品を防水ポーチに完全セット。",
     "isBestDeal": true,
-    "updated_at": "2026-11-06T06:44:51.902Z",
+    "updated_at": "2026-11-09T09:41:08.778Z",
     "registered_at": "2026-11-06T06:03:31.340Z"
+  },
+  {
+    "id": "deal-gear-deal-mw92mus1-rz6p",
+    "gear_id": "gear-deal-mw92mus1-rz6p",
+    "title": "ミレー (Millet) ティフォン 50000 ストレッチ ジャケット TYPHON MIV01508 / 防水 24FWモデル レインウェア",
+    "category": "レインウェア",
+    "price": 26400,
+    "original_price": 35200,
+    "discount_rate": 25,
+    "point_rate": 10,
+    "image_url": "https://shop.r10s.jp/millet-outlet/cabinet/24ss_3/miv01508.jpg",
+    "affiliate_url": "https://item.rakuten.co.jp/millet-outlet/miv01508/",
+    "badge": "25%OFF 特価",
+    "description": "【最新セール発掘】定価より25%OFF（¥8,800引き）。楽天市場の本日更新目玉特価品。",
+    "isBestDeal": false,
+    "updated_at": "2026-11-09T09:41:08.778Z",
+    "registered_at": "2026-11-09T09:41:08.778Z"
+  },
+  {
+    "id": "deal-gear-innerfact-5fingers-socks",
+    "gear_id": "gear-innerfact-5fingers-socks",
+    "title": "INNER FACT ラミー五本指ソックス ショート丈 (天然麻 / マメ防止)",
+    "category": "ランニングソックス",
+    "price": 2530,
+    "original_price": 3300,
+    "discount_rate": 23,
+    "point_rate": 3,
+    "image_url": "https://shop.r10s.jp/sportsfield/cabinet/takenaga/5f-s-1.jpg",
+    "affiliate_url": "https://item.rakuten.co.jp/sportsfield/5f-s/",
+    "badge": "23%OFF 特価",
+    "description": "【マメ防止の決定版】水分を保持しない天然ラミー（麻）繊維100%仕様。長時間の雨・泥水・汗でも足がふやけず、靴擦れ・マメの発生を徹底的に防ぐトレラン界の最強靴下。",
+    "official_url": "https://inner-fact.co.jp/",
+    "shop_name": "INNER FACT 公式ストア / 楽天市場",
+    "isBestDeal": false,
+    "updated_at": "2026-11-09T09:41:08.778Z",
+    "registered_at": "2026-11-09T09:28:09.186Z"
+  },
+  {
+    "id": "deal-gear-innerfact-tabi-socks",
+    "gear_id": "gear-innerfact-tabi-socks",
+    "title": "INNER FACT ラミー足袋型ソックス ミドル丈 (踏ん張り・耐久性抜群)",
+    "category": "ランニングソックス",
+    "price": 2530,
+    "original_price": 3300,
+    "discount_rate": 23,
+    "point_rate": 3,
+    "image_url": "https://shop.r10s.jp/racketfield/cabinet/takenaga/t-m-2.jpg",
+    "affiliate_url": "https://item.rakuten.co.jp/racketfield/t-m/",
+    "badge": "23%OFF 特価",
+    "description": "親指が独立する足袋型形状により、下りや登りの踏ん張りと着地グリップを両立。五本指が苦手な人にも最適な高ホールド感＆超耐久ラミーモデル。",
+    "official_url": "https://inner-fact.co.jp/",
+    "shop_name": "INNER FACT 公式ストア / 楽天市場",
+    "isBestDeal": false,
+    "updated_at": "2026-11-09T09:41:08.778Z",
+    "registered_at": "2026-11-09T09:28:09.186Z"
   },
   {
     "id": "deal-gear-trail-rain-pants-millet-dry",
@@ -489,24 +648,7 @@
     "badge": "20%OFF 特価",
     "description": "小雨や霧雨を弾き飛ばす高耐久撥水加工。タイツの上から履いてもゴワつかないスリムシルエット。",
     "isBestDeal": false,
-    "updated_at": "2026-11-06T06:44:51.902Z",
-    "registered_at": "2026-11-06T06:03:31.340Z"
-  },
-  {
-    "id": "deal-gear-trail-wear-c3fit-tights",
-    "gear_id": "gear-trail-wear-c3fit-tights",
-    "title": "C3fit インパクトエアー ロングタイツ (3F14127 / 最軽量サポート)",
-    "category": "サポートタイツ",
-    "price": 11880,
-    "original_price": 14850,
-    "discount_rate": 20,
-    "point_rate": 10,
-    "image_url": "https://shop.r10s.jp/gold/auc-bestsports/img/c3fit/impactairlongtights/airlongtights_w_main.jpg",
-    "affiliate_url": "https://item.rakuten.co.jp/auc-bestsports/3fw14127/",
-    "badge": "20%OFF 特価",
-    "description": "【膝腰サポートの金字塔】着心地の軽さと強力なテーピングサポートを両立。後半の下り坂でも脚が残る。",
-    "isBestDeal": false,
-    "updated_at": "2026-11-06T06:44:51.902Z",
+    "updated_at": "2026-11-09T09:41:08.778Z",
     "registered_at": "2026-11-06T06:03:31.340Z"
   },
   {
@@ -523,7 +665,7 @@
     "badge": "🔥 20%OFF 最安特価",
     "description": "【カテゴリ最安20%OFF】必須アミノ酸BCAA＋グルタミンを高配合。レース前後の摂取で翌日の筋肉痛を大幅に抑える定番サプリ。",
     "isBestDeal": true,
-    "updated_at": "2026-11-06T06:44:51.902Z",
+    "updated_at": "2026-11-09T09:41:08.778Z",
     "registered_at": "2026-11-06T06:03:31.340Z"
   },
   {
@@ -540,7 +682,7 @@
     "badge": "20%OFF 特価",
     "description": "パンク修理やサドル調整に必要なアーレンキーとドライバーをコンパクトに集約した手のひらサイズ工具。",
     "isBestDeal": false,
-    "updated_at": "2026-11-06T06:44:51.902Z",
+    "updated_at": "2026-11-09T09:41:08.778Z",
     "registered_at": "2026-11-06T06:03:31.340Z"
   }
 ]

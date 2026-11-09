@@ -1,4 +1,5 @@
 @echo off
+chcp 65001 > nul
 powershell.exe -NoProfile -ExecutionPolicy Bypass -EncodedCommand JgAgACIARAA6AFwAQQBJAC0AUwB5AHMAdABlAG0AXADWMO0wsDC1MKQwyDBcAHMAYwByAGkAcAB0AHMAXAB1AHAAZABhAHQAZQBfAGcAaQB0AGgAdQBiAC4AcABzADEAIgA=
 echo.
 pause

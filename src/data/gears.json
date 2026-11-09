@@ -26,7 +26,7 @@
     "imageUrl": "https://shop.r10s.jp/sakaiya/cabinet/05449151/07483255/56f99910002.jpg",
     "badge": "30%OFF 特価",
     "isBestDeal": false,
-    "priceVerifiedAt": "2026-11-06T06:44:48.487Z"
+    "priceVerifiedAt": "2026-11-09T09:38:53.648Z"
   },
   {
     "id": "gear-trail-shoes-speedgoat2",
@@ -54,7 +54,7 @@
     "dealUrl": "https://item.rakuten.co.jp/beacle/523-1162710-dcbk",
     "imageUrl": "https://shop.r10s.jp/beacle/cabinet/image0054/523-1162710-dcbk-000.jpg",
     "badge": "30%OFF 特価",
-    "priceVerifiedAt": "2026-11-06T06:44:48.541Z",
+    "priceVerifiedAt": "2026-11-09T09:38:53.752Z",
     "isBestDeal": false
   },
   {
@@ -83,65 +83,65 @@
     "dealUrl": "https://item.rakuten.co.jp/stridelab/p_7407589032102",
     "imageUrl": "https://shop.r10s.jp/stridelab/cabinet/items1679906671/13593855732126631220.jpg",
     "badge": "30%OFF 特価",
-    "priceVerifiedAt": "2026-11-06T06:44:48.460Z",
+    "priceVerifiedAt": "2026-11-09T09:38:53.712Z",
     "isBestDeal": false
   },
   {
-    "id": "gear-trail-shoes-mesa2",
-    "sports": [
-      "trail"
-    ],
-    "gearType": "トレランシューズ",
-    "matchKeywords": [
-      "トレランシューズ",
-      "シューズ",
-      "ゼロシューズ",
-      "ベアフット",
-      "メサトレイル"
-    ],
-    "title": "ゼロシューズ メサトレイル2 メンズ (超軽量ベアフット・足裏感覚重視)",
-    "brand": "XERO SHOES",
-    "standardTitle": "【カテゴリ最安30%OFF】裸足感覚で走るベアフットトレランの決定版。足本来のバネと腱を鍛え、路面をダイレクトに掴むフィーリング。",
-    "standardUrl": "https://item.rakuten.co.jp/sakaiya/202607071859",
-    "dealKeyword": "ゼロシューズ メサトレイル2",
-    "price": 11550,
-    "originalPrice": 16500,
-    "discountRate": 30,
-    "pointRate": 10,
-    "dealUrl": "https://item.rakuten.co.jp/sakaiya/202607071859",
-    "imageUrl": "https://shop.r10s.jp/sakaiya/cabinet/kenko/xeroshoes/imgrc0131156406.jpg",
-    "badge": "🔥 30%OFF 最安特価",
-    "priceVerifiedAt": "2026-11-06T06:44:48.535Z",
-    "isBestDeal": true
-  },
-  {
-    "id": "gear-marathon-shoes-nike-juniper",
+    "id": "gear-deal-mw92kbug-bwek",
     "sports": [
       "trail",
       "marathon"
     ],
     "gearType": "トレランシューズ",
     "matchKeywords": [
+      "SALOMON",
       "トレランシューズ",
-      "シューズ",
-      "ナイキ",
-      "NIKE",
-      "ジュニパー"
+      "セール",
+      "特価",
+      "目玉"
     ],
-    "title": "NIKE ジュニパー トレイル 2 (エントリー＆ロング練習対応)",
-    "brand": "NIKE",
-    "standardTitle": "ナイキ公式。高い通気性と耐久ラバーグリップで林道から不整地まで軽快にカバーする万能モデル。",
-    "standardUrl": "https://item.rakuten.co.jp/nike-official/dm0822-301",
-    "dealKeyword": "NIKE ジュニパートレイル2",
-    "price": 11880,
-    "originalPrice": 16971,
-    "discountRate": 30,
+    "title": "サロモン エアロブレイズ3グラベル メンズ SALOMON AERO BLAZE 3 GRVL 靴 スニーカー ランニング おしゃれ キャンプ アウトドア",
+    "brand": "SALOMON",
+    "standardTitle": "【カテゴリ最安50%OFF】【最新セール発掘】定価より50%OFF（¥16,500引き）。楽天市場の本日更新目玉特価品。",
+    "standardUrl": "https://item.rakuten.co.jp/canpanera/s22182-1/",
+    "dealKeyword": "サロモン トレランシューズ セール",
+    "price": 16500,
+    "originalPrice": 33000,
+    "discountRate": 50,
     "pointRate": 10,
-    "dealUrl": "https://item.rakuten.co.jp/nike-official/dm0822-301",
-    "imageUrl": "https://shop.r10s.jp/nike-official/cabinet/fa2601/dm0822-301_a.jpg",
-    "badge": "30%OFF 特価",
-    "priceVerifiedAt": "2026-11-06T06:44:48.779Z",
-    "isBestDeal": false
+    "dealUrl": "https://item.rakuten.co.jp/canpanera/s22182-1/",
+    "imageUrl": "https://shop.r10s.jp/canpanera/cabinet/item242/item_s22182_0.jpg",
+    "badge": "🔥 50%OFF 最安特価",
+    "isBestDeal": true,
+    "priceVerifiedAt": "2026-11-09T09:39:08.169Z"
+  },
+  {
+    "id": "gear-deal-mw92kizw-0ap8",
+    "sports": [
+      "trail"
+    ],
+    "gearType": "トレランシューズ",
+    "matchKeywords": [
+      "HOKA",
+      "トレランシューズ",
+      "セール",
+      "特価",
+      "目玉"
+    ],
+    "title": "ホカ スピードゴート2 ユニセックス HOKA SPEEDGOAT 2 メンズ レディース 1162710 靴 スニーカー シューズ ランニング トレイル トレラン ロード フェス 黒 おしゃれ キャンプ アウトドア ホカオネオネ HOKA ONE ONE",
+    "brand": "HOKA",
+    "standardTitle": "【最新セール発掘】定価より50%OFF（¥27,500引き）。楽天市場の本日更新目玉特価品。",
+    "standardUrl": "https://item.rakuten.co.jp/canpanera/h20098/",
+    "dealKeyword": "HOKA スピードゴート セール",
+    "price": 27500,
+    "originalPrice": 55000,
+    "discountRate": 50,
+    "pointRate": 10,
+    "dealUrl": "https://item.rakuten.co.jp/canpanera/h20098/",
+    "imageUrl": "https://shop.r10s.jp/canpanera/cabinet/item239/item_h20098_0.jpg",
+    "badge": "50%OFF 特価",
+    "isBestDeal": false,
+    "priceVerifiedAt": "2026-11-09T09:39:17.420Z"
   },
   {
     "id": "gear-trail-pack-salomon-actskin4",
@@ -171,7 +171,7 @@
     "imageUrl": "https://shop.r10s.jp/apworld/cabinet/cm/2605a/actskn4set_01.jpg",
     "badge": "🔥 60%OFF 最安特価",
     "isBestDeal": true,
-    "priceVerifiedAt": "2026-11-06T06:44:48.790Z"
+    "priceVerifiedAt": "2026-11-09T09:38:53.960Z"
   },
   {
     "id": "gear-trail-pack-salomon-actskin12",
@@ -199,7 +199,7 @@
     "dealUrl": "https://item.rakuten.co.jp/apworld/actskin12setw",
     "imageUrl": "https://shop.r10s.jp/apworld/cabinet/cm/2605b/actskin12setw_01.jpg",
     "badge": "60%OFF 特価",
-    "priceVerifiedAt": "2026-11-06T06:44:48.824Z",
+    "priceVerifiedAt": "2026-11-09T09:38:53.988Z",
     "isBestDeal": false
   },
   {
@@ -229,7 +229,7 @@
     "dealUrl": "https://item.rakuten.co.jp/sundaymountain/e05371-1",
     "imageUrl": "https://shop.r10s.jp/sundaymountain/cabinet/item220/item_e05371_0.jpg",
     "badge": "30%OFF 特価",
-    "priceVerifiedAt": "2026-11-06T06:44:48.755Z",
+    "priceVerifiedAt": "2026-11-09T09:38:54.038Z",
     "isBestDeal": false
   },
   {
@@ -251,13 +251,13 @@
     "standardUrl": "https://item.rakuten.co.jp/usbonline/ns40180j/",
     "dealKeyword": "ネイサン ピナクル 12L",
     "price": 8800,
-    "originalPrice": 8800,
-    "discountRate": 0,
+    "originalPrice": 17600,
+    "discountRate": 50,
     "pointRate": 1,
     "dealUrl": "https://item.rakuten.co.jp/usbonline/ns40180j/",
     "imageUrl": "https://shop.r10s.jp/usbonline/cabinet/pic-2/ns40180j-main.jpg",
-    "badge": "定番おすすめ",
-    "priceVerifiedAt": "2026-11-06T06:44:49.211Z",
+    "badge": "50%OFF 特価",
+    "priceVerifiedAt": "2026-11-09T09:38:54.227Z",
     "isBestDeal": false
   },
   {
@@ -287,37 +287,35 @@
     "imageUrl": "https://shop.r10s.jp/canpanera/cabinet/item257/item_b17227-1_0.jpg",
     "badge": "🔥 40%OFF 最安特価",
     "isBestDeal": true,
-    "priceVerifiedAt": "2026-11-06T06:44:48.980Z"
+    "priceVerifiedAt": "2026-11-09T09:38:54.322Z"
   },
   {
-    "id": "gear-trail-poles-leki-neotrail",
+    "id": "gear-deal-mw92miiy-j7ad",
     "sports": [
-      "trail",
-      "adventure"
+      "trail"
     ],
     "gearType": "トレッキングポール",
     "matchKeywords": [
+      "Black Diamond",
       "トレッキングポール",
-      "ポール",
-      "LEKI",
-      "レキ",
-      "カーボン",
-      "折りたたみ"
+      "セール",
+      "特価",
+      "目玉"
     ],
-    "title": "LEKI ネオトレイル プロ FX.One Superlite (超軽量カーボンポール)",
-    "brand": "LEKI",
-    "standardTitle": "LEKI最高峰のトレラン専用超軽量カーボンポール。ボタン1つで一瞬展開・折りたたみ可能。",
-    "standardUrl": "https://item.rakuten.co.jp/sakaiya/202601281828",
-    "dealKeyword": "LEKI ネオトレイルプロ",
-    "price": 21175,
-    "originalPrice": 30250,
-    "discountRate": 30,
+    "title": "ブラックダイヤモンド ディスタンス15 Black Diamond DISTANCE 15 BD56614 メンズ バッグ バックパック リュック トレランザック ランニング ファストハイク トレイルランニング 登山 通勤ラン トラベル おしゃれ キャンプ アウトドア",
+    "brand": "Black Diamond",
+    "standardTitle": "【最新セール発掘】定価より40%OFF（¥14,322引き）。楽天市場の本日更新目玉特価品。",
+    "standardUrl": "https://item.rakuten.co.jp/canpanera/b17263-1/",
+    "dealKeyword": "ブラックダイヤモンド ディスタンス セール",
+    "price": 21483,
+    "originalPrice": 35805,
+    "discountRate": 40,
     "pointRate": 10,
-    "dealUrl": "https://item.rakuten.co.jp/sakaiya/202601281828",
-    "imageUrl": "https://shop.r10s.jp/sakaiya/cabinet/evidence6/imgrc0126015752.jpg",
-    "badge": "30%OFF 特価",
-    "priceVerifiedAt": "2026-11-06T06:44:49.038Z",
-    "isBestDeal": false
+    "dealUrl": "https://item.rakuten.co.jp/canpanera/b17263-1/",
+    "imageUrl": "https://shop.r10s.jp/canpanera/cabinet/item215/item_b17263_0.jpg",
+    "badge": "40%OFF 特価",
+    "isBestDeal": false,
+    "priceVerifiedAt": "2026-11-09T09:40:50.122Z"
   },
   {
     "id": "gear-trail-poles-bd-pursuit",
@@ -345,7 +343,7 @@
     "dealUrl": "https://item.rakuten.co.jp/canpanera/b17689",
     "imageUrl": "https://shop.r10s.jp/canpanera/cabinet/item253/item_b17689_0.jpg",
     "badge": "30%OFF 特価",
-    "priceVerifiedAt": "2026-11-06T06:44:49.308Z",
+    "priceVerifiedAt": "2026-11-09T09:38:54.283Z",
     "isBestDeal": false
   },
   {
@@ -365,13 +363,13 @@
     "standardUrl": "https://item.rakuten.co.jp/sakaiya/202610211933/",
     "dealKeyword": "LEKI ウルトラトレイル FX.ONE",
     "price": 36300,
-    "originalPrice": 36300,
-    "discountRate": 0,
+    "originalPrice": 51857,
+    "discountRate": 30,
     "pointRate": 10,
     "dealUrl": "https://item.rakuten.co.jp/sakaiya/202610211933/",
     "imageUrl": "https://shop.r10s.jp/sakaiya/cabinet/leki/1300542_1.jpg",
-    "badge": "定番おすすめ",
-    "priceVerifiedAt": "2026-11-06T06:44:49.167Z",
+    "badge": "30%OFF 特価",
+    "priceVerifiedAt": "2026-11-09T09:38:54.410Z",
     "isBestDeal": false
   },
   {
@@ -394,14 +392,14 @@
     "standardUrl": "https://item.rakuten.co.jp/esports/6000000141008",
     "dealKeyword": "ミレー タンペート ジャケット",
     "price": 18480,
-    "originalPrice": 28430,
+    "originalPrice": 28431,
     "discountRate": 35,
     "pointRate": 10,
     "dealUrl": "https://item.rakuten.co.jp/esports/6000000141008",
     "imageUrl": "https://shop.r10s.jp/esports/cabinet/6000-221/6000000141008.jpg",
     "badge": "🔥 35%OFF 最安特価",
     "isBestDeal": true,
-    "priceVerifiedAt": "2026-11-06T06:44:49.272Z"
+    "priceVerifiedAt": "2026-11-09T09:38:54.510Z"
   },
   {
     "id": "gear-trail-rain-tnf-venture",
@@ -431,7 +429,7 @@
     "dealUrl": "https://item.rakuten.co.jp/e-lodge-2/gw-np62515-t",
     "imageUrl": "https://shop.r10s.jp/e-lodge-2/cabinet/gw4/gw-np62515-t.jpg",
     "badge": "30%OFF 特価",
-    "priceVerifiedAt": "2026-11-06T06:44:49.365Z",
+    "priceVerifiedAt": "2026-11-09T09:38:54.511Z",
     "isBestDeal": false
   },
   {
@@ -458,7 +456,7 @@
     "dealUrl": "https://item.rakuten.co.jp/millet-online/miv03168",
     "imageUrl": "https://shop.r10s.jp/millet-online/cabinet/26ss_2/miv03168.jpg",
     "badge": "定番おすすめ",
-    "priceVerifiedAt": "2026-11-06T06:44:49.436Z",
+    "priceVerifiedAt": "2026-11-09T09:38:54.746Z",
     "isBestDeal": false
   },
   {
@@ -487,7 +485,7 @@
     "imageUrl": "https://shop.r10s.jp/benque/cabinet/item/sale/be84_10off.jpg",
     "badge": "🔥 30%OFF 最安特価",
     "isBestDeal": true,
-    "priceVerifiedAt": "2026-11-06T06:44:49.520Z"
+    "priceVerifiedAt": "2026-11-09T09:38:54.661Z"
   },
   {
     "id": "gear-trail-rain-pants-millet-dry",
@@ -514,7 +512,7 @@
     "dealUrl": "https://item.rakuten.co.jp/millet-outlet/miv03204",
     "imageUrl": "https://shop.r10s.jp/millet-outlet/cabinet/26ss_2/miv03204.jpg",
     "badge": "20%OFF 特価",
-    "priceVerifiedAt": "2026-11-06T06:44:49.696Z",
+    "priceVerifiedAt": "2026-11-09T09:38:54.755Z",
     "isBestDeal": false
   },
   {
@@ -542,7 +540,7 @@
     "dealUrl": "https://item.rakuten.co.jp/rampjack/np62577-262/",
     "imageUrl": "https://shop.r10s.jp/rampjack/cabinet/26fw_tnf_2/np62577-262_1.jpg",
     "badge": "定番おすすめ",
-    "priceVerifiedAt": "2026-11-06T06:44:49.556Z",
+    "priceVerifiedAt": "2026-11-09T09:38:54.692Z",
     "isBestDeal": false
   },
   {
@@ -573,7 +571,7 @@
     "imageUrl": "https://shop.r10s.jp/yoshikip2/cabinet/sukeneko8/e065ab0x_01.jpg",
     "badge": "50%OFF 特価",
     "isBestDeal": false,
-    "priceVerifiedAt": "2026-11-06T06:44:49.732Z"
+    "priceVerifiedAt": "2026-11-09T09:38:54.894Z"
   },
   {
     "id": "gear-trail-light-petzl-tikkina",
@@ -602,7 +600,7 @@
     "dealUrl": "https://item.rakuten.co.jp/yoshikip2/e060ab0x",
     "imageUrl": "https://shop.r10s.jp/yoshikip2/cabinet/sukeneko8/e060ab0x_01.jpg",
     "badge": "🔥 50%OFF 最安特価",
-    "priceVerifiedAt": "2026-11-06T06:44:49.753Z",
+    "priceVerifiedAt": "2026-11-09T09:38:54.922Z",
     "isBestDeal": true
   },
   {
@@ -629,36 +627,37 @@
     "dealUrl": "https://item.rakuten.co.jp/canpanera/b17001-1",
     "imageUrl": "https://shop.r10s.jp/canpanera/cabinet/item243/item_b17001_0.jpg",
     "badge": "定番おすすめ",
-    "priceVerifiedAt": "2026-11-06T06:44:49.991Z",
+    "priceVerifiedAt": "2026-11-09T09:38:54.956Z",
     "isBestDeal": false
   },
   {
-    "id": "gear-trail-light-ledlenser-neo3",
+    "id": "gear-deal-mw92lbi5-vzlm",
     "sports": [
       "trail",
       "adventure"
     ],
     "gearType": "ヘッドライト",
     "matchKeywords": [
+      "PETZL",
       "ヘッドライト",
-      "レッドレンザー",
-      "LEDLENSER",
-      "NEO3"
+      "セール",
+      "特価",
+      "目玉"
     ],
-    "title": "Ledlenser NEO3 トレイルランニングライト (単4電池×3 / 広角照射)",
-    "brand": "Ledlenser",
-    "standardTitle": "【ドイツ光学工学】ワイドビームで足元から遠方まで均一に照らし、夜間の下り坂でも段差を鮮明に見極められる。",
-    "standardUrl": "https://item.rakuten.co.jp/gramsky/b0bgkzbz2y",
-    "dealKeyword": "レッドレンザー NEO3",
-    "price": 12100,
-    "originalPrice": 12100,
-    "discountRate": 0,
+    "title": "2025FW ペツル アクティックコア E065AB0x 国内正規品 ヘッドライト LED 充電式 登山 ランニング",
+    "brand": "PETZL",
+    "standardTitle": "【最新セール発掘】定価より50%OFF（¥12,177引き）。楽天市場の本日更新目玉特価品。",
+    "standardUrl": "https://item.rakuten.co.jp/yoshikip2/e065ab0x/",
+    "dealKeyword": "ペツル ヘッドライト セール",
+    "price": 12177,
+    "originalPrice": 24354,
+    "discountRate": 50,
     "pointRate": 10,
-    "dealUrl": "https://item.rakuten.co.jp/gramsky/b0bgkzbz2y",
-    "imageUrl": "https://shop.r10s.jp/gramsky/cabinet/yuragipic/systempic196/b0bgkzbz2y-00.jpg",
-    "badge": "定番おすすめ",
-    "priceVerifiedAt": "2026-11-06T06:44:49.903Z",
-    "isBestDeal": false
+    "dealUrl": "https://item.rakuten.co.jp/yoshikip2/e065ab0x/",
+    "imageUrl": "https://shop.r10s.jp/yoshikip2/cabinet/sukeneko8/e065ab0x_01.jpg",
+    "badge": "50%OFF 特価",
+    "isBestDeal": false,
+    "priceVerifiedAt": "2026-11-09T09:39:54.365Z"
   },
   {
     "id": "gear-trail-wear-c3fit-goldwin",
@@ -687,7 +686,7 @@
     "imageUrl": "https://shop.r10s.jp/auc-bestsports/cabinet/sports/c3fit/c3fit-gcw04351.jpg",
     "badge": "🔥 60%OFF 最安特価",
     "isBestDeal": true,
-    "priceVerifiedAt": "2026-11-06T06:44:50.230Z"
+    "priceVerifiedAt": "2026-11-09T09:38:55.156Z"
   },
   {
     "id": "gear-trail-wear-cwx-expert-ladies",
@@ -716,7 +715,7 @@
     "dealUrl": "https://item.rakuten.co.jp/shirohato/40hxy499",
     "imageUrl": "https://shop.r10s.jp/shirohato/cabinet/001255/40hxy499.jpg",
     "badge": "38%OFF 特価",
-    "priceVerifiedAt": "2026-11-06T06:44:50.013Z",
+    "priceVerifiedAt": "2026-11-09T09:38:55.177Z",
     "isBestDeal": false
   },
   {
@@ -746,7 +745,7 @@
     "dealUrl": "https://item.rakuten.co.jp/ranfan/cwx-hxo499",
     "imageUrl": "https://shop.r10s.jp/ranfan/cabinet/wacoal-sports/hxo499-ima.jpg",
     "badge": "26%OFF 特価",
-    "priceVerifiedAt": "2026-11-06T06:44:50.154Z",
+    "priceVerifiedAt": "2026-11-09T09:38:55.238Z",
     "isBestDeal": false
   },
   {
@@ -767,13 +766,13 @@
     "standardUrl": "https://item.rakuten.co.jp/auc-bestsports/3fw14127/",
     "dealKeyword": "C3fit インパクトエアー",
     "price": 11880,
-    "originalPrice": 14850,
-    "discountRate": 20,
+    "originalPrice": 29700,
+    "discountRate": 60,
     "pointRate": 10,
     "dealUrl": "https://item.rakuten.co.jp/auc-bestsports/3fw14127/",
     "imageUrl": "https://shop.r10s.jp/gold/auc-bestsports/img/c3fit/impactairlongtights/airlongtights_w_main.jpg",
-    "badge": "20%OFF 特価",
-    "priceVerifiedAt": "2026-11-06T06:44:50.172Z",
+    "badge": "60%OFF 特価",
+    "priceVerifiedAt": "2026-11-09T09:38:55.267Z",
     "isBestDeal": false
   },
   {
@@ -792,7 +791,7 @@
     ],
     "title": "THE NORTH FACE ロングスリーブ ドライクルー (NU62401 吸汗速乾)",
     "brand": "THE NORTH FACE",
-    "standardTitle": "【カテゴリ最安30%OFF】疎水性ファイバー採用で汗を肌面から瞬時に外側へ放出。肌を常にサラサラに保ち汗冷えを徹底ブロック。",
+    "standardTitle": "疎水性ファイバー採用で汗を肌面から瞬時に外側へ放出。肌を常にサラサラに保ち汗冷えを徹底ブロック。",
     "standardUrl": "https://item.rakuten.co.jp/sakaiya/202501271600-o-nu62401",
     "dealKeyword": "ノースフェイス ロングスリーブドライクルー",
     "price": 3696,
@@ -801,9 +800,9 @@
     "pointRate": 10,
     "dealUrl": "https://item.rakuten.co.jp/sakaiya/202501271600-o-nu62401",
     "imageUrl": "https://shop.r10s.jp/sakaiya/cabinet/tnf18/imgrc0114707711.jpg",
-    "badge": "🔥 30%OFF 最安特価",
-    "isBestDeal": true,
-    "priceVerifiedAt": "2026-11-06T06:44:50.237Z"
+    "badge": "30%OFF 特価",
+    "isBestDeal": false,
+    "priceVerifiedAt": "2026-11-09T09:38:55.383Z"
   },
   {
     "id": "gear-trail-wear-mil-drynamic",
@@ -832,7 +831,7 @@
     "dealUrl": "https://item.rakuten.co.jp/sportsmario2/i06mjmiv01248/",
     "imageUrl": "https://shop.r10s.jp/sportsmario2/cabinet/evidence_20250822/i06mjmiv01248_1.jpg",
     "badge": "定番おすすめ",
-    "priceVerifiedAt": "2026-11-06T06:44:50.368Z",
+    "priceVerifiedAt": "2026-11-09T09:38:55.375Z",
     "isBestDeal": false
   },
   {
@@ -859,7 +858,7 @@
     "dealUrl": "https://item.rakuten.co.jp/niche-express/ftr00000002827",
     "imageUrl": "https://shop.r10s.jp/niche-express/cabinet/2020/ftr/01-0/ftr00000002827.jpg",
     "badge": "定番おすすめ",
-    "priceVerifiedAt": "2026-11-06T06:44:50.381Z",
+    "priceVerifiedAt": "2026-11-09T09:38:55.457Z",
     "isBestDeal": false
   },
   {
@@ -888,7 +887,7 @@
     "imageUrl": "https://shop.r10s.jp/funtastic/cabinet/07347997/08903542/sprz006_1.jpg",
     "badge": "🔥 30%OFF 最安特価",
     "isBestDeal": true,
-    "priceVerifiedAt": "2026-11-06T06:44:50.462Z"
+    "priceVerifiedAt": "2026-11-09T09:38:55.500Z"
   },
   {
     "id": "gear-marathon-socks-injinji-mini",
@@ -914,7 +913,7 @@
     "dealUrl": "https://item.rakuten.co.jp/auroralodge-r/24ss-213130",
     "imageUrl": "https://shop.r10s.jp/auroralodge-r/cabinet/10781197/10808975/trailmwminicrew.jpg",
     "badge": "定番おすすめ",
-    "priceVerifiedAt": "2026-11-06T06:44:50.469Z",
+    "priceVerifiedAt": "2026-11-09T09:38:55.613Z",
     "isBestDeal": false
   },
   {
@@ -941,7 +940,7 @@
     "dealUrl": "https://item.rakuten.co.jp/auroralodge-r/24ss-213170",
     "imageUrl": "https://shop.r10s.jp/auroralodge-r/cabinet/10781197/10809098/imgrc0197273708.jpg",
     "badge": "定番おすすめ",
-    "priceVerifiedAt": "2026-11-06T06:44:50.588Z",
+    "priceVerifiedAt": "2026-11-09T09:38:55.600Z",
     "isBestDeal": false
   },
   {
@@ -971,7 +970,7 @@
     "dealUrl": "https://item.rakuten.co.jp/kemari87/072120037-8/",
     "imageUrl": "https://shop.r10s.jp/kemari87/cabinet/other5/072120037-8.jpg",
     "badge": "定番おすすめ",
-    "priceVerifiedAt": "2026-11-06T06:44:50.609Z",
+    "priceVerifiedAt": "2026-11-09T09:38:55.670Z",
     "isBestDeal": false
   },
   {
@@ -1001,7 +1000,7 @@
     "imageUrl": "https://shop.r10s.jp/enigumachan22/cabinet/aminovital-bara.jpg",
     "badge": "🔥 20%OFF 最安特価",
     "isBestDeal": true,
-    "priceVerifiedAt": "2026-11-06T06:44:50.648Z"
+    "priceVerifiedAt": "2026-11-09T09:38:55.715Z"
   },
   {
     "id": "gear-nutrition-medalist-set",
@@ -1028,7 +1027,7 @@
     "dealUrl": "https://item.rakuten.co.jp/ishikawasports/medalist-energygel-4",
     "imageUrl": "https://shop.r10s.jp/ishikawasports/cabinet/sapplement/medalist/energy_gel/medalist4x1.jpg",
     "badge": "定番おすすめ",
-    "priceVerifiedAt": "2026-11-06T06:44:50.686Z",
+    "priceVerifiedAt": "2026-11-09T09:38:55.868Z",
     "isBestDeal": false
   },
   {
@@ -1059,7 +1058,7 @@
     "dealUrl": "https://item.rakuten.co.jp/lafitte/magon-energygel-set/",
     "imageUrl": "https://shop.r10s.jp/lafitte/cabinet/19ss_keleme_01/1baa78ee55d355a8dc_1.jpg",
     "badge": "定番おすすめ",
-    "priceVerifiedAt": "2026-11-06T06:44:50.897Z",
+    "priceVerifiedAt": "2026-11-09T09:38:55.837Z",
     "isBestDeal": false
   },
   {
@@ -1089,7 +1088,7 @@
     "imageUrl": "https://shop.r10s.jp/funtastic/cabinet/07347997/spbg/08860895/spbg002_1.jpg",
     "badge": "🔥 30%OFF 最安特価",
     "isBestDeal": true,
-    "priceVerifiedAt": "2026-11-06T06:44:50.811Z"
+    "priceVerifiedAt": "2026-11-09T09:38:55.878Z"
   },
   {
     "id": "gear-marathon-pouch-salomon-pulse",
@@ -1115,7 +1114,7 @@
     "dealUrl": "https://item.rakuten.co.jp/yanosp-fineplay/lc2179800",
     "imageUrl": "https://shop.r10s.jp/yanosp-fineplay/cabinet/a20151007/lc2179800_1.jpg",
     "badge": "定番おすすめ",
-    "priceVerifiedAt": "2026-11-06T06:44:50.871Z",
+    "priceVerifiedAt": "2026-11-09T09:38:55.930Z",
     "isBestDeal": false
   },
   {
@@ -1142,7 +1141,7 @@
     "dealUrl": "https://item.rakuten.co.jp/himaraya/0000000859362",
     "imageUrl": "https://shop.r10s.jp/himaraya/cabinet/0000000859b/0000000859362_r1_01.jpg",
     "badge": "定番おすすめ",
-    "priceVerifiedAt": "2026-11-06T06:44:50.908Z",
+    "priceVerifiedAt": "2026-11-09T09:38:56.037Z",
     "isBestDeal": false
   },
   {
@@ -1169,7 +1168,7 @@
     "dealUrl": "https://item.rakuten.co.jp/runwalk/10000190/",
     "imageUrl": "https://shop.r10s.jp/runwalk/cabinet/biiino/item/main-image/20220923191309_1.jpg",
     "badge": "定番おすすめ",
-    "priceVerifiedAt": "2026-11-06T06:44:51.072Z",
+    "priceVerifiedAt": "2026-11-09T09:38:56.066Z",
     "isBestDeal": false
   },
   {
@@ -1198,7 +1197,7 @@
     "imageUrl": "https://shop.r10s.jp/multibox/cabinet/11519729/6592962_4.jpg",
     "badge": "🔥 25%OFF 最安特価",
     "isBestDeal": true,
-    "priceVerifiedAt": "2026-11-06T06:44:51.071Z"
+    "priceVerifiedAt": "2026-11-09T09:38:56.074Z"
   },
   {
     "id": "gear-firstaid-poison-remover",
@@ -1226,7 +1225,7 @@
     "dealUrl": "https://item.rakuten.co.jp/tokyo-tools/suction-x",
     "imageUrl": "https://shop.r10s.jp/tokyo-tools/cabinet/04711832/suctionx-1-new.jpg",
     "badge": "定番おすすめ",
-    "priceVerifiedAt": "2026-11-06T06:44:51.173Z",
+    "priceVerifiedAt": "2026-11-09T09:38:56.234Z",
     "isBestDeal": false
   },
   {
@@ -1248,14 +1247,14 @@
     "standardTitle": "【透湿エマージェンシー定番】内部の湿気を逃がし結露を防ぐ高機能アルミヴィヴィ。",
     "standardUrl": "https://item.rakuten.co.jp/canpanera/s23005/",
     "dealKeyword": "SOL エスケープヴィヴィ",
-    "price": 12870,
+    "price": 11440,
     "originalPrice": 12870,
-    "discountRate": 0,
+    "discountRate": 11,
     "pointRate": 1,
     "dealUrl": "https://item.rakuten.co.jp/canpanera/s23005/",
     "imageUrl": "https://shop.r10s.jp/canpanera/cabinet/item209/item_s23005_0.jpg",
     "badge": "定番おすすめ",
-    "priceVerifiedAt": "2026-11-06T06:44:51.044Z",
+    "priceVerifiedAt": "2026-11-09T09:38:56.211Z",
     "isBestDeal": false
   },
   {
@@ -1284,7 +1283,7 @@
     "imageUrl": "https://shop.r10s.jp/e-lodge-2/cabinet/od-lst-st01/lst2-st83221.jpg",
     "badge": "定番おすすめ",
     "isBestDeal": false,
-    "priceVerifiedAt": "2026-11-06T06:44:51.268Z"
+    "priceVerifiedAt": "2026-11-09T09:38:56.278Z"
   },
   {
     "id": "gear-ar-compass-suunto-sk8",
@@ -1311,7 +1310,7 @@
     "dealUrl": "https://item.rakuten.co.jp/mic21/2410803001",
     "imageUrl": "https://shop.r10s.jp/mic21/cabinet/2024/2410803001-001_1.jpg",
     "badge": "定番おすすめ",
-    "priceVerifiedAt": "2026-11-06T06:44:51.336Z",
+    "priceVerifiedAt": "2026-11-09T09:38:56.350Z",
     "isBestDeal": false
   },
   {
@@ -1371,7 +1370,7 @@
     "imageUrl": "https://shop.r10s.jp/hzll/cabinet/13400306/14025653/fsb-30.jpg",
     "badge": "🔥 30%OFF 最安特価",
     "isBestDeal": true,
-    "priceVerifiedAt": "2026-11-06T06:44:51.395Z"
+    "priceVerifiedAt": "2026-11-09T09:38:56.517Z"
   },
   {
     "id": "gear-ar-drybag-seatosummit-ultra",
@@ -1397,7 +1396,7 @@
     "dealUrl": "https://item.rakuten.co.jp/e-lodge-2/lst-st83372",
     "imageUrl": "https://shop.r10s.jp/e-lodge-2/cabinet/lst2/lst-st83372.jpg",
     "badge": "定番おすすめ",
-    "priceVerifiedAt": "2026-11-06T06:44:51.442Z",
+    "priceVerifiedAt": "2026-11-09T09:38:56.499Z",
     "isBestDeal": false
   },
   {
@@ -1424,7 +1423,7 @@
     "dealUrl": "https://item.rakuten.co.jp/canpanera/s07062",
     "imageUrl": "https://shop.r10s.jp/canpanera/cabinet/item246/item_s07062_0.jpg",
     "badge": "定番おすすめ",
-    "priceVerifiedAt": "2026-11-06T06:44:51.473Z",
+    "priceVerifiedAt": "2026-11-09T09:38:56.560Z",
     "isBestDeal": false
   },
   {
@@ -1454,7 +1453,7 @@
     "imageUrl": "https://shop.r10s.jp/auc-bestsports/cabinet/accessory/others/optionparts/el145_01_1000.jpg",
     "badge": "🔥 60%OFF 最安特価",
     "isBestDeal": true,
-    "priceVerifiedAt": "2026-11-06T06:44:51.602Z"
+    "priceVerifiedAt": "2026-11-09T09:38:56.688Z"
   },
   {
     "id": "gear-cycle-helmet-road-light",
@@ -1481,7 +1480,7 @@
     "dealUrl": "https://item.rakuten.co.jp/lifeideakan/m23",
     "imageUrl": "https://shop.r10s.jp/lifeideakan/cabinet/m23/1.jpg",
     "badge": "55%OFF 特価",
-    "priceVerifiedAt": "2026-11-06T06:44:51.640Z",
+    "priceVerifiedAt": "2026-11-09T09:38:56.744Z",
     "isBestDeal": false
   },
   {
@@ -1509,7 +1508,7 @@
     "dealUrl": "https://item.rakuten.co.jp/powerpit/10005935",
     "imageUrl": "https://shop.r10s.jp/powerpit/cabinet/pic002/07955693/imgrc0105374144.jpg",
     "badge": "20%OFF 特価",
-    "priceVerifiedAt": "2026-11-06T06:44:51.643Z",
+    "priceVerifiedAt": "2026-11-09T09:38:56.755Z",
     "isBestDeal": false
   },
   {
@@ -1567,7 +1566,7 @@
     "imageUrl": "https://shop.r10s.jp/awaspo/cabinet/c-makes/asics/other14/1013a237_401_sr_rt.jpg",
     "badge": "🔥 50%OFF 最安特価",
     "isBestDeal": true,
-    "priceVerifiedAt": "2026-11-06T06:44:51.856Z"
+    "priceVerifiedAt": "2026-11-09T09:38:56.943Z"
   },
   {
     "id": "gear-marathon-shoes-asics-sonoma",
@@ -1595,7 +1594,7 @@
     "dealUrl": "https://item.rakuten.co.jp/murasaki-sports/m00124101030011",
     "imageUrl": "https://shop.r10s.jp/murasaki-sports/cabinet/25-49/m00124101030011.jpg",
     "badge": "50%OFF 特価",
-    "priceVerifiedAt": "2026-11-06T06:44:51.842Z",
+    "priceVerifiedAt": "2026-11-09T09:38:56.961Z",
     "isBestDeal": false
   },
   {
@@ -1622,7 +1621,7 @@
     "dealUrl": "https://item.rakuten.co.jp/step-sports/ki5716",
     "imageUrl": "https://shop.r10s.jp/step-sports/cabinet/adidas26fw/ki5716.jpg",
     "badge": "定番おすすめ",
-    "priceVerifiedAt": "2026-11-06T06:44:51.901Z",
+    "priceVerifiedAt": "2026-11-09T09:38:57.138Z",
     "isBestDeal": false
   },
   {
@@ -1648,7 +1647,236 @@
     "dealUrl": "https://item.rakuten.co.jp/troishomme/pega42mns",
     "imageUrl": "https://shop.r10s.jp/troishomme/cabinet/30/ib1873_3-1.jpg",
     "badge": "定番おすすめ",
-    "priceVerifiedAt": "2026-11-06T06:44:51.887Z",
+    "priceVerifiedAt": "2026-11-09T09:38:56.971Z",
     "isBestDeal": false
+  },
+  {
+    "id": "gear-innerfact-seamless-pant",
+    "sports": [
+      "trail",
+      "marathon",
+      "adventure"
+    ],
+    "gearType": "アンダーウェア",
+    "matchKeywords": [
+      "インナーファクト",
+      "INNER FACT",
+      "シームレス",
+      "アンダーウェア",
+      "パンツ",
+      "股擦れ"
+    ],
+    "title": "INNER FACT Men's シームレスインナーパンツ (無縫製 / 股擦れゼロ)",
+    "brand": "INNER FACT",
+    "standardTitle": "【カテゴリ最安30%OFF】【股擦れゼロの感動】無縫製シームレス加工により、過酷な100マイルや雨天レースでも肌への摩擦・痛みを完全排除。吸汗速乾性に優れサラサラが持続。",
+    "standardUrl": "https://inner-fact.co.jp/",
+    "officialUrl": "https://inner-fact.co.jp/",
+    "shopName": "INNER FACT 公式ストア / 楽天市場",
+    "dealKeyword": "インナーファクト シームレス",
+    "price": 1460,
+    "originalPrice": 2090,
+    "discountRate": 30,
+    "pointRate": 3,
+    "dealUrl": "https://item.rakuten.co.jp/heimat-berg/inf239002/",
+    "imageUrl": "https://shop.r10s.jp/heimat-berg/cabinet/innerfact2/inf239002_1.jpg",
+    "badge": "🔥 30%OFF 最安特価",
+    "isBestDeal": true,
+    "priceVerifiedAt": "2026-11-09T09:38:56.943Z"
+  },
+  {
+    "id": "gear-innerfact-5fingers-socks",
+    "sports": [
+      "trail",
+      "marathon",
+      "adventure",
+      "cycling"
+    ],
+    "gearType": "ランニングソックス",
+    "matchKeywords": [
+      "インナーファクト",
+      "INNER FACT",
+      "五本指",
+      "ソックス",
+      "靴下",
+      "ラミー",
+      "麻",
+      "マメ防止"
+    ],
+    "title": "INNER FACT ラミー五本指ソックス ショート丈 (天然麻 / マメ防止)",
+    "brand": "INNER FACT",
+    "standardTitle": "【マメ防止の決定版】水分を保持しない天然ラミー（麻）繊維100%仕様。長時間の雨・泥水・汗でも足がふやけず、靴擦れ・マメの発生を徹底的に防ぐトレラン界の最強靴下。",
+    "standardUrl": "https://inner-fact.co.jp/",
+    "officialUrl": "https://inner-fact.co.jp/",
+    "shopName": "INNER FACT 公式ストア / 楽天市場",
+    "dealKeyword": "インナーファクト 五本指",
+    "price": 2530,
+    "originalPrice": 3300,
+    "discountRate": 23,
+    "pointRate": 3,
+    "dealUrl": "https://item.rakuten.co.jp/sportsfield/5f-s/",
+    "imageUrl": "https://shop.r10s.jp/sportsfield/cabinet/takenaga/5f-s-1.jpg",
+    "badge": "23%OFF 特価",
+    "isBestDeal": false,
+    "priceVerifiedAt": "2026-11-09T09:38:56.943Z"
+  },
+  {
+    "id": "gear-innerfact-tabi-socks",
+    "sports": [
+      "trail",
+      "marathon",
+      "adventure"
+    ],
+    "gearType": "ランニングソックス",
+    "matchKeywords": [
+      "インナーファクト",
+      "INNER FACT",
+      "足袋",
+      "タビ",
+      "ソックス",
+      "靴下",
+      "ラミー",
+      "麻"
+    ],
+    "title": "INNER FACT ラミー足袋型ソックス ミドル丈 (踏ん張り・耐久性抜群)",
+    "brand": "INNER FACT",
+    "standardTitle": "親指が独立する足袋型形状により、下りや登りの踏ん張りと着地グリップを両立。五本指が苦手な人にも最適な高ホールド感＆超耐久ラミーモデル。",
+    "standardUrl": "https://inner-fact.co.jp/",
+    "officialUrl": "https://inner-fact.co.jp/",
+    "shopName": "INNER FACT 公式ストア / 楽天市場",
+    "dealKeyword": "インナーファクト 足袋",
+    "price": 2530,
+    "originalPrice": 3300,
+    "discountRate": 23,
+    "pointRate": 3,
+    "dealUrl": "https://item.rakuten.co.jp/racketfield/t-m/",
+    "imageUrl": "https://shop.r10s.jp/racketfield/cabinet/takenaga/t-m-2.jpg",
+    "badge": "23%OFF 特価",
+    "isBestDeal": false,
+    "priceVerifiedAt": "2026-11-09T09:38:56.943Z"
+  },
+  {
+    "id": "gear-runplus-tetonbros-windriver",
+    "sports": [
+      "trail",
+      "cycling",
+      "adventure"
+    ],
+    "gearType": "レインウェア",
+    "matchKeywords": [
+      "ランプラス",
+      "RUNPLUS",
+      "ティートンブロス",
+      "Teton Bros",
+      "ウィンドシェル",
+      "撥水"
+    ],
+    "title": "Teton Bros. Wind River Hoody (超軽量ウィンドシェル / 広島RUNPLUS取扱)",
+    "brand": "Teton Bros.",
+    "standardTitle": "【広島の専門店RUNPLUS厳選】通気性と防風性を高次元で両立するPERTEX EQUILIBRIUM採用。発汗しても肌に張り付かず、トレラン・ハイキングで最も頼れるウィンドシェル。",
+    "standardUrl": "https://runplus.shopselect.net/items/162371222",
+    "officialUrl": "https://runplus.shopselect.net/items/162371222",
+    "shopName": "提携専門店 RUNPLUS（広島実店舗＆公式通販）",
+    "dealKeyword": "Teton Bros Wind River Hoody",
+    "price": 18700,
+    "originalPrice": 18700,
+    "discountRate": 0,
+    "pointRate": 1,
+    "dealUrl": "https://runplus.shopselect.net/items/162371222",
+    "imageUrl": "https://baseec-img-mng.akamaized.net/images/item/origin/d5b062779eb5a1adcdfccd0d9eb70338.jpg?imformat=generic&q=90&im=Resize,width=1200,type=normal",
+    "badge": "定番おすすめ",
+    "isBestDeal": false,
+    "priceVerifiedAt": "2026-11-09T09:38:56.943Z"
+  },
+  {
+    "id": "gear-runplus-omm-sonic-vest",
+    "sports": [
+      "trail",
+      "cycling",
+      "adventure",
+      "marathon"
+    ],
+    "gearType": "アンダーウェア",
+    "matchKeywords": [
+      "ランプラス",
+      "RUNPLUS",
+      "OMM",
+      "ソニックベスト",
+      "防風ベスト",
+      "超軽量"
+    ],
+    "title": "OMM Sonic Vest (わずか42g！手のひらサイズ超軽量防風ベスト)",
+    "brand": "OMM",
+    "standardTitle": "【広島の専門店RUNPLUS厳選】わずか42gで体幹の冷えをシャットアウト。腕の可動域を一切妨げず、変わりやすい山岳天候でサッと羽織れる必携コンパクトベスト。",
+    "standardUrl": "https://runplus.shopselect.net/items/162366696",
+    "officialUrl": "https://runplus.shopselect.net/items/162366696",
+    "shopName": "提携専門店 RUNPLUS（広島実店舗＆公式通販）",
+    "dealKeyword": "OMM Sonic Vest",
+    "price": 14850,
+    "originalPrice": 14850,
+    "discountRate": 0,
+    "pointRate": 1,
+    "dealUrl": "https://runplus.shopselect.net/items/162366696",
+    "imageUrl": "https://baseec-img-mng.akamaized.net/images/item/origin/be69029107cfb41e7ea18d0bdbe827e1.jpg?imformat=generic&q=90&im=Resize,width=1200,type=normal",
+    "badge": "定番おすすめ",
+    "isBestDeal": false,
+    "priceVerifiedAt": "2026-11-09T09:38:56.943Z"
+  },
+  {
+    "id": "gear-deal-mw92koce-wagd",
+    "sports": [
+      "trail",
+      "marathon"
+    ],
+    "gearType": "トレランシューズ",
+    "matchKeywords": [
+      "ASICS",
+      "トレランシューズ",
+      "セール",
+      "特価",
+      "目玉"
+    ],
+    "title": "asics/アシックス トレイルランニング シューズ ランシュー_スニーカー_運動靴",
+    "brand": "ASICS",
+    "standardTitle": "【最新セール発掘】定価より30%OFF（¥4,620引き）。楽天市場の本日更新目玉特価品。",
+    "standardUrl": "https://item.rakuten.co.jp/kumasupo/1011c086-400/",
+    "dealKeyword": "アシックス トレラン セール",
+    "price": 10780,
+    "originalPrice": 15400,
+    "discountRate": 30,
+    "pointRate": 10,
+    "dealUrl": "https://item.rakuten.co.jp/kumasupo/1011c086-400/",
+    "imageUrl": "https://shop.r10s.jp/kumasupo/cabinet/asics26ss/1011c086-400_1.jpg",
+    "badge": "30%OFF 特価",
+    "isBestDeal": false,
+    "priceVerifiedAt": "2026-11-09T09:39:24.350Z"
+  },
+  {
+    "id": "gear-deal-mw92mus1-rz6p",
+    "sports": [
+      "trail",
+      "adventure"
+    ],
+    "gearType": "レインウェア",
+    "matchKeywords": [
+      "MILLET",
+      "レインウェア",
+      "セール",
+      "特価",
+      "目玉"
+    ],
+    "title": "ミレー (Millet) ティフォン 50000 ストレッチ ジャケット TYPHON MIV01508 / 防水 24FWモデル レインウェア",
+    "brand": "MILLET",
+    "standardTitle": "【最新セール発掘】定価より25%OFF（¥8,800引き）。楽天市場の本日更新目玉特価品。",
+    "standardUrl": "https://item.rakuten.co.jp/millet-outlet/miv01508/",
+    "dealKeyword": "ミレー レインウェア 特価",
+    "price": 26400,
+    "originalPrice": 35200,
+    "discountRate": 25,
+    "pointRate": 10,
+    "dealUrl": "https://item.rakuten.co.jp/millet-outlet/miv01508/",
+    "imageUrl": "https://shop.r10s.jp/millet-outlet/cabinet/24ss_3/miv01508.jpg",
+    "badge": "25%OFF 特価",
+    "isBestDeal": false,
+    "priceVerifiedAt": "2026-11-09T09:41:06.001Z"
   }
 ]

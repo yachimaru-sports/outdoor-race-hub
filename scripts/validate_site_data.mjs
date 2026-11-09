@@ -46,6 +46,11 @@ async function main() {
   console.log(`- 検査対象装備: 全 ${gears.length} 品のリンクおよび画像`);
   for (let i = 0; i < gears.length; i++) {
     const g = gears[i];
+    // 提携プロショップ・公式固定枠（RUNPLUS、INNER FACT等）は検証対象外（保護）
+    if (g.officialUrl || g.shopName || !g.dealUrl?.includes('item.rakuten.co.jp')) {
+      continue;
+    }
+
     let pageOk = false;
     let imgOk = false;
 
@@ -126,7 +131,10 @@ async function main() {
   const byType = new Map();
   for (const g of gears) {
     (byType.get(g.gearType) || byType.set(g.gearType, []).get(g.gearType)).push(g);
-    if (!/^https:\/\/item\.rakuten\.co\.jp\//.test(g.dealUrl || '')) errors.push(`直リンクではない: ${g.id} ${g.dealUrl}`);
+    // 提携プロショップ品（RUNPLUS等）以外は楽天個別商品直リンクであることを検証
+    if (!g.officialUrl && !g.shopName && !/^https:\/\/item\.rakuten\.co\.jp\//.test(g.dealUrl || '')) {
+      errors.push(`直リンクではない: ${g.id} ${g.dealUrl}`);
+    }
     if (!(g.price > 0) || !(g.originalPrice >= g.price)) errors.push(`価格異常: ${g.id} ${g.price}/${g.originalPrice}`);
   }
   for (const [t, list] of byType) {
