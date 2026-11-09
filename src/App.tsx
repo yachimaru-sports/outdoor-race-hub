@@ -182,65 +182,125 @@ export const App: React.FC = () => {
     }));
   };
 
-  // アドベンチャーゲーム絞り込みショートカット（ピックアップカード1：オン/オフトグル）
+  // アドベンチャーゲーム絞り込みショートカット（3ステートトグル：抽出 ➔ 除外 ➔ 解除）
   const handleFilterAdventure = () => {
-    if (filters.category === 'adventure' && (filters.featureTag === 'toretore' || filters.featureTag === 'nav')) {
-      setFilters(INITIAL_FILTERS);
-    } else {
+    const isAdventureIncluded =
+      filters.featureTag === 'toretore' && filters.featureMode !== 'exclude';
+    const isAdventureExcluded =
+      filters.featureTag === 'toretore' && filters.featureMode === 'exclude';
+
+    if (!isAdventureIncluded && !isAdventureExcluded) {
+      // 1. 抽出（これのみ表示）
       setFilters({
         ...INITIAL_FILTERS,
         category: 'adventure',
         featureTag: 'toretore',
+        featureMode: 'include',
         selectedCategories: ['adventure'],
       });
+    } else if (isAdventureIncluded) {
+      // 2. 除外（これ以外を表示）
+      setFilters({
+        ...INITIAL_FILTERS,
+        category: 'all',
+        featureTag: 'toretore',
+        featureMode: 'exclude',
+        excludedCategories: ['adventure'],
+      });
+    } else {
+      // 3. 元通り（解除）
+      setFilters(INITIAL_FILTERS);
     }
   };
 
-  // ピックアップカード2・3・4からの絞り込みショートカット（オン/オフトグル）
+  // ピックアップカード2・3・4からの絞り込みショートカット（3ステートトグル：抽出 ➔ 除外 ➔ 解除）
   const handleFilterFeature = (category: string, featureTag: string, region = 'all') => {
     // ARWS & ARWC（世界アドベンチャーレース）カードの場合
     if (featureTag === 'arws') {
-      if (filters.featureTag === 'arws') {
+      const isIncluded = filters.featureTag === 'arws' && filters.featureMode !== 'exclude';
+      const isExcluded = filters.featureTag === 'arws' && filters.featureMode === 'exclude';
+
+      if (!isIncluded && !isExcluded) {
+        // 1. 抽出（これのみ）
+        setFilters({
+          ...INITIAL_FILTERS,
+          category: 'adventure',
+          selectedCategories: ['adventure'],
+          featureTag: 'arws',
+          featureMode: 'include',
+          maxDistance: 1000,
+          entryStatus: 'all',
+        });
+      } else if (isIncluded) {
+        // 2. 除外（これ以外：ARWSを完全除外して国内一般レースのみ表示！）
+        setFilters({
+          ...INITIAL_FILTERS,
+          category: 'all',
+          featureTag: 'arws',
+          featureMode: 'exclude',
+        });
+      } else {
+        // 3. 元通り（解除）
         setFilters(INITIAL_FILTERS);
-        return;
       }
-      setFilters({
-        ...INITIAL_FILTERS,
-        category: 'adventure',
-        selectedCategories: ['adventure'],
-        featureTag: 'arws',
-        maxDistance: 1000,
-        entryStatus: 'all',
-      });
       return;
     }
 
     // 100マイルカードの場合
     if (featureTag === '100mile') {
-      if (filters.featureTag === '100mile') {
+      const isIncluded = filters.featureTag === '100mile' && filters.featureMode !== 'exclude';
+      const isExcluded = filters.featureTag === '100mile' && filters.featureMode === 'exclude';
+
+      if (!isIncluded && !isExcluded) {
+        // 1. 抽出（100マイルのみ）
+        setFilters({
+          ...INITIAL_FILTERS,
+          category: 'all',
+          featureTag: '100mile',
+          featureMode: 'include',
+        });
+      } else if (isIncluded) {
+        // 2. 除外（100マイルを除外：ミドル・ショートのみ表示！）
+        setFilters({
+          ...INITIAL_FILTERS,
+          category: 'all',
+          featureTag: '100mile',
+          featureMode: 'exclude',
+        });
+      } else {
+        // 3. 元通り（解除）
         setFilters(INITIAL_FILTERS);
-        return;
       }
-      setFilters({
-        ...INITIAL_FILTERS,
-        category: 'all',
-        featureTag: '100mile',
-      });
       return;
     }
 
     // 地域（中国・四国）カードの場合
     if (region !== 'all') {
-      if (filters.region === region) {
+      const isRegionIncluded = filters.region === region && filters.regionMode !== 'exclude';
+      const isRegionExcluded = filters.region === region && filters.regionMode === 'exclude';
+
+      if (!isRegionIncluded && !isRegionExcluded) {
+        // 1. 抽出（該当地域のみ）
+        setFilters({
+          ...INITIAL_FILTERS,
+          category: 'all',
+          featureTag: 'all',
+          region: region,
+          regionMode: 'include',
+        });
+      } else if (isRegionIncluded) {
+        // 2. 除外（該当地域以外）
+        setFilters({
+          ...INITIAL_FILTERS,
+          category: 'all',
+          featureTag: 'all',
+          region: region,
+          regionMode: 'exclude',
+        });
+      } else {
+        // 3. 元通り（解除）
         setFilters(INITIAL_FILTERS);
-        return;
       }
-      setFilters({
-        ...INITIAL_FILTERS,
-        category: 'all',
-        featureTag: 'all',
-        region: region,
-      });
       return;
     }
 
@@ -252,7 +312,7 @@ export const App: React.FC = () => {
         ...INITIAL_FILTERS,
         category,
         featureTag,
-        region,
+        selectedCategories: category === 'all' ? undefined : [category],
       });
     }
   };
@@ -297,11 +357,17 @@ export const App: React.FC = () => {
         // 「受付中のみ表示」フィルターで隠れてしまわないように特別にデフォルト常時表示（保存アイテム保護）
         const isProtectedFavorite = isFavorite && isFutureOrActive;
 
+        // 競技ジャンル（親・種目）の除外判定（NOT検索対応）
+        const eventGenre = (event.elements?.includes('ロゲイニング') || event.id.includes('rogaining'))
+          ? 'rogaining'
+          : event.category;
+
+        if (filters.excludedCategories && filters.excludedCategories.includes(eventGenre)) {
+          return false;
+        }
+
         // 競技ジャンル（親・種目）のチェックボックス判定（複数選択＆除外OFF対応）
         if (filters.selectedCategories !== undefined) {
-          const eventGenre = (event.elements?.includes('ロゲイニング') || event.id.includes('rogaining'))
-            ? 'rogaining'
-            : event.category;
           if (!filters.selectedCategories.includes(eventGenre)) {
             return false;
           }
@@ -309,9 +375,13 @@ export const App: React.FC = () => {
           return false;
         }
 
-        // エリア絞り込み
-        if (filters.region !== 'all' && event.region !== filters.region) {
-          return false;
+        // エリア絞り込み（抽出 / 除外対応）
+        if (filters.region !== 'all') {
+          if (filters.regionMode === 'exclude') {
+            if (event.region === filters.region) return false;
+          } else {
+            if (event.region !== filters.region) return false;
+          }
         }
 
         // 都道府県絞り込み
@@ -371,38 +441,47 @@ export const App: React.FC = () => {
             }
           }
         } else {
-          // 単一タグの後方互換
+          // 単一タグ（クイック抽出・除外）の判定（3ステート対応）
           const featureTag = filters.featureTag || 'all';
           if (featureTag !== 'all') {
+            const isExclude = filters.featureMode === 'exclude';
+            let match = false;
+
             if (featureTag === '100mile') {
-              if (!event.elements?.includes('100マイル') && event.distance_km < 155) return false;
+              match = Boolean(event.elements?.includes('100マイル') || event.distance_km >= 155);
             } else if (featureTag === '100km') {
-              if (!event.elements?.includes('100km+') && (event.distance_km < 95 || event.distance_km >= 155)) return false;
+              match = Boolean(event.elements?.includes('100km+') || (event.distance_km >= 95 && event.distance_km < 155));
             } else if (featureTag === 'toretore') {
-              if (!event.id.startsWith('toretore-') && !event.id.includes('rogaining') && event.category !== 'adventure') return false;
+              match = Boolean(event.id.startsWith('toretore-') || event.id.includes('rogaining') || event.category === 'adventure');
             } else if (featureTag === 'map') {
-              if (!event.elements?.includes('読図')) return false;
+              match = Boolean(event.elements?.includes('読図'));
             } else if (featureTag === 'mtb') {
-              if (!event.elements?.includes('MTB')) return false;
+              match = Boolean(event.elements?.includes('MTB'));
             } else if (featureTag === 'paddle') {
-              if (!event.elements?.includes('パドル')) return false;
+              match = Boolean(event.elements?.includes('パドル'));
             } else if (featureTag === 'rogaining') {
-              if (!event.elements?.includes('ロゲイニング')) return false;
+              match = Boolean(event.elements?.includes('ロゲイニング'));
             } else if (featureTag === 'night') {
-              if (!event.elements?.includes('夜間')) return false;
+              match = Boolean(event.elements?.includes('夜間'));
             } else if (featureTag === 'arws') {
-              const isArws =
+              match = Boolean(
                 event.elements?.some((e) => /arws|arwc|世界選手権|ワールドシリーズ/i.test(e)) ||
                 /arws|arwc|magnificent|qualifier/i.test(event.title) ||
                 event.id.startsWith('arws-') ||
-                event.id.startsWith('arwc-');
-              if (!isArws) return false;
+                event.id.startsWith('arwc-')
+              );
+            }
+
+            if (isExclude) {
+              if (match) return false; // 除外モード：合致したレースを完全非表示
+            } else {
+              if (!match) return false; // 抽出モード：合致したレースのみ表示
             }
           }
         }
 
-        // 距離レンジ（ARWS選択時は世界遠征レースのため距離上限チェックをバイパス）
-        if (filters.featureTag !== 'arws') {
+        // 距離レンジ（ARWS抽出時のみ世界遠征レースのため距離上限チェックをバイパス）
+        if (!(filters.featureTag === 'arws' && filters.featureMode !== 'exclude')) {
           if (event.distance_km < filters.minDistance) {
             return false;
           }

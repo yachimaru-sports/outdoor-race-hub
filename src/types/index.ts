@@ -105,9 +105,11 @@ export type SortOption =
 
 export interface FilterState {
   category: string;
-  selectedCategories?: string[]; // 複数選択・除外対応の競技ジャンル（親）
+  selectedCategories?: string[]; // 複数選択・表示対象の競技ジャンル（親）
+  excludedCategories?: string[]; // 除外対象の競技ジャンル（NOT条件）
   selectedElements?: string[];   // 複数選択対応の競技エレメント（子・特徴条件）
   region: string;
+  regionMode?: 'include' | 'exclude'; // エリアの抽出/除外モード
   prefecture: string;
   minDistance: number;
   maxDistance: number;
@@ -115,7 +117,8 @@ export interface FilterState {
   searchKeyword: string;
   sortBy: SortOption;
   monthFilter?: string;    // 'all' | 'spring' | 'summer' | 'autumn' | 'winter' | '1'..'12'
-  featureTag?: string;     // 後方互換用
+  featureTag?: string;     // クイック抽出タグ（'arws' | '100mile' | 'toretore' など）
+  featureMode?: 'include' | 'exclude'; // 特徴タグの抽出/除外モード（include:これのみ, exclude:これ以外）
   onlyFavorites?: boolean; // お気に入り・参戦予定のみ
 }
 

@@ -23,6 +23,8 @@ import {
   Bike,
   Footprints,
   Map,
+  Ban,
+  Check,
 } from 'lucide-react';
 
 interface FilterSectionProps {
@@ -124,26 +126,59 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
     },
   ];
 
-  const selectedGenres = filters.selectedCategories ?? [...ALL_GENRES];
+    const selectedGenres = filters.selectedCategories ?? [...ALL_GENRES];
+  const excludedGenres = filters.excludedCategories ?? [];
 
-  const handleToggleGenre = (genreId: string) => {
-    let next: string[];
-    if (selectedGenres.includes(genreId)) {
-      next = selectedGenres.filter((id) => id !== genreId);
-    } else {
-      next = [...selectedGenres, genreId];
+  // 各ジャンルの3ステート状態判定（通常 ➔ 抽出 ➔ 除外）
+  const getGenreState = (genreId: string): 'include' | 'exclude' | 'default' => {
+    if (excludedGenres.includes(genreId)) {
+      return 'exclude';
     }
-    onFilterChange({
-      ...filters,
-      selectedCategories: next,
-      category: next.length === 1 ? next[0] : 'all',
-    });
+    if (
+      filters.selectedCategories &&
+      filters.selectedCategories.length === 1 &&
+      filters.selectedCategories[0] === genreId
+    ) {
+      return 'include';
+    }
+    return 'default';
+  };
+
+  // 競技ジャンルの3ステートトグル（①これのみ表示 ➔ ②これを除外 ➔ ③元通り）
+  const handleToggleGenre = (genreId: string) => {
+    const currentState = getGenreState(genreId);
+    if (currentState === 'default') {
+      // 1. これのみ抽出
+      onFilterChange({
+        ...filters,
+        selectedCategories: [genreId],
+        excludedCategories: [],
+        category: genreId,
+      });
+    } else if (currentState === 'include') {
+      // 2. これを除外（他をすべて表示し、これだけNOT除外）
+      onFilterChange({
+        ...filters,
+        selectedCategories: ALL_GENRES.filter((id) => id !== genreId),
+        excludedCategories: [genreId],
+        category: 'all',
+      });
+    } else {
+      // 3. 元通り（解除）
+      onFilterChange({
+        ...filters,
+        selectedCategories: [...ALL_GENRES],
+        excludedCategories: [],
+        category: 'all',
+      });
+    }
   };
 
   const handleSelectAllGenres = () => {
     onFilterChange({
       ...filters,
       selectedCategories: [...ALL_GENRES],
+      excludedCategories: [],
       category: 'all',
     });
   };
@@ -152,6 +187,7 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
     onFilterChange({
       ...filters,
       selectedCategories: [],
+      excludedCategories: [],
       category: 'all',
     });
   };
@@ -193,17 +229,54 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
   // ==========================================
   const activeChips: { id: string; label: string; onRemove: () => void }[] = [];
 
-  // 競技ジャンル
-  if (selectedGenres.length === 0) {
+  // 特徴タグの抽出・除外チップ
+  if (filters.featureTag && filters.featureTag !== 'all') {
+    const isEx = filters.featureMode === 'exclude';
+    const tagLabel =
+      filters.featureTag === 'arws'
+        ? 'ARWS・世界選手権'
+        : filters.featureTag === '100mile'
+        ? '国内100マイル'
+        : filters.featureTag === 'toretore'
+        ? 'とれとれ・読図・AR'
+        : filters.featureTag;
+
+    activeChips.push({
+      id: 'feature-' + filters.featureTag,
+      label: isEx ? `🚫 除外中: ${tagLabel}` : `✅ 抽出中: ${tagLabel}`,
+      onRemove: () => onFilterChange({ ...filters, featureTag: 'all', featureMode: undefined }),
+    });
+  }
+
+  // エリアの除外チップ
+  if (filters.region !== 'all' && filters.regionMode === 'exclude') {
+    activeChips.push({
+      id: 'region-exclude',
+      label: `🚫 除外中: ${filters.region}エリア`,
+      onRemove: () => onFilterChange({ ...filters, region: 'all', regionMode: undefined }),
+    });
+  }
+
+  // 競技ジャンルの抽出・除外チップ
+  if (excludedGenres.length > 0) {
+    for (const exId of excludedGenres) {
+      const g = genreDefinitions.find((d) => d.id === exId);
+      activeChips.push({
+        id: 'genre-exclude-' + exId,
+        label: `🚫 除外中: ${g?.label.split('・')[0] || exId}`,
+        onRemove: () => {
+          onFilterChange({
+            ...filters,
+            excludedCategories: excludedGenres.filter((id) => id !== exId),
+            selectedCategories: [...ALL_GENRES],
+          });
+        },
+      });
+    }
+  } else if (selectedGenres.length === 0) {
     activeChips.push({
       id: 'genre-none',
       label: '🚫 全競技OFF中 (0件)',
-      onRemove: handleSelectAllGenres,
-    });
-  } else if (selectedGenres.length === 4 && !selectedGenres.includes('cycling')) {
-    activeChips.push({
-      id: 'no-cycling',
-      label: '🚫 サイクリング除外中',
       onRemove: handleSelectAllGenres,
     });
   } else if (selectedGenres.length < ALL_GENRES.length) {
@@ -213,7 +286,7 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
       .join(' + ');
     activeChips.push({
       id: 'genre-selected',
-      label: `種目: ${labels}`,
+      label: `✅ 抽出中: ${labels}`,
       onRemove: handleSelectAllGenres,
     });
   }
@@ -403,7 +476,7 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
               競技ジャンル（種目選択・除外）:
             </span>
             <span className="text-xs text-slate-600 dark:text-slate-400 font-bold hidden sm:inline">
-              ※チェックを外すとその競技が非表示（除外）になります
+              ※タップで［①これのみ表示］➔［②これを除外］➔［③元通り］に順次切り替わります
             </span>
           </div>
 
@@ -425,10 +498,12 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
           </div>
         </div>
 
-        {/* スマホ専用：縦型表示（右スライド廃止・画面横幅ピッタリ配置） */}
+        {/* スマホ専用：縦型表示（3ステート対応：①抽出 ➔ ②除外 ➔ ③元通り） */}
         <div className="flex flex-col md:hidden gap-2 w-full">
           {genreDefinitions.map((genre) => {
-            const isChecked = selectedGenres.includes(genre.id);
+            const state = getGenreState(genre.id);
+            const isInclude = state === 'include';
+            const isExclude = state === 'exclude';
             const Icon = genre.icon;
             return (
               <button
@@ -436,53 +511,63 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
                 type="button"
                 onClick={() => handleToggleGenre(genre.id)}
                 className={`w-full min-h-[48px] px-3.5 py-2.5 rounded-xl border-2 flex items-center justify-between transition-all cursor-pointer select-none ${
-                  isChecked
-                    ? `${genre.activeColor} shadow-xs font-black`
-                    : 'border-slate-300 dark:border-slate-800 bg-slate-100/70 dark:bg-slate-900/60 text-slate-500 opacity-60'
+                  isInclude
+                    ? `${genre.activeColor} shadow-md ring-2 ring-teal-400/50 font-black`
+                    : isExclude
+                    ? 'border-rose-500 bg-rose-50 dark:bg-rose-950/60 text-rose-900 dark:text-rose-200 shadow-md ring-2 ring-rose-400/50 font-black'
+                    : 'border-slate-300 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 hover:bg-slate-50 font-bold'
                 }`}
               >
                 <div className="flex items-center gap-2.5 min-w-0">
-                  {/* ON/OFF チェック */}
+                  {/* ステートバッジ */}
                   <div className="shrink-0">
-                    {isChecked ? (
-                      <div className="flex items-center gap-1 bg-teal-600 text-white px-2 py-0.5 rounded text-[11px] font-black">
-                        <CheckSquare className="w-3.5 h-3.5 fill-white text-teal-600" />
-                        <span>ON</span>
+                    {isInclude ? (
+                      <div className="flex items-center gap-1 bg-teal-600 text-white px-2 py-0.5 rounded text-[11px] font-black shadow-2xs">
+                        <Check className="w-3.5 h-3.5 stroke-[3]" />
+                        <span>① 抽出中</span>
+                      </div>
+                    ) : isExclude ? (
+                      <div className="flex items-center gap-1 bg-rose-600 text-white px-2 py-0.5 rounded text-[11px] font-black shadow-2xs">
+                        <Ban className="w-3.5 h-3.5 stroke-[3]" />
+                        <span>② 除外中</span>
                       </div>
                     ) : (
-                      <div className="flex items-center gap-1 bg-slate-300 dark:bg-slate-700 text-slate-600 dark:text-slate-400 px-2 py-0.5 rounded text-[11px] font-black">
-                        <Square className="w-3.5 h-3.5" />
-                        <span>OFF</span>
+                      <div className="flex items-center gap-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 px-2 py-0.5 rounded text-[11px] font-black border border-slate-300 dark:border-slate-700">
+                        <span>通常</span>
                       </div>
                     )}
                   </div>
 
                   <div
                     className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 ${
-                      isChecked ? genre.activeIconBg : genre.iconBg
+                      isInclude ? genre.activeIconBg : isExclude ? 'bg-rose-600 text-white' : genre.iconBg
                     }`}
                   >
                     <Icon className="w-4 h-4 stroke-[2.2]" />
                   </div>
 
                   <div className="text-left min-w-0">
-                    <div className="text-xs sm:text-sm font-black text-slate-950 dark:text-white truncate">
+                    <div className={`text-xs sm:text-sm font-black truncate ${isExclude ? 'line-through text-rose-800 dark:text-rose-300 opacity-80' : 'text-slate-950 dark:text-white'}`}>
                       {genre.label}
                     </div>
                   </div>
                 </div>
 
-                {/* 件数バッジ */}
-                <div className="shrink-0 ml-2">
+                {/* 件数バッジ ＆ 次のアクション案内 */}
+                <div className="shrink-0 ml-2 flex items-center gap-1.5">
                   <span
-                    className={`text-xs font-mono font-black px-2.5 py-1 rounded-full flex items-center gap-1 ${
-                      isChecked
+                    className={`text-xs font-mono font-black px-2 py-1 rounded-full flex items-center gap-1 ${
+                      isInclude
                         ? 'bg-slate-950 text-white dark:bg-white dark:text-slate-950'
-                        : 'bg-slate-200 text-slate-400 dark:bg-slate-800'
+                        : isExclude
+                        ? 'bg-rose-600 text-white'
+                        : 'bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300'
                     }`}
                   >
                     <span>{genre.count}件</span>
-                    <span className="text-emerald-500 text-[10px]">(受付{genre.openCount})</span>
+                  </span>
+                  <span className="text-[10px] font-bold text-slate-500 dark:text-slate-400">
+                    {isInclude ? '➔除外' : isExclude ? '➔元通り' : '➔抽出'}
                   </span>
                 </div>
               </button>
@@ -490,10 +575,12 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
           })}
         </div>
 
-        {/* PC表示：5大ジャンルのリッチカードグリッド */}
+        {/* PC表示：5大ジャンルのリッチカードグリッド（3ステート対応：①抽出 ➔ ②除外 ➔ ③元通り） */}
         <div className="hidden md:grid md:grid-cols-3 lg:grid-cols-5 gap-2.5">
           {genreDefinitions.map((genre) => {
-            const isChecked = selectedGenres.includes(genre.id);
+            const state = getGenreState(genre.id);
+            const isInclude = state === 'include';
+            const isExclude = state === 'exclude';
             const Icon = genre.icon;
             return (
               <button
@@ -501,23 +588,35 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
                 type="button"
                 onClick={() => handleToggleGenre(genre.id)}
                 className={`group relative flex flex-col items-center text-center py-2 px-1.5 sm:py-2.5 sm:px-2 rounded-xl border-2 transition-all cursor-pointer select-none ${
-                  isChecked
-                    ? `${genre.activeColor} shadow-xs scale-[1.01]`
-                    : 'border-slate-250 dark:border-slate-800 bg-slate-100/60 dark:bg-slate-900/60 opacity-50 hover:opacity-75'
+                  isInclude
+                    ? `${genre.activeColor} shadow-md ring-2 ring-teal-400/50 scale-[1.01]`
+                    : isExclude
+                    ? 'border-rose-500 bg-rose-50/90 dark:bg-rose-950/40 text-rose-950 dark:text-rose-100 shadow-md ring-2 ring-rose-400/50 scale-[1.01]'
+                    : 'border-slate-300 dark:border-slate-800 bg-white dark:bg-slate-900/80 hover:border-slate-400 dark:hover:border-slate-700'
                 }`}
-                title={isChecked ? 'クリックしてこの競技を除外' : 'クリックしてこの競技を含める'}
+                title={
+                  isInclude
+                    ? '現在抽出中（クリックで除外へ切り替え）'
+                    : isExclude
+                    ? '現在除外中（クリックで解除・元通り）'
+                    : 'クリックでこの競技のみ抽出'
+                }
               >
-                {/* 左上：チェックボックス（ON / OFF） */}
+                {/* 左上：ステートバッジ */}
                 <div className="absolute top-2 left-2">
-                  {isChecked ? (
+                  {isInclude ? (
                     <div className="flex items-center gap-0.5 bg-teal-600 text-white px-1.5 py-0.2 rounded shadow-2xs text-[11px] font-black leading-none">
-                      <CheckSquare className="w-3 h-3 fill-white text-teal-600" />
-                      <span>ON</span>
+                      <Check className="w-3 h-3 stroke-[3]" />
+                      <span>①抽出中</span>
+                    </div>
+                  ) : isExclude ? (
+                    <div className="flex items-center gap-0.5 bg-rose-600 text-white px-1.5 py-0.2 rounded shadow-2xs text-[11px] font-black leading-none animate-pulse">
+                      <Ban className="w-3 h-3 stroke-[3]" />
+                      <span>②除外中</span>
                     </div>
                   ) : (
-                    <div className="flex items-center gap-0.5 bg-slate-300 dark:bg-slate-700 text-slate-600 dark:text-slate-400 px-1.5 py-0.2 rounded text-[11px] font-black leading-none">
-                      <Square className="w-3 h-3" />
-                      <span>OFF</span>
+                    <div className="flex items-center gap-0.5 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 px-1.5 py-0.2 rounded text-[11px] font-bold border border-slate-200 dark:border-slate-700">
+                      <span>通常</span>
                     </div>
                   )}
                 </div>
@@ -526,54 +625,59 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
                 <div className="absolute top-2 right-2">
                   <span
                     className={`text-[11px] sm:text-xs font-mono font-black px-2 py-0.5 rounded-full leading-none flex items-center gap-1 shadow-2xs ${
-                      isChecked
+                      isInclude
                         ? 'bg-slate-950 text-white dark:bg-white dark:text-slate-950'
-                        : 'bg-slate-200 text-slate-400 dark:bg-slate-800 dark:text-slate-500 line-through'
+                        : isExclude
+                        ? 'bg-rose-600 text-white line-through'
+                        : 'bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300'
                     }`}
                   >
                     <span className="text-xs sm:text-[13px] font-black">{genre.count}</span>
-                    <span className="text-emerald-500 dark:text-emerald-400 font-black text-[10px]">
+                    <span className={`font-black text-[10px] ${isExclude ? 'text-white' : 'text-emerald-600 dark:text-emerald-400'}`}>
                       (受付{genre.openCount})
                     </span>
                   </span>
                 </div>
 
                 {/* 注目バッジ（アドベンチャーなど） */}
-                {genre.badgeText && isChecked && (
+                {genre.badgeText && !isExclude && (
                   <span className="absolute top-6 left-2 text-[10px] font-black px-1.5 py-0.2 rounded bg-amber-500 text-slate-950 shadow-2xs">
                     {genre.badgeText}
                   </span>
                 )}
 
-                {/* 中央：アイコンサークル（高さを約1行分コンパクトに） */}
+                {/* 中央：アイコンサークル */}
                 <div
                   className={`w-9 h-9 rounded-xl flex items-center justify-center mt-3.5 mb-1.5 transition-transform group-hover:scale-105 shadow-2xs ${
-                    isChecked ? genre.activeIconBg : genre.iconBg
+                    isInclude ? genre.activeIconBg : isExclude ? 'bg-rose-600 text-white' : genre.iconBg
                   }`}
                 >
                   <Icon className="w-4.5 h-4.5 stroke-[2.2]" />
                 </div>
 
-                {/* 競技名（★絶対に改行せず1行で美しく収まるように調整） */}
+                {/* 競技名 */}
                 <div
                   className={`font-black text-xs sm:text-sm lg:text-[13px] leading-tight whitespace-nowrap tracking-tight px-0.5 ${
-                    isChecked
-                      ? 'text-slate-950 dark:text-white'
-                      : 'text-slate-400 dark:text-slate-500 line-through'
+                    isExclude
+                      ? 'text-rose-900 dark:text-rose-200 line-through opacity-85'
+                      : 'text-slate-950 dark:text-white'
                   }`}
                 >
                   {genre.label}
                 </div>
 
-                {/* サブ説明 */}
+                {/* サブ説明 ＆ 次のアクション案内 */}
                 <div
-                  className={`text-[11px] mt-0.5 font-bold whitespace-nowrap px-0.5 ${
-                    isChecked
-                      ? 'text-slate-600 dark:text-slate-300'
-                      : 'text-slate-400 dark:text-slate-500'
+                  className={`text-[11px] mt-0.5 font-bold whitespace-nowrap px-0.5 flex items-center justify-center gap-1 ${
+                    isExclude
+                      ? 'text-rose-700 dark:text-rose-300'
+                      : 'text-slate-600 dark:text-slate-300'
                   }`}
                 >
-                  {genre.sub}
+                  <span>{genre.sub}</span>
+                  <span className="text-[10px] font-black opacity-80">
+                    ({isInclude ? '次:除外' : isExclude ? '次:元通り' : '抽出➔'})
+                  </span>
                 </div>
               </button>
             );

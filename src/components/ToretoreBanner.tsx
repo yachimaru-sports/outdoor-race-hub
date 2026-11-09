@@ -1,5 +1,5 @@
 import React from 'react';
-import { Compass, ExternalLink, Bike, ArrowRight, Mountain, Sparkles, Crown, Check, X, Globe } from 'lucide-react';
+import { Compass, ExternalLink, Bike, ArrowRight, Mountain, Sparkles, Crown, Check, X, Globe, Ban } from 'lucide-react';
 import { FilterState } from '../types';
 
 interface ToretoreBannerProps {
@@ -13,18 +13,31 @@ export const ToretoreBanner: React.FC<ToretoreBannerProps> = ({
   onFilterAdventure,
   onFilterFeature,
 }) => {
-  // 4つのカードの適用状態判定（オン・オフ）
-  const isAdventureActive =
-    filters?.category === 'adventure' &&
-    (filters?.featureTag === 'toretore' || filters?.featureTag === 'nav');
+  // 4つのカードの3ステート判定（通常 ➔ 抽出 ➔ 除外）
+  // 1. とれとれ・AR
+  const isAdventureInclude =
+    filters?.featureTag === 'toretore' && filters?.featureMode !== 'exclude';
+  const isAdventureExclude =
+    filters?.featureTag === 'toretore' && filters?.featureMode === 'exclude';
 
-  const is100MileActive = filters?.featureTag === '100mile';
+  // 2. 100マイル
+  const is100MileInclude =
+    filters?.featureTag === '100mile' && filters?.featureMode !== 'exclude';
+  const is100MileExclude =
+    filters?.featureTag === '100mile' && filters?.featureMode === 'exclude';
 
-  const isChugokuActive = filters?.region === '中国';
-  const isShikokuActive = filters?.region === '四国';
-  const isRegionCardActive = isChugokuActive || isShikokuActive;
+  // 3. 中国・四国
+  const isChugokuInclude = filters?.region === '中国' && filters?.regionMode !== 'exclude';
+  const isChugokuExclude = filters?.region === '中国' && filters?.regionMode === 'exclude';
+  const isShikokuInclude = filters?.region === '四国' && filters?.regionMode !== 'exclude';
+  const isShikokuExclude = filters?.region === '四国' && filters?.regionMode === 'exclude';
+  const isRegionCardActive = isChugokuInclude || isChugokuExclude || isShikokuInclude || isShikokuExclude;
 
-  const isArwsActive = filters?.featureTag === 'arws';
+  // 4. ARWS & ARWC
+  const isArwsInclude =
+    filters?.featureTag === 'arws' && filters?.featureMode !== 'exclude';
+  const isArwsExclude =
+    filters?.featureTag === 'arws' && filters?.featureMode === 'exclude';
 
   return (
     <div className="space-y-4">
@@ -36,7 +49,7 @@ export const ToretoreBanner: React.FC<ToretoreBannerProps> = ({
             注目の競技カテゴリー・主要大会クイック抽出
           </h2>
           <span className="text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-300 hidden sm:inline">
-            — 国内外主要アドベンチャー・100マイル・中四国エリア（※再度押すと解除）
+            — 国内外主要アドベンチャー・100マイル・中四国エリア（※押すたびに［これのみ表示］➔［これを除外］➔［元通り］に切り替わります）
           </span>
         </div>
 
@@ -131,106 +144,147 @@ export const ToretoreBanner: React.FC<ToretoreBannerProps> = ({
         </div>
       </div>
 
-      {/* スマホ専用：4つのボタン（縦並び） */}
+      {/* スマホ専用：4つのボタン（縦並び・3ステート対応） */}
       <div className="flex flex-col gap-2.5 lg:hidden w-full">
         {/* 黄色: とれとれバイク・読図・AR */}
         <button
           type="button"
           onClick={onFilterAdventure}
           className={`w-full min-h-[48px] px-3.5 py-2.5 rounded-xl border-2 flex items-center justify-between text-left transition-all cursor-pointer select-none ${
-            isAdventureActive
+            isAdventureInclude
               ? 'bg-amber-400 text-slate-950 border-amber-500 shadow-md ring-2 ring-amber-400/50 font-black'
+              : isAdventureExclude
+              ? 'bg-rose-100 dark:bg-rose-950/60 text-rose-900 dark:text-rose-200 border-rose-500 shadow-md ring-2 ring-rose-400/50 font-black'
               : 'bg-amber-50 dark:bg-amber-950/30 text-amber-900 dark:text-amber-200 border-amber-300 dark:border-amber-800 hover:bg-amber-100 font-bold'
           }`}
         >
           <div className="flex items-center gap-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-amber-500 shrink-0" />
+            <span className={`w-2.5 h-2.5 rounded-full shrink-0 ${isAdventureExclude ? 'bg-rose-500' : 'bg-amber-500'}`} />
             <div className="leading-snug">
-              <span className="font-black text-xs sm:text-sm">とれとれバイク・読図・AR</span>
+              <span className={`font-black text-xs sm:text-sm ${isAdventureExclude ? 'line-through opacity-85' : ''}`}>
+                とれとれバイク・読図・AR
+              </span>
               <span className="text-[11px] opacity-80 ml-2">（2.5万図必携・アドベンチャー）</span>
             </div>
           </div>
-          {isAdventureActive ? (
-            <span className="text-[10px] font-black bg-slate-950 text-white px-2 py-0.5 rounded-full shrink-0">
-              適用中 ✕
+          {isAdventureInclude ? (
+            <span className="text-[10px] font-black bg-slate-950 text-amber-300 px-2 py-0.5 rounded-full shrink-0 flex items-center gap-1">
+              <Check className="w-3 h-3 stroke-[3]" />
+              <span>抽出中（次:除外）</span>
+            </span>
+          ) : isAdventureExclude ? (
+            <span className="text-[10px] font-black bg-rose-600 text-white px-2 py-0.5 rounded-full shrink-0 flex items-center gap-1">
+              <Ban className="w-3 h-3 stroke-[3]" />
+              <span>除外中（次:解除）</span>
             </span>
           ) : (
             <span className="text-xs font-mono font-black opacity-70 shrink-0">抽出 ➔</span>
           )}
         </button>
 
-        {/* 赤色: 国内100マイルレース一覧 */}
+        {/* 赤色: 国内100マイル */}
         <button
           type="button"
           onClick={() => onFilterFeature && onFilterFeature('all', '100mile')}
           className={`w-full min-h-[48px] px-3.5 py-2.5 rounded-xl border-2 flex items-center justify-between text-left transition-all cursor-pointer select-none ${
-            is100MileActive
-              ? 'bg-rose-500 text-white border-rose-600 shadow-md ring-2 ring-rose-400/50 font-black'
+            is100MileInclude
+              ? 'bg-rose-600 text-white border-rose-700 shadow-md ring-2 ring-rose-400/50 font-black'
+              : is100MileExclude
+              ? 'bg-rose-100 dark:bg-rose-950/60 text-rose-900 dark:text-rose-200 border-rose-500 shadow-md ring-2 ring-rose-400/50 font-black'
               : 'bg-rose-50 dark:bg-rose-950/30 text-rose-900 dark:text-rose-200 border-rose-300 dark:border-rose-800 hover:bg-rose-100 font-bold'
           }`}
         >
           <div className="flex items-center gap-2">
             <span className="w-2.5 h-2.5 rounded-full bg-rose-500 shrink-0" />
             <div className="leading-snug">
-              <span className="font-black text-xs sm:text-sm">国内100マイルレース一覧</span>
-              <span className="text-[11px] opacity-80 ml-2">（160km級・UTMB等）</span>
+              <span className={`font-black text-xs sm:text-sm ${is100MileExclude ? 'line-through opacity-85' : ''}`}>
+                👑 国内100マイル一覧
+              </span>
+              <span className="text-[11px] opacity-80 ml-2">（Mt.FUJI・信越・KOUMIほか）</span>
             </div>
           </div>
-          {is100MileActive ? (
-            <span className="text-[10px] font-black bg-white text-rose-700 px-2 py-0.5 rounded-full shrink-0">
-              適用中 ✕
+          {is100MileInclude ? (
+            <span className="text-[10px] font-black bg-white text-rose-800 px-2 py-0.5 rounded-full shrink-0 flex items-center gap-1">
+              <Check className="w-3 h-3 stroke-[3]" />
+              <span>抽出中（次:除外）</span>
+            </span>
+          ) : is100MileExclude ? (
+            <span className="text-[10px] font-black bg-rose-600 text-white px-2 py-0.5 rounded-full shrink-0 flex items-center gap-1">
+              <Ban className="w-3 h-3 stroke-[3]" />
+              <span>除外中（次:解除）</span>
             </span>
           ) : (
             <span className="text-xs font-mono font-black opacity-70 shrink-0">抽出 ➔</span>
           )}
         </button>
 
-        {/* 緑色: 中国5県 ＆ 四国4県 地域別一覧 */}
-        <button
-          type="button"
-          onClick={() => onFilterFeature && onFilterFeature('all', 'all', '中国')}
-          className={`w-full min-h-[48px] px-3.5 py-2.5 rounded-xl border-2 flex items-center justify-between text-left transition-all cursor-pointer select-none ${
-            isRegionCardActive
-              ? 'bg-emerald-600 text-white border-emerald-700 shadow-md ring-2 ring-emerald-400/50 font-black'
-              : 'bg-emerald-50 dark:bg-emerald-950/30 text-emerald-900 dark:text-emerald-200 border-emerald-300 dark:border-emerald-800 hover:bg-emerald-100 font-bold'
-          }`}
-        >
-          <div className="flex items-center gap-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 shrink-0" />
-            <div className="leading-snug">
-              <span className="font-black text-xs sm:text-sm">中国5県 ＆ 四国4県 地域別一覧</span>
-              <span className="text-[11px] opacity-80 ml-2">（地元密着・中四国大会）</span>
-            </div>
-          </div>
-          {isRegionCardActive ? (
-            <span className="text-[10px] font-black bg-white text-emerald-800 px-2 py-0.5 rounded-full shrink-0">
-              適用中 ✕
+        {/* 緑色: 中国・四国 地域別 */}
+        <div className="w-full grid grid-cols-2 gap-2">
+          <button
+            type="button"
+            onClick={() => onFilterFeature && onFilterFeature('all', 'all', '中国')}
+            className={`min-h-[46px] px-2.5 py-2 rounded-xl border-2 flex items-center justify-between text-left transition-all cursor-pointer select-none ${
+              isChugokuInclude
+                ? 'bg-emerald-600 text-white border-emerald-700 shadow-md font-black'
+                : isChugokuExclude
+                ? 'bg-rose-100 dark:bg-rose-950/60 text-rose-900 dark:text-rose-200 border-rose-500 font-black'
+                : 'bg-emerald-50 dark:bg-emerald-950/30 text-emerald-900 dark:text-emerald-200 border-emerald-300 dark:border-emerald-800 hover:bg-emerald-100 font-bold'
+            }`}
+          >
+            <span className={`text-xs font-black ${isChugokuExclude ? 'line-through' : ''}`}>⛰️ 中国5県</span>
+            <span className="text-[10px] font-bold">
+              {isChugokuInclude ? '✅ 抽出中' : isChugokuExclude ? '🚫 除外中' : '➔'}
             </span>
-          ) : (
-            <span className="text-xs font-mono font-black opacity-70 shrink-0">抽出 ➔</span>
-          )}
-        </button>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => onFilterFeature && onFilterFeature('all', 'all', '四国')}
+            className={`min-h-[46px] px-2.5 py-2 rounded-xl border-2 flex items-center justify-between text-left transition-all cursor-pointer select-none ${
+              isShikokuInclude
+                ? 'bg-sky-600 text-white border-sky-700 shadow-md font-black'
+                : isShikokuExclude
+                ? 'bg-rose-100 dark:bg-rose-950/60 text-rose-900 dark:text-rose-200 border-rose-500 font-black'
+                : 'bg-sky-50 dark:bg-sky-950/30 text-sky-900 dark:text-sky-200 border-sky-300 dark:border-sky-800 hover:bg-sky-100 font-bold'
+            }`}
+          >
+            <span className={`text-xs font-black ${isShikokuExclude ? 'line-through' : ''}`}>⛰️ 四国4県</span>
+            <span className="text-[10px] font-bold">
+              {isShikokuInclude ? '✅ 抽出中' : isShikokuExclude ? '🚫 除外中' : '➔'}
+            </span>
+          </button>
+        </div>
 
         {/* 藍色: ARWS & ARWC 世界のアドベンチャーレース（4日以上） */}
         <button
           type="button"
           onClick={() => onFilterFeature && onFilterFeature('adventure', 'arws')}
           className={`w-full min-h-[48px] px-3.5 py-2.5 rounded-xl border-2 flex items-center justify-between text-left transition-all cursor-pointer select-none ${
-            isArwsActive
+            isArwsInclude
               ? 'bg-indigo-600 text-white border-indigo-700 shadow-md ring-2 ring-indigo-400/50 font-black'
+              : isArwsExclude
+              ? 'bg-rose-100 dark:bg-rose-950/60 text-rose-900 dark:text-rose-200 border-rose-500 shadow-md ring-2 ring-rose-400/50 font-black'
               : 'bg-indigo-50 dark:bg-indigo-950/30 text-indigo-900 dark:text-indigo-200 border-indigo-300 dark:border-indigo-800 hover:bg-indigo-100 font-bold'
           }`}
         >
           <div className="flex items-center gap-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-indigo-500 shrink-0" />
+            <span className={`w-2.5 h-2.5 rounded-full shrink-0 ${isArwsExclude ? 'bg-rose-500' : 'bg-indigo-500'}`} />
             <div className="leading-snug">
-              <span className="font-black text-xs sm:text-sm">🌍 ARWS・ARWC 世界最高峰レース</span>
-              <span className="text-[11px] opacity-80 ml-2">（4日以上・500km〜遠征型）</span>
+              <span className={`font-black text-xs sm:text-sm ${isArwsExclude ? 'line-through opacity-85' : ''}`}>
+                🌍 ARWS・ARWC 世界最高峰
+              </span>
+              <span className="text-[11px] opacity-80 ml-2">（4日以上・遠征型）</span>
             </div>
           </div>
-          {isArwsActive ? (
-            <span className="text-[10px] font-black bg-white text-indigo-800 px-2 py-0.5 rounded-full shrink-0">
-              適用中 ✕
+          {isArwsInclude ? (
+            <span className="text-[10px] font-black bg-white text-indigo-800 px-2 py-0.5 rounded-full shrink-0 flex items-center gap-1">
+              <Check className="w-3 h-3 stroke-[3]" />
+              <span>抽出中（次:除外）</span>
+            </span>
+          ) : isArwsExclude ? (
+            <span className="text-[10px] font-black bg-rose-600 text-white px-2 py-0.5 rounded-full shrink-0 flex items-center gap-1">
+              <Ban className="w-3 h-3 stroke-[3]" />
+              <span>除外中（次:解除）</span>
             </span>
           ) : (
             <span className="text-xs font-mono font-black opacity-70 shrink-0">抽出 ➔</span>
@@ -238,17 +292,25 @@ export const ToretoreBanner: React.FC<ToretoreBannerProps> = ({
         </button>
       </div>
 
-      {/* PC表示：4連ビジュアルピックアップカード */}
+      {/* PC表示：4連ビジュアルピックアップカード（3ステート対応） */}
       <div className="hidden lg:grid grid-cols-4 gap-4">
         {/* カード1: とれとれバイク＆AR関西・全国アドベンチャー特集 */}
         <div
           onClick={onFilterAdventure}
           className={`group relative rounded-2xl overflow-hidden border-2 transition-all cursor-pointer bg-gradient-to-br from-slate-900 via-slate-850 to-amber-950 text-white p-5 flex flex-col justify-between min-h-[225px] select-none ${
-            isAdventureActive
+            isAdventureInclude
               ? 'border-amber-400 ring-4 ring-amber-500/40 shadow-xl scale-[1.01]'
+              : isAdventureExclude
+              ? 'border-rose-500 ring-4 ring-rose-500/40 shadow-xl scale-[1.01] bg-gradient-to-br from-slate-950 via-rose-950 to-slate-900'
               : 'border-slate-800 shadow-sm hover:shadow-md hover:border-slate-700'
           }`}
-          title={isAdventureActive ? 'クリックでアドベンチャー絞り込みを解除' : 'クリックでアドベンチャー＆読図大会を抽出'}
+          title={
+            isAdventureInclude
+              ? '現在抽出中（クリックで除外に切り替え）'
+              : isAdventureExclude
+              ? '現在除外中（クリックで解除・元通り）'
+              : 'クリックでアドベンチャー＆読図大会を抽出'
+          }
         >
           <div className="absolute -right-8 -bottom-8 w-32 h-32 bg-amber-500/20 rounded-full blur-2xl pointer-events-none group-hover:scale-125 transition-transform" />
 
@@ -256,24 +318,37 @@ export const ToretoreBanner: React.FC<ToretoreBannerProps> = ({
             <div className="flex items-center justify-between gap-1.5 mb-2">
               <span
                 className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-black transition-colors ${
-                  isAdventureActive ? 'bg-amber-300 text-slate-950 shadow-xs' : 'bg-amber-400 text-slate-950'
+                  isAdventureInclude
+                    ? 'bg-amber-300 text-slate-950 shadow-xs'
+                    : isAdventureExclude
+                    ? 'bg-rose-500 text-white shadow-xs'
+                    : 'bg-amber-400 text-slate-950'
                 }`}
               >
-                {isAdventureActive ? <Check className="w-3 h-3 stroke-[3]" /> : <Sparkles className="w-3 h-3 fill-current" />}
+                {isAdventureInclude ? (
+                  <Check className="w-3 h-3 stroke-[3]" />
+                ) : isAdventureExclude ? (
+                  <Ban className="w-3 h-3 stroke-[3]" />
+                ) : (
+                  <Sparkles className="w-3 h-3 fill-current" />
+                )}
                 とれとれ・AR
               </span>
 
-              {isAdventureActive ? (
-                <span className="text-[10px] font-black bg-amber-500 text-slate-950 px-1.5 py-0.5 rounded-full flex items-center gap-0.5 shadow-xs animate-pulse">
-                  <span>適用中</span>
-                  <X className="w-2.5 h-2.5 stroke-[3]" />
+              {isAdventureInclude ? (
+                <span className="text-[10px] font-black bg-amber-500 text-slate-950 px-2 py-0.5 rounded-full flex items-center gap-0.5 shadow-xs animate-pulse">
+                  <span>① 抽出中（次:除外）</span>
+                </span>
+              ) : isAdventureExclude ? (
+                <span className="text-[10px] font-black bg-rose-600 text-white px-2 py-0.5 rounded-full flex items-center gap-0.5 shadow-xs animate-pulse">
+                  <span>② 除外中（次:元通り）</span>
                 </span>
               ) : (
                 <span className="text-[11px] font-mono text-amber-300 font-extrabold">2.5万図必携</span>
               )}
             </div>
 
-            <h3 className="text-sm sm:text-base font-black text-white group-hover:text-amber-300 transition-colors leading-snug">
+            <h3 className={`text-sm sm:text-base font-black text-white group-hover:text-amber-300 transition-colors leading-snug ${isAdventureExclude ? 'line-through opacity-75' : ''}`}>
               2.5万分の1地形図で挑む！<br />アドベンチャー＆ロゲイニング
             </h3>
 
@@ -285,12 +360,18 @@ export const ToretoreBanner: React.FC<ToretoreBannerProps> = ({
           <div className="flex items-center justify-between mt-3 pt-2.5 border-t border-white/15">
             <span
               className={`text-xs font-extrabold flex items-center gap-1 transition-colors ${
-                isAdventureActive ? 'text-white bg-amber-600/60 px-2 py-0.5 rounded-lg border border-amber-400/60' : 'text-amber-300'
+                isAdventureInclude
+                  ? 'text-white bg-amber-600/60 px-2 py-0.5 rounded-lg border border-amber-400/60'
+                  : isAdventureExclude
+                  ? 'text-white bg-rose-600/60 px-2 py-0.5 rounded-lg border border-rose-400/60'
+                  : 'text-amber-300'
               }`}
             >
               <Bike className="w-3.5 h-3.5" />
-              <span>{isAdventureActive ? '解除' : '一覧へ'}</span>
-              {isAdventureActive ? (
+              <span>
+                {isAdventureInclude ? '除外へ切替 ➔' : isAdventureExclude ? '元通り（解除）' : '一覧へ'}
+              </span>
+              {isAdventureExclude ? (
                 <X className="w-3 h-3 ml-0.5" />
               ) : (
                 <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
@@ -314,11 +395,19 @@ export const ToretoreBanner: React.FC<ToretoreBannerProps> = ({
         <div
           onClick={() => onFilterFeature && onFilterFeature('all', '100mile')}
           className={`group relative rounded-2xl overflow-hidden border-2 transition-all cursor-pointer bg-gradient-to-br from-rose-950 via-slate-900 to-amber-950 text-white p-5 flex flex-col justify-between min-h-[225px] select-none ${
-            is100MileActive
+            is100MileInclude
               ? 'border-rose-400 ring-4 ring-rose-500/40 shadow-xl scale-[1.01]'
+              : is100MileExclude
+              ? 'border-rose-500 ring-4 ring-rose-500/40 shadow-xl scale-[1.01] bg-gradient-to-br from-slate-950 via-rose-950 to-slate-900'
               : 'border-slate-800 shadow-sm hover:shadow-md hover:border-slate-700'
           }`}
-          title={is100MileActive ? 'クリックで100マイル絞り込みを解除' : 'クリックで国内100マイルレースを抽出'}
+          title={
+            is100MileInclude
+              ? '現在100マイル抽出中（クリックで除外に切り替え）'
+              : is100MileExclude
+              ? '現在100マイル除外中（クリックで解除・元通り）'
+              : 'クリックで国内100マイルレースを抽出'
+          }
         >
           <div className="absolute -right-8 -bottom-8 w-32 h-32 bg-rose-500/20 rounded-full blur-2xl pointer-events-none group-hover:scale-125 transition-transform" />
 
@@ -326,24 +415,37 @@ export const ToretoreBanner: React.FC<ToretoreBannerProps> = ({
             <div className="flex items-center justify-between gap-1.5 mb-2">
               <span
                 className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-black transition-colors ${
-                  is100MileActive ? 'bg-rose-300 text-slate-950 shadow-xs' : 'bg-rose-400 text-slate-950'
+                  is100MileInclude
+                    ? 'bg-rose-300 text-slate-950 shadow-xs'
+                    : is100MileExclude
+                    ? 'bg-rose-500 text-white shadow-xs'
+                    : 'bg-rose-400 text-slate-950'
                 }`}
               >
-                {is100MileActive ? <Check className="w-3 h-3 stroke-[3]" /> : <Crown className="w-3 h-3 fill-current" />}
+                {is100MileInclude ? (
+                  <Check className="w-3 h-3 stroke-[3]" />
+                ) : is100MileExclude ? (
+                  <Ban className="w-3 h-3 stroke-[3]" />
+                ) : (
+                  <Crown className="w-3 h-3 fill-current" />
+                )}
                 国内100マイル一覧
               </span>
 
-              {is100MileActive ? (
-                <span className="text-[10px] font-black bg-rose-500 text-white px-1.5 py-0.5 rounded-full flex items-center gap-0.5 shadow-xs animate-pulse">
-                  <span>適用中</span>
-                  <X className="w-2.5 h-2.5 stroke-[3]" />
+              {is100MileInclude ? (
+                <span className="text-[10px] font-black bg-rose-500 text-white px-2 py-0.5 rounded-full flex items-center gap-0.5 shadow-xs animate-pulse">
+                  <span>① 抽出中（次:除外）</span>
+                </span>
+              ) : is100MileExclude ? (
+                <span className="text-[10px] font-black bg-rose-600 text-white px-2 py-0.5 rounded-full flex items-center gap-0.5 shadow-xs animate-pulse">
+                  <span>② 除外中（次:元通り）</span>
                 </span>
               ) : (
                 <span className="text-[11px] font-mono text-rose-300 font-extrabold">160km級</span>
               )}
             </div>
 
-            <h3 className="text-sm sm:text-base font-black text-white group-hover:text-rose-300 transition-colors leading-snug">
+            <h3 className={`text-sm sm:text-base font-black text-white group-hover:text-rose-300 transition-colors leading-snug ${is100MileExclude ? 'line-through opacity-75' : ''}`}>
               Mt.FUJI 100・Hiroshima UTMB・信越五岳・FTR ほか
             </h3>
 
@@ -355,12 +457,18 @@ export const ToretoreBanner: React.FC<ToretoreBannerProps> = ({
           <div className="flex items-center justify-between mt-3 pt-2.5 border-t border-white/15">
             <span
               className={`text-xs font-extrabold flex items-center gap-1 transition-colors ${
-                is100MileActive ? 'text-white bg-rose-600/60 px-2 py-0.5 rounded-lg border border-rose-400/60' : 'text-rose-300'
+                is100MileInclude
+                  ? 'text-white bg-rose-600/60 px-2 py-0.5 rounded-lg border border-rose-400/60'
+                  : is100MileExclude
+                  ? 'text-white bg-rose-600/60 px-2 py-0.5 rounded-lg border border-rose-400/60'
+                  : 'text-rose-300'
               }`}
             >
               <Crown className="w-3.5 h-3.5" />
-              <span>{is100MileActive ? '解除' : '100マイル表示'}</span>
-              {is100MileActive ? (
+              <span>
+                {is100MileInclude ? '除外へ切替 ➔' : is100MileExclude ? '元通り（解除）' : '100マイル表示'}
+              </span>
+              {is100MileExclude ? (
                 <X className="w-3 h-3 ml-0.5" />
               ) : (
                 <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
@@ -371,13 +479,11 @@ export const ToretoreBanner: React.FC<ToretoreBannerProps> = ({
 
         {/* カード3: 中国地方＆四国地方 徹底網羅 */}
         <div
-          onClick={() => onFilterFeature && onFilterFeature('all', 'all', '中国')}
-          className={`group relative rounded-2xl overflow-hidden border-2 transition-all cursor-pointer bg-gradient-to-br from-teal-950 via-slate-900 to-sky-950 text-white p-5 flex flex-col justify-between min-h-[225px] select-none ${
+          className={`group relative rounded-2xl overflow-hidden border-2 transition-all bg-gradient-to-br from-teal-950 via-slate-900 to-sky-950 text-white p-5 flex flex-col justify-between min-h-[225px] select-none ${
             isRegionCardActive
-              ? 'border-emerald-400 ring-4 ring-emerald-500/40 shadow-xl scale-[1.01]'
+              ? 'border-emerald-400 ring-4 ring-emerald-500/40 shadow-xl'
               : 'border-slate-800 shadow-sm hover:shadow-md hover:border-slate-700'
           }`}
-          title="クリックで中国地方または四国地方を抽出（再度クリックで解除）"
         >
           <div className="absolute -right-8 -bottom-8 w-32 h-32 bg-teal-500/20 rounded-full blur-2xl pointer-events-none group-hover:scale-125 transition-transform" />
 
@@ -387,15 +493,21 @@ export const ToretoreBanner: React.FC<ToretoreBannerProps> = ({
                 ⛰️ 中国＆四国
               </span>
 
-              {isChugokuActive ? (
+              {isChugokuInclude ? (
                 <span className="text-[10px] font-black bg-emerald-500 text-slate-950 px-1.5 py-0.5 rounded-full flex items-center gap-0.5 shadow-xs animate-pulse">
-                  <span>中国中</span>
-                  <X className="w-2.5 h-2.5 stroke-[3]" />
+                  <span>中国抽出中</span>
                 </span>
-              ) : isShikokuActive ? (
+              ) : isChugokuExclude ? (
+                <span className="text-[10px] font-black bg-rose-600 text-white px-1.5 py-0.5 rounded-full flex items-center gap-0.5 shadow-xs animate-pulse">
+                  <span>中国除外中</span>
+                </span>
+              ) : isShikokuInclude ? (
                 <span className="text-[10px] font-black bg-sky-400 text-slate-950 px-1.5 py-0.5 rounded-full flex items-center gap-0.5 shadow-xs animate-pulse">
-                  <span>四国中</span>
-                  <X className="w-2.5 h-2.5 stroke-[3]" />
+                  <span>四国抽出中</span>
+                </span>
+              ) : isShikokuExclude ? (
+                <span className="text-[10px] font-black bg-rose-600 text-white px-1.5 py-0.5 rounded-full flex items-center gap-0.5 shadow-xs animate-pulse">
+                  <span>四国除外中</span>
                 </span>
               ) : (
                 <span className="text-[11px] font-mono text-emerald-300 font-extrabold">中四国密着</span>
@@ -419,13 +531,23 @@ export const ToretoreBanner: React.FC<ToretoreBannerProps> = ({
                 onFilterFeature && onFilterFeature('all', 'all', '中国');
               }}
               className={`text-[11px] font-extrabold px-2 py-1 rounded flex items-center gap-0.5 transition-all cursor-pointer ${
-                isChugokuActive
-                  ? 'bg-white text-emerald-950 font-black ring-2 ring-emerald-400 shadow-sm'
+                isChugokuInclude
+                  ? 'bg-emerald-400 text-slate-950 font-black ring-2 ring-emerald-300 shadow-sm'
+                  : isChugokuExclude
+                  ? 'bg-rose-600 text-white font-black ring-2 ring-rose-400 shadow-sm'
                   : 'bg-emerald-500 hover:bg-emerald-400 text-slate-950'
               }`}
             >
-              {isChugokuActive ? <Check className="w-3 h-3 stroke-[3]" /> : <Mountain className="w-3 h-3" />}
-              <span>{isChugokuActive ? '中国解除' : '中国地方'}</span>
+              {isChugokuInclude ? (
+                <Check className="w-3 h-3 stroke-[3]" />
+              ) : isChugokuExclude ? (
+                <Ban className="w-3 h-3 stroke-[3]" />
+              ) : (
+                <Mountain className="w-3 h-3" />
+              )}
+              <span>
+                {isChugokuInclude ? '中国:除外へ' : isChugokuExclude ? '中国:解除' : '中国地方'}
+              </span>
             </button>
 
             <button
@@ -435,13 +557,23 @@ export const ToretoreBanner: React.FC<ToretoreBannerProps> = ({
                 onFilterFeature && onFilterFeature('all', 'all', '四国');
               }}
               className={`text-[11px] font-extrabold px-2 py-1 rounded flex items-center gap-0.5 transition-all cursor-pointer ${
-                isShikokuActive
-                  ? 'bg-white text-sky-950 font-black ring-2 ring-sky-400 shadow-sm'
+                isShikokuInclude
+                  ? 'bg-sky-400 text-slate-950 font-black ring-2 ring-sky-300 shadow-sm'
+                  : isShikokuExclude
+                  ? 'bg-rose-600 text-white font-black ring-2 ring-rose-400 shadow-sm'
                   : 'bg-sky-400 hover:bg-sky-300 text-slate-950'
               }`}
             >
-              {isShikokuActive ? <Check className="w-3 h-3 stroke-[3]" /> : <Mountain className="w-3 h-3" />}
-              <span>{isShikokuActive ? '四国解除' : '四国地方'}</span>
+              {isShikokuInclude ? (
+                <Check className="w-3 h-3 stroke-[3]" />
+              ) : isShikokuExclude ? (
+                <Ban className="w-3 h-3 stroke-[3]" />
+              ) : (
+                <Mountain className="w-3 h-3" />
+              )}
+              <span>
+                {isShikokuInclude ? '四国:除外へ' : isShikokuExclude ? '四国:解除' : '四国地方'}
+              </span>
             </button>
           </div>
         </div>
@@ -450,11 +582,19 @@ export const ToretoreBanner: React.FC<ToretoreBannerProps> = ({
         <div
           onClick={() => onFilterFeature && onFilterFeature('adventure', 'arws')}
           className={`group relative rounded-2xl overflow-hidden border-2 transition-all cursor-pointer bg-gradient-to-br from-indigo-950 via-slate-900 to-blue-950 text-white p-5 flex flex-col justify-between min-h-[225px] select-none ${
-            isArwsActive
+            isArwsInclude
               ? 'border-indigo-400 ring-4 ring-indigo-500/40 shadow-xl scale-[1.01]'
+              : isArwsExclude
+              ? 'border-rose-500 ring-4 ring-rose-500/40 shadow-xl scale-[1.01] bg-gradient-to-br from-slate-950 via-rose-950 to-slate-900'
               : 'border-slate-800 shadow-sm hover:shadow-md hover:border-slate-700'
           }`}
-          title={isArwsActive ? 'クリックでARWS/ARWC絞り込みを解除' : 'クリックでARWS/ARWC 4日以上の世界最高峰レースを抽出'}
+          title={
+            isArwsInclude
+              ? '現在ARWS抽出中（クリックで除外に切り替え：世界戦を除外して国内レースのみ表示）'
+              : isArwsExclude
+              ? '現在ARWS除外中（クリックで解除・元通り）'
+              : 'クリックでARWS/ARWC 4日以上の世界最高峰レースを抽出'
+          }
         >
           <div className="absolute -right-8 -bottom-8 w-32 h-32 bg-indigo-500/20 rounded-full blur-2xl pointer-events-none group-hover:scale-125 transition-transform" />
 
@@ -462,24 +602,37 @@ export const ToretoreBanner: React.FC<ToretoreBannerProps> = ({
             <div className="flex items-center justify-between gap-1.5 mb-2">
               <span
                 className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-black transition-colors ${
-                  isArwsActive ? 'bg-indigo-300 text-slate-950 shadow-xs' : 'bg-indigo-400 text-slate-950'
+                  isArwsInclude
+                    ? 'bg-indigo-300 text-slate-950 shadow-xs'
+                    : isArwsExclude
+                    ? 'bg-rose-500 text-white shadow-xs'
+                    : 'bg-indigo-400 text-slate-950'
                 }`}
               >
-                <Globe className="w-3 h-3" />
+                {isArwsInclude ? (
+                  <Check className="w-3 h-3 stroke-[3]" />
+                ) : isArwsExclude ? (
+                  <Ban className="w-3 h-3 stroke-[3]" />
+                ) : (
+                  <Globe className="w-3 h-3" />
+                )}
                 ARWS & ARWC
               </span>
 
-              {isArwsActive ? (
-                <span className="text-[10px] font-black bg-indigo-500 text-white px-1.5 py-0.5 rounded-full flex items-center gap-0.5 shadow-xs animate-pulse">
-                  <span>適用中</span>
-                  <X className="w-2.5 h-2.5 stroke-[3]" />
+              {isArwsInclude ? (
+                <span className="text-[10px] font-black bg-indigo-500 text-white px-2 py-0.5 rounded-full flex items-center gap-0.5 shadow-xs animate-pulse">
+                  <span>① 抽出中（次:除外）</span>
+                </span>
+              ) : isArwsExclude ? (
+                <span className="text-[10px] font-black bg-rose-600 text-white px-2 py-0.5 rounded-full flex items-center gap-0.5 shadow-xs animate-pulse">
+                  <span>② 除外中（次:元通り）</span>
                 </span>
               ) : (
                 <span className="text-[11px] font-mono text-indigo-300 font-extrabold">4日以上・世界戦</span>
               )}
             </div>
 
-            <h3 className="text-sm sm:text-base font-black text-white group-hover:text-indigo-300 transition-colors leading-snug">
+            <h3 className={`text-sm sm:text-base font-black text-white group-hover:text-indigo-300 transition-colors leading-snug ${isArwsExclude ? 'line-through opacity-75' : ''}`}>
               世界最高峰アドベンチャー！<br />ワールドシリーズ＆世界選手権
             </h3>
 
@@ -491,12 +644,18 @@ export const ToretoreBanner: React.FC<ToretoreBannerProps> = ({
           <div className="flex items-center justify-between mt-3 pt-2.5 border-t border-white/15">
             <span
               className={`text-xs font-extrabold flex items-center gap-1 transition-colors ${
-                isArwsActive ? 'text-white bg-indigo-600/60 px-2 py-0.5 rounded-lg border border-indigo-400/60' : 'text-indigo-300'
+                isArwsInclude
+                  ? 'text-white bg-indigo-600/60 px-2 py-0.5 rounded-lg border border-indigo-400/60'
+                  : isArwsExclude
+                  ? 'text-white bg-rose-600/60 px-2 py-0.5 rounded-lg border border-rose-400/60'
+                  : 'text-indigo-300'
               }`}
             >
               <Globe className="w-3.5 h-3.5" />
-              <span>{isArwsActive ? '解除' : 'ARWS一覧へ'}</span>
-              {isArwsActive ? (
+              <span>
+                {isArwsInclude ? '除外へ切替 ➔' : isArwsExclude ? '元通り（解除）' : 'ARWS一覧へ'}
+              </span>
+              {isArwsExclude ? (
                 <X className="w-3 h-3 ml-0.5" />
               ) : (
                 <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
