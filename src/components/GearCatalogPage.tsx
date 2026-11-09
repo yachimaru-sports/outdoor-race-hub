@@ -329,71 +329,110 @@ export const GearCatalogPage: React.FC<GearCatalogPageProps> = ({
 
       {/* メインコンテンツ */}
       <main className="flex-1 max-w-7xl w-full mx-auto px-3 sm:px-4 py-3 sm:py-6 space-y-4 sm:space-y-6">
-        {/* 2. 魅力的なヒーローバナーセクション（スマホではスリム化） */}
-        <section className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-slate-900 via-slate-850 to-indigo-950 border border-amber-500/40 p-4 sm:p-6 lg:p-8 text-white shadow-xl">
+        {/* 2. 魅力的なヒーローバナーセクション（左右2カラム分割・右側ミニバナー配置・スマホ最適化） */}
+        <section className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-slate-900 via-slate-850 to-indigo-950 border border-amber-500/40 p-4 sm:p-6 lg:p-7 text-white shadow-xl">
           <div className="absolute top-0 right-0 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute bottom-0 left-1/3 w-60 h-60 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
 
-          <div className="relative z-10 max-w-3xl space-y-2 sm:space-y-3">
-            <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1 rounded-full bg-gradient-to-r from-amber-500/20 to-orange-500/20 border border-amber-400/50 text-amber-300 text-[11px] sm:text-xs font-black">
-              <Flame className="w-3.5 h-3.5 text-red-500 animate-pulse fill-red-500 shrink-0" />
-              <span>全レース実戦検証 ＆ レギュレーション完全準拠</span>
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 items-center">
+            {/* 左側：キャッチコピー ＆ 概要 ＆ メリットバッジ */}
+            <div className="lg:col-span-7 space-y-2.5 sm:space-y-3">
+              <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-0.8 rounded-full bg-gradient-to-r from-amber-500/20 to-orange-500/20 border border-amber-400/50 text-amber-300 text-[11px] sm:text-xs font-black">
+                <Flame className="w-3.5 h-3.5 text-red-500 animate-pulse fill-red-500 shrink-0" />
+                <span>全レース実戦検証 ＆ レギュレーション完全準拠</span>
+              </div>
+
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-black tracking-tight leading-tight">
+                大会完走を勝ち取る、<br className="hidden sm:inline" />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-300 to-yellow-200">
+                  プロ厳選ギア ＆ リアルタイム最安値
+                </span>
+              </h2>
+
+              <p className="text-xs sm:text-sm text-slate-300 font-medium leading-relaxed">
+                100マイル、過酷なアドベンチャーレース、ロングライド、ウルトラマラソンで実際に必携品として指定される定番装備を網羅。
+                提携プロショップ・公式ストアおよび楽天市場の最新セール価格でお得に揃えられます。
+              </p>
+
+              {/* 3大メリットバッジ */}
+              <div className="flex flex-wrap gap-1.5 sm:gap-2 pt-0.5 text-[10px] sm:text-xs font-bold">
+                <span className="flex items-center gap-1 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-lg bg-slate-800/90 border border-slate-700 text-slate-200 shadow-2xs">
+                  <CheckCircle2 className="w-3 h-3 text-emerald-400 shrink-0" />
+                  必携品チェックリスト直結
+                </span>
+                <span className="flex items-center gap-1 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-lg bg-slate-800/90 border border-slate-700 text-slate-200 shadow-2xs">
+                  <CheckCircle2 className="w-3 h-3 text-emerald-400 shrink-0" />
+                  実戦仕様ギア＆公式通販
+                </span>
+                <span className="flex items-center gap-1 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-lg bg-slate-800/90 border border-slate-700 text-slate-200 shadow-2xs">
+                  <CheckCircle2 className="w-3 h-3 text-emerald-400 shrink-0" />
+                  楽天ポイント還元＆セール連動
+                </span>
+              </div>
             </div>
 
-            <h2 className="text-lg sm:text-3xl lg:text-4xl font-black tracking-tight leading-tight">
-              大会完走を勝ち取る、<br className="hidden sm:inline" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-300 to-yellow-200">
-                プロ厳選ギア ＆ リアルタイム最安値
-              </span>
-            </h2>
-
-            <p className="text-xs sm:text-sm text-slate-300 font-medium leading-relaxed hidden xs:block">
-              100マイル、過酷なアドベンチャーレース、ロングライド、ウルトラマラソンで実際に必携品として指定される定番装備を網羅。
-              提携プロショップ・公式ストアおよび楽天市場の最新セール価格でお得に揃えられます。
-            </p>
-
-            {/* 3大メリットバッジ */}
-            <div className="flex flex-wrap gap-1.5 sm:gap-2 pt-1 text-[10px] sm:text-xs font-bold">
-              <span className="flex items-center gap-1 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-lg bg-slate-800/80 border border-slate-700 text-slate-200">
-                <CheckCircle2 className="w-3 h-3 text-emerald-400 shrink-0" />
-                必携品チェックリスト直結
-              </span>
-              <span className="flex items-center gap-1 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-lg bg-slate-800/80 border border-slate-700 text-slate-200">
-                <CheckCircle2 className="w-3 h-3 text-emerald-400 shrink-0" />
-                実戦仕様ギア＆公式通販
-              </span>
-              <span className="flex items-center gap-1 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-lg bg-slate-800/80 border border-slate-700 text-slate-200">
-                <CheckCircle2 className="w-3 h-3 text-emerald-400 shrink-0" />
-                楽天ポイント還元＆セール連動
-              </span>
-            </div>
-
-            {/* おすすめショップ・ブランドへのスマートリンク */}
-            <div className="pt-2 flex flex-wrap items-center gap-2 text-xs border-t border-slate-800/70 mt-2">
-              <span className="text-slate-400 font-bold text-[11px]">おすすめストア:</span>
+            {/* 右側：おすすめストア＆ブランドのコンパクトミニバナー（PCでは右側を贅沢に有効活用、スマホでは2列/並列でスッキリ） */}
+            <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-2.5 w-full">
+              {/* ミニバナー1: INNER FACT */}
               <a
                 href="https://inner-fact.co.jp/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-slate-800/90 hover:bg-slate-700 text-amber-300 border border-amber-500/30 text-[11px] font-bold transition-colors cursor-pointer"
-                title="インナーファクト 公式サイト"
+                className="group relative overflow-hidden rounded-xl bg-gradient-to-r from-slate-900/95 to-amber-950/60 border border-amber-500/40 hover:border-amber-400 p-2.5 sm:p-3 transition-all hover:scale-[1.01] shadow-md flex items-center justify-between text-left cursor-pointer"
+                title="インナーファクト 公式サイトへ"
               >
-                <span>INNER FACT (インナーファクト) 公式HP</span>
-                <ExternalLink className="w-3 h-3 text-slate-400" />
+                <div className="min-w-0 pr-2">
+                  <div className="flex items-center gap-1.5 mb-0.5">
+                    <span className="text-[10px] font-black px-1.5 py-0.2 rounded bg-amber-400 text-slate-950 leading-tight">
+                      BRAND
+                    </span>
+                    <span className="text-[11px] font-bold text-amber-200 truncate">
+                      天然ラミー（麻）・マメ防止
+                    </span>
+                  </div>
+                  <div className="text-xs sm:text-sm font-black text-white group-hover:text-amber-300 transition-colors truncate">
+                    INNER FACT（インナーファクト）
+                  </div>
+                  <div className="text-[10px] sm:text-[11px] text-slate-300 truncate mt-0.5">
+                    五本指・足袋型ソックス / 無縫製パンツ
+                  </div>
+                </div>
+                <div className="shrink-0 flex items-center gap-1 text-[11px] font-black text-amber-300 bg-amber-500/20 px-2 py-1.5 rounded-lg border border-amber-400/40 group-hover:bg-amber-400 group-hover:text-slate-950 transition-all shadow-2xs">
+                  <span>公式HP</span>
+                  <ExternalLink className="w-3 h-3" />
+                </div>
               </a>
+
+              {/* ミニバナー2: RUNPLUS */}
               <a
                 href="https://runplus.shopselect.net/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-slate-800/90 hover:bg-slate-700 text-teal-300 border border-teal-500/30 text-[11px] font-bold transition-colors cursor-pointer"
-                title="ランプラス 公式通販"
+                className="group relative overflow-hidden rounded-xl bg-gradient-to-r from-slate-900/95 to-teal-950/60 border border-teal-500/40 hover:border-teal-400 p-2.5 sm:p-3 transition-all hover:scale-[1.01] shadow-md flex items-center justify-between text-left cursor-pointer"
+                title="ランプラス 公式通販ストアへ"
               >
-                <span>RUNPLUS (ランプラス) 公式通販</span>
-                <ExternalLink className="w-3 h-3 text-slate-400" />
+                <div className="min-w-0 pr-2">
+                  <div className="flex items-center gap-1.5 mb-0.5">
+                    <span className="text-[10px] font-black px-1.5 py-0.2 rounded bg-teal-400 text-slate-950 leading-tight">
+                      PRO SHOP
+                    </span>
+                    <span className="text-[11px] font-bold text-teal-200 truncate">
+                      広島・山岳ランニング専門店
+                    </span>
+                  </div>
+                  <div className="text-xs sm:text-sm font-black text-white group-hover:text-teal-300 transition-colors truncate">
+                    RUNPLUS（ランプラス）
+                  </div>
+                  <div className="text-[10px] sm:text-[11px] text-slate-300 truncate mt-0.5">
+                    Teton Bros. / OMM 厳選実戦ギア通販
+                  </div>
+                </div>
+                <div className="shrink-0 flex items-center gap-1 text-[11px] font-black text-teal-300 bg-teal-500/20 px-2 py-1.5 rounded-lg border border-teal-400/40 group-hover:bg-teal-400 group-hover:text-slate-950 transition-all shadow-2xs">
+                  <span>公式通販</span>
+                  <ExternalLink className="w-3 h-3" />
+                </div>
               </a>
             </div>
-
-
           </div>
         </section>
 
