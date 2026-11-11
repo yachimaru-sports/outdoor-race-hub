@@ -32,6 +32,54 @@ export const MAX_UPDATE_NEWS_COUNT = 10;
  */
 export const UPDATE_NEWS_DATA: UpdateNewsItem[] = [
   {
+    id: 'update-system-autosync-fix-20261111',
+    date: '2026.11.11',
+    time: '18:40',
+    tag: 'システム最適化',
+    tagStyle: 'bg-indigo-100 text-indigo-900 border-indigo-300 dark:bg-indigo-950/70 dark:text-indigo-200',
+    title: '毎朝8時自動更新のCI耐性強化＆最新更新日時のリアルタイム表示同期を完了！',
+    description:
+      'GitHub Actions環境での楽天市場WAF遮断による更新失敗を解消し、実測定価・割引率の厳格検証と毎朝8時前後の確実な自動更新・日時表示同期を実現しました。',
+    targetId: 'events-section',
+    targetLabel: '最新一覧を見る',
+  },
+  {
+    id: 'update-nobeyama-fuji5-2027-20261111',
+    date: '2026.11.11',
+    time: '18:38',
+    tag: '新着ウルトラ',
+    tagStyle: 'bg-rose-100 text-rose-900 border-rose-300 dark:bg-rose-950/70 dark:text-rose-200',
+    title: '八ヶ岳野辺山100km・茨城100K・チャレンジ富士五湖（二次）2027 受付最新情報反映！',
+    description:
+      '第33回 星の郷八ヶ岳野辺山高原100km、第9回 茨城100Kを新規登録し、本日RUNNET二次受付開始のチャレンジ富士五湖ウルトラマラソン2027を最新化しました。',
+    targetId: 'events-section',
+    targetLabel: 'ウルトラ大会を見る',
+  },
+  {
+    id: 'update-cycle-chase-peaks-20261111',
+    date: '2026.11.11',
+    time: '18:35',
+    tag: '新着サイクル',
+    tagStyle: 'bg-sky-100 text-sky-900 border-sky-300 dark:bg-sky-950/70 dark:text-sky-200',
+    title: 'CHASE THE SUN JAPAN 2027・The PEAKS 妙高2・伊勢鳥羽志摩チャリフェス登録！',
+    description:
+      '日本初上陸250kmライド CHASE THE SUN JAPAN、獲得標高5,200m超 The PEAKS 妙高2、伊勢鳥羽志摩リアス式チャリフェス2027を公式検証済み登録しました。',
+    targetId: 'events-section',
+    targetLabel: 'サイクル大会を見る',
+  },
+  {
+    id: 'update-trail-kakamigahara-taiki-20261111',
+    date: '2026.11.11',
+    time: '18:32',
+    tag: '新着トレラン',
+    tagStyle: 'bg-teal-100 text-teal-900 border-teal-300 dark:bg-teal-950/70 dark:text-teal-200',
+    title: '各務原アルプス・まつさか香肌峡・大紀町シーサイド・OSJ新城2027 公式最新化！',
+    description:
+      '本日エントリー開始の各務原アルプスパノラマ、まつさか香肌峡を新規登録し、大紀町シーサイド(2/20)・OSJ新城(3/27-28)・笠戸島(2/7重複統合)を最新化しました。',
+    targetId: 'events-section',
+    targetLabel: 'トレラン大会を見る',
+  },
+  {
     id: 'update-wake-alps-20261109',
     date: '2026.11.09',
     time: '19:40',
@@ -102,54 +150,6 @@ export const UPDATE_NEWS_DATA: UpdateNewsItem[] = [
       '全レース必携品カタログの画面レイアウトを左右2カラムに刷新し、提携公式ショップのミニバナーを設置しました。',
     targetId: 'gears-catalog',
     targetLabel: '専用カタログを見る',
-  },
-  {
-    id: 'update-filter-3state-20261109',
-    date: '2026.11.09',
-    time: '19:10',
-    tag: '新機能・フィルター',
-    tagStyle: 'bg-emerald-100 text-emerald-900 border-emerald-300 dark:bg-emerald-950/70 dark:text-emerald-200',
-    title: 'フィルター機能が進化！［①これのみ表示］➔［②除外］➔［③元通り］の3ステート対応',
-    description:
-      'ARWSや100マイル、特定競技など「見たくないレース」をワンタップで除外（NOT検索）できるようUIを全面強化しました。',
-    targetId: 'events-section',
-    targetLabel: 'フィルターを試す',
-  },
-  {
-    id: 'update-shimanto-ar-20261109',
-    date: '2026.11.09',
-    time: '19:05',
-    tag: 'アドベンチャー',
-    tagStyle: 'bg-emerald-100 text-emerald-900 border-emerald-300 dark:bg-emerald-950/70 dark:text-emerald-200',
-    title: '四万十清流アドベンチャーレース 2026（高知・四万十川 42km）最新情報確認！',
-    description:
-      '四万十川を舞台にしたパックラフト＆MTB＆トレッキング＆読図レースの最新スペック・公式サイト実通検証を完了しました。',
-    targetId: 'events-section',
-    targetLabel: '四万十ARを見る',
-  },
-  {
-    id: 'update-yamanami-kaido-20261109',
-    date: '2026.11.09',
-    time: '19:00',
-    tag: 'サイクル',
-    tagStyle: 'bg-cyan-100 text-cyan-900 border-cyan-300 dark:bg-cyan-950/70 dark:text-cyan-200',
-    title: 'やまなみ街道チャレンジライド 2027（尾道〜松江 縦断140km）公式情報確認！',
-    description:
-      '瀬戸内から山陰まで中国山地を縦断する大人気ロングライドイベントのリンク実通・公式登録を再確認しました。',
-    targetId: 'events-section',
-    targetLabel: 'やまなみ街道を見る',
-  },
-  {
-    id: 'update-daiki-seaside-20261109',
-    date: '2026.11.09',
-    time: '18:55',
-    tag: '新着トレラン',
-    tagStyle: 'bg-teal-100 text-teal-900 border-teal-300 dark:bg-teal-950/70 dark:text-teal-200',
-    title: '大紀町シーサイドトレイル 2027（三重・熊野灘 23km/14km）公式情報確認！',
-    description:
-      '南伊勢の絶景熊野灘オーシャンビューコース。公式エントリー・レギュレーション情報の健全性を検証済みです。',
-    targetId: 'events-section',
-    targetLabel: '大紀町トレイルを見る',
   },
 ];
 

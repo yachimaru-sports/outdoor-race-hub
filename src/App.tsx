@@ -31,19 +31,30 @@ export const App: React.FC = () => {
     const soonStr = `${soonDate.getFullYear()}-${String(soonDate.getMonth() + 1).padStart(2, '0')}-${String(soonDate.getDate()).padStart(2, '0')}`;
 
     return (eventsData as RaceEvent[]).map((ev) => {
-      if (ev.date < todayStr) {
+      const baseDate = ev.date.split(/[~～]/)[0].trim();
+      if (baseDate < todayStr) {
         return { ...ev, entry_status: 'closed' as const };
       }
       if (ev.entry_deadline && ev.entry_deadline < todayStr) {
         return { ...ev, entry_status: 'closed' as const };
       }
+      if (ev.entry_start_date && ev.entry_start_date > todayStr) {
+        return { ...ev, entry_status: 'upcoming' as const };
+      }
       if (
-        ev.entry_status === 'open' &&
         ev.entry_deadline &&
         ev.entry_deadline >= todayStr &&
-        ev.entry_deadline <= soonStr
+        ev.entry_deadline <= soonStr &&
+        (ev.entry_status === 'open' || ev.entry_status === 'upcoming')
       ) {
         return { ...ev, entry_status: 'closing_soon' as const };
+      }
+      if (
+        ev.entry_status === 'upcoming' &&
+        ev.entry_start_date &&
+        ev.entry_start_date <= todayStr
+      ) {
+        return { ...ev, entry_status: 'open' as const };
       }
       return ev;
     });
@@ -541,27 +552,41 @@ export const App: React.FC = () => {
 
   const latestNews = UPDATE_NEWS_DATA[0];
   const lastUpdated = (() => {
-    // 常に最新ニュースの登録日時をダイレクトに表示（ニュースと同期）
-    if (latestNews && latestNews.date && latestNews.time) {
-      return `${latestNews.date} ${latestNews.time}`;
-    }
+    // meta.json (毎朝8時自動同期日時)・deals.json・UPDATE_NEWS_DATA のうち最新日時を JST で自動表示
     try {
-      const now = new Date();
-      const formatter = new Intl.DateTimeFormat('ja-JP', {
-        timeZone: 'Asia/Tokyo',
-        year: 'numeric',
-        month: '2-digit',
-        day: '2-digit',
-        hour: '2-digit',
-        minute: '2-digit',
-        hour12: false,
-      });
-      const parts = formatter.formatToParts(now);
-      const getPart = (type: string) => parts.find((p) => p.type === type)?.value || '';
-      return `${getPart('year')}.${getPart('month')}.${getPart('day')} ${getPart('hour')}:${getPart('minute')}`;
-    } catch {
-      return '2026.11.09 19:40';
-    }
+      const candidates: number[] = [];
+      if (metaData && (metaData as { last_updated_at?: string }).last_updated_at) {
+        const t = new Date((metaData as { last_updated_at: string }).last_updated_at).getTime();
+        if (!isNaN(t) && t > 0) candidates.push(t);
+      }
+      for (const d of dealsData as Array<{ updated_at?: string }>) {
+        if (d.updated_at) {
+          const t = new Date(d.updated_at).getTime();
+          if (!isNaN(t) && t > 0) candidates.push(t);
+        }
+      }
+      if (latestNews && latestNews.date && latestNews.time) {
+        const newsIso = `${latestNews.date.replace(/\./g, '-')}T${latestNews.time}:00+09:00`;
+        const t = new Date(newsIso).getTime();
+        if (!isNaN(t) && t > 0) candidates.push(t);
+      }
+      if (candidates.length > 0) {
+        const latestTime = new Date(Math.max(...candidates));
+        const formatter = new Intl.DateTimeFormat('ja-JP', {
+          timeZone: 'Asia/Tokyo',
+          year: 'numeric',
+          month: '2-digit',
+          day: '2-digit',
+          hour: '2-digit',
+          minute: '2-digit',
+          hour12: false,
+        });
+        const parts = formatter.formatToParts(latestTime);
+        const getPart = (type: string) => parts.find((p) => p.type === type)?.value || '';
+        return `${getPart('year')}.${getPart('month')}.${getPart('day')} ${getPart('hour')}:${getPart('minute')}`;
+      }
+    } catch {}
+    return latestNews ? `${latestNews.date} ${latestNews.time}` : '2026.11.11 18:30';
   })();
 
   // 固定ヘッダーの高さ分を考慮したスムーズジャンプハンドラ

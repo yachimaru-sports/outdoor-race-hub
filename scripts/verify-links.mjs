@@ -54,71 +54,78 @@ export const DUMMY_TEMPLATE_KEYWORDS = [
   'This domain may be for sale',
 ];
 
-export async function checkUrlLive(url) {
+export async function checkUrlLive(url, tries = 2) {
   if (!url || !url.startsWith('http')) {
     return { ok: false, status: 0, reason: '不正なURL形式' };
   }
 
-  try {
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 8000);
+  let lastErr = { ok: false, status: 0, reason: '不明なエラー' };
+  for (let attempt = 0; attempt < tries; attempt++) {
+    try {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 15000);
 
-    const res = await fetch(url, {
-      method: 'GET',
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-        'Accept-Language': 'ja,en-US;q=0.9,en;q=0.8'
-      },
-      signal: controller.signal,
-      redirect: 'follow'
-    });
-    clearTimeout(timeout);
+      const res = await fetch(url, {
+        method: 'GET',
+        headers: {
+          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+          'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+          'Accept-Language': 'ja,en-US;q=0.9,en;q=0.8'
+        },
+        signal: controller.signal,
+        redirect: 'follow'
+      });
+      clearTimeout(timeout);
 
-    if (res.status >= 400) {
-      return { ok: false, status: res.status, reason: `HTTPエラー ${res.status}` };
-    }
-
-    const html = await res.text();
-
-    // 1. タイトルの抽出と検証
-    const titleMatch = html.match(/<title[^>]*>([^<]+)<\/title>/i);
-    const title = titleMatch ? titleMatch[1].trim() : '';
-
-    if (title.includes('FC2ホームページ - 無料ホームページスペース')) {
-      return { ok: false, status: res.status, reason: '未初期化ダミーテンプレート検知 (FC2初期タイトル)' };
-    }
-    if (title.toLowerCase().includes('404') && (title.toLowerCase().includes('not found') || title.includes('見つかりません'))) {
-      return { ok: false, status: res.status, reason: `ソフト404タイトル検知 (${title})` };
-    }
-
-    // 2. 表示用テキスト（<script> や <style> タグ内のNuxt/SPAペイロード等を除外）
-    const visibleText = html
-      .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
-      .replace(/<style\b[^<]*(?:(?!<\/style>)<[^<]*)*<\/style>/gi, '')
-      .replace(/<[^>]+>/g, ' ');
-
-    // 未初期化ダミーテンプレートの本文検知
-    for (const kw of DUMMY_TEMPLATE_KEYWORDS) {
-      if (visibleText.includes(kw)) {
-        return { ok: false, status: res.status, reason: `未初期化ダミーテンプレート検知 (${kw})` };
+      if (res.status >= 400) {
+        lastErr = { ok: false, status: res.status, reason: `HTTPエラー ${res.status}` };
+        if (res.status === 404 || res.status === 410) return lastErr;
+        if (attempt + 1 < tries) { await new Promise((r) => setTimeout(r, 1000)); continue; }
+        return lastErr;
       }
-    }
 
-    // ソフト404の本文検知（「お探しのページは見つかりませんでした」等）
-    for (const kw of SOFT_404_KEYWORDS) {
-      if (visibleText.includes(kw)) {
-        return { ok: false, status: res.status, reason: `ソフト404検知 (${kw})` };
+      const html = await res.text();
+
+      // 1. タイトルの抽出と検証
+      const titleMatch = html.match(/<title[^>]*>([^<]+)<\/title>/i);
+      const title = titleMatch ? titleMatch[1].trim() : '';
+
+      if (title.includes('FC2ホームページ - 無料ホームページスペース')) {
+        return { ok: false, status: res.status, reason: '未初期化ダミーテンプレート検知 (FC2初期タイトル)' };
       }
-    }
+      if (title.toLowerCase().includes('404') && (title.toLowerCase().includes('not found') || title.includes('見つかりません'))) {
+        return { ok: false, status: res.status, reason: `ソフト404タイトル検知 (${title})` };
+      }
 
-    return { ok: true, status: res.status, finalUrl: res.url };
-  } catch (err) {
-    if (err.name === 'AbortError') {
-      return { ok: false, status: 0, reason: 'タイムアウト (8秒)' };
+      // 2. 表示用テキスト（<script> や <style> タグ内のNuxt/SPAペイロード等を除外）
+      const visibleText = html
+        .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
+        .replace(/<style\b[^<]*(?:(?!<\/style>)<[^<]*)*<\/style>/gi, '')
+        .replace(/<[^>]+>/g, ' ');
+
+      // 未初期化ダミーテンプレートの本文検知
+      for (const kw of DUMMY_TEMPLATE_KEYWORDS) {
+        if (visibleText.includes(kw)) {
+          return { ok: false, status: res.status, reason: `未初期化ダミーテンプレート検知 (${kw})` };
+        }
+      }
+
+      // ソフト404の本文検知（「お探しのページは見つかりませんでした」等）
+      for (const kw of SOFT_404_KEYWORDS) {
+        if (visibleText.includes(kw)) {
+          return { ok: false, status: res.status, reason: `ソフト404検知 (${kw})` };
+        }
+      }
+
+      return { ok: true, status: res.status, finalUrl: res.url };
+    } catch (err) {
+      lastErr = err.name === 'AbortError'
+        ? { ok: false, status: 0, reason: 'タイムアウト (15秒)' }
+        : { ok: false, status: 0, reason: err.message };
+      if (attempt + 1 < tries) await new Promise((r) => setTimeout(r, 1000));
     }
-    return { ok: false, status: 0, reason: err.message };
   }
+  return lastErr;
 }
 
 export async function verifyAllLinks() {

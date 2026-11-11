@@ -29,15 +29,16 @@ const GEMINI_API_KEY = (process.env.GEMINI_API_KEY || '').trim();
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-async function fetchRetry(url, opts = {}, tries = 3) {
+async function fetchRetry(url, opts = {}, tries = 2) {
   let last = null;
   for (let i = 0; i < tries; i++) {
     try {
-      const res = await fetch(url, { ...opts, headers: { ...HEADERS, ...(opts.headers || {}) }, signal: AbortSignal.timeout(15000), redirect: 'follow' });
+      const res = await fetch(url, { ...opts, headers: { ...HEADERS, ...(opts.headers || {}) }, signal: AbortSignal.timeout(9000), redirect: 'follow' });
+      // 403/404/410 等はリトライしても変わらないため即返す
       if (res.status < 500 && res.status !== 429) return res;
       last = res;
-    } catch (e) { last = null; }
-    await sleep(800 * (i + 1));
+    } catch { last = null; }
+    if (i + 1 < tries) await sleep(600 * (i + 1));
   }
   return last;
 }
@@ -71,13 +72,17 @@ function decodeHtml(buffer, contentType = '') {
 /** 商品ページから 価格・定価・画像候補 を抽出 */
 export async function scrapeItem(url) {
   const res = await fetchRetry(url);
-  if (!res) return { ok: false, reason: 'network' };
-  if (res.status !== 200) return { ok: false, reason: `HTTP ${res.status}` };
-  if (!/item\.rakuten\.co\.jp/.test(res.url)) return { ok: false, reason: `redirected to ${res.url}` };
+  if (!res) return { ok: false, blocked: true, reason: 'network' };
+  if (res.status === 403 || res.status === 429 || res.status >= 500) {
+    return { ok: false, blocked: true, reason: `HTTP ${res.status}` };
+  }
+  if (res.status !== 200) return { ok: false, blocked: false, reason: `HTTP ${res.status}` };
+  if (!/item\.rakuten\.co\.jp/.test(res.url)) return { ok: false, blocked: false, reason: `redirected to ${res.url}` };
   const html = decodeHtml(Buffer.from(await res.arrayBuffer()), res.headers.get('content-type') || '');
 
   let title = '';
   let price = 0;
+  let taxIncRefPrice = 0;
   const imageCandidates = [];
   for (const s of html.matchAll(/<script[^>]*type=["']application\/(?:json|ld\+json)["'][^>]*>([\s\S]*?)<\/script>/gi)) {
     try {
@@ -86,6 +91,7 @@ export async function scrapeItem(url) {
       if (sku?.title) title = sku.title;
       if (sku?.sku?.[0]) {
         price = price || sku.sku[0].taxIncludedPrice || 0;
+        taxIncRefPrice = taxIncRefPrice || Number(sku.sku[0].taxIncludedReferencePrice) || 0;
         for (const im of sku.sku[0].images || []) if (im.location) imageCandidates.push(im.location);
       }
     } catch { /* skip */ }
@@ -99,16 +105,22 @@ export async function scrapeItem(url) {
   if (og && !/noimage/i.test(og[1])) imageCandidates.unshift(og[1]);
   for (const m of html.matchAll(/https?:\/\/(?:tshop|shop|image)\.r10s\.jp\/[^"'\s\\<>)]+\.(?:jpg|jpeg|png)/gi)) imageCandidates.push(m[0]);
 
-  let listPrice = 0;
-  const lp = html.match(/メーカー希望小売価格[^\d]{0,30}([0-9,]+)\s*円/) || html.match(/希望小売価格[^\d]{0,30}([0-9,]+)\s*円/) || html.match(/定価[^\d]{0,30}([0-9,]+)\s*円/);
-  if (lp) listPrice = Number(lp[1].replace(/,/g, ''));
+  // 定価取得の優先順位: 1) 楽天JSON公式税込定価 2) HTMLのメーカー希望小売価格 3) 商品タイトルの明示的割引(Max/最大/クーポン除外)
+  let listPrice = taxIncRefPrice > price ? taxIncRefPrice : 0;
+  if (!listPrice) {
+    const lp = html.match(/メーカー希望小売価格[^\d]{0,30}([0-9,]+)\s*円/) || html.match(/希望小売価格[^\d]{0,30}([0-9,]+)\s*円/) || html.match(/定価[^\d]{0,30}([0-9,]+)\s*円/);
+    if (lp) listPrice = Number(lp[1].replace(/,/g, ''));
+  }
 
-  // タイトルやHTML内に "XX%OFF" や "XX％OFF" の記載がある場合、定価を逆算補正
-  const offMatch = html.match(/([0-9]{1,2})\s*[%％]\s*OFF/i);
-  if (!listPrice && offMatch && price > 0) {
-    const rate = Number(offMatch[1]);
-    if (rate >= 15 && rate <= 80) {
-      listPrice = Math.round(price / (1 - rate / 100));
+  // 商品タイトルそのものに記載された「XX%OFF」のみ対象（ページ全体の広告バナーや「Max/最大XX%OFF」による架空定価生成を防止）
+  if (!listPrice && title && price > 0) {
+    const cleanedForOff = title.replace(/(?:max|最大|クーポン|割引)[^0-9]{0,10}[0-9]{1,2}\s*[%％]\s*off/gi, '');
+    const offMatch = cleanedForOff.match(/([0-9]{1,2})\s*[%％]\s*(?:OFF|off)/i);
+    if (offMatch) {
+      const rate = Number(offMatch[1]);
+      if (rate >= 10 && rate <= 70) {
+        listPrice = Math.round(price / (1 - rate / 100));
+      }
     }
   }
 
@@ -178,6 +190,20 @@ export async function searchRakutenApi(gear) {
     const url = it.itemUrl.split('?')[0];
     const s = await scrapeItem(url);
     if (s.ok) return { url, title: it.itemName, scraped: s, source: '楽天API' };
+    // CI等で商品ページがWAF遮断(403等)された場合でも、楽天APIの在庫・価格＋画像CDN実通が取れれば採用
+    if (s.blocked && it.itemPrice > 0) {
+      const rawImgs = (it.mediumImageUrls || it.smallImageUrls || []).map((x) => cleanImage(typeof x === 'string' ? x : x?.imageUrl)).filter(Boolean);
+      for (const im of rawImgs) {
+        if (await imageIsAlive(im)) {
+          return {
+            url,
+            title: it.itemName,
+            scraped: { ok: true, title: it.itemName, price: it.itemPrice, listPrice: 0, images: [im] },
+            source: '楽天API(WAF迂回)',
+          };
+        }
+      }
+    }
   }
   return null;
 }
@@ -229,15 +255,16 @@ async function pool(items, size, fn) {
 }
 
 async function refreshOne(g) {
-  // 提携ショップ・公式固定枠（RUNPLUS、INNER FACT等）は自動削除せず保護
+  // 提携ショップ・公式固定枠（RUNPLUS、INNER FACT等）は画像疎通を確認しつつ保護
   if (g.officialUrl || g.shopName || !g.dealUrl?.includes('item.rakuten.co.jp')) {
+    const imgOk = await imageIsAlive(g.imageUrl);
     return {
       gear: {
         ...g,
-        priceVerifiedAt: new Date().toISOString()
+        priceVerifiedAt: new Date().toISOString(),
       },
       status: 'ok',
-      log: ['提携パートナー・公式固定枠として安全に維持']
+      log: [imgOk ? '提携パートナー・公式固定枠として安全に維持(画像200 OK)' : '提携パートナー・公式固定枠として安全に維持'],
     };
   }
 
@@ -248,9 +275,33 @@ async function refreshOne(g) {
 
   // 1. 商品ページ自体の死活確認＆自己修復
   if (!scraped.ok) {
-    log.push(`商品ページ不通(${scraped.reason})`);
+    if (scraped.blocked) {
+      // WAF遮断(403/429)や一時的タイムアウトの場合は安易に削除せず、画像CDNの生存を確認して安全維持
+      const imgAlive = await imageIsAlive(g.imageUrl);
+      if (imgAlive) {
+        return {
+          gear: { ...g, priceVerifiedAt: g.priceVerifiedAt || new Date().toISOString() },
+          status: 'ok',
+          log: [`WAF/一時応答制限(${scraped.reason})のため画像生存確認のうえ前回正常値を安全維持`],
+        };
+      }
+      log.push(`WAF/応答制限(${scraped.reason})かつ画像不通`);
+    } else {
+      log.push(`商品ページ消滅(${scraped.reason})`);
+    }
+
     const rep = await findReplacement(g);
-    if (!rep) return { gear: g, status: 'dead', log };
+    if (!rep) {
+      // 確実な消滅(404/410)のみ除外し、一時障害は既存データを維持してCI全滅を防止
+      if (scraped.blocked) {
+        return {
+          gear: { ...g },
+          status: 'ok',
+          log: [...log, '一時障害の可能性があるため既存データを保護'],
+        };
+      }
+      return { gear: g, status: 'dead', log };
+    }
     scraped = rep.scraped; url = rep.url; replaced = true;
     log.push(`【自己修復】${rep.source}で代替商品を特定: ${url}`);
   }
@@ -258,6 +309,10 @@ async function refreshOne(g) {
   // 2. 画像の死活確認＆自己修復
   let image = '';
   for (const c of scraped.images) { if (await imageIsAlive(c)) { image = c; break; } }
+  if (!image && g.imageUrl && await imageIsAlive(g.imageUrl)) {
+    image = g.imageUrl;
+    log.push('商品ページ画像候補から取得不可のため既存有効画像を維持');
+  }
   if (!image) {
     log.push('元ページで画像取得不能');
     const rep = await findReplacement(g);
@@ -271,15 +326,19 @@ async function refreshOne(g) {
   }
   if (!image) return { gear: g, status: 'noimage', log: [...log, '商品画像をどうしても取得できず除外'] };
 
-  // 価格: ページ実測値
-  let originalPrice = g.originalPrice || 0;
-  if (scraped.listPrice > 0) originalPrice = scraped.listPrice;
+  // 価格・定価: 商品ページの実測値を厳格採用（HTML誤検知の架空定価は是正）
   let price = scraped.price;
+  let originalPrice = g.originalPrice || 0;
   let stale = false;
   if (replaced) {
-    originalPrice = scraped.listPrice || price;
-  } else if (!price || price < originalPrice * 0.2) {
-    price = g.price; stale = true; log.push('価格を確認できず前回値を維持');
+    originalPrice = scraped.listPrice > price ? scraped.listPrice : price;
+  } else if (!price || price <= 0) {
+    price = g.price;
+    stale = true;
+    log.push('価格を確認できず前回値を維持');
+  } else {
+    // ページに公式定価・明示割引がある場合のみ定価を設定し、根拠がない場合は正直に通常価格扱い
+    originalPrice = scraped.listPrice > price ? scraped.listPrice : price;
   }
   if (price > originalPrice) originalPrice = price;
   const discountRate = originalPrice > price ? Math.round((1 - price / originalPrice) * 100) : 0;
@@ -313,15 +372,44 @@ const DISCOVERY_TARGETS = [
   { keyword: 'マグオン ジェル セール', category: '補給食・エナジージェル', sports: ['trail', 'marathon', 'cycling'], brand: 'Mag-on' },
 ];
 
+const CATEGORY_RULES = {
+  'トレランシューズ': { must: /シューズ|靴|トレイル|ランニング|スピードゴート|speedgoat|mutant|altra|salomon/i, ban: /靴下|ソックス|インソール|ポール|ザック|ベスト|ライト/i },
+  'トレランザック': { must: /ザック|ベスト|バックパック|リュック|skin|スキン|ピナクル/i, ban: /ポール|ストック|シューズ|ライト|タイツ/i },
+  'トレッキングポール': { must: /ポール|ストック|zポール|carbon|distance.*(?:z|carbon)/i, ban: /ザック|リュック|バックパック|バッグ|15|ベスト|シューズ/i },
+  'ヘッドライト': { must: /ヘッドライト|ライト|ランタン|ティカ|ティキナ|アクティック|スポット|led/i, ban: /電池のみ|ケースのみ|ベルトのみ|バンドのみ/i },
+  'サポートタイツ': { must: /タイツ|レギンス|スパッツ|ジェネレーター|エキスパート|c3fit|cw-x/i, ban: /シャツ|ジャケット|靴下|ソックス|パンツのみ|ショーツ/i },
+  'レインウェア': { must: /レイン|ジャケット|シェル|防水|ゴアテックス|ティフォン|タンペート/i, ban: /パンツ|ズボン|シューズ|ザック|グローブ/i },
+  '補給食・エナジージェル': { must: /ジェル|補給|マグオン|アミノ|メダリスト|エナジー/i, ban: /ボトル|ポーチ|ザック/i },
+};
+
+function isCategoryMatch(category, title) {
+  const rule = CATEGORY_RULES[category];
+  if (!rule) return true;
+  if (rule.ban && rule.ban.test(title)) return false;
+  if (rule.must && !rule.must.test(title)) return false;
+  return true;
+}
+
+function normGearKey(title) {
+  return (title || '').normalize('NFKC').toLowerCase().replace(/[^a-z0-9ぁ-んァ-ヶ一-龥]/g, '').slice(0, 16);
+}
+
 /** 毎朝の新規特価品自動探索 ＆ ローテーション入れ替えエンジン */
 async function discoverAndRotateDeals(currentGears) {
   console.log('\n🔍 [毎朝自動実行] 新たな目玉特価品の探索＆入れ替えを開始します（Gemini AI & 楽天検索）...');
   const gears = [...currentGears];
-  const existingUrls = new Set(gears.map((g) => (g.dealUrl || '').split('?')[0]));
+  const normUrl = (u) => (u || '').split('?')[0].replace(/\/+$/, '');
+  const existingUrls = new Set(gears.map((g) => normUrl(g.dealUrl)));
+  const existingKeys = new Set(gears.map((g) => normGearKey(g.title)));
   let addedCount = 0;
   let replacedCount = 0;
+  let consecutiveBlocked = 0;
 
   for (const target of DISCOVERY_TARGETS) {
+    if (consecutiveBlocked >= 4) {
+      console.log(' ⏭️ 楽天スクレイピングがWAF連続制限中のため、新規ディスカバリーを早期完了します。');
+      break;
+    }
     try {
       let candUrls = [];
       if (GEMINI_API_KEY) {
@@ -330,13 +418,25 @@ async function discoverAndRotateDeals(currentGears) {
       }
       const directUrls = await searchRakutenDirect(target.keyword);
       candUrls = [...new Set([...candUrls, ...directUrls])];
+      if (candUrls.length === 0) {
+        consecutiveBlocked++;
+        continue;
+      }
+      consecutiveBlocked = 0;
 
       for (const u of candUrls.slice(0, 3)) {
-        const cleanU = u.split('?')[0];
+        const cleanU = u.split('?')[0].replace(/\/+$/, '');
         if (existingUrls.has(cleanU)) continue;
 
         const s = await scrapeItem(cleanU);
-        if (!s.ok || !s.price || s.price <= 0) continue;
+        if (!s.ok) {
+          if (s.blocked) consecutiveBlocked++;
+          continue;
+        }
+        if (!s.price || s.price <= 0) continue;
+        if (!isCategoryMatch(target.category, s.title)) continue;
+        const nKey = normGearKey(s.title);
+        if (nKey.length >= 6 && existingKeys.has(nKey)) continue;
 
         let listPrice = s.listPrice || 0;
         let discountRate = 0;
@@ -344,8 +444,8 @@ async function discoverAndRotateDeals(currentGears) {
           discountRate = Math.round((1 - s.price / listPrice) * 100);
         }
 
-        // 割引率25%以上の本物の目玉特価品のみを採用
-        if (discountRate < 25) continue;
+        // 本物の実測割引率20%以上の目玉特価品のみを採用
+        if (discountRate < 20) continue;
 
         let validImg = '';
         for (const im of s.images) {
@@ -394,6 +494,7 @@ async function discoverAndRotateDeals(currentGears) {
             console.log(` 🔄 入替: [${target.category}] ${lowestDiscountGear.title.slice(0, 25)} (${lowestDiscountGear.discountRate}%OFF) → ${newGear.title.slice(0, 25)} (${discountRate}%OFF)`);
             gears.splice(removeIdx, 1, newGear);
             existingUrls.add(cleanU);
+            existingKeys.add(nKey);
             replacedCount++;
             break;
           }
@@ -401,6 +502,7 @@ async function discoverAndRotateDeals(currentGears) {
           console.log(` ➕ 新規追加: [${target.category}] ${newGear.title.slice(0, 30)} (${discountRate}%OFF)`);
           gears.push(newGear);
           existingUrls.add(cleanU);
+          existingKeys.add(nKey);
           addedCount++;
           break;
         }

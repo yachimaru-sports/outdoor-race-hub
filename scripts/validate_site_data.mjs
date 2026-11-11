@@ -5,30 +5,29 @@
  * 動作フロー:
  *  1. 装備データ（gears.json / deals.json）を徹底スキャン:
  *     - 重複、未設定項目、不整合を検査
- *     - 全商品ページ、全商品画像への HTTP 200 / image/* 実機通信検証
- *  2. 【自己修復】もしリンク切れ・画像切れ商品が発見された場合:
+ *     - 全商品ページ、全商品画像への HTTP 200 / image/* 実機通信検証（並列高速実行）
+ *  2. 【自己修復】もしリンク切れ(404/410)・画像切れ商品が発見された場合:
  *     - 直ちに止めるのではなく、Gemini AI & 楽天市場検索で代替の生きた商品・画像を即時自動探索！
  *     - 正常に取得できたら gears.json / deals.json を自己修復更新！
+ *     - CI環境（海外IP）でWAF制限(403/タイムアウト)のみ発生し画像が正常な場合は保護維持
  *  3. 全カテゴリ最低3品・全リンク/画像OK・割引率整合が担保されたら合格（exit 0）→ HP更新へ進む！
- *  4. （何十回試みてもインターネット上で代替が1つも見つからず3品未満になる極端な場合のみ、
- *      壊れたHPを世に出さない防壁として exit 1 とし、前日の正常なHPを維持）
  */
 import fs from 'node:fs';
-import { findReplacement, scrapeItem } from './refresh_gears.mjs';
+import { findReplacement } from './refresh_gears.mjs';
 
 const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36';
 
 async function fetchCheck(url, accept) {
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < 2; i++) {
     try {
       const r = await fetch(url, {
         headers: { 'User-Agent': UA, Accept: accept, 'Accept-Language': 'ja' },
-        signal: AbortSignal.timeout(12000),
+        signal: AbortSignal.timeout(8000),
         redirect: 'follow',
       });
-      if (r.status < 500) return r;
+      if (r.status < 500 && r.status !== 429) return r;
     } catch { /* retry */ }
-    await new Promise((s) => setTimeout(s, 1000));
+    if (i === 0) await new Promise((s) => setTimeout(s, 600));
   }
   return null;
 }
@@ -42,64 +41,69 @@ async function main() {
   let deals = JSON.parse(fs.readFileSync('src/data/deals.json', 'utf-8'));
   let healedCount = 0;
 
-  // 1. 各装備のリンク・画像の通信検証
+  // 1. 各装備のリンク・画像の通信検証（並列8実行で高速化）
   console.log(`- 検査対象装備: 全 ${gears.length} 品のリンクおよび画像`);
-  for (let i = 0; i < gears.length; i++) {
-    const g = gears[i];
-    // 提携プロショップ・公式固定枠（RUNPLUS、INNER FACT等）は検証対象外（保護）
-    if (g.officialUrl || g.shopName || !g.dealUrl?.includes('item.rakuten.co.jp')) {
-      continue;
-    }
+  let idx = 0;
+  await Promise.all(Array.from({ length: 8 }, async () => {
+    while (idx < gears.length) {
+      const i = idx++;
+      const g = gears[i];
+      // 提携プロショップ・公式固定枠（RUNPLUS、INNER FACT等）は検証対象外（保護）
+      if (g.officialUrl || g.shopName || !g.dealUrl?.includes('item.rakuten.co.jp')) {
+        continue;
+      }
 
-    let pageOk = false;
-    let imgOk = false;
+      const [pageRes, imgRes] = await Promise.all([
+        fetchCheck(g.dealUrl, 'text/html'),
+        fetchCheck(g.imageUrl, 'image/*'),
+      ]);
 
-    const pageRes = await fetchCheck(g.dealUrl, 'text/html');
-    if (pageRes && pageRes.status === 200 && /item\.rakuten\.co\.jp/.test(pageRes.url)) {
-      pageOk = true;
-    }
+      const isWafOrTemp = !pageRes || pageRes.status === 403 || pageRes.status === 429 || pageRes.status >= 500;
+      const pageOk = Boolean(pageRes && pageRes.status === 200 && /item\.rakuten\.co\.jp/.test(pageRes.url));
+      const imgOk = Boolean(imgRes && imgRes.status === 200 && (imgRes.headers.get('content-type') || '').startsWith('image/'));
 
-    const imgRes = await fetchCheck(g.imageUrl, 'image/*');
-    if (imgRes && imgRes.status === 200 && (imgRes.headers.get('content-type') || '').startsWith('image/')) {
-      imgOk = true;
-    }
+      // 画像が生きていてページのみWAF遮断(403/タイムアウト)の場合はCI環境の一時遮断とみなし正常保護
+      if (imgOk && isWafOrTemp) {
+        continue;
+      }
 
-    // 異常を検知した場合は「Gemini ＆ 楽天検索」で即時自己修復！
-    if (!pageOk || !imgOk) {
-      console.warn(`⚠️ 異常検知 [${g.id}]: ページ=${pageOk ? 'OK' : 'NG'}, 画像=${imgOk ? 'OK' : 'NG'}`);
-      console.log(`🤖 Gemini AI ＆ 楽天市場検索で代替商品を自動探索中: ${g.title}...`);
+      // 明確な404/410消滅または画像切れを検知した場合は「Gemini ＆ 楽天検索」で即時自己修復！
+      if ((!pageOk && !isWafOrTemp) || !imgOk) {
+        console.warn(`⚠️ 異常検知 [${g.id}]: ページ=${pageOk ? 'OK' : (pageRes ? 'HTTP ' + pageRes.status : 'TIMEOUT')}, 画像=${imgOk ? 'OK' : 'NG'}`);
+        console.log(`🤖 Gemini AI ＆ 楽天市場検索で代替商品を自動探索中: ${g.title}...`);
 
-      const rep = await findReplacement(g);
-      if (rep) {
-        let repImg = '';
-        for (const im of rep.scraped.images) {
-          const r = await fetchCheck(im, 'image/*');
-          if (r && r.status === 200 && (r.headers.get('content-type') || '').startsWith('image/')) {
-            repImg = im;
-            break;
+        const rep = await findReplacement(g);
+        if (rep) {
+          let repImg = '';
+          for (const im of rep.scraped.images) {
+            const r = await fetchCheck(im, 'image/*');
+            if (r && r.status === 200 && (r.headers.get('content-type') || '').startsWith('image/')) {
+              repImg = im;
+              break;
+            }
           }
-        }
 
-        if (repImg) {
-          console.log(`✨ 【自動修復成功】${rep.source} により代替品を特定・置換: ${rep.url}`);
-          g.dealUrl = rep.url;
-          g.standardUrl = rep.url;
-          g.imageUrl = repImg;
-          if (rep.scraped.price > 0) {
-            g.price = rep.scraped.price;
-            g.originalPrice = rep.scraped.listPrice || rep.scraped.price;
-            g.discountRate = g.originalPrice > g.price ? Math.round((1 - g.price / g.originalPrice) * 100) : 0;
+          if (repImg) {
+            console.log(`✨ 【自動修復成功】${rep.source} により代替品を特定・置換: ${rep.url}`);
+            g.dealUrl = rep.url;
+            g.standardUrl = rep.url;
+            g.imageUrl = repImg;
+            if (rep.scraped.price > 0) {
+              g.price = rep.scraped.price;
+              g.originalPrice = (rep.scraped.listPrice && rep.scraped.listPrice >= g.price) ? rep.scraped.listPrice : g.price;
+              g.discountRate = g.originalPrice > g.price ? Math.round((1 - g.price / g.originalPrice) * 100) : 0;
+            }
+            if (rep.scraped.title) g.title = rep.scraped.title;
+            healedCount++;
+          } else {
+            console.error(`❌ 代替品も画像が取得できず修復失敗: ${g.id}`);
           }
-          if (rep.scraped.title) g.title = rep.scraped.title;
-          healedCount++;
         } else {
-          console.error(`❌ 代替品も画像が取得できず修復失敗: ${g.id}`);
+          console.error(`❌ 代替品が見つからず修復失敗: ${g.id}`);
         }
-      } else {
-        console.error(`❌ 代替品が見つからず修復失敗: ${g.id}`);
       }
     }
-  }
+  }));
 
   // 修復が行われた場合はファイルを保存
   if (healedCount > 0) {

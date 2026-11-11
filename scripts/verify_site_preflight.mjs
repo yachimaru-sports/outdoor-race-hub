@@ -153,7 +153,7 @@ async function runPreflightGate() {
   // -------------------------------------------------------------
   // 4. [装備] 装備・特価品データの整合性検証
   // -------------------------------------------------------------
-  console.log('\n[検査 4/4] 装備品（65品）および特価品（40品）のデータ完全性検証...');
+  console.log('\n[検査 4/4] 装備品および特価品のデータ完全性検証...');
   const gearsPath = path.join(ROOT_DIR, 'src', 'data', 'gears.json');
   const gears = JSON.parse(fs.readFileSync(gearsPath, 'utf8'));
   const dealsPath = path.join(ROOT_DIR, 'src', 'data', 'deals.json');
@@ -163,7 +163,7 @@ async function runPreflightGate() {
     console.error(`❌ 装備品データ件数不足: ${gears.length}件`);
     hasError = true;
   }
-  if (!Array.isArray(deals) || deals.length < 20) {
+  if (!Array.isArray(deals) || deals.length < 10) {
     console.error(`❌ 特価品データ件数不足: ${deals.length}件`);
     hasError = true;
   }

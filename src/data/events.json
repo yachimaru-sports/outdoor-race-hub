@@ -1,5 +1,385 @@
 [
   {
+    "id": "yatsugatake-nobeyama-ultra-2027",
+    "category": "marathon",
+    "subCategory": "100kmウルトラマラソン",
+    "elements": [
+      "ウルトラ",
+      "100km",
+      "高原・山岳ロード"
+    ],
+    "title": "第33回 星の郷八ヶ岳野辺山高原100kmウルトラマラソン 2027",
+    "date": "2027-05-16",
+    "month": 5,
+    "region": "甲信越",
+    "prefecture": "長野県",
+    "distance_km": 100,
+    "elevation_m": 1850,
+    "entry_status": "open",
+    "entry_start_date": "2026-11-06",
+    "entry_deadline": "2027-03-12",
+    "entry_fee": "23,000円",
+    "links": {
+      "official": "https://www.r-wellness.com/nobeyama/",
+      "entry": "https://runnet.jp/",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-11"
+    },
+    "mandatory_gear": [
+      {
+        "name": "マイカップ（エイド給水用）",
+        "category": "ギア"
+      },
+      {
+        "name": "夜間・早朝用ライト＆反射材",
+        "category": "ライト"
+      },
+      {
+        "name": "防寒ウインドシェル",
+        "category": "ウェア"
+      },
+      {
+        "name": "エナジージェル・電解質タブレット",
+        "category": "補給"
+      }
+    ],
+    "venue": {
+      "name": "滝沢牧場（長野県南佐久郡南牧村野辺山23-1）",
+      "address": "長野県南佐久郡南牧村野辺山",
+      "mapQuery": "長野県南牧村 滝沢牧場"
+    },
+    "source": {
+      "portalName": "RUNNET",
+      "portalUrl": "https://runnet.jp/"
+    }
+  },
+  {
+    "id": "kakamigahara-alps-panorama-trail-2027",
+    "category": "trail",
+    "subCategory": "ミドル・パノラマトレイル",
+    "elements": [
+      "トレラン",
+      "アルプス絶景"
+    ],
+    "title": "第10回 各務原アルプスパノラマトレイルラン 2027（岐阜・36km/15km）",
+    "date": "2027-04-03",
+    "month": 4,
+    "region": "東海",
+    "prefecture": "岐阜県",
+    "distance_km": 36,
+    "elevation_m": 1800,
+    "entry_status": "open",
+    "entry_start_date": "2026-11-11",
+    "entry_deadline": "2027-03-13",
+    "entry_fee": "10,000円",
+    "links": {
+      "official": "https://www.actrep-sports.com/kakamigahara-trailrun/",
+      "entry": "https://www.sportsentry.ne.jp/",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-11"
+    },
+    "mandatory_gear": [
+      {
+        "name": "トレランシューズ（グリップ力重視）",
+        "category": "フットウェア"
+      },
+      {
+        "name": "水分500ml以上＆行動食",
+        "category": "補給"
+      },
+      {
+        "name": "レインジャケットまたはウインドシェル",
+        "category": "ウェア"
+      },
+      {
+        "name": "マイカップ・健康保険証",
+        "category": "ギア"
+      }
+    ],
+    "venue": {
+      "name": "うぬまの森公園（岐阜県各務原市鵜沼）",
+      "address": "岐阜県各務原市鵜沼",
+      "mapQuery": "岐阜県各務原市 うぬまの森"
+    },
+    "source": {
+      "portalName": "スポーツエントリー",
+      "portalUrl": "https://www.sportsentry.ne.jp/"
+    }
+  },
+  {
+    "id": "matsusaka-kahadakyo-trail-2027",
+    "category": "trail",
+    "subCategory": "ショートトレイル",
+    "elements": [
+      "トレラン",
+      "山岳・渓谷"
+    ],
+    "title": "第4回 まつさか香肌峡トレイルラン大会 2027（三重・14km）",
+    "date": "2027-02-28",
+    "month": 2,
+    "region": "近畿",
+    "prefecture": "三重県",
+    "distance_km": 14,
+    "elevation_m": 1000,
+    "entry_status": "open",
+    "entry_start_date": "2026-10-15",
+    "entry_deadline": "2027-01-31",
+    "entry_fee": "7,000円",
+    "links": {
+      "official": "https://www.matsusakakahadakyotrail.com/",
+      "entry": "https://runnet.jp/",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-11"
+    },
+    "mandatory_gear": [
+      {
+        "name": "トレランシューズ",
+        "category": "フットウェア"
+      },
+      {
+        "name": "水分500ml以上＆マイカップ",
+        "category": "補給"
+      },
+      {
+        "name": "防寒着・レインウェア",
+        "category": "ウェア"
+      },
+      {
+        "name": "携帯電話・健康保険証",
+        "category": "ギア"
+      }
+    ],
+    "venue": {
+      "name": "リバーサイド茶倉周辺（三重県松阪市飯南町）",
+      "address": "三重県松阪市飯南町",
+      "mapQuery": "三重県松阪市 リバーサイド茶倉"
+    },
+    "source": {
+      "portalName": "RUNNET",
+      "portalUrl": "https://runnet.jp/"
+    }
+  },
+  {
+    "id": "chase-the-sun-japan-2027",
+    "category": "cycling",
+    "subCategory": "ワンウェイ・ウルトラロングライド",
+    "elements": [
+      "ロングライド",
+      "200km超",
+      "日本初上陸"
+    ],
+    "title": "CHASE THE SUN JAPAN 2027（東京湾〜静岡沼津 250km/225km）",
+    "date": "2027-05-29",
+    "month": 5,
+    "region": "関東",
+    "prefecture": "東京都",
+    "distance_km": 250,
+    "elevation_m": 2600,
+    "entry_status": "open",
+    "entry_start_date": "2026-10-17",
+    "entry_deadline": "2027-04-30",
+    "entry_fee": "30,000円",
+    "links": {
+      "official": "https://ride-beyond-japan.com/",
+      "entry": "https://www.sportsentry.ne.jp/",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-11"
+    },
+    "mandatory_gear": [
+      {
+        "name": "ロードバイク＆ヘルメット",
+        "category": "ギア"
+      },
+      {
+        "name": "前後ライト（夜間・トンネル対応高輝度）",
+        "category": "ライト"
+      },
+      {
+        "name": "パンク修理キット＆携帯ポンプ",
+        "category": "ギア"
+      },
+      {
+        "name": "輪行袋・GPSサイクルコンピュータ",
+        "category": "ナビゲーション"
+      }
+    ],
+    "venue": {
+      "name": "城南島海浜公園 つばさ浜（東京都大田区）〜島郷海岸（沼津市）",
+      "address": "東京都大田区城南島4-2-2",
+      "mapQuery": "東京都大田区 城南島海浜公園"
+    },
+    "source": {
+      "portalName": "スポーツエントリー",
+      "portalUrl": "https://www.sportsentry.ne.jp/"
+    }
+  },
+  {
+    "id": "the-peaks-r20-myoko2-2027",
+    "category": "cycling",
+    "subCategory": "超山岳ロングライド",
+    "elements": [
+      "ロングライド",
+      "激坂・獲得標高5000m超"
+    ],
+    "title": "The PEAKS ラウンド20 妙高2 2027（新潟・長野 228km/209km）",
+    "date": "2027-05-30",
+    "month": 5,
+    "region": "甲信越",
+    "prefecture": "新潟県",
+    "distance_km": 228,
+    "elevation_m": 5200,
+    "entry_status": "open",
+    "entry_start_date": "2026-10-13",
+    "entry_deadline": "2027-03-30",
+    "entry_fee": "20,000円",
+    "links": {
+      "official": "https://www.longridefan.com/thepeaks/8060/",
+      "entry": "https://www.sportsentry.ne.jp/",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-11"
+    },
+    "mandatory_gear": [
+      {
+        "name": "ロードバイク＆ヘルメット",
+        "category": "ギア"
+      },
+      {
+        "name": "前照灯・尾灯（早朝スタート必携）",
+        "category": "ライト"
+      },
+      {
+        "name": "防寒ウインドブレーカー・ジレ",
+        "category": "ウェア"
+      },
+      {
+        "name": "パンク修理ツール・ドリンクボトル2本",
+        "category": "ギア"
+      }
+    ],
+    "venue": {
+      "name": "池の平温泉イベント広場（新潟県妙高市関川）",
+      "address": "新潟県妙高市関川",
+      "mapQuery": "新潟県妙高市 池の平温泉"
+    },
+    "source": {
+      "portalName": "スポエンCYCLE",
+      "portalUrl": "https://cycle.spoen.jp/"
+    }
+  },
+  {
+    "id": "ise-toba-shima-cycle-2027",
+    "category": "cycling",
+    "subCategory": "サイクリング・グルメライド",
+    "elements": [
+      "ロングライド",
+      "海岸絶景"
+    ],
+    "title": "第2回 伊勢鳥羽志摩リアス式チャリフェス 2027（三重・92km/62km）",
+    "date": "2027-02-07",
+    "month": 2,
+    "region": "近畿",
+    "prefecture": "三重県",
+    "distance_km": 92,
+    "elevation_m": 1100,
+    "entry_status": "open",
+    "entry_start_date": "2026-11-06",
+    "entry_deadline": "2027-01-24",
+    "entry_fee": "9,000円",
+    "links": {
+      "official": "https://miecycling.or.jp/event/isetobashima_charifes2027",
+      "entry": "https://www.sportsentry.ne.jp/",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-11"
+    },
+    "mandatory_gear": [
+      {
+        "name": "ヘルメット＆フロントライト・テールライト",
+        "category": "ギア"
+      },
+      {
+        "name": "防寒グローブ・ウインドブレーカー",
+        "category": "ウェア"
+      },
+      {
+        "name": "パンク修理キット＆ボトル",
+        "category": "ギア"
+      }
+    ],
+    "venue": {
+      "name": "三重県営サンアリーナ（三重県伊勢市朝熊町）",
+      "address": "三重県伊勢市朝熊町",
+      "mapQuery": "三重県伊勢市 三重県営サンアリーナ"
+    },
+    "source": {
+      "portalName": "スポーツエントリー",
+      "portalUrl": "https://www.sportsentry.ne.jp/"
+    }
+  },
+  {
+    "id": "ibaraki-100k-ultra-2027",
+    "category": "marathon",
+    "subCategory": "100kmウルトラマラソン",
+    "elements": [
+      "ウルトラ",
+      "100km",
+      "フラット高速"
+    ],
+    "title": "第9回 茨城100Kウルトラマラソン in 鹿行 2027（茨城・100km）",
+    "date": "2027-03-14",
+    "month": 3,
+    "region": "関東",
+    "prefecture": "茨城県",
+    "distance_km": 100,
+    "elevation_m": 250,
+    "entry_status": "open",
+    "entry_start_date": "2026-10-01",
+    "entry_deadline": "2026-12-15",
+    "entry_fee": "20,000円",
+    "links": {
+      "official": "https://ibaraki100k.teamsportsjapan.jp/",
+      "entry": "https://runnet.jp/",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-11"
+    },
+    "mandatory_gear": [
+      {
+        "name": "早朝用ヘッドライトまたはハンドライト・反射材",
+        "category": "ライト"
+      },
+      {
+        "name": "マイカップ＆防寒シェル",
+        "category": "ギア"
+      },
+      {
+        "name": "補給食・エネルギージェル",
+        "category": "補給"
+      }
+    ],
+    "venue": {
+      "name": "行方市 北浦公民館（茨城県行方市山田）",
+      "address": "茨城県行方市山田2175",
+      "mapQuery": "茨城県行方市 北浦公民館"
+    },
+    "source": {
+      "portalName": "RUNNET",
+      "portalUrl": "https://runnet.jp/"
+    }
+  },
+  {
     "id": "granfondo-kumano-2027",
     "category": "cycling",
     "subCategory": "山岳ロングライド",
@@ -229,9 +609,9 @@
       }
     ],
     "venue": {
-      "name": "笠戸島ハイツ・公民館周辺（山口県下松市）",
+      "name": "笠戸島国民宿舎大城周辺（山口県下松市笠戸島14-1）",
       "address": "山口県下松市笠戸島",
-      "mapQuery": "笠戸島 山口県下松市"
+      "mapQuery": "山口県下松市 笠戸島国民宿舎大城"
     },
     "source": {
       "portalName": "RUNNET",
@@ -6001,15 +6381,15 @@
       "シングル・テクニカル"
     ],
     "title": "大紀町シーサイドトレイル 2027（三重・熊野灘オーシャントレイル 23km/14km）",
-    "date": "2027-02-13",
+    "date": "2027-02-20",
     "month": 2,
     "region": "近畿",
     "prefecture": "三重県",
     "distance_km": 23,
     "elevation_m": 1450,
-    "entry_status": "upcoming",
-    "entry_start_date": "2026-11-01",
-    "entry_deadline": "2027-01-20",
+    "entry_status": "open",
+    "entry_start_date": "2026-11-08",
+    "entry_deadline": "2027-02-01",
     "entry_fee": "7,500円",
     "links": {
       "official": "https://www.nature-scene.net/taiki/",
@@ -6213,58 +6593,6 @@
     },
     "source": {
       "portalName": "大会公式"
-    }
-  },
-  {
-    "id": "くだまつ笠戸島アイランドトレイル-2027",
-    "category": "trail",
-    "subCategory": "瀬戸内多島美オーシャントレイル",
-    "elements": [
-      "トレック"
-    ],
-    "title": "くだまつ笠戸島アイランドトレイル 2027（山口・下松市）",
-    "date": "2027-02-14",
-    "month": 2,
-    "region": "中国",
-    "prefecture": "山口県",
-    "distance_km": 32,
-    "elevation_m": 1750,
-    "entry_status": "open",
-    "entry_start_date": "2026-10-11",
-    "entry_deadline": "2026-12-10",
-    "entry_fee": "11,000円",
-    "links": {
-      "official": "http://kasadojima-islandtrail.com/",
-      "entry": "http://kasadojima-islandtrail.com/",
-      "review": null,
-      "sns": null,
-      "verified": true,
-      "verified_at": "2026-11-11"
-    },
-    "mandatory_gear": [
-      {
-        "name": "レインジャケットまたは防風シェル",
-        "category": "ウェア"
-      },
-      {
-        "name": "エマージェンシーシート・ホイッスル・保険証コピー",
-        "category": "エイド"
-      },
-      {
-        "name": "水分500ml〜1.0L以上・行動食・マイカップ",
-        "category": "補給"
-      },
-      {
-        "name": "トレイルランニングシューズ＆トレランザック",
-        "category": "ギア"
-      }
-    ],
-    "venue": {
-      "name": "笠戸島国民宿舎大城（山口県下松市笠戸島14-1）",
-      "mapQuery": "山口県下松市 笠戸島国民宿舎大城"
-    },
-    "source": {
-      "portalName": "モシコム"
     }
   },
   {
@@ -6789,15 +7117,15 @@
       "OSJ開幕戦"
     ],
     "title": "OSJ新城トレイル 32K＆ダブル64K 2027（愛知・新城市 愛知県民の森）",
-    "date": "2027-03-20",
+    "date": "2027-03-27~28",
     "month": 3,
     "region": "中部",
     "prefecture": "愛知県",
     "distance_km": 64,
     "elevation_m": 4800,
-    "entry_status": "upcoming",
-    "entry_start_date": "2026-10-15",
-    "entry_deadline": "2027-02-15",
+    "entry_status": "open",
+    "entry_start_date": "2026-11-09",
+    "entry_deadline": "2027-02-21",
     "entry_fee": "16,000円",
     "links": {
       "official": "https://www.outdoorsportsjapan.com/trail/shinshiro_32/",
@@ -7122,13 +7450,13 @@
     "prefecture": "山梨県",
     "distance_km": 118,
     "elevation_m": 1250,
-    "entry_status": "upcoming",
-    "entry_start_date": "2026-12-02",
+    "entry_status": "open",
+    "entry_start_date": "2026-11-11",
     "entry_deadline": "2027-01-31",
     "entry_fee": "24,000円",
     "links": {
       "official": "https://www.r-wellness.com/fuji5/",
-      "entry": "https://www.r-wellness.com/fuji5/",
+      "entry": "https://runnet.jp/",
       "review": null,
       "sns": null,
       "verified": true,
@@ -7186,14 +7514,14 @@
       "夜間"
     ],
     "title": "Mt.FUJI100 2027（富士山麓一周166km・国内最高峰マイル）",
-    "date": "2027-04-23",
+    "date": "2027-04-23~25",
     "month": 4,
     "region": "甲信越",
     "prefecture": "山梨県",
     "distance_km": 166,
     "elevation_m": 7574,
     "entry_status": "closing_soon",
-    "entry_start_date": "2026-09-16",
+    "entry_start_date": "2026-11-02",
     "entry_deadline": "2026-11-15",
     "entry_fee": "48,000円",
     "links": {
@@ -7571,13 +7899,13 @@
       "4日以上"
     ],
     "title": "Adventure Race Croatia 2027（クロアチア ARWC世界選手権 600km・6日間）",
-    "date": "2027-09-18",
+    "date": "2027-09-14~25",
     "month": 9,
     "region": "海外",
     "prefecture": "クロアチア",
     "distance_km": 600,
     "elevation_m": 13500,
-    "entry_status": "upcoming",
+    "entry_status": "open",
     "entry_start_date": "2026-11-01",
     "entry_deadline": "2027-06-30",
     "entry_fee": "950,000円",

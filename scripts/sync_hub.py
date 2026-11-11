@@ -515,8 +515,9 @@ def compute_entry_status(date_str: str, deadline_str: str, start_str: str, curre
     today_str = datetime.now(JST).strftime("%Y-%m-%d")
     soon_str = (datetime.now(JST) + timedelta(days=21)).strftime("%Y-%m-%d")
 
-    # 開催日終了
-    if date_str and date_str < today_str:
+    # 開催日終了（複数日開催 '2027-04-23~25' の場合は開始日部分でなく最終日で比較する方が正確だが、まずは開始日文字列を正規化）
+    base_date = date_str.split("~")[0].split("〜")[0].strip() if date_str else ""
+    if base_date and base_date < today_str:
         return "closed"
     # 締切日終了
     if deadline_str and deadline_str < today_str:
@@ -524,9 +525,12 @@ def compute_entry_status(date_str: str, deadline_str: str, start_str: str, curre
     # エントリー開始前
     if start_str and start_str > today_str:
         return "upcoming"
-    # 締切間近
+    # 締切間近（21日以内）
     if deadline_str and today_str <= deadline_str <= soon_str:
         return "closing_soon"
+    # エントリー開始日を過ぎていて現在が upcoming なら open へ自動昇格
+    if start_str and start_str <= today_str and (not current_status or current_status == "upcoming"):
+        return "open"
     return current_status or "open"
 
 

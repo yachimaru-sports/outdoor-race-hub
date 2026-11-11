@@ -1,8 +1,8 @@
 {
-  "last_updated_at": "2026-11-11T08:38:25.501057+09:00",
-  "events_count": 130,
-  "deals_count": 40,
-  "gears_count": 65,
+  "last_updated_at": "2026-11-11T09:40:27.213Z",
+  "events_count": 136,
+  "deals_count": 25,
+  "gears_count": 62,
   "sync_source": "Google Sheets & Rakuten API Automated Sync",
   "gear_sync_source": "refresh_gears.mjs (自己修復・商品ページ実測・画像HTTP200検証済)",
   "gear_removed": []
