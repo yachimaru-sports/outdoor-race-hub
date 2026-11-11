@@ -82,9 +82,16 @@ async function main() {
       healed.push({ id: t.ev.id, type: t.type, from: t.url, to: replacement });
       console.log(`🤖 AIが修復: ${t.ev.title} [${t.type}] → ${replacement}`);
     } else {
-      t.ev.links[t.type] = null;
-      removed.push({ id: t.ev.id, type: t.type, url: t.url });
-      console.log(`🧹 非表示化: ${t.ev.title} [${t.type}] ${t.url}`);
+      const otherType = t.type === 'official' ? 'entry' : 'official';
+      const otherUrl = t.ev.links?.[otherType];
+      // 両方のリンクが null になるとビルド前検査 (verify_site_preflight.mjs) でエラー停止するため、最後の1本は保護する
+      if (otherUrl && !deadUrls.has(otherUrl)) {
+        t.ev.links[t.type] = null;
+        removed.push({ id: t.ev.id, type: t.type, url: t.url });
+        console.log(`🧹 非表示化: ${t.ev.title} [${t.type}] ${t.url}`);
+      } else {
+        console.warn(`⚠️ 両リンク消失防止のため既存URLを保持: ${t.ev.title} [${t.type}] ${t.url}`);
+      }
     }
   }
 
