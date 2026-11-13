@@ -178,19 +178,27 @@ export async function searchWithGemini(keyword) {
 }
 
 /** 3. 楽天公式API検索（2026年新仕様 openapi.rakuten.co.jp + accessKey 対応） */
-export async function searchRakutenApi(gear) {
-  if (!RAKUTEN_APP_ID || !RAKUTEN_ACCESS_KEY) return null;
+export async function searchRakutenApiItems(keyword, minPrice = 1000) {
+  if (!RAKUTEN_APP_ID || !RAKUTEN_ACCESS_KEY) return [];
   const params = new URLSearchParams({
-    applicationId: RAKUTEN_APP_ID, keyword: gear.dealKeyword || gear.title, availability: '1',
-    sort: '+itemPrice', hits: '10', minPrice: String(Math.round((gear.originalPrice || 10000) * 0.3)), format: 'json', formatVersion: '2',
+    applicationId: RAKUTEN_APP_ID, keyword, availability: '1',
+    sort: '+itemPrice', hits: '10', minPrice: String(minPrice), format: 'json', formatVersion: '2',
   });
   if (AFFILIATE_ID) params.set('affiliateId', AFFILIATE_ID);
   const res = await fetchRetry(`https://openapi.rakuten.co.jp/ichibams/api/IchibaItem/Search/20260701?${params}`, {
     headers: { accessKey: RAKUTEN_ACCESS_KEY, Referer: `${RAKUTEN_ORIGIN}/`, Origin: RAKUTEN_ORIGIN },
   });
-  if (!res || res.status !== 200) return null;
+  if (!res || res.status !== 200) return [];
   const data = await res.json().catch(() => null);
-  for (const it of data?.Items || []) {
+  return data?.Items || [];
+}
+
+export async function searchRakutenApi(gear) {
+  const items = await searchRakutenApiItems(
+    gear.dealKeyword || gear.title,
+    Math.round((gear.originalPrice || 10000) * 0.3)
+  );
+  for (const it of items) {
     if (!it.itemUrl || !it.itemUrl.includes('item.rakuten.co.jp')) continue;
     if (!isReplacementRelevant(gear, it.itemName || '')) continue;
     const url = it.itemUrl.split('?')[0];
@@ -472,6 +480,14 @@ async function discoverAndRotateDeals(currentGears) {
     }
     try {
       let candUrls = [];
+      if (RAKUTEN_APP_ID && RAKUTEN_ACCESS_KEY) {
+        const apiItems = await searchRakutenApiItems(target.keyword, 1500);
+        for (const it of apiItems) {
+          if (it.itemUrl && it.itemUrl.includes('item.rakuten.co.jp')) {
+            candUrls.push(it.itemUrl.split('?')[0]);
+          }
+        }
+      }
       if (GEMINI_API_KEY && geminiCalls < 5) {
         geminiCalls++;
         const geminiUrl = await searchWithGemini(`${target.brand} ${target.category} セール 30%OFF`);

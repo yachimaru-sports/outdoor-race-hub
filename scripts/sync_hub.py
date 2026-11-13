@@ -62,10 +62,12 @@ MASTER_CSV_PATH = os.path.join(ROOT_DIR, "outdoor_race_hub_events_master.csv")
 GEAR_SHEET_ID = "1Fs7dmlsHorYsswPMOKrVZVvK06cIqpWmfpxm6XWgQEg"
 EVENT_SHEET_ID = "1GckzxJfV2soq9FYAIx94u3nrhw5DD1WcUS27dfuzuuQ"
 
-# 楽天API・アフィリエイト設定
+# 楽天API・アフィリエイト設定（2026年新仕様 openapi.rakuten.co.jp + accessKey 対応）
 RAKUTEN_APP_ID = os.environ.get("RAKUTEN_APP_ID", "").strip()
+RAKUTEN_ACCESS_KEY = os.environ.get("RAKUTEN_ACCESS_KEY", "").strip()
+RAKUTEN_ORIGIN = os.environ.get("RAKUTEN_ORIGIN", "https://yachimaru-sports.github.io").strip()
 RAKUTEN_AFFILIATE_ID = os.environ.get("RAKUTEN_AFFILIATE_ID", "58fb598b.0ed2da59.58fb598c.27018da5").strip()
-RAKUTEN_API_ENDPOINT = "https://app.rakuten.co.jp/services/api/IchibaItem/Search/20220601"
+RAKUTEN_API_ENDPOINT = "https://openapi.rakuten.co.jp/ichibams/api/IchibaItem/Search/20260701"
 
 # Google Cloud サービスアカウントJSON
 GCP_SA_KEY = os.environ.get("GCP_SA_KEY", "").strip()
@@ -231,9 +233,9 @@ def clean_rakuten_image_url(raw_image_url: str) -> str:
 # ---------------------------------------------------------------------------
 def search_rakuten_item(keyword: str, min_price: int = 1000) -> dict | None:
     """
-    楽天市場商品検索APIを呼び出し、在庫あり(availability=1)の個別商品URL・高解像度画像・価格を実機検証して取得。
+    楽天市場商品検索API（新API）を呼び出し、在庫あり(availability=1)の個別商品URL・高解像度画像・価格を実機検証して取得。
     """
-    if not RAKUTEN_APP_ID:
+    if not RAKUTEN_APP_ID or not RAKUTEN_ACCESS_KEY:
         return None
 
     params = {
@@ -249,7 +251,13 @@ def search_rakuten_item(keyword: str, min_price: int = 1000) -> dict | None:
     }
 
     try:
-        res = requests.get(RAKUTEN_API_ENDPOINT, params=params, headers=HTTP_HEADERS, timeout=8.0)
+        api_headers = {
+            **HTTP_HEADERS,
+            "accessKey": RAKUTEN_ACCESS_KEY,
+            "Referer": f"{RAKUTEN_ORIGIN}/",
+            "Origin": RAKUTEN_ORIGIN,
+        }
+        res = requests.get(RAKUTEN_API_ENDPOINT, params=params, headers=api_headers, timeout=8.0)
         if res.status_code != 200:
             logger.warning(f"  ⚠️ 楽天APIエラー HTTP {res.status_code}: {res.text[:120]}")
             return None
