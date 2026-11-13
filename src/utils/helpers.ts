@@ -484,3 +484,47 @@ export function getGoogleMapsUrl(event: {
   return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query.trim())}`;
 }
 
+/** 大会の「NEW」（7日以内追加）または「情報更新」（3日以内更新）バッジ判定 */
+export function getEventFreshnessBadge(event: { added_at?: string; updated_at?: string }): 'NEW' | '情報更新' | null {
+  const now = Date.now();
+  const daysDiff = (iso?: string) => {
+    if (!iso) return Infinity;
+    const t = new Date(`${iso.slice(0, 10)}T00:00:00+09:00`).getTime();
+    return Number.isNaN(t) ? Infinity : (now - t) / (24 * 3600 * 1000);
+  };
+  if (daysDiff(event.added_at) <= 7) return 'NEW';
+  if (daysDiff(event.updated_at) <= 3) return '情報更新';
+  return null;
+}
+
+/** Googleカレンダー予定追加URLを生成 */
+export function getGoogleCalendarUrl(event: {
+  title: string;
+  date: string;
+  end_date?: string;
+  prefecture?: string;
+  venue?: { name?: string };
+  links?: { official?: string | null; entry?: string | null };
+}): string {
+  const start = (event.date || '').split(/[~〜]/)[0].replace(/-/g, '').slice(0, 8);
+  if (!/^\d{8}$/.test(start)) return '';
+  const endBase = event.end_date && /^\d{4}-\d{2}-\d{2}$/.test(event.end_date) ? event.end_date : `${start.slice(0, 4)}-${start.slice(4, 6)}-${start.slice(6, 8)}`;
+  const d = new Date(`${endBase}T00:00:00Z`);
+  d.setUTCDate(d.getUTCDate() + 1);
+  const end = d.toISOString().slice(0, 10).replace(/-/g, '');
+  const loc = [event.prefecture, event.venue?.name].filter(Boolean).join(' ');
+  const details = [
+    event.links?.official ? `公式: ${event.links.official}` : '',
+    event.links?.entry ? `申込: ${event.links.entry}` : '',
+  ].filter(Boolean).join('\n');
+  const params = new URLSearchParams({
+    action: 'TEMPLATE',
+    text: event.title,
+    dates: `${start}/${end}`,
+    ...(loc ? { location: loc } : {}),
+    ...(details ? { details } : {}),
+  });
+  return `https://calendar.google.com/calendar/render?${params.toString()}`;
+}
+
+

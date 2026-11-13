@@ -50,26 +50,27 @@ jobs:
           pip install -r requirements.txt
           npm ci
 
-      - name: "Step 1: 装備カタログ更新（商品ページ実測・画像/価格/割引率を実データで確定）"
+      - name: "Step 1: 装備カタログ・お得情報更新（商品ページ実測・新規特価探索＆入替）"
         id: gears
         continue-on-error: true
         env:
           RAKUTEN_APP_ID: ${{ secrets.RAKUTEN_APP_ID }}
+          RAKUTEN_ACCESS_KEY: ${{ secrets.RAKUTEN_ACCESS_KEY }}
           RAKUTEN_AFFILIATE_ID: ${{ secrets.RAKUTEN_AFFILIATE_ID }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: node scripts/refresh_gears.mjs
 
-      - name: "Step 2: 大会データ同期・正規化（Python / スプレッドシート連携 / Gemini AI）"
+      - name: "Step 2: 大会データ自動更新（終了アーカイブ・次回調査・新着大会追加・リンク内容照合＆修復）"
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: node scripts/update_events.mjs
+
+      - name: "Step 3: Googleスプレッドシート＆マスターCSV同期"
         env:
           RAKUTEN_AFFILIATE_ID: ${{ secrets.RAKUTEN_AFFILIATE_ID }}
           GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python scripts/sync_hub.py
-
-      - name: "Step 3: 大会リンク自動修復（死リンクはAI再探索→不可なら非表示）"
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: node scripts/auto_heal_event_links.mjs
 
       - name: "Step 4: 公開前ゲート＆自己修復（重複ゼロ・装備の全リンク/画像/割引率の検証＆AI自動修復）"
         env:
@@ -78,7 +79,7 @@ jobs:
           npm run check:duplicates
           node scripts/validate_site_data.mjs
 
-      - name: "Step 5: ビルド（型チェック込み）"
+      - name: "Step 5: ビルド（事前監査・型チェック・SEO静的ページ生成込み）"
         run: |
           npm run build
           cp dist/index.html dist/404.html
@@ -87,7 +88,7 @@ jobs:
         run: |
           git config user.name "outdoor-race-hub-bot"
           git config user.email "bot@outdoor-race-hub.local"
-          git add src/data/events.json src/data/deals.json src/data/gears.json src/data/meta.json
+          git add src/data/events.json src/data/events_archive.json src/data/deals.json src/data/gears.json src/data/meta.json src/data/changelog.json outdoor_race_hub_events_master.csv
           if ! git diff --staged --quiet; then
             git commit -m "chore(auto): 毎朝8時定期同期（装備は商品ページ実測・大会リンクはHTTP検証済み）"
             git pull --rebase origin main

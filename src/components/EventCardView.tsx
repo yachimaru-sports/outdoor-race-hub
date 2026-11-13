@@ -10,6 +10,7 @@ import {
   formatDeadlineSlash,
   formatPeriodSlash,
   getGoogleMapsUrl,
+  getEventFreshnessBadge,
 } from '../utils/helpers';
 import { LinkButton } from './LinkButton';
 import {
@@ -118,6 +119,19 @@ export const EventCardView: React.FC<EventCardViewProps> = ({
                 </div>
 
                 <div className="flex items-center gap-1.5 shrink-0">
+                  {(() => {
+                    const fb = getEventFreshnessBadge(event);
+                    if (!fb) return null;
+                    return (
+                      <span
+                        className={`px-1.5 py-0.5 rounded text-[10px] font-black shrink-0 ${
+                          fb === 'NEW' ? 'bg-emerald-600 text-white' : 'bg-sky-600 text-white'
+                        }`}
+                      >
+                        {fb}
+                      </span>
+                    );
+                  })()}
                   <span
                     className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs border ${
                       statusBadgeClass

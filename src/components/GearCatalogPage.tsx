@@ -914,11 +914,23 @@ export const GearCatalogPage: React.FC<GearCatalogPageProps> = ({
                     <div className="pt-2 border-t border-slate-150 dark:border-slate-800 space-y-1">
                       <div className="flex items-baseline justify-between gap-1">
                         <div>
-                          <div className="text-[9px] sm:text-[10px] text-slate-400 font-bold">
-                            {item.originalPrice > item.price ? 'セール特価（税込）' : '実売価格（税込）'}
+                          <div className="text-[9px] sm:text-[10px] text-slate-400 font-bold flex items-center gap-1.5 flex-wrap">
+                            <span>{item.originalPrice > item.price ? 'セール特価（税込）' : '実売価格（税込）'}</span>
+                            {item.priceVerifiedAt && (
+                              <span className="text-slate-500 dark:text-slate-400 font-mono">
+                                ({new Date(item.priceVerifiedAt).getMonth() + 1}/{new Date(item.priceVerifiedAt).getDate()}確認)
+                              </span>
+                            )}
                           </div>
-                          <div className="text-lg sm:text-2xl font-black font-mono text-amber-600 dark:text-amber-400 tracking-tight">
-                            {formatPrice(item.price)}
+                          <div className="flex items-center gap-2 flex-wrap">
+                            <div className="text-lg sm:text-2xl font-black font-mono text-amber-600 dark:text-amber-400 tracking-tight">
+                              {formatPrice(item.price)}
+                            </div>
+                            {item.prevPrice && item.prevPrice > item.price && (
+                              <span className="px-1.5 py-0.5 rounded bg-rose-600 text-white text-[10px] font-black">
+                                前回比 ¥{(item.prevPrice - item.price).toLocaleString()}値下げ
+                              </span>
+                            )}
                           </div>
                         </div>
 

@@ -721,14 +721,14 @@ def process_events() -> tuple[list[dict], list[list[str]]]:
         updated_ev["entry_deadline"] = deadline or None
         updated_ev["entry_fee"] = entry_fee
         updated_ev["entry_status"] = entry_status
-        updated_ev["links"] = {
-            "official": verified_official,
-            "entry": verified_entry,
-            "review": links.get("review"),
-            "sns": links.get("sns"),
-            "verified": True,
-            "verified_at": today_str
-        }
+        new_links = dict(links)
+        new_links["official"] = verified_official
+        new_links["entry"] = verified_entry
+        new_links["review"] = links.get("review")
+        new_links["sns"] = links.get("sns")
+        new_links["verified"] = bool(verified_official or verified_entry)
+        new_links.setdefault("verified_at", today_str)
+        updated_ev["links"] = new_links
         verified_events.append(updated_ev)
 
     logger.info(f"✅ 全 {len(verified_events)} 件の大会リンク検証＆正規化完了")

@@ -15,8 +15,9 @@
  *  7. 修復後もカテゴリが3品未満になる場合は終了コード1で失敗 → デプロイを止め、前日の正常なサイトを維持
  */
 import fs from 'node:fs';
+import { appendChangelog, nowJstParts } from './lib/changelog.mjs';
 
-const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36';
+const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36';
 const HEADERS = { 'User-Agent': UA, 'Accept-Language': 'ja,en-US;q=0.9,en;q=0.8', Accept: 'text/html,application/xhtml+xml,*/*;q=0.8' };
 const MIN_PER_CATEGORY = 3;
 const DEAL_THRESHOLD = 20;
@@ -24,6 +25,8 @@ const GEARS_PATH = 'src/data/gears.json';
 const DEALS_PATH = 'src/data/deals.json';
 const META_PATH = 'src/data/meta.json';
 const RAKUTEN_APP_ID = (process.env.RAKUTEN_APP_ID || '').trim();
+const RAKUTEN_ACCESS_KEY = (process.env.RAKUTEN_ACCESS_KEY || '').trim();
+const RAKUTEN_ORIGIN = (process.env.RAKUTEN_ORIGIN || 'https://yachimaru-sports.github.io').trim();
 const AFFILIATE_ID = (process.env.RAKUTEN_AFFILIATE_ID || '').trim();
 const GEMINI_API_KEY = (process.env.GEMINI_API_KEY || '').trim();
 
@@ -174,19 +177,22 @@ export async function searchWithGemini(keyword) {
   }
 }
 
-/** 3. 楽天公式API検索（RAKUTEN_APP_ID がある場合） */
+/** 3. 楽天公式API検索（2026年新仕様 openapi.rakuten.co.jp + accessKey 対応） */
 export async function searchRakutenApi(gear) {
-  if (!RAKUTEN_APP_ID) return null;
+  if (!RAKUTEN_APP_ID || !RAKUTEN_ACCESS_KEY) return null;
   const params = new URLSearchParams({
     applicationId: RAKUTEN_APP_ID, keyword: gear.dealKeyword || gear.title, availability: '1',
     sort: '+itemPrice', hits: '10', minPrice: String(Math.round((gear.originalPrice || 10000) * 0.3)), format: 'json', formatVersion: '2',
   });
   if (AFFILIATE_ID) params.set('affiliateId', AFFILIATE_ID);
-  const res = await fetchRetry(`https://app.rakuten.co.jp/services/api/IchibaItem/Search/20220601?${params}`);
+  const res = await fetchRetry(`https://openapi.rakuten.co.jp/ichibams/api/IchibaItem/Search/20260701?${params}`, {
+    headers: { accessKey: RAKUTEN_ACCESS_KEY, Referer: `${RAKUTEN_ORIGIN}/`, Origin: RAKUTEN_ORIGIN },
+  });
   if (!res || res.status !== 200) return null;
   const data = await res.json().catch(() => null);
   for (const it of data?.Items || []) {
     if (!it.itemUrl || !it.itemUrl.includes('item.rakuten.co.jp')) continue;
+    if (!isReplacementRelevant(gear, it.itemName || '')) continue;
     const url = it.itemUrl.split('?')[0];
     const s = await scrapeItem(url);
     if (s.ok) return { url, title: it.itemName, scraped: s, source: '楽天API' };
@@ -208,21 +214,56 @@ export async function searchRakutenApi(gear) {
   return null;
 }
 
+/** 代替商品が元の商品カテゴリ・ブランド/キーワードと一致しているか検証（別商品への誤置換を防止） */
+const BRAND_ALIASES = {
+  altra: ['altra', 'アルトラ'],
+  hoka: ['hoka', 'ホカ'],
+  salomon: ['salomon', 'サロモン'],
+  petzl: ['petzl', 'ペツル'],
+  leki: ['leki', 'レキ'],
+  millet: ['millet', 'ミレー'],
+  asics: ['asics', 'アシックス'],
+  nike: ['nike', 'ナイキ'],
+  adidas: ['adidas', 'アディダス'],
+  'the north face': ['north face', 'ノースフェイス'],
+  'black diamond': ['black diamond', 'ブラックダイヤモンド'],
+  'cw-x': ['cw-x', 'cwx'],
+  c3fit: ['c3fit'],
+  montbell: ['montbell', 'モンベル'],
+  finetrack: ['finetrack', 'ファイントラック'],
+};
+
+function isReplacementRelevant(gear, candTitle) {
+  if (!candTitle) return false;
+  if (!isCategoryMatch(gear.gearType, candTitle)) return false;
+  const t = candTitle.normalize('NFKC').toLowerCase();
+  const brand = (gear.brand || '').normalize('NFKC').toLowerCase().trim();
+  if (brand && brand.length >= 2) {
+    const aliases = BRAND_ALIASES[brand] || [brand];
+    if (aliases.some((a) => t.includes(a))) return true;
+    // ブランド指定があるのに全く違うブランドなら不採用
+    return false;
+  }
+  const kws = (gear.matchKeywords || []).map((k) => String(k).normalize('NFKC').toLowerCase()).filter((k) => k.length >= 2);
+  if (kws.some((k) => t.includes(k))) return true;
+  return kws.length === 0;
+}
+
 /** 3重自己修復（Self-Healing）エンジン: 楽天API → 楽天モール直接検索 → Gemini AI */
 export async function findReplacement(gear) {
   const query = `${gear.brand || ''} ${gear.gearType || ''} ${gear.dealKeyword || gear.title || ''}`.trim();
 
-  // 第1層: 楽天API（キーがある場合）
-  if (RAKUTEN_APP_ID) {
+  // 第1層: 楽天新API（キーがある場合）
+  if (RAKUTEN_APP_ID && RAKUTEN_ACCESS_KEY) {
     const apiRes = await searchRakutenApi(gear);
     if (apiRes) return apiRes;
   }
 
   // 第2層: 楽天モール検索スクレイピング（APIキー完全不要で生きた個別商品URLを抽出）
   const directUrls = await searchRakutenDirect(query);
-  for (const u of directUrls.slice(0, 5)) {
+  for (const u of directUrls.slice(0, 6)) {
     const s = await scrapeItem(u);
-    if (s.ok) {
+    if (s.ok && isReplacementRelevant(gear, s.title)) {
       let hasImg = false;
       for (const im of s.images) { if (await imageIsAlive(im)) { hasImg = true; break; } }
       if (hasImg) return { url: u, title: s.title || gear.title, scraped: s, source: '楽天モール直接検索' };
@@ -234,7 +275,7 @@ export async function findReplacement(gear) {
     const geminiUrl = await searchWithGemini(query);
     if (geminiUrl) {
       const s = await scrapeItem(geminiUrl);
-      if (s.ok) {
+      if (s.ok && isReplacementRelevant(gear, s.title)) {
         let hasImg = false;
         for (const im of s.images) { if (await imageIsAlive(im)) { hasImg = true; break; } }
         if (hasImg) return { url: geminiUrl, title: s.title || gear.title, scraped: s, source: 'Gemini AI' };
@@ -342,43 +383,57 @@ async function refreshOne(g) {
   }
   if (price > originalPrice) originalPrice = price;
   const discountRate = originalPrice > price ? Math.round((1 - price / originalPrice) * 100) : 0;
+  const prevPrice = g.price && g.price !== price ? g.price : g.prevPrice;
+  const lowest30d = Math.min(g.lowest30d || price, price);
+  const dropped = Boolean(!replaced && g.price && price > 0 && price < g.price);
 
   const next = {
     ...g,
     dealUrl: url, standardUrl: url,
     imageUrl: image, price, originalPrice, discountRate,
+    ...(prevPrice ? { prevPrice } : {}),
+    lowest30d,
     priceVerifiedAt: stale ? g.priceVerifiedAt : new Date().toISOString(),
   };
   if (replaced && scraped.title) next.title = scraped.title;
-  return { gear: next, status: 'ok', log };
+  return { gear: next, status: 'ok', dropped, oldPrice: g.price, log };
 }
 
 function stripTag(s) { return (s || '').replace(/^【[^】]*(?:最安|OFF|目玉)[^】]*】\s*/g, ''); }
 
-// 毎朝の新規特価品ディスカバリー用ターゲットリスト
+// 毎朝の新規特価品ディスカバリー用ターゲットリスト（シューズ・ウェア・ザック・ライト・サイクル・補給食）
 const DISCOVERY_TARGETS = [
   { keyword: 'サロモン トレランシューズ セール', category: 'トレランシューズ', sports: ['trail', 'marathon'], brand: 'SALOMON' },
   { keyword: 'HOKA スピードゴート セール', category: 'トレランシューズ', sports: ['trail'], brand: 'HOKA' },
-  { keyword: 'アシックス トレラン セール', category: 'トレランシューズ', sports: ['trail', 'marathon'], brand: 'ASICS' },
+  { keyword: 'アシックス ランニングシューズ セール', category: 'ランニングシューズ', sports: ['marathon'], brand: 'ASICS' },
+  { keyword: 'ホカ ランニングシューズ 特価', category: 'ランニングシューズ', sports: ['marathon'], brand: 'HOKA' },
   { keyword: 'サロモン トレランザック 特価', category: 'トレランザック', sports: ['trail', 'marathon'], brand: 'SALOMON' },
   { keyword: 'ネイサン ランニングベスト セール', category: 'トレランザック', sports: ['trail'], brand: 'NATHAN' },
   { keyword: 'ペツル ヘッドライト セール', category: 'ヘッドライト', sports: ['trail', 'adventure'], brand: 'PETZL' },
   { keyword: 'レッドレンザー ヘッドライト 特価', category: 'ヘッドライト', sports: ['trail', 'adventure'], brand: 'LEDLENSER' },
   { keyword: 'C3fit タイツ セール', category: 'サポートタイツ', sports: ['trail', 'marathon', 'cycling'], brand: 'C3fit' },
   { keyword: 'CW-X ジェネレーター セール', category: 'サポートタイツ', sports: ['trail', 'marathon'], brand: 'CW-X' },
+  { keyword: 'ノースフェイス ランニングウェア セール', category: 'ランニングウェア', sports: ['trail', 'marathon'], brand: 'THE NORTH FACE' },
+  { keyword: 'パタゴニア ランニング ウェア セール', category: 'ランニングウェア', sports: ['trail', 'marathon'], brand: 'Patagonia' },
   { keyword: 'LEKI トレラン ポール 特価', category: 'トレッキングポール', sports: ['trail'], brand: 'LEKI' },
   { keyword: 'ブラックダイヤモンド ディスタンス セール', category: 'トレッキングポール', sports: ['trail'], brand: 'Black Diamond' },
   { keyword: 'ミレー レインウェア 特価', category: 'レインウェア', sports: ['trail', 'adventure'], brand: 'MILLET' },
+  { keyword: 'ノースフェイス レインジャケット セール', category: 'レインウェア', sports: ['trail', 'adventure'], brand: 'THE NORTH FACE' },
+  { keyword: 'パールイズミ サイクルウェア セール', category: 'サイクル用品', sports: ['cycling'], brand: 'PEARL iZUMi' },
+  { keyword: 'OGK カブト ヘルメット セール', category: 'サイクル用品', sports: ['cycling'], brand: 'OGK KABUTO' },
   { keyword: 'マグオン ジェル セール', category: '補給食・エナジージェル', sports: ['trail', 'marathon', 'cycling'], brand: 'Mag-on' },
 ];
 
 const CATEGORY_RULES = {
-  'トレランシューズ': { must: /シューズ|靴|トレイル|ランニング|スピードゴート|speedgoat|mutant|altra|salomon/i, ban: /靴下|ソックス|インソール|ポール|ザック|ベスト|ライト/i },
+  'トレランシューズ': { must: /シューズ|靴|トレイル|ランニング|スピードゴート|speedgoat|mutant|altra|salomon/i, ban: /靴下|ソックス|インソール|ポール|ザック|ベスト|ライト|ジュニア|キッズ|子供|子ども|junior|kids/i },
   'トレランザック': { must: /ザック|ベスト|バックパック|リュック|skin|スキン|ピナクル/i, ban: /ポール|ストック|シューズ|ライト|タイツ/i },
   'トレッキングポール': { must: /ポール|ストック|zポール|carbon|distance.*(?:z|carbon)/i, ban: /ザック|リュック|バックパック|バッグ|15|ベスト|シューズ/i },
   'ヘッドライト': { must: /ヘッドライト|ライト|ランタン|ティカ|ティキナ|アクティック|スポット|led/i, ban: /電池のみ|ケースのみ|ベルトのみ|バンドのみ/i },
-  'サポートタイツ': { must: /タイツ|レギンス|スパッツ|ジェネレーター|エキスパート|c3fit|cw-x/i, ban: /シャツ|ジャケット|靴下|ソックス|パンツのみ|ショーツ/i },
-  'レインウェア': { must: /レイン|ジャケット|シェル|防水|ゴアテックス|ティフォン|タンペート/i, ban: /パンツ|ズボン|シューズ|ザック|グローブ/i },
+  'サポートタイツ': { must: /タイツ|レギンス|スパッツ|ジェネレーター|エキスパート|c3fit|cw-x/i, ban: /シャツ|ジャケット|靴下|ソックス|パンツのみ|ショーツ|ジュニア|キッズ/i },
+  'レインウェア': { must: /レイン|ジャケット|シェル|防水|ゴアテックス|ティフォン|タンペート/i, ban: /パンツ|ズボン|シューズ|ザック|グローブ|ジュニア|キッズ/i },
+  'ランニングシューズ': { must: /シューズ|靴|ランニング|マラソン|ゲル|ノヴァ|クリフトン|ボンダイ/i, ban: /靴下|ソックス|インソール|ポール|ザック|ジュニア|キッズ|子供|子ども|junior|kids/i },
+  'ランニングウェア': { must: /シャツ|tシャツ|フーディ|ジャケット|ベスト|ショーツ|パンツ|ウェア/i, ban: /シューズ|靴|ザック|ライト|ソックス|ジュニア|キッズ|子供|子ども|junior|kids/i },
+  'サイクル用品': { must: /サイクル|ジャージ|ジャケット|ウィンドブレーカー|ビブ|タイツ|ヘルメット|ライト|ボトル|ツール/i, ban: /タイヤチューブのみ|パッチのみ/i },
   '補給食・エナジージェル': { must: /ジェル|補給|マグオン|アミノ|メダリスト|エナジー/i, ban: /ボトル|ポーチ|ザック/i },
 };
 
@@ -404,15 +459,21 @@ async function discoverAndRotateDeals(currentGears) {
   let addedCount = 0;
   let replacedCount = 0;
   let consecutiveBlocked = 0;
+  let geminiCalls = 0;
 
-  for (const target of DISCOVERY_TARGETS) {
+  // 日替わりで探索ターゲットの順番をローテーション（毎日違うジャンルのお得品を発見）
+  const daySeed = Math.floor(Date.now() / 86400000) % DISCOVERY_TARGETS.length;
+  const rotatedTargets = [...DISCOVERY_TARGETS.slice(daySeed), ...DISCOVERY_TARGETS.slice(0, daySeed)];
+
+  for (const target of rotatedTargets) {
     if (consecutiveBlocked >= 4) {
       console.log(' ⏭️ 楽天スクレイピングがWAF連続制限中のため、新規ディスカバリーを早期完了します。');
       break;
     }
     try {
       let candUrls = [];
-      if (GEMINI_API_KEY) {
+      if (GEMINI_API_KEY && geminiCalls < 5) {
+        geminiCalls++;
         const geminiUrl = await searchWithGemini(`${target.brand} ${target.category} セール 30%OFF`);
         if (geminiUrl) candUrls.push(geminiUrl);
       }
@@ -513,7 +574,7 @@ async function discoverAndRotateDeals(currentGears) {
   }
 
   console.log(`✨ 新規特価品ディスカバリー完了: ${addedCount} 品追加, ${replacedCount} 品ローテーション入替`);
-  return gears;
+  return { gears, addedCount, replacedCount, discoveredTitles: gears.filter((g) => g.isNewDiscovery).map((g) => ({ id: g.id, title: g.title, discountRate: g.discountRate })) };
 }
 
 async function main() {
@@ -526,21 +587,24 @@ async function main() {
   });
 
   const aliveBasic = results.filter((r) => r.status === 'ok').map((r) => r.gear);
+  const priceDrops = results.filter((r) => r.status === 'ok' && r.dropped);
   const removed = results.filter((r) => r.status !== 'ok').map((r) => ({ id: r.gear.id, reason: r.log.join(' / ') }));
 
   // ★【毎朝自動実行】Gemini AI ＆ 楽天市場検索による新たな特価商品の自動探索＆入れ替え★
-  const alive = await discoverAndRotateDeals(aliveBasic);
+  const disc = await discoverAndRotateDeals(aliveBasic);
+  const alive = disc.gears;
 
   // カテゴリごとに isBestDeal を再計算（最大割引。同率は安い方）
   const byType = new Map();
   for (const g of alive) { g.isBestDeal = false; (byType.get(g.gearType) || byType.set(g.gearType, []).get(g.gearType)).push(g); }
+  const origTypes = new Set(gears.map((g) => g.gearType));
   const problems = [];
   for (const [type, list] of byType) {
-    if (list.length < MIN_PER_CATEGORY) problems.push(`${type}: ${list.length}品（最低${MIN_PER_CATEGORY}品必要）`);
+    if (origTypes.has(type) && list.length < MIN_PER_CATEGORY) problems.push(`${type}: ${list.length}品（最低${MIN_PER_CATEGORY}品必要）`);
     const best = [...list].sort((a, b) => b.discountRate - a.discountRate || a.price - b.price)[0];
     if (best && best.discountRate > 0) best.isBestDeal = true;
   }
-  for (const t of new Set(gears.map((g) => g.gearType))) if (!byType.has(t)) problems.push(`${t}: 0品`);
+  for (const t of origTypes) if (!byType.has(t)) problems.push(`${t}: 0品`);
 
   for (const g of alive) {
     const body = stripTag(g.standardTitle);
@@ -579,8 +643,31 @@ async function main() {
     last_updated_at: now, deals_count: deals.length, gears_count: alive.length,
     gear_sync_source: 'refresh_gears.mjs (自己修復・商品ページ実測・画像HTTP200検証済)',
     gear_removed: removed,
+    run_summary: {
+      ...(meta.run_summary || {}),
+      deals_added: disc.addedCount + disc.replacedCount,
+      price_drops: priceDrops.length,
+    },
   });
   fs.writeFileSync(META_PATH, JSON.stringify(meta, null, 2) + '\n');
+
+  const { date, time } = nowJstParts();
+  const cLogs = [];
+  for (const d of disc.discoveredTitles.slice(0, 3)) {
+    cLogs.push({
+      id: `deal-add-${d.id}-${date}`, date, time, type: 'deal_added',
+      title: `新着特価ギア発掘: ${d.title.slice(0, 40)}`,
+      detail: `実測 ${d.discountRate}%OFF の特価品を追加・入替しました`, gearId: d.id,
+    });
+  }
+  for (const p of priceDrops.slice(0, 3)) {
+    cLogs.push({
+      id: `price-drop-${p.gear.id}-${date}`, date, time, type: 'price_drop',
+      title: `値下げ検知: ${p.gear.title.slice(0, 40)}`,
+      detail: `¥${(p.oldPrice || 0).toLocaleString()} → ¥${p.gear.price.toLocaleString()}`, gearId: p.gear.id,
+    });
+  }
+  appendChangelog(cLogs);
   console.log(`\n🎉 完了: 掲載 ${alive.length} 品 / 特価(${DEAL_THRESHOLD}%以上) ${deals.length} 品 / 除外 ${removed.length} 品`);
   for (const r of removed) console.log(` 除外: ${r.id} ${r.reason}`);
 }

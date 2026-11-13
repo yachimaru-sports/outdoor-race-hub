@@ -12,6 +12,7 @@ import {
   formatDeadlineSlash,
   formatPeriodSlash,
   formatPrice,
+  getGoogleCalendarUrl,
 } from '../utils/helpers';
 import {
   X,
@@ -30,6 +31,10 @@ import {
   Flame,
   ShoppingBag,
   ChevronRight,
+  CalendarPlus,
+  Copy,
+  Check,
+  AlertTriangle,
 } from 'lucide-react';
 
 interface EventDetailModalProps {
@@ -108,6 +113,18 @@ export const EventDetailModal: React.FC<EventDetailModalProps> = ({ event, deals
   const recommendedDeals = [...priorityDeals, ...remainingDeals].slice(0, 4);
 
   const cat = CATEGORY_LABELS[event.category];
+  const [copied, setCopied] = useState(false);
+  const shareUrl = typeof window !== 'undefined'
+    ? `${window.location.origin}${window.location.pathname}?event=${encodeURIComponent(event.id)}`
+    : '';
+  const calendarUrl = getGoogleCalendarUrl(event);
+  const handleCopyShareUrl = async () => {
+    try {
+      await navigator.clipboard.writeText(shareUrl);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch { /* ignore */ }
+  };
   const now = new Date();
   const todayStr = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
   const isPastRace = event.date < todayStr;
@@ -251,7 +268,66 @@ export const EventDetailModal: React.FC<EventDetailModalProps> = ({ event, deals
                 <span>公式SNS</span>
               </a>
             )}
+
+            {calendarUrl && (
+              <a
+                href={calendarUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="py-3 px-4 rounded-xl bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 text-sm font-bold flex items-center gap-1.5 transition-colors shadow-2xs"
+              >
+                <CalendarPlus className="w-4 h-4 text-emerald-600" />
+                <span>Googleカレンダー</span>
+              </a>
+            )}
+
+            <a
+              href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`${event.title}（${event.date}・${event.prefecture}）`)}&url=${encodeURIComponent(shareUrl)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="py-3 px-3 rounded-xl bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 text-xs font-bold flex items-center gap-1 transition-colors shadow-2xs"
+              title="Xで共有"
+            >
+              <span>Xで共有</span>
+            </a>
+
+            <a
+              href={`https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(shareUrl)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="py-3 px-3 rounded-xl bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 text-xs font-bold flex items-center gap-1 transition-colors shadow-2xs"
+              title="LINEで送る"
+            >
+              <span>LINE</span>
+            </a>
+
+            <button
+              type="button"
+              onClick={handleCopyShareUrl}
+              className="py-3 px-3 rounded-xl bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 text-xs font-bold flex items-center gap-1 transition-colors shadow-2xs cursor-pointer"
+            >
+              {copied ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5 text-slate-500" />}
+              <span>{copied ? 'コピー済' : 'URLコピー'}</span>
+            </button>
           </div>
+
+          {/* リンク確認日・前年情報注意書き */}
+          {(event.links.verified_at || event.links.official_stale) && (
+            <div className="flex flex-wrap items-center justify-between gap-2 text-xs px-3 py-2 rounded-xl bg-slate-100 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700/70 text-slate-600 dark:text-slate-300">
+              {event.links.verified_at && (
+                <span className="inline-flex items-center gap-1 font-medium">
+                  <ShieldCheck className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
+                  リンク内容照合日: {event.links.verified_at}
+                </span>
+              )}
+              {event.links.official_stale && (
+                <span className="inline-flex items-center gap-1 text-amber-700 dark:text-amber-300 font-bold">
+                  <AlertTriangle className="w-3.5 h-3.5 shrink-0" />
+                  公式サイトは前年情報のままの可能性があります（最新案内は申込ページもあわせてご確認ください）
+                </span>
+              )}
+            </div>
+          )}
 
           {/* セクション 1: 必携品チェックリスト (localStorage保存) */}
           <div className="bg-slate-50 dark:bg-slate-850/60 border border-slate-200 dark:border-slate-800 rounded-xl p-5 space-y-4">

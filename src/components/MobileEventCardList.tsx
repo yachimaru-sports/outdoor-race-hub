@@ -9,6 +9,7 @@ import {
   formatEventDateSlash,
   formatPeriodSlash,
   getGoogleMapsUrl,
+  getEventFreshnessBadge,
 } from '../utils/helpers';
 import {
   Calendar,
@@ -123,6 +124,19 @@ export const MobileEventCardList: React.FC<MobileEventCardListProps> = ({
                   >
                     {cat.shortLabel}
                   </span>
+                  {(() => {
+                    const fb = getEventFreshnessBadge(event);
+                    if (!fb) return null;
+                    return (
+                      <span
+                        className={`px-1.5 py-0.5 rounded text-[10px] font-black shrink-0 ${
+                          fb === 'NEW' ? 'bg-emerald-600 text-white' : 'bg-sky-600 text-white'
+                        }`}
+                      >
+                        {fb}
+                      </span>
+                    );
+                  })()}
                   <span
                     className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] border shrink-0 ${statusBadgeClass}`}
                   >

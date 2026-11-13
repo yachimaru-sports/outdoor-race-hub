@@ -102,8 +102,22 @@ export const App: React.FC = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // 大会詳細モーダルの選択状態
-  const [selectedEvent, setSelectedEvent] = useState<RaceEvent | null>(null);
+  // 大会詳細モーダルの選択状態（?event=<id> クエリによるディープリンク対応）
+  const [selectedEvent, setSelectedEvent] = useState<RaceEvent | null>(() => {
+    if (typeof window !== 'undefined') {
+      const id = new URLSearchParams(window.location.search).get('event');
+      if (id) return (eventsData as RaceEvent[]).find((e) => e.id === id) || null;
+    }
+    return null;
+  });
+
+  const handleOpenEventById = (eventId: string) => {
+    const found = events.find((e) => e.id === eventId);
+    if (found) {
+      setCurrentRoute('events');
+      setSelectedEvent(found);
+    }
+  };
 
   // テーマ管理（デフォルト: 'light'）
   const [theme, setTheme] = useState<'light' | 'dark'>(() => {
@@ -638,11 +652,33 @@ export const App: React.FC = () => {
             onOpenCatalog={() => navigateTo('gears')}
           />
         </div>
-        <UpdateTicker onJumpToTarget={handleJumpToSection} />
+        <UpdateTicker onJumpToTarget={handleJumpToSection} onOpenEvent={handleOpenEventById} />
       </header>
 
       {/* メインコンテンツ（ご要望順：注目の競技カテゴリー → すべての大会 → 条件にマッチする → 大会一覧） */}
       <main className="flex-1 max-w-7xl w-full mx-auto px-2.5 sm:px-4 py-4 sm:py-8 space-y-4 sm:space-y-8 overflow-x-hidden">
+        {(() => {
+          const rs = (metaData as { run_summary?: Record<string, number> }).run_summary;
+          if (!rs) return null;
+          const items = [
+            rs.events_added ? `新着大会 +${rs.events_added}件` : null,
+            rs.events_updated ? `日程・状態更新 ${rs.events_updated}件` : null,
+            rs.links_fixed ? `リンク修復 ${rs.links_fixed}件` : null,
+            rs.deals_added ? `特価ギア追加 +${rs.deals_added}件` : null,
+            rs.price_drops ? `値下げ ${rs.price_drops}件` : null,
+          ].filter(Boolean);
+          if (!items.length) return null;
+          return (
+            <div className="flex flex-wrap items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-900 border border-emerald-200 dark:border-emerald-900/60 text-xs shadow-2xs">
+              <span className="px-2 py-0.5 rounded-full bg-emerald-600 text-white font-bold text-[10px]">
+                毎朝8時 自動更新レポート
+              </span>
+              <span className="text-slate-600 dark:text-slate-300 font-medium">
+                本日の更新：{items.join(' ／ ')}
+              </span>
+            </div>
+          );
+        })()}
         {/* ★ おすすめ商品専用カタログへのクイックジャンプバナー */}
         <div
           onClick={() => navigateTo('gears')}

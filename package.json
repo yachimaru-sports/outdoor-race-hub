@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "preflight": "node scripts/verify_site_preflight.mjs",
-    "build": "node scripts/verify_site_preflight.mjs && tsc && vite build",
+    "build": "node scripts/verify_site_preflight.mjs && tsc && vite build && node scripts/generate_seo.mjs",
     "preview": "vite preview",
     "auto-update": "node scripts/auto_update.mjs",
     "check:duplicates": "node scripts/audit-duplicates.mjs",

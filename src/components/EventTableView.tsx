@@ -15,6 +15,7 @@ import {
   formatEventDateSlash,
   formatDeadlineSlash,
   formatPeriodSlash,
+  getEventFreshnessBadge,
 } from '../utils/helpers';
 import { LinkButton } from './LinkButton';
 import {
@@ -335,6 +336,19 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
                           className="font-black text-slate-950 dark:text-white hover:text-teal-700 dark:hover:text-teal-400 transition-colors text-sm leading-snug line-clamp-2 select-text cursor-pointer"
                           title="クリックして必携品・詳細情報を開く"
                         >
+                          {(() => {
+                            const fb = getEventFreshnessBadge(event);
+                            if (!fb) return null;
+                            return (
+                              <span
+                                className={`inline-block mr-1.5 px-1.5 py-0.2 rounded text-[10px] font-black align-middle ${
+                                  fb === 'NEW' ? 'bg-emerald-600 text-white' : 'bg-sky-600 text-white'
+                                }`}
+                              >
+                                {fb}
+                              </span>
+                            );
+                          })()}
                           {event.title}
                         </div>
 

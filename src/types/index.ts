@@ -11,6 +11,9 @@ export interface EventLinks {
   entry: string | null;
   review: string | null;
   sns: string | null;
+  verified?: boolean;
+  verified_at?: string;      // リンク内容照合日（YYYY-MM-DD）
+  official_stale?: boolean;  // 公式サイトが前年情報のままの可能性
 }
 
 export interface EventReview {
@@ -51,6 +54,8 @@ export interface RaceEvent {
   mandatory_gear: MandatoryGear[];
   venue?: EventVenue;   // 集合場所・受付場所データ（Googleマップ高精度連携用）
   source?: EventSource; // 大会情報の入手元ポータルデータ
+  added_at?: string;    // 新規発見日（YYYY-MM-DD）
+  updated_at?: string;  // 内容更新日（YYYY-MM-DD）
 }
 
 export interface GearItem {
@@ -73,6 +78,10 @@ export interface GearItem {
   isBestDeal?: boolean;
   officialUrl?: string; // 公式ブランドHPまたは専門ショップURL
   shopName?: string;    // 販売店名（例: "INNER FACT 公式", "提携専門店 RUNPLUS"）
+  pointRate?: number;
+  priceVerifiedAt?: string; // 価格確認日時（ISO文字列）
+  prevPrice?: number;       // 前回確認価格
+  lowest30d?: number;       // 30日最安値
 }
 
 export interface DealItem {
@@ -130,3 +139,42 @@ export interface Preset {
 }
 
 export type ViewMode = 'table' | 'card';
+
+
+// 更新履歴（changelog.json）
+export type ChangelogType =
+  | 'event_added'
+  | 'event_updated'
+  | 'event_archived'
+  | 'link_fixed'
+  | 'deal_added'
+  | 'price_drop'
+  | 'system';
+
+export interface ChangelogEntry {
+  id: string;
+  date: string; // YYYY-MM-DD
+  time?: string; // HH:MM
+  type: ChangelogType | string;
+  title: string;
+  detail?: string;
+  eventId?: string;
+  gearId?: string;
+}
+
+// 自動更新の実行サマリー（meta.json の run_summary）
+export interface RunSummary {
+  events_added?: number;
+  events_updated?: number;
+  events_archived?: number;
+  links_fixed?: number;
+  links_removed?: number;
+  deals_added?: number;
+  price_drops?: number;
+}
+
+export interface SiteMeta {
+  last_updated_at?: string;
+  run_summary?: RunSummary;
+  [key: string]: unknown;
+}

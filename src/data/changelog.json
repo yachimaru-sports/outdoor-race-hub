@@ -1,0 +1,145 @@
+[
+  {
+    "id": "ev-add-8-idaten-30-4bqsph-2027-2026-11-13",
+    "date": "2026-11-13",
+    "time": "21:54",
+    "type": "event_added",
+    "title": "新着大会追加: 静岡県 第8回 IDATENチャレンジ 浜名湖ガーデンパーク 30キロ&ハーフマラソン",
+    "detail": "北海道 / 2027-01-10（公式・申込ページ実確認済み）",
+    "eventId": "8-idaten-30-4bqsph-2027"
+  },
+  {
+    "id": "ev-add-bike-to-shonan-2027-dqizxg-2027-2026-11-13",
+    "date": "2026-11-13",
+    "time": "21:54",
+    "type": "event_added",
+    "title": "新着大会追加: BIKE to SHONAN 2027",
+    "detail": "北海道 / 2027-01-23（公式・申込ページ実確認済み）",
+    "eventId": "bike-to-shonan-2027-dqizxg-2027"
+  },
+  {
+    "id": "ev-add-race-1x4ap4-2026-2026-11-13",
+    "date": "2026-11-13",
+    "time": "21:54",
+    "type": "event_added",
+    "title": "新着大会追加: 狩野智也選手と走る！秋の上野村サイクリングツアー",
+    "detail": "北海道 / 2026-11-21（公式・申込ページ実確認済み）",
+    "eventId": "race-1x4ap4-2026"
+  },
+  {
+    "id": "ev-add-e-bike-tour-in-presents-2027-gl2qrq-2027-2026-11-13",
+    "date": "2026-11-13",
+    "time": "21:54",
+    "type": "event_added",
+    "title": "新着大会追加: E-BIKE TOUR in スルガ銀行presents湘南ひらつかサイクルフェスティバル2027",
+    "detail": "北海道 / 2027-01-23（公式・申込ページ実確認済み）",
+    "eventId": "e-bike-tour-in-presents-2027-gl2qrq-2027"
+  },
+  {
+    "id": "deal-add-gear-deal-mwez7vcm-luke-2026-11-13",
+    "date": "2026-11-13",
+    "time": "21:52",
+    "type": "deal_added",
+    "title": "新着特価ギア発掘: ワコール CW-X スポーツタイツ レディース ジェネレーターモデル ロング S",
+    "detail": "実測 20%OFF の特価品を追加・入替しました",
+    "gearId": "gear-deal-mwez7vcm-luke"
+  },
+  {
+    "id": "deal-add-gear-deal-mwez824f-gqb1-2026-11-13",
+    "date": "2026-11-13",
+    "time": "21:52",
+    "type": "deal_added",
+    "title": "新着特価ギア発掘: 20％OFF(PEARL IZUMI パールイズミ 2024年 秋冬モデル) 3",
+    "detail": "実測 20%OFF の特価品を追加・入替しました",
+    "gearId": "gear-deal-mwez824f-gqb1"
+  },
+  {
+    "id": "deal-add-gear-deal-mwez80xm-us59-2026-11-13",
+    "date": "2026-11-13",
+    "time": "21:52",
+    "type": "deal_added",
+    "title": "新着特価ギア発掘: セールsale 最大65％OFF ザ・ノース・フェイス メンズ レディース エン",
+    "detail": "実測 56%OFF の特価品を追加・入替しました",
+    "gearId": "gear-deal-mwez80xm-us59"
+  },
+  {
+    "id": "price-drop-gear-trail-bivvy-sol-escape-2026-11-13",
+    "date": "2026-11-13",
+    "time": "21:52",
+    "type": "price_drop",
+    "title": "値下げ検知: SOL エスケープヴィヴィ (12416 / 成人男性対応サイズ)",
+    "detail": "¥11,440 → ¥10,010",
+    "gearId": "gear-trail-bivvy-sol-escape"
+  },
+  {
+    "id": "ev-next-2027-b8mw9c-2027-2026-11-13",
+    "date": "2026-11-13",
+    "time": "21:45",
+    "type": "event_updated",
+    "title": "次回開催決定: 周防大島ウルトラマラニック2027",
+    "detail": "開催日 2027-04-18（公式/申込ページで日程・リンク確認済み）",
+    "eventId": "2027-b8mw9c-2027"
+  },
+  {
+    "id": "fix-ent-kakamigahara-alps-panorama-trail-2027-2026-11-13",
+    "date": "2026-11-13",
+    "time": "21:45",
+    "type": "link_fixed",
+    "title": "申込リンク修正: 第10回 各務原アルプスパノラマトレイルラン 2027（岐阜・36km/15km）",
+    "detail": "トップページ/過去ページを最新申込ページへ修正",
+    "eventId": "kakamigahara-alps-panorama-trail-2027"
+  },
+  {
+    "id": "fix-ent-chase-the-sun-japan-2027-2026-11-13",
+    "date": "2026-11-13",
+    "time": "21:45",
+    "type": "link_fixed",
+    "title": "申込リンク修正: CHASE THE SUN JAPAN 2027（東京湾〜静岡沼津 250km/225km）",
+    "detail": "トップページ/過去ページを最新申込ページへ修正",
+    "eventId": "chase-the-sun-japan-2027"
+  },
+  {
+    "id": "fix-ent-the-peaks-r20-myoko2-2027-2026-11-13",
+    "date": "2026-11-13",
+    "time": "21:45",
+    "type": "link_fixed",
+    "title": "申込リンク修正: The PEAKS ラウンド20 妙高2 2027（新潟・長野 228km/209km）",
+    "detail": "トップページ/過去ページを最新申込ページへ修正",
+    "eventId": "the-peaks-r20-myoko2-2027"
+  },
+  {
+    "id": "fix-ent-ise-toba-shima-cycle-2027-2026-11-13",
+    "date": "2026-11-13",
+    "time": "21:45",
+    "type": "link_fixed",
+    "title": "申込リンク修正: 第2回 伊勢鳥羽志摩リアス式チャリフェス 2027（三重・92km/62km）",
+    "detail": "トップページ/過去ページを最新申込ページへ修正",
+    "eventId": "ise-toba-shima-cycle-2027"
+  },
+  {
+    "id": "fix-ent-bitchu-totomichi-trail-2027-2026-11-13",
+    "date": "2026-11-13",
+    "time": "21:45",
+    "type": "link_fixed",
+    "title": "申込リンク修正: 第1回 備中とと道トレイルラン 2027（岡山・笠岡〜高梁吹屋 57km）",
+    "detail": "トップページ/過去ページを最新申込ページへ修正",
+    "eventId": "bitchu-totomichi-trail-2027"
+  },
+  {
+    "id": "fix-ent-taiki-seaside-trail-2027-2026-11-13",
+    "date": "2026-11-13",
+    "time": "21:45",
+    "type": "link_fixed",
+    "title": "申込リンク修正: 大紀町シーサイドトレイル 2027（三重・熊野灘オーシャントレイル 23km/14km）",
+    "detail": "トップページ/過去ページを最新申込ページへ修正",
+    "eventId": "taiki-seaside-trail-2027"
+  },
+  {
+    "id": "system-20261113-pipeline-v2",
+    "date": "2026-11-13",
+    "time": "22:00",
+    "type": "system",
+    "title": "毎朝8時の自動更新を全面刷新",
+    "detail": "新しい大会の自動発見・終了大会の次回開催への自動更新・リンク先が本当にその大会のページかの内容照合を開始しました。"
+  }
+]
