@@ -1,18 +1,18 @@
 {
-  "last_updated_at": "2026-11-14T09:56:42.674+09:00",
-  "events_count": 57,
+  "last_updated_at": "2026-11-14T02:13:35.646Z",
+  "events_count": 56,
   "deals_count": 28,
   "gears_count": 63,
   "sync_source": "Google Sheets & Rakuten API Automated Sync",
   "gear_sync_source": "refresh_gears.mjs (自己修復・商品ページ実測・画像HTTP200検証済)",
   "gear_removed": [],
   "run_summary": {
-    "events_added": 4,
+    "events_added": 0,
     "events_updated": 0,
-    "events_archived": 0,
+    "events_archived": 1,
     "links_fixed": 0,
     "links_removed": 0,
-    "deals_added": 1,
+    "deals_added": 0,
     "price_drops": 0
   }
 }

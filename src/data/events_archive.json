@@ -4770,5 +4770,72 @@
     },
     "archived_at": "2026-11-13",
     "archive_reason": "有効リンク確認不可のため退避"
+  },
+  {
+    "id": "kumagawa-revival-trail-100mile-2026",
+    "category": "trail",
+    "subCategory": "100マイル 九州脊梁",
+    "elements": [
+      "100マイル",
+      "トレック",
+      "夜間"
+    ],
+    "title": "球磨川リバイバルトレイル 100マイル (KRT 167km) 2026",
+    "date": "2026-11-13",
+    "month": 11,
+    "region": "九州",
+    "prefecture": "熊本県",
+    "distance_km": 167,
+    "elevation_m": 9400,
+    "entry_status": "closed",
+    "entry_start_date": "2026-07-27",
+    "entry_deadline": "2026-09-25",
+    "entry_fee": "39,000円",
+    "links": {
+      "official": "https://kumagawa-trail.jp/",
+      "entry": "https://kumagawa-trail.jp/",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-13"
+    },
+    "mandatory_gear": [
+      {
+        "name": "ゴアテックス等 シームテープ加工防水透湿レイン上下",
+        "category": "ウェア"
+      },
+      {
+        "name": "高光量ヘッドライト2灯（メイン300lm以上＋予備ライト・予備電池）",
+        "category": "ライト"
+      },
+      {
+        "name": "GPXトラック収録GPSウォッチ（SUUNTO",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "GARMIN等）",
+        "category": "ギア"
+      },
+      {
+        "name": "エマージェンシーサバイバルシート（130×200cm以上）＆ホイッスル",
+        "category": "エイド"
+      },
+      {
+        "name": "保温ベースレイヤー（ドライナミック等）・防寒長袖・グローブ",
+        "category": "ウェア"
+      },
+      {
+        "name": "水分1.5L以上携行可能なトレランザック（10L〜12L）＆補給食",
+        "category": "補給"
+      }
+    ],
+    "venue": {
+      "name": "八代城跡公園（熊本県八代市松江城町7-34）",
+      "mapQuery": "熊本県八代市 八代城跡公園"
+    },
+    "source": {
+      "portalName": "モシコム"
+    },
+    "archived_at": "2026-11-14"
   }
 ]
