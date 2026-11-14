@@ -29,3 +29,6 @@ __pycache__/
 *.njsproj
 *.sln
 *.sw?
+
+# APIキー（手動バッチ用・絶対にコミットしない）
+.env
