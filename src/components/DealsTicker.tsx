@@ -12,6 +12,8 @@ import {
   ShoppingBag,
   Sun,
   Moon,
+  Monitor,
+  Smartphone,
 } from 'lucide-react';
 import { formatPrice } from '../utils/helpers';
 
@@ -23,6 +25,8 @@ interface DealsTickerProps {
   theme?: 'light' | 'dark';
   onToggleTheme?: () => void;
   onOpenCatalog?: () => void;
+  isPcView?: boolean;
+  onToggleDisplayMode?: () => void;
 }
 
 export const DealsTicker: React.FC<DealsTickerProps> = ({
@@ -33,6 +37,8 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({
   theme = 'light',
   onToggleTheme,
   onOpenCatalog,
+  isPcView,
+  onToggleDisplayMode,
 }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [isPaused, setIsPaused] = useState(false);
@@ -280,6 +286,28 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({
               >
                 <ChevronRight className="w-3 h-3" />
               </button>
+
+              {/* PC表示 / スマホ表示 切り替えボタン */}
+              {onToggleDisplayMode && (
+                <button
+                  onClick={onToggleDisplayMode}
+                  className="inline-flex items-center gap-1 px-1.5 py-1 rounded border border-slate-700 bg-slate-900 hover:bg-slate-800 text-slate-200 text-[10px] font-bold transition-colors shadow-2xs cursor-pointer whitespace-nowrap"
+                  aria-label="PC表示とスマホ表示の切り替え"
+                  title={isPcView ? 'スマホ用画面に切り替え' : 'PC用画面に切り替え'}
+                >
+                  {isPcView ? (
+                    <>
+                      <Smartphone className="w-3 h-3 text-teal-400 shrink-0" />
+                      <span>スマホ版</span>
+                    </>
+                  ) : (
+                    <>
+                      <Monitor className="w-3 h-3 text-amber-400 shrink-0" />
+                      <span>PC版</span>
+                    </>
+                  )}
+                </button>
+              )}
 
               {/* テーマ切り替えボタン */}
               {onToggleTheme && (

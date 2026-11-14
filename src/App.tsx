@@ -145,6 +145,50 @@ export const App: React.FC = () => {
     setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
   };
 
+  // PC用画面 / スマホ用画面の切り替え管理（'auto': 画面幅自動 / 'pc': 強制PC版 / 'mobile': 強制スマホ版）
+  const [displayMode, setDisplayMode] = useState<'auto' | 'pc' | 'mobile'>(() => {
+    try {
+      const saved = localStorage.getItem('race_hub_display_mode');
+      return saved === 'pc' || saved === 'mobile' ? saved : 'auto';
+    } catch {
+      return 'auto';
+    }
+  });
+  const [isNarrowScreen, setIsNarrowScreen] = useState<boolean>(() =>
+    typeof window !== 'undefined' ? window.innerWidth < 768 : false
+  );
+
+  useEffect(() => {
+    const onResize = () => setIsNarrowScreen(window.innerWidth < 768);
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
+
+  const isPcView = displayMode === 'pc' || (displayMode === 'auto' && !isNarrowScreen);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem('race_hub_display_mode', displayMode);
+    } catch {}
+    const vp = document.querySelector('meta[name="viewport"]');
+    if (vp) {
+      vp.setAttribute(
+        'content',
+        displayMode === 'pc'
+          ? 'width=1280'
+          : 'width=device-width, initial-scale=1.0'
+      );
+    }
+  }, [displayMode]);
+
+  const toggleDisplayMode = () => {
+    setDisplayMode((prev) => {
+      if (prev === 'pc') return 'mobile';
+      if (prev === 'mobile') return 'pc';
+      return isNarrowScreen ? 'pc' : 'mobile';
+    });
+  };
+
   // フィルター状態
   const [filters, setFilters] = useState<FilterState>(INITIAL_FILTERS);
 
@@ -650,6 +694,8 @@ export const App: React.FC = () => {
             theme={theme}
             onToggleTheme={toggleTheme}
             onOpenCatalog={() => navigateTo('gears')}
+            isPcView={isPcView}
+            onToggleDisplayMode={toggleDisplayMode}
           />
         </div>
         <UpdateTicker onJumpToTarget={handleJumpToSection} onOpenEvent={handleOpenEventById} />
@@ -735,39 +781,39 @@ export const App: React.FC = () => {
           />
         </div>
 
-        {/* 5. 大会情報一覧（PC: テーブル/カード切替 ＆ スマホ: 視認性抜群の縦積み最適化カード常時表示） */}
+        {/* 5. 大会情報一覧（PC表示 / スマホ表示の自動・手動切替に対応） */}
         <div id="events-section">
-          {/* PC・タブレット表示（md:block） */}
-          <div className="hidden md:block">
-            {viewMode === 'table' ? (
-              <EventTableView
+          {isPcView ? (
+            <div>
+              {viewMode === 'table' ? (
+                <EventTableView
+                  events={filteredEvents}
+                  deals={deals}
+                  favoriteIds={favoriteIds}
+                  sortBy={filters.sortBy}
+                  onSortChange={(newSort) => setFilters((prev) => ({ ...prev, sortBy: newSort }))}
+                  onToggleFavorite={handleToggleFavorite}
+                  onSelectEvent={setSelectedEvent}
+                />
+              ) : (
+                <EventCardView
+                  events={filteredEvents}
+                  favoriteIds={favoriteIds}
+                  onToggleFavorite={handleToggleFavorite}
+                  onSelectEvent={setSelectedEvent}
+                />
+              )}
+            </div>
+          ) : (
+            <div>
+              <MobileEventCardList
                 events={filteredEvents}
                 deals={deals}
                 favoriteIds={favoriteIds}
-                sortBy={filters.sortBy}
-                onSortChange={(newSort) => setFilters((prev) => ({ ...prev, sortBy: newSort }))}
                 onToggleFavorite={handleToggleFavorite}
-                onSelectEvent={setSelectedEvent}
               />
-            ) : (
-              <EventCardView
-                events={filteredEvents}
-                favoriteIds={favoriteIds}
-                onToggleFavorite={handleToggleFavorite}
-                onSelectEvent={setSelectedEvent}
-              />
-            )}
-          </div>
-
-          {/* スマホ表示（block md:hidden）：親指一本でタップしやすい縦積みカード形式 */}
-          <div className="block md:hidden">
-            <MobileEventCardList
-              events={filteredEvents}
-              deals={deals}
-              favoriteIds={favoriteIds}
-              onToggleFavorite={handleToggleFavorite}
-            />
-          </div>
+            </div>
+          )}
         </div>
       </main>
 
