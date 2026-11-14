@@ -7,7 +7,39 @@ interface AccessCounterProps {
 
 const STORAGE_KEY = 'race_hub_local_hits';
 const SESSION_KEY = 'race_hub_session_active';
-const BASE_ACCESS_COUNT = 113; // ご指定の初期基準アクセス数（113件）
+const BASE_ACCESS_COUNT = 113; // 既存の累計基準アクセス数（113件）
+const COUNTER_NS = 'yachimaru-outdoor-race-hub';
+const COUNTER_KEY = 'visits';
+
+// 同一ページ内にヘッダー・フッターの2箇所へマウントされても API 呼び出しは1回にまとめる
+let sharedFetchPromise: Promise<number | null> | null = null;
+
+function fetchSharedCount(): Promise<number | null> {
+  if (sharedFetchPromise) return sharedFetchPromise;
+  sharedFetchPromise = (async () => {
+    try {
+      const isLocal =
+        typeof window !== 'undefined' &&
+        /^(localhost|127\.0\.0\.1)$/i.test(window.location.hostname);
+      const isNewSession = !sessionStorage.getItem(SESSION_KEY);
+      if (isNewSession) {
+        sessionStorage.setItem(SESSION_KEY, '1');
+      }
+      const action = isNewSession && !isLocal ? 'hit' : 'get';
+      const res = await fetch(
+        `https://abacus.jasoncameron.dev/${action}/${COUNTER_NS}/${COUNTER_KEY}`,
+        { signal: AbortSignal.timeout(5000) }
+      );
+      if (!res.ok) return null;
+      const data = (await res.json()) as { value?: number };
+      if (typeof data.value !== 'number' || Number.isNaN(data.value)) return null;
+      return BASE_ACCESS_COUNT + data.value;
+    } catch {
+      return null;
+    }
+  })();
+  return sharedFetchPromise;
+}
 
 export const AccessCounter: React.FC<AccessCounterProps> = ({ variant = 'compact' }) => {
   const [count, setCount] = useState<number>(() => {
@@ -22,28 +54,27 @@ export const AccessCounter: React.FC<AccessCounterProps> = ({ variant = 'compact
   });
 
   useEffect(() => {
-    try {
-      // 同一タブ内のリロードでの二重加算を防ぎつつ、新規セッションで確実に+1カウントアップ
-      const isNewSession = !sessionStorage.getItem(SESSION_KEY);
-      if (isNewSession) {
-        sessionStorage.setItem(SESSION_KEY, '1');
-        const currentStored = localStorage.getItem(STORAGE_KEY);
-        const prev = currentStored ? parseInt(currentStored, 10) : NaN;
-        const next = (!isNaN(prev) && prev >= BASE_ACCESS_COUNT ? prev : BASE_ACCESS_COUNT) + 1;
-        localStorage.setItem(STORAGE_KEY, String(next));
-        setCount(next);
+    let mounted = true;
+    fetchSharedCount().then((total) => {
+      if (!mounted || total === null) return;
+      setCount(total);
+      try {
+        localStorage.setItem(STORAGE_KEY, String(total));
+      } catch {
+        // LocalStorage制限時は無視
       }
-    } catch {
-      // LocalStorageが制限されている場合でも初期値113で安全表示
-    }
+    });
+    return () => {
+      mounted = false;
+    };
   }, []);
 
-  // ヘッダー用（画面右上）表示（★大きくくっきり113件表示・画像読み込み遅延ゼロ）
+  // ヘッダー用（画面右上）表示
   if (variant === 'compact') {
     return (
       <div
         className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xl bg-slate-900 border border-slate-700/90 text-xs font-black text-slate-100 leading-none shadow-sm select-none hover:border-teal-500 transition-colors"
-        title="サイト累計アクセス数（リアルタイム集計中）"
+        title="サイト累計アクセス数（PC・スマホ全端末合算）"
       >
         <Eye className="w-4 h-4 text-teal-400 shrink-0" />
         <span className="text-[11px] font-bold text-slate-300">累計アクセス</span>
