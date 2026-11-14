@@ -60,7 +60,7 @@ jobs:
     if: needs.guard.outputs.run == 'true'
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url || steps.deployment_retry1_exec.outputs.page_url || steps.deployment_retry2.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: "Checkout Repository"
@@ -159,23 +159,62 @@ jobs:
           exit 1
 
       - name: "Step 7: Setup Pages"
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v6
 
       - name: "Step 8: Upload Artifact"
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: './dist'
 
-      - name: "Step 9: Deploy to GitHub Pages"
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: "Step 8.5: アーティファクト反映待機（Found 0 artifact(s) 防止）"
+        run: sleep 10
 
-      - name: "Step 10: 一部の処理が失敗していた場合は実行を失敗扱いにして通知（サイト公開は完了済み）"
-        if: ${{ steps.gears.outcome == 'failure' || steps.events.outcome == 'failure' || steps.sheets.outcome == 'failure' || steps.push.outcome == 'failure' }}
+      - name: "Step 9: Deploy to GitHub Pages (Attempt 1)"
+        id: deployment
+        continue-on-error: true
+        uses: actions/deploy-pages@v5
+
+      - name: "Step 9-Retry1: 15秒待機後に再デプロイ"
+        if: steps.deployment.outcome == 'failure'
+        continue-on-error: true
+        run: sleep 15
+      - name: "Step 9-Retry1: Execute Deploy"
+        id: deployment_retry1_exec
+        if: steps.deployment.outcome == 'failure'
+        continue-on-error: true
+        uses: actions/deploy-pages@v5
+
+      - name: "Step 9-Retry2: 30秒待機後に最終再デプロイ"
+        if: steps.deployment.outcome == 'failure' && steps.deployment_retry1_exec.outcome == 'failure'
+        run: sleep 30
+      - name: "Step 9-Retry2: Execute Deploy"
+        id: deployment_retry2
+        if: steps.deployment.outcome == 'failure' && steps.deployment_retry1_exec.outcome == 'failure'
+        uses: actions/deploy-pages@v5
+
+      - name: "Step 10: エラー診断サマリー出力＆一部失敗時の再試行通知"
+        if: ${{ failure() || steps.gears.outcome == 'failure' || steps.events.outcome == 'failure' || steps.sheets.outcome == 'failure' || steps.push.outcome == 'failure' }}
         run: |
+          {
+            echo "## ⚠️ 毎朝自動同期・更新ワークフロー診断レポート"
+            echo ""
+            echo "| ステップ | 結果 |"
+            echo "| :--- | :--- |"
+            echo "| Step 1: 装備カタログ更新 | \`${{ steps.gears.outcome }}\` |"
+            echo "| Step 2: 大会データ更新 | \`${{ steps.events.outcome }}\` |"
+            echo "| Step 3: スプレッドシート同期 | \`${{ steps.sheets.outcome }}\` |"
+            echo "| Step 6: Gitコミット＆プッシュ | \`${{ steps.push.outcome }}\` |"
+            echo "| Step 9: Pagesデプロイ (1回目) | \`${{ steps.deployment.outcome }}\` |"
+            echo "| Step 9: Pagesデプロイ (2回目) | \`${{ steps.deployment_retry1_exec.outcome }}\` |"
+            echo "| Step 9: Pagesデプロイ (3回目) | \`${{ steps.deployment_retry2.outcome }}\` |"
+            echo ""
+            echo "### エラー対応プロセス"
+            echo "- Step 1〜3・6 のみの失敗時は、公開サイト自体は前日正常データで保護されています（予備スケジュールで自動再実行されます）。"
+            echo "- Step 9（Pagesデプロイ）が 3 回とも失敗した場合は、\`docs/ERROR_RECOVERY.md\` の手順に従って手動再実行または状況確認を行ってください。"
+          } >> "$GITHUB_STEP_SUMMARY"
           [ "${{ steps.gears.outcome }}" = "failure" ]  && echo "::error::Step 1 装備カタログ更新が失敗しました（前日データで公開）"
           [ "${{ steps.events.outcome }}" = "failure" ] && echo "::error::Step 2 大会データ更新が失敗しました（前日データで公開）"
           [ "${{ steps.sheets.outcome }}" = "failure" ] && echo "::error::Step 3 スプレッドシート同期が失敗しました"
           [ "${{ steps.push.outcome }}" = "failure" ]   && echo "::error::Step 6 データのプッシュが失敗しました（サイトは最新データで公開済み）"
-          echo "失敗扱いにするため、予備スケジュールで自動再実行されます"
+          echo "失敗ステップがあるため、予備スケジュールで自動再実行されます"
           exit 1

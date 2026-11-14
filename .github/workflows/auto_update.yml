@@ -18,7 +18,7 @@ jobs:
   auto-update-and-deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url || steps.deployment_retry1_exec.outputs.page_url || steps.deployment_retry2.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: "Checkout Repository"
@@ -70,13 +70,35 @@ jobs:
           cp dist/index.html dist/404.html
 
       - name: "Step 7: Setup Pages"
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v6
 
       - name: "Step 8: Upload Artifact"
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: './dist'
 
-      - name: "Step 9: Deploy to GitHub Pages"
+      - name: "Step 8.5: アーティファクト反映待機（Found 0 artifact(s) 防止）"
+        run: sleep 10
+
+      - name: "Step 9: Deploy to GitHub Pages (Attempt 1)"
         id: deployment
-        uses: actions/deploy-pages@v4
+        continue-on-error: true
+        uses: actions/deploy-pages@v5
+
+      - name: "Step 9-Retry1: 15秒待機後に再デプロイ"
+        if: steps.deployment.outcome == 'failure'
+        continue-on-error: true
+        run: sleep 15
+      - name: "Step 9-Retry1: Execute Deploy"
+        id: deployment_retry1_exec
+        if: steps.deployment.outcome == 'failure'
+        continue-on-error: true
+        uses: actions/deploy-pages@v5
+
+      - name: "Step 9-Retry2: 30秒待機後に最終再デプロイ"
+        if: steps.deployment.outcome == 'failure' && steps.deployment_retry1_exec.outcome == 'failure'
+        run: sleep 30
+      - name: "Step 9-Retry2: Execute Deploy"
+        id: deployment_retry2
+        if: steps.deployment.outcome == 'failure' && steps.deployment_retry1_exec.outcome == 'failure'
+        uses: actions/deploy-pages@v5

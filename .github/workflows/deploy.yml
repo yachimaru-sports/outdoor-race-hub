@@ -13,13 +13,16 @@ permissions:
 
 concurrency:
   group: 'pages'
-  cancel-in-progress: true
+  # 自動同期ワークフロー等の進行中デプロイを強制キャンセルしない
+  cancel-in-progress: false
 
 jobs:
   build-and-deploy:
+    # daily_sync.yml 自身の自動同期コミットによる重複起動を防止（手動実行時は常に実行）
+    if: github.event_name != 'push' || !startsWith(github.event.head_commit.message, 'chore(auto):')
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url || steps.deployment_retry1_exec.outputs.page_url || steps.deployment_retry2.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
@@ -41,13 +44,55 @@ jobs:
           cp dist/index.html dist/404.html
 
       - name: Setup Pages
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v6
 
       - name: Upload Artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: './dist'
 
-      - name: Deploy to GitHub Pages
+      - name: Wait for Artifact Metadata Propagation
+        # GitHub側のアーティファクト反映遅延による "Found 0 artifact(s)" エラーを防止
+        run: sleep 10
+
+      - name: Deploy to GitHub Pages (Attempt 1)
         id: deployment
-        uses: actions/deploy-pages@v4
+        continue-on-error: true
+        uses: actions/deploy-pages@v5
+
+      - name: Deploy to GitHub Pages (Retry 1 after 15s)
+        id: deployment_retry1
+        if: steps.deployment.outcome == 'failure'
+        continue-on-error: true
+        run: sleep 15
+      - name: Execute Deploy Retry 1
+        id: deployment_retry1_exec
+        if: steps.deployment.outcome == 'failure'
+        continue-on-error: true
+        uses: actions/deploy-pages@v5
+
+      - name: Deploy to GitHub Pages (Retry 2 after 30s)
+        if: steps.deployment.outcome == 'failure' && steps.deployment_retry1_exec.outcome == 'failure'
+        run: sleep 30
+      - name: Execute Deploy Retry 2
+        id: deployment_retry2
+        if: steps.deployment.outcome == 'failure' && steps.deployment_retry1_exec.outcome == 'failure'
+        uses: actions/deploy-pages@v5
+
+      - name: Write Error Recovery Summary
+        if: failure()
+        run: |
+          {
+            echo "## ❌ GitHub Pages デプロイエラー発生"
+            echo ""
+            echo "### 自動リトライ結果"
+            echo "- 1回目: \`${{ steps.deployment.outcome }}\`"
+            echo "- 2回目 (15秒後): \`${{ steps.deployment_retry1_exec.outcome }}\`"
+            echo "- 3回目 (30秒後): \`${{ steps.deployment_retry2.outcome }}\`"
+            echo ""
+            echo "### エラー対応プロセス"
+            echo "1. [GitHub Status](https://www.githubstatus.com/) で GitHub Pages / Actions の障害が発生していないか確認してください。"
+            echo "2. 障害が復旧していれば、このページ右上の **「Re-run all jobs」** をクリックして再実行してください。"
+            echo "3. ビルドエラー（\`Build SPA for GitHub Pages\` 失敗）の場合は、ローカルで \`npm run build\` を実行してエラー箇所を修正してください。"
+            echo "4. 詳細はリポジトリ内の \`docs/ERROR_RECOVERY.md\` を参照してください。"
+          } >> "$GITHUB_STEP_SUMMARY"
