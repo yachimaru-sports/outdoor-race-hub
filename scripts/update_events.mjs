@@ -195,7 +195,7 @@ async function discoverNewEvents(existingEvents, today, maxAdd = 8) {
     if (added.length >= maxAdd) break;
     const prompt = [
       `本日(${today})から${endWindow}の間に日本国内で開催される最新の「${q.label}」で、現在公式サイトやエントリーページが公開されている大会を5件、Google検索で見つけてJSON配列で出力してください。`,
-      `架空の大会や過去日程は禁止。URLは必ず各大会の個別公式ページまたはRUNNET/モシコム/スポーツエントリーの個別ページ（トップページ禁止）。`,
+      `架空の大会や過去日程は禁止。モシコム（moshicom.com）のみに掲載されている小規模・練習会・草レースも除外。URLは必ず各大会の個別公式ページまたはRUNNET/スポーツエントリーの個別ページ（トップページ禁止）。`,
       `フォーマット: [{"title":"","date":"YYYY-MM-DD","prefecture":"都道府県名","distance_km":数値,"elevation_m":数値,"entry_fee":"例: 10,000円","entry_start_date":"YYYY-MM-DDまたは空","entry_deadline":"YYYY-MM-DDまたは空","venue_name":"会場名","official_url":"https://...","entry_url":"https://..."}]`,
     ].join('\n');
     const text = await askGeminiSearch(prompt);
@@ -235,6 +235,8 @@ async function discoverNewEvents(existingEvents, today, maxAdd = 8) {
       const off = await verifyCandidateUrl(cand, item.official_url, 'official', { requireDate: true });
       const ent = await verifyCandidateUrl(cand, item.entry_url, 'entry', { requireDate: true });
       if (!off && !ent) continue;
+      // 公式サイトがなくモシコム（moshicom.com）のみの大会・モシコム確認が必要な小規模イベントは掲載対象外
+      if ((!off && ent?.url?.includes('moshicom.com')) || cand.entry_fee.includes('モシコム')) continue;
 
       cand.links.official = off?.url || null;
       cand.links.entry = ent?.url || null;
@@ -243,68 +245,6 @@ async function discoverNewEvents(existingEvents, today, maxAdd = 8) {
       console.log(`✨ 新規大会追加: ${cand.title} (${cand.date}) -> ${cand.links.official || cand.links.entry}`);
     }
     await sleep(1000);
-  }
-  return added;
-}
-
-/** モシコム公開検索からGemini不要で新着大会を発見（練習会・試走会は除外） */
-async function discoverFromMoshicom(existingEvents, today, maxAdd = 4) {
-  const queries = [
-    { cat: 'trail', sub: 'トレイルランニング', kw: 'トレイルラン' },
-    { cat: 'marathon', sub: 'ウルトラ・マラソン', kw: 'ウルトラマラソン' },
-    { cat: 'cycling', sub: 'サイクリング・ライド', kw: 'サイクリング' },
-    { cat: 'adventure', sub: 'ロゲイニング', kw: 'ロゲイニング' },
-  ];
-  const dayOffset = Math.floor(Date.now() / 86400000) % queries.length;
-  const rotated = [...queries.slice(dayOffset), ...queries.slice(0, dayOffset)];
-  const added = [];
-  const prefList = Object.keys(REGIONS);
-
-  for (const q of rotated) {
-    if (added.length >= maxAdd) break;
-    const searchUrl = `https://moshicom.com/search/?keyword=${encodeURIComponent(q.kw)}`;
-    const listPage = await fetchPage(searchUrl);
-    if (listPage.kind !== 'ok') continue;
-    const links = [...new Set([...(listPage.html || '').matchAll(/href=["'](https:\/\/moshicom\.com\/\d+)[^"']*/g)].map((m) => m[1]))];
-    for (const u of links.slice(0, 6)) {
-      if (added.length >= maxAdd) break;
-      const p = await fetchPage(u);
-      if (p.kind !== 'ok') continue;
-      const rawTitle = (p.title || '').split('|')[0].trim();
-      if (!rawTitle || /練習会|試走|講習|クリニック|セミナー|交流会|オンライン/.test(rawTitle)) continue;
-      // 開催日抽出（YYYY年M月D日）
-      const dm = p.text.match(/(202[6-9])年\s*(\d{1,2})月\s*(\d{1,2})日/);
-      if (!dm) continue;
-      const date = `${dm[1]}-${dm[2].padStart(2, '0')}-${dm[3].padStart(2, '0')}`;
-      if (date <= today) continue;
-      const pref = prefList.find((pr) => p.text.includes(pr)) || '全国';
-      const cand = {
-        id: slugifyId(rawTitle, date),
-        category: q.cat,
-        subCategory: q.sub,
-        elements: [q.sub],
-        title: rawTitle,
-        date,
-        month: Number(date.slice(5, 7)),
-        region: REGIONS[pref] || '全国',
-        prefecture: pref,
-        distance_km: 0,
-        elevation_m: 0,
-        entry_fee: 'モシコム確認',
-        entry_status: 'open',
-        entry_start_date: null,
-        entry_deadline: '',
-        links: { official: null, entry: p.finalUrl || u, review: null, sns: null, verified: true, verified_at: today },
-        mandatory_gear: DEFAULT_GEAR[q.cat],
-        venue: { name: pref, mapQuery: `${pref} ${rawTitle}`.trim() },
-        source: { portalName: 'モシコム', portalUrl: u },
-        added_at: today,
-        updated_at: today,
-      };
-      if (isDuplicateEvent(cand, [...existingEvents, ...added])) continue;
-      added.push(cand);
-      console.log(`✨ モシコム新着大会追加: ${cand.title} (${cand.date}) -> ${u}`);
-    }
   }
   return added;
 }
@@ -338,10 +278,9 @@ async function main() {
     }
   }
 
-  // 1.5 新規大会の発見を最優先で実行（Gemini 4回枠 ＋ モシコム直接検索）
+  // 1.5 新規大会の発見を最優先で実行（Gemini 検索のみ。モシコム小規模イベントは除外）
   const newEvents = await discoverNewEvents(active, today, 6);
-  const moshicomNew = await discoverFromMoshicom([...active, ...newEvents], today, 4);
-  for (const ne of [...newEvents, ...moshicomNew]) {
+  for (const ne of newEvents) {
     active.push(ne);
     stats.events_added++;
     logs.push({
