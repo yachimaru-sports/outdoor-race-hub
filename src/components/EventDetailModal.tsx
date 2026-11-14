@@ -12,8 +12,8 @@ import {
   formatDeadlineSlash,
   formatPeriodSlash,
   formatPrice,
-  getGoogleCalendarUrl,
 } from '../utils/helpers';
+import { CalendarAddButton } from './CalendarAddButton';
 import {
   X,
   Calendar,
@@ -31,7 +31,6 @@ import {
   Flame,
   ShoppingBag,
   ChevronRight,
-  CalendarPlus,
   Copy,
   Check,
   AlertTriangle,
@@ -117,7 +116,6 @@ export const EventDetailModal: React.FC<EventDetailModalProps> = ({ event, deals
   const shareUrl = typeof window !== 'undefined'
     ? `${window.location.origin}${window.location.pathname}?event=${encodeURIComponent(event.id)}`
     : '';
-  const calendarUrl = getGoogleCalendarUrl(event);
   const handleCopyShareUrl = async () => {
     try {
       await navigator.clipboard.writeText(shareUrl);
@@ -269,17 +267,7 @@ export const EventDetailModal: React.FC<EventDetailModalProps> = ({ event, deals
               </a>
             )}
 
-            {calendarUrl && (
-              <a
-                href={calendarUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="py-3 px-4 rounded-xl bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 text-sm font-bold flex items-center gap-1.5 transition-colors shadow-2xs"
-              >
-                <CalendarPlus className="w-4 h-4 text-emerald-600" />
-                <span>Googleカレンダー</span>
-              </a>
-            )}
+            <CalendarAddButton event={event} variant="button" menuPlacement="bottom-left" />
 
             <a
               href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`${event.title}（${event.date}・${event.prefecture}）`)}&url=${encodeURIComponent(shareUrl)}`}

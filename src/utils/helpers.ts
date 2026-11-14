@@ -497,34 +497,176 @@ export function getEventFreshnessBadge(event: { added_at?: string; updated_at?: 
   return null;
 }
 
-/** Googleカレンダー予定追加URLを生成 */
-export function getGoogleCalendarUrl(event: {
+export interface CalendarEventInput {
+  id?: string;
   title: string;
   date: string;
   end_date?: string;
+  entry_start_date?: string;
+  entry_deadline?: string;
   prefecture?: string;
-  venue?: { name?: string };
+  distance_km?: number;
+  elevation_m?: number;
+  entry_fee?: string;
+  venue?: { name?: string; address?: string };
   links?: { official?: string | null; entry?: string | null };
+}
+
+function extractYmd(raw?: string): string | null {
+  if (!raw) return null;
+  const first = raw.split(/[~〜]/)[0].trim();
+  const match = first.match(/^(\d{4})-(\d{2})-(\d{2})/);
+  return match ? `${match[1]}-${match[2]}-${match[3]}` : null;
+}
+
+function toCompactYmd(ymd: string): string {
+  return ymd.replace(/-/g, '');
+}
+
+function addDaysCompact(ymd: string, days: number): string {
+  const d = new Date(`${ymd}T00:00:00Z`);
+  d.setUTCDate(d.getUTCDate() + days);
+  return d.toISOString().slice(0, 10).replace(/-/g, '');
+}
+
+function buildEventLocation(event: CalendarEventInput): string {
+  const parts = [event.prefecture, event.venue?.name, event.venue?.address].filter(
+    (v): v is string => Boolean(v && v.trim())
+  );
+  // 重複する文字列を除外
+  return Array.from(new Set(parts)).join(' ');
+}
+
+function buildEventDetails(event: CalendarEventInput): string {
+  const specs: string[] = [];
+  if (typeof event.distance_km === 'number' && event.distance_km > 0) {
+    specs.push(`距離: ${Math.round(event.distance_km)}km`);
+  }
+  if (typeof event.elevation_m === 'number' && event.elevation_m > 0) {
+    specs.push(`獲得標高: +${event.elevation_m.toLocaleString()}m`);
+  }
+  if (event.entry_fee) {
+    specs.push(`参加費: ${event.entry_fee}`);
+  }
+  const siteUrl =
+    typeof window !== 'undefined' && event.id
+      ? `${window.location.origin}${window.location.pathname}?event=${encodeURIComponent(event.id)}`
+      : '';
+
+  return [
+    specs.length > 0 ? specs.join(' / ') : '',
+    event.links?.official ? `公式HP: ${event.links.official}` : '',
+    event.links?.entry ? `申込ページ: ${event.links.entry}` : '',
+    siteUrl ? `大会詳細: ${siteUrl}` : '',
+  ]
+    .filter(Boolean)
+    .join('\n');
+}
+
+function buildGoogleCalendarTemplateUrl(opts: {
+  title: string;
+  startYmd: string;
+  endYmd?: string | null;
+  location?: string;
+  details?: string;
 }): string {
-  const start = (event.date || '').split(/[~〜]/)[0].replace(/-/g, '').slice(0, 8);
-  if (!/^\d{8}$/.test(start)) return '';
-  const endBase = event.end_date && /^\d{4}-\d{2}-\d{2}$/.test(event.end_date) ? event.end_date : `${start.slice(0, 4)}-${start.slice(4, 6)}-${start.slice(6, 8)}`;
-  const d = new Date(`${endBase}T00:00:00Z`);
-  d.setUTCDate(d.getUTCDate() + 1);
-  const end = d.toISOString().slice(0, 10).replace(/-/g, '');
-  const loc = [event.prefecture, event.venue?.name].filter(Boolean).join(' ');
-  const details = [
-    event.links?.official ? `公式: ${event.links.official}` : '',
-    event.links?.entry ? `申込: ${event.links.entry}` : '',
-  ].filter(Boolean).join('\n');
+  const start = toCompactYmd(opts.startYmd);
+  const end = addDaysCompact(opts.endYmd || opts.startYmd, 1);
   const params = new URLSearchParams({
     action: 'TEMPLATE',
-    text: event.title,
+    text: opts.title,
     dates: `${start}/${end}`,
-    ...(loc ? { location: loc } : {}),
-    ...(details ? { details } : {}),
+    ...(opts.location ? { location: opts.location } : {}),
+    ...(opts.details ? { details: opts.details } : {}),
   });
   return `https://calendar.google.com/calendar/render?${params.toString()}`;
+}
+
+/** Googleカレンダー予定追加URLを生成（大会開催日） */
+export function getGoogleCalendarUrl(event: CalendarEventInput): string {
+  const startYmd = extractYmd(event.date);
+  if (!startYmd) return '';
+  const endYmd = extractYmd(event.end_date) || startYmd;
+  return buildGoogleCalendarTemplateUrl({
+    title: event.title,
+    startYmd,
+    endYmd,
+    location: buildEventLocation(event),
+    details: buildEventDetails(event),
+  });
+}
+
+/** Googleカレンダー予定追加URLを生成（エントリー開始日） */
+export function getGoogleCalendarEntryStartUrl(event: CalendarEventInput): string {
+  const startYmd = extractYmd(event.entry_start_date);
+  if (!startYmd) return '';
+  return buildGoogleCalendarTemplateUrl({
+    title: `【エントリー開始】${event.title}`,
+    startYmd,
+    location: buildEventLocation(event),
+    details: [`開催日: ${event.date}`, buildEventDetails(event)].filter(Boolean).join('\n'),
+  });
+}
+
+/** Googleカレンダー予定追加URLを生成（エントリー締切日） */
+export function getGoogleCalendarDeadlineUrl(event: CalendarEventInput): string {
+  const deadlineYmd = extractYmd(event.entry_deadline);
+  if (!deadlineYmd) return '';
+  return buildGoogleCalendarTemplateUrl({
+    title: `【エントリー締切】${event.title}`,
+    startYmd: deadlineYmd,
+    location: buildEventLocation(event),
+    details: [`開催日: ${event.date}`, buildEventDetails(event)].filter(Boolean).join('\n'),
+  });
+}
+
+function escapeIcsText(text: string): string {
+  return text
+    .replace(/\\/g, '\\\\')
+    .replace(/\n/g, '\\n')
+    .replace(/,/g, '\\,')
+    .replace(/;/g, '\\;');
+}
+
+/** 大会開催日のiCalendar(.ics)ファイルを生成してダウンロード（Appleカレンダー / Outlook対応） */
+export function downloadEventIcs(event: CalendarEventInput): void {
+  const startYmd = extractYmd(event.date);
+  if (!startYmd) return;
+  const endYmd = extractYmd(event.end_date) || startYmd;
+  const dtStart = toCompactYmd(startYmd);
+  const dtEnd = addDaysCompact(endYmd, 1);
+  const dtStamp = new Date().toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+  const uid = `${event.id || dtStart}@outdoor-race-hub`;
+  const location = buildEventLocation(event);
+  const description = buildEventDetails(event);
+
+  const lines = [
+    'BEGIN:VCALENDAR',
+    'VERSION:2.0',
+    'PRODID:-//Outdoor Race Hub//Event Calendar//JA',
+    'CALSCALE:GREGORIAN',
+    'METHOD:PUBLISH',
+    'BEGIN:VEVENT',
+    `UID:${uid}`,
+    `DTSTAMP:${dtStamp}`,
+    `DTSTART;VALUE=DATE:${dtStart}`,
+    `DTEND;VALUE=DATE:${dtEnd}`,
+    `SUMMARY:${escapeIcsText(event.title)}`,
+    ...(location ? [`LOCATION:${escapeIcsText(location)}`] : []),
+    ...(description ? [`DESCRIPTION:${escapeIcsText(description)}`] : []),
+    'END:VEVENT',
+    'END:VCALENDAR',
+  ];
+
+  const blob = new Blob([lines.join('\r\n')], { type: 'text/calendar;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `${event.id || 'race-event'}.ics`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
 }
 
 

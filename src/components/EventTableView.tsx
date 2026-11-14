@@ -18,6 +18,7 @@ import {
   getEventFreshnessBadge,
 } from '../utils/helpers';
 import { LinkButton } from './LinkButton';
+import { CalendarAddButton } from './CalendarAddButton';
 import {
   Globe,
   FileEdit,
@@ -193,8 +194,8 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
               </th>
               {/* 8. 受付状況 */}
               <th className="py-3 px-2.5 w-[115px] text-center">受付状況</th>
-              {/* 9. 申込・公式 */}
-              <th className="py-3 px-2.5 w-[140px] text-center">申込・公式</th>
+              {/* 9. 申込・公式・予定 */}
+              <th className="py-3 px-2.5 w-[170px] text-center">申込・公式・予定</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-200 dark:divide-slate-800 text-xs sm:text-sm">
@@ -477,6 +478,7 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
                           isBroken={false}
                           eventTitle={event.title}
                         />
+                        <CalendarAddButton event={event} variant="icon" menuPlacement="bottom-right" />
                       </div>
                     </td>
                   </tr>

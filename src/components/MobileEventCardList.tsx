@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { RaceEvent, DealItem, GearItem } from '../types';
 import { matchMandatoryGear } from '../utils/gearMatcher';
 import { MandatoryGearLinks } from './MandatoryGearLinks';
+import { CalendarAddButton } from './CalendarAddButton';
 import {
   CATEGORY_LABELS,
   ELEMENT_BADGES,
@@ -343,6 +344,8 @@ export const MobileEventCardList: React.FC<MobileEventCardListProps> = ({
                     <ExternalLink className="w-3.5 h-3.5 opacity-60" />
                   </a>
                 )}
+
+                <CalendarAddButton event={event} variant="mobile" menuPlacement="top-right" />
               </div>
             </div>
           </div>

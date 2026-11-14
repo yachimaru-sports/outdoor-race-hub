@@ -13,6 +13,7 @@ import {
   getEventFreshnessBadge,
 } from '../utils/helpers';
 import { LinkButton } from './LinkButton';
+import { CalendarAddButton } from './CalendarAddButton';
 import {
   Calendar,
   Clock,
@@ -340,6 +341,7 @@ export const EventCardView: React.FC<EventCardViewProps> = ({
                   eventTitle={event.title}
                 />
               </div>
+              <CalendarAddButton event={event} variant="icon" menuPlacement="top-right" />
             </div>
           </div>
         );

@@ -12,7 +12,7 @@ declare global {
 
 // カスタムイベント送信（申込ボタン・公式サイト・楽天商品のクリック追跡）
 export const trackEvent = (
-  eventName: 'entry_click' | 'official_click' | 'rakuten_click' | 'favorite_toggle',
+  eventName: 'entry_click' | 'official_click' | 'rakuten_click' | 'favorite_toggle' | 'calendar_add',
   params: Record<string, any> = {}
 ) => {
   if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
