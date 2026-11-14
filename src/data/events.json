@@ -1352,6 +1352,50 @@
     }
   },
   {
+    "id": "sky1-vertical-race-2027",
+    "category": "trail",
+    "subCategory": "バーティカルレース",
+    "elements": [
+      "トレラン",
+      "バーティカル",
+      "絶景",
+      "中四国"
+    ],
+    "title": "スカイ1号バーティカルレース2027（山口・笠戸島 2.3km）",
+    "date": "2027-02-06",
+    "month": 2,
+    "region": "中国",
+    "prefecture": "山口県",
+    "distance_km": 2.3,
+    "elevation_m": 270,
+    "entry_status": "open",
+    "entry_start_date": "2026-10-01",
+    "entry_deadline": "2026-12-06",
+    "entry_fee": "2,000円",
+    "links": {
+      "official": "https://kasadojima-islandtrail.com/vertical-race",
+      "entry": "https://kasadojima-islandtrail.com/entry",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-14"
+    },
+    "mandatory_gear": [
+      "くだまつ笠戸島アイランドトレイル2027へのエントリー必須",
+      "トレイルランニングシューズ",
+      "行動食・水分",
+      "防寒着・レインウェア"
+    ],
+    "venue": {
+      "name": "笠戸公民館（下松市笠戸島209）→ スカイ1号頂上",
+      "access": "下松市笠戸島 国民宿舎大城 駐車場（下松市笠戸島14-1）からスタート地点まで移動",
+      "parking": "国民宿舎大城（下松市笠戸島14-1）"
+    },
+    "source": "https://kasadojima-islandtrail.com/vertical-race",
+    "added_at": "2026-11-14",
+    "updated_at": "2026-11-14"
+  },
+  {
     "id": "ise-toba-shima-cycle-2027",
     "category": "cycling",
     "subCategory": "サイクリング・グルメライド",
@@ -1425,11 +1469,11 @@
     "entry_fee": "9,700円",
     "links": {
       "official": "https://kasadojima-islandtrail.com/",
-      "entry": null,
+      "entry": "https://runnet.jp/entry/runtes/smp/competitiondetail.do?raceId=398153&div=1",
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-13"
+      "verified_at": "2026-11-14"
     },
     "mandatory_gear": [
       {
@@ -1461,7 +1505,8 @@
     "source": {
       "portalName": "RUNNET",
       "portalUrl": "https://runnet.jp/"
-    }
+    },
+    "updated_at": "2026-11-14"
   },
   {
     "id": "kagawa-marugame-half-2027",
