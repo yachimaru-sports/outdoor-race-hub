@@ -2778,6 +2778,53 @@
     }
   },
   {
+    "id": "arjs-2027-r1-nagaragawa",
+    "category": "adventure",
+    "subCategory": "ARJS（アドベンチャーレース ジャパンシリーズ）",
+    "elements": [
+      "ARJS",
+      "アドベンチャー",
+      "読図",
+      "パドル",
+      "ラフティング",
+      "トレック",
+      "夜間"
+    ],
+    "title": "ARJS 2027 第1戦 岐阜長良川大会",
+    "date": "2027-04-24",
+    "end_date": "2027-04-25",
+    "month": 4,
+    "region": "東海",
+    "prefecture": "岐阜県",
+    "distance_km": 0,
+    "elevation_m": 0,
+    "entry_status": "upcoming",
+    "entry_start_date": "未定",
+    "entry_deadline": "未定",
+    "entry_fee": "未定",
+    "links": {
+      "official": "https://www.facebook.com/arjs.adventurerace",
+      "entry": null,
+      "review": null,
+      "sns": "https://www.facebook.com/arjs.adventurerace",
+      "verified": true,
+      "verified_at": "2026-11-14"
+    },
+    "mandatory_gear": [
+      {
+        "name": "未定（公式要項発表待ち・地図/コンパス・レインウェア・パドル装備等想定）",
+        "category": "ギア"
+      }
+    ],
+    "venue": {
+      "name": "岐阜県長良川周辺（詳細会場未定）",
+      "mapQuery": "岐阜県 長良川"
+    },
+    "source": {
+      "portalName": "ARJS公式"
+    }
+  },
+  {
     "id": "arws-bimbache-morocco-2027",
     "category": "adventure",
     "subCategory": "ARWS世界選手権予選 (Qualifier)",
@@ -3064,6 +3111,121 @@
     }
   },
   {
+    "id": "kuman100-2027",
+    "category": "trail",
+    "subCategory": "100マイル トレイル",
+    "elements": [
+      "100マイル",
+      "トレック",
+      "夜間"
+    ],
+    "title": "クマン100 2027（広島県江田島市 100マイル トレイルランニング）",
+    "date": "2027-06-12",
+    "month": 6,
+    "region": "中国",
+    "prefecture": "広島県",
+    "distance_km": 160,
+    "elevation_m": 5200,
+    "entry_status": "open",
+    "entry_start_date": "2026-11-12",
+    "entry_deadline": "2026-12-13",
+    "entry_fee": "15,000円",
+    "links": {
+      "official": "https://inner-fact.co.jp/kuman100/2027_entry_announce/",
+      "entry": "https://moshicom.com/156604",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-14"
+    },
+    "mandatory_gear": [
+      {
+        "name": "レインウェア・レインパンツ（シーム加工済）",
+        "category": "ウェア"
+      },
+      {
+        "name": "ヘッドライト2個＆予備電池",
+        "category": "ライト"
+      },
+      {
+        "name": "点滅ライト（夜間公道・ザック後部装着）",
+        "category": "ライト"
+      },
+      {
+        "name": "水分1L以上＆携帯ボトル",
+        "category": "補給"
+      },
+      {
+        "name": "マイボウル＆スポーク（または箸等・耐熱推奨）",
+        "category": "ギア"
+      },
+      {
+        "name": "エマージェンシーシート＆ホイッスル",
+        "category": "エイド"
+      },
+      {
+        "name": "トレイルランニングシューズ（サンダル・ロード不可）",
+        "category": "ギア"
+      },
+      {
+        "name": "携帯電話（推奨：モバイルバッテリー・保険証）",
+        "category": "ナビゲーション"
+      }
+    ],
+    "venue": {
+      "name": "江田島市立切串小学校（広島県江田島市江田島町切串1-11-2）",
+      "mapQuery": "広島県江田島市 江田島市立切串小学校"
+    },
+    "source": {
+      "portalName": "モシコム"
+    }
+  },
+  {
+    "id": "arjs-2027-r2-minakami",
+    "category": "adventure",
+    "subCategory": "ARJS（アドベンチャーレース ジャパンシリーズ）",
+    "elements": [
+      "ARJS",
+      "アドベンチャー",
+      "読図",
+      "パドル",
+      "ラフティング",
+      "トレック"
+    ],
+    "title": "ARJS 2027 第2戦 みなかみ大会",
+    "date": "2027-06-12",
+    "month": 6,
+    "region": "関東",
+    "prefecture": "群馬県",
+    "distance_km": 0,
+    "elevation_m": 0,
+    "entry_status": "upcoming",
+    "entry_start_date": "未定",
+    "entry_deadline": "未定",
+    "entry_fee": "未定",
+    "links": {
+      "official": "https://www.facebook.com/arjs.adventurerace",
+      "entry": null,
+      "review": null,
+      "sns": "https://www.facebook.com/arjs.adventurerace",
+      "verified": true,
+      "verified_at": "2026-11-14"
+    },
+    "mandatory_gear": [
+      {
+        "name": "未定（公式要項発表待ち・地図/コンパス・レインウェア・パドル装備等想定）",
+        "category": "ギア"
+      }
+    ],
+    "venue": {
+      "name": "群馬県みなかみ周辺（詳細会場未定）",
+      "mapQuery": "群馬県みなかみ町"
+    },
+    "source": {
+      "portalName": "ARJS公式"
+    }
+  },
+  {
     "id": "arws-expedition-wild-west-2027",
     "category": "adventure",
     "subCategory": "ARWSエクスピディション",
@@ -3300,6 +3462,98 @@
     },
     "source": {
       "portalName": "ARWS公式"
+    }
+  },
+  {
+    "id": "arjs-2027-r3-choshu",
+    "category": "adventure",
+    "subCategory": "ARJS（アドベンチャーレース ジャパンシリーズ）",
+    "elements": [
+      "ARJS",
+      "アドベンチャー",
+      "読図",
+      "パドル",
+      "シーカヤック",
+      "トレック",
+      "夜間"
+    ],
+    "title": "ARJS 2027 第3戦 長州大会",
+    "date": "2027-09-18",
+    "end_date": "2027-09-19",
+    "month": 9,
+    "region": "中国",
+    "prefecture": "山口県",
+    "distance_km": 0,
+    "elevation_m": 0,
+    "entry_status": "upcoming",
+    "entry_start_date": "未定",
+    "entry_deadline": "未定",
+    "entry_fee": "未定",
+    "links": {
+      "official": "https://www.facebook.com/arjs.adventurerace",
+      "entry": null,
+      "review": null,
+      "sns": "https://www.facebook.com/arjs.adventurerace",
+      "verified": true,
+      "verified_at": "2026-11-14"
+    },
+    "mandatory_gear": [
+      {
+        "name": "未定（公式要項発表待ち・地図/コンパス・レインウェア・パドル装備等想定）",
+        "category": "ギア"
+      }
+    ],
+    "venue": {
+      "name": "山口県長州エリア（詳細会場未定）",
+      "mapQuery": "山口県下関市 唐戸市場"
+    },
+    "source": {
+      "portalName": "ARJS公式"
+    }
+  },
+  {
+    "id": "arjs-2027-r4-myoko",
+    "category": "adventure",
+    "subCategory": "ARJS（アドベンチャーレース ジャパンシリーズ）",
+    "elements": [
+      "ARJS",
+      "アドベンチャー",
+      "読図",
+      "パドル",
+      "トレック"
+    ],
+    "title": "ARJS 2027 第4戦 妙高大会",
+    "date": "2027-10-30",
+    "end_date": "2027-10-31",
+    "month": 10,
+    "region": "甲信越",
+    "prefecture": "新潟県",
+    "distance_km": 0,
+    "elevation_m": 0,
+    "entry_status": "upcoming",
+    "entry_start_date": "未定",
+    "entry_deadline": "未定",
+    "entry_fee": "未定",
+    "links": {
+      "official": "https://www.facebook.com/arjs.adventurerace",
+      "entry": null,
+      "review": null,
+      "sns": "https://www.facebook.com/arjs.adventurerace",
+      "verified": true,
+      "verified_at": "2026-11-14"
+    },
+    "mandatory_gear": [
+      {
+        "name": "未定（公式要項発表待ち・地図/コンパス・レインウェア・パドル装備等想定）",
+        "category": "ギア"
+      }
+    ],
+    "venue": {
+      "name": "新潟県妙高エリア（詳細会場未定）",
+      "mapQuery": "新潟県妙高市"
+    },
+    "source": {
+      "portalName": "ARJS公式"
     }
   }
 ]
