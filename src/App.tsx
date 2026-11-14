@@ -189,8 +189,46 @@ export const App: React.FC = () => {
     });
   };
 
-  // フィルター状態
-  const [filters, setFilters] = useState<FilterState>(INITIAL_FILTERS);
+  // フィルター状態（前回の表示条件を localStorage から復元し、変更時に自動保存）
+  const [filters, setFilters] = useState<FilterState>(() => {
+    try {
+      const saved = localStorage.getItem('race_hub_filters');
+      if (!saved) return INITIAL_FILTERS;
+      const parsed = JSON.parse(saved);
+      if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) {
+        return INITIAL_FILTERS;
+      }
+      return {
+        ...INITIAL_FILTERS,
+        ...parsed,
+        selectedCategories: Array.isArray(parsed.selectedCategories)
+          ? parsed.selectedCategories
+          : INITIAL_FILTERS.selectedCategories,
+        excludedCategories: Array.isArray(parsed.excludedCategories)
+          ? parsed.excludedCategories
+          : INITIAL_FILTERS.excludedCategories,
+        selectedElements: Array.isArray(parsed.selectedElements)
+          ? parsed.selectedElements
+          : INITIAL_FILTERS.selectedElements,
+        minDistance:
+          typeof parsed.minDistance === 'number' && !Number.isNaN(parsed.minDistance)
+            ? parsed.minDistance
+            : INITIAL_FILTERS.minDistance,
+        maxDistance:
+          typeof parsed.maxDistance === 'number' && !Number.isNaN(parsed.maxDistance)
+            ? parsed.maxDistance
+            : INITIAL_FILTERS.maxDistance,
+      };
+    } catch {
+      return INITIAL_FILTERS;
+    }
+  });
+
+  useEffect(() => {
+    try {
+      localStorage.setItem('race_hub_filters', JSON.stringify(filters));
+    } catch {}
+  }, [filters]);
 
   // マイ参戦予定（お気に入り）IDリスト
   const [favoriteIds, setFavoriteIds] = useState<string[]>(() => {
