@@ -129,50 +129,109 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({
       onTouchStart={() => setIsPaused(true)}
       onTouchEnd={() => setIsPaused(false)}
     >
-      <div className="max-w-7xl mx-auto px-3 sm:px-4 py-2">
-        <div className="flex items-center justify-between gap-2.5">
-          {/* 左端：サイトブランドロゴ（上段に大きく配置） ＆ その下に更新日時バッジ */}
-          <div className="flex flex-col justify-center shrink-0 pr-1">
-            {/* 上段：HP名称をクリックでページ最上部へスムーズスクロール */}
-            <a
-              href="#"
-              onClick={handleScrollToTop}
-              className="flex items-center gap-1.5 sm:gap-2 group cursor-pointer"
-              title="OUTDOOR RACE HUB ページの先頭へ戻る"
-            >
-              <div className="w-7 h-7 sm:w-9 sm:h-9 rounded-xl bg-teal-600 text-white flex items-center justify-center shadow-md shrink-0 group-hover:bg-teal-500 transition-colors">
-                <Mountain className="w-4 h-4 sm:w-5 sm:h-5 stroke-[2.4]" />
-              </div>
-              <div className="leading-none">
-                <div className="text-sm sm:text-lg font-black tracking-tight text-white flex items-center gap-1 drop-shadow-xs">
-                  <span>OUTDOOR</span>
-                  <span className="text-teal-400">RACE HUB</span>
-                </div>
-                <span className="text-[9px] sm:text-[10px] text-slate-400 font-bold tracking-wide mt-0.5 inline-block">
-                  2026-2027 全国＆中四国
-                </span>
-              </div>
-            </a>
-
-            {/* 下段：ロゴの真下に最新情報更新日時バッジ（いつ時点の最新情報かがひと目で分かる表示） */}
-            <div className="flex items-center gap-1.5 mt-1.5">
-              <div
-                className="flex items-center gap-1.5 px-2 py-0.5 rounded bg-emerald-950/70 border border-emerald-500/50 text-[10px] sm:text-[11px] font-bold text-emerald-300 leading-none whitespace-nowrap shadow-xs"
-                title="全国＆中四国の大会日程・エントリー受付状況・必携装備・ギア特価を常時巡回更新中"
+      <div className="max-w-7xl mx-auto px-2.5 sm:px-4 py-1.5 sm:py-2">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-1.5 md:gap-2.5">
+          {/* 上段（スマホでは左右1行に収める／PCでは左ブロック） */}
+          <div className="flex items-center justify-between md:justify-start gap-2 w-full md:w-auto shrink-0">
+            <div className="flex flex-col justify-center shrink-0 pr-1">
+              {/* 上段：HP名称をクリックでページ最上部へスムーズスクロール */}
+              <a
+                href="#"
+                onClick={handleScrollToTop}
+                className="flex items-center gap-1.5 sm:gap-2 group cursor-pointer"
+                title="OUTDOOR RACE HUB ページの先頭へ戻る"
               >
-                <span className="relative flex h-2 w-2 shrink-0">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
-                </span>
-                <Clock className="w-2.5 h-2.5 text-emerald-400 shrink-0" />
-                <span className="text-slate-300">最新情報:</span>
-                <span className="text-white font-mono font-black">{lastUpdated}</span>
+                <div className="w-7 h-7 sm:w-9 sm:h-9 rounded-xl bg-teal-600 text-white flex items-center justify-center shadow-md shrink-0 group-hover:bg-teal-500 transition-colors">
+                  <Mountain className="w-4 h-4 sm:w-5 sm:h-5 stroke-[2.4]" />
+                </div>
+                <div className="leading-none">
+                  <div className="text-xs sm:text-lg font-black tracking-tight text-white flex items-center gap-1 drop-shadow-xs whitespace-nowrap">
+                    <span>OUTDOOR</span>
+                    <span className="text-teal-400">RACE HUB</span>
+                  </div>
+                  <span className="text-[9px] sm:text-[10px] text-slate-400 font-bold tracking-wide mt-0.5 inline-block">
+                    2026-2027 全国＆中四国
+                  </span>
+                </div>
+              </a>
+
+              {/* PC表示時：ロゴの真下に最新情報更新日時バッジ */}
+              <div className="hidden md:flex items-center gap-1.5 mt-1.5">
+                <div
+                  className="flex items-center gap-1.5 px-2 py-0.5 rounded bg-emerald-950/70 border border-emerald-500/50 text-[10px] sm:text-[11px] font-bold text-emerald-300 leading-none whitespace-nowrap shadow-xs"
+                  title="全国＆中四国の大会日程・エントリー受付状況・必携装備・ギア特価を常時巡回更新中"
+                >
+                  <span className="relative flex h-2 w-2 shrink-0">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+                  </span>
+                  <Clock className="w-2.5 h-2.5 text-emerald-400 shrink-0" />
+                  <span className="text-slate-300">最新情報:</span>
+                  <span className="text-white font-mono font-black">{lastUpdated}</span>
+                </div>
               </div>
+            </div>
+
+            {/* スマホ表示時の右上コントロール（はみ出しゼロ） */}
+            <div className="flex md:hidden items-center gap-1 shrink-0">
+              {onToggleDisplayMode && (
+                <button
+                  onClick={onToggleDisplayMode}
+                  className="inline-flex items-center gap-1 px-2 py-1 rounded-lg border border-slate-700 bg-slate-900 hover:bg-slate-800 text-slate-200 text-[10px] font-bold transition-colors cursor-pointer whitespace-nowrap"
+                  aria-label="PC表示とスマホ表示の切り替え"
+                >
+                  {isPcView ? (
+                    <>
+                      <Smartphone className="w-3 h-3 text-teal-400 shrink-0" />
+                      <span>スマホ版</span>
+                    </>
+                  ) : (
+                    <>
+                      <Monitor className="w-3 h-3 text-amber-400 shrink-0" />
+                      <span>PC版</span>
+                    </>
+                  )}
+                </button>
+              )}
+              <AccessCounter variant="compact" />
+              {onToggleTheme && (
+                <button
+                  onClick={onToggleTheme}
+                  className="p-1.5 rounded-lg border border-slate-700 bg-slate-900 hover:bg-slate-800 text-slate-200 transition-colors cursor-pointer"
+                  aria-label="テーマ切り替え"
+                >
+                  {theme === 'light' ? (
+                    <Moon className="w-3.5 h-3.5 text-slate-200" />
+                  ) : (
+                    <Sun className="w-3.5 h-3.5 text-amber-400" />
+                  )}
+                </button>
+              )}
             </div>
           </div>
 
+          {/* スマホ2段目：最新情報日時 ＋ おすすめ商品専用ページボタン（見切れゼロ） */}
+          <div className="flex md:hidden items-center justify-between gap-2 w-full">
+            <div className="flex items-center gap-1 px-1.5 py-0.5 rounded bg-emerald-950/70 border border-emerald-500/50 text-[10px] font-bold text-emerald-300 leading-none whitespace-nowrap min-w-0">
+              <span className="relative flex h-1.5 w-1.5 shrink-0">
+                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-400"></span>
+              </span>
+              <span className="text-white font-mono font-black truncate">{lastUpdated}</span>
+            </div>
+            {onOpenCatalog && (
+              <button
+                onClick={onOpenCatalog}
+                className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-gradient-to-r from-amber-400 via-orange-400 to-amber-500 text-slate-950 font-black text-[11px] shadow-sm cursor-pointer whitespace-nowrap border border-amber-300 shrink-0"
+              >
+                <ShoppingBag className="w-3 h-3 text-slate-950 shrink-0" />
+                <span>おすすめ商品専用ページ</span>
+                <ChevronRight className="w-3 h-3 shrink-0" />
+              </button>
+            )}
+          </div>
+
           {/* 中央：無限スライド 楽天特価ギアカルーセル */}
-          <div className="relative flex-1 min-w-0 overflow-hidden">
+          <div className="relative w-full md:flex-1 min-w-0 overflow-hidden">
             <div
               ref={scrollRef}
               className="flex items-center gap-2.5 overflow-x-auto no-scrollbar py-0.5"
@@ -250,8 +309,8 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({
             </div>
           </div>
 
-          {/* 右端：2段構成（上段：累計アクセス数 / 下段：＜ ＞ 月マーク） */}
-          <div className="flex flex-col items-end justify-center gap-1 shrink-0">
+          {/* 右端（PC表示のみ）：2段構成（上段：累計アクセス数 / 下段：＜ ＞ 月マーク） */}
+          <div className="hidden md:flex flex-col items-end justify-center gap-1 shrink-0">
             {/* 上段：アクセス数 */}
             <div className="flex items-center gap-1.5">
               {onOpenCatalog && (

@@ -695,7 +695,7 @@ export const App: React.FC = () => {
             onToggleTheme={toggleTheme}
             onOpenCatalog={() => navigateTo('gears')}
             isPcView={isPcView}
-            onToggleDisplayMode={toggleDisplayMode}
+            onToggleDisplayMode={isNarrowScreen || displayMode !== 'auto' ? toggleDisplayMode : undefined}
           />
         </div>
         <UpdateTicker onJumpToTarget={handleJumpToSection} onOpenEvent={handleOpenEventById} />

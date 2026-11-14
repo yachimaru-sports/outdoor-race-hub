@@ -73,12 +73,12 @@ export const AccessCounter: React.FC<AccessCounterProps> = ({ variant = 'compact
   if (variant === 'compact') {
     return (
       <div
-        className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xl bg-slate-900 border border-slate-700/90 text-xs font-black text-slate-100 leading-none shadow-sm select-none hover:border-teal-500 transition-colors"
+        className="inline-flex items-center gap-1 sm:gap-1.5 px-1.5 sm:px-2.5 py-1 rounded-xl bg-slate-900 border border-slate-700/90 text-xs font-black text-slate-100 leading-none shadow-sm select-none hover:border-teal-500 transition-colors shrink-0"
         title="サイト累計アクセス数（PC・スマホ全端末合算）"
       >
-        <Eye className="w-4 h-4 text-teal-400 shrink-0" />
-        <span className="text-[11px] font-bold text-slate-300">累計アクセス</span>
-        <span className="px-2 py-0.5 rounded bg-teal-600 text-white font-mono text-xs font-black shadow-inner tracking-wide">
+        <Eye className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-teal-400 shrink-0" />
+        <span className="text-[10px] sm:text-[11px] font-bold text-slate-300 hidden sm:inline">累計アクセス</span>
+        <span className="px-1.5 sm:px-2 py-0.5 rounded bg-teal-600 text-white font-mono text-[11px] sm:text-xs font-black shadow-inner tracking-wide">
           {count.toLocaleString()}
         </span>
       </div>
