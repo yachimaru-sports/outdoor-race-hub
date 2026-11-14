@@ -1,64 +1,5 @@
 [
   {
-    "id": "arws-mechukha-india-2026",
-    "category": "adventure",
-    "subCategory": "ARWS世界選手権予選 (Qualifier)",
-    "elements": [
-      "ARWS",
-      "世界選手権予選",
-      "アドベンチャー",
-      "読図",
-      "MTB",
-      "パドル",
-      "トレック",
-      "4日以上"
-    ],
-    "title": "Adventure @ Mechukha 2026（インド・ヒマラヤ ARWS Qualifier 450km・5日間）",
-    "date": "2026-11-14",
-    "month": 11,
-    "region": "海外",
-    "prefecture": "インド",
-    "distance_km": 450,
-    "elevation_m": 15000,
-    "entry_status": "closed",
-    "entry_start_date": "2026-01-15",
-    "entry_deadline": "2026-10-31",
-    "entry_fee": "450,000円",
-    "links": {
-      "official": "https://arworldseries.com/races/adventure-mechukha-india-qualifier-2026-india",
-      "entry": "https://arworldseries.com/races/adventure-mechukha-india-qualifier-2026-india",
-      "review": null,
-      "sns": null,
-      "verified": true,
-      "verified_at": "2026-11-14"
-    },
-    "mandatory_gear": [
-      {
-        "name": "MTB・ヘルメット・修理キット",
-        "category": "ギア"
-      },
-      {
-        "name": "ラフティング/カヤック装備一式",
-        "category": "ギア"
-      },
-      {
-        "name": "高標高寒冷地用防寒シェル・ダウン",
-        "category": "ウェア"
-      },
-      {
-        "name": "GPS/地図/コンパス/ヘッドランプ",
-        "category": "ナビゲーション"
-      }
-    ],
-    "venue": {
-      "name": "Mechukha, Arunachal Pradesh",
-      "mapQuery": "Mechukha India"
-    },
-    "source": {
-      "portalName": "ARWS公式"
-    }
-  },
-  {
     "id": "tour-de-okinawa-2026",
     "category": "cycling",
     "subCategory": "市民ロード最高峰200km",
@@ -82,7 +23,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-14"
+      "verified_at": "2026-11-15"
     },
     "mandatory_gear": [
       {
@@ -140,7 +81,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-14"
+      "verified_at": "2026-11-15"
     },
     "mandatory_gear": [
       {
@@ -203,7 +144,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-14",
+      "verified_at": "2026-11-15",
       "official_stale": true
     },
     "mandatory_gear": [
@@ -262,7 +203,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-14"
+      "verified_at": "2026-11-15"
     },
     "mandatory_gear": [
       {
@@ -326,7 +267,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-14"
+      "verified_at": "2026-11-15"
     },
     "mandatory_gear": [
       {
@@ -389,7 +330,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-14"
+      "verified_at": "2026-11-15"
     },
     "mandatory_gear": [
       {
@@ -439,7 +380,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-14"
+      "verified_at": "2026-11-15"
     },
     "mandatory_gear": [
       {
@@ -488,7 +429,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-14"
+      "verified_at": "2026-11-15"
     },
     "mandatory_gear": [
       {
@@ -541,7 +482,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-14"
+      "verified_at": "2026-11-15"
     },
     "mandatory_gear": [
       {
@@ -592,7 +533,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-14"
+      "verified_at": "2026-11-15"
     },
     "mandatory_gear": [
       {
@@ -663,7 +604,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-14"
+      "verified_at": "2026-11-15"
     },
     "mandatory_gear": [
       {
@@ -719,7 +660,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-14"
+      "verified_at": "2026-11-15"
     },
     "mandatory_gear": [
       {
@@ -769,7 +710,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-14"
+      "verified_at": "2026-11-15"
     },
     "mandatory_gear": [
       {
@@ -823,7 +764,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-14"
+      "verified_at": "2026-11-15"
     },
     "mandatory_gear": [
       {
@@ -880,7 +821,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-14"
+      "verified_at": "2026-11-15"
     },
     "mandatory_gear": [
       {
@@ -939,7 +880,7 @@
       "review": "",
       "sns": "",
       "verified": true,
-      "verified_at": "2026-11-14"
+      "verified_at": "2026-11-15"
     },
     "mandatory_gear": [
       {
@@ -1053,7 +994,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-14"
+      "verified_at": "2026-11-15"
     },
     "mandatory_gear": [
       {
@@ -1098,7 +1039,7 @@
     "prefecture": "山口県",
     "distance_km": 2.3,
     "elevation_m": 270,
-    "entry_status": "open",
+    "entry_status": "closing_soon",
     "entry_start_date": "2026-10-01",
     "entry_deadline": "2026-12-06",
     "entry_fee": "2,000円",
@@ -1108,7 +1049,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-14"
+      "verified_at": "2026-11-15"
     },
     "mandatory_gear": [
       "くだまつ笠戸島アイランドトレイル2027へのエントリー必須",
@@ -1123,7 +1064,7 @@
     },
     "source": "https://kasadojima-islandtrail.com/vertical-race",
     "added_at": "2026-11-14",
-    "updated_at": "2026-11-14"
+    "updated_at": "2026-11-15"
   },
   {
     "id": "ise-toba-shima-cycle-2027",
@@ -1150,7 +1091,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-14"
+      "verified_at": "2026-11-15"
     },
     "mandatory_gear": [
       {
@@ -1203,7 +1144,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-14"
+      "verified_at": "2026-11-15"
     },
     "mandatory_gear": [
       {
@@ -1262,7 +1203,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-14"
+      "verified_at": "2026-11-15"
     },
     "mandatory_gear": [
       {
@@ -1310,7 +1251,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-14"
+      "verified_at": "2026-11-15"
     },
     "mandatory_gear": [
       {
@@ -1362,7 +1303,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-14"
+      "verified_at": "2026-11-15"
     },
     "mandatory_gear": [
       {
@@ -1420,7 +1361,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-14"
+      "verified_at": "2026-11-15"
     },
     "mandatory_gear": [
       {
@@ -1476,7 +1417,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-14"
+      "verified_at": "2026-11-15"
     },
     "mandatory_gear": [
       {
@@ -1526,7 +1467,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-14"
+      "verified_at": "2026-11-15"
     },
     "mandatory_gear": [
       {
@@ -1589,7 +1530,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-14"
+      "verified_at": "2026-11-15"
     },
     "mandatory_gear": [
       {
@@ -1648,7 +1589,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-14"
+      "verified_at": "2026-11-15"
     },
     "mandatory_gear": [
       {
@@ -1712,7 +1653,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-14"
+      "verified_at": "2026-11-15"
     },
     "mandatory_gear": [
       {
@@ -1761,7 +1702,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-14",
+      "verified_at": "2026-11-15",
       "official_stale": true
     },
     "mandatory_gear": [
@@ -1816,7 +1757,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-14",
+      "verified_at": "2026-11-15",
       "official_stale": true
     },
     "mandatory_gear": [
@@ -1872,7 +1813,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-14"
+      "verified_at": "2026-11-15"
     },
     "mandatory_gear": [
       {
@@ -1931,7 +1872,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-14"
+      "verified_at": "2026-11-15"
     },
     "mandatory_gear": [
       {
@@ -1987,7 +1928,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-14"
+      "verified_at": "2026-11-15"
     },
     "mandatory_gear": [
       {
@@ -2049,7 +1990,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-14",
+      "verified_at": "2026-11-15",
       "official_stale": true
     },
     "mandatory_gear": [
@@ -2102,7 +2043,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-14"
+      "verified_at": "2026-11-15"
     },
     "mandatory_gear": [
       {
@@ -2152,7 +2093,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-14"
+      "verified_at": "2026-11-15"
     },
     "mandatory_gear": [
       {
@@ -2204,7 +2145,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-14"
+      "verified_at": "2026-11-15"
     },
     "mandatory_gear": [
       {
@@ -2256,7 +2197,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-14"
+      "verified_at": "2026-11-15"
     },
     "mandatory_gear": [
       {
@@ -2334,7 +2275,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-14",
+      "verified_at": "2026-11-15",
       "official_stale": true
     },
     "mandatory_gear": [
@@ -2396,7 +2337,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-14"
+      "verified_at": "2026-11-15"
     },
     "mandatory_gear": [
       {
@@ -2455,7 +2396,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-14",
+      "verified_at": "2026-11-15",
       "official_stale": true
     },
     "mandatory_gear": [
@@ -2537,7 +2478,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-14",
+      "verified_at": "2026-11-15",
       "official_stale": true
     },
     "mandatory_gear": [
@@ -2591,7 +2532,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-14"
+      "verified_at": "2026-11-15"
     },
     "mandatory_gear": [
       {
@@ -2661,7 +2602,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-14"
+      "verified_at": "2026-11-15"
     },
     "mandatory_gear": [
       {
@@ -2717,7 +2658,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-14"
+      "verified_at": "2026-11-15"
     },
     "mandatory_gear": [
       {
@@ -2798,7 +2739,7 @@
     "prefecture": "岐阜県",
     "distance_km": 0,
     "elevation_m": 0,
-    "entry_status": "upcoming",
+    "entry_status": "open",
     "entry_start_date": "未定",
     "entry_deadline": "未定",
     "entry_fee": "未定",
@@ -2808,7 +2749,7 @@
       "review": null,
       "sns": "https://www.facebook.com/arjs.adventurerace",
       "verified": true,
-      "verified_at": "2026-11-14"
+      "verified_at": "2026-11-15"
     },
     "mandatory_gear": [
       {
@@ -2822,7 +2763,8 @@
     },
     "source": {
       "portalName": "ARJS公式"
-    }
+    },
+    "updated_at": "2026-11-15"
   },
   {
     "id": "arws-bimbache-morocco-2027",
@@ -2855,7 +2797,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-14"
+      "verified_at": "2026-11-15"
     },
     "mandatory_gear": [
       {
@@ -2909,7 +2851,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-14"
+      "verified_at": "2026-11-15"
     },
     "mandatory_gear": [
       {
@@ -2970,7 +2912,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-14"
+      "verified_at": "2026-11-15"
     },
     "mandatory_gear": [
       {
@@ -3024,7 +2966,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-14"
+      "verified_at": "2026-11-15"
     },
     "mandatory_gear": [
       {
@@ -3079,7 +3021,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-14",
+      "verified_at": "2026-11-15",
       "official_stale": true
     },
     "mandatory_gear": [
@@ -3136,7 +3078,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-14"
+      "verified_at": "2026-11-15"
     },
     "mandatory_gear": [
       {
@@ -3199,7 +3141,7 @@
     "prefecture": "群馬県",
     "distance_km": 0,
     "elevation_m": 0,
-    "entry_status": "upcoming",
+    "entry_status": "open",
     "entry_start_date": "未定",
     "entry_deadline": "未定",
     "entry_fee": "未定",
@@ -3209,7 +3151,7 @@
       "review": null,
       "sns": "https://www.facebook.com/arjs.adventurerace",
       "verified": true,
-      "verified_at": "2026-11-14"
+      "verified_at": "2026-11-15"
     },
     "mandatory_gear": [
       {
@@ -3223,7 +3165,8 @@
     },
     "source": {
       "portalName": "ARJS公式"
-    }
+    },
+    "updated_at": "2026-11-15"
   },
   {
     "id": "arws-expedition-wild-west-2027",
@@ -3255,7 +3198,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-14"
+      "verified_at": "2026-11-15"
     },
     "mandatory_gear": [
       {
@@ -3304,7 +3247,7 @@
     "prefecture": "フランス",
     "distance_km": 350,
     "elevation_m": 16000,
-    "entry_status": "upcoming",
+    "entry_status": "open",
     "entry_start_date": "2026-11-15",
     "entry_deadline": "2027-06-15",
     "entry_fee": "620,000円",
@@ -3314,7 +3257,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-14"
+      "verified_at": "2026-11-15"
     },
     "mandatory_gear": [
       {
@@ -3340,7 +3283,8 @@
     },
     "source": {
       "portalName": "ARWS公式"
-    }
+    },
+    "updated_at": "2026-11-15"
   },
   {
     "id": "arws-endurance-quest-saimaa-2027",
@@ -3373,7 +3317,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-14"
+      "verified_at": "2026-11-15"
     },
     "mandatory_gear": [
       {
@@ -3432,7 +3376,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-14"
+      "verified_at": "2026-11-15"
     },
     "mandatory_gear": [
       {
@@ -3485,7 +3429,7 @@
     "prefecture": "山口県",
     "distance_km": 0,
     "elevation_m": 0,
-    "entry_status": "upcoming",
+    "entry_status": "open",
     "entry_start_date": "未定",
     "entry_deadline": "未定",
     "entry_fee": "未定",
@@ -3495,7 +3439,7 @@
       "review": null,
       "sns": "https://www.facebook.com/arjs.adventurerace",
       "verified": true,
-      "verified_at": "2026-11-14"
+      "verified_at": "2026-11-15"
     },
     "mandatory_gear": [
       {
@@ -3509,7 +3453,8 @@
     },
     "source": {
       "portalName": "ARJS公式"
-    }
+    },
+    "updated_at": "2026-11-15"
   },
   {
     "id": "arjs-2027-r4-myoko",
@@ -3530,7 +3475,7 @@
     "prefecture": "新潟県",
     "distance_km": 0,
     "elevation_m": 0,
-    "entry_status": "upcoming",
+    "entry_status": "open",
     "entry_start_date": "未定",
     "entry_deadline": "未定",
     "entry_fee": "未定",
@@ -3540,7 +3485,7 @@
       "review": null,
       "sns": "https://www.facebook.com/arjs.adventurerace",
       "verified": true,
-      "verified_at": "2026-11-14"
+      "verified_at": "2026-11-15"
     },
     "mandatory_gear": [
       {
@@ -3554,6 +3499,7 @@
     },
     "source": {
       "portalName": "ARJS公式"
-    }
+    },
+    "updated_at": "2026-11-15"
   }
 ]
