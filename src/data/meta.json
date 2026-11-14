@@ -1,5 +1,5 @@
 {
-  "last_updated_at": "2026-11-13T12:54:44.349Z",
+  "last_updated_at": "2026-11-14T09:05:45.714976+09:00",
   "events_count": 60,
   "deals_count": 28,
   "gears_count": 63,
@@ -12,7 +12,7 @@
     "events_archived": 0,
     "links_fixed": 0,
     "links_removed": 0,
-    "deals_added": 3,
-    "price_drops": 1
+    "deals_added": 1,
+    "price_drops": 0
   }
 }

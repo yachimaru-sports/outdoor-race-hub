@@ -385,7 +385,7 @@
     "entry_fee": "モシコム確認",
     "entry_status": "open",
     "entry_start_date": null,
-    "entry_deadline": "",
+    "entry_deadline": null,
     "links": {
       "official": null,
       "entry": "https://moshicom.com/154590",
@@ -1046,7 +1046,7 @@
     "entry_fee": "モシコム確認",
     "entry_status": "open",
     "entry_start_date": null,
-    "entry_deadline": "",
+    "entry_deadline": null,
     "links": {
       "official": null,
       "entry": "https://moshicom.com/154736",
@@ -1097,7 +1097,7 @@
     "entry_fee": "モシコム確認",
     "entry_status": "open",
     "entry_start_date": null,
-    "entry_deadline": "",
+    "entry_deadline": null,
     "links": {
       "official": null,
       "entry": "https://moshicom.com/156226",
@@ -1148,7 +1148,7 @@
     "entry_fee": "モシコム確認",
     "entry_status": "open",
     "entry_start_date": null,
-    "entry_deadline": "",
+    "entry_deadline": null,
     "links": {
       "official": null,
       "entry": "https://moshicom.com/156313",
@@ -1313,7 +1313,7 @@
     "prefecture": "徳島県",
     "distance_km": 36,
     "elevation_m": 2250,
-    "entry_status": "open",
+    "entry_status": "closing_soon",
     "entry_start_date": "2026-10-06",
     "entry_deadline": "2026-12-05",
     "entry_fee": "11,000円",
