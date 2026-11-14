@@ -2,8 +2,12 @@ name: "Daily Auto Sync & Update (Every Morning 8:00 JST)"
 
 on:
   schedule:
-    # 毎朝 08:00 JST 前後に確実に完了するよう 07:50 JST（UTC 22:50）に定期自動実行（毎時00分の遅延回避）
+    # 本番: 07:50 JST（UTC 22:50）。毎時00分の混雑を避けて 8:00 前後の完了を狙う
     - cron: '50 22 * * *'
+    # 予備1: 08:40 JST（UTC 23:40）… 本番が GitHub 側で起動されなかった／失敗した場合の自動再実行
+    - cron: '40 23 * * *'
+    # 予備2: 10:15 JST（UTC 01:15）… 最終リトライ
+    - cron: '15 1 * * *'
   workflow_dispatch:
     inputs:
       update_trend:
@@ -16,13 +20,44 @@ permissions:
   contents: write
   pages: write
   id-token: write
+  actions: read
 
 concurrency:
   group: 'pages'
   cancel-in-progress: false
 
 jobs:
+  # 予備スケジュールで起動した場合、本日（JST）すでに成功していれば何もしない（二重更新・API浪費の防止）
+  guard:
+    runs-on: ubuntu-latest
+    outputs:
+      run: ${{ steps.check.outputs.run }}
+    steps:
+      - name: "本日分が成功済みかを確認"
+        id: check
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ "${{ github.event_name }}" != "schedule" ]; then
+            echo "手動実行のため必ず実行します"
+            echo "run=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          TODAY_JST=$(TZ=Asia/Tokyo date +%F)
+          START_UTC=$(date -u -d "${TODAY_JST} 00:00 +0900" +%FT%TZ)
+          COUNT=$(gh run list --repo "$GITHUB_REPOSITORY" --workflow daily_sync.yml \
+                    --status success --created ">=${START_UTC}" --json databaseId --jq 'length' || echo 0)
+          echo "本日(${TODAY_JST} JST)の成功済み実行数: ${COUNT}"
+          if [ "${COUNT}" -gt 0 ]; then
+            echo "本日分は更新済みのためスキップします"
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          fi
+
   daily-sync-and-deploy:
+    needs: guard
+    if: needs.guard.outputs.run == 'true'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -60,12 +95,24 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: node scripts/refresh_gears.mjs
 
+      - name: "Step 1-R: 装備更新失敗時は前日の正常データに戻す"
+        if: ${{ steps.gears.outcome == 'failure' }}
+        run: git checkout -- src/data/gears.json src/data/deals.json src/data/meta.json
+
       - name: "Step 2: 大会データ自動更新（終了アーカイブ・次回調査・新着大会追加・リンク内容照合＆修復）"
+        id: events
+        continue-on-error: true
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: node scripts/update_events.mjs
 
-      - name: "Step 3: Googleスプレッドシート＆マスターCSV同期"
+      - name: "Step 2-R: 大会更新失敗時は前日の正常データに戻す"
+        if: ${{ steps.events.outcome == 'failure' }}
+        run: git checkout -- src/data/events.json src/data/events_archive.json src/data/changelog.json
+
+      - name: "Step 3: Googleスプレッドシート＆マスターCSV同期（失敗してもサイト更新は継続）"
+        id: sheets
+        continue-on-error: true
         env:
           RAKUTEN_AFFILIATE_ID: ${{ secrets.RAKUTEN_AFFILIATE_ID }}
           GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
@@ -84,18 +131,33 @@ jobs:
           npm run build
           cp dist/index.html dist/404.html
 
-      - name: "Step 6: 検証済みデータをコミット＆プッシュ"
+      - name: "Step 6: 検証済みデータをコミット＆プッシュ（失敗しても公開は継続）"
+        id: push
+        continue-on-error: true
         run: |
           git config user.name "outdoor-race-hub-bot"
           git config user.email "bot@outdoor-race-hub.local"
-          git add src/data/events.json src/data/events_archive.json src/data/deals.json src/data/gears.json src/data/meta.json src/data/changelog.json outdoor_race_hub_events_master.csv
-          if ! git diff --staged --quiet; then
-            git commit -m "chore(auto): 毎朝8時定期同期（装備は商品ページ実測・大会リンクはHTTP検証済み）"
-            git pull --rebase origin main
-            git push origin main
-          else
+          # Git管理下のデータファイルだけを追加（.gitignore 対象の CSV 等を指定すると exit 1 で停止するため）
+          for f in src/data/events.json src/data/events_archive.json src/data/deals.json src/data/gears.json src/data/meta.json src/data/changelog.json; do
+            if [ -f "$f" ] && ! git check-ignore -q "$f"; then git add -- "$f"; fi
+          done
+          if git diff --staged --quiet; then
             echo "データ変更なし（差分なしのためプッシュをスキップします）"
+            exit 0
           fi
+          git commit -m "chore(auto): 毎朝8時定期同期（装備は商品ページ実測・大会リンクはHTTP検証済み）"
+          # 他のコミットと競合した場合に備えて最大3回リトライ
+          for i in 1 2 3; do
+            if git pull --rebase --autostash origin main && git push origin main; then
+              echo "プッシュ成功（${i}回目）"
+              exit 0
+            fi
+            echo "プッシュ失敗（${i}回目）。10秒後に再試行します"
+            git rebase --abort 2>/dev/null || true
+            sleep 10
+          done
+          exit 1
+
       - name: "Step 7: Setup Pages"
         uses: actions/configure-pages@v4
 
@@ -108,8 +170,12 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
-      - name: "Step 10: 装備更新が失敗していた場合は実行を失敗扱いにして通知（サイトは前日の正常データで公開済み）"
-        if: ${{ steps.gears.outcome == 'failure' }}
+      - name: "Step 10: 一部の処理が失敗していた場合は実行を失敗扱いにして通知（サイト公開は完了済み）"
+        if: ${{ steps.gears.outcome == 'failure' || steps.events.outcome == 'failure' || steps.sheets.outcome == 'failure' || steps.push.outcome == 'failure' }}
         run: |
-          echo "::error::装備カタログの自動更新が検証に失敗しました。前日の正常データで公開を継続しています。Step 1 のログを確認してください。"
+          [ "${{ steps.gears.outcome }}" = "failure" ]  && echo "::error::Step 1 装備カタログ更新が失敗しました（前日データで公開）"
+          [ "${{ steps.events.outcome }}" = "failure" ] && echo "::error::Step 2 大会データ更新が失敗しました（前日データで公開）"
+          [ "${{ steps.sheets.outcome }}" = "failure" ] && echo "::error::Step 3 スプレッドシート同期が失敗しました"
+          [ "${{ steps.push.outcome }}" = "failure" ]   && echo "::error::Step 6 データのプッシュが失敗しました（サイトは最新データで公開済み）"
+          echo "失敗扱いにするため、予備スケジュールで自動再実行されます"
           exit 1
