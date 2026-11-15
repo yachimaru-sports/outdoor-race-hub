@@ -1,5 +1,5 @@
 {
-  "last_updated_at": "2026-11-14T23:27:55.505Z",
+  "last_updated_at": "2026-11-15T00:21:45.109Z",
   "events_count": 60,
   "deals_count": 28,
   "gears_count": 63,
@@ -8,8 +8,8 @@
   "gear_removed": [],
   "run_summary": {
     "events_added": 0,
-    "events_updated": 6,
-    "events_archived": 1,
+    "events_updated": 0,
+    "events_archived": 0,
     "links_fixed": 0,
     "links_removed": 0,
     "deals_added": 0,
