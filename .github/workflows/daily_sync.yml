@@ -110,6 +110,11 @@ jobs:
         if: ${{ steps.events.outcome == 'failure' }}
         run: git checkout -- src/data/events.json src/data/events_archive.json src/data/changelog.json
 
+      - name: "Step 2.5: 外部ポータル同期（人力企画＆トレイルランナー.JP）"
+        id: portals
+        continue-on-error: true
+        run: node scripts/sync_external_portals.mjs
+
       - name: "Step 3: Googleスプレッドシート＆マスターCSV同期（失敗してもサイト更新は継続）"
         id: sheets
         continue-on-error: true

@@ -23,6 +23,9 @@ function detectPortal(e) {
   if (allUrls.includes('moshicom.com')) return 'モシコム';
   if (allUrls.includes('runnet.jp')) return 'RUNNET';
   if (allUrls.includes('toretore') || e.id.startsWith('toretore-')) return 'とれとれバイク';
+  if (allUrls.includes('outdoor-sports.info')) return '人力企画';
+  if (allUrls.includes('adventure1series.com')) return 'A1シリーズ';
+  if (allUrls.includes('trailrunner.jp')) return 'トレイルランナー.JP';
   if (allUrls.includes('navigames') || allUrls.includes('orienteering')) return 'ナビゲーム';
   if (allUrls.includes('theomm.jp')) return 'OMM公式';
   if (allUrls.includes('utmb.world') || e.id.includes('utmb')) return 'UTMB公式';

@@ -53,7 +53,7 @@ export const ToretoreBanner: React.FC<ToretoreBannerProps> = ({
           </span>
         </div>
 
-        <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-0.5">
+        <div className="flex flex-wrap items-center gap-1.5 py-0.5">
           <span className="text-xs font-black text-slate-500 dark:text-slate-400 shrink-0 mr-0.5">
             情報元・ポータル:
           </span>
@@ -139,6 +139,42 @@ export const ToretoreBanner: React.FC<ToretoreBannerProps> = ({
           >
             <Compass className="w-3 h-3 text-teal-700" />
             <span>ナビゲーム</span>
+            <ExternalLink className="w-2.5 h-2.5 opacity-60" />
+          </a>
+
+          <a
+            href="https://www.outdoor-sports.info/races-events"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 text-xs font-black text-rose-900 dark:text-rose-200 bg-rose-50 dark:bg-rose-950/60 px-2.5 py-1 rounded-full border border-rose-300 dark:border-rose-700 shadow-2xs hover:bg-rose-100 transition-all shrink-0"
+            title="人力企画（OUTDOOR SPORTS SQUARE）レース・イベント"
+          >
+            <Mountain className="w-3 h-3 text-rose-600 dark:text-rose-400" />
+            <span>人力企画</span>
+            <ExternalLink className="w-2.5 h-2.5 opacity-60" />
+          </a>
+
+          <a
+            href="https://adventure1series.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 text-xs font-black text-violet-900 dark:text-violet-200 bg-violet-50 dark:bg-violet-950/60 px-2.5 py-1 rounded-full border border-violet-300 dark:border-violet-700 shadow-2xs hover:bg-violet-100 transition-all shrink-0"
+            title="Adventure 1（アドベンチャーレース A1シリーズ）公式"
+          >
+            <Globe className="w-3 h-3 text-violet-600 dark:text-violet-400" />
+            <span>A1シリーズ</span>
+            <ExternalLink className="w-2.5 h-2.5 opacity-60" />
+          </a>
+
+          <a
+            href="https://trailrunner.jp/taikai.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 text-xs font-black text-lime-900 dark:text-lime-200 bg-lime-50 dark:bg-lime-950/60 px-2.5 py-1 rounded-full border border-lime-300 dark:border-lime-700 shadow-2xs hover:bg-lime-100 transition-all shrink-0"
+            title="トレイルランナー.JP（国内・海外トレイルランニング大会情報）"
+          >
+            <Mountain className="w-3 h-3 text-lime-700 dark:text-lime-400" />
+            <span>トレイルランナー.JP</span>
             <ExternalLink className="w-2.5 h-2.5 opacity-60" />
           </a>
         </div>

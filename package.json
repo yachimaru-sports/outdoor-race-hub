@@ -9,6 +9,7 @@
     "build": "node scripts/verify_site_preflight.mjs && tsc && vite build && node scripts/generate_seo.mjs",
     "preview": "vite preview",
     "auto-update": "node scripts/auto_update.mjs",
+    "sync:portals": "node scripts/sync_external_portals.mjs",
     "check:duplicates": "node scripts/audit-duplicates.mjs",
     "fix:duplicates": "node scripts/audit-duplicates.mjs --fix",
     "check:links": "node scripts/verify-links.mjs",
