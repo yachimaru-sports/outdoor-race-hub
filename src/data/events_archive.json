@@ -4897,5 +4897,177 @@
       "portalName": "ARWS公式"
     },
     "archived_at": "2026-11-15"
+  },
+  {
+    "id": "tour-de-okinawa-2026",
+    "category": "cycling",
+    "subCategory": "市民ロード最高峰200km",
+    "elements": [
+      "ロード"
+    ],
+    "title": "ツール・ド・おきなわ 2026（沖縄・名護市 市民レース200km）",
+    "date": "2026-11-15",
+    "month": 11,
+    "region": "九州",
+    "prefecture": "沖縄県",
+    "distance_km": 200,
+    "elevation_m": 2600,
+    "entry_status": "closed",
+    "entry_start_date": "2026-08-01",
+    "entry_deadline": "2026-11-05",
+    "entry_fee": "13,000円",
+    "links": {
+      "official": "https://www.tour-de-okinawa.jp/",
+      "entry": "https://www.tour-de-okinawa.jp/",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-15"
+    },
+    "mandatory_gear": [
+      {
+        "name": "JCF公認サイクルヘルメット＆グローブ",
+        "category": "ウェア"
+      },
+      {
+        "name": "高輝度フロントライト＆リアレッドライト（トンネル通過必須）",
+        "category": "ライト"
+      },
+      {
+        "name": "携帯マルチツール・予備チューブ2本・タイヤレバー・携帯ポンプ",
+        "category": "ギア"
+      },
+      {
+        "name": "サイクルボトル水分＆高カロリー補給食",
+        "category": "補給"
+      },
+      {
+        "name": "ウインドブレーカー・レインジレ",
+        "category": "ウェア"
+      }
+    ],
+    "venue": {
+      "name": "21世紀の森体育館（沖縄県名護市大南2-1-1）",
+      "mapQuery": "沖縄県名護市 21世紀の森体育館"
+    },
+    "source": {
+      "portalName": "スポエンCYCLE"
+    },
+    "archived_at": "2026-11-16"
+  },
+  {
+    "id": "mannou-rogaining-2026",
+    "category": "adventure",
+    "subCategory": "ロゲイニング・読図",
+    "elements": [
+      "読図",
+      "ロゲイニング",
+      "オリエンテーリング"
+    ],
+    "title": "まんのうロゲイニング 2026（香川・道の駅ことなみ）",
+    "date": "2026-11-15",
+    "month": 11,
+    "region": "四国",
+    "prefecture": "香川県",
+    "distance_km": 22,
+    "elevation_m": 600,
+    "entry_status": "closed",
+    "entry_start_date": "2026-09-03",
+    "entry_deadline": "2026-11-02",
+    "entry_fee": "4,500円",
+    "links": {
+      "official": "https://www.outdoor-sports.info/mannou-rogaining",
+      "entry": "https://www.outdoor-sports.info/mannou-rogaining",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-15"
+    },
+    "mandatory_gear": [
+      {
+        "name": "プレートコンパス（シルバコンパス等・方位磁石）",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "デジタルカメラまたはスマートフォン（CP撮影・集計用）",
+        "category": "ギア"
+      },
+      {
+        "name": "ゴアテックス等 防水透湿レインジャケット",
+        "category": "ウェア"
+      },
+      {
+        "name": "ファーストエイドキット（絆創膏・テーピング・消毒薬）",
+        "category": "エイド"
+      },
+      {
+        "name": "行動食（エナジージェル等）＆水分1.0L以上",
+        "category": "補給"
+      }
+    ],
+    "venue": {
+      "name": "道の駅ことなみ エピアみかど（香川県仲多度郡まんのう町川東2070-67）",
+      "mapQuery": "香川県まんのう町 道の駅ことなみ"
+    },
+    "source": {
+      "portalName": "ナビゲーム"
+    },
+    "archived_at": "2026-11-16"
+  },
+  {
+    "id": "trjp-arataki-samurai-trail-2027",
+    "category": "trail",
+    "subCategory": "トレイルランニング",
+    "elements": [
+      "トレック"
+    ],
+    "title": "荒滝SAMURAIトレイル 2027（山口県）",
+    "date": "2027-02-27",
+    "month": 2,
+    "region": "中国",
+    "prefecture": "山口県",
+    "distance_km": 22,
+    "elevation_m": 1400,
+    "entry_fee": "公式サイト参照",
+    "entry_status": "open",
+    "entry_deadline": "2027-02-27",
+    "links": {
+      "official": null,
+      "entry": null,
+      "review": null,
+      "sns": null,
+      "verified": false,
+      "verified_at": "2026-11-16"
+    },
+    "mandatory_gear": [
+      {
+        "name": "トレイルランニングシューズ・ザック",
+        "category": "ギア"
+      },
+      {
+        "name": "レインジャケット（防風・防水シェル）",
+        "category": "ウェア"
+      },
+      {
+        "name": "水分・行動食・マイカップ",
+        "category": "補給"
+      },
+      {
+        "name": "ファーストエイドキット・携帯電話・保険証",
+        "category": "エイド"
+      }
+    ],
+    "venue": {
+      "name": "2027年は未発表（2026年実績：旧吉部小学校、宇部市東吉部3397）",
+      "mapQuery": "山口県 2027年は未発表（2026年実績：旧吉部小学校、宇部市東吉部3397）"
+    },
+    "source": {
+      "portalName": "トレイルランナー.JP",
+      "portalUrl": "https://trailrunner.jp/race-detail-arataki-samurai-trail.html"
+    },
+    "added_at": "2026-11-16",
+    "updated_at": "2026-11-16",
+    "archived_at": "2026-11-16",
+    "archive_reason": "有効リンク確認不可のため退避"
   }
 ]

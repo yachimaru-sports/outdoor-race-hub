@@ -1,119 +1,5 @@
 [
   {
-    "id": "tour-de-okinawa-2026",
-    "category": "cycling",
-    "subCategory": "市民ロード最高峰200km",
-    "elements": [
-      "ロード"
-    ],
-    "title": "ツール・ド・おきなわ 2026（沖縄・名護市 市民レース200km）",
-    "date": "2026-11-15",
-    "month": 11,
-    "region": "九州",
-    "prefecture": "沖縄県",
-    "distance_km": 200,
-    "elevation_m": 2600,
-    "entry_status": "closed",
-    "entry_start_date": "2026-08-01",
-    "entry_deadline": "2026-11-05",
-    "entry_fee": "13,000円",
-    "links": {
-      "official": "https://www.tour-de-okinawa.jp/",
-      "entry": "https://www.tour-de-okinawa.jp/",
-      "review": null,
-      "sns": null,
-      "verified": true,
-      "verified_at": "2026-11-15"
-    },
-    "mandatory_gear": [
-      {
-        "name": "JCF公認サイクルヘルメット＆グローブ",
-        "category": "ウェア"
-      },
-      {
-        "name": "高輝度フロントライト＆リアレッドライト（トンネル通過必須）",
-        "category": "ライト"
-      },
-      {
-        "name": "携帯マルチツール・予備チューブ2本・タイヤレバー・携帯ポンプ",
-        "category": "ギア"
-      },
-      {
-        "name": "サイクルボトル水分＆高カロリー補給食",
-        "category": "補給"
-      },
-      {
-        "name": "ウインドブレーカー・レインジレ",
-        "category": "ウェア"
-      }
-    ],
-    "venue": {
-      "name": "21世紀の森体育館（沖縄県名護市大南2-1-1）",
-      "mapQuery": "沖縄県名護市 21世紀の森体育館"
-    },
-    "source": {
-      "portalName": "スポエンCYCLE"
-    }
-  },
-  {
-    "id": "mannou-rogaining-2026",
-    "category": "adventure",
-    "subCategory": "ロゲイニング・読図",
-    "elements": [
-      "読図",
-      "ロゲイニング",
-      "オリエンテーリング"
-    ],
-    "title": "まんのうロゲイニング 2026（香川・道の駅ことなみ）",
-    "date": "2026-11-15",
-    "month": 11,
-    "region": "四国",
-    "prefecture": "香川県",
-    "distance_km": 22,
-    "elevation_m": 600,
-    "entry_status": "closed",
-    "entry_start_date": "2026-09-03",
-    "entry_deadline": "2026-11-02",
-    "entry_fee": "4,500円",
-    "links": {
-      "official": "https://www.outdoor-sports.info/mannou-rogaining",
-      "entry": "https://www.outdoor-sports.info/mannou-rogaining",
-      "review": null,
-      "sns": null,
-      "verified": true,
-      "verified_at": "2026-11-15"
-    },
-    "mandatory_gear": [
-      {
-        "name": "プレートコンパス（シルバコンパス等・方位磁石）",
-        "category": "ナビゲーション"
-      },
-      {
-        "name": "デジタルカメラまたはスマートフォン（CP撮影・集計用）",
-        "category": "ギア"
-      },
-      {
-        "name": "ゴアテックス等 防水透湿レインジャケット",
-        "category": "ウェア"
-      },
-      {
-        "name": "ファーストエイドキット（絆創膏・テーピング・消毒薬）",
-        "category": "エイド"
-      },
-      {
-        "name": "行動食（エナジージェル等）＆水分1.0L以上",
-        "category": "補給"
-      }
-    ],
-    "venue": {
-      "name": "道の駅ことなみ エピアみかど（香川県仲多度郡まんのう町川東2070-67）",
-      "mapQuery": "香川県まんのう町 道の駅ことなみ"
-    },
-    "source": {
-      "portalName": "ナビゲーム"
-    }
-  },
-  {
     "id": "arws-vulcania-2026",
     "category": "adventure",
     "subCategory": "ARWS世界選手権予選",
@@ -144,7 +30,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-15",
+      "verified_at": "2026-11-16",
       "official_stale": true
     },
     "mandatory_gear": [
@@ -203,7 +89,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-15"
+      "verified_at": "2026-11-16"
     },
     "mandatory_gear": [
       {
@@ -369,7 +255,7 @@
     "prefecture": "高知県",
     "distance_km": 135,
     "elevation_m": 1650,
-    "entry_status": "closing_soon",
+    "entry_status": "closed",
     "entry_start_date": "2026-09-16",
     "entry_deadline": "2026-11-15",
     "entry_fee": "10,000円",
@@ -379,7 +265,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-15"
+      "verified_at": "2026-11-16"
     },
     "mandatory_gear": [
       {
@@ -409,7 +295,8 @@
     },
     "source": {
       "portalName": "スポエンCYCLE"
-    }
+    },
+    "updated_at": "2026-11-16"
   },
   {
     "id": "trjp-kusenbu-quest-50-2026",
@@ -706,7 +593,7 @@
     "entry_deadline": "2026-10-26",
     "links": {
       "official": "https://www.kazekko.com/",
-      "entry": "https://runnet.jp/entry/runtes/user/pc/competitionDetailAction.do?raceId=395796&amp;div=1",
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
@@ -772,7 +659,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-15"
+      "verified_at": "2026-11-16"
     },
     "mandatory_gear": [
       {
@@ -876,7 +763,7 @@
     "entry_deadline": "2026-11-23",
     "links": {
       "official": "https://trailrunner.jp/race-detail-kinomata-dog-trail-running.html",
-      "entry": "https://runnet.jp/entry/runtes/user/pc/moshicomDetailAction.do?raceId=155472&#038;div=1",
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
@@ -1039,7 +926,7 @@
     "entry_start_date": "2026-09-04",
     "entry_deadline": "2026-10-31",
     "links": {
-      "official": "https://www.instagram.com/mt.kaba.tr/",
+      "official": null,
       "entry": "https://moshicom.com/153431",
       "review": null,
       "sns": null,
@@ -1153,7 +1040,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-15"
+      "verified_at": "2026-11-16"
     },
     "mandatory_gear": [
       {
@@ -1202,7 +1089,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-15"
+      "verified_at": "2026-11-16"
     },
     "mandatory_gear": [
       {
@@ -1255,7 +1142,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-15"
+      "verified_at": "2026-11-16"
     },
     "mandatory_gear": [
       {
@@ -1848,7 +1735,7 @@
     "entry_deadline": "2026-11-15",
     "links": {
       "official": "https://grc.dog/newsDetail/be45db5d-7c6a-401f-a224-2771ddb26cc3",
-      "entry": "https://runnet.jp/entry/runtes/user/pc/competitionDetailAction.do?div=1&amp;raceId=398378",
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
@@ -2016,7 +1903,8 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-16"
+      "verified_at": "2026-11-16",
+      "official_stale": true
     },
     "mandatory_gear": [
       {
@@ -2129,7 +2017,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-15"
+      "verified_at": "2026-11-16"
     },
     "mandatory_gear": [
       {
@@ -2189,7 +2077,7 @@
     "entry_deadline": "2026-11-09",
     "links": {
       "official": "https://www.nature-scene.net/yoro/about/",
-      "entry": "https://runnet.jp/entry/runtes/user/pc/competitionDetailAction.do?raceId=397224&amp;div=1",
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
@@ -2300,7 +2188,7 @@
     "prefecture": "ニュージーランド",
     "distance_km": 500,
     "elevation_m": 12000,
-    "entry_status": "closing_soon",
+    "entry_status": "closed",
     "entry_start_date": "2026-03-01",
     "entry_deadline": "2026-11-15",
     "entry_fee": "750,000円",
@@ -2310,7 +2198,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-15"
+      "verified_at": "2026-11-16"
     },
     "mandatory_gear": [
       {
@@ -2340,7 +2228,8 @@
     },
     "source": {
       "portalName": "ARWS公式"
-    }
+    },
+    "updated_at": "2026-11-16"
   },
   {
     "id": "matsue-kokuhou-marathon-2026",
@@ -2366,7 +2255,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-15"
+      "verified_at": "2026-11-16"
     },
     "mandatory_gear": [
       {
@@ -2416,7 +2305,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-15"
+      "verified_at": "2026-11-16"
     },
     "mandatory_gear": [
       {
@@ -2464,7 +2353,7 @@
     "entry_deadline": "2026-09-27",
     "links": {
       "official": "https://www.shugyoso.com/2026overview",
-      "entry": "https://runnet.jp/entry/runtes/user/pc/competitionDetailAction.do?raceId=395675&amp;div=1",
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
@@ -2519,7 +2408,7 @@
     "entry_deadline": "2026-10-31",
     "links": {
       "official": "https://hitachi-trail.com/",
-      "entry": "https://runnet.jp/entry/runtes/user/pc/competitionDetailAction.do?raceId=397113&amp;div=1",
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
@@ -2624,7 +2513,7 @@
     "distance_km": 22.8,
     "elevation_m": 1160,
     "entry_fee": "公式サイト参照",
-    "entry_status": "open",
+    "entry_status": "closing_soon",
     "entry_deadline": "2026-12-06",
     "links": {
       "official": "https://go-trail.net/pages/sanage-trail",
@@ -2735,7 +2624,7 @@
     "distance_km": 4.8,
     "elevation_m": 930,
     "entry_fee": "公式サイト参照",
-    "entry_status": "open",
+    "entry_status": "closing_soon",
     "entry_start_date": "2026-09-29",
     "entry_deadline": "2026-12-05",
     "links": {
@@ -2801,7 +2690,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-15"
+      "verified_at": "2026-11-16"
     },
     "mandatory_gear": [
       {
@@ -2858,7 +2747,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-15"
+      "verified_at": "2026-11-16"
     },
     "mandatory_gear": [
       {
@@ -2905,7 +2794,7 @@
     "distance_km": 4,
     "elevation_m": 0,
     "entry_fee": "公式サイト参照",
-    "entry_status": "open",
+    "entry_status": "closing_soon",
     "entry_start_date": "2026-10-19",
     "entry_deadline": "2026-12-06",
     "links": {
@@ -2965,7 +2854,7 @@
     "entry_deadline": "2026-10-31",
     "links": {
       "official": "https://kofu-tourism.com/feature/trailrunning/top",
-      "entry": "https://runnet.jp/entry/runtes/user/pc/competitionDetailAction.do?raceId=395666&amp;div=1",
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
@@ -3131,7 +3020,7 @@
     "entry_deadline": "2026-11-15",
     "links": {
       "official": "https://www.motherfarm.co.jp/information/trailrun/",
-      "entry": "https://runnet.jp/entry/runtes/user/pc/competitionDetailAction.do?raceId=392525&amp;div=1",
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
@@ -3186,7 +3075,7 @@
     "entry_deadline": "2026-09-20",
     "links": {
       "official": "https://local-gain.com/minamiaso_trail/",
-      "entry": "https://runnet.jp/entry/runtes/user/pc/competitionDetailAction.do?raceId=394613&amp;div=1",
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
@@ -3296,7 +3185,7 @@
     "entry_deadline": "2026-11-08",
     "links": {
       "official": "https://sportswindow.net/event-post/hitachinokunitrail/",
-      "entry": "https://runnet.jp/entry/runtes/user/pc/competitionDetailAction.do?raceId=396994&amp;div=1",
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
@@ -3351,7 +3240,7 @@
     "entry_deadline": "2026-11-18",
     "links": {
       "official": "https://fields-co.jp/nokogiriyama/",
-      "entry": "https://runnet.jp/entry/runtes/user/pc/competitionDetailAction.do?raceId=397414&amp;div=1",
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
@@ -3456,7 +3345,7 @@
     "distance_km": 8,
     "elevation_m": 600,
     "entry_fee": "公式サイト参照",
-    "entry_status": "open",
+    "entry_status": "closing_soon",
     "entry_start_date": "2026-06-05",
     "entry_deadline": "2026-12-04",
     "links": {
@@ -3516,7 +3405,7 @@
     "entry_deadline": "2026-11-08",
     "links": {
       "official": "https://fun-trails.com/race/idaten/",
-      "entry": "https://runnet.jp/entry/runtes/user/pc/competitionDetailAction.do?raceId=397231&amp;div=1",
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
@@ -3571,7 +3460,7 @@
     "entry_deadline": "2026-11-15",
     "links": {
       "official": "https://www.nagatoro.gr.jp/trailrace17/",
-      "entry": "https://runnet.jp/entry/runtes/user/pc/competitionDetailAction.do?raceId=397227&amp;div=1",
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
@@ -3792,7 +3681,7 @@
     "entry_start_date": "2026-10-28",
     "entry_deadline": "2026-12-26",
     "links": {
-      "official": "https://www.instagram.com/rising_of_the_dead/",
+      "official": null,
       "entry": "https://moshicom.com/157213",
       "review": null,
       "sns": null,
@@ -3960,7 +3849,7 @@
     "entry_deadline": "2026-11-29",
     "links": {
       "official": "https://fields-co.jp/minamiboso/",
-      "entry": "https://runnet.jp/entry/runtes/user/pc/competitionDetailAction.do?raceId=397413&amp;div=1",
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
@@ -4183,7 +4072,8 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-16"
+      "verified_at": "2026-11-16",
+      "official_stale": true
     },
     "mandatory_gear": [
       {
@@ -4233,11 +4123,12 @@
     "entry_deadline": "2027-01-17",
     "links": {
       "official": "https://sites.google.com/view/snow-marathon/details",
-      "entry": "https://sites.google.com/view/snow-marathon/details",
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-16"
+      "verified_at": "2026-11-16",
+      "official_stale": true
     },
     "mandatory_gear": [
       {
@@ -4288,7 +4179,7 @@
     "entry_deadline": "2027-01-04",
     "links": {
       "official": "https://www.nature-scene.net/gamagori",
-      "entry": "https://runnet.jp/entry/runtes/user/pc/competitionDetailAction.do?raceId=398341&amp;div=1",
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
@@ -4405,7 +4296,7 @@
       "review": "",
       "sns": "",
       "verified": true,
-      "verified_at": "2026-11-15"
+      "verified_at": "2026-11-16"
     },
     "mandatory_gear": [
       {
@@ -4569,7 +4460,7 @@
     "entry_deadline": "2027-01-10",
     "links": {
       "official": "https://trailrunner.jp/race-detail-hakuba-snow-harp-snowshoeing-race.html",
-      "entry": "https://runnet.jp/entry/runtes/user/pc/moshicomDetailAction.do?raceId=156029&#038;div=1",
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
@@ -4905,7 +4796,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-15"
+      "verified_at": "2026-11-16"
     },
     "mandatory_gear": [
       "くだまつ笠戸島アイランドトレイル2027へのエントリー必須",
@@ -5111,7 +5002,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-15"
+      "verified_at": "2026-11-16"
     },
     "mandatory_gear": [
       {
@@ -5164,7 +5055,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-15"
+      "verified_at": "2026-11-16"
     },
     "mandatory_gear": [
       {
@@ -5213,7 +5104,7 @@
     "prefecture": "香川県",
     "distance_km": 21,
     "elevation_m": 45,
-    "entry_status": "closing_soon",
+    "entry_status": "closed",
     "entry_start_date": "2026-09-16",
     "entry_deadline": "2026-11-15",
     "entry_fee": "7,500円",
@@ -5223,7 +5114,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-15"
+      "verified_at": "2026-11-16"
     },
     "mandatory_gear": [
       {
@@ -5245,7 +5136,8 @@
     },
     "source": {
       "portalName": "大会公式"
-    }
+    },
+    "updated_at": "2026-11-16"
   },
   {
     "id": "ehime-marathon-2027",
@@ -5271,7 +5163,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-15"
+      "verified_at": "2026-11-16"
     },
     "mandatory_gear": [
       {
@@ -5429,7 +5321,8 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-16"
+      "verified_at": "2026-11-16",
+      "official_stale": true
     },
     "mandatory_gear": [
       {
@@ -5480,7 +5373,7 @@
     "entry_deadline": "2027-01-22",
     "links": {
       "official": "https://sjc-kaidan.jp/scc/osaka/",
-      "entry": "https://runnet.jp/entry/runtes/user/pc/competitionDetailAction.do?raceId=394021&amp;div=1",
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
@@ -5543,7 +5436,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-15"
+      "verified_at": "2026-11-16"
     },
     "mandatory_gear": [
       {
@@ -5595,7 +5488,7 @@
     "entry_deadline": "2027-01-04",
     "links": {
       "official": "https://www.fields-co.jp/onjuku/",
-      "entry": "https://runnet.jp/entry/runtes/user/pc/competitionDetailAction.do?raceId=397415&amp;div=1",
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
@@ -5656,7 +5549,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-15"
+      "verified_at": "2026-11-16"
     },
     "mandatory_gear": [
       {
@@ -5712,7 +5605,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-15"
+      "verified_at": "2026-11-16"
     },
     "mandatory_gear": [
       {
@@ -5921,7 +5814,7 @@
     "entry_deadline": "2027-01-31",
     "links": {
       "official": "https://trailrunner.jp/race-detail-gokayama-taira-snowshoeing-race.html",
-      "entry": "https://runnet.jp/entry/runtes/user/pc/moshicomDetailAction.do?raceId=156027&#038;div=1",
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
@@ -5975,11 +5868,12 @@
     "entry_deadline": "2027-02-14",
     "links": {
       "official": "https://universal-field.com/event/aya-syaka-twinpeaks/",
-      "entry": "https://universal-field.com/event/aya-syaka-twinpeaks/",
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-16"
+      "verified_at": "2026-11-16",
+      "official_stale": true
     },
     "mandatory_gear": [
       {
@@ -6036,7 +5930,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-15"
+      "verified_at": "2026-11-16"
     },
     "mandatory_gear": [
       {
@@ -6099,7 +5993,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-15"
+      "verified_at": "2026-11-16"
     },
     "mandatory_gear": [
       {
@@ -6214,7 +6108,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-15"
+      "verified_at": "2026-11-16"
     },
     "mandatory_gear": [
       {
@@ -6605,7 +6499,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-15"
+      "verified_at": "2026-11-16"
     },
     "mandatory_gear": [
       {
@@ -6739,6 +6633,62 @@
     "updated_at": "2026-11-16"
   },
   {
+    "id": "trjp-gokayama-sefuri-cross-trail-2027",
+    "category": "trail",
+    "subCategory": "ロングトレイル（42km以上）",
+    "elements": [
+      "トレック"
+    ],
+    "title": "五ケ山・脊振クロストレイル 2027（福岡県）",
+    "date": "2027-02-27",
+    "end_date": "2027-02-28",
+    "month": 2,
+    "region": "九州",
+    "prefecture": "福岡県",
+    "distance_km": 64,
+    "elevation_m": 4400,
+    "entry_fee": "公式サイト参照",
+    "entry_status": "open",
+    "entry_deadline": "2027-02-27",
+    "links": {
+      "official": "https://universal-field.com/event/gsct/",
+      "entry": null,
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-16",
+      "official_stale": true
+    },
+    "mandatory_gear": [
+      {
+        "name": "トレイルランニングシューズ・ザック",
+        "category": "ギア"
+      },
+      {
+        "name": "レインジャケット（防風・防水シェル）",
+        "category": "ウェア"
+      },
+      {
+        "name": "水分・行動食・マイカップ",
+        "category": "補給"
+      },
+      {
+        "name": "ファーストエイドキット・携帯電話・保険証",
+        "category": "エイド"
+      }
+    ],
+    "venue": {
+      "name": "福岡県",
+      "mapQuery": "福岡県 福岡県"
+    },
+    "source": {
+      "portalName": "トレイルランナー.JP",
+      "portalUrl": "https://trailrunner.jp/race-detail-gokayama-sefuri-cross-trail.html"
+    },
+    "added_at": "2026-11-16",
+    "updated_at": "2026-11-16"
+  },
+  {
     "id": "trjp-arataki-samurai-trail-2027",
     "category": "trail",
     "subCategory": "トレイルランニング",
@@ -6793,61 +6743,6 @@
     "updated_at": "2026-11-16"
   },
   {
-    "id": "trjp-gokayama-sefuri-cross-trail-2027",
-    "category": "trail",
-    "subCategory": "ロングトレイル（42km以上）",
-    "elements": [
-      "トレック"
-    ],
-    "title": "五ケ山・脊振クロストレイル 2027（福岡県）",
-    "date": "2027-02-27",
-    "end_date": "2027-02-28",
-    "month": 2,
-    "region": "九州",
-    "prefecture": "福岡県",
-    "distance_km": 64,
-    "elevation_m": 4400,
-    "entry_fee": "公式サイト参照",
-    "entry_status": "open",
-    "entry_deadline": "2027-02-27",
-    "links": {
-      "official": "https://universal-field.com/event/gsct/",
-      "entry": "https://universal-field.com/event/gsct/",
-      "review": null,
-      "sns": null,
-      "verified": true,
-      "verified_at": "2026-11-16"
-    },
-    "mandatory_gear": [
-      {
-        "name": "トレイルランニングシューズ・ザック",
-        "category": "ギア"
-      },
-      {
-        "name": "レインジャケット（防風・防水シェル）",
-        "category": "ウェア"
-      },
-      {
-        "name": "水分・行動食・マイカップ",
-        "category": "補給"
-      },
-      {
-        "name": "ファーストエイドキット・携帯電話・保険証",
-        "category": "エイド"
-      }
-    ],
-    "venue": {
-      "name": "福岡県",
-      "mapQuery": "福岡県 福岡県"
-    },
-    "source": {
-      "portalName": "トレイルランナー.JP",
-      "portalUrl": "https://trailrunner.jp/race-detail-gokayama-sefuri-cross-trail.html"
-    },
-    "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
-  },
-  {
     "id": "matsusaka-kahadakyo-trail-2027",
     "category": "trail",
     "subCategory": "ショートトレイル",
@@ -6872,7 +6767,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-15",
+      "verified_at": "2026-11-16",
       "official_stale": true
     },
     "mandatory_gear": [
@@ -6927,7 +6822,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-15",
+      "verified_at": "2026-11-16",
       "official_stale": true
     },
     "mandatory_gear": [
@@ -7260,7 +7155,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-15"
+      "verified_at": "2026-11-16"
     },
     "mandatory_gear": [
       {
@@ -7484,7 +7379,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-15"
+      "verified_at": "2026-11-16"
     },
     "mandatory_gear": [
       {
@@ -7540,7 +7435,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-15"
+      "verified_at": "2026-11-16"
     },
     "mandatory_gear": [
       {
@@ -7600,7 +7495,8 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-16"
+      "verified_at": "2026-11-16",
+      "official_stale": true
     },
     "mandatory_gear": [
       {
@@ -7657,7 +7553,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-15",
+      "verified_at": "2026-11-16",
       "official_stale": true
     },
     "mandatory_gear": [
@@ -7710,7 +7606,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-15"
+      "verified_at": "2026-11-16"
     },
     "mandatory_gear": [
       {
@@ -7802,7 +7698,7 @@
     "entry_deadline": "2027-02-07",
     "links": {
       "official": "https://fields-co.jp/ctc/2027/information/",
-      "entry": "https://runnet.jp/entry/runtes/user/pc/competitionDetailAction.do?raceId=395696&amp;div=1",
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
@@ -7857,7 +7753,7 @@
     "entry_deadline": "2027-02-26",
     "links": {
       "official": "https://trailrunners.jp/event/nara-2027/",
-      "entry": "https://runnet.jp/entry/runtes/user/pc/competitionDetailAction.do?raceId=395455&amp;div=1",
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
@@ -7912,7 +7808,7 @@
     "entry_deadline": "2026-12-08",
     "links": {
       "official": "https://oyama-tozan-marathon.jp/",
-      "entry": "https://runnet.jp/entry/runtes/user/pc/competitionDetailAction.do?raceId=399834&amp;div=1",
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
@@ -8027,7 +7923,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-15"
+      "verified_at": "2026-11-16"
     },
     "mandatory_gear": [
       {
@@ -8076,7 +7972,7 @@
     "entry_deadline": "2027-02-20",
     "links": {
       "official": "https://aganojuku-trail.com/",
-      "entry": "https://runnet.jp/entry/runtes/user/pc/competitionDetailAction.do?raceId=401933&amp;div=1",
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
@@ -8135,7 +8031,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-15"
+      "verified_at": "2026-11-16"
     },
     "mandatory_gear": [
       {
@@ -8295,7 +8191,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-15"
+      "verified_at": "2026-11-16"
     },
     "mandatory_gear": [
       {
@@ -8373,7 +8269,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-15",
+      "verified_at": "2026-11-16",
       "official_stale": true
     },
     "mandatory_gear": [
@@ -8435,7 +8331,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-15"
+      "verified_at": "2026-11-16"
     },
     "mandatory_gear": [
       {
@@ -8593,7 +8489,7 @@
     "entry_deadline": "2027-04-04",
     "links": {
       "official": "https://ninjatrailrun.com/haruninja/",
-      "entry": "https://runnet.jp/entry/runtes/user/pc/competitionDetailAction.do?raceId=399753&amp;div=1",
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
@@ -8657,7 +8553,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-15",
+      "verified_at": "2026-11-16",
       "official_stale": true
     },
     "mandatory_gear": [
@@ -8796,7 +8692,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-15",
+      "verified_at": "2026-11-16",
       "official_stale": true
     },
     "mandatory_gear": [
@@ -9115,11 +9011,12 @@
     "entry_deadline": "2027-04-17",
     "links": {
       "official": "https://local-gain.com/asotrail-girls-school/",
-      "entry": "https://local-gain.com/asotrail-girls-school/",
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-16"
+      "verified_at": "2026-11-16",
+      "official_stale": true
     },
     "mandatory_gear": [
       {
@@ -9175,7 +9072,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-15"
+      "verified_at": "2026-11-16"
     },
     "mandatory_gear": [
       {
@@ -9245,7 +9142,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-15"
+      "verified_at": "2026-11-16"
     },
     "mandatory_gear": [
       {
@@ -9295,7 +9192,7 @@
     "entry_deadline": "2027-04-02",
     "links": {
       "official": "https://trailrunners.jp/event/echigo-2027/",
-      "entry": "https://runnet.jp/entry/runtes/user/pc/competitionDetailAction.do?raceId=395798&amp;div=1",
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
@@ -9401,7 +9298,7 @@
     "prefecture": "山梨県",
     "distance_km": 166,
     "elevation_m": 7574,
-    "entry_status": "closing_soon",
+    "entry_status": "closed",
     "entry_start_date": "2026-11-02",
     "entry_deadline": "2026-11-15",
     "entry_fee": "48,000円",
@@ -9411,7 +9308,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-15"
+      "verified_at": "2026-11-16"
     },
     "mandatory_gear": [
       {
@@ -9469,7 +9366,8 @@
     },
     "source": {
       "portalName": "大会公式"
-    }
+    },
+    "updated_at": "2026-11-16"
   },
   {
     "id": "arjs-2027-r1-nagaragawa",
@@ -9502,7 +9400,7 @@
       "review": null,
       "sns": "https://www.facebook.com/arjs.adventurerace",
       "verified": true,
-      "verified_at": "2026-11-15"
+      "verified_at": "2026-11-16"
     },
     "mandatory_gear": [
       {
@@ -9550,7 +9448,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-15"
+      "verified_at": "2026-11-16"
     },
     "mandatory_gear": [
       {
@@ -9715,7 +9613,8 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-16"
+      "verified_at": "2026-11-16",
+      "official_stale": true
     },
     "mandatory_gear": [
       {
@@ -10098,11 +9997,12 @@
     "entry_deadline": "2026-03-31",
     "links": {
       "official": "https://trainic-world.org/sainokuni/",
-      "entry": "https://trainic-world.org/sainokuni/",
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-16"
+      "verified_at": "2026-11-16",
+      "official_stale": true
     },
     "mandatory_gear": [
       {
@@ -10159,7 +10059,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-15"
+      "verified_at": "2026-11-16"
     },
     "mandatory_gear": [
       {
@@ -10328,7 +10228,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-15"
+      "verified_at": "2026-11-16"
     },
     "mandatory_gear": [
       {
@@ -10484,11 +10384,12 @@
     "entry_deadline": "2027-05-23",
     "links": {
       "official": "https://www.amagiattack.com/",
-      "entry": "https://www.amagiattack.com/",
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-16"
+      "verified_at": "2026-11-16",
+      "official_stale": true
     },
     "mandatory_gear": [
       {
@@ -10545,7 +10446,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-15"
+      "verified_at": "2026-11-16"
     },
     "mandatory_gear": [
       {
@@ -10655,7 +10556,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-15",
+      "verified_at": "2026-11-16",
       "official_stale": true
     },
     "mandatory_gear": [
@@ -10818,11 +10719,12 @@
     "entry_deadline": "2027-06-04",
     "links": {
       "official": "https://okushinano100.com/",
-      "entry": "https://okushinano100.com/",
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-16"
+      "verified_at": "2026-11-16",
+      "official_stale": true
     },
     "mandatory_gear": [
       {
@@ -10873,7 +10775,7 @@
     "entry_deadline": "2027-03-31",
     "links": {
       "official": "https://oshinotrail.jp/",
-      "entry": "https://runnet.jp/entry/runtes/user/pc/competitionDetailAction.do?div=1&amp;raceId=397775",
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
@@ -10934,7 +10836,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-15"
+      "verified_at": "2026-11-16"
     },
     "mandatory_gear": [
       {
@@ -11007,7 +10909,7 @@
       "review": null,
       "sns": "https://www.facebook.com/arjs.adventurerace",
       "verified": true,
-      "verified_at": "2026-11-15"
+      "verified_at": "2026-11-16"
     },
     "mandatory_gear": [
       {
@@ -11217,7 +11119,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-15"
+      "verified_at": "2026-11-16"
     },
     "mandatory_gear": [
       {
@@ -11267,7 +11169,7 @@
     "entry_deadline": "2027-02-26",
     "links": {
       "official": "https://www.deepjapanultra.com/overview",
-      "entry": "https://runnet.jp/entry/runtes/user/pc/competitionDetailAction.do?raceId=397523&amp;div=1",
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
@@ -11388,7 +11290,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-15"
+      "verified_at": "2026-11-16"
     },
     "mandatory_gear": [
       {
@@ -11546,11 +11448,12 @@
     "entry_deadline": "2027-07-09",
     "links": {
       "official": "https://www.rh-track.com/roundgirls100/",
-      "entry": "https://www.rh-track.com/roundgirls100/",
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-16"
+      "verified_at": "2026-11-16",
+      "official_stale": true
     },
     "mandatory_gear": [
       {
@@ -11666,7 +11569,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-15"
+      "verified_at": "2026-11-16"
     },
     "mandatory_gear": [
       {
@@ -11833,7 +11736,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-15"
+      "verified_at": "2026-11-16"
     },
     "mandatory_gear": [
       {
@@ -11896,7 +11799,7 @@
       "review": null,
       "sns": "https://www.facebook.com/arjs.adventurerace",
       "verified": true,
-      "verified_at": "2026-11-15"
+      "verified_at": "2026-11-16"
     },
     "mandatory_gear": [
       {
@@ -11991,7 +11894,8 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-16"
+      "verified_at": "2026-11-16",
+      "official_stale": true
     },
     "mandatory_gear": [
       {
@@ -12215,7 +12119,7 @@
       "review": null,
       "sns": "https://www.facebook.com/arjs.adventurerace",
       "verified": true,
-      "verified_at": "2026-11-15"
+      "verified_at": "2026-11-16"
     },
     "mandatory_gear": [
       {
