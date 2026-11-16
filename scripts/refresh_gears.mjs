@@ -325,6 +325,37 @@ async function refreshOne(g) {
   // 1. 商品ページ自体の死活確認＆自己修復
   if (!scraped.ok) {
     if (scraped.blocked) {
+      // CI等でWAF遮断(403/429)された場合でも、楽天APIキーがあればAPI経由で最新価格を取得
+      if (RAKUTEN_APP_ID && RAKUTEN_ACCESS_KEY) {
+        try {
+          const cleanDealUrl = g.dealUrl.split('?')[0].replace(/\/+$/, '');
+          const apiItems = await searchRakutenApiItems(g.dealKeyword || g.title.slice(0, 40), 500);
+          const matched = apiItems.find((it) => it.itemUrl && it.itemUrl.split('?')[0].replace(/\/+$/, '') === cleanDealUrl);
+          if (matched && matched.itemPrice > 0) {
+            const imgAlive = await imageIsAlive(g.imageUrl);
+            if (imgAlive) {
+              const price = matched.itemPrice;
+              const originalPrice = g.originalPrice && g.originalPrice > price ? g.originalPrice : price;
+              const discountRate = originalPrice > price ? Math.round((1 - price / originalPrice) * 100) : 0;
+              const dropped = Boolean(g.price && price < g.price);
+              return {
+                gear: {
+                  ...g,
+                  price,
+                  originalPrice,
+                  discountRate,
+                  lowest30d: Math.min(g.lowest30d || price, price),
+                  priceVerifiedAt: new Date().toISOString(),
+                },
+                status: 'ok',
+                dropped,
+                oldPrice: g.price,
+                log: [`楽天API経由で最新価格(¥${price.toLocaleString()})を取得・更新(WAF回避)`],
+              };
+            }
+          }
+        } catch { /* API照会失敗時は画像生存確認へフォールバック */ }
+      }
       // WAF遮断(403/429)や一時的タイムアウトの場合は安易に削除せず、画像CDNの生存を確認して安全維持
       const imgAlive = await imageIsAlive(g.imageUrl);
       if (imgAlive) {
