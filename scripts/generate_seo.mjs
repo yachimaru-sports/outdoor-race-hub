@@ -95,7 +95,9 @@ function layoutHtml({ title, description, canonical, jsonLd, body }) {
 <meta property="og:title" content="${esc(title)}">
 <meta property="og:description" content="${esc(description)}">
 <meta property="og:url" content="${esc(canonical)}">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="${SITE_URL}/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="${SITE_URL}/og-image.jpg">
 <style>
   body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans JP",sans-serif;margin:0;background:#f8fafc;color:#0f172a;line-height:1.65}
   .wrap{max-width:860px;margin:0 auto;padding:20px 16px 48px}

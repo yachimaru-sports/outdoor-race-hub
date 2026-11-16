@@ -1,26 +1,29 @@
 /**
  * scripts/post_to_x.mjs
  * 毎朝8時の自動更新・GitHub Pagesデプロイ完了後に、
- * 最新の更新内容（大会情報・特価ギア）を X（@yachimaru000）へ自動投稿するスクリプト。
+ * 最新の更新内容（大会情報・特価ギア）から X（@yachimaru000）向けの
+ * 投稿用テキスト・ワンタップ投稿リンク・画像URLを生成するスクリプト。
  *
- * 必要な環境変数（GitHub Secrets に設定）:
- *   X_API_KEY              (Consumer Key / API Key)
- *   X_API_SECRET           (Consumer Secret / API Key Secret)
- *   X_ACCESS_TOKEN         (Access Token - Read and Write 権限)
- *   X_ACCESS_TOKEN_SECRET  (Access Token Secret)
- *
- * ローカルテスト用:
- *   node scripts/post_to_x.mjs --dry-run
+ * オプション:
+ *   --dry-run             : プレビュー表示のみ
+ *   --draft-file=<path>   : メール送信用テキストファイルを指定パスへ出力
+ *   --post-api            : X API v2 (OAuth 1.0a) での直接自動投稿も試みる
  */
 import fs from 'node:fs';
+import path from 'node:path';
 import crypto from 'node:crypto';
 
 const SITE_URL = 'https://yachimaru-sports.github.io/outdoor-race-hub/';
+const OGP_IMAGE_URL = 'https://yachimaru-sports.github.io/outdoor-race-hub/og-image.jpg';
 const META_PATH = 'src/data/meta.json';
 const CHANGELOG_PATH = 'src/data/changelog.json';
 const EVENTS_PATH = 'src/data/events.json';
+const DEALS_PATH = 'src/data/deals.json';
 
 const isDryRun = process.argv.includes('--dry-run');
+const shouldPostApi = process.argv.includes('--post-api');
+const draftFileArg = process.argv.find((a) => a.startsWith('--draft-file='));
+const draftFilePath = draftFileArg ? draftFileArg.slice('--draft-file='.length) : null;
 
 /** 日本時間（JST）の YYYY-MM-DD を取得 */
 function getTodayJST() {
@@ -55,16 +58,18 @@ function truncateByWeight(str, maxWeight) {
   return result;
 }
 
-/** 当日の更新データから投稿文を組み立てる */
-function buildTweetText() {
+/** 当日の更新データから投稿文と注目画像情報を組み立てる */
+function buildTweetPayload() {
   const today = getTodayJST();
   let meta = {};
   let changelog = [];
   let events = [];
+  let deals = [];
 
   try { meta = JSON.parse(fs.readFileSync(META_PATH, 'utf-8')); } catch { /* ignore */ }
   try { changelog = JSON.parse(fs.readFileSync(CHANGELOG_PATH, 'utf-8')); } catch { /* ignore */ }
   try { events = JSON.parse(fs.readFileSync(EVENTS_PATH, 'utf-8')); } catch { /* ignore */ }
+  try { deals = JSON.parse(fs.readFileSync(DEALS_PATH, 'utf-8')); } catch { /* ignore */ }
 
   const todayLogs = changelog.filter((c) => c.date === today);
   const priceDrop = todayLogs.find((c) => c.type === 'price_drop');
@@ -76,11 +81,18 @@ function buildTweetText() {
     (e) => e.entry_status === 'closing_soon' && e.entry_deadline >= today
   );
 
+  // 本日の注目ギア（値下げ品 or 新着品 or 割引率トップ）の画像を取得
+  const targetGearId = priceDrop?.gearId || dealAdded?.gearId;
+  let featuredDeal = targetGearId ? deals.find((d) => d.id === targetGearId) : null;
+  if (!featuredDeal && deals.length > 0) {
+    featuredDeal = [...deals].sort((a, b) => (b.discount_rate || 0) - (a.discount_rate || 0))[0];
+  }
+
   const lines = [];
   lines.push(`⚡【毎朝8時更新】OUTDOOR RACE HUB`);
 
   const eventsCount = meta.events_count || events.length || 0;
-  const dealsCount = meta.deals_count || 0;
+  const dealsCount = meta.deals_count || deals.length || 0;
   lines.push(`大会${eventsCount}件・特価ギア${dealsCount}件を最新化しました！`);
 
   // 本日のハイライトを優先度順に最大2つピックアップ
@@ -108,7 +120,6 @@ function buildTweetText() {
 
   let text = lines.join('\n');
 
-  // 万が一 280 ウェイト（全角140文字）を超える場合はハイライト行を削って調整
   if (calcTweetWeight(text) > 280 && highlights.length > 1) {
     const fallbackLines = [
       lines[0],
@@ -131,7 +142,47 @@ function buildTweetText() {
     ].join('\n');
   }
 
-  return text;
+  return {
+    today,
+    tweetText: text,
+    intentUrl: `https://x.com/intent/tweet?text=${encodeURIComponent(text)}`,
+    featuredDeal,
+  };
+}
+
+/** メール送信用本文を作成 */
+function buildMailBody({ today, tweetText, intentUrl, featuredDeal }) {
+  const sections = [
+    `OUTDOOR RACE HUB の毎朝更新（${today}）が完了しました！`,
+    `そのままX（@yachimaru000）へ投稿できるテキストをお送りします。`,
+    '',
+    '========================================',
+    '📱 ワンタップでX投稿画面を開く（スマホ・PC対応）',
+    '========================================',
+    intentUrl,
+    '',
+    '========================================',
+    '📋 コピペ用X投稿テキスト',
+    '========================================',
+    tweetText,
+    '',
+    '========================================',
+    '🖼️ 画像・アイキャッチについて',
+    '========================================',
+    '※サイトURLを含めて投稿すると、自動で大きなアイキャッチ画像（OGPカード）が表示されます：',
+    `サイトOGP画像: ${OGP_IMAGE_URL}`,
+  ];
+
+  if (featuredDeal?.image_url) {
+    sections.push('');
+    sections.push(`本日の注目ギア画像（${featuredDeal.title}）:`);
+    sections.push(featuredDeal.image_url);
+  }
+
+  sections.push('');
+  sections.push('※画像付きで投稿したい場合は、上記の画像URLを開いて保存し、Xの投稿画面で添付してください。');
+
+  return sections.join('\n');
 }
 
 /** RFC 3986 準拠のパーセントエンコード */
@@ -180,15 +231,21 @@ function createOAuthHeader(method, url, { apiKey, apiSecret, accessToken, access
 }
 
 async function main() {
-  const tweetText = buildTweetText();
-  const weight = calcTweetWeight(tweetText);
+  const payload = buildTweetPayload();
+  const weight = calcTweetWeight(payload.tweetText);
 
   console.log('--- 生成されたX投稿内容 ---');
-  console.log(tweetText);
+  console.log(payload.tweetText);
   console.log(`--- 文字数ウェイト: ${weight} / 280 ---`);
 
-  if (isDryRun) {
-    console.log('🧪 --dry-run モードのため実際の投稿はスキップしました。');
+  if (draftFilePath) {
+    fs.mkdirSync(path.dirname(draftFilePath), { recursive: true });
+    fs.writeFileSync(draftFilePath, buildMailBody(payload), 'utf-8');
+    console.log(`✉️ メール送信用テキストを出力しました: ${draftFilePath}`);
+  }
+
+  if (isDryRun || !shouldPostApi) {
+    if (isDryRun) console.log('🧪 --dry-run モードのためAPI投稿はスキップしました。');
     return;
   }
 
@@ -198,7 +255,7 @@ async function main() {
   const accessTokenSecret = process.env.X_ACCESS_TOKEN_SECRET?.trim();
 
   if (!apiKey || !apiSecret || !accessToken || !accessTokenSecret) {
-    console.log('⚠️ X APIキー（GitHub Secrets）が未設定のため、自動投稿をスキップします。');
+    console.log('⚠️ X APIキー（GitHub Secrets）が未設定のため、API投稿をスキップします。');
     return;
   }
 
@@ -216,7 +273,7 @@ async function main() {
       Authorization: authHeader,
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ text: tweetText }),
+    body: JSON.stringify({ text: payload.tweetText }),
   });
 
   const data = await res.json().catch(() => ({}));
