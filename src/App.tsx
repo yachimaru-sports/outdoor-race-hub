@@ -15,6 +15,7 @@ import { EventDetailModal } from './components/EventDetailModal';
 import { UpdateTicker, UPDATE_NEWS_DATA } from './components/UpdateTicker';
 import { Footer } from './components/Footer';
 import { GearCatalogPage } from './components/GearCatalogPage';
+import { ScrollToTopButton } from './components/ScrollToTopButton';
 import { ShoppingBag, ChevronRight } from 'lucide-react';
 
 export const App: React.FC = () => {
@@ -712,13 +713,16 @@ export const App: React.FC = () => {
 
   if (currentRoute === 'gears') {
     return (
-      <GearCatalogPage
-        gears={gears}
-        deals={deals}
-        theme={theme}
-        onToggleTheme={toggleTheme}
-        onBackToEvents={() => navigateTo('events')}
-      />
+      <>
+        <GearCatalogPage
+          gears={gears}
+          deals={deals}
+          theme={theme}
+          onToggleTheme={toggleTheme}
+          onBackToEvents={() => navigateTo('events')}
+        />
+        <ScrollToTopButton />
+      </>
     );
   }
 
@@ -875,6 +879,9 @@ export const App: React.FC = () => {
 
       {/* フッター */}
       <Footer onOpenCatalog={() => navigateTo('gears')} />
+
+      {/* 右下常駐：一番上へ戻るボタン（PC・スマホ共通） */}
+      <ScrollToTopButton />
     </div>
   );
 };
