@@ -16,6 +16,7 @@ import { UpdateTicker, UPDATE_NEWS_DATA } from './components/UpdateTicker';
 import { Footer } from './components/Footer';
 import { GearCatalogPage } from './components/GearCatalogPage';
 import { ScrollToTopButton } from './components/ScrollToTopButton';
+import { MyRaceCountdownBanner } from './components/MyRaceCountdownBanner';
 import { trackEvent, trackPageView } from './utils/analytics';
 import { ShoppingBag, ChevronRight } from 'lucide-react';
 
@@ -832,6 +833,13 @@ export const App: React.FC = () => {
           filters={filters}
           onFilterAdventure={handleFilterAdventure}
           onFilterFeature={handleFilterFeature}
+        />
+
+        {/* 3. 出場予定カウントダウン＆必携装備準備率バナー（お気に入り登録時のみ表示） */}
+        <MyRaceCountdownBanner
+          events={events}
+          favoriteIds={favoriteIds}
+          onSelectEvent={setSelectedEvent}
         />
 
         {/* 4. 条件にマッチする（多次元検索パネル） */}

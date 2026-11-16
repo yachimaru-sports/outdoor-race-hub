@@ -70,6 +70,7 @@ export const EventDetailModal: React.FC<EventDetailModalProps> = ({ event, deals
     setCheckedItems((prev) => {
       const updated = { ...prev, [name]: !prev[name] };
       localStorage.setItem(storageKey, JSON.stringify(updated));
+      window.dispatchEvent(new Event('gear-check-updated'));
       return updated;
     });
   };
@@ -81,11 +82,13 @@ export const EventDetailModal: React.FC<EventDetailModalProps> = ({ event, deals
     });
     setCheckedItems(updated);
     localStorage.setItem(storageKey, JSON.stringify(updated));
+    window.dispatchEvent(new Event('gear-check-updated'));
   };
 
   const clearAll = () => {
     setCheckedItems({});
     localStorage.removeItem(storageKey);
+    window.dispatchEvent(new Event('gear-check-updated'));
   };
 
   const totalCount = event.mandatory_gear.length;
