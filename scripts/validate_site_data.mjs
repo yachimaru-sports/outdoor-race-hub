@@ -15,19 +15,22 @@
 import fs from 'node:fs';
 import { findReplacement } from './refresh_gears.mjs';
 
+const isCI = Boolean(process.env.CI || process.env.GITHUB_ACTIONS);
 const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36';
 
 async function fetchCheck(url, accept) {
-  for (let i = 0; i < 2; i++) {
+  const tries = isCI ? 1 : 2;
+  const timeoutMs = isCI ? 4500 : 8000;
+  for (let i = 0; i < tries; i++) {
     try {
       const r = await fetch(url, {
         headers: { 'User-Agent': UA, Accept: accept, 'Accept-Language': 'ja' },
-        signal: AbortSignal.timeout(8000),
+        signal: AbortSignal.timeout(timeoutMs),
         redirect: 'follow',
       });
       if (r.status < 500 && r.status !== 429) return r;
     } catch { /* retry */ }
-    if (i === 0) await new Promise((s) => setTimeout(s, 600));
+    if (i + 1 < tries) await new Promise((s) => setTimeout(s, 600));
   }
   return null;
 }
@@ -53,8 +56,9 @@ async function main() {
         continue;
       }
 
+      // CI環境では楽天ページがWAF遮断されるため画像CDNの実通確認に集中して高速化
       const [pageRes, imgRes] = await Promise.all([
-        fetchCheck(g.dealUrl, 'text/html'),
+        isCI ? Promise.resolve(null) : fetchCheck(g.dealUrl, 'text/html'),
         fetchCheck(g.imageUrl, 'image/*'),
       ]);
 

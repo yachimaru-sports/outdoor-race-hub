@@ -18,6 +18,7 @@ import fs from 'node:fs';
 import { appendChangelog, nowJstParts } from './lib/changelog.mjs';
 
 const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36';
+const isCI = Boolean(process.env.CI || process.env.GITHUB_ACTIONS);
 const HEADERS = { 'User-Agent': UA, 'Accept-Language': 'ja,en-US;q=0.9,en;q=0.8', Accept: 'text/html,application/xhtml+xml,*/*;q=0.8' };
 const MIN_PER_CATEGORY = 3;
 const DEAL_THRESHOLD = 20;
@@ -30,13 +31,16 @@ const RAKUTEN_ORIGIN = (process.env.RAKUTEN_ORIGIN || 'https://yachimaru-sports.
 const AFFILIATE_ID = (process.env.RAKUTEN_AFFILIATE_ID || '').trim();
 const GEMINI_API_KEY = (process.env.GEMINI_API_KEY || '').trim();
 
+let ciRakutenBlockedCount = 0;
+
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-async function fetchRetry(url, opts = {}, tries = 2) {
+async function fetchRetry(url, opts = {}, tries = isCI ? 1 : 2) {
   let last = null;
+  const timeoutMs = isCI ? 5000 : 9000;
   for (let i = 0; i < tries; i++) {
     try {
-      const res = await fetch(url, { ...opts, headers: { ...HEADERS, ...(opts.headers || {}) }, signal: AbortSignal.timeout(9000), redirect: 'follow' });
+      const res = await fetch(url, { ...opts, headers: { ...HEADERS, ...(opts.headers || {}) }, signal: AbortSignal.timeout(timeoutMs), redirect: 'follow' });
       // 403/404/410 等はリトライしても変わらないため即返す
       if (res.status < 500 && res.status !== 429) return res;
       last = res;
@@ -352,7 +356,14 @@ async function refreshOne(g) {
   }
 
   const log = [];
-  let scraped = await scrapeItem(g.dealUrl);
+  let scraped;
+  if (isCI && ciRakutenBlockedCount >= 3) {
+    scraped = { ok: false, blocked: true, reason: 'CI環境WAF連続遮断のため高速スキップ' };
+  } else {
+    scraped = await scrapeItem(g.dealUrl);
+    if (scraped.blocked) ciRakutenBlockedCount++;
+    else if (scraped.ok) ciRakutenBlockedCount = 0;
+  }
   let url = g.dealUrl;
   let replaced = false;
 
@@ -568,6 +579,10 @@ async function discoverAndRotateDeals(currentGears) {
   const rotatedTargets = [...DISCOVERY_TARGETS.slice(daySeed), ...DISCOVERY_TARGETS.slice(0, daySeed)];
 
   for (const target of rotatedTargets) {
+    if (isCI && ciRakutenBlockedCount >= 3) {
+      console.log(' ⏭️ CI環境で楽天WAF制限中のため、新規ディスカバリーを高速スキップします。');
+      break;
+    }
     if (consecutiveBlocked >= 4) {
       console.log(' ⏭️ 楽天スクレイピングがWAF連続制限中のため、新規ディスカバリーを早期完了します。');
       break;

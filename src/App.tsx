@@ -429,9 +429,12 @@ export const App: React.FC = () => {
     setFilters(newFilters);
   };
 
-  // フィルターリセット
+  // フィルターリセット（「受付中のみ」も含めてすべての絞り込み条件を完全クリア）
   const handleResetFilters = () => {
-    setFilters(INITIAL_FILTERS);
+    setFilters({
+      ...INITIAL_FILTERS,
+      entryStatus: 'all',
+    });
   };
 
   // 統計値
