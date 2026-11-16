@@ -417,10 +417,13 @@ async function fetchTrailrunnerList(todayStr) {
     const distRaw = prefMatch ? (prefMatch[2] || '') : '';
     const titleBase = afterDates.replace(/\s*\([^()]+\)\s*(?:【[^】]+】)?\s*$/, '').trim();
 
+    // 小規模・体験系（キッズ/ドッグ/カニクロス/親子/練習会等）は除外
+    if (/キッズ|ジュニア|ドッグ|カニクロス|親子|体験|練習会|試走/i.test(titleBase)) continue;
+
     const prefecture = normalizePrefecture(prefRaw);
     const region = PREF_TO_REGION[prefecture] || '全国';
 
-    // 距離の暫定パース
+    // 距離の暫定パース（10km以下は追加不要のためスキップ）
     let maxKm = 0;
     for (const dm of distRaw.matchAll(/(\d+(?:\.\d+)?)\s*(?:k|km|キロ)/gi)) {
       const v = parseFloat(dm[1]);
@@ -428,7 +431,7 @@ async function fetchTrailrunnerList(todayStr) {
     }
     if (maxKm === 0 && /100\s*mile/i.test(distRaw)) maxKm = 160;
     if (maxKm === 0 && /時間/.test(distRaw)) maxKm = 20;
-    if (maxKm === 0) maxKm = 10;
+    if (maxKm <= 10) continue;
 
     // ID生成
     const slug = detailUrl
@@ -599,7 +602,20 @@ async function main() {
   const todayStr = getTodayJst();
   console.log(`=== 外部ポータル同期開始 (基準日: ${todayStr}) ===`);
 
-  const events = JSON.parse(fs.readFileSync(EVENTS_PATH, 'utf8'));
+  const rawEvents = JSON.parse(fs.readFileSync(EVENTS_PATH, 'utf8'));
+  // 既存のトレイルランナー.JP由来データのうち 10km以下・対象外種目をクリーンアップ
+  let pruned = 0;
+  const events = rawEvents.filter((e) => {
+    const isTrjp = e.id?.startsWith('trjp-') || e.source?.portalName === 'トレイルランナー.JP';
+    if (isTrjp && (e.distance_km <= 10 || /キッズ|ジュニア|ドッグ|カニクロス|親子|体験|練習会|試走/i.test(e.title))) {
+      pruned++;
+      return false;
+    }
+    return true;
+  });
+  if (pruned > 0) {
+    console.log(`🧹 トレイルランナー.JP の 10km以下・対象外大会を ${pruned} 件整理しました。`);
+  }
   let added = 0;
   let updated = 0;
 
@@ -655,8 +671,9 @@ async function main() {
     })
   );
 
-  // 追加直前にもう一度重複チェック（一覧内での重複対策）
+  // 追加直前にもう一度重複チェック＆10km超チェック
   for (const ev of enriched) {
+    if (ev.distance_km <= 10) continue;
     if (findDuplicateIndex(events, ev) >= 0) continue;
     events.push(ev);
     added++;
