@@ -177,6 +177,40 @@ export async function searchWithGemini(keyword) {
   }
 }
 
+/** 2-B. Gemini AI (Google Search Grounding) による最新価格取得（楽天APIなし・WAF遮断時のフォールバック） */
+let geminiPriceQuota = 10;
+async function fetchPriceWithGemini(gear) {
+  if (!GEMINI_API_KEY || geminiPriceQuota <= 0) return null;
+  geminiPriceQuota--;
+  const prompt = `次の楽天市場商品の現在の税込販売価格（円）と、もしセール中なら定価/参考価格（円）をGoogle検索で調べて、JSONのみ（例: {"price": 12800, "originalPrice": 16000}）で出力してください。不明な場合は {"price": 0}。\n商品名: ${gear.title}\nURL: ${gear.dealUrl}`;
+  try {
+    const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        contents: [{ parts: [{ text: prompt }] }],
+        tools: [{ google_search: {} }],
+        generationConfig: { temperature: 0.1 }
+      }),
+      signal: AbortSignal.timeout(15000)
+    });
+    if (!res.ok) return null;
+    const data = await res.json();
+    const text = (data.candidates?.[0]?.content?.parts || []).map((p) => p.text || '').join('');
+    const jsonMatch = text.match(/\{[\s\S]*?\}/);
+    if (!jsonMatch) return null;
+    const parsed = JSON.parse(jsonMatch[0]);
+    const price = Number(parsed.price) || 0;
+    const originalPrice = Number(parsed.originalPrice) || 0;
+    // 極端な誤検知を防ぐ安全範囲チェック（従来価格の0.3倍〜3倍かつ500円以上）
+    if (price < 500 || price > 300000) return null;
+    if (gear.price && (price < gear.price * 0.3 || price > gear.price * 3)) return null;
+    return { price, originalPrice: originalPrice > price ? originalPrice : 0 };
+  } catch {
+    return null;
+  }
+}
+
 /** 3. 楽天公式API検索（2026年新仕様 openapi.rakuten.co.jp + accessKey 対応） */
 export async function searchRakutenApiItems(keyword, minPrice = 1000) {
   if (!RAKUTEN_APP_ID || !RAKUTEN_ACCESS_KEY) return [];
@@ -355,6 +389,35 @@ async function refreshOne(g) {
             }
           }
         } catch { /* API照会失敗時は画像生存確認へフォールバック */ }
+      }
+      // 楽天API未設定かつWAF遮断時は Gemini (Google Search Grounding) で最新価格を補完更新
+      if (GEMINI_API_KEY && geminiPriceQuota > 0) {
+        const gRes = await fetchPriceWithGemini(g);
+        if (gRes && gRes.price > 0) {
+          const imgAlive = await imageIsAlive(g.imageUrl);
+          if (imgAlive) {
+            const price = gRes.price;
+            const originalPrice = gRes.originalPrice > price
+              ? gRes.originalPrice
+              : (g.originalPrice && g.originalPrice > price ? g.originalPrice : price);
+            const discountRate = originalPrice > price ? Math.round((1 - price / originalPrice) * 100) : 0;
+            const dropped = Boolean(g.price && price < g.price);
+            return {
+              gear: {
+                ...g,
+                price,
+                originalPrice,
+                discountRate,
+                lowest30d: Math.min(g.lowest30d || price, price),
+                priceVerifiedAt: new Date().toISOString(),
+              },
+              status: 'ok',
+              dropped,
+              oldPrice: g.price,
+              log: [`Gemini検索経由で最新価格(¥${price.toLocaleString()})を取得・更新(API不要/WAF回避)`],
+            };
+          }
+        }
       }
       // WAF遮断(403/429)や一時的タイムアウトの場合は安易に削除せず、画像CDNの生存を確認して安全維持
       const imgAlive = await imageIsAlive(g.imageUrl);
