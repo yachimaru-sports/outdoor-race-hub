@@ -1,5 +1,22 @@
 [
   {
+    "id": "ev-sync-2026-11-16",
+    "date": "2026-11-16",
+    "time": "09:38",
+    "type": "event_updated",
+    "title": "大会データ定期検証完了（掲載 216 件）",
+    "detail": "終了大会アーカイブ 0 件 / リンク修正 0 件 / ステータス更新 2 件"
+  },
+  {
+    "id": "price-drop-gear-deal-mw92kizw-0ap8-2026-11-16",
+    "date": "2026-11-16",
+    "time": "09:38",
+    "type": "price_drop",
+    "title": "値下げ検知: ホカ スピードゴート2 ユニセックス HOKA SPEEDGOAT 2 メンズ ",
+    "detail": "¥27,500 → ¥16,500",
+    "gearId": "gear-deal-mw92kizw-0ap8"
+  },
+  {
     "id": "deal-add-gear-deal-mwiiqn0k-y3i8-2026-11-16",
     "date": "2026-11-16",
     "time": "09:22",
@@ -16,14 +33,6 @@
     "title": "新着特価ギア発掘: ザ・ノース・フェイス THE NORTH FACE NP62515 VENTUR",
     "detail": "実測 20%OFF の特価品を追加・入替しました",
     "gearId": "gear-deal-mwiiqnry-e6bb"
-  },
-  {
-    "id": "ev-sync-2026-11-16",
-    "date": "2026-11-16",
-    "time": "08:33",
-    "type": "event_updated",
-    "title": "大会データ定期検証完了（掲載 216 件）",
-    "detail": "終了大会アーカイブ 3 件 / リンク修正 0 件 / ステータス更新 10 件"
   },
   {
     "id": "ev-sync-2026-11-15",
