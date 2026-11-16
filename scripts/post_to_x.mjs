@@ -144,17 +144,69 @@ function buildTweetPayload() {
 
   return {
     today,
+    eventsCount,
+    dealsCount,
     tweetText: text,
     intentUrl: `https://x.com/intent/tweet?text=${encodeURIComponent(text)}`,
     featuredDeal,
+    priceDrop,
+    dealAdded,
+    eventAdded,
+    closingSoon,
+  };
+}
+
+/** TikTok用のスライド構成＆キャプションを作成 */
+function buildTikTokDraft({ today, eventsCount, dealsCount, featuredDeal, priceDrop, dealAdded, eventAdded, closingSoon }) {
+  const slide1 = `⚡【${today}更新】トレラン・マラソン大会＆特価ギア速報`;
+  const slide2 = priceDrop
+    ? `🔥 今日の値下げギア：${priceDrop.title.replace(/^値下げ検知:\s*/, '')}（${priceDrop.detail || '大幅値下げ'}）`
+    : dealAdded
+      ? `🏷️ 今日の特価ギア：${dealAdded.title.replace(/^新着特価ギア発掘:\s*/, '')}（${dealAdded.detail || '特価'}）`
+      : featuredDeal
+        ? `🏷️ 注目特価ギア：${featuredDeal.title}（${featuredDeal.discount_rate || ''}%OFF）`
+        : `🏷️ 大会必携ギアの最新特価を毎日更新中！`;
+
+  const slide3 = closingSoon
+    ? `⏳ まもなく締切：${closingSoon.title}（〜${closingSoon.entry_deadline}）`
+    : eventAdded
+      ? `🆕 新規追加大会：${eventAdded.title.replace(/^新規大会追加:\s*/, '')}`
+      : `🏔️ 全国${eventsCount}大会の日程・必携装備を一覧比較！`;
+
+  const slide4 = `👇 申込リンク・全${dealsCount}件の特価ギアはプロフィールのリンク「OUTDOOR RACE HUB」から！`;
+
+  const caption = [
+    `⚡【毎日朝8時更新】トレラン・マラソン・サイクル大会＆特価ギア速報（${today}）`,
+    '',
+    closingSoon ? `⏳締切間近：${closingSoon.title}（〜${closingSoon.entry_deadline}）` : '',
+    priceDrop ? `🔥値下げ：${priceDrop.title.replace(/^値下げ検知:\s*/, '')}（${priceDrop.detail || ''}）` : '',
+    `全国${eventsCount}大会のエントリー情報と必携品・特価ギア${dealsCount}件をまとめています！`,
+    '👇 詳細はプロフィールのリンク（OUTDOOR RACE HUB）からチェック！',
+    '',
+    '#トレラン #トレイルランニング #マラソン #ランニング #サイクリング #アウトドアギア #登山 #OUTDOORRACEHUB',
+  ]
+    .filter((line, idx, arr) => !(line === '' && arr[idx - 1] === ''))
+    .join('\n');
+
+  return {
+    slidesText: [
+      `1枚目（表紙）: ${slide1}`,
+      `2枚目（ギア）: ${slide2}`,
+      `3枚目（大会）: ${slide3}`,
+      `4枚目（誘導）: ${slide4}`,
+    ].join('\n'),
+    caption,
   };
 }
 
 /** メール送信用本文を作成 */
-function buildMailBody({ today, tweetText, intentUrl, featuredDeal }) {
+function buildMailBody(payload) {
+  const { today, tweetText, intentUrl, featuredDeal } = payload;
+  const tiktok = buildTikTokDraft(payload);
+
   const sections = [
     `OUTDOOR RACE HUB の毎朝更新（${today}）が完了しました！`,
-    `そのままX（@yachimaru000）へ投稿できるテキストをお送りします。`,
+    `そのままX（@yachimaru000）やTikTokへ投稿できるテキストをお送りします。`,
     '',
     '========================================',
     '📱 ワンタップでX投稿画面を開く（スマホ・PC対応）',
@@ -167,9 +219,19 @@ function buildMailBody({ today, tweetText, intentUrl, featuredDeal }) {
     tweetText,
     '',
     '========================================',
+    '🎵 TikTok用 スライド画像テキスト案（フォトモード推奨）',
+    '========================================',
+    tiktok.slidesText,
+    '',
+    '========================================',
+    '🎵 コピペ用 TikTok 投稿キャプション（説明文）',
+    '========================================',
+    tiktok.caption,
+    '',
+    '========================================',
     '🖼️ 画像・アイキャッチについて',
     '========================================',
-    '※サイトURLを含めて投稿すると、自動で大きなアイキャッチ画像（OGPカード）が表示されます：',
+    '※XではサイトURLを含めて投稿すると、自動で大きなアイキャッチ画像（OGPカード）が表示されます：',
     `サイトOGP画像: ${OGP_IMAGE_URL}`,
   ];
 
@@ -180,7 +242,7 @@ function buildMailBody({ today, tweetText, intentUrl, featuredDeal }) {
   }
 
   sections.push('');
-  sections.push('※画像付きで投稿したい場合は、上記の画像URLを開いて保存し、Xの投稿画面で添付してください。');
+  sections.push('※画像付きで投稿したい場合は、上記の画像URLを開いて保存し、投稿画面で添付してください。');
 
   return sections.join('\n');
 }
