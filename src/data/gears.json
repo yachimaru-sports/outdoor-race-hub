@@ -1335,34 +1335,32 @@
     "lowest30d": 4950
   },
   {
-    "id": "gear-ar-sacoche-waterproof",
+    "id": "gear-ar-drybag-exped-versa",
     "sports": [
       "adventure",
       "trail"
     ],
     "gearType": "防水スタッフバッグ",
     "matchKeywords": [
-      "防水バッグ",
       "ドライバッグ",
-      "サコッシュ",
-      "完全防水",
-      "IPX7"
+      "スタッフバッグ",
+      "防水バッグ",
+      "EXPED"
     ],
-    "title": "高密閉 完全防水サコッシュ＆ドライバッグ (IPX7水没耐性 / ロール密閉)",
-    "brand": "AQUA-SEAL",
-    "standardTitle": "【カテゴリ最安57%OFF】雨天レース・渡渉・カヌーでも電子機器や地図、必携医療品を水濡れから100%保護する高気密ポーチ。",
-    "standardUrl": "https://item.rakuten.co.jp/hzll/fsb-m816",
-    "dealKeyword": "完全防水 サコッシュ ドライバッグ",
-    "price": 2580,
-    "originalPrice": 5960,
-    "discountRate": 57,
+    "title": "EXPED Drybag Versa（エクスペド 完全防水・防塵ドライバッグ）",
+    "brand": "EXPED",
+    "standardTitle": "【大会定番】ザック内の防寒着や必携装備を水濡れから確実に守る完全防水ロールトップ・ドライバッグ。",
+    "standardUrl": "https://item.rakuten.co.jp/plywood/39383084/",
+    "dealKeyword": "EXPED ドライバッグ",
+    "price": 2200,
+    "originalPrice": 2200,
+    "discountRate": 0,
     "pointRate": 10,
-    "dealUrl": "https://item.rakuten.co.jp/hzll/fsb-m816",
-    "imageUrl": "https://shop.r10s.jp/hzll/cabinet/13400306/14025653/fsb-30.jpg",
-    "badge": "🔥 57%OFF 最安特価",
-    "isBestDeal": true,
-    "priceVerifiedAt": "2026-11-16T00:21:24.357Z",
-    "lowest30d": 2580
+    "dealUrl": "https://item.rakuten.co.jp/plywood/39383084/",
+    "imageUrl": "https://shop.r10s.jp/plywood/cabinet/503/39383084.jpg",
+    "badge": "定番おすすめ",
+    "isBestDeal": false,
+    "priceVerifiedAt": "2026-11-16T07:05:09.695Z"
   },
   {
     "id": "gear-ar-drybag-seatosummit-ultra",
