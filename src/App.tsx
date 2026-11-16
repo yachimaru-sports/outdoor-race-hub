@@ -16,6 +16,7 @@ import { UpdateTicker, UPDATE_NEWS_DATA } from './components/UpdateTicker';
 import { Footer } from './components/Footer';
 import { GearCatalogPage } from './components/GearCatalogPage';
 import { ScrollToTopButton } from './components/ScrollToTopButton';
+import { trackEvent, trackPageView } from './utils/analytics';
 import { ShoppingBag, ChevronRight } from 'lucide-react';
 
 export const App: React.FC = () => {
@@ -93,6 +94,11 @@ export const App: React.FC = () => {
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
+  // ページ切り替え（大会一覧 / 商品一覧）をGA4で計測
+  useEffect(() => {
+    trackPageView(currentRoute);
+  }, [currentRoute]);
+
   const navigateTo = (route: 'events' | 'gears') => {
     setCurrentRoute(route);
     if (route === 'gears') {
@@ -119,6 +125,18 @@ export const App: React.FC = () => {
       setSelectedEvent(found);
     }
   };
+
+  // 大会詳細モーダルが開かれた際にGA4イベントを送信
+  useEffect(() => {
+    if (selectedEvent) {
+      trackEvent('event_detail_view', {
+        event_id: selectedEvent.id,
+        event_title: selectedEvent.title,
+        event_category: selectedEvent.category,
+        event_prefecture: selectedEvent.prefecture,
+      });
+    }
+  }, [selectedEvent]);
 
   // テーマ管理（デフォルト: 'light'）
   const [theme, setTheme] = useState<'light' | 'dark'>(() => {

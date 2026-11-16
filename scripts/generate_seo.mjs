@@ -2,10 +2,12 @@
  * scripts/generate_seo.mjs
  * vite build 後に dist/ へ SEO用静的HTML・sitemap.xml・robots.txt・JSON-LD を生成
  *
- * - dist/events/<id>/index.html : 各大会の静的ランディングページ（SportsEvent JSON-LD付き）
+ * - dist/events/<id>/index.html : 各大会の静的ランディングページ（SportsEvent JSON-LD・必携品リスト付き）
  * - dist/events/<category>/index.html : 4競技別一覧ページ
+ * - dist/areas/<slug>/index.html : 地域別一覧ページ
+ * - dist/gears/index.html : おすすめ商品・特価ギア一覧ページ
  * - dist/sitemap.xml / dist/robots.txt
- * - dist/index.html へ WebSite + ItemList JSON-LD を挿入
+ * - dist/index.html へ WebSite JSON-LD を挿入
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -13,6 +15,8 @@ import path from 'node:path';
 const SITE_URL = 'https://yachimaru-sports.github.io/outdoor-race-hub';
 const DIST_DIR = 'dist';
 const EVENTS_PATH = 'src/data/events.json';
+const DEALS_PATH = 'src/data/deals.json';
+const GEARS_PATH = 'src/data/gears.json';
 const META_PATH = 'src/data/meta.json';
 
 const CAT_INFO = {
@@ -20,6 +24,22 @@ const CAT_INFO = {
   marathon: { label: 'マラソン・ウルトラマラソン大会一覧', short: 'マラソン' },
   cycling: { label: 'サイクリング・ヒルクライム大会一覧', short: 'サイクル' },
   adventure: { label: 'アドベンチャーレース・ロゲイニング一覧', short: 'アドベンチャー' },
+};
+
+const REGION_SLUG = {
+  北海道: 'hokkaido',
+  東北: 'tohoku',
+  関東: 'kanto',
+  甲信越: 'koshinetsu',
+  '甲信越・北陸': 'koshinetsu-hokuriku',
+  中部: 'chubu',
+  東海: 'tokai',
+  関西: 'kansai',
+  近畿: 'kinki',
+  中国: 'chugoku',
+  四国: 'shikoku',
+  九州: 'kyushu',
+  海外: 'overseas',
 };
 
 const STATUS_LABEL = {
@@ -36,6 +56,13 @@ const SCHEMA_STATUS = {
   closed: 'https://schema.org/EventScheduled',
 };
 
+const SCHEMA_AVAILABILITY = {
+  open: 'https://schema.org/InStock',
+  closing_soon: 'https://schema.org/InStock',
+  upcoming: 'https://schema.org/PreOrder',
+  closed: 'https://schema.org/SoldOut',
+};
+
 function esc(s) {
   return String(s ?? '')
     .replace(/&/g, '&amp;')
@@ -43,6 +70,14 @@ function esc(s) {
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#39;');
+}
+
+/** 参加費文字列から数値（円）を抽出（例: "8,000円〜9,200円" -> 8000） */
+function extractPriceNumber(feeStr) {
+  if (!feeStr) return null;
+  const cleaned = String(feeStr).replace(/,/g, '');
+  const m = cleaned.match(/\d{3,6}/);
+  return m ? Number(m[0]) : null;
 }
 
 function layoutHtml({ title, description, canonical, jsonLd, body }) {
@@ -65,12 +100,17 @@ function layoutHtml({ title, description, canonical, jsonLd, body }) {
   body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans JP",sans-serif;margin:0;background:#f8fafc;color:#0f172a;line-height:1.65}
   .wrap{max-width:860px;margin:0 auto;padding:20px 16px 48px}
   header{background:#0f172a;color:#fff;padding:12px 16px}
+  header .inner{max-width:860px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
   header a{color:#5eead4;text-decoration:none;font-weight:800;font-size:15px}
+  header a.sub{color:#cbd5e1;font-size:13px;font-weight:600}
   nav{font-size:13px;color:#475569;margin-bottom:14px}
   nav a{color:#0f766e;text-decoration:none}
   .card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:22px;box-shadow:0 1px 3px rgba(0,0,0,.05)}
   h1{font-size:22px;line-height:1.35;margin:0 0 12px}
+  h2{font-size:16px;margin:22px 0 10px;border-left:4px solid #0f766e;padding-left:10px}
   .badge{display:inline-block;padding:3px 10px;border-radius:999px;font-size:12px;font-weight:700;background:#ccfbf1;color:#115e59;margin-right:6px}
+  .gear-tags{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 0;padding:0;list-style:none}
+  .gear-tags li{background:#f1f5f9;border:1px solid #cbd5e1;border-radius:8px;padding:4px 10px;font-size:13px;font-weight:600}
   dl{display:grid;grid-template-columns:130px 1fr;gap:8px 12px;margin:18px 0;font-size:14px}
   dt{color:#64748b;font-weight:700}
   dd{margin:0;font-weight:600}
@@ -85,7 +125,7 @@ function layoutHtml({ title, description, canonical, jsonLd, body }) {
 ${jsonLd ? `<script type="application/ld+json">${JSON.stringify(jsonLd)}</script>` : ''}
 </head>
 <body>
-<header><div style="max-width:860px;margin:0 auto"><a href="${SITE_URL}/">⚡ OUTDOOR RACE HUB</a></div></header>
+<header><div class="inner"><a href="${SITE_URL}/">⚡ OUTDOOR RACE HUB</a><a class="sub" href="${SITE_URL}/#/gears">おすすめ商品・特価ギア</a></div></header>
 <main class="wrap">${body}</main>
 </body>
 </html>`;
@@ -94,7 +134,11 @@ ${jsonLd ? `<script type="application/ld+json">${JSON.stringify(jsonLd)}</script
 function main() {
   if (!fs.existsSync(DIST_DIR)) return;
   const events = JSON.parse(fs.readFileSync(EVENTS_PATH, 'utf-8'));
+  let deals = [];
+  let gears = [];
   let meta = {};
+  try { deals = JSON.parse(fs.readFileSync(DEALS_PATH, 'utf-8')); } catch { /* ignore */ }
+  try { gears = JSON.parse(fs.readFileSync(GEARS_PATH, 'utf-8')); } catch { /* ignore */ }
   try { meta = JSON.parse(fs.readFileSync(META_PATH, 'utf-8')); } catch { /* ignore */ }
   const lastmod = (meta.last_updated_at || new Date().toISOString()).slice(0, 10);
 
@@ -134,7 +178,97 @@ function main() {
     fs.writeFileSync(path.join(dir, 'index.html'), html);
   }
 
-  // 2. 大会ごとの静的詳細ページ
+  // 2. 地域別一覧ページ
+  const regionMap = new Map();
+  for (const ev of events) {
+    const r = (ev.region || '').trim();
+    if (!r) continue;
+    if (!regionMap.has(r)) regionMap.set(r, []);
+    regionMap.get(r).push(ev);
+  }
+
+  for (const [regionName, list] of regionMap.entries()) {
+    const slug = REGION_SLUG[regionName] || encodeURIComponent(regionName);
+    const dir = path.join(DIST_DIR, 'areas', slug);
+    fs.mkdirSync(dir, { recursive: true });
+    const canonical = `${SITE_URL}/areas/${slug}/`;
+    urls.push(canonical);
+    const areaTitle = `${regionName}のトレラン・マラソン・サイクル大会一覧`;
+    const html = layoutHtml({
+      title: `${areaTitle}｜OUTDOOR RACE HUB`,
+      description: `${regionName}で開催されるトレイルランニング・マラソン・サイクリング・アドベンチャーレース（${list.length}件）の最新開催日程とエントリー情報。`,
+      canonical,
+      jsonLd: {
+        '@context': 'https://schema.org',
+        '@type': 'ItemList',
+        name: areaTitle,
+        numberOfItems: list.length,
+        itemListElement: list.slice(0, 30).map((e, i) => ({
+          '@type': 'ListItem',
+          position: i + 1,
+          url: `${SITE_URL}/events/${e.id}/`,
+          name: e.title,
+        })),
+      },
+      body: `
+        <nav><a href="${SITE_URL}/">トップ</a> &gt; ${esc(regionName)}の大会一覧</nav>
+        <h1>${esc(areaTitle)}（${list.length}件）</h1>
+        <p><a class="btn btn-main" href="${SITE_URL}/">条件を絞り込んでアプリで探す</a></p>
+        <ul class="list">
+          ${list.map((e) => `<li><a href="${SITE_URL}/events/${esc(e.id)}/">${esc(e.title)}<span>${esc(e.date)} ／ ${esc(e.prefecture)} ／ ${esc(STATUS_LABEL[e.entry_status] || e.entry_status)}</span></a></li>`).join('\n')}
+        </ul>`,
+    });
+    fs.writeFileSync(path.join(dir, 'index.html'), html);
+  }
+
+  // 3. おすすめ商品・特価ギア一覧ページ
+  if (deals.length > 0 || gears.length > 0) {
+    const gearsDir = path.join(DIST_DIR, 'gears');
+    fs.mkdirSync(gearsDir, { recursive: true });
+    const canonical = `${SITE_URL}/gears/`;
+    urls.push(canonical);
+    const combinedItems = [
+      ...deals.map((d) => ({
+        title: d.title,
+        sub: `${d.category || '特価ギア'} ／ ${d.price ? `¥${Number(d.price).toLocaleString()}` : ''}${d.discount_rate ? ` (${d.discount_rate}%OFF)` : ''}`,
+      })),
+      ...gears.slice(0, 30).map((g) => ({
+        title: g.title,
+        sub: `${g.gearType || '定番ギア'} ／ ${g.price ? `¥${Number(g.price).toLocaleString()}` : '価格確認'}`,
+      })),
+    ];
+    const html = layoutHtml({
+      title: `トレラン・マラソン必携装備＆特価ギア一覧｜OUTDOOR RACE HUB`,
+      description: `大会の必携装備に使えるレインウェア・ザック・ヘッドライト・シューズなどの特価セール品(${deals.length}件)＆定番おすすめギア(${gears.length}件)を毎朝8時自動更新。`,
+      canonical,
+      jsonLd: {
+        '@context': 'https://schema.org',
+        '@type': 'CollectionPage',
+        name: 'トレラン・マラソン必携装備＆特価ギア一覧',
+        url: canonical,
+        mainEntity: {
+          '@type': 'ItemList',
+          numberOfItems: combinedItems.length,
+          itemListElement: combinedItems.slice(0, 30).map((item, i) => ({
+            '@type': 'ListItem',
+            position: i + 1,
+            name: item.title,
+          })),
+        },
+      },
+      body: `
+        <nav><a href="${SITE_URL}/">トップ</a> &gt; おすすめ商品・特価ギア一覧</nav>
+        <h1>トレラン・マラソン必携装備＆特価ギア一覧</h1>
+        <p>毎朝8時に価格・割引率を自動検証している特価ギア（${deals.length}件）と定番装備（${gears.length}件）のラインナップです。</p>
+        <p><a class="btn btn-main" href="${SITE_URL}/#/gears">アプリで特価ギア・おすすめ商品を詳しく見る</a></p>
+        <ul class="list">
+          ${combinedItems.map((item) => `<li><a href="${SITE_URL}/#/gears">${esc(item.title)}<span>${esc(item.sub)}</span></a></li>`).join('\n')}
+        </ul>`,
+    });
+    fs.writeFileSync(path.join(gearsDir, 'index.html'), html);
+  }
+
+  // 4. 大会ごとの静的詳細ページ
   for (const ev of events) {
     const dir = path.join(DIST_DIR, 'events', ev.id);
     fs.mkdirSync(dir, { recursive: true });
@@ -142,10 +276,20 @@ function main() {
     urls.push(canonical);
     const catInfo = CAT_INFO[ev.category] || { label: '大会一覧', short: ev.category };
     const startDate = (ev.date || '').split(/[~〜]/)[0];
+    const mandatoryList = Array.isArray(ev.mandatory_gear) ? ev.mandatory_gear : [];
+    const gearSummary = mandatoryList.length > 0
+      ? `必携装備: ${mandatoryList.slice(0, 6).map((g) => g.name).join('・')}`
+      : '';
+    const desc = `${ev.title}（${ev.date}／${ev.prefecture}）の開催日・距離(${ev.distance_km ? `${ev.distance_km}km` : '公式確認'})・参加費(${ev.entry_fee || '公式確認'})・申込期間・公式リンクまとめ。${gearSummary}`;
+
+    const priceNum = extractPriceNumber(ev.entry_fee);
+    const offerUrl = ev.links?.entry || ev.links?.official || canonical;
+
     const jsonLd = {
       '@context': 'https://schema.org',
       '@type': 'SportsEvent',
       name: ev.title,
+      description: desc,
       startDate,
       ...(ev.end_date ? { endDate: ev.end_date } : {}),
       eventStatus: SCHEMA_STATUS[ev.entry_status] || 'https://schema.org/EventScheduled',
@@ -159,15 +303,39 @@ function main() {
           addressCountry: 'JP',
         },
       },
+      offers: {
+        '@type': 'Offer',
+        url: offerUrl,
+        priceCurrency: 'JPY',
+        ...(priceNum !== null ? { price: priceNum } : {}),
+        availability: SCHEMA_AVAILABILITY[ev.entry_status] || 'https://schema.org/InStock',
+      },
+      ...(ev.source?.portalName ? {
+        organizer: {
+          '@type': 'Organization',
+          name: ev.source.portalName,
+          ...(ev.source.portalUrl ? { url: ev.source.portalUrl } : {}),
+        },
+      } : {}),
       url: ev.links?.official || ev.links?.entry || canonical,
     };
+
+    const regionSlug = REGION_SLUG[ev.region] || '';
+    const gearHtml = mandatoryList.length > 0
+      ? `<h2>必携装備・持ち物目安</h2>
+         <ul class="gear-tags">
+           ${mandatoryList.map((g) => `<li>${esc(g.name)}</li>`).join('\n')}
+         </ul>
+         <p style="font-size:13px;margin-top:10px;"><a href="${SITE_URL}/#/gears">▶ 必携装備に使える特価ギア・おすすめ商品を探す</a></p>`
+      : '';
+
     const html = layoutHtml({
-      title: `${ev.title}｜開催日・エントリー情報｜OUTDOOR RACE HUB`,
-      description: `${ev.title}（${ev.date}／${ev.prefecture}）の開催日・参加費(${ev.entry_fee || '公式確認'})・申込期間・公式リンク・必携装備まとめ。`,
+      title: `${ev.title}｜開催日・エントリー・必携装備｜OUTDOOR RACE HUB`,
+      description: desc,
       canonical,
       jsonLd,
       body: `
-        <nav><a href="${SITE_URL}/">トップ</a> &gt; <a href="${SITE_URL}/events/${esc(ev.category)}/">${esc(catInfo.label)}</a> &gt; ${esc(ev.title)}</nav>
+        <nav><a href="${SITE_URL}/">トップ</a> &gt; <a href="${SITE_URL}/events/${esc(ev.category)}/">${esc(catInfo.label)}</a>${regionSlug ? ` &gt; <a href="${SITE_URL}/areas/${esc(regionSlug)}/">${esc(ev.region)}</a>` : ''} &gt; ${esc(ev.title)}</nav>
         <div class="card">
           <div>
             <span class="badge">${esc(catInfo.short)}</span>
@@ -182,8 +350,9 @@ function main() {
             <dt>申込期間</dt><dd>${esc(ev.entry_start_date || '—')} 〜 ${esc(ev.entry_deadline || '公式サイト確認')}</dd>
             <dt>リンク確認日</dt><dd>${esc(ev.links?.verified_at || lastmod)}</dd>
           </dl>
+          ${gearHtml}
           <div class="btns">
-            <a class="btn btn-main" href="${SITE_URL}/?event=${encodeURIComponent(ev.id)}">アプリで必携品・詳細を見る</a>
+            <a class="btn btn-main" href="${SITE_URL}/?event=${encodeURIComponent(ev.id)}">アプリで必携品チェック・詳細を見る</a>
             ${ev.links?.entry ? `<a class="btn btn-sub" href="${esc(ev.links.entry)}" target="_blank" rel="noopener nofollow">申込ページへ</a>` : ''}
             ${ev.links?.official ? `<a class="btn btn-sub" href="${esc(ev.links.official)}" target="_blank" rel="noopener nofollow">大会公式サイトへ</a>` : ''}
           </div>
@@ -192,14 +361,14 @@ function main() {
     fs.writeFileSync(path.join(dir, 'index.html'), html);
   }
 
-  // 3. sitemap.xml & robots.txt
+  // 5. sitemap.xml & robots.txt
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls
     .map((u) => `  <url><loc>${esc(u)}</loc><lastmod>${lastmod}</lastmod></url>`)
     .join('\n')}\n</urlset>\n`;
   fs.writeFileSync(path.join(DIST_DIR, 'sitemap.xml'), sitemap);
   fs.writeFileSync(path.join(DIST_DIR, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${SITE_URL}/sitemap.xml\n`);
 
-  // 4. dist/index.html に WebSite JSON-LD を挿入
+  // 6. dist/index.html に WebSite JSON-LD を挿入
   const idxPath = path.join(DIST_DIR, 'index.html');
   if (fs.existsSync(idxPath)) {
     const idxHtml = fs.readFileSync(idxPath, 'utf-8');
@@ -214,7 +383,7 @@ function main() {
       fs.writeFileSync(idxPath, idxHtml.replace('</head>', `${webSiteLd}\n</head>`));
     }
   }
-  console.log(`🌐 SEO静的ページ生成完了: ${events.length} 大会 + 4 カテゴリ + sitemap.xml`);
+  console.log(`🌐 SEO静的ページ生成完了: ${events.length} 大会 + ${Object.keys(CAT_INFO).length} カテゴリ + ${regionMap.size} 地域 + 特価ギアページ + sitemap.xml (全${urls.length} URL)`);
 }
 
 main();

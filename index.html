@@ -25,8 +25,9 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      // デフォルト設定（IDが差し替えられた際に自動トラッキング開始）
-      gtag('config', 'G-OUTDOORHUB', { send_page_view: true });
+      // SPAのページ切り替え（大会一覧/商品一覧）をApp.tsx側で重複なく正確に計測するため send_page_view: false に設定
+      // ※本番計測を開始するには、下の2箇所の「G-OUTDOORHUB」を実際のGA4測定ID（G-XXXXXXXXXX）に書き換えてください
+      gtag('config', 'G-OUTDOORHUB', { send_page_view: false });
     </script>
     <script>
       (function() {
