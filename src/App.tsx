@@ -655,6 +655,10 @@ export const App: React.FC = () => {
     // meta.json (毎朝8時自動同期日時)・deals.json・UPDATE_NEWS_DATA のうち最新日時を JST で自動表示
     try {
       const candidates: number[] = [];
+      if (typeof __BUILD_TIME__ === 'string' && __BUILD_TIME__) {
+        const buildT = new Date(__BUILD_TIME__).getTime();
+        if (!isNaN(buildT) && buildT > 0) candidates.push(buildT);
+      }
       if (metaData && (metaData as { last_updated_at?: string }).last_updated_at) {
         const t = new Date((metaData as { last_updated_at: string }).last_updated_at).getTime();
         if (!isNaN(t) && t > 0) candidates.push(t);
