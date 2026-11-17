@@ -22,6 +22,18 @@ const isCI = Boolean(process.env.CI || process.env.GITHUB_ACTIONS);
 const HEADERS = { 'User-Agent': UA, 'Accept-Language': 'ja,en-US;q=0.9,en;q=0.8', Accept: 'text/html,application/xhtml+xml,*/*;q=0.8' };
 const MIN_PER_CATEGORY = 3;
 const DEAL_THRESHOLD = 20;
+const MIN_GEAR_PRICE = 3001; // ツール・ギア類は3,000円以下の安価品を不採用（靴下・補給食等の小物は除外）
+const SMALL_EXEMPT_CATEGORIES = new Set([
+  'ランニングソックス',
+  '補給食・エナジージェル',
+  'アンダーウェア',
+  'エマージェンシー・救急',
+  '防水スタッフバッグ',
+]);
+function meetsQualityPrice(category, price) {
+  if (SMALL_EXEMPT_CATEGORIES.has(category)) return price > 0;
+  return price >= MIN_GEAR_PRICE;
+}
 const GEARS_PATH = 'src/data/gears.json';
 const DEALS_PATH = 'src/data/deals.json';
 const META_PATH = 'src/data/meta.json';
@@ -500,6 +512,11 @@ async function refreshOne(g) {
   const lowest30d = Math.min(g.lowest30d || price, price);
   const dropped = Boolean(!replaced && g.price && price > 0 && price < g.price);
 
+  // 品質ガード: 靴下・補給食等の小物を除き、3,000円以下の安価ツール・ギアは除外
+  if (!meetsQualityPrice(g.gearType, price)) {
+    return { gear: g, status: 'low_quality', log: [`品質価格基準(¥${MIN_GEAR_PRICE.toLocaleString()}以上)未満のため除外: ¥${price.toLocaleString()}`] };
+  }
+
   const next = {
     ...g,
     dealUrl: url, standardUrl: url,
@@ -522,8 +539,8 @@ const DISCOVERY_TARGETS = [
   { keyword: 'ホカ ランニングシューズ 特価', category: 'ランニングシューズ', sports: ['marathon'], brand: 'HOKA' },
   { keyword: 'サロモン トレランザック 特価', category: 'トレランザック', sports: ['trail', 'marathon'], brand: 'SALOMON' },
   { keyword: 'ネイサン ランニングベスト セール', category: 'トレランザック', sports: ['trail'], brand: 'NATHAN' },
-  { keyword: 'ペツル ヘッドライト セール', category: 'ヘッドライト', sports: ['trail', 'adventure'], brand: 'PETZL' },
-  { keyword: 'レッドレンザー ヘッドライト 特価', category: 'ヘッドライト', sports: ['trail', 'adventure'], brand: 'LEDLENSER' },
+  { keyword: 'ペツル アクティックコア 充電式 ヘッドライト セール', category: 'ヘッドライト', sports: ['trail', 'adventure'], brand: 'PETZL' },
+  { keyword: 'レッドレンザー 充電式 ヘッドライト 高照度 特価', category: 'ヘッドライト', sports: ['trail', 'adventure'], brand: 'LEDLENSER' },
   { keyword: 'C3fit タイツ セール', category: 'サポートタイツ', sports: ['trail', 'marathon', 'cycling'], brand: 'C3fit' },
   { keyword: 'CW-X ジェネレーター セール', category: 'サポートタイツ', sports: ['trail', 'marathon'], brand: 'CW-X' },
   { keyword: 'ノースフェイス ランニングウェア セール', category: 'ランニングウェア', sports: ['trail', 'marathon'], brand: 'THE NORTH FACE' },
@@ -533,6 +550,7 @@ const DISCOVERY_TARGETS = [
   { keyword: 'ミレー レインウェア 特価', category: 'レインウェア', sports: ['trail', 'adventure'], brand: 'MILLET' },
   { keyword: 'ノースフェイス レインジャケット セール', category: 'レインウェア', sports: ['trail', 'adventure'], brand: 'THE NORTH FACE' },
   { keyword: 'パールイズミ サイクルウェア セール', category: 'サイクル用品', sports: ['cycling'], brand: 'PEARL iZUMi' },
+  { keyword: 'キャットアイ VOLT400 AMPP500 充電式 ライト セール', category: 'サイクル用品', sports: ['cycling'], brand: 'CATEYE' },
   { keyword: 'OGK カブト ヘルメット セール', category: 'サイクル用品', sports: ['cycling'], brand: 'OGK KABUTO' },
   { keyword: 'マグオン ジェル セール', category: '補給食・エナジージェル', sports: ['trail', 'marathon', 'cycling'], brand: 'Mag-on' },
 ];
@@ -541,7 +559,7 @@ const CATEGORY_RULES = {
   'トレランシューズ': { must: /シューズ|靴|トレイル|ランニング|スピードゴート|speedgoat|mutant|altra|salomon/i, ban: /靴下|ソックス|インソール|ポール|ザック|ベスト|ライト|ジュニア|キッズ|子供|子ども|junior|kids/i },
   'トレランザック': { must: /ザック|ベスト|バックパック|リュック|skin|スキン|ピナクル/i, ban: /ポール|ストック|シューズ|ライト|タイツ/i },
   'トレッキングポール': { must: /ポール|ストック|zポール|carbon|distance.*(?:z|carbon)/i, ban: /ザック|リュック|バックパック|バッグ|15|ベスト|シューズ/i },
-  'ヘッドライト': { must: /ヘッドライト|ライト|ランタン|ティカ|ティキナ|アクティック|スポット|led/i, ban: /電池のみ|ケースのみ|ベルトのみ|バンドのみ/i },
+  'ヘッドライト': { must: /ヘッドライト|ライト|ランタン|アクティック|スイフト|スポット|led/i, ban: /電池のみ|ケースのみ|ベルトのみ|バンドのみ|乾電池専用|単3/i },
   'サポートタイツ': { must: /タイツ|レギンス|スパッツ|ジェネレーター|エキスパート|c3fit|cw-x/i, ban: /シャツ|ジャケット|靴下|ソックス|パンツのみ|ショーツ|ジュニア|キッズ/i },
   'レインウェア': { must: /レイン|ジャケット|シェル|防水|ゴアテックス|ティフォン|タンペート/i, ban: /パンツ|ズボン|シューズ|ザック|グローブ|ジュニア|キッズ/i },
   'ランニングシューズ': { must: /シューズ|靴|ランニング|マラソン|ゲル|ノヴァ|クリフトン|ボンダイ/i, ban: /靴下|ソックス|インソール|ポール|ザック|ジュニア|キッズ|子供|子ども|junior|kids/i },
@@ -588,7 +606,8 @@ async function discoverAndRotateDeals(currentGears) {
       let candUrls = [];
       const apiItemMap = new Map();
       if (RAKUTEN_APP_ID && RAKUTEN_ACCESS_KEY) {
-        const apiItems = await searchRakutenApiItems(target.keyword, 1500);
+        const minApiPrice = SMALL_EXEMPT_CATEGORIES.has(target.category) ? 1000 : MIN_GEAR_PRICE;
+        const apiItems = await searchRakutenApiItems(target.keyword, minApiPrice);
         for (const it of apiItems) {
           if (it.itemUrl && it.itemUrl.includes('item.rakuten.co.jp')) {
             const u = it.itemUrl.split('?')[0].replace(/\/+$/, '');
@@ -645,7 +664,7 @@ async function discoverAndRotateDeals(currentGears) {
             continue;
           }
         }
-        if (!s.price || s.price <= 0) continue;
+        if (!s.price || !meetsQualityPrice(target.category, s.price)) continue;
         if (!isCategoryMatch(target.category, s.title)) continue;
         const nKey = normGearKey(s.title);
         if (nKey.length >= 6 && existingKeys.has(nKey)) continue;
@@ -692,9 +711,9 @@ async function discoverAndRotateDeals(currentGears) {
           isNewDiscovery: true,
         };
 
-        // カテゴリ内の入れ替え対象を探す（提携公式枠 INNER FACT や RUNPLUS は絶対に保護・除外）
+        // カテゴリ内の入れ替え対象を探す（提携公式枠 INNER FACT / RUNPLUS や必須ライト枠は保護）
         const categoryGears = gears.filter(
-          (g) => g.gearType === target.category && !g.officialUrl && !g.shopName && !g.id.startsWith('gear-innerfact-') && !g.id.startsWith('gear-runplus-')
+          (g) => g.gearType === target.category && !g.officialUrl && !g.shopName && !g.id.startsWith('gear-innerfact-') && !g.id.startsWith('gear-runplus-') && !g.id.startsWith('gear-cycle-light-')
         );
 
         // 割引率が最も低いアイテム（通常価格品や低割引品）を探す
