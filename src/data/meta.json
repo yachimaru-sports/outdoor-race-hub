@@ -1,7 +1,7 @@
 {
-  "last_updated_at": "2026-11-16T11:15:16.411Z",
-  "events_count": 180,
-  "deals_count": 31,
+  "last_updated_at": "2026-11-17T12:07:06.960Z",
+  "events_count": 181,
+  "deals_count": 30,
   "gears_count": 65,
   "sync_source": "Google Sheets & Rakuten API Automated Sync",
   "gear_sync_source": "refresh_gears.mjs (自己修復・商品ページ実測・画像HTTP200検証済)",
@@ -11,7 +11,7 @@
     "events_updated": 2,
     "events_archived": 0,
     "links_fixed": 0,
-    "links_removed": 2,
+    "links_removed": 0,
     "deals_added": 0,
     "price_drops": 0
   }
