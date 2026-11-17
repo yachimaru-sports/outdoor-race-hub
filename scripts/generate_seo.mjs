@@ -155,7 +155,7 @@ function main() {
     urls.push(canonical);
     const html = layoutHtml({
       title: `${info.label}｜OUTDOOR RACE HUB`,
-      description: `${info.label}（${list.length}件）。毎朝8時に公式・申込リンクと開催日程を自動検証・更新。`,
+      description: `${info.label}（${list.length}件）。毎朝6時に公式・申込リンクと開催日程を自動検証・更新。`,
       canonical,
       jsonLd: {
         '@context': 'https://schema.org',
@@ -241,7 +241,7 @@ function main() {
     ];
     const html = layoutHtml({
       title: `トレラン・マラソン必携装備＆特価ギア一覧｜OUTDOOR RACE HUB`,
-      description: `大会の必携装備に使えるレインウェア・ザック・ヘッドライト・シューズなどの特価セール品(${deals.length}件)＆定番おすすめギア(${gears.length}件)を毎朝8時自動更新。`,
+      description: `大会の必携装備に使えるレインウェア・ザック・ヘッドライト・シューズなどの特価セール品(${deals.length}件)＆定番おすすめギア(${gears.length}件)を毎朝6時自動更新。`,
       canonical,
       jsonLd: {
         '@context': 'https://schema.org',
@@ -261,7 +261,7 @@ function main() {
       body: `
         <nav><a href="${SITE_URL}/">トップ</a> &gt; おすすめ商品・特価ギア一覧</nav>
         <h1>トレラン・マラソン必携装備＆特価ギア一覧</h1>
-        <p>毎朝8時に価格・割引率を自動検証している特価ギア（${deals.length}件）と定番装備（${gears.length}件）のラインナップです。</p>
+        <p>毎朝6時に価格・割引率を自動検証している特価ギア（${deals.length}件）と定番装備（${gears.length}件）のラインナップです。</p>
         <p><a class="btn btn-main" href="${SITE_URL}/#/gears">アプリで特価ギア・おすすめ商品を詳しく見る</a></p>
         <ul class="list">
           ${combinedItems.map((item) => `<li><a href="${SITE_URL}/#/gears">${esc(item.title)}<span>${esc(item.sub)}</span></a></li>`).join('\n')}
@@ -379,7 +379,7 @@ function main() {
       '@type': 'WebSite',
       name: 'OUTDOOR RACE HUB',
       url: `${SITE_URL}/`,
-      description: 'トレラン・マラソン・サイクル・アドベンチャーレース大会情報と必携装備特価の毎朝8時自動更新ポータル',
+      description: 'トレラン・マラソン・サイクル・アドベンチャーレース大会情報と必携装備特価の毎朝6時自動更新ポータル',
     })}</script>`;
     if (!idxHtml.includes('application/ld+json')) {
       fs.writeFileSync(idxPath, idxHtml.replace('</head>', `${webSiteLd}\n</head>`));

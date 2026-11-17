@@ -1,7 +1,7 @@
 ﻿[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 # =====================================================================
 #  OUTDOOR RACE HUB - 手動更新バッチ
-#  GitHub Actions の毎朝8時自動更新（.github/workflows/daily_sync.yml）と
+#  GitHub Actions の毎朝6時自動更新（.github/workflows/daily_sync.yml）と
 #  まったく同じ手順を、このPC上で実行して GitHub へプッシュします。
 #  ※ daily_sync.yml を変更したら、このファイルも同じ内容に合わせてください。
 # =====================================================================
@@ -28,7 +28,7 @@ function Stop-Batch($msg) {
 }
 
 Write-Host '======================================================' -ForegroundColor Cyan
-Write-Host '  OUTDOOR RACE HUB - 手動更新（毎朝8時の自動更新と同じ処理）' -ForegroundColor Cyan
+Write-Host '  OUTDOOR RACE HUB - 手動更新（毎朝6時の自動更新と同じ処理）' -ForegroundColor Cyan
 Write-Host '======================================================' -ForegroundColor Cyan
 Write-Host ''
 
@@ -137,7 +137,7 @@ git diff --cached --quiet
 if ($LASTEXITCODE -eq 0) {
     Write-Ok 'データ変更なし（すでに最新のためプッシュは不要です）'
 } else {
-    git commit -m 'chore(manual): 手動バッチによる定期同期（毎朝8時の自動更新と同一処理）' | Out-Null
+    git commit -m 'chore(manual): 手動バッチによる定期同期（毎朝6時の自動更新と同一処理）' | Out-Null
     $pushed = $false
     foreach ($i in 1..3) {
         git pull --rebase --autostash origin main

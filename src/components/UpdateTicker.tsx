@@ -87,7 +87,7 @@ export const UPDATE_NEWS_DATA: UpdateNewsItem[] = (changelogData as ChangelogEnt
   return {
     id: c.id,
     date: (c.date || '').replace(/-/g, '.'),
-    time: c.time || '08:00',
+    time: c.time || '06:00',
     tag: meta.tag,
     tagStyle: meta.style,
     title: c.title,
@@ -265,7 +265,7 @@ export const UpdateTicker: React.FC<UpdateTickerProps> = ({ onJumpToTarget, onOp
             </div>
 
             <div className="px-5 py-3 border-t border-slate-800 bg-slate-950/60 flex items-center justify-between text-xs text-slate-400">
-              <span>※毎朝8時に大会情報・ギア特価を自動検証して記録しています</span>
+              <span>※毎朝6時に大会情報・ギア特価を自動検証して記録しています</span>
               <button
                 onClick={() => setShowHistoryModal(false)}
                 className="px-3 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs transition-colors cursor-pointer"

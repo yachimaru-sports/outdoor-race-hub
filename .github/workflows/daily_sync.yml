@@ -1,13 +1,13 @@
-name: "Daily Auto Sync & Update (Every Morning 8:00 JST)"
+name: "Daily Auto Sync & Update (Every Morning 6:00 JST)"
 
 on:
   schedule:
-    # 本番: 07:50 JST（UTC 22:50）。毎時00分の混雑を避けて 8:00 前後の完了を狙う
-    - cron: '50 22 * * *'
-    # 予備1: 08:40 JST（UTC 23:40）… 本番が GitHub 側で起動されなかった／失敗した場合の自動再実行
-    - cron: '40 23 * * *'
-    # 予備2: 10:15 JST（UTC 01:15）… 最終リトライ
-    - cron: '15 1 * * *'
+    # 本番: 05:50 JST（UTC 20:50）。毎時00分の混雑を避けて 6:00 前後の完了を狙う
+    - cron: '50 20 * * *'
+    # 予備1: 06:40 JST（UTC 21:40）… 本番が GitHub 側で起動されなかった／失敗した場合の自動再実行
+    - cron: '40 21 * * *'
+    # 予備2: 08:15 JST（UTC 23:15）… 最終リトライ
+    - cron: '15 23 * * *'
   workflow_dispatch:
     inputs:
       update_trend:
@@ -172,7 +172,7 @@ jobs:
               rm -rf "$TMP_DIR"
               exit 0
             fi
-            git commit -m "chore(auto): 毎朝8時定期同期（装備は商品ページ実測・大会リンクはHTTP検証済み）"
+            git commit -m "chore(auto): 毎朝6時定期同期（装備は商品ページ実測・大会リンクはHTTP検証済み）"
             if git push origin main; then
               echo "プッシュ成功（${i}回目）"
               rm -rf "$TMP_DIR"
@@ -243,7 +243,7 @@ jobs:
           secure: true
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
-          subject: "⚡【毎朝8時更新】X投稿用テキスト（OUTDOOR RACE HUB）"
+          subject: "⚡【毎朝6時更新】X投稿用テキスト（OUTDOOR RACE HUB）"
           to: ${{ secrets.MAIL_TO || secrets.MAIL_USERNAME }}
           from: "OUTDOOR RACE HUB Bot"
           body: file:///tmp/x_mail_draft.txt

@@ -89,7 +89,7 @@ function buildTweetPayload() {
   }
 
   const lines = [];
-  lines.push(`⚡【毎朝8時更新】OUTDOOR RACE HUB`);
+  lines.push(`⚡【毎朝6時更新】OUTDOOR RACE HUB`);
 
   const eventsCount = meta.events_count || events.length || 0;
   const dealsCount = meta.deals_count || deals.length || 0;
@@ -176,7 +176,7 @@ function buildTikTokDraft({ today, eventsCount, dealsCount, featuredDeal, priceD
   const slide4 = `👇 申込リンク・全${dealsCount}件の特価ギアはプロフィールのリンク「OUTDOOR RACE HUB」から！`;
 
   const caption = [
-    `⚡【毎日朝8時更新】トレラン・マラソン・サイクル大会＆特価ギア速報（${today}）`,
+    `⚡【毎日朝6時更新】トレラン・マラソン・サイクル大会＆特価ギア速報（${today}）`,
     '',
     closingSoon ? `⏳締切間近：${closingSoon.title}（〜${closingSoon.entry_deadline}）` : '',
     priceDrop ? `🔥値下げ：${priceDrop.title.replace(/^値下げ検知:\s*/, '')}（${priceDrop.detail || ''}）` : '',
