@@ -122,18 +122,24 @@ export function yearCheck(dateStr, pageText) {
   return { ok: true, reason: '年号記載なし' };
 }
 
-/** 月日表記がページに含まれるか（新規大会の開催日裏取り用） */
+/** 月日表記がページに含まれるか（開催日裏取り用） */
+const EN_MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const EN_MONTHS_FULL = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
 export function dateMentioned(dateStr, pageText) {
   const m = (dateStr || '').match(/^(\d{4})-(\d{2})-(\d{2})/);
   if (!m) return false;
   const [, y, mm, dd] = m;
   const M = Number(mm), D = Number(dd);
   const t = (pageText || '').normalize('NFKC').replace(/\s+/g, '');
+  const enShort = EN_MONTHS[M - 1];
+  const enFull = EN_MONTHS_FULL[M - 1];
   const pats = [
     `${M}月${D}日`, `${mm}月${dd}日`, `${y}/${M}/${D}`, `${y}/${mm}/${dd}`, `${y}.${M}.${D}`, `${y}.${mm}.${dd}`, `${y}-${mm}-${dd}`, `${y}年${M}月${D}日`,
     `${M}/${D}(`, `${M}.${D}(`,
+    `${enShort}${D}`, `${enShort}.${D}`, `${D}${enShort}`, `${enFull}${D}`, `${D}${enFull}`,
   ];
-  return pats.some((p) => t.includes(p));
+  return pats.some((p) => t.toLowerCase().includes(p.toLowerCase()));
 }
 
 /** 総合判定: リンク先がこの大会の正しいページか */

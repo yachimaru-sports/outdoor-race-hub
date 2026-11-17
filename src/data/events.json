@@ -1,135 +1,5 @@
 [
   {
-    "id": "arws-vulcania-2026",
-    "category": "adventure",
-    "subCategory": "ARWS世界選手権予選",
-    "elements": [
-      "ARWS",
-      "世界選手権予選",
-      "アドベンチャー",
-      "読図",
-      "MTB",
-      "パドル",
-      "トレック",
-      "4日以上"
-    ],
-    "title": "Vulcania Expedition Race 2026（チリ ARWS Qualifier 500km・5日間）",
-    "date": "2026-11-20",
-    "month": 11,
-    "region": "海外",
-    "prefecture": "チリ",
-    "distance_km": 500,
-    "elevation_m": 13000,
-    "entry_status": "closed",
-    "entry_start_date": "2026-03-01",
-    "entry_deadline": "2026-10-31",
-    "entry_fee": "650,000円",
-    "links": {
-      "official": "https://tierraindomitaar.com/",
-      "entry": null,
-      "review": null,
-      "sns": null,
-      "verified": true,
-      "verified_at": "2026-11-17",
-      "official_stale": true
-    },
-    "mandatory_gear": [
-      {
-        "name": "マウンテンバイク＆ヘルメット",
-        "category": "ギア"
-      },
-      {
-        "name": "パックラフト＆PFD",
-        "category": "ギア"
-      },
-      {
-        "name": "2.5万分の1地形図＆コンパス",
-        "category": "ナビゲーション"
-      },
-      {
-        "name": "完全防水レインウェア",
-        "category": "ウェア"
-      },
-      {
-        "name": "エマージェンシーキット",
-        "category": "ギア"
-      }
-    ],
-    "venue": {
-      "name": "Pucon, Araucania",
-      "mapQuery": "Pucon Chile"
-    },
-    "source": {
-      "portalName": "ARWS公式"
-    }
-  },
-  {
-    "id": "ftr-chichibu-okumusashi-100mile-2026",
-    "category": "trail",
-    "subCategory": "100マイル トレイル",
-    "elements": [
-      "100マイル",
-      "トレック",
-      "夜間"
-    ],
-    "title": "FunTrails Round 秩父＆奥武蔵 100mile (FTR100) 2026",
-    "date": "2026-11-21",
-    "month": 11,
-    "region": "関東",
-    "prefecture": "埼玉県",
-    "distance_km": 163,
-    "elevation_m": 9800,
-    "entry_status": "closed",
-    "entry_start_date": "2026-08-01",
-    "entry_deadline": "2026-09-30",
-    "entry_fee": "38,000円",
-    "links": {
-      "official": "https://fun-trails.com/",
-      "entry": "https://fun-trails.com/",
-      "review": null,
-      "sns": null,
-      "verified": true,
-      "verified_at": "2026-11-17"
-    },
-    "mandatory_gear": [
-      {
-        "name": "ゴアテックス等 シームテープ加工防水透湿レイン上下",
-        "category": "ウェア"
-      },
-      {
-        "name": "高光量ヘッドライト2灯（メイン300lm以上＋予備ライト・予備電池）",
-        "category": "ライト"
-      },
-      {
-        "name": "GPXトラック収録GPSウォッチ（SUUNTO",
-        "category": "ナビゲーション"
-      },
-      {
-        "name": "GARMIN等）",
-        "category": "ギア"
-      },
-      {
-        "name": "エマージェンシーサバイバルシート（130×200cm以上）＆ホイッスル",
-        "category": "エイド"
-      },
-      {
-        "name": "保温ベースレイヤー（ドライナミック等）・防寒長袖・グローブ",
-        "category": "ウェア"
-      },
-      {
-        "name": "水分1.5L以上携行可能なトレランザック（10L〜12L）＆補給食",
-        "category": "補給"
-      }
-    ],
-    "venue": {
-      "name": "羊山公園（埼玉県秩父市大宮6360）",
-      "mapQuery": "埼玉県秩父市 羊山公園"
-    },
-    "source": {
-      "portalName": "大会公式"
-    }
-  },
-  {
     "id": "trjp-bambi-100-2026",
     "category": "trail",
     "subCategory": "100km / 100マイルウルトラトレイル",
@@ -184,64 +54,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-bambi-100.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
-  },
-  {
-    "id": "shimanto-dragon-ride-2026",
-    "category": "cycling",
-    "subCategory": "清流四万十川ロングライド",
-    "elements": [
-      "ロード"
-    ],
-    "title": "幡多・四万十エリア どっぷりライド（清流四万十川＆足摺岬ロングライド 135km）2026",
-    "date": "2026-11-22",
-    "month": 11,
-    "region": "四国",
-    "prefecture": "高知県",
-    "distance_km": 135,
-    "elevation_m": 1650,
-    "entry_status": "closed",
-    "entry_start_date": "2026-09-16",
-    "entry_deadline": "2026-11-15",
-    "entry_fee": "10,000円",
-    "links": {
-      "official": "https://cycling.hata-kochi.jp/event/",
-      "entry": "https://cycling.hata-kochi.jp/event/",
-      "review": null,
-      "sns": null,
-      "verified": true,
-      "verified_at": "2026-11-17"
-    },
-    "mandatory_gear": [
-      {
-        "name": "JCF公認サイクルヘルメット＆グローブ",
-        "category": "ウェア"
-      },
-      {
-        "name": "高輝度フロントライト＆リアレッドライト（トンネル通過必須）",
-        "category": "ライト"
-      },
-      {
-        "name": "携帯マルチツール・予備チューブ2本・タイヤレバー・携帯ポンプ",
-        "category": "ギア"
-      },
-      {
-        "name": "サイクルボトル水分＆高カロリー補給食",
-        "category": "補給"
-      },
-      {
-        "name": "ウインドブレーカー・レインジレ",
-        "category": "ウェア"
-      }
-    ],
-    "venue": {
-      "name": "四万十市安並運動公園（高知県四万十市安並4231）",
-      "mapQuery": "高知県四万十市 安並運動公園"
-    },
-    "source": {
-      "portalName": "スポエンCYCLE"
-    },
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-kusenbu-quest-50-2026",
@@ -296,7 +110,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-kusenbu-quest-50.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-the-first-step-jyoyama-trail-2026",
@@ -351,7 +166,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-the-first-step-jyoyama-trail.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-kinko-denshiro-trail-2026",
@@ -406,7 +222,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-kinko-denshiro-trail.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-rokko-24-peaks-hunt-2026",
@@ -461,7 +278,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-rokko-24-peaks-hunt.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-sagami-kazekko-trail-running-2026",
@@ -487,7 +305,8 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-17"
+      "verified_at": "2026-11-17",
+      "official_stale": true
     },
     "mandatory_gear": [
       {
@@ -516,7 +335,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-sagami-kazekko-trail-running.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "arws-patagonia-esquel-2026",
@@ -575,7 +395,8 @@
     },
     "source": {
       "portalName": "ARWS公式"
-    }
+    },
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "jinriki-zensouyama-2026",
@@ -631,7 +452,8 @@
       "portalUrl": "https://www.outdoor-sports.info/races-events"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-17"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-awaji-island-trail-2026",
@@ -687,155 +509,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-awaji-island-trail.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
-  },
-  {
-    "id": "shodoshima-mameichi-2026",
-    "category": "cycling",
-    "subCategory": "小豆島一周マメイチ",
-    "elements": [],
-    "title": "小豆島一周オリーブサイクリング（マメイチ）2026",
-    "date": "2026-11-29",
-    "month": 11,
-    "region": "四国",
-    "prefecture": "香川県",
-    "distance_km": 100,
-    "elevation_m": 1350,
-    "entry_status": "closing_soon",
-    "entry_start_date": "2026-09-21",
-    "entry_deadline": "2026-11-20",
-    "entry_fee": "9,000円",
-    "links": {
-      "official": "https://kca36.sakura.ne.jp/wp/",
-      "entry": "https://kca36.sakura.ne.jp/wp/",
-      "review": null,
-      "sns": null,
-      "verified": true,
-      "verified_at": "2026-11-17"
-    },
-    "mandatory_gear": [
-      {
-        "name": "自転車点検済証＆ヘルメット",
-        "category": "ギア"
-      },
-      {
-        "name": "高輝度ライト（トンネル走行必須）",
-        "category": "ライト"
-      },
-      {
-        "name": "携帯ツール＆CO2インフレーター",
-        "category": "ギア"
-      }
-    ],
-    "venue": {
-      "name": "土庄港フェリーターミナル（香川県小豆郡土庄町甲5165-201）",
-      "mapQuery": "香川県土庄町 土庄港フェリーターミナル"
-    },
-    "source": {
-      "portalName": "スポエンCYCLE"
-    }
-  },
-  {
-    "id": "kumano-kodo-trail-2026",
-    "category": "trail",
-    "subCategory": "世界遺産トレイル",
-    "elements": [
-      "トレラン",
-      "山岳トレック"
-    ],
-    "title": "熊野古道トレイルランニングレース 2026",
-    "date": "2026-11-29",
-    "month": 11,
-    "region": "近畿",
-    "prefecture": "三重県",
-    "distance_km": 50,
-    "elevation_m": 2800,
-    "entry_status": "closed",
-    "entry_start_date": "2026-09-01",
-    "entry_deadline": "2026-10-31",
-    "entry_fee": "13,500円",
-    "links": {
-      "official": "http://kumanooldtrails.com/",
-      "entry": "http://kumanooldtrails.com/",
-      "review": null,
-      "sns": null,
-      "verified": true,
-      "verified_at": "2026-11-17"
-    },
-    "mandatory_gear": [
-      {
-        "name": "レインジャケット",
-        "category": "ウェア"
-      },
-      {
-        "name": "1L以上の水分",
-        "category": "補給"
-      },
-      {
-        "name": "ホイッスル＆エマージェンシーシート",
-        "category": "エイド"
-      },
-      {
-        "name": "ヘッドランプ（日没対応）",
-        "category": "ライト"
-      }
-    ],
-    "venue": {
-      "name": "熊野市鬼ヶ城センター（三重県熊野市木本町1835-7）",
-      "mapQuery": "三重県熊野市 鬼ヶ城センター"
-    },
-    "source": {
-      "portalName": "大会公式"
-    }
-  },
-  {
-    "id": "tobishima-orange-ride-2026",
-    "category": "cycling",
-    "subCategory": "アイランドロングライド",
-    "elements": [
-      "ロード",
-      "1日"
-    ],
-    "title": "とびしま海道 安芸灘オレンジライド 2026（広島・呉市）",
-    "date": "2026-11-29",
-    "month": 11,
-    "region": "中国",
-    "prefecture": "広島県",
-    "distance_km": 90,
-    "elevation_m": 650,
-    "entry_status": "closed",
-    "entry_start_date": "2026-09-11",
-    "entry_deadline": "2026-11-10",
-    "entry_fee": "8,500円",
-    "links": {
-      "official": "https://tobishimaride.jp/",
-      "entry": "https://tobishimaride.jp/",
-      "review": null,
-      "sns": null,
-      "verified": true,
-      "verified_at": "2026-11-17"
-    },
-    "mandatory_gear": [
-      {
-        "name": "ヘルメット・グローブ",
-        "category": "ウェア"
-      },
-      {
-        "name": "前後ライト",
-        "category": "ライト"
-      },
-      {
-        "name": "ボトル（水分補給）",
-        "category": "補給"
-      }
-    ],
-    "venue": {
-      "name": "呉市役所下蒲刈市民センター（広島県呉市下蒲刈町下島2364）",
-      "mapQuery": "広島県呉市 下蒲刈市民センター"
-    },
-    "source": {
-      "portalName": "スポエンCYCLE"
-    }
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-hikosan-mineirido-trail-2026",
@@ -890,7 +565,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-hikosan-mineirido-trail.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-sanda-moushi-trail-2026",
@@ -945,7 +621,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-sanda-moushi-trail.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-jinbagatayama-eco-trail-2026",
@@ -1000,7 +677,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-jinbagatayama-eco-trail.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-country-race-2026",
@@ -1054,7 +732,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-country-race.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-kawada-trail-2026",
@@ -1109,7 +788,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-kawada-trail.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-sotochichi-45k-2026",
@@ -1164,7 +844,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-sotochichi-45k.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "toretore-tomisu-2026",
@@ -1231,7 +912,8 @@
     },
     "source": {
       "portalName": "とれとれバイク"
-    }
+    },
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-yoro-mountains-trail-2026",
@@ -1286,7 +968,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-yoro-mountains-trail.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-mashiko-trail-2026",
@@ -1342,6 +1025,62 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16"
+  },
+  {
+    "id": "kumano-kodo-trail-2026",
+    "category": "trail",
+    "subCategory": "世界遺産トレイル",
+    "elements": [
+      "トレラン",
+      "山岳トレック"
+    ],
+    "title": "熊野古道トレイルランニングレース 2026",
+    "date": "2026-12-06",
+    "month": 12,
+    "region": "近畿",
+    "prefecture": "三重県",
+    "distance_km": 50,
+    "elevation_m": 2800,
+    "entry_status": "closed",
+    "entry_start_date": "2026-07-01",
+    "entry_deadline": "2026-10-12",
+    "entry_fee": "13,500円",
+    "links": {
+      "official": "http://kumanooldtrails.com/",
+      "entry": "http://kumanooldtrails.com/",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-17"
+    },
+    "mandatory_gear": [
+      {
+        "name": "レインジャケット",
+        "category": "ウェア"
+      },
+      {
+        "name": "1L以上の水分",
+        "category": "補給"
+      },
+      {
+        "name": "ホイッスル＆エマージェンシーシート",
+        "category": "エイド"
+      },
+      {
+        "name": "ヘッドランプ（日没対応）",
+        "category": "ライト"
+      }
+    ],
+    "venue": {
+      "name": "熊野市鬼ヶ城センター（三重県熊野市木本町1835-7）",
+      "mapQuery": "三重県熊野市 鬼ヶ城センター"
+    },
+    "source": {
+      "portalName": "大会公式"
+    },
+    "end_date": "2026-12-06",
+    "updated_at": "2026-11-17",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "arws-magnificent-2026-nz",
@@ -1405,7 +1144,8 @@
     "source": {
       "portalName": "ARWS公式"
     },
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "matsue-kokuhou-marathon-2026",
@@ -1453,7 +1193,8 @@
     },
     "source": {
       "portalName": "モシコム"
-    }
+    },
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "nanki-shirahama-adventure-ride-2026",
@@ -1562,7 +1303,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-shugyoso-monks-run.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-hitachi-alps-ocean-trail-2026",
@@ -1617,7 +1359,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-hitachi-alps-ocean-trail.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-watari-trail-run-2026",
@@ -1672,7 +1415,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-watari-trail-run.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-sanage-trail-2026",
@@ -1726,7 +1470,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-sanage-trail.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "kochi-navigms-winter-2026",
@@ -1896,7 +1641,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-takeda-no-mori-trail-running.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-mitake-mountain-race-2026",
@@ -1952,7 +1698,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-mitake-mountain-race.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-ushimatsuyama-skyrace-winter-2026",
@@ -2007,7 +1754,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-ushimatsuyama-skyrace-winter.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-christmas-trail-run-2026",
@@ -2227,7 +1975,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-hitachinokuni-yakiimo-trail.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-nokogiriyama-trail-run-dec-2026",
@@ -2282,7 +2031,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-nokogiriyama-trail-run-dec.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-hachioji-jinba-trail-2026",
@@ -2337,7 +2087,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-hachioji-jinba-trail.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-funtrails-idaten-hanno-2026",
@@ -2392,7 +2143,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-funtrails-idaten-hanno.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-nagatoro-alps-trail-race-2026",
@@ -2447,7 +2199,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-nagatoro-alps-trail-race.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-tengu100-2026",
@@ -2503,7 +2256,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-tengu100.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-kyoto-great-round-2026",
@@ -2560,7 +2314,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-kyoto-great-round.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-rising-of-the-dead-2026",
@@ -2615,7 +2370,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-rising-of-the-dead.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-boroishiyama-100-2027",
@@ -2672,7 +2428,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-boroishiyama-100.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-mitake-kodo-hatsumode-race-2027",
@@ -2727,7 +2484,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-mitake-kodo-hatsumode-race.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-17"
+    "updated_at": "2026-11-17",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-hanayome-kaido-karasubayama-trail-2027",
@@ -2782,7 +2540,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-hanayome-kaido-karasubayama-trail.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-tochigi-training-trail-mikamoyama-2027",
@@ -2836,7 +2595,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-tochigi-training-trail-mikamoyama.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-jungle-guruguru-zero-2027",
@@ -2946,7 +2706,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-sakahogi-trail-run.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-shodai-adventure-mountain-2027",
@@ -3002,7 +2763,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-shodai-adventure-mountain.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-gamagori-bayside-trail-2027",
@@ -3112,7 +2874,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-udoyama-trail.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "bitchu-totomichi-trail-2027",
@@ -3229,7 +2992,8 @@
     "source": {
       "portalName": "RUNNET",
       "portalUrl": "https://runnet.jp/"
-    }
+    },
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "senba-sea-cliff-trail-2027",
@@ -3245,7 +3009,7 @@
     "prefecture": "徳島県",
     "distance_km": 50,
     "elevation_m": 2600,
-    "entry_status": "open",
+    "entry_status": "closing_soon",
     "entry_start_date": "2026-10-06",
     "entry_deadline": "2026-12-05",
     "entry_fee": "11,000円",
@@ -3283,7 +3047,8 @@
       "portalName": "人力企画",
       "portalUrl": "https://www.outdoor-sports.info/races-events"
     },
-    "updated_at": "2026-11-17"
+    "updated_at": "2026-11-17",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-hakuba-snow-harp-snowshoeing-race-2027",
@@ -3338,7 +3103,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-hakuba-snow-harp-snowshoeing-race.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-nara-ishibutai-100-trail-2027",
@@ -3394,7 +3160,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-nara-ishibutai-100-trail.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-kamigoto-trail-2027",
@@ -3448,7 +3215,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-kamigoto-trail.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "sky1-vertical-race-2027",
@@ -3492,7 +3260,8 @@
     },
     "source": "https://kasadojima-islandtrail.com/vertical-race",
     "added_at": "2026-11-14",
-    "updated_at": "2026-11-15"
+    "updated_at": "2026-11-15",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-ikoma-winter-trail-2027",
@@ -3546,7 +3315,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-ikoma-winter-trail.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-ogawa-trail-festival-2027",
@@ -3602,7 +3372,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-ogawa-trail-festival.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "ise-toba-shima-cycle-2027",
@@ -3653,7 +3424,8 @@
     "source": {
       "portalName": "スポーツエントリー",
       "portalUrl": "https://www.sportsentry.ne.jp/"
-    }
+    },
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "kasadojima-island-trail-2027",
@@ -3715,7 +3487,8 @@
       "portalName": "RUNNET",
       "portalUrl": "https://runnet.jp/"
     },
-    "updated_at": "2026-11-14"
+    "updated_at": "2026-11-14",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "kagawa-marugame-half-2027",
@@ -3764,7 +3537,8 @@
     "source": {
       "portalName": "大会公式"
     },
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "ehime-marathon-2027",
@@ -3812,7 +3586,8 @@
     },
     "source": {
       "portalName": "大会公式"
-    }
+    },
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-iouzan-snowshoe-race-2027",
@@ -3867,7 +3642,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-iouzan-snowshoe-race.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-kanmuridake-trail-2027",
@@ -3983,7 +3759,8 @@
     },
     "source": {
       "portalName": "モシコム"
-    }
+    },
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-onjuku-ocean-trail-2027",
@@ -4096,7 +3873,8 @@
     },
     "source": {
       "portalName": "RUNNET"
-    }
+    },
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "kochi-ryoma-marathon-2027",
@@ -4200,7 +3978,8 @@
       "portalUrl": "https://www.outdoor-sports.info/races-events"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-17"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-nagasaki-round-trail-2027",
@@ -4254,7 +4033,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-nagasaki-round-trail.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-betsukai-ice-marathon-2027",
@@ -4309,7 +4089,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-betsukai-ice-marathon.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-gokayama-taira-snowshoeing-race-2027",
@@ -4364,7 +4145,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-gokayama-taira-snowshoeing-race.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-aya-kunitomi-twin-peaks-2027",
@@ -4596,7 +4378,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-daimonji-100.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "ggr-ishikiriba-100-2027",
@@ -4663,7 +4446,8 @@
     },
     "source": {
       "portalName": "モシコム"
-    }
+    },
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-boso-nokogiriyama-trail-run-2027",
@@ -4772,7 +4556,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-umenosato-trail-run.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-inuyama-momotaro-trail-2027",
@@ -4880,7 +4665,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-awagatake-trail-race.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "zentsuji-gogaku-2027",
@@ -4928,7 +4714,8 @@
     },
     "source": {
       "portalName": "モシコム"
-    }
+    },
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-damonde-way-to-go-2027",
@@ -4983,7 +4770,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-damonde-way-to-go.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-gokayama-sefuri-cross-trail-2027",
@@ -5037,60 +4825,6 @@
     "source": {
       "portalName": "トレイルランナー.JP",
       "portalUrl": "https://trailrunner.jp/race-detail-gokayama-sefuri-cross-trail.html"
-    },
-    "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
-  },
-  {
-    "id": "trjp-arataki-samurai-trail-2027",
-    "category": "trail",
-    "subCategory": "トレイルランニング",
-    "elements": [
-      "トレック"
-    ],
-    "title": "荒滝SAMURAIトレイル 2027（山口県）",
-    "date": "2027-02-27",
-    "month": 2,
-    "region": "中国",
-    "prefecture": "山口県",
-    "distance_km": 22,
-    "elevation_m": 1400,
-    "entry_fee": "公式サイト参照",
-    "entry_status": "open",
-    "entry_deadline": "2027-02-27",
-    "links": {
-      "official": "https://www.instagram.com/arataki.samurai.trail/",
-      "entry": "https://www.instagram.com/arataki.samurai.trail/",
-      "review": null,
-      "sns": null,
-      "verified": true,
-      "verified_at": "2026-11-17"
-    },
-    "mandatory_gear": [
-      {
-        "name": "トレイルランニングシューズ・ザック",
-        "category": "ギア"
-      },
-      {
-        "name": "レインジャケット（防風・防水シェル）",
-        "category": "ウェア"
-      },
-      {
-        "name": "水分・行動食・マイカップ",
-        "category": "補給"
-      },
-      {
-        "name": "ファーストエイドキット・携帯電話・保険証",
-        "category": "エイド"
-      }
-    ],
-    "venue": {
-      "name": "2027年は未発表（2026年実績：旧吉部小学校、宇部市東吉部3397）",
-      "mapQuery": "山口県 2027年は未発表（2026年実績：旧吉部小学校、宇部市東吉部3397）"
-    },
-    "source": {
-      "portalName": "トレイルランナー.JP",
-      "portalUrl": "https://trailrunner.jp/race-detail-arataki-samurai-trail.html"
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16"
@@ -5198,7 +4932,8 @@
     },
     "source": {
       "portalName": "大会公式"
-    }
+    },
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-yukiguni-uonuma-kakenoue-snowshoeing-race-2027",
@@ -5253,7 +4988,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-yukiguni-uonuma-kakenoue-snowshoeing-race.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-minonokuni-yamajiro-firstheld-2027",
@@ -5309,7 +5045,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-minonokuni-yamajiro-firstheld.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-onagawa-100-trails-2027",
@@ -5333,11 +5070,12 @@
     "entry_deadline": "2026-02-09",
     "links": {
       "official": "https://onagawa-100trails-running.com/",
-      "entry": "https://onagawa-100trails-running.com/",
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-17"
+      "verified_at": "2026-11-17",
+      "official_stale": true
     },
     "mandatory_gear": [
       {
@@ -5420,7 +5158,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-rokko-traverse-trail-run.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "arws-tierra-indomita-vulcania-2027",
@@ -5479,7 +5218,8 @@
     },
     "source": {
       "portalName": "ARWS公式"
-    }
+    },
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "jinriki-takabagamori-skyrace-2027",
@@ -5535,7 +5275,8 @@
       "portalUrl": "https://www.outdoor-sports.info/races-events"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-17"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-soja-takatakiyama-trail-2027",
@@ -5589,7 +5330,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-soja-takatakiyama-trail.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-kohechi-trail-journey-totsukawa-2027",
@@ -5644,7 +5386,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-kohechi-trail-journey-totsukawa.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "arws-la-ruta-madre-2027",
@@ -5703,7 +5446,8 @@
     },
     "source": {
       "portalName": "ARWS公式"
-    }
+    },
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "hiei-international-trail-2027",
@@ -5767,7 +5511,8 @@
     },
     "source": {
       "portalName": "大会公式"
-    }
+    },
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-takachiho-peaks-2027",
@@ -5823,7 +5568,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-takachiho-peaks.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "ibaraki-100k-ultra-2027",
@@ -5926,7 +5672,8 @@
     },
     "source": {
       "portalName": "大会公式"
-    }
+    },
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "jinriki-symboltower-stairclimbing-2027",
@@ -5974,7 +5721,8 @@
       "portalUrl": "https://www.outdoor-sports.info/races-events"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-17"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-coast-to-coast-boso-2027",
@@ -6029,7 +5777,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-coast-to-coast-boso.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "yamanami-kaido-challenge-ride-2027",
@@ -6083,7 +5832,8 @@
     },
     "source": {
       "portalName": "スポエンCYCLE"
-    }
+    },
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-aganoyuku-trail-2027",
@@ -6139,7 +5889,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-aganoyuku-trail.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "tokushima-marathon-2027",
@@ -6241,7 +5992,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-trail-running-fes-okazaki.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-atgtrail-2027",
@@ -6295,7 +6047,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-atgtrail.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "wake-alps-trail-2027",
@@ -6375,7 +6128,8 @@
     },
     "source": {
       "portalName": "RUNNET"
-    }
+    },
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "osj-shinshiro-trail-2027",
@@ -6493,7 +6247,8 @@
     "source": {
       "portalName": "スポーツエントリー",
       "portalUrl": "https://www.sportsentry.ne.jp/"
-    }
+    },
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-ayabe-suigen-no-sato-trail-run-2027",
@@ -6547,7 +6302,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-ayabe-suigen-no-sato-trail-run.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-haru-ninja-trail-run-2027",
@@ -6601,7 +6357,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-haru-ninja-trail-run.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "hiroshima-utmb-2027",
@@ -6744,7 +6501,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-amagase-100-trail.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "okumikawa-power-trail-2027",
@@ -6906,7 +6664,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-osaka-challenge-daitore.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-otaki-sengoku-extremes-2027",
@@ -6960,7 +6719,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-otaki-sengoku-extremes.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-kyoto-trail-run-higashiyama-2027",
@@ -7014,7 +6774,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-kyoto-trail-run-higashiyama.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-aso-trail-jogakuin-2027",
@@ -7138,7 +6899,8 @@
     },
     "source": {
       "portalName": "大会公式"
-    }
+    },
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "2027-b8mw9c-2027",
@@ -7194,7 +6956,8 @@
       "portalName": "大会公式"
     },
     "added_at": "2026-11-13",
-    "updated_at": "2026-11-13"
+    "updated_at": "2026-11-13",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-trailrunners-cup-echigo-2027",
@@ -7249,7 +7012,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-trailrunners-cup-echigo.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-yogoko-isshu-trail-2027",
@@ -7304,7 +7068,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-yogoko-isshu-trail.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "mt-fuji-100-2027",
@@ -7498,7 +7263,8 @@
     },
     "source": {
       "portalName": "ARWS公式"
-    }
+    },
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-stage-race-sanriku-srs200-100-2027",
@@ -7554,7 +7320,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-stage-race-sanriku-srs200-100.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-sankei-michi-triangle-225-2027",
@@ -7610,7 +7377,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-sankei-michi-triangle-225.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-yarikan-2027",
@@ -7667,7 +7435,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-yarikan.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-ueda-vertical-race-2027",
@@ -7776,7 +7545,8 @@
       "portalUrl": "https://www.outdoor-sports.info/races-events"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-17"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-aso-volcano-trail-2027",
@@ -7832,7 +7602,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-aso-volcano-trail.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-iwate-coastal-trail-100km-2027",
@@ -7889,7 +7660,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-iwate-coastal-trail-100km.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-takaoka-futagamiyama-trail-2027",
@@ -7943,7 +7715,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-takaoka-futagamiyama-trail.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-nose-myokenzan-power-trail-run-2027",
@@ -7997,7 +7770,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-nose-myokenzan-power-trail-run.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-sainokuni-100mile-2027",
@@ -8111,7 +7885,8 @@
     "source": {
       "portalName": "RUNNET",
       "portalUrl": "https://runnet.jp/"
-    }
+    },
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-saba-kaido-ultra-marathon-2027",
@@ -8165,7 +7940,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-saba-kaido-ultra-marathon.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-trailrunners-cup-ishikawa-okuradake-2027",
@@ -8219,7 +7995,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-trailrunners-cup-ishikawa-okuradake.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "arws-raid-gallaecia-2027",
@@ -8278,7 +8055,8 @@
     },
     "source": {
       "portalName": "ARWS公式"
-    }
+    },
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-world-geopark-trail-run-2027",
@@ -8332,7 +8110,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-world-geopark-trail-run.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-komono-four-peaks-trail-2027",
@@ -8387,7 +8166,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-komono-four-peaks-trail.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-amagi-attack-35-2027",
@@ -8442,7 +8222,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-amagi-attack-35.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "chase-the-sun-japan-2027",
@@ -8498,7 +8279,8 @@
     "source": {
       "portalName": "スポーツエントリー",
       "portalUrl": "https://www.sportsentry.ne.jp/"
-    }
+    },
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-okumusashi-long-trail-race-2027",
@@ -8553,7 +8335,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-okumusashi-long-trail-race.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "the-peaks-r20-myoko2-2027",
@@ -8609,7 +8392,8 @@
     "source": {
       "portalName": "スポエンCYCLE",
       "portalUrl": "https://cycle.spoen.jp/"
-    }
+    },
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-tochigi-training-trail-nikko-2027",
@@ -8664,7 +8448,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-tochigi-training-trail-nikko.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-tamba100-adventure-trail-2027",
@@ -8832,7 +8617,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-fuji-oshino-trail.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "kuman100-2027",
@@ -8902,7 +8688,8 @@
     },
     "source": {
       "portalName": "モシコム"
-    }
+    },
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "arjs-2027-r2-minakami",
@@ -9002,7 +8789,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-echigo-country-trail.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-grand-diamond-trail-2027",
@@ -9056,7 +8844,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-grand-diamond-trail.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-kaga-spa-trail-endurance-100-by-utmb-2027",
@@ -9169,7 +8958,8 @@
     },
     "source": {
       "portalName": "ARWS公式"
-    }
+    },
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-deep-japan-ultra-100-niigata-2027",
@@ -9226,7 +9016,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-deep-japan-ultra-100-niigata.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-hachimoriyama-otakane-trail-festa-2027",
@@ -9281,7 +9072,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-hachimoriyama-otakane-trail-festa.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "arws-sud-raid-2027",
@@ -9341,7 +9133,8 @@
     "source": {
       "portalName": "ARWS公式"
     },
-    "updated_at": "2026-11-15"
+    "updated_at": "2026-11-15",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-kaizukiyama-hakuryu-trail-run-2027",
@@ -9395,7 +9188,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-kaizukiyama-hakuryu-trail-run.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-tsurugi-sanroku-trail-du-kamiichi-2027",
@@ -9560,7 +9354,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-okuhiei-ogitanada-trail-run.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "arws-endurance-quest-saimaa-2027",
@@ -9619,7 +9414,8 @@
     },
     "source": {
       "portalName": "ARWS公式"
-    }
+    },
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-okuhida-trail-run-2027",
@@ -9673,7 +9469,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-okuhida-trail-run.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-mt-rokko-trail-run-summer-picnic-2027",
@@ -9727,7 +9524,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-mt-rokko-trail-run-summer-picnic.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "arwc-croatia-2027",
@@ -9892,7 +9690,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-shiwa-azumane-trail.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-trainic-world-ogose-tokigawa-2027",
@@ -9914,7 +9713,7 @@
     "entry_deadline": "2026-09-01",
     "links": {
       "official": "https://trainic-world.org/ogose-tokigawa/",
-      "entry": "https://www.sportsentry.ne.jp/event/t/105223",
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
@@ -9948,7 +9747,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-trainic-world-ogose-tokigawa.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-lake-biwa-100-2027",
@@ -10058,7 +9858,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-kyoto-isshu-trail-run.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "trjp-matsudaira-tenka-trailrun-2027",
@@ -10112,7 +9913,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-matsudaira-tenka-trailrun.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17"
   },
   {
     "id": "arjs-2027-r4-myoko",

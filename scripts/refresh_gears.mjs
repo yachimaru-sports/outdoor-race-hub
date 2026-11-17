@@ -580,45 +580,70 @@ async function discoverAndRotateDeals(currentGears) {
   const rotatedTargets = [...DISCOVERY_TARGETS.slice(daySeed), ...DISCOVERY_TARGETS.slice(0, daySeed)];
 
   for (const target of rotatedTargets) {
-    if (isCI && ciRakutenBlockedCount >= 3) {
-      console.log(' ⏭️ CI環境で楽天WAF制限中のため、新規ディスカバリーを高速スキップします。');
-      break;
-    }
-    if (consecutiveBlocked >= 4) {
-      console.log(' ⏭️ 楽天スクレイピングがWAF連続制限中のため、新規ディスカバリーを早期完了します。');
+    if (consecutiveBlocked >= 6) {
+      console.log(' ⏭️ 楽天スクレイピングが連続制限中のため、新規ディスカバリーを早期完了します。');
       break;
     }
     try {
       let candUrls = [];
+      const apiItemMap = new Map();
       if (RAKUTEN_APP_ID && RAKUTEN_ACCESS_KEY) {
         const apiItems = await searchRakutenApiItems(target.keyword, 1500);
         for (const it of apiItems) {
           if (it.itemUrl && it.itemUrl.includes('item.rakuten.co.jp')) {
-            candUrls.push(it.itemUrl.split('?')[0]);
+            const u = it.itemUrl.split('?')[0].replace(/\/+$/, '');
+            candUrls.push(u);
+            apiItemMap.set(u, it);
           }
         }
       }
-      if (GEMINI_API_KEY && geminiCalls < 5) {
+      if (GEMINI_API_KEY && geminiCalls < 6) {
         geminiCalls++;
         const geminiUrl = await searchWithGemini(`${target.brand} ${target.category} セール 30%OFF`);
-        if (geminiUrl) candUrls.push(geminiUrl);
+        if (geminiUrl) candUrls.push(geminiUrl.split('?')[0].replace(/\/+$/, ''));
       }
-      const directUrls = await searchRakutenDirect(target.keyword);
-      candUrls = [...new Set([...candUrls, ...directUrls])];
+      if (!(isCI && ciRakutenBlockedCount >= 3)) {
+        const directUrls = await searchRakutenDirect(target.keyword);
+        candUrls.push(...directUrls.map((u) => u.split('?')[0].replace(/\/+$/, '')));
+      }
+      candUrls = [...new Set(candUrls)];
       if (candUrls.length === 0) {
-        consecutiveBlocked++;
+        if (!(isCI && ciRakutenBlockedCount >= 3)) consecutiveBlocked++;
         continue;
       }
       consecutiveBlocked = 0;
 
-      for (const u of candUrls.slice(0, 3)) {
+      for (const u of candUrls.slice(0, 4)) {
         const cleanU = u.split('?')[0].replace(/\/+$/, '');
         if (existingUrls.has(cleanU)) continue;
 
-        const s = await scrapeItem(cleanU);
+        let s = await scrapeItem(cleanU);
         if (!s.ok) {
-          if (s.blocked) consecutiveBlocked++;
-          continue;
+          if (s.blocked) {
+            // CI等でWAF遮断されても、楽天API情報があればAPI価格＋画像CDN＋タイトル割引/Geminiで救済
+            const apiIt = apiItemMap.get(cleanU);
+            if (apiIt && apiIt.itemPrice > 0) {
+              const rawImgs = (apiIt.mediumImageUrls || apiIt.smallImageUrls || []).map((x) => cleanImage(typeof x === 'string' ? x : x?.imageUrl)).filter(Boolean);
+              let apiTitle = (apiIt.itemName || '').replace(/【[^】]*】/g, ' ').replace(/\[[^\]]*\]/g, ' ').replace(/\s+/g, ' ').trim();
+              let listPrice = 0;
+              const cleanedOff = apiTitle.replace(/(?:max|最大|クーポン|割引)[^0-9]{0,10}[0-9]{1,2}\s*[%％]\s*off/gi, '');
+              const offMatch = cleanedOff.match(/([0-9]{1,2})\s*[%％]\s*(?:OFF|off)/i);
+              if (offMatch) {
+                const rate = Number(offMatch[1]);
+                if (rate >= 10 && rate <= 70) listPrice = Math.round(apiIt.itemPrice / (1 - rate / 100));
+              }
+              if (!listPrice && GEMINI_API_KEY && geminiPriceQuota > 0) {
+                const gRes = await fetchPriceWithGemini({ title: apiTitle, dealUrl: cleanU, price: apiIt.itemPrice });
+                if (gRes && gRes.originalPrice > apiIt.itemPrice) listPrice = gRes.originalPrice;
+              }
+              s = { ok: true, title: apiTitle, price: apiIt.itemPrice, listPrice, images: rawImgs };
+            } else {
+              consecutiveBlocked++;
+              continue;
+            }
+          } else {
+            continue;
+          }
         }
         if (!s.price || s.price <= 0) continue;
         if (!isCategoryMatch(target.category, s.title)) continue;

@@ -1,11 +1,93 @@
 [
   {
-    "id": "ev-sync-2026-11-17",
+    "id": "deal-add-gear-deal-mwkns0xk-3503-2026-11-17",
     "date": "2026-11-17",
-    "time": "21:06",
+    "time": "21:18",
+    "type": "deal_added",
+    "title": "新着特価ギア発掘: ワコール メンズ CW-X スポーツタイツ＜GENERATOR＞ジェネレーターモ",
+    "detail": "実測 26%OFF の特価品を追加・入替しました",
+    "gearId": "gear-deal-mwkns0xk-3503"
+  },
+  {
+    "id": "deal-add-gear-deal-mwkns7de-so39-2026-11-17",
+    "date": "2026-11-17",
+    "time": "21:18",
+    "type": "deal_added",
+    "title": "新着特価ギア発掘: (PEARL IZUMI パールイズミ 2026年 春夏モデル) 600-B フ",
+    "detail": "実測 20%OFF の特価品を追加・入替しました",
+    "gearId": "gear-deal-mwkns7de-so39"
+  },
+  {
+    "id": "deal-add-gear-deal-mwknsccn-u4px-2026-11-17",
+    "date": "2026-11-17",
+    "time": "21:18",
+    "type": "deal_added",
+    "title": "新着特価ギア発掘: セールsale 最大26％OFF アシックス asics ハイパースピード 6 ",
+    "detail": "実測 26%OFF の特価品を追加・入替しました",
+    "gearId": "gear-deal-mwknsccn-u4px"
+  },
+  {
+    "id": "price-drop-gear-deal-mwez80xm-us59-2026-11-17",
+    "date": "2026-11-17",
+    "time": "21:18",
+    "type": "price_drop",
+    "title": "値下げ検知: セールsale 最大65％OFF ザ・ノース・フェイス メンズ レディース エン",
+    "detail": "¥20,812 → ¥20,361",
+    "gearId": "gear-deal-mwez80xm-us59"
+  },
+  {
+    "id": "ev-endfix-arws-vulcania-2026-2026-11-17",
+    "date": "2026-11-17",
+    "time": "21:16",
     "type": "event_updated",
-    "title": "大会データ定期検証完了（掲載 181 件）",
-    "detail": "終了大会アーカイブ 0 件 / リンク修正 0 件 / ステータス更新 2 件"
+    "title": "終了済み大会を修正＆アーカイブ: Vulcania Expedition Race 2026（チリ ARWS Qualifier 500km・5日間）",
+    "detail": "誤登録日 2026-11-20 → 実開催日 2026-03-07（終了済み）",
+    "eventId": "arws-vulcania-2026"
+  },
+  {
+    "id": "ev-endfix-ftr-chichibu-okumusashi-100mile-2026-2026-11-17",
+    "date": "2026-11-17",
+    "time": "21:16",
+    "type": "event_updated",
+    "title": "終了済み大会を修正＆アーカイブ: FunTrails Round 秩父＆奥武蔵 100mile (FTR100) 2026",
+    "detail": "誤登録日 2026-11-21 → 実開催日 2026-11-14（終了済み）",
+    "eventId": "ftr-chichibu-okumusashi-100mile-2026"
+  },
+  {
+    "id": "ev-endfix-shimanto-dragon-ride-2026-2026-11-17",
+    "date": "2026-11-17",
+    "time": "21:16",
+    "type": "event_updated",
+    "title": "終了済み大会を修正＆アーカイブ: 幡多・四万十エリア どっぷりライド（清流四万十川＆足摺岬ロングライド 135km）2026",
+    "detail": "誤登録日 2026-11-22 → 実開催日 2026-03-07（終了済み）",
+    "eventId": "shimanto-dragon-ride-2026"
+  },
+  {
+    "id": "ev-endfix-shodoshima-mameichi-2026-2026-11-17",
+    "date": "2026-11-17",
+    "time": "21:16",
+    "type": "event_updated",
+    "title": "終了済み大会を修正＆アーカイブ: 小豆島一周オリーブサイクリング（マメイチ）2026",
+    "detail": "誤登録日 2026-11-29 → 実開催日 2026-09-27（終了済み）",
+    "eventId": "shodoshima-mameichi-2026"
+  },
+  {
+    "id": "ev-datefix-kumano-kodo-trail-2026-2026-11-17",
+    "date": "2026-11-17",
+    "time": "21:16",
+    "type": "event_updated",
+    "title": "開催日を公式情報へ修正: 熊野古道トレイルランニングレース 2026",
+    "detail": "2026-11-29 → 2026-12-06（公式HP、スポーツエントリーで確認）",
+    "eventId": "kumano-kodo-trail-2026"
+  },
+  {
+    "id": "ev-endfix-tobishima-orange-ride-2026-2026-11-17",
+    "date": "2026-11-17",
+    "time": "21:16",
+    "type": "event_updated",
+    "title": "終了済み大会を修正＆アーカイブ: とびしま海道 安芸灘オレンジライド 2026（広島・呉市）",
+    "detail": "誤登録日 2026-11-29 → 実開催日 2026-10-03（終了済み）",
+    "eventId": "tobishima-orange-ride-2026"
   },
   {
     "id": "ev-sync-2026-11-16",

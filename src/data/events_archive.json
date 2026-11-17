@@ -5069,5 +5069,297 @@
     "updated_at": "2026-11-16",
     "archived_at": "2026-11-16",
     "archive_reason": "有効リンク確認不可のため退避"
+  },
+  {
+    "id": "arws-vulcania-2026",
+    "category": "adventure",
+    "subCategory": "ARWS世界選手権予選",
+    "elements": [
+      "ARWS",
+      "世界選手権予選",
+      "アドベンチャー",
+      "読図",
+      "MTB",
+      "パドル",
+      "トレック",
+      "4日以上"
+    ],
+    "title": "Vulcania Expedition Race 2026（チリ ARWS Qualifier 500km・5日間）",
+    "date": "2026-03-07",
+    "month": 3,
+    "region": "海外",
+    "prefecture": "チリ",
+    "distance_km": 500,
+    "elevation_m": 13000,
+    "entry_status": "closed",
+    "entry_start_date": "2026-03-01",
+    "entry_deadline": "2026-10-31",
+    "entry_fee": "650,000円",
+    "links": {
+      "official": "https://tierraindomitaar.com/",
+      "entry": null,
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-16",
+      "official_stale": true
+    },
+    "mandatory_gear": [
+      {
+        "name": "マウンテンバイク＆ヘルメット",
+        "category": "ギア"
+      },
+      {
+        "name": "パックラフト＆PFD",
+        "category": "ギア"
+      },
+      {
+        "name": "2.5万分の1地形図＆コンパス",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "完全防水レインウェア",
+        "category": "ウェア"
+      },
+      {
+        "name": "エマージェンシーキット",
+        "category": "ギア"
+      }
+    ],
+    "venue": {
+      "name": "Pucon, Araucania",
+      "mapQuery": "Pucon Chile"
+    },
+    "source": {
+      "portalName": "ARWS公式"
+    },
+    "archived_at": "2026-11-17",
+    "archive_reason": "実開催日(2026-03-07)終了済みのためアーカイブ"
+  },
+  {
+    "id": "ftr-chichibu-okumusashi-100mile-2026",
+    "category": "trail",
+    "subCategory": "100マイル トレイル",
+    "elements": [
+      "100マイル",
+      "トレック",
+      "夜間"
+    ],
+    "title": "FunTrails Round 秩父＆奥武蔵 100mile (FTR100) 2026",
+    "date": "2026-11-14",
+    "month": 11,
+    "region": "関東",
+    "prefecture": "埼玉県",
+    "distance_km": 163,
+    "elevation_m": 9800,
+    "entry_status": "closed",
+    "entry_start_date": "2026-08-01",
+    "entry_deadline": "2026-09-30",
+    "entry_fee": "38,000円",
+    "links": {
+      "official": "https://fun-trails.com/",
+      "entry": "https://fun-trails.com/",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-16"
+    },
+    "mandatory_gear": [
+      {
+        "name": "ゴアテックス等 シームテープ加工防水透湿レイン上下",
+        "category": "ウェア"
+      },
+      {
+        "name": "高光量ヘッドライト2灯（メイン300lm以上＋予備ライト・予備電池）",
+        "category": "ライト"
+      },
+      {
+        "name": "GPXトラック収録GPSウォッチ（SUUNTO",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "GARMIN等）",
+        "category": "ギア"
+      },
+      {
+        "name": "エマージェンシーサバイバルシート（130×200cm以上）＆ホイッスル",
+        "category": "エイド"
+      },
+      {
+        "name": "保温ベースレイヤー（ドライナミック等）・防寒長袖・グローブ",
+        "category": "ウェア"
+      },
+      {
+        "name": "水分1.5L以上携行可能なトレランザック（10L〜12L）＆補給食",
+        "category": "補給"
+      }
+    ],
+    "venue": {
+      "name": "羊山公園（埼玉県秩父市大宮6360）",
+      "mapQuery": "埼玉県秩父市 羊山公園"
+    },
+    "source": {
+      "portalName": "大会公式"
+    },
+    "archived_at": "2026-11-17",
+    "archive_reason": "実開催日(2026-11-14)終了済みのためアーカイブ"
+  },
+  {
+    "id": "shimanto-dragon-ride-2026",
+    "category": "cycling",
+    "subCategory": "清流四万十川ロングライド",
+    "elements": [
+      "ロード"
+    ],
+    "title": "幡多・四万十エリア どっぷりライド（清流四万十川＆足摺岬ロングライド 135km）2026",
+    "date": "2026-03-07",
+    "month": 3,
+    "region": "四国",
+    "prefecture": "高知県",
+    "distance_km": 135,
+    "elevation_m": 1650,
+    "entry_status": "closed",
+    "entry_start_date": "2026-09-16",
+    "entry_deadline": "2026-11-15",
+    "entry_fee": "10,000円",
+    "links": {
+      "official": "https://cycling.hata-kochi.jp/event/",
+      "entry": "https://cycling.hata-kochi.jp/event/",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-16"
+    },
+    "mandatory_gear": [
+      {
+        "name": "JCF公認サイクルヘルメット＆グローブ",
+        "category": "ウェア"
+      },
+      {
+        "name": "高輝度フロントライト＆リアレッドライト（トンネル通過必須）",
+        "category": "ライト"
+      },
+      {
+        "name": "携帯マルチツール・予備チューブ2本・タイヤレバー・携帯ポンプ",
+        "category": "ギア"
+      },
+      {
+        "name": "サイクルボトル水分＆高カロリー補給食",
+        "category": "補給"
+      },
+      {
+        "name": "ウインドブレーカー・レインジレ",
+        "category": "ウェア"
+      }
+    ],
+    "venue": {
+      "name": "四万十市安並運動公園（高知県四万十市安並4231）",
+      "mapQuery": "高知県四万十市 安並運動公園"
+    },
+    "source": {
+      "portalName": "スポエンCYCLE"
+    },
+    "updated_at": "2026-11-16",
+    "archived_at": "2026-11-17",
+    "archive_reason": "実開催日(2026-03-07)終了済みのためアーカイブ"
+  },
+  {
+    "id": "shodoshima-mameichi-2026",
+    "category": "cycling",
+    "subCategory": "小豆島一周マメイチ",
+    "elements": [],
+    "title": "小豆島一周オリーブサイクリング（マメイチ）2026",
+    "date": "2026-09-27",
+    "month": 9,
+    "region": "四国",
+    "prefecture": "香川県",
+    "distance_km": 100,
+    "elevation_m": 1350,
+    "entry_status": "closed",
+    "entry_start_date": "2026-09-21",
+    "entry_deadline": "2026-11-20",
+    "entry_fee": "9,000円",
+    "links": {
+      "official": "https://kca36.sakura.ne.jp/wp/",
+      "entry": "https://kca36.sakura.ne.jp/wp/",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-16"
+    },
+    "mandatory_gear": [
+      {
+        "name": "自転車点検済証＆ヘルメット",
+        "category": "ギア"
+      },
+      {
+        "name": "高輝度ライト（トンネル走行必須）",
+        "category": "ライト"
+      },
+      {
+        "name": "携帯ツール＆CO2インフレーター",
+        "category": "ギア"
+      }
+    ],
+    "venue": {
+      "name": "土庄港フェリーターミナル（香川県小豆郡土庄町甲5165-201）",
+      "mapQuery": "香川県土庄町 土庄港フェリーターミナル"
+    },
+    "source": {
+      "portalName": "スポエンCYCLE"
+    },
+    "archived_at": "2026-11-17",
+    "archive_reason": "実開催日(2026-09-27)終了済みのためアーカイブ"
+  },
+  {
+    "id": "tobishima-orange-ride-2026",
+    "category": "cycling",
+    "subCategory": "アイランドロングライド",
+    "elements": [
+      "ロード",
+      "1日"
+    ],
+    "title": "とびしま海道 安芸灘オレンジライド 2026（広島・呉市）",
+    "date": "2026-10-03",
+    "month": 10,
+    "region": "中国",
+    "prefecture": "広島県",
+    "distance_km": 90,
+    "elevation_m": 650,
+    "entry_status": "closed",
+    "entry_start_date": "2026-09-11",
+    "entry_deadline": "2026-11-10",
+    "entry_fee": "8,500円",
+    "links": {
+      "official": "https://tobishimaride.jp/",
+      "entry": "https://tobishimaride.jp/",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-16"
+    },
+    "mandatory_gear": [
+      {
+        "name": "ヘルメット・グローブ",
+        "category": "ウェア"
+      },
+      {
+        "name": "前後ライト",
+        "category": "ライト"
+      },
+      {
+        "name": "ボトル（水分補給）",
+        "category": "補給"
+      }
+    ],
+    "venue": {
+      "name": "呉市役所下蒲刈市民センター（広島県呉市下蒲刈町下島2364）",
+      "mapQuery": "広島県呉市 下蒲刈市民センター"
+    },
+    "source": {
+      "portalName": "スポエンCYCLE"
+    },
+    "archived_at": "2026-11-17",
+    "archive_reason": "実開催日(2026-10-03)終了済みのためアーカイブ"
   }
 ]

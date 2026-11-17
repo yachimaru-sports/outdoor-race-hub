@@ -141,6 +141,45 @@ async function researchEventLinks(ev, needOfficial, needEntry) {
   return res;
 }
 
+/** 既存大会の「実際の開催日・申込期間・開催状況」を Gemini Google検索で事実確認する */
+async function researchEventDateAndInfo(ev, today) {
+  if (!hasGeminiKey()) return null;
+  const prompt = [
+    `次の日本のスポーツ・アウトドア大会について、本日(${today})時点での「正確な開催日・申込期間・開催状況・公式URL」をGoogle検索で事実確認してください。`,
+    `現在サイトに登録されている情報（誤っている可能性があります）:`,
+    `- 大会名: ${ev.title}`,
+    `- 開催地: ${ev.prefecture || ''} ${ev.region || ''}`,
+    `- 登録中の開催日: ${ev.date}`,
+    `- 登録中の公式URL: ${ev.links?.official || 'なし'}`,
+    ``,
+    `重要ルール:`,
+    `- 推測や前年日程の流用、仮の日付は厳禁です。必ず公式発表・RUNNET・スポーツエントリー・モシコム・公式SNS等の検索結果で確認できた事実のみを出力してください。`,
+    `- すでに2026年分（または該当回）が終了している場合は、その実際に開催された日付を "date" に入れ、"status": "ended" としてください。`,
+    `- まだ開催されていない未来の開催日（${today}以降）が公式に確定している場合は、"status": "upcoming" とし、正確な "date" を入れてください。`,
+    `- 大会自体が中止になった場合は "status": "cancelled" としてください。`,
+    `- 今年度の開催日が公式に一切発表されていない・確認できない場合は "status": "unknown" としてください。`,
+    ``,
+    `出力はJSONのみ:`,
+    `{"status": "upcoming|ended|cancelled|unknown", "date": "YYYY-MM-DDまたは空", "end_date": "YYYY-MM-DDまたは空", "entry_start_date": "YYYY-MM-DDまたは空", "entry_deadline": "YYYY-MM-DDまたは空", "official_url": "https://...または空", "entry_url": "https://...または空", "note": "確認した根拠を20字以内"}`,
+  ].join('\n');
+
+  const text = await askGeminiSearch(prompt);
+  const obj = extractJson(text);
+  if (!obj || typeof obj !== 'object') return null;
+  const status = ['upcoming', 'ended', 'cancelled', 'unknown'].includes(obj.status) ? obj.status : 'unknown';
+  const validDate = /^\d{4}-\d{2}-\d{2}$/.test(obj.date || '') ? obj.date : '';
+  return {
+    status,
+    date: validDate,
+    end_date: /^\d{4}-\d{2}-\d{2}$/.test(obj.end_date || '') ? obj.end_date : '',
+    entry_start_date: /^\d{4}-\d{2}-\d{2}$/.test(obj.entry_start_date || '') ? obj.entry_start_date : '',
+    entry_deadline: /^\d{4}-\d{2}-\d{2}$/.test(obj.entry_deadline || '') ? obj.entry_deadline : '',
+    official_url: obj.official_url || '',
+    entry_url: obj.entry_url || '',
+    note: obj.note || '',
+  };
+}
+
 /** 終了した大会の次回開催を調査して返す（見つからなければ null） */
 async function findNextEdition(ev, today) {
   if (!hasGeminiKey()) return null;
@@ -250,16 +289,18 @@ async function discoverNewEvents(existingEvents, today, maxAdd = 8) {
 }
 
 async function main() {
+  const fixAllDates = process.argv.includes('--fix-dates') || process.argv.includes('--all');
+  const skipDiscover = process.argv.includes('--skip-discover');
   const today = todayJst();
   const { time } = nowJstParts();
   const events = JSON.parse(fs.readFileSync(EVENTS_PATH, 'utf-8'));
   let archive = [];
   try { archive = JSON.parse(fs.readFileSync(ARCHIVE_PATH, 'utf-8')); } catch { archive = []; }
 
-  const stats = { events_added: 0, events_updated: 0, events_archived: 0, links_fixed: 0, links_removed: 0 };
+  const stats = { events_added: 0, events_updated: 0, events_date_fixed: 0, events_archived: 0, links_fixed: 0, links_removed: 0 };
   const logs = [];
 
-  // 1. 開催終了大会をアーカイブへ分離し、日本開催のものは次回開催を調査（1日最大12件）
+  // 1. 開催終了大会をアーカイブへ分離し、日本開催のものは次回開催を調査
   const active = [];
   const ended = [];
   for (const ev of events) {
@@ -279,7 +320,7 @@ async function main() {
   }
 
   // 1.5 新規大会の発見を最優先で実行（Gemini 検索のみ。モシコム小規模イベントは除外）
-  const newEvents = await discoverNewEvents(active, today, 6);
+  const newEvents = skipDiscover ? [] : await discoverNewEvents(active, today, 6);
   for (const ne of newEvents) {
     active.push(ne);
     stats.events_added++;
@@ -319,10 +360,85 @@ async function main() {
   await pool(urls, 8, async (u) => { pageCache.set(u, await fetchPage(u)); });
 
   let geminiFixCalls = 0;
-  const MAX_FIX_CALLS = 4;
+  let dateCheckCalls = 0;
+  const MAX_FIX_CALLS = fixAllDates ? 20 : 6;
+  const MAX_DATE_CHECKS = fixAllDates ? 120 : 15;
+  const recheckCutoff = addDays(today, -14);
   const finalActive = [];
 
   for (const ev of active) {
+    const offUrl = ev.links?.official || null;
+    const entUrl = ev.links?.entry || null;
+    const offPage = offUrl ? pageCache.get(offUrl) : null;
+    const entPage = entUrl ? pageCache.get(entUrl) : null;
+
+    // 2-A. 開催日の公式ページ照合（ページに月日が見つからない場合は Gemini で事実確認＆自動修正/アーカイブ）
+    const offDateOk = Boolean(offPage?.kind === 'ok' && dateMentioned(ev.date, offPage.text));
+    const entDateOk = Boolean(entPage?.kind === 'ok' && dateMentioned(ev.date, entPage.text));
+    if (offDateOk || entDateOk) {
+      ev.date_verified_at = today;
+    } else {
+      const needDateVerify = !ev.date_verified_at || ev.date_verified_at <= recheckCutoff || fixAllDates;
+      if (needDateVerify && dateCheckCalls < MAX_DATE_CHECKS && hasGeminiKey()) {
+        dateCheckCalls++;
+        const info = await researchEventDateAndInfo(ev, today);
+        if (info) {
+          if (info.status === 'cancelled') {
+            if (!archiveIds.has(ev.id)) {
+              archive.push({ ...ev, entry_status: 'closed', archived_at: today, archive_reason: '大会中止のためアーカイブ' });
+              archiveIds.add(ev.id);
+              stats.events_archived++;
+            }
+            logs.push({ id: `ev-cancel-${ev.id}-${today}`, date: today, time, type: 'event_updated', title: `中止大会をアーカイブ: ${ev.title}`, detail: info.note || '公式中止発表を確認', eventId: ev.id });
+            console.log(`🚫 中止アーカイブ: ${ev.title}`);
+            continue;
+          }
+          if (info.status === 'ended' || (info.date && info.date < today)) {
+            const fixedDate = info.date || ev.date;
+            const archivedEv = { ...ev, date: fixedDate, month: Number(fixedDate.slice(5, 7)) || ev.month, entry_status: 'closed', archived_at: today, archive_reason: `実開催日(${fixedDate})終了済みのためアーカイブ` };
+            if (!archiveIds.has(ev.id)) {
+              archive.push(archivedEv);
+              archiveIds.add(ev.id);
+              stats.events_archived++;
+            }
+            logs.push({ id: `ev-endfix-${ev.id}-${today}`, date: today, time, type: 'event_updated', title: `終了済み大会を修正＆アーカイブ: ${ev.title}`, detail: `誤登録日 ${ev.date} → 実開催日 ${fixedDate}（終了済み）`, eventId: ev.id });
+            console.log(`📦 終了済み修正アーカイブ: ${ev.title} (${ev.date} → ${fixedDate})`);
+            continue;
+          }
+          if (info.status === 'upcoming' && info.date && info.date >= today) {
+            if (info.date !== ev.date) {
+              const oldDate = ev.date;
+              ev.date = info.date;
+              ev.month = Number(info.date.slice(5, 7)) || ev.month;
+              if (info.end_date) ev.end_date = info.end_date;
+              else delete ev.end_date;
+              if (info.entry_start_date) ev.entry_start_date = info.entry_start_date;
+              if (info.entry_deadline) ev.entry_deadline = info.entry_deadline;
+              ev.updated_at = today;
+              stats.events_date_fixed++;
+              logs.push({ id: `ev-datefix-${ev.id}-${today}`, date: today, time, type: 'event_updated', title: `開催日を公式情報へ修正: ${ev.title}`, detail: `${oldDate} → ${ev.date}（${info.note || 'Gemini検索確認'}）`, eventId: ev.id });
+              console.log(`📅 開催日修正: ${ev.title} (${oldDate} → ${ev.date})`);
+            } else {
+              // 日付は一致していたが申込期間が更新されている場合も反映
+              if (info.entry_deadline && !ev.entry_deadline) ev.entry_deadline = info.entry_deadline;
+              if (info.entry_start_date && !ev.entry_start_date) ev.entry_start_date = info.entry_start_date;
+            }
+            ev.date_verified_at = today;
+          } else {
+            // status === 'unknown'（登録日も公式に見つからず、今年度の開催日も確認不可）
+            if (!archiveIds.has(ev.id)) {
+              archive.push({ ...ev, entry_status: 'closed', archived_at: today, archive_reason: '開催日不一致・公式確認不可のため一時退避' });
+              archiveIds.add(ev.id);
+              stats.events_archived++;
+            }
+            console.log(`📦 開催日確認不可のためアーカイブ退避: ${ev.title} (登録日: ${ev.date})`);
+            continue;
+          }
+        }
+        await sleep(600);
+      }
+    }
+
     const prevStatus = ev.entry_status;
     ev.entry_status = computeStatus(ev, today);
     if (prevStatus !== ev.entry_status) {
@@ -330,10 +446,6 @@ async function main() {
       stats.events_updated++;
     }
 
-    const offUrl = ev.links?.official || null;
-    const entUrl = ev.links?.entry || null;
-    const offPage = offUrl ? pageCache.get(offUrl) : null;
-    const entPage = entUrl ? pageCache.get(entUrl) : null;
     const offJudge = offUrl ? judgeEventPage(ev, offPage, 'official') : { verdict: 'none' };
     const entJudge = entUrl ? judgeEventPage(ev, entPage, 'entry') : { verdict: 'none' };
 
@@ -400,12 +512,12 @@ async function main() {
   fs.writeFileSync(EVENTS_PATH, JSON.stringify(finalActive, null, 2) + '\n');
   fs.writeFileSync(ARCHIVE_PATH, JSON.stringify(archive.slice(-500), null, 2) + '\n');
 
-  if (stats.events_added || stats.events_updated || stats.links_fixed || stats.events_archived) {
+  if (stats.events_added || stats.events_updated || stats.events_date_fixed || stats.links_fixed || stats.events_archived) {
     if (!logs.length) {
       logs.push({
         id: `ev-sync-${today}`, date: today, time, type: 'event_updated',
         title: `大会データ定期検証完了（掲載 ${finalActive.length} 件）`,
-        detail: `終了大会アーカイブ ${stats.events_archived} 件 / リンク修正 ${stats.links_fixed} 件 / ステータス更新 ${stats.events_updated} 件`,
+        detail: `開催日修正 ${stats.events_date_fixed} 件 / 終了大会アーカイブ ${stats.events_archived} 件 / リンク修正 ${stats.links_fixed} 件 / ステータス更新 ${stats.events_updated} 件`,
       });
     }
     appendChangelog(logs);
@@ -418,7 +530,7 @@ async function main() {
   meta.run_summary = { ...(meta.run_summary || {}), ...stats };
   fs.writeFileSync(META_PATH, JSON.stringify(meta, null, 2) + '\n');
 
-  console.log(`\n✅ 大会更新完了: 掲載 ${finalActive.length}件 | 追加 ${stats.events_added} | 更新 ${stats.events_updated} | アーカイブ ${stats.events_archived} | リンク修復 ${stats.links_fixed} | 無効リンク除外 ${stats.links_removed}`);
+  console.log(`\n✅ 大会更新完了: 掲載 ${finalActive.length}件 | 追加 ${stats.events_added} | 日付修正 ${stats.events_date_fixed} | 更新 ${stats.events_updated} | アーカイブ ${stats.events_archived} | リンク修復 ${stats.links_fixed} | 無効リンク除外 ${stats.links_removed}`);
 }
 
 main().catch((e) => { console.error(e); process.exit(1); });
