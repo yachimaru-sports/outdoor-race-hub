@@ -1,24 +1,19 @@
 {
-  "last_updated_at": "2026-11-17T12:26:08.172Z",
+  "last_updated_at": "2026-11-17T21:38:27.745Z",
   "events_count": 175,
   "deals_count": 31,
   "gears_count": 65,
   "sync_source": "Google Sheets & Rakuten API Automated Sync",
   "gear_sync_source": "refresh_gears.mjs (自己修復・商品ページ実測・画像HTTP200検証済)",
-  "gear_removed": [
-    {
-      "id": "gear-marathon-pouch-shakefree",
-      "reason": "品質価格基準(¥3,001以上)未満のため除外: ¥1,690"
-    }
-  ],
+  "gear_removed": [],
   "run_summary": {
     "events_added": 0,
-    "events_updated": 2,
-    "events_archived": 5,
+    "events_updated": 0,
+    "events_archived": 0,
     "links_fixed": 0,
-    "links_removed": 4,
-    "deals_added": 2,
+    "links_removed": 0,
+    "deals_added": 0,
     "price_drops": 0,
-    "events_date_fixed": 1
+    "events_date_fixed": 0
   }
 }
