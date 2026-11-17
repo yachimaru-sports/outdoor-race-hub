@@ -1,5 +1,23 @@
 [
   {
+    "id": "price-drop-gear-deal-mwbxea18-14eg-2026-11-18",
+    "date": "2026-11-18",
+    "time": "07:30",
+    "type": "price_drop",
+    "title": "値下げ検知: アシックス スニーカー メンズ ブランド asics ゴアテックス GT 100",
+    "detail": "¥12,990 → ¥12,980",
+    "gearId": "gear-deal-mwbxea18-14eg"
+  },
+  {
+    "id": "price-drop-gear-deal-mw92kizw-0ap8-2026-11-18",
+    "date": "2026-11-18",
+    "time": "07:30",
+    "type": "price_drop",
+    "title": "値下げ検知: ホカ スピードゴート2 ユニセックス HOKA SPEEDGOAT 2 メンズ ",
+    "detail": "¥27,500 → ¥16,500",
+    "gearId": "gear-deal-mw92kizw-0ap8"
+  },
+  {
     "id": "deal-add-gear-deal-mwko1fm6-7jst-2026-11-17",
     "date": "2026-11-17",
     "time": "21:26",
