@@ -1,12 +1,13 @@
 import React from 'react';
-import { Mountain, ShieldCheck, Compass, ExternalLink, ShoppingBag, ChevronRight } from 'lucide-react';
+import { Mountain, ShieldCheck, Compass, ExternalLink, ShoppingBag, ChevronRight, HelpCircle } from 'lucide-react';
 
 interface FooterProps {
   onOpenCatalog?: () => void;
+  onOpenGuide?: () => void;
 }
 import { AccessCounter } from './AccessCounter';
 
-export const Footer: React.FC<FooterProps> = ({ onOpenCatalog }) => {
+export const Footer: React.FC<FooterProps> = ({ onOpenCatalog, onOpenGuide }) => {
   return (
     <footer className="mt-20 border-t border-slate-300 dark:border-slate-800 bg-white dark:bg-[#090d16] text-slate-600 dark:text-slate-400 text-xs py-12 transition-colors">
       <div className="max-w-7xl mx-auto px-4 space-y-6">
@@ -27,6 +28,15 @@ export const Footer: React.FC<FooterProps> = ({ onOpenCatalog }) => {
 
           {/* 関連コミュニティ・活動紹介リンク（控えめで上品な配置） */}
           <div className="flex flex-wrap items-center gap-3 text-xs">
+            {onOpenGuide && (
+              <button
+                onClick={onOpenGuide}
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800/80 hover:bg-teal-50 dark:hover:bg-teal-950/40 text-slate-800 dark:text-slate-200 hover:text-teal-800 dark:hover:text-teal-300 border border-slate-300 dark:border-slate-700 font-bold transition-colors cursor-pointer whitespace-nowrap"
+              >
+                <HelpCircle className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400" />
+                <span>使い方ガイド</span>
+              </button>
+            )}
             {onOpenCatalog && (
               <button
                 onClick={onOpenCatalog}

@@ -14,6 +14,7 @@ import {
   Moon,
   Monitor,
   Smartphone,
+  HelpCircle,
 } from 'lucide-react';
 import { formatPrice } from '../utils/helpers';
 
@@ -25,6 +26,7 @@ interface DealsTickerProps {
   theme?: 'light' | 'dark';
   onToggleTheme?: () => void;
   onOpenCatalog?: () => void;
+  onOpenGuide?: () => void;
   isPcView?: boolean;
   onToggleDisplayMode?: () => void;
 }
@@ -37,6 +39,7 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({
   theme = 'light',
   onToggleTheme,
   onOpenCatalog,
+  onOpenGuide,
   isPcView,
   onToggleDisplayMode,
 }) => {
@@ -194,6 +197,17 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({
                 </button>
               )}
               <AccessCounter variant="compact" />
+              {onOpenGuide && (
+                <button
+                  onClick={onOpenGuide}
+                  className="inline-flex items-center gap-0.5 px-1.5 py-1 rounded-lg border border-slate-700 bg-slate-900 hover:bg-slate-800 text-teal-300 text-[10px] font-bold transition-colors cursor-pointer whitespace-nowrap"
+                  aria-label="使い方ガイドを開く"
+                  title="使い方ガイドを開く"
+                >
+                  <HelpCircle className="w-3.5 h-3.5 shrink-0" />
+                  <span>使い方</span>
+                </button>
+              )}
               {onToggleTheme && (
                 <button
                   onClick={onToggleTheme}
@@ -365,6 +379,19 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({
                       <span>PC版</span>
                     </>
                   )}
+                </button>
+              )}
+
+              {/* 使い方ガイドボタン（控えめ常設） */}
+              {onOpenGuide && (
+                <button
+                  onClick={onOpenGuide}
+                  className="inline-flex items-center gap-1 px-1.5 py-1 rounded border border-slate-700 bg-slate-900 hover:bg-slate-800 hover:border-teal-500/60 text-teal-300 text-[10px] font-bold transition-colors shadow-2xs cursor-pointer whitespace-nowrap"
+                  aria-label="使い方ガイドを開く"
+                  title="検索・地図確認・カレンダー登録などの使い方ガイド"
+                >
+                  <HelpCircle className="w-3 h-3 shrink-0" />
+                  <span>使い方</span>
                 </button>
               )}
 

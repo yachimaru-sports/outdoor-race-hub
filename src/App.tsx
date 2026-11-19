@@ -17,8 +17,9 @@ import { Footer } from './components/Footer';
 import { GearCatalogPage } from './components/GearCatalogPage';
 import { ScrollToTopButton } from './components/ScrollToTopButton';
 import { MyRaceCountdownBanner } from './components/MyRaceCountdownBanner';
+import { HowToUseModal } from './components/HowToUseModal';
 import { trackEvent, trackPageView } from './utils/analytics';
-import { ShoppingBag, ChevronRight } from 'lucide-react';
+import { ShoppingBag, ChevronRight, HelpCircle, X } from 'lucide-react';
 
 export const App: React.FC = () => {
   // 現在日付を基準に、開催日や申込締切日が過ぎている大会は自動的に「closed（終了）」へリアルタイム補正
@@ -108,6 +109,46 @@ export const App: React.FC = () => {
       window.location.hash = '#/';
     }
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  // 使い方ガイドモーダル（?guide=1 クエリによる直リンク対応）＆ 初回限定1行バー表示管理
+  const [isGuideOpen, setIsGuideOpen] = useState<boolean>(() => {
+    if (typeof window !== 'undefined') {
+      return new URLSearchParams(window.location.search).get('guide') === '1';
+    }
+    return false;
+  });
+
+  const [isGuideBannerDismissed, setIsGuideBannerDismissed] = useState<boolean>(() => {
+    try {
+      return localStorage.getItem('race_hub_guide_dismissed') === '1';
+    } catch {
+      return false;
+    }
+  });
+
+  const handleDismissGuideBanner = () => {
+    setIsGuideBannerDismissed(true);
+    try {
+      localStorage.setItem('race_hub_guide_dismissed', '1');
+    } catch {}
+  };
+
+  const handleOpenGuide = (source: 'header' | 'banner' | 'footer') => {
+    setIsGuideOpen(true);
+    handleDismissGuideBanner();
+    trackEvent('guide_open', { source });
+  };
+
+  const handleCloseGuide = () => {
+    setIsGuideOpen(false);
+    try {
+      const url = new URL(window.location.href);
+      if (url.searchParams.has('guide')) {
+        url.searchParams.delete('guide');
+        window.history.replaceState({}, '', url.toString());
+      }
+    } catch {}
   };
 
   // 大会詳細モーダルの選択状態（?event=<id> クエリによるディープリンク対応）
@@ -762,6 +803,7 @@ export const App: React.FC = () => {
             theme={theme}
             onToggleTheme={toggleTheme}
             onOpenCatalog={() => navigateTo('gears')}
+            onOpenGuide={() => handleOpenGuide('header')}
             isPcView={isPcView}
             onToggleDisplayMode={isNarrowScreen || displayMode !== 'auto' ? toggleDisplayMode : undefined}
           />
@@ -842,6 +884,37 @@ export const App: React.FC = () => {
           onSelectEvent={setSelectedEvent}
         />
 
+        {/* 3.5 初回訪問時のみ表示される1行スリムガイドバー（ガイドを開くか×で二度と非表示） */}
+        {!isGuideBannerDismissed && (
+          <div className="flex items-center justify-between gap-2 px-3 py-2 rounded-xl bg-teal-50/90 dark:bg-teal-950/40 border border-teal-200 dark:border-teal-800/70 text-xs shadow-2xs">
+            <div className="flex items-center gap-2 min-w-0">
+              <HelpCircle className="w-4 h-4 text-teal-600 dark:text-teal-400 shrink-0" />
+              <p className="text-slate-700 dark:text-slate-200 font-medium truncate sm:whitespace-normal">
+                <strong className="font-black text-teal-800 dark:text-teal-300">はじめての方へ：</strong>
+                検索・Googleマップ直行・お気に入り・カレンダー一発登録が1分で完結します
+              </p>
+            </div>
+            <div className="flex items-center gap-1.5 shrink-0">
+              <button
+                type="button"
+                onClick={() => handleOpenGuide('banner')}
+                className="px-2.5 py-1 rounded-lg bg-teal-600 hover:bg-teal-500 text-white font-black text-[11px] transition-colors cursor-pointer whitespace-nowrap shadow-2xs"
+              >
+                使い方を見る
+              </button>
+              <button
+                type="button"
+                onClick={handleDismissGuideBanner}
+                className="p-1 rounded-lg text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-teal-100/70 dark:hover:bg-teal-900/50 transition-colors cursor-pointer"
+                aria-label="この案内を閉じる"
+                title="閉じる（次回から表示しません）"
+              >
+                <X className="w-3.5 h-3.5" />
+              </button>
+            </div>
+          </div>
+        )}
+
         {/* 4. 条件にマッチする（多次元検索パネル） */}
         <div id="filter-section">
           <FilterSection
@@ -907,8 +980,14 @@ export const App: React.FC = () => {
         />
       )}
 
+      {/* 使い方ガイドモーダル */}
+      <HowToUseModal isOpen={isGuideOpen} onClose={handleCloseGuide} />
+
       {/* フッター */}
-      <Footer onOpenCatalog={() => navigateTo('gears')} />
+      <Footer
+        onOpenCatalog={() => navigateTo('gears')}
+        onOpenGuide={() => handleOpenGuide('footer')}
+      />
 
       {/* 右下常駐：一番上へ戻るボタン（PC・スマホ共通） */}
       <ScrollToTopButton />

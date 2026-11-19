@@ -18,7 +18,8 @@ export const trackEvent = (
     | 'rakuten_click'
     | 'favorite_toggle'
     | 'calendar_add'
-    | 'event_detail_view',
+    | 'event_detail_view'
+    | 'guide_open',
   params: Record<string, any> = {}
 ) => {
   if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
