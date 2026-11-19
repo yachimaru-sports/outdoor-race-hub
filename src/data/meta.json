@@ -1,6 +1,6 @@
 {
-  "last_updated_at": "2026-11-18T21:40:30.261Z",
-  "events_count": 175,
+  "last_updated_at": "2026-11-19T21:38:26.141Z",
+  "events_count": 179,
   "deals_count": 32,
   "gears_count": 65,
   "sync_source": "Google Sheets & Rakuten API Automated Sync",
@@ -9,9 +9,9 @@
   "run_summary": {
     "events_added": 0,
     "events_updated": 3,
-    "events_archived": 0,
+    "events_archived": 1,
     "links_fixed": 0,
-    "links_removed": 2,
+    "links_removed": 1,
     "deals_added": 0,
     "price_drops": 0,
     "events_date_fixed": 0

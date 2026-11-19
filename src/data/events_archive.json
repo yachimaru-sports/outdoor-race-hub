@@ -5361,5 +5361,65 @@
     },
     "archived_at": "2026-11-17",
     "archive_reason": "実開催日(2026-10-03)終了済みのためアーカイブ"
+  },
+  {
+    "id": "trjp-deep-japan-ultra-100-niigata-2027",
+    "category": "trail",
+    "subCategory": "100km / 100マイルウルトラトレイル",
+    "elements": [
+      "トレック",
+      "100マイル"
+    ],
+    "title": "DEEP JAPAN ULTRA 100 2027（新潟県）",
+    "date": "2027-06-25",
+    "end_date": "2027-06-27",
+    "month": 6,
+    "region": "甲信越・北陸",
+    "prefecture": "新潟県",
+    "distance_km": 160,
+    "elevation_m": 8342,
+    "entry_fee": "公式サイト参照",
+    "entry_status": "open",
+    "entry_start_date": "2026-09-25",
+    "entry_deadline": "2027-02-26",
+    "links": {
+      "official": null,
+      "entry": null,
+      "review": null,
+      "sns": null,
+      "verified": false,
+      "verified_at": "2026-11-20"
+    },
+    "mandatory_gear": [
+      {
+        "name": "トレイルランニングシューズ・ザック",
+        "category": "ギア"
+      },
+      {
+        "name": "レインジャケット（防風・防水シェル）",
+        "category": "ウェア"
+      },
+      {
+        "name": "水分・行動食・マイカップ",
+        "category": "補給"
+      },
+      {
+        "name": "ファーストエイドキット・携帯電話・保険証",
+        "category": "エイド"
+      }
+    ],
+    "venue": {
+      "name": "入広瀬スポーツセンター（受付：旧湯沢小学校体育館）",
+      "mapQuery": "新潟県 入広瀬スポーツセンター（受付：旧湯沢小学校体育館）"
+    },
+    "source": {
+      "portalName": "トレイルランナー.JP",
+      "portalUrl": "https://trailrunner.jp/race-detail-deep-japan-ultra-100-niigata.html"
+    },
+    "added_at": "2026-11-16",
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-19",
+    "archived_at": "2026-11-20",
+    "archive_reason": "有効リンク確認不可のため退避"
   }
 ]
