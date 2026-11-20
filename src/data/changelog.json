@@ -1,5 +1,14 @@
 [
   {
+    "id": "add-shiraishi-mm-2027",
+    "date": "2026-11-20",
+    "time": "20:28",
+    "type": "event_added",
+    "title": "新着大会追加: 白石マウンテンマラソン2027（SMM2027）~epsode1~",
+    "detail": "岡山県笠岡市・白石島 / 2027-03-28（受付中：〜2027-03-14）",
+    "eventId": "shiraishi-mountain-marathon-2027"
+  },
+  {
     "id": "spoen-cycle-sync-2026-11-20",
     "date": "2026-11-20",
     "time": "19:31",

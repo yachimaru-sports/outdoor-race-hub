@@ -8325,6 +8325,64 @@
     }
   },
   {
+    "id": "shiraishi-mountain-marathon-2027",
+    "category": "adventure",
+    "subCategory": "オリエンテーリング・マウンテンマラソン",
+    "elements": [
+      "読図",
+      "ロゲ",
+      "1日"
+    ],
+    "title": "白石マウンテンマラソン2027（SMM2027）~epsode1~",
+    "date": "2027-03-28",
+    "month": 3,
+    "region": "中国",
+    "prefecture": "岡山県",
+    "distance_km": 20,
+    "elevation_m": 800,
+    "entry_status": "open",
+    "entry_start_date": "2026-11-06",
+    "entry_deadline": "2027-03-14",
+    "entry_fee": "5,000円〜10,000円",
+    "links": {
+      "official": "https://moshicom.com/157713",
+      "entry": "https://moshicom.com/157713",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-20"
+    },
+    "mandatory_gear": [
+      {
+        "name": "コンパス・防水マップケース",
+        "category": "ギア"
+      },
+      {
+        "name": "防水透湿レインウェア・防寒着",
+        "category": "ウェア"
+      },
+      {
+        "name": "ファーストエイドキット・エマージェンシーシート",
+        "category": "ギア"
+      },
+      {
+        "name": "水分・行動食・携帯電話",
+        "category": "補給"
+      }
+    ],
+    "venue": {
+      "name": "笠岡市B&G海洋センター（岡山県笠岡市白石島2364-6）",
+      "address": "〒714-0036 岡山県笠岡市白石島2364-6",
+      "mapQuery": "岡山県笠岡市白石島 笠岡市B&G海洋センター"
+    },
+    "source": {
+      "portalName": "e-moshicom",
+      "portalUrl": "https://moshicom.com/157713"
+    },
+    "added_at": "2026-11-20",
+    "date_verified_at": "2026-11-20"
+  },
+  {
     "id": "kakamigahara-alps-panorama-trail-2027",
     "category": "trail",
     "subCategory": "ミドル・パノラマトレイル",
