@@ -101,28 +101,17 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
     },
     {
       id: 'adventure',
-      label: 'アドベンチャー・MTB読図',
-      sub: 'とれとれ・AR関西・複合',
+      label: 'アドベンチャー・ロゲ・読図',
+      sub: 'とれとれ・ロゲイニング・OMM',
       icon: Compass,
       badgeText: '注目',
       activeColor: 'border-amber-600 bg-white dark:bg-slate-800 text-amber-950 dark:text-amber-200',
       iconBg: 'bg-amber-100 text-amber-800 dark:bg-amber-950/60 dark:text-amber-300',
       activeIconBg: 'bg-amber-500 text-slate-950',
-      count: events.filter((e) => e.category === 'adventure' && !e.elements?.includes('ロゲイニング')).length,
+      count: events.filter((e) => e.category === 'adventure' || e.elements?.includes('ロゲイニング')).length,
       openCount: events.filter(
-        (e) => e.category === 'adventure' && !e.elements?.includes('ロゲイニング') && isOpen(e)
+        (e) => (e.category === 'adventure' || e.elements?.includes('ロゲイニング')) && isOpen(e)
       ).length,
-    },
-    {
-      id: 'rogaining',
-      label: 'ロゲイニング・OMM',
-      sub: '地図読み・ナビゲーション',
-      icon: Map,
-      activeColor: 'border-emerald-600 bg-white dark:bg-slate-800 text-emerald-950 dark:text-emerald-200',
-      iconBg: 'bg-emerald-100 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300',
-      activeIconBg: 'bg-emerald-700 text-white',
-      count: events.filter((e) => e.elements?.includes('ロゲイニング')).length,
-      openCount: events.filter((e) => e.elements?.includes('ロゲイニング') && isOpen(e)).length,
     },
   ];
 
@@ -576,7 +565,7 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
         </div>
 
         {/* PC表示：5大ジャンルのリッチカードグリッド（3ステート対応：①抽出 ➔ ②除外 ➔ ③元通り） */}
-        <div className="hidden md:grid md:grid-cols-3 lg:grid-cols-5 gap-2.5">
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-2.5">
           {genreDefinitions.map((genre) => {
             const state = getGenreState(genre.id);
             const isInclude = state === 'include';

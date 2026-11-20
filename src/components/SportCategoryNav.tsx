@@ -22,14 +22,10 @@ export const SportCategoryNav: React.FC<SportCategoryNavProps> = ({
   const totalOpen = events.filter(isOpen).length;
 
   const advEvents = events.filter(
-    (e) => e.category === 'adventure' && !e.elements?.includes('ロゲイニング')
+    (e) => e.category === 'adventure' || e.elements?.includes('ロゲイニング')
   );
   const advCount = advEvents.length;
   const advOpen = advEvents.filter(isOpen).length;
-
-  const rogEvents = events.filter((e) => e.elements?.includes('ロゲイニング'));
-  const rogainingCount = rogEvents.length;
-  const rogainingOpen = rogEvents.filter(isOpen).length;
 
   const trailEvents = events.filter((e) => e.category === 'trail');
   const trailCount = trailEvents.length;
@@ -68,8 +64,8 @@ export const SportCategoryNav: React.FC<SportCategoryNavProps> = ({
     {
       id: 'adventure-main',
       genreId: 'adventure',
-      label: 'アドベンチャー・MTB読図',
-      sub: 'とれとれ・AR関西・複合',
+      label: 'アドベンチャー・ロゲ・読図',
+      sub: 'とれとれ・ロゲイニング・OMM',
       count: advCount,
       openCount: advOpen,
       icon: Compass,
@@ -81,22 +77,6 @@ export const SportCategoryNav: React.FC<SportCategoryNavProps> = ({
       isSelected: selectedCats.length === 1 && selectedCats.includes('adventure') && !filters.onlyFavorites,
       isExcluded: !selectedCats.includes('adventure'),
       onClick: () => onSelectNav('adventure', 'all', false),
-    },
-    {
-      id: 'rogaining',
-      genreId: 'rogaining',
-      label: 'ロゲイニング・OMM',
-      sub: '地図読み・ナビゲーション',
-      count: rogainingCount,
-      openCount: rogainingOpen,
-      icon: Map,
-      activeColor:
-        'border-emerald-700 bg-emerald-50 dark:bg-emerald-950/50 text-emerald-950 dark:text-emerald-200',
-      iconBg: 'bg-emerald-100 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300',
-      activeIconBg: 'bg-emerald-700 text-white',
-      isSelected: selectedCats.length === 1 && selectedCats.includes('rogaining') && !filters.onlyFavorites,
-      isExcluded: !selectedCats.includes('rogaining'),
-      onClick: () => onSelectNav('all', 'rogaining', false),
     },
     {
       id: 'trail',
@@ -166,7 +146,7 @@ export const SportCategoryNav: React.FC<SportCategoryNavProps> = ({
   return (
     <section className="bg-white dark:bg-slate-900 border-b border-slate-300 dark:border-slate-800 shadow-2xs transition-colors">
       <div className="max-w-7xl mx-auto px-4 py-3.5 sm:py-4">
-        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2.5">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5">
           {navItems.map((item) => {
             const Icon = item.icon;
             const handleClick = () => {

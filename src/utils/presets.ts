@@ -1,10 +1,10 @@
 import { FilterState, Preset } from '../types';
 
-export const ALL_GENRES = ['trail', 'cycling', 'marathon', 'adventure', 'rogaining'] as const;
+export const ALL_GENRES = ['trail', 'cycling', 'marathon', 'adventure'] as const;
 
 export const INITIAL_FILTERS: FilterState = {
   category: 'all',
-  selectedCategories: ['trail', 'cycling', 'marathon', 'adventure', 'rogaining'],
+  selectedCategories: ['trail', 'cycling', 'marathon', 'adventure'],
   region: 'all',
   prefecture: 'all',
   minDistance: 0,

@@ -335,10 +335,10 @@ export const App: React.FC = () => {
     featureTag = 'all',
     onlyFavorites = false
   ) => {
-    const allGenres = ['trail', 'cycling', 'marathon', 'adventure', 'rogaining'];
+    const allGenres = ['trail', 'cycling', 'marathon', 'adventure'];
     let selectedCategories = allGenres;
     if (category === 'all' && featureTag === 'rogaining') {
-      selectedCategories = ['rogaining'];
+      selectedCategories = ['adventure'];
     } else if (category !== 'all') {
       selectedCategories = [category];
     }
@@ -531,7 +531,7 @@ export const App: React.FC = () => {
 
         // 競技ジャンル（親・種目）の除外判定（NOT検索対応）
         const eventGenre = (event.elements?.includes('ロゲイニング') || event.id.includes('rogaining'))
-          ? 'rogaining'
+          ? 'adventure'
           : event.category;
 
         if (filters.excludedCategories && filters.excludedCategories.includes(eventGenre)) {
