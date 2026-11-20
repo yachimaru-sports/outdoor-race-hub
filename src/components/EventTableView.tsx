@@ -114,7 +114,7 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
     <div className="bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm">
       {/* テーブルコンテナ：二重スクロールを排除し、ページ全体と自然に連動 */}
       <div className="overflow-x-auto">
-        <table className="w-full text-left border-collapse table-fixed min-w-[1160px]">
+        <table className="w-full text-left border-collapse table-fixed min-w-[1180px]">
           <thead className="bg-slate-100 dark:bg-slate-800">
             <tr className="text-slate-800 dark:text-slate-200 border-b-2 border-slate-300 dark:border-slate-700 text-xs font-extrabold tracking-wide">
               {/* 1. 保存 */}
@@ -193,9 +193,9 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
                 </div>
               </th>
               {/* 8. 受付状況 */}
-              <th className="py-3 px-2 w-[118px] text-center">受付状況</th>
+              <th className="py-3 px-1.5 w-[96px] text-center">受付状況</th>
               {/* 9. 申込・公式・予定 */}
-              <th className="py-3 px-2 w-[165px] text-center">申込・公式・予定</th>
+              <th className="py-3 px-2 w-[192px] text-center">申込・公式・予定</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-200 dark:divide-slate-800 text-xs sm:text-sm">
@@ -469,7 +469,7 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
                     </td>
 
                     {/* 8. 受付状況 */}
-                    <td className="py-2.5 px-2 text-center align-middle whitespace-nowrap overflow-hidden">
+                    <td className="py-2.5 px-1.5 text-center align-middle whitespace-nowrap overflow-hidden">
                       <span
                         className={`inline-flex items-center justify-center gap-1 px-2 py-0.5 rounded-full text-[11px] border ${
                           statusBadgeClass
@@ -482,8 +482,8 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
                     </td>
 
                     {/* 9. 申込・公式（ホバーで直リンクURLポップアップ＆リンク切れ取り消し線対応） */}
-                    <td className="py-2.5 px-2.5 align-middle whitespace-nowrap">
-                      <div className="flex items-center justify-center gap-1.5">
+                    <td className="py-2.5 px-2 align-middle whitespace-nowrap">
+                      <div className="flex items-center justify-center gap-1">
                         <LinkButton
                           type="entry"
                           url={event.links.entry}

@@ -134,7 +134,7 @@ export const ENTRY_STATUS_CONFIG: Record<
   { label: string; badge: string; dot: string; pulse?: boolean }
 > = {
   open: {
-    label: 'エントリー受付中',
+    label: '受付中',
     badge:
       'bg-emerald-100 text-emerald-950 border-emerald-400 dark:bg-emerald-950/60 dark:text-emerald-200 dark:border-emerald-500/50 font-extrabold',
     dot: 'bg-emerald-600 dark:bg-emerald-400',
@@ -147,7 +147,7 @@ export const ENTRY_STATUS_CONFIG: Record<
     pulse: true,
   },
   upcoming: {
-    label: '告知・準備中',
+    label: '受付前',
     badge:
       'bg-sky-100 text-sky-950 border-sky-300 dark:bg-sky-950/50 dark:text-sky-200 dark:border-sky-700/60 font-bold',
     dot: 'bg-sky-600 dark:bg-sky-400',
