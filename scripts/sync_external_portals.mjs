@@ -85,11 +85,16 @@ function stripHtml(html) {
 function findDuplicateIndex(events, candidate) {
   const normCand = normalizeRaceTitle(candidate.title);
   const candTime = new Date(candidate.date).getTime();
+  const candEntry = (candidate.links?.entry || '').replace(/\?.*$/, '').replace(/\/+$/, '');
 
   for (let i = 0; i < events.length; i++) {
     const ex = events[i];
     if (ex.id === candidate.id) return i;
     if (candidate.links?.official && ex.links?.official === candidate.links.official && !candidate.links.official.includes('trailrunner.jp/taikai')) {
+      return i;
+    }
+    const exEntry = (ex.links?.entry || '').replace(/\?.*$/, '').replace(/\/+$/, '');
+    if (candEntry && exEntry && candEntry === exEntry) {
       return i;
     }
 
@@ -598,6 +603,171 @@ async function enrichFromTrailrunnerDetail(item, todayStr) {
   };
 }
 
+const DEFAULT_CYCLING_GEAR = [
+  { name: 'JCF公認ヘルメット＆グローブ', category: 'ギア' },
+  { name: '前後ライト（フロント・テール）・リフレクター', category: 'ライト' },
+  { name: '携帯工具・パンク修理キット・ボトル', category: 'ギア' },
+  { name: '防寒ウインドブレーカー・レインウェア', category: 'ウェア' },
+];
+
+/**
+ * スポエンCYCLE（cycle.spoen.jp）からロングライド（50km以上）＆ブルベの今後の大会を取得
+ */
+async function fetchSpoenCycleEvents(todayStr) {
+  const targets = [
+    { basePath: '/search/longride/opendate', maxPages: 8, kind: 'longride' },
+    { basePath: '/search/brevet/attention', maxPages: 4, kind: 'brevet' },
+    { basePath: '/search/brevet/accdate', maxPages: 2, kind: 'brevet' },
+  ];
+
+  const seenSpoenIds = new Set();
+  const collected = [];
+
+  const parseSpoenDateRange = (raw) => {
+    const fullDates = [...raw.matchAll(/(\d{4})年(\d{1,2})月(\d{1,2})日/g)].map(
+      (m) => `${m[1]}-${m[2].padStart(2, '0')}-${m[3].padStart(2, '0')}`
+    );
+    if (fullDates.length >= 2) {
+      return { date: fullDates[0], endDate: fullDates[fullDates.length - 1] };
+    }
+    if (fullDates.length === 1) {
+      return { date: fullDates[0], endDate: null };
+    }
+    const ymDates = [...raw.matchAll(/(\d{4})年(\d{1,2})月/g)].map((m) => ({
+      y: Number(m[1]),
+      m: Number(m[2]),
+    }));
+    if (ymDates.length >= 1) {
+      const start = ymDates[0];
+      const end = ymDates[ymDates.length - 1];
+      const startStr = `${start.y}-${String(start.m).padStart(2, '0')}-01`;
+      const lastDay = new Date(Date.UTC(end.y, end.m, 0)).getUTCDate();
+      const endStr = `${end.y}-${String(end.m).padStart(2, '0')}-${String(lastDay).padStart(2, '0')}`;
+      return { date: startStr, endDate: endStr };
+    }
+    return null;
+  };
+
+  const extractPref = (rawVenue) => {
+    for (const full of Object.keys(PREF_TO_REGION)) {
+      const short = full.replace(/[都道府県]$/, '');
+      if (rawVenue.includes(full) || rawVenue.includes(short)) return full;
+    }
+    if (/海外|ホノルル|ハワイ/.test(rawVenue)) return '海外';
+    return '東京都';
+  };
+
+  for (const t of targets) {
+    for (let page = 1; page <= t.maxPages; page++) {
+      const url = `https://cycle.spoen.jp${t.basePath}/${page}`;
+      let html = '';
+      try {
+        const res = await fetch(url, { headers: { 'User-Agent': UA }, signal: AbortSignal.timeout(12000) });
+        if (!res.ok) break;
+        html = await res.text();
+      } catch {
+        break;
+      }
+
+      const sections = html.split('<section class="search-result-list').slice(1);
+      if (!sections.length) break;
+
+      for (const sec of sections) {
+        const titleM = sec.match(/<h2 class="result-title"><a href="([^"]+)"[^>]*>([\s\S]*?)<\/a><\/h2>/);
+        if (!titleM) continue;
+
+        const rawUrl = titleM[1].split('?')[0].replace(/\/+$/, '');
+        const idM = rawUrl.match(/\/event\/t\/(\d+)/);
+        if (!idM) continue;
+        const spoenId = idM[1];
+        if (seenSpoenIds.has(spoenId)) continue;
+
+        const title = stripHtml(titleM[2]);
+        if (!title || /キッズ|ジュニア|体験|講習|セミナー/i.test(title)) continue;
+
+        const dateM = sec.match(/<dt>開催日<\/dt>\s*<dd>([\s\S]*?)<\/dd>/);
+        const dateRaw = dateM ? stripHtml(dateM[1]) : '';
+        const parsedDate = parseSpoenDateRange(dateRaw);
+        if (!parsedDate) continue;
+
+        const effectiveEnd = parsedDate.endDate || parsedDate.date;
+        if (effectiveEnd < todayStr) continue;
+
+        const venueM = sec.match(/<dt>開催地<\/dt>\s*<dd>([\s\S]*?)<\/dd>/);
+        const venueRaw = venueM ? stripHtml(venueM[1]) : '';
+        const prefecture = extractPref(venueRaw || title);
+        const region = prefecture === '海外' ? '海外' : (PREF_TO_REGION[prefecture] || '関東');
+
+        const entryM = sec.match(/<dt>エントリー<\/dt>\s*<dd>([\s\S]*?)<\/dd>/);
+        const entryRaw = entryM ? stripHtml(entryM[1]) : '';
+        const entryDates = [...entryRaw.matchAll(/(\d{4})年(\d{1,2})月(\d{1,2})日/g)].map(
+          (m) => `${m[1]}-${m[2].padStart(2, '0')}-${m[3].padStart(2, '0')}`
+        );
+        const entryStart = entryDates[0] || undefined;
+        const entryDeadline = entryDates[1] || undefined;
+
+        let entryStatus = 'open';
+        if (/受付終了|締切|中止/.test(entryRaw) || (entryDeadline && entryDeadline < todayStr)) {
+          entryStatus = 'closed';
+        } else if (/受付開始前|受付前/.test(entryRaw) || (entryStart && entryStart > todayStr)) {
+          entryStatus = 'upcoming';
+        }
+
+        const displayDate = parsedDate.date < todayStr && parsedDate.endDate && parsedDate.endDate >= todayStr
+          ? todayStr
+          : parsedDate.date;
+
+        const prM = sec.match(/<div class="result-text-pr">([\s\S]*?)<\/div>/);
+        const prText = prM ? stripHtml(prM[1]) : '';
+        const distM = `${title} ${prText}`.match(/(\d{2,4})\s*(?:km|ｋｍ|キロ)/i);
+        const distanceKm = distM ? Number(distM[1]) : (t.kind === 'brevet' ? 200 : 80);
+
+        seenSpoenIds.add(spoenId);
+        collected.push({
+          id: `spoen-cycle-${spoenId}`,
+          category: 'cycling',
+          subCategory: t.kind === 'brevet' ? 'ブルベ (BRM/AJ)' : 'ロングライド (50km以上)',
+          elements: t.kind === 'brevet' ? ['ブルベ', 'ロングライド'] : ['ロングライド'],
+          title,
+          date: displayDate,
+          ...(parsedDate.endDate ? { end_date: parsedDate.endDate } : {}),
+          month: Number(displayDate.slice(5, 7)) || 1,
+          region,
+          prefecture,
+          distance_km: distanceKm,
+          elevation_m: 0,
+          entry_status: entryStatus,
+          ...(entryStart ? { entry_start_date: entryStart } : {}),
+          ...(entryDeadline ? { entry_deadline: entryDeadline } : {}),
+          entry_fee: '詳細はエントリーページを確認',
+          links: {
+            official: rawUrl,
+            entry: rawUrl,
+            review: null,
+            sns: null,
+            verified: true,
+            verified_at: todayStr,
+          },
+          mandatory_gear: DEFAULT_CYCLING_GEAR,
+          venue: {
+            name: venueRaw ? venueRaw.slice(0, 60) : prefecture,
+            address: prefecture,
+            mapQuery: `${prefecture} ${title}`.slice(0, 80),
+          },
+          source: {
+            portalName: 'スポエンCYCLE',
+            portalUrl: 'https://cycle.spoen.jp/',
+          },
+          added_at: todayStr,
+          date_verified_at: todayStr,
+        });
+      }
+    }
+  }
+
+  return collected;
+}
+
 async function main() {
   const todayStr = getTodayJst();
   console.log(`=== 外部ポータル同期開始 (基準日: ${todayStr}) ===`);
@@ -678,6 +848,26 @@ async function main() {
     events.push(ev);
     added++;
   }
+
+  // 3. スポエンCYCLE（ロングライド50km以上 ＆ ブルベ）
+  console.log('\n[3/3] スポエンCYCLE（cycle.spoen.jp）のロングライド・ブルベを同期中...');
+  const spoenList = await fetchSpoenCycleEvents(todayStr);
+  let spoenAdded = 0;
+  let spoenUpdated = 0;
+  for (const ev of spoenList) {
+    const dupIdx = findDuplicateIndex(events, ev);
+    if (dupIdx >= 0) {
+      if (events[dupIdx].id === ev.id) {
+        events[dupIdx] = { ...events[dupIdx], ...ev, added_at: events[dupIdx].added_at || ev.added_at };
+        spoenUpdated++;
+      }
+      continue;
+    }
+    events.push(ev);
+    added++;
+    spoenAdded++;
+  }
+  console.log(`  スポエンCYCLE 検出 ${spoenList.length} 件 → 新規追加 ${spoenAdded} 件 / 更新 ${spoenUpdated} 件`);
 
   // 日付順でソート
   events.sort((a, b) => a.date.localeCompare(b.date));

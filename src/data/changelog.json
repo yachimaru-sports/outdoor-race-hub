@@ -1,5 +1,13 @@
 [
   {
+    "id": "spoen-cycle-sync-2026-11-20",
+    "date": "2026-11-20",
+    "time": "19:31",
+    "type": "event_added",
+    "title": "スポエンCYCLE（ロングライド50km以上・ブルベ）40大会を新規登録",
+    "detail": "サイクリングカテゴリーにロングライド・BRMブルベ大会を一括同期しました"
+  },
+  {
     "id": "ev-endfix-nanki-shirahama-adventure-ride-2026-2026-11-20",
     "date": "2026-11-20",
     "time": "19:13",

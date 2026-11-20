@@ -12,7 +12,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { normalizeRaceTitle, isSameOrOverlappingDate } from './audit-duplicates.mjs';
+import { isDuplicateRace } from './audit-duplicates.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -67,14 +67,10 @@ async function runPreflightGate() {
     for (let j = i + 1; j < events.length; j++) {
       const a = events[i];
       const b = events[j];
-      const normA = normalizeRaceTitle(a.title);
-      const normB = normalizeRaceTitle(b.title);
-
-      if (normA && normB && (normA === normB || normA.includes(normB) || normB.includes(normA))) {
-        if (isSameOrOverlappingDate(a.date, b.date)) {
-          console.error(`❌ [重複検知] タイトル・開催日が重複: [${a.id}] "${a.title}" と [${b.id}] "${b.title}"`);
-          duplicateCount++;
-        }
+      const dup = isDuplicateRace(a, b);
+      if (dup && dup.isDup) {
+        console.error(`❌ [重複検知] ${dup.reason}: [${a.id}] "${a.title}" と [${b.id}] "${b.title}"`);
+        duplicateCount++;
       }
     }
   }

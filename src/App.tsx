@@ -36,7 +36,8 @@ export const App: React.FC = () => {
 
     return (eventsData as RaceEvent[]).map((ev) => {
       const baseDate = ev.date.split(/[~～]/)[0].trim();
-      if (baseDate < todayStr) {
+      const endDate = (ev as RaceEvent & { end_date?: string }).end_date || baseDate;
+      if (endDate < todayStr) {
         return { ...ev, entry_status: 'closed' as const };
       }
       if (ev.entry_deadline && ev.entry_deadline < todayStr) {
