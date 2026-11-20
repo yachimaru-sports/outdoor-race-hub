@@ -114,6 +114,12 @@ export const UpdateTicker: React.FC<UpdateTickerProps> = ({ onJumpToTarget, onOp
   const currentItem = items[currentIndex];
 
   useEffect(() => {
+    const openHistory = () => setShowHistoryModal(true);
+    window.addEventListener('open-update-history', openHistory);
+    return () => window.removeEventListener('open-update-history', openHistory);
+  }, []);
+
+  useEffect(() => {
     if (isPaused || items.length <= 1) return;
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % items.length);

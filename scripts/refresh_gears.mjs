@@ -168,9 +168,11 @@ export async function searchRakutenDirect(keyword) {
   }
 }
 
+let geminiQuotaExhausted = false;
+
 /** 2. Gemini AI による Google Search Grounding での楽天市場商品URL探索 */
 export async function searchWithGemini(keyword) {
-  if (!GEMINI_API_KEY) return null;
+  if (!GEMINI_API_KEY || geminiQuotaExhausted) return null;
   const prompt = `楽天市場（rakuten.co.jp）で現在販売中の「${keyword}」の個別商品ページURL（https://item.rakuten.co.jp/...）を1つGoogle検索で特定し、URLのみを出力してください。見つからなければ空文字。`;
   try {
     const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`, {
@@ -183,6 +185,11 @@ export async function searchWithGemini(keyword) {
       }),
       signal: AbortSignal.timeout(15000)
     });
+    if (res.status === 429) {
+      const body = await res.text().catch(() => '');
+      if (/per day|free_tier_requests|limit:\s*20/i.test(body)) geminiQuotaExhausted = true;
+      return null;
+    }
     if (!res.ok) return null;
     const data = await res.json();
     const text = (data.candidates?.[0]?.content?.parts || []).map((p) => p.text || '').join('');
@@ -193,10 +200,60 @@ export async function searchWithGemini(keyword) {
   }
 }
 
+/** 2-A. Gemini AI (Google Search Grounding) によるセール商品候補一括探索（楽天API不要・CI WAF遮断時も利用可能） */
+async function discoverDealsWithGemini(target) {
+  if (!GEMINI_API_KEY || geminiQuotaExhausted) return [];
+  const prompt = [
+    `Google検索を使い、楽天市場（item.rakuten.co.jp）で現在販売中かつセール・割引中の「${target.brand} ${target.category}」（キーワード: ${target.keyword}）の商品を最大3件探してください。`,
+    '必ず実在する商品ページのURL（https://item.rakuten.co.jp/...）、商品名、現在の税込販売価格（円）、定価または参考価格（円）、可能なら商品画像URL（r10s.jp 等）をJSON配列のみで出力してください。',
+    '例: [{"title":"商品名","url":"https://item.rakuten.co.jp/shop/item/","price":12800,"originalPrice":19800,"imageUrl":"https://thumbnail.image.rakuten.co.jp/..."}]',
+    '見つからない場合は [] のみ出力してください。推測や架空のURL・価格は絶対に出力しないでください。',
+  ].join('\n');
+  try {
+    const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        contents: [{ parts: [{ text: prompt }] }],
+        tools: [{ google_search: {} }],
+        generationConfig: { temperature: 0.1 }
+      }),
+      signal: AbortSignal.timeout(20000)
+    });
+    if (res.status === 429) {
+      const body = await res.text().catch(() => '');
+      if (/per day|free_tier_requests|limit:\s*20/i.test(body)) {
+        geminiQuotaExhausted = true;
+        console.warn(' ⚠️ Gemini API 1日上限に達したため、以降は他ソースのみで継続します。');
+      }
+      return [];
+    }
+    if (!res.ok) return [];
+    const data = await res.json();
+    const text = (data.candidates?.[0]?.content?.parts || []).map((p) => p.text || '').join('');
+    const cleaned = text.replace(/```json\s*/gi, '').replace(/```\s*/g, '').trim();
+    const m = cleaned.match(/\[[\s\S]*\]/);
+    if (!m) return [];
+    const arr = JSON.parse(m[1] || m[0]);
+    if (!Array.isArray(arr)) return [];
+    return arr
+      .filter((x) => x && typeof x.url === 'string' && /^https:\/\/item\.rakuten\.co\.jp\/[a-zA-Z0-9_\-]+\/[a-zA-Z0-9_\-]+/.test(x.url))
+      .map((x) => ({
+        url: x.url.split('?')[0].replace(/\/+$/, ''),
+        title: String(x.title || '').trim(),
+        price: Number(x.price) || 0,
+        originalPrice: Number(x.originalPrice) || 0,
+        imageUrl: cleanImage(String(x.imageUrl || '')),
+      }));
+  } catch {
+    return [];
+  }
+}
+
 /** 2-B. Gemini AI (Google Search Grounding) による最新価格取得（楽天APIなし・WAF遮断時のフォールバック） */
-let geminiPriceQuota = 10;
+let geminiPriceQuota = 15;
 async function fetchPriceWithGemini(gear) {
-  if (!GEMINI_API_KEY || geminiPriceQuota <= 0) return null;
+  if (!GEMINI_API_KEY || geminiQuotaExhausted || geminiPriceQuota <= 0) return null;
   geminiPriceQuota--;
   const prompt = `次の楽天市場商品の現在の税込販売価格（円）と、もしセール中なら定価/参考価格（円）をGoogle検索で調べて、JSONのみ（例: {"price": 12800, "originalPrice": 16000}）で出力してください。不明な場合は {"price": 0}。\n商品名: ${gear.title}\nURL: ${gear.dealUrl}`;
   try {
@@ -210,6 +267,11 @@ async function fetchPriceWithGemini(gear) {
       }),
       signal: AbortSignal.timeout(15000)
     });
+    if (res.status === 429) {
+      const body = await res.text().catch(() => '');
+      if (/per day|free_tier_requests|limit:\s*20/i.test(body)) geminiQuotaExhausted = true;
+      return null;
+    }
     if (!res.ok) return null;
     const data = await res.json();
     const text = (data.candidates?.[0]?.content?.parts || []).map((p) => p.text || '').join('');
@@ -564,7 +626,7 @@ const CATEGORY_RULES = {
   'レインウェア': { must: /レイン|ジャケット|シェル|防水|ゴアテックス|ティフォン|タンペート/i, ban: /パンツ|ズボン|シューズ|ザック|グローブ|ジュニア|キッズ/i },
   'ランニングシューズ': { must: /シューズ|靴|ランニング|マラソン|ゲル|ノヴァ|クリフトン|ボンダイ/i, ban: /靴下|ソックス|インソール|ポール|ザック|ジュニア|キッズ|子供|子ども|junior|kids/i },
   'ランニングウェア': { must: /シャツ|tシャツ|フーディ|ジャケット|ベスト|ショーツ|パンツ|ウェア/i, ban: /シューズ|靴|ザック|ライト|ソックス|ジュニア|キッズ|子供|子ども|junior|kids/i },
-  'サイクル用品': { must: /サイクル|ジャージ|ジャケット|ウィンドブレーカー|ビブ|タイツ|ヘルメット|ライト|ボトル|ツール/i, ban: /タイヤチューブのみ|パッチのみ/i },
+  'サイクル用品': { must: /サイクル|ジャージ|ジャケット|ウィンドブレーカー|ビブ|タイツ|ヘルメット|ライト|ボトル|ツール/i, ban: /タイヤチューブのみ|パッチのみ|バイク用品|バイクウェア|オートバイ|原付/i },
   '補給食・エナジージェル': { must: /ジェル|補給|マグオン|アミノ|メダリスト|エナジー/i, ban: /ボトル|ポーチ|ザック/i },
   '防水スタッフバッグ': { must: /ドライバッグ|ドライサック|スタッフバッグ|防水バッグ/i, ban: /サコッシュ|ビーチ|海水浴|プール|スマホ|ショルダー|肩掛け/i },
 };
@@ -598,13 +660,16 @@ async function discoverAndRotateDeals(currentGears) {
   const rotatedTargets = [...DISCOVERY_TARGETS.slice(daySeed), ...DISCOVERY_TARGETS.slice(0, daySeed)];
 
   for (const target of rotatedTargets) {
-    if (consecutiveBlocked >= 6) {
-      console.log(' ⏭️ 楽天スクレイピングが連続制限中のため、新規ディスカバリーを早期完了します。');
+    const canUseGemini = Boolean(GEMINI_API_KEY && !geminiQuotaExhausted && geminiCalls < 8);
+    if (consecutiveBlocked >= 6 && !canUseGemini) {
+      console.log(' ⏭️ 楽天スクレイピングが連続制限中かつGemini枠上限のため、新規ディスカバリーを早期完了します。');
       break;
     }
     try {
       let candUrls = [];
       const apiItemMap = new Map();
+      const geminiItemMap = new Map();
+
       if (RAKUTEN_APP_ID && RAKUTEN_ACCESS_KEY) {
         const minApiPrice = SMALL_EXEMPT_CATEGORIES.has(target.category) ? 1000 : MIN_GEAR_PRICE;
         const apiItems = await searchRakutenApiItems(target.keyword, minApiPrice);
@@ -616,10 +681,13 @@ async function discoverAndRotateDeals(currentGears) {
           }
         }
       }
-      if (GEMINI_API_KEY && geminiCalls < 6) {
+      if (canUseGemini) {
         geminiCalls++;
-        const geminiUrl = await searchWithGemini(`${target.brand} ${target.category} セール 30%OFF`);
-        if (geminiUrl) candUrls.push(geminiUrl.split('?')[0].replace(/\/+$/, ''));
+        const gItems = await discoverDealsWithGemini(target);
+        for (const gi of gItems) {
+          candUrls.push(gi.url);
+          geminiItemMap.set(gi.url, gi);
+        }
       }
       if (!(isCI && ciRakutenBlockedCount >= 3)) {
         const directUrls = await searchRakutenDirect(target.keyword);
@@ -636,11 +704,15 @@ async function discoverAndRotateDeals(currentGears) {
         const cleanU = u.split('?')[0].replace(/\/+$/, '');
         if (existingUrls.has(cleanU)) continue;
 
-        let s = await scrapeItem(cleanU);
+        let s = (isCI && ciRakutenBlockedCount >= 3)
+          ? { ok: false, blocked: true, reason: 'CI WAF保護のためスキップ' }
+          : await scrapeItem(cleanU);
+        if (s.blocked && isCI) ciRakutenBlockedCount++;
         if (!s.ok) {
           if (s.blocked) {
             // CI等でWAF遮断されても、楽天API情報があればAPI価格＋画像CDN＋タイトル割引/Geminiで救済
             const apiIt = apiItemMap.get(cleanU);
+            const gIt = geminiItemMap.get(cleanU);
             if (apiIt && apiIt.itemPrice > 0) {
               const rawImgs = (apiIt.mediumImageUrls || apiIt.smallImageUrls || []).map((x) => cleanImage(typeof x === 'string' ? x : x?.imageUrl)).filter(Boolean);
               let apiTitle = (apiIt.itemName || '').replace(/【[^】]*】/g, ' ').replace(/\[[^\]]*\]/g, ' ').replace(/\s+/g, ' ').trim();
@@ -651,11 +723,20 @@ async function discoverAndRotateDeals(currentGears) {
                 const rate = Number(offMatch[1]);
                 if (rate >= 10 && rate <= 70) listPrice = Math.round(apiIt.itemPrice / (1 - rate / 100));
               }
-              if (!listPrice && GEMINI_API_KEY && geminiPriceQuota > 0) {
+              if (!listPrice && GEMINI_API_KEY && !geminiQuotaExhausted && geminiPriceQuota > 0) {
                 const gRes = await fetchPriceWithGemini({ title: apiTitle, dealUrl: cleanU, price: apiIt.itemPrice });
                 if (gRes && gRes.originalPrice > apiIt.itemPrice) listPrice = gRes.originalPrice;
               }
               s = { ok: true, title: apiTitle, price: apiIt.itemPrice, listPrice, images: rawImgs };
+            } else if (gIt && gIt.price > 0 && gIt.title && gIt.imageUrl) {
+              // 楽天APIなし＋CI WAF遮断時は Gemini 探索結果を採用（後段の imageIsAlive で実在画像のみ厳選）
+              s = {
+                ok: true,
+                title: gIt.title.replace(/【[^】]*】/g, ' ').replace(/\[[^\]]*\]/g, ' ').replace(/\s+/g, ' ').trim(),
+                price: gIt.price,
+                listPrice: gIt.originalPrice > gIt.price ? gIt.originalPrice : 0,
+                images: [gIt.imageUrl],
+              };
             } else {
               consecutiveBlocked++;
               continue;
@@ -711,18 +792,31 @@ async function discoverAndRotateDeals(currentGears) {
           isNewDiscovery: true,
         };
 
-        // カテゴリ内の入れ替え対象を探す（提携公式枠 INNER FACT / RUNPLUS や必須ライト枠は保護）
+        // カテゴリ内の入れ替え対象を探す（提携公式枠 INNER FACT / RUNPLUS や必須ライト枠、カテゴリ最安目玉品は保護）
         const categoryGears = gears.filter(
           (g) => g.gearType === target.category && !g.officialUrl && !g.shopName && !g.id.startsWith('gear-innerfact-') && !g.id.startsWith('gear-runplus-') && !g.id.startsWith('gear-cycle-light-')
         );
 
-        // 割引率が最も低いアイテム（通常価格品や低割引品）を探す
-        const lowestDiscountGear = categoryGears.sort((a, b) => a.discountRate - b.discountRate || a.price - b.price)[0];
+        // 割引率が最も低い（または非ベストディールで古い）アイテムを探す
+        const replaceable = categoryGears
+          .filter((g) => !g.isBestDeal)
+          .sort((a, b) => a.discountRate - b.discountRate || (a.priceVerifiedAt || '').localeCompare(b.priceVerifiedAt || ''));
+        const swapTarget = replaceable[0] || categoryGears.sort((a, b) => a.discountRate - b.discountRate || a.price - b.price)[0];
 
-        if (lowestDiscountGear && lowestDiscountGear.discountRate < discountRate && categoryGears.length >= 4) {
-          const removeIdx = gears.findIndex((g) => g.id === lowestDiscountGear.id);
+        if (categoryGears.length >= 6 && swapTarget) {
+          const removeIdx = gears.findIndex((g) => g.id === swapTarget.id);
           if (removeIdx >= 0) {
-            console.log(` 🔄 入替: [${target.category}] ${lowestDiscountGear.title.slice(0, 25)} (${lowestDiscountGear.discountRate}%OFF) → ${newGear.title.slice(0, 25)} (${discountRate}%OFF)`);
+            console.log(` 🔄 入替: [${target.category}] ${swapTarget.title.slice(0, 25)} (${swapTarget.discountRate}%OFF) → ${newGear.title.slice(0, 25)} (${discountRate}%OFF)`);
+            gears.splice(removeIdx, 1, newGear);
+            existingUrls.add(cleanU);
+            existingKeys.add(nKey);
+            replacedCount++;
+            break;
+          }
+        } else if (swapTarget && swapTarget.discountRate < discountRate && categoryGears.length >= 4) {
+          const removeIdx = gears.findIndex((g) => g.id === swapTarget.id);
+          if (removeIdx >= 0) {
+            console.log(` 🔄 入替: [${target.category}] ${swapTarget.title.slice(0, 25)} (${swapTarget.discountRate}%OFF) → ${newGear.title.slice(0, 25)} (${discountRate}%OFF)`);
             gears.splice(removeIdx, 1, newGear);
             existingUrls.add(cleanU);
             existingKeys.add(nKey);
@@ -807,21 +901,24 @@ async function main() {
   fs.writeFileSync(GEARS_PATH, JSON.stringify(alive, null, 2) + '\n');
   fs.writeFileSync(DEALS_PATH, JSON.stringify(deals, null, 2) + '\n');
 
+  const { date, time } = nowJstParts();
   let meta = {};
   try { meta = JSON.parse(fs.readFileSync(META_PATH, 'utf-8')); } catch { /* new */ }
+  const prevSummary = (meta.run_summary && meta.run_summary.updated_date === date) ? meta.run_summary : {};
   Object.assign(meta, {
     last_updated_at: now, deals_count: deals.length, gears_count: alive.length,
-    gear_sync_source: 'refresh_gears.mjs (自己修復・商品ページ実測・画像HTTP200検証済)',
+    gear_sync_source: 'refresh_gears.mjs (自己修復・商品ページ実測・Gemini探索・画像HTTP200検証済)',
     gear_removed: removed,
     run_summary: {
-      ...(meta.run_summary || {}),
+      ...prevSummary,
+      updated_date: date,
+      updated_time: time,
       deals_added: disc.addedCount + disc.replacedCount,
       price_drops: priceDrops.length,
     },
   });
   fs.writeFileSync(META_PATH, JSON.stringify(meta, null, 2) + '\n');
 
-  const { date, time } = nowJstParts();
   const cLogs = [];
   for (const d of disc.discoveredTitles.slice(0, 3)) {
     cLogs.push({

@@ -336,7 +336,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-18"
+    "date_verified_at": "2026-11-20"
   },
   {
     "id": "arws-patagonia-esquel-2026",
@@ -414,7 +414,7 @@
     "distance_km": 30,
     "elevation_m": 1200,
     "entry_fee": "5,000円",
-    "entry_status": "closing_soon",
+    "entry_status": "closed",
     "entry_start_date": "2026-09-01",
     "entry_deadline": "2026-11-18",
     "links": {
@@ -510,7 +510,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-18"
+    "date_verified_at": "2026-11-20"
   },
   {
     "id": "trjp-hikosan-mineirido-trail-2026",
@@ -1024,7 +1024,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-mashiko-trail.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-20"
   },
   {
     "id": "kumano-kodo-trail-2026",
@@ -1195,60 +1196,6 @@
       "portalName": "モシコム"
     },
     "date_verified_at": "2026-11-20"
-  },
-  {
-    "id": "nanki-shirahama-adventure-ride-2026",
-    "category": "cycling",
-    "subCategory": "アドベンチャーコーストライド",
-    "elements": [
-      "ロード",
-      "山岳",
-      "1日"
-    ],
-    "title": "南紀白浜＆すさみアドベンチャーコーストライド 2026（和歌山）",
-    "date": "2026-12-06",
-    "month": 12,
-    "region": "近畿",
-    "prefecture": "和歌山県",
-    "distance_km": 125,
-    "elevation_m": 1600,
-    "entry_status": "closing_soon",
-    "entry_start_date": "2026-09-21",
-    "entry_deadline": "2026-11-20",
-    "entry_fee": "10,000円",
-    "links": {
-      "official": "https://ride-on-susami.com/",
-      "entry": "https://ride-on-susami.com/",
-      "review": null,
-      "sns": null,
-      "verified": true,
-      "verified_at": "2026-11-20"
-    },
-    "mandatory_gear": [
-      {
-        "name": "ヘルメット・グローブ",
-        "category": "ウェア"
-      },
-      {
-        "name": "前後ライト",
-        "category": "ライト"
-      },
-      {
-        "name": "防寒着",
-        "category": "ウェア"
-      },
-      {
-        "name": "パンク修理セット",
-        "category": "ギア"
-      }
-    ],
-    "venue": {
-      "name": "すさみ町総合運動公園（和歌山県西牟婁郡すさみ町周参見4110）",
-      "mapQuery": "和歌山県すさみ町 すさみ町総合運動公園"
-    },
-    "source": {
-      "portalName": "スポエンCYCLE"
-    }
   },
   {
     "id": "trjp-shugyoso-monks-run-2026",
@@ -1532,64 +1479,6 @@
     "date_verified_at": "2026-11-20"
   },
   {
-    "id": "kochi-navigms-winter-2026",
-    "category": "adventure",
-    "subCategory": "ナビゲーションゲーム・読図",
-    "elements": [
-      "読図",
-      "ロゲイニング",
-      "オリエンテーリング"
-    ],
-    "title": "高知ナビゲーションゲームズ 2026-2027 ウィンターシリーズ（高知）",
-    "date": "2026-12-13",
-    "month": 12,
-    "region": "四国",
-    "prefecture": "高知県",
-    "distance_km": 20,
-    "elevation_m": 650,
-    "entry_status": "closing_soon",
-    "entry_start_date": "2026-10-01",
-    "entry_deadline": "2026-11-30",
-    "entry_fee": "4,500円",
-    "links": {
-      "official": "https://kochi-navigms.com/",
-      "entry": "https://kochi-navigms.com/",
-      "review": null,
-      "sns": null,
-      "verified": true,
-      "verified_at": "2026-11-20"
-    },
-    "mandatory_gear": [
-      {
-        "name": "プレートコンパス（シルバコンパス等・方位磁石）",
-        "category": "ナビゲーション"
-      },
-      {
-        "name": "デジタルカメラまたはスマートフォン（CP撮影・集計用）",
-        "category": "ギア"
-      },
-      {
-        "name": "ゴアテックス等 防水透湿レインジャケット",
-        "category": "ウェア"
-      },
-      {
-        "name": "ファーストエイドキット（絆創膏・テーピング・消毒薬）",
-        "category": "エイド"
-      },
-      {
-        "name": "行動食（エナジージェル等）＆水分1.0L以上",
-        "category": "補給"
-      }
-    ],
-    "venue": {
-      "name": "高知市中央公園（高知県高知市帯屋町1-11-27）",
-      "mapQuery": "高知県高知市 中央公園"
-    },
-    "source": {
-      "portalName": "ナビゲーム"
-    }
-  },
-  {
     "id": "izu-trail-journey-2026",
     "category": "trail",
     "subCategory": "伊豆半島縦断トレイル",
@@ -1644,7 +1533,8 @@
     },
     "source": {
       "portalName": "大会公式"
-    }
+    },
+    "date_verified_at": "2026-11-20"
   },
   {
     "id": "trjp-takeda-no-mori-trail-running-2026",
@@ -3067,7 +2957,7 @@
     "prefecture": "徳島県",
     "distance_km": 50,
     "elevation_m": 2600,
-    "entry_status": "open",
+    "entry_status": "closing_soon",
     "entry_start_date": "2026-10-06",
     "entry_deadline": "2026-12-05",
     "entry_fee": "11,000円",
@@ -4036,7 +3926,7 @@
       "portalUrl": "https://www.outdoor-sports.info/races-events"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-20",
+    "updated_at": "2026-11-19",
     "date_verified_at": "2026-11-20"
   },
   {
@@ -4889,60 +4779,6 @@
     "updated_at": "2026-11-16"
   },
   {
-    "id": "trjp-arataki-samurai-trail-2027",
-    "category": "trail",
-    "subCategory": "トレイルランニング",
-    "elements": [
-      "トレック"
-    ],
-    "title": "荒滝SAMURAIトレイル 2027（山口県）",
-    "date": "2027-02-27",
-    "month": 2,
-    "region": "中国",
-    "prefecture": "山口県",
-    "distance_km": 22,
-    "elevation_m": 1400,
-    "entry_fee": "公式サイト参照",
-    "entry_status": "open",
-    "entry_deadline": "2027-02-27",
-    "links": {
-      "official": "https://www.instagram.com/arataki.samurai.trail/",
-      "entry": "https://www.instagram.com/arataki.samurai.trail/",
-      "review": null,
-      "sns": null,
-      "verified": true,
-      "verified_at": "2026-11-20"
-    },
-    "mandatory_gear": [
-      {
-        "name": "トレイルランニングシューズ・ザック",
-        "category": "ギア"
-      },
-      {
-        "name": "レインジャケット（防風・防水シェル）",
-        "category": "ウェア"
-      },
-      {
-        "name": "水分・行動食・マイカップ",
-        "category": "補給"
-      },
-      {
-        "name": "ファーストエイドキット・携帯電話・保険証",
-        "category": "エイド"
-      }
-    ],
-    "venue": {
-      "name": "2027年は未発表（2026年実績：旧吉部小学校、宇部市東吉部3397）",
-      "mapQuery": "山口県 2027年は未発表（2026年実績：旧吉部小学校、宇部市東吉部3397）"
-    },
-    "source": {
-      "portalName": "トレイルランナー.JP",
-      "portalUrl": "https://trailrunner.jp/race-detail-arataki-samurai-trail.html"
-    },
-    "added_at": "2026-11-19",
-    "updated_at": "2026-11-19"
-  },
-  {
     "id": "matsusaka-kahadakyo-trail-2027",
     "category": "trail",
     "subCategory": "ショートトレイル",
@@ -5159,7 +4995,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-18"
+    "date_verified_at": "2026-11-20"
   },
   {
     "id": "trjp-onagawa-100-trails-2027",
@@ -5388,7 +5224,7 @@
       "portalUrl": "https://www.outdoor-sports.info/races-events"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-20",
+    "updated_at": "2026-11-19",
     "date_verified_at": "2026-11-20"
   },
   {
@@ -5835,7 +5671,7 @@
       "portalUrl": "https://www.outdoor-sports.info/races-events"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-20",
+    "updated_at": "2026-11-19",
     "date_verified_at": "2026-11-20"
   },
   {
@@ -7659,7 +7495,7 @@
       "portalUrl": "https://www.outdoor-sports.info/races-events"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-20",
+    "updated_at": "2026-11-19",
     "date_verified_at": "2026-11-20"
   },
   {
@@ -8566,7 +8402,7 @@
       "portalName": "スポエンCYCLE",
       "portalUrl": "https://cycle.spoen.jp/"
     },
-    "date_verified_at": "2026-11-18"
+    "date_verified_at": "2026-11-20"
   },
   {
     "id": "trjp-tochigi-training-trail-nikko-2027",
@@ -9133,63 +8969,6 @@
       "portalName": "ARWS公式"
     },
     "date_verified_at": "2026-11-20"
-  },
-  {
-    "id": "trjp-deep-japan-ultra-100-niigata-2027",
-    "category": "trail",
-    "subCategory": "100km / 100マイルウルトラトレイル",
-    "elements": [
-      "トレック",
-      "100マイル"
-    ],
-    "title": "DEEP JAPAN ULTRA 100 2027（新潟県）",
-    "date": "2027-06-25",
-    "end_date": "2027-06-27",
-    "month": 6,
-    "region": "甲信越・北陸",
-    "prefecture": "新潟県",
-    "distance_km": 160,
-    "elevation_m": 8342,
-    "entry_fee": "公式サイト参照",
-    "entry_status": "open",
-    "entry_start_date": "2026-09-25",
-    "entry_deadline": "2027-02-26",
-    "links": {
-      "official": "https://www.deepjapanultra.com/overview",
-      "entry": "https://runnet.jp/entry/runtes/user/pc/competitionDetailAction.do?raceId=397523&amp;div=1",
-      "review": null,
-      "sns": null,
-      "verified": true,
-      "verified_at": "2026-11-20"
-    },
-    "mandatory_gear": [
-      {
-        "name": "トレイルランニングシューズ・ザック",
-        "category": "ギア"
-      },
-      {
-        "name": "レインジャケット（防風・防水シェル）",
-        "category": "ウェア"
-      },
-      {
-        "name": "水分・行動食・マイカップ",
-        "category": "補給"
-      },
-      {
-        "name": "ファーストエイドキット・携帯電話・保険証",
-        "category": "エイド"
-      }
-    ],
-    "venue": {
-      "name": "入広瀬スポーツセンター（受付：旧湯沢小学校体育館）",
-      "mapQuery": "新潟県 入広瀬スポーツセンター（受付：旧湯沢小学校体育館）"
-    },
-    "source": {
-      "portalName": "トレイルランナー.JP",
-      "portalUrl": "https://trailrunner.jp/race-detail-deep-japan-ultra-100-niigata.html"
-    },
-    "added_at": "2026-11-20",
-    "updated_at": "2026-11-20"
   },
   {
     "id": "trjp-hachimoriyama-otakane-trail-festa-2027",

@@ -5363,6 +5363,122 @@
     "archive_reason": "実開催日(2026-10-03)終了済みのためアーカイブ"
   },
   {
+    "id": "nanki-shirahama-adventure-ride-2026",
+    "category": "cycling",
+    "subCategory": "アドベンチャーコーストライド",
+    "elements": [
+      "ロード",
+      "山岳",
+      "1日"
+    ],
+    "title": "南紀白浜＆すさみアドベンチャーコーストライド 2026（和歌山）",
+    "date": "2026-10-17",
+    "month": 10,
+    "region": "近畿",
+    "prefecture": "和歌山県",
+    "distance_km": 125,
+    "elevation_m": 1600,
+    "entry_status": "closed",
+    "entry_start_date": "2026-09-21",
+    "entry_deadline": "2026-11-20",
+    "entry_fee": "10,000円",
+    "links": {
+      "official": "https://ride-on-susami.com/",
+      "entry": "https://ride-on-susami.com/",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-19"
+    },
+    "mandatory_gear": [
+      {
+        "name": "ヘルメット・グローブ",
+        "category": "ウェア"
+      },
+      {
+        "name": "前後ライト",
+        "category": "ライト"
+      },
+      {
+        "name": "防寒着",
+        "category": "ウェア"
+      },
+      {
+        "name": "パンク修理セット",
+        "category": "ギア"
+      }
+    ],
+    "venue": {
+      "name": "すさみ町総合運動公園（和歌山県西牟婁郡すさみ町周参見4110）",
+      "mapQuery": "和歌山県すさみ町 すさみ町総合運動公園"
+    },
+    "source": {
+      "portalName": "スポエンCYCLE"
+    },
+    "archived_at": "2026-11-20",
+    "archive_reason": "実開催日(2026-10-17)終了済みのためアーカイブ"
+  },
+  {
+    "id": "kochi-navigms-winter-2026",
+    "category": "adventure",
+    "subCategory": "ナビゲーションゲーム・読図",
+    "elements": [
+      "読図",
+      "ロゲイニング",
+      "オリエンテーリング"
+    ],
+    "title": "高知ナビゲーションゲームズ 2026-2027 ウィンターシリーズ（高知）",
+    "date": "2026-12-13",
+    "month": 12,
+    "region": "四国",
+    "prefecture": "高知県",
+    "distance_km": 20,
+    "elevation_m": 650,
+    "entry_status": "closed",
+    "entry_start_date": "2026-10-01",
+    "entry_deadline": "2026-11-30",
+    "entry_fee": "4,500円",
+    "links": {
+      "official": "https://kochi-navigms.com/",
+      "entry": "https://kochi-navigms.com/",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-19"
+    },
+    "mandatory_gear": [
+      {
+        "name": "プレートコンパス（シルバコンパス等・方位磁石）",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "デジタルカメラまたはスマートフォン（CP撮影・集計用）",
+        "category": "ギア"
+      },
+      {
+        "name": "ゴアテックス等 防水透湿レインジャケット",
+        "category": "ウェア"
+      },
+      {
+        "name": "ファーストエイドキット（絆創膏・テーピング・消毒薬）",
+        "category": "エイド"
+      },
+      {
+        "name": "行動食（エナジージェル等）＆水分1.0L以上",
+        "category": "補給"
+      }
+    ],
+    "venue": {
+      "name": "高知市中央公園（高知県高知市帯屋町1-11-27）",
+      "mapQuery": "高知県高知市 中央公園"
+    },
+    "source": {
+      "portalName": "ナビゲーム"
+    },
+    "archived_at": "2026-11-20",
+    "archive_reason": "開催日不一致・公式確認不可のため一時退避"
+  },
+  {
     "id": "trjp-deep-japan-ultra-100-niigata-2027",
     "category": "trail",
     "subCategory": "100km / 100マイルウルトラトレイル",

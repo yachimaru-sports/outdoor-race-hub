@@ -525,9 +525,15 @@ async function main() {
 
   let meta = {};
   try { meta = JSON.parse(fs.readFileSync(META_PATH, 'utf-8')); } catch { meta = {}; }
+  const prevSummary = (meta.run_summary && meta.run_summary.updated_date === today) ? meta.run_summary : {};
   meta.events_count = finalActive.length;
   meta.last_updated_at = new Date().toISOString();
-  meta.run_summary = { ...(meta.run_summary || {}), ...stats };
+  meta.run_summary = {
+    ...prevSummary,
+    updated_date: today,
+    updated_time: time,
+    ...stats,
+  };
   fs.writeFileSync(META_PATH, JSON.stringify(meta, null, 2) + '\n');
 
   console.log(`\n✅ 大会更新完了: 掲載 ${finalActive.length}件 | 追加 ${stats.events_added} | 日付修正 ${stats.events_date_fixed} | 更新 ${stats.events_updated} | アーカイブ ${stats.events_archived} | リンク修復 ${stats.links_fixed} | 無効リンク除外 ${stats.links_removed}`);

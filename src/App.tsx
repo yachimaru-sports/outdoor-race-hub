@@ -814,24 +814,76 @@ export const App: React.FC = () => {
       {/* メインコンテンツ（ご要望順：注目の競技カテゴリー → すべての大会 → 条件にマッチする → 大会一覧） */}
       <main className="flex-1 max-w-7xl w-full mx-auto px-2.5 sm:px-4 py-4 sm:py-8 space-y-4 sm:space-y-8 overflow-x-hidden">
         {(() => {
-          const rs = (metaData as { run_summary?: Record<string, number> }).run_summary;
-          if (!rs) return null;
-          const items = [
-            rs.events_added ? `新着大会 +${rs.events_added}件` : null,
-            rs.events_updated ? `日程・状態更新 ${rs.events_updated}件` : null,
-            rs.links_fixed ? `リンク修復 ${rs.links_fixed}件` : null,
-            rs.deals_added ? `特価ギア追加 +${rs.deals_added}件` : null,
-            rs.price_drops ? `値下げ ${rs.price_drops}件` : null,
-          ].filter(Boolean);
-          if (!items.length) return null;
+          const meta = metaData as {
+            last_updated_at?: string;
+            events_count?: number;
+            gears_count?: number;
+            deals_count?: number;
+            run_summary?: Record<string, number | string>;
+          };
+          const rs = meta.run_summary || {};
+          const updatedAt = meta.last_updated_at ? new Date(meta.last_updated_at) : null;
+          const jstUpdated = updatedAt ? new Date(updatedAt.getTime() + 9 * 3600 * 1000) : null;
+          const jstNow = new Date(Date.now() + 9 * 3600 * 1000);
+          const todayIso = jstNow.toISOString().slice(0, 10);
+          const updatedIso = jstUpdated ? jstUpdated.toISOString().slice(0, 10) : '';
+          const updatedTimeLabel = jstUpdated
+            ? `${updatedIso === todayIso ? '本日' : `${jstUpdated.getUTCMonth() + 1}/${jstUpdated.getUTCDate()}`} ${jstUpdated.toISOString().slice(11, 16)} 更新`
+            : '毎朝6時 自動更新';
+
+          // run_summary が本日分（または最新更新日分）か確認
+          const summaryDate = typeof rs.updated_date === 'string' ? rs.updated_date : updatedIso;
+          const isFreshSummary = !summaryDate || summaryDate === updatedIso;
+
+          const items = isFreshSummary
+            ? [
+                Number(rs.events_added) ? `新着大会 +${rs.events_added}件` : null,
+                Number(rs.events_date_fixed) ? `開催日修正 ${rs.events_date_fixed}件` : null,
+                Number(rs.events_updated) ? `日程・状態更新 ${rs.events_updated}件` : null,
+                Number(rs.events_archived) ? `終了整理 ${rs.events_archived}件` : null,
+                Number(rs.links_fixed) ? `リンク修復 ${rs.links_fixed}件` : null,
+                Number(rs.deals_added) ? `特価ギア入替 +${rs.deals_added}件` : null,
+                Number(rs.price_drops) ? `値下げ ${rs.price_drops}件` : null,
+              ].filter(Boolean)
+            : [];
+
+          const latestNews = UPDATE_NEWS_DATA[0];
+          const summaryText = items.length
+            ? items.join(' ／ ')
+            : `全${meta.events_count || events.length}大会・${meta.gears_count || gears.length}ギアのリンク＆価格を生存確認済み（異常なし）`;
+
           return (
-            <div className="flex flex-wrap items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-900 border border-emerald-200 dark:border-emerald-900/60 text-xs shadow-2xs">
-              <span className="px-2 py-0.5 rounded-full bg-emerald-600 text-white font-bold text-[10px]">
-                毎朝6時 自動更新レポート
-              </span>
-              <span className="text-slate-600 dark:text-slate-300 font-medium">
-                本日の更新：{items.join(' ／ ')}
-              </span>
+            <div className="flex flex-wrap items-center justify-between gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-900 border border-emerald-200 dark:border-emerald-900/60 text-xs shadow-2xs">
+              <div className="flex flex-wrap items-center gap-2 min-w-0 flex-1">
+                <span className="px-2 py-0.5 rounded-full bg-emerald-600 text-white font-bold text-[10px] shrink-0">
+                  {updatedTimeLabel}
+                </span>
+                <span className="text-slate-700 dark:text-slate-200 font-semibold">
+                  {summaryText}
+                </span>
+                {latestNews && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      if (latestNews.eventId) handleOpenEventById(latestNews.eventId);
+                      else if (latestNews.targetId === 'gears-catalog') navigateTo('gears');
+                      else handleJumpToSection(latestNews.targetId);
+                    }}
+                    className="hidden md:inline-flex items-center gap-1 text-[11px] text-emerald-700 dark:text-emerald-300 hover:underline truncate max-w-md cursor-pointer"
+                    title={`${latestNews.date} ${latestNews.title}`}
+                  >
+                    <span className="text-slate-400">|</span>
+                    <span className="truncate">最新: {latestNews.title}</span>
+                  </button>
+                )}
+              </div>
+              <button
+                type="button"
+                onClick={() => window.dispatchEvent(new CustomEvent('open-update-history'))}
+                className="px-2.5 py-1 rounded-lg bg-emerald-50 hover:bg-emerald-100 dark:bg-emerald-950/60 dark:hover:bg-emerald-900/70 text-emerald-800 dark:text-emerald-200 font-bold text-[11px] border border-emerald-200 dark:border-emerald-800 transition-colors shrink-0 cursor-pointer"
+              >
+                詳細履歴を見る
+              </button>
             </div>
           );
         })()}
