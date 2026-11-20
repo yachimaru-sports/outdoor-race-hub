@@ -74,7 +74,7 @@ export const EventCardView: React.FC<EventCardViewProps> = ({
         const cat = CATEGORY_LABELS[event.category];
         const now = new Date();
         const todayStr = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
-        const isPastRace = event.date < todayStr;
+        const isPastRace = (event.end_date || event.date) < todayStr;
         const status = ENTRY_STATUS_CONFIG[event.entry_status];
         const isFav = favoriteIds.includes(event.id);
         // 保存済みで申込締切が過ぎ、開催日を待っている状態

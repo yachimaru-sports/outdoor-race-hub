@@ -128,7 +128,7 @@ export const EventDetailModal: React.FC<EventDetailModalProps> = ({ event, deals
   };
   const now = new Date();
   const todayStr = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
-  const isPastRace = event.date < todayStr;
+  const isPastRace = (event.end_date || event.date) < todayStr;
   const status = ENTRY_STATUS_CONFIG[event.entry_status];
   const isAwaitingRace = isFavorite && !isPastRace && event.entry_status === 'closed';
   const statusLabel = isPastRace ? '開催終了' : (isAwaitingRace ? '開催待ち' : status.label);

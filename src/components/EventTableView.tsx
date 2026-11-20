@@ -114,7 +114,7 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
     <div className="bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm">
       {/* テーブルコンテナ：二重スクロールを排除し、ページ全体と自然に連動 */}
       <div className="overflow-x-auto">
-        <table className="w-full text-left border-collapse table-fixed min-w-[1100px]">
+        <table className="w-full text-left border-collapse table-fixed min-w-[1160px]">
           <thead className="bg-slate-100 dark:bg-slate-800">
             <tr className="text-slate-800 dark:text-slate-200 border-b-2 border-slate-300 dark:border-slate-700 text-xs font-extrabold tracking-wide">
               {/* 1. 保存 */}
@@ -123,7 +123,7 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
               </th>
               {/* 2. 開催日 / 締切（クリックでソート） */}
               <th
-                className={`py-3 px-3 w-[155px] transition-colors select-none ${
+                className={`py-3 px-3 w-[165px] transition-colors select-none ${
                   onSortChange ? 'cursor-pointer hover:bg-slate-200 dark:hover:bg-slate-750' : ''
                 }`}
                 onClick={() => {
@@ -141,7 +141,7 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
               </th>
               {/* 3. 種別（★クリックで種別ソート） */}
               <th
-                className={`py-3 px-2.5 w-[130px] transition-colors select-none ${
+                className={`py-3 px-2.5 w-[135px] transition-colors select-none ${
                   onSortChange ? 'cursor-pointer hover:bg-slate-200 dark:hover:bg-slate-750' : ''
                 }`}
                 onClick={() => {
@@ -186,16 +186,16 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
                 </div>
               </th>
               {/* 7. 参加費 */}
-              <th className="py-3 px-2.5 w-[95px] text-right">
+              <th className="py-3 px-2 w-[108px] text-right">
                 <div className="flex items-center justify-end gap-1 text-amber-800 dark:text-amber-300">
                   <Coins className="w-3.5 h-3.5" />
                   <span>参加費</span>
                 </div>
               </th>
               {/* 8. 受付状況 */}
-              <th className="py-3 px-2.5 w-[115px] text-center">受付状況</th>
+              <th className="py-3 px-2 w-[118px] text-center">受付状況</th>
               {/* 9. 申込・公式・予定 */}
-              <th className="py-3 px-2.5 w-[170px] text-center">申込・公式・予定</th>
+              <th className="py-3 px-2 w-[165px] text-center">申込・公式・予定</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-200 dark:divide-slate-800 text-xs sm:text-sm">
@@ -203,7 +203,8 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
               const cat = CATEGORY_LABELS[event.category];
               const now = new Date();
               const todayStr = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
-              const isPastRace = event.date < todayStr;
+              const effectiveEndDate = event.end_date || event.date.split(/[~～]/)[0].trim();
+              const isPastRace = effectiveEndDate < todayStr;
               const status = ENTRY_STATUS_CONFIG[event.entry_status];
               const isFav = favoriteIds.includes(event.id);
               // 保存済みで申込締切が過ぎ、開催日を待っている状態
@@ -256,13 +257,28 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
                       </button>
                     </td>
 
-                    {/* 2. 開催日 / 締切（2行でスッキリ整列: 例 2026/11/28㈯~29㈰, 締切:10/9㈮） */}
-                    <td className="py-2.5 px-3 align-middle whitespace-nowrap">
-                      <div className="relative group/daterange flex items-center gap-1 font-mono cursor-help" title={fullDateTooltip}>
-                        <Calendar className="w-3.5 h-3.5 text-teal-700 dark:text-teal-400 shrink-0" />
-                        <span className="text-sm font-black text-slate-950 dark:text-white tracking-tight">
-                          {formatEventDateSlash(event.date, event.end_date)}
-                        </span>
+                    {/* 2. 開催日 / 締切（長期間大会は2行で折り返し表示して見切れ・重なりを防止） */}
+                    <td className="py-2.5 px-3 align-middle overflow-hidden">
+                      <div className="relative group/daterange flex items-start gap-1 font-mono cursor-help" title={fullDateTooltip}>
+                        <Calendar className="w-3.5 h-3.5 text-teal-700 dark:text-teal-400 shrink-0 mt-0.5" />
+                        {(() => {
+                          const slashDate = formatEventDateSlash(event.date, event.end_date);
+                          const tildeIdx = slashDate.indexOf('~');
+                          const isLongRange = tildeIdx > 0 && slashDate.length > 15;
+                          if (isLongRange) {
+                            return (
+                              <span className="text-[12.5px] leading-tight font-black text-slate-950 dark:text-white tracking-tight flex flex-col">
+                                <span>{slashDate.slice(0, tildeIdx)}</span>
+                                <span className="text-teal-700 dark:text-teal-300">{slashDate.slice(tildeIdx)}</span>
+                              </span>
+                            );
+                          }
+                          return (
+                            <span className="text-sm font-black text-slate-950 dark:text-white tracking-tight whitespace-nowrap">
+                              {slashDate}
+                            </span>
+                          );
+                        })()}
                         {/* ホバー時詳細日程ポップアップ */}
                         <div className="absolute left-0 bottom-full mb-1.5 hidden group-hover/daterange:block z-50 bg-slate-950/95 text-white text-[11px] font-extrabold px-2.5 py-1.5 rounded-lg shadow-xl border border-teal-500/40 pointer-events-none whitespace-nowrap backdrop-blur-xs">
                           <span className="text-teal-300 mr-1">開催日程:</span>
@@ -271,10 +287,10 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
                       </div>
 
                       {/* 申込期間表示（開催日同様に 〇/〇~〇/〇 形式でスッキリ表示） */}
-                      <div className="mt-0.5">
+                      <div className="mt-1">
                         {event.entry_start_date || event.entry_deadline ? (
                           <span
-                            className={`inline-flex items-center gap-0.5 px-1.5 py-0.2 rounded text-[11px] font-mono whitespace-nowrap ${
+                            className={`inline-flex items-center gap-0.5 px-1.5 py-0.2 rounded text-[10.5px] font-mono max-w-full truncate ${
                               isClosingSoon
                                 ? 'bg-red-50 text-red-700 dark:bg-red-950/60 dark:text-red-300 border border-red-300 font-extrabold animate-pulse'
                                 : isOpen
@@ -283,8 +299,8 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
                             }`}
                             title={`エントリー申込期間: ${event.entry_start_date || '未定'} 〜 ${event.entry_deadline || '締切まで'}`}
                           >
-                            <Clock className="w-2.5 h-2.5 opacity-80" />
-                            <span>申込:{formatPeriodSlash(event.entry_start_date, event.entry_deadline)}</span>
+                            <Clock className="w-2.5 h-2.5 opacity-80 shrink-0" />
+                            <span className="truncate">申込:{formatPeriodSlash(event.entry_start_date, event.entry_deadline)}</span>
                           </span>
                         ) : (
                           <span className="text-[11px] text-slate-500 font-bold font-mono pl-0.5">
@@ -304,7 +320,7 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
                         </span>
                         {event.subCategory && (
                           <div
-                            className="text-[11px] text-slate-700 dark:text-slate-300 font-bold truncate max-w-[125px] mt-0.5 cursor-help"
+                            className="text-[10.5px] leading-tight text-slate-700 dark:text-slate-300 font-bold break-words mt-0.5 cursor-help"
                           >
                             {event.subCategory}
                           </div>
@@ -443,16 +459,19 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
                     </td>
 
                     {/* 7. エントリー費用（参加費） */}
-                    <td className="py-2.5 px-2.5 text-right align-middle whitespace-nowrap font-mono">
-                      <span className="text-xs font-black text-slate-900 dark:text-slate-100 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded border border-slate-300 dark:border-slate-700">
-                        {event.entry_fee || '—'}
+                    <td className="py-2.5 px-2 text-right align-middle font-mono overflow-hidden">
+                      <span
+                        className="inline-block max-w-full truncate text-[11px] font-black text-slate-900 dark:text-slate-100 bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded border border-slate-300 dark:border-slate-700"
+                        title={event.entry_fee || '詳細は公式・申込ページを確認'}
+                      >
+                        {event.entry_fee === '詳細はエントリーページを確認' ? '公式・申込頁' : (event.entry_fee || '—')}
                       </span>
                     </td>
 
                     {/* 8. 受付状況 */}
-                    <td className="py-2.5 px-2.5 text-center align-middle whitespace-nowrap">
+                    <td className="py-2.5 px-2 text-center align-middle whitespace-nowrap overflow-hidden">
                       <span
-                        className={`inline-flex items-center justify-center gap-1 w-[100px] py-0.5 rounded-full text-xs border ${
+                        className={`inline-flex items-center justify-center gap-1 px-2 py-0.5 rounded-full text-[11px] border ${
                           statusBadgeClass
                         } ${status.pulse ? 'animate-pulse' : ''}`}
                         title={isAwaitingRace ? 'エントリー済・大会開催日を待っている状態です' : undefined}
