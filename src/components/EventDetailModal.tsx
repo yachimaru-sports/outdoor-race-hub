@@ -12,6 +12,7 @@ import {
   formatDeadlineSlash,
   formatPeriodSlash,
   formatPrice,
+  getGoogleMapsUrl,
 } from '../utils/helpers';
 import { CalendarAddButton } from './CalendarAddButton';
 import {
@@ -181,10 +182,23 @@ export const EventDetailModal: React.FC<EventDetailModalProps> = ({ event, deals
                 <Calendar className="w-4 h-4 text-teal-700 dark:text-teal-400" />
                 開催日: {formatEventDateSlash(event.date, event.end_date)}
               </span>
-              <span className="flex items-center gap-1.5 font-bold">
-                <MapPin className="w-4 h-4 text-teal-700 dark:text-teal-400" />
-                {event.prefecture} ({event.region}地方)
-              </span>
+              <a
+                href={getGoogleMapsUrl(event)}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={
+                  event.venue?.name
+                    ? `Googleマップで集合場所「${event.venue.name}」を開きます`
+                    : `Googleマップで「${event.prefecture}」の大会会場を開きます`
+                }
+                className="inline-flex items-center gap-1.5 font-bold text-slate-800 dark:text-slate-200 hover:text-teal-700 dark:hover:text-teal-300 transition-colors group/map"
+              >
+                <MapPin className="w-4 h-4 text-teal-700 dark:text-teal-400 group-hover/map:text-red-500 transition-colors shrink-0" />
+                <span className="underline decoration-teal-400/50 underline-offset-2">
+                  {event.prefecture} ({event.region}地方)
+                </span>
+                <ExternalLink className="w-3.5 h-3.5 text-slate-400 group-hover/map:text-teal-600 shrink-0" />
+              </a>
             </div>
           </div>
 

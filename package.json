@@ -13,7 +13,8 @@
     "check:duplicates": "node scripts/audit-duplicates.mjs",
     "fix:duplicates": "node scripts/audit-duplicates.mjs --fix",
     "check:links": "node scripts/verify-links.mjs",
-    "heal:links": "node scripts/heal-links.mjs"
+    "heal:links": "node scripts/heal-links.mjs",
+    "promo:video": "node scripts/generate_promo_video.mjs"
   },
   "dependencies": {
     "lucide-react": "^1.16.0",

@@ -32,3 +32,7 @@ __pycache__/
 
 # APIキー（手動バッチ用・絶対にコミットしない）
 .env
+
+# ローカル仮想環境・生成動画
+.venv/
+promo_videos/
