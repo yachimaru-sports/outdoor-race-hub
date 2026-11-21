@@ -99,21 +99,21 @@ jobs:
         if: ${{ steps.gears.outcome == 'failure' }}
         run: git checkout -- src/data/gears.json src/data/deals.json src/data/meta.json
 
-      - name: "Step 2: 大会データ自動更新（終了アーカイブ・次回調査・新着大会追加・リンク内容照合＆修復）"
+      - name: "Step 2: 外部ポータル同期（人力企画＆トレイルランナー.JP）"
+        id: portals
+        continue-on-error: true
+        run: node scripts/sync_external_portals.mjs
+
+      - name: "Step 2.5: 大会データ自動更新（終了アーカイブ・次回調査・新着大会追加・リンク内容照合＆修復）"
         id: events
         continue-on-error: true
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: node scripts/update_events.mjs
 
-      - name: "Step 2-R: 大会更新失敗時は前日の正常データに戻す"
+      - name: "Step 2.5-R: 大会更新失敗時は前日の正常データに戻す"
         if: ${{ steps.events.outcome == 'failure' }}
         run: git checkout -- src/data/events.json src/data/events_archive.json src/data/changelog.json
-
-      - name: "Step 2.5: 外部ポータル同期（人力企画＆トレイルランナー.JP）"
-        id: portals
-        continue-on-error: true
-        run: node scripts/sync_external_portals.mjs
 
       - name: "Step 3: Googleスプレッドシート＆マスターCSV同期（失敗してもサイト更新は継続）"
         id: sheets

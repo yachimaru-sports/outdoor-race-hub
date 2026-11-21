@@ -493,7 +493,7 @@ async function enrichFromTrailrunnerDetail(item, todayStr) {
       // 公式・エントリーリンク抽出
       const anchors = [...body.matchAll(/<a[^>]+href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/gi)];
       for (const a of anchors) {
-        const href = a[1];
+        const href = a[1].replace(/&amp;/g, '&').replace(/&#038;/g, '&').trim();
         const label = stripHtml(a[2]);
         if (!href.startsWith('http')) continue;
         if (label.includes('公式サイト')) official = href;

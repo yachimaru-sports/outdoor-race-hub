@@ -641,7 +641,7 @@
     "entry_deadline": "2026-10-24",
     "links": {
       "official": "https://universal-field.com/event/kinko-trail/",
-      "entry": "https://universal-field.com/event/kinko-trail/entry.html",
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
@@ -1318,7 +1318,7 @@
     "entry_deadline": "2026-10-31",
     "links": {
       "official": "https://universal-field.com/event/hikosan-mineiritrail/",
-      "entry": "https://universal-field.com/event/hikosan-mineiritrail/entry.html",
+      "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
@@ -4530,7 +4530,7 @@
     "entry_deadline": "2026-12-20",
     "entry_fee": "17,000円",
     "links": {
-      "official": "https://okayama-kanko.jp/",
+      "official": "https://totomichi-trailrun.com/",
       "entry": "https://totomichi-trailrun.com/",
       "review": "",
       "sns": "",
@@ -4624,7 +4624,8 @@
       "portalName": "RUNNET",
       "portalUrl": "https://runnet.jp/"
     },
-    "date_verified_at": "2026-11-22"
+    "date_verified_at": "2026-11-22",
+    "updated_at": "2026-11-22"
   },
   {
     "id": "senba-sea-cliff-trail-2027",
@@ -5410,7 +5411,7 @@
     "entry_deadline": "2027-01-10",
     "links": {
       "official": "https://universal-field.com/event/kanmuridake-trail/",
-      "entry": "https://entry.universal-field.com/es_entryform.php?eid=1058&amp;frame=top",
+      "entry": "https://entry.universal-field.com/es_entryform.php?eid=1058 & frame=top",
       "review": null,
       "sns": null,
       "verified": true,
@@ -5629,7 +5630,7 @@
       "ロード"
     ],
     "title": "高知龍馬マラソン 2027（高知・桂浜〜仁淀川河口大橋）",
-    "date": "2027-02-14",
+    "date": "2027-02-21",
     "month": 2,
     "region": "四国",
     "prefecture": "高知県",
@@ -5667,7 +5668,9 @@
     },
     "source": {
       "portalName": "大会公式"
-    }
+    },
+    "date_verified_at": "2026-11-22",
+    "updated_at": "2026-11-22"
   },
   {
     "id": "jinriki-tsunomine-vertical-2027",
@@ -7768,8 +7771,8 @@
     "entry_deadline": "2027-02-28",
     "entry_fee": "13,000円",
     "links": {
-      "official": "http://www.plusvalue.co.jp/michinoekiden/entry.html",
-      "entry": "https://plusvalue.co.jp/michinoekiden/",
+      "official": "https://plusvalue.co.jp/michinoekiden/",
+      "entry": "https://www.sportsentry.ne.jp/event/t/106678",
       "review": null,
       "sns": null,
       "verified": true,
@@ -7800,7 +7803,8 @@
     "source": {
       "portalName": "スポエンCYCLE"
     },
-    "date_verified_at": "2026-11-22"
+    "date_verified_at": "2026-11-22",
+    "updated_at": "2026-11-22"
   },
   {
     "id": "trjp-aganoyuku-trail-2027",
@@ -7867,7 +7871,7 @@
       "ロード"
     ],
     "title": "とくしまマラソン 2027（徳島・吉野川ブルーライン公認コース）",
-    "date": "2027-03-21",
+    "date": "2027-03-14",
     "month": 3,
     "region": "四国",
     "prefecture": "徳島県",
@@ -7905,7 +7909,9 @@
     },
     "source": {
       "portalName": "大会公式"
-    }
+    },
+    "date_verified_at": "2026-11-22",
+    "updated_at": "2026-11-22"
   },
   {
     "id": "trjp-trail-running-fes-okazaki-2027",
@@ -8119,13 +8125,12 @@
     "entry_deadline": "2027-02-21",
     "entry_fee": "16,000円",
     "links": {
-      "official": "https://www.outdoorsportsjapan.com/trail/shinshiro_32/",
+      "official": "https://www.outdoorsportsjapan.com/",
       "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-22",
-      "official_stale": true
+      "verified_at": "2026-11-22"
     },
     "mandatory_gear": [
       {
@@ -8159,7 +8164,8 @@
     },
     "source": {
       "portalName": "大会公式"
-    }
+    },
+    "updated_at": "2026-11-22"
   },
   {
     "id": "shiraishi-mountain-marathon-2027",
@@ -8409,13 +8415,12 @@
     "entry_deadline": "2027-01-31",
     "entry_fee": "38,000円",
     "links": {
-      "official": "https://wangantrailrun.com/",
+      "official": "https://hiroshima.utmb.world/ja",
       "entry": null,
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-22",
-      "official_stale": true
+      "verified_at": "2026-11-22"
     },
     "mandatory_gear": [
       {
@@ -8469,7 +8474,8 @@
     },
     "source": {
       "portalName": "UTMB公式"
-    }
+    },
+    "updated_at": "2026-11-22"
   },
   {
     "id": "trjp-amagase-100-trail-2027",
@@ -9320,7 +9326,7 @@
     "entry_deadline": "未定",
     "entry_fee": "未定",
     "links": {
-      "official": "https://www.facebook.com/arjs.adventurerace",
+      "official": "https://www.adventurerace.jp/",
       "entry": null,
       "review": null,
       "sns": "https://www.facebook.com/arjs.adventurerace",
@@ -9340,7 +9346,7 @@
     "source": {
       "portalName": "ARJS公式"
     },
-    "updated_at": "2026-11-15"
+    "updated_at": "2026-11-22"
   },
   {
     "id": "arws-bimbache-morocco-2027",
@@ -10441,7 +10447,7 @@
     "entry_deadline": "2027-04-30",
     "entry_fee": "30,000円",
     "links": {
-      "official": "https://ride-beyond-japan.com/",
+      "official": "https://ride-beyond-japan.com/cts/",
       "entry": "https://ride-beyond-japan.com/cts/",
       "review": null,
       "sns": null,
@@ -10475,7 +10481,8 @@
       "portalName": "スポーツエントリー",
       "portalUrl": "https://www.sportsentry.ne.jp/"
     },
-    "date_verified_at": "2026-11-22"
+    "date_verified_at": "2026-11-22",
+    "updated_at": "2026-11-22"
   },
   {
     "id": "trjp-okumusashi-long-trail-race-2027",
@@ -10553,13 +10560,12 @@
     "entry_deadline": "2027-03-30",
     "entry_fee": "20,000円",
     "links": {
-      "official": "https://www.longridefan.com/thepeaks/8060/",
+      "official": "https://www.longridefan.com/thepeaks/",
       "entry": "https://www.sportsentry.ne.jp/event/t/107359",
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-22",
-      "official_stale": true
+      "verified_at": "2026-11-22"
     },
     "mandatory_gear": [
       {
@@ -10588,7 +10594,8 @@
       "portalName": "スポエンCYCLE",
       "portalUrl": "https://cycle.spoen.jp/"
     },
-    "date_verified_at": "2026-11-20"
+    "date_verified_at": "2026-11-20",
+    "updated_at": "2026-11-22"
   },
   {
     "id": "trjp-tochigi-training-trail-nikko-2027",
@@ -10667,7 +10674,7 @@
     "entry_deadline": "2027-06-03",
     "links": {
       "official": "https://trailrun-tamba.com/",
-      "entry": "https://tsuku2.jp/tamba100",
+      "entry": "https://trailrun-tamba.com/",
       "review": null,
       "sns": null,
       "verified": true,
@@ -10700,7 +10707,7 @@
       "portalUrl": "https://trailrunner.jp/race-detail-tamba100-adventure-trail.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-22"
   },
   {
     "id": "trjp-okushinano100-2027",
@@ -10911,7 +10918,7 @@
     "entry_deadline": "未定",
     "entry_fee": "未定",
     "links": {
-      "official": "https://www.facebook.com/arjs.adventurerace",
+      "official": "https://www.adventurerace.jp/",
       "entry": null,
       "review": null,
       "sns": "https://www.facebook.com/arjs.adventurerace",
@@ -10931,7 +10938,7 @@
     "source": {
       "portalName": "ARJS公式"
     },
-    "updated_at": "2026-11-15"
+    "updated_at": "2026-11-22"
   },
   {
     "id": "trjp-echigo-country-trail-2027",
@@ -11981,7 +11988,7 @@
     "entry_deadline": "未定",
     "entry_fee": "未定",
     "links": {
-      "official": "https://www.facebook.com/arjs.adventurerace",
+      "official": "https://www.adventurerace.jp/",
       "entry": null,
       "review": null,
       "sns": "https://www.facebook.com/arjs.adventurerace",
@@ -12001,7 +12008,7 @@
     "source": {
       "portalName": "ARJS公式"
     },
-    "updated_at": "2026-11-15"
+    "updated_at": "2026-11-22"
   },
   {
     "id": "trjp-shiwa-azumane-trail-2027",
@@ -12416,7 +12423,7 @@
     "entry_deadline": "未定",
     "entry_fee": "未定",
     "links": {
-      "official": "https://www.facebook.com/arjs.adventurerace",
+      "official": "https://www.adventurerace.jp/",
       "entry": null,
       "review": null,
       "sns": "https://www.facebook.com/arjs.adventurerace",
@@ -12436,7 +12443,7 @@
     "source": {
       "portalName": "ARJS公式"
     },
-    "updated_at": "2026-11-15"
+    "updated_at": "2026-11-22"
   },
   {
     "id": "trjp-diamond-trail-run-2027",

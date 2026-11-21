@@ -109,7 +109,7 @@ export function isGenericPortalUrl(url) {
   } catch { return true; }
 }
 
-/** 年号の妥当性: 大会開催年 Y がページに出てくるか、過去年だけしか出てこないか */
+/** 年号の妥当性: 大会開催年 Y がページに出てくるか、過去年(2018〜Y-1)だけしか出てこないか */
 export function yearCheck(dateStr, pageText) {
   const y = Number((dateStr || '').slice(0, 4));
   if (!y) return { ok: true, reason: '' };
@@ -117,8 +117,11 @@ export function yearCheck(dateStr, pageText) {
   const reiwa = y - 2018;
   const has = text.includes(String(y)) || new RegExp(`令和\\s*${reiwa}\\s*年`).test(text) || new RegExp(`R\\s*${reiwa}[年.]`).test(text);
   if (has) return { ok: true, reason: '' };
-  const prev = [y - 1, y - 2].filter((p) => text.includes(String(p)));
-  if (prev.length) return { ok: false, reason: `ページに${y}年の記載がなく過去年(${prev.join(',')})のみ` };
+  const prev = [];
+  for (let py = y - 1; py >= 2018; py--) {
+    if (text.includes(String(py))) prev.push(py);
+  }
+  if (prev.length) return { ok: false, reason: `ページに${y}年の記載がなく過去年(${prev.slice(0, 4).join(',')})のみ` };
   return { ok: true, reason: '年号記載なし' };
 }
 
@@ -164,5 +167,9 @@ export function judgeEventPage(ev, page, type = 'official') {
     if (!yc.ok) return { verdict: 'wrong', reason: `申込ページが過去大会のもの（${yc.reason}）`, score: ms.score };
   }
   const yc = yearCheck(ev.date, page.text);
-  return { verdict: 'ok', score: ms.score, stale: !yc.ok, reason: yc.reason };
+  const dateOk = dateMentioned(ev.date, page.text);
+  if (!yc.ok) {
+    return { verdict: 'stale', score: ms.score, stale: true, dateOk, reason: yc.reason };
+  }
+  return { verdict: 'ok', score: ms.score, stale: false, dateOk, reason: yc.reason };
 }

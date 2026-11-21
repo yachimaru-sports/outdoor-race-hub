@@ -46,12 +46,12 @@ const KNOWN_VALID_URLS = {
   },
   // トレイルラン・アドベンチャー
   'hiroshima-utmb-2027': {
-    official: 'https://wangantrailrun.com/',
-    entry: 'https://wangantrailrun.com/',
+    official: 'https://hiroshima.utmb.world/ja',
+    entry: 'https://hiroshima.utmb.world/ja',
   },
   'hiroshima-wangantrail-108k-2027': {
-    official: 'https://wangantrailrun.com/',
-    entry: 'https://wangantrailrun.com/',
+    official: 'https://hiroshima.utmb.world/ja',
+    entry: 'https://hiroshima.utmb.world/ja',
   },
   'hiei-international-trail-2027': {
     official: 'https://www.facebook.com/mthiei/',

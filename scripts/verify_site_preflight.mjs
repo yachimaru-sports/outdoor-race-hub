@@ -105,6 +105,10 @@ async function runPreflightGate() {
       console.error(`❌ [不備] 公式/エントリーリンク不在: ID=${ev.id}`);
       schemaErrors++;
     }
+    if ((ev.links?.official || '').includes('&amp;') || (ev.links?.entry || '').includes('&amp;')) {
+      console.error(`❌ [不備] URLにHTMLエンティティ(&amp;)が混入: ID=${ev.id}`);
+      schemaErrors++;
+    }
   }
 
   if (schemaErrors > 0) {

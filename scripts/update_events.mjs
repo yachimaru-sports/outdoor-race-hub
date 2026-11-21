@@ -105,11 +105,13 @@ function isDuplicateEvent(cand, list) {
 /** 候補URLを実際に開いて、その大会の正しいページか検証して返す */
 async function verifyCandidateUrl(ev, rawUrl, type, { requireDate = false } = {}) {
   if (!rawUrl || !/^https?:\/\//.test(rawUrl) || isGenericPortalUrl(rawUrl)) return null;
-  const page = await fetchPage(rawUrl);
+  const cleanUrl = rawUrl.replace(/&amp;/g, '&').trim();
+  const page = await fetchPage(cleanUrl);
   const j = judgeEventPage(ev, page, type);
+  // stale（過去年のみ）も含め、verdict === 'ok' のみ新URLとして採用する
   if (j.verdict !== 'ok') return null;
   if (requireDate && !dateMentioned(ev.date, page.text)) return null;
-  return { url: page.finalUrl || rawUrl, stale: Boolean(j.stale) };
+  return { url: page.finalUrl || cleanUrl, stale: false };
 }
 
 /** Gemini で大会の正しい公式URL・申込URL・最新情報を検索 */
@@ -361,7 +363,7 @@ async function main() {
 
   let geminiFixCalls = 0;
   let dateCheckCalls = 0;
-  const MAX_FIX_CALLS = fixAllDates ? 20 : 6;
+  const MAX_FIX_CALLS = fixAllDates ? 40 : 12;
   const MAX_DATE_CHECKS = fixAllDates ? 120 : 15;
   const recheckCutoff = addDays(today, -14);
   const finalActive = [];
@@ -423,6 +425,22 @@ async function main() {
               if (info.entry_deadline && !ev.entry_deadline) ev.entry_deadline = info.entry_deadline;
               if (info.entry_start_date && !ev.entry_start_date) ev.entry_start_date = info.entry_start_date;
             }
+            // 日付調査で新しい公式/申込URLが得られた場合は検証して反映
+            if (info.official_url && info.official_url !== ev.links?.official) {
+              const vOff = await verifyCandidateUrl(ev, info.official_url, 'official');
+              if (vOff) {
+                ev.links.official = vOff.url;
+                delete ev.links.official_stale;
+                stats.links_fixed++;
+              }
+            }
+            if (info.entry_url && info.entry_url !== ev.links?.entry) {
+              const vEnt = await verifyCandidateUrl(ev, info.entry_url, 'entry');
+              if (vEnt) {
+                ev.links.entry = vEnt.url;
+                stats.links_fixed++;
+              }
+            }
             ev.date_verified_at = today;
           } else {
             // status === 'unknown'（登録日も公式に見つからず、今年度の開催日も確認不可）
@@ -449,8 +467,9 @@ async function main() {
     const offJudge = offUrl ? judgeEventPage(ev, offPage, 'official') : { verdict: 'none' };
     const entJudge = entUrl ? judgeEventPage(ev, entPage, 'entry') : { verdict: 'none' };
 
-    const needFixOff = offUrl && (offJudge.verdict === 'dead' || offJudge.verdict === 'wrong');
-    const needFixEnt = entUrl && (entJudge.verdict === 'dead' || entJudge.verdict === 'wrong');
+    const isOffStale = offJudge.verdict === 'stale';
+    const needFixOff = Boolean(offUrl && (offJudge.verdict === 'dead' || offJudge.verdict === 'wrong' || isOffStale));
+    const needFixEnt = Boolean(entUrl && (entJudge.verdict === 'dead' || entJudge.verdict === 'wrong'));
 
     if ((needFixOff || needFixEnt) && geminiFixCalls < MAX_FIX_CALLS && hasGeminiKey()) {
       geminiFixCalls++;
@@ -458,12 +477,16 @@ async function main() {
       if (needFixOff) {
         if (fixed.official) {
           ev.links.official = fixed.official.url;
-          ev.links.official_stale = fixed.official.stale || undefined;
+          delete ev.links.official_stale;
           stats.links_fixed++;
-          logs.push({ id: `fix-off-${ev.id}-${today}`, date: today, time, type: 'link_fixed', title: `公式リンク修正: ${ev.title}`, detail: `誤/切れリンクを正規ページへ差し替え`, eventId: ev.id });
+          logs.push({ id: `fix-off-${ev.id}-${today}`, date: today, time, type: 'link_fixed', title: `公式リンク修正: ${ev.title}`, detail: `誤/切れ/旧年度リンクを正規最新ページへ差し替え`, eventId: ev.id });
           console.log(`🔧 公式リンク修復: ${ev.title} -> ${fixed.official.url}`);
+        } else if (isOffStale) {
+          // まだ次年度版が公開されていないだけの正規公式サイトは保持し stale フラグを付与
+          ev.links.official_stale = true;
         } else {
           ev.links.official = null;
+          delete ev.links.official_stale;
           stats.links_removed++;
           console.log(`🧹 無効公式リンク除外: ${ev.title} (${offJudge.reason})`);
         }
@@ -482,11 +505,18 @@ async function main() {
       }
       await sleep(700);
     } else {
-      if (needFixOff) { ev.links.official = null; stats.links_removed++; }
+      if (needFixOff) {
+        if (isOffStale) {
+          ev.links.official_stale = true;
+        } else {
+          ev.links.official = null;
+          delete ev.links.official_stale;
+          stats.links_removed++;
+        }
+      }
       if (needFixEnt) { ev.links.entry = null; stats.links_removed++; }
       if (offJudge.verdict === 'ok') {
-        if (offJudge.stale) ev.links.official_stale = true;
-        else delete ev.links.official_stale;
+        delete ev.links.official_stale;
       }
     }
 
