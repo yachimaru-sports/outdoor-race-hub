@@ -5537,5 +5537,176 @@
     "date_verified_at": "2026-11-19",
     "archived_at": "2026-11-20",
     "archive_reason": "有効リンク確認不可のため退避"
+  },
+  {
+    "id": "spoen-cycle-107055",
+    "category": "cycling",
+    "subCategory": "ロングライド (50km以上)",
+    "elements": [
+      "ロングライド"
+    ],
+    "title": "ライドアラウンド in 多摩湖 ～スペシャル1Day～",
+    "date": "2026-11-21",
+    "month": 11,
+    "region": "関東",
+    "prefecture": "東京都",
+    "distance_km": 80,
+    "elevation_m": 0,
+    "entry_status": "closed",
+    "entry_start_date": "2026-10-01",
+    "entry_deadline": "2026-11-18",
+    "entry_fee": "詳細はエントリーページを確認",
+    "links": {
+      "official": "https://www.sportsentry.ne.jp/event/t/107055",
+      "entry": "https://www.sportsentry.ne.jp/event/t/107055",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-21"
+    },
+    "mandatory_gear": [
+      {
+        "name": "JCF公認ヘルメット＆グローブ",
+        "category": "ギア"
+      },
+      {
+        "name": "前後ライト（フロント・テール）・リフレクター",
+        "category": "ライト"
+      },
+      {
+        "name": "携帯工具・パンク修理キット・ボトル",
+        "category": "ギア"
+      },
+      {
+        "name": "防寒ウインドブレーカー・レインウェア",
+        "category": "ウェア"
+      }
+    ],
+    "venue": {
+      "name": "東京都 会場：村山下貯水池 第一取水塔前広場",
+      "address": "東京都",
+      "mapQuery": "東京都 ライドアラウンド in 多摩湖 ～スペシャル1Day～"
+    },
+    "source": {
+      "portalName": "スポエンCYCLE",
+      "portalUrl": "https://cycle.spoen.jp/"
+    },
+    "added_at": "2026-11-20",
+    "date_verified_at": "2026-11-20",
+    "archived_at": "2026-11-22"
+  },
+  {
+    "id": "spoen-cycle-105511",
+    "category": "cycling",
+    "subCategory": "ロングライド (50km以上)",
+    "elements": [
+      "ロングライド"
+    ],
+    "title": "伊賀はんグルメライド2026",
+    "date": "2026-11-21",
+    "month": 11,
+    "region": "東海",
+    "prefecture": "三重県",
+    "distance_km": 60,
+    "elevation_m": 0,
+    "entry_status": "closed",
+    "entry_start_date": "2026-06-04",
+    "entry_deadline": "2026-11-08",
+    "entry_fee": "詳細はエントリーページを確認",
+    "links": {
+      "official": "https://www.sportsentry.ne.jp/event/t/105511",
+      "entry": "https://www.sportsentry.ne.jp/event/t/105511",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-21"
+    },
+    "mandatory_gear": [
+      {
+        "name": "JCF公認ヘルメット＆グローブ",
+        "category": "ギア"
+      },
+      {
+        "name": "前後ライト（フロント・テール）・リフレクター",
+        "category": "ライト"
+      },
+      {
+        "name": "携帯工具・パンク修理キット・ボトル",
+        "category": "ギア"
+      },
+      {
+        "name": "防寒ウインドブレーカー・レインウェア",
+        "category": "ウェア"
+      }
+    ],
+    "venue": {
+      "name": "三重県 旧長田小学校 グラウンド特設会場 〒518-0031 三重県伊賀市長田2316（受付）",
+      "address": "三重県",
+      "mapQuery": "三重県 伊賀はんグルメライド2026"
+    },
+    "source": {
+      "portalName": "スポエンCYCLE",
+      "portalUrl": "https://cycle.spoen.jp/"
+    },
+    "added_at": "2026-11-20",
+    "date_verified_at": "2026-11-20",
+    "archived_at": "2026-11-22"
+  },
+  {
+    "id": "spoen-cycle-106777",
+    "category": "cycling",
+    "subCategory": "ロングライド (50km以上)",
+    "elements": [
+      "ロングライド"
+    ],
+    "title": "第26回 ツール・ド・おおすみサイクリング大会",
+    "date": "2026-11-21",
+    "month": 11,
+    "region": "九州",
+    "prefecture": "鹿児島県",
+    "distance_km": 80,
+    "elevation_m": 0,
+    "entry_status": "closed",
+    "entry_start_date": "2026-08-24",
+    "entry_deadline": "2026-11-06",
+    "entry_fee": "詳細はエントリーページを確認",
+    "links": {
+      "official": "https://www.sportsentry.ne.jp/event/t/106777",
+      "entry": "https://www.sportsentry.ne.jp/event/t/106777",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-21"
+    },
+    "mandatory_gear": [
+      {
+        "name": "JCF公認ヘルメット＆グローブ",
+        "category": "ギア"
+      },
+      {
+        "name": "前後ライト（フロント・テール）・リフレクター",
+        "category": "ライト"
+      },
+      {
+        "name": "携帯工具・パンク修理キット・ボトル",
+        "category": "ギア"
+      },
+      {
+        "name": "防寒ウインドブレーカー・レインウェア",
+        "category": "ウェア"
+      }
+    ],
+    "venue": {
+      "name": "鹿児島県 鹿屋市浜田町1250 霧島ヶ丘公園（スタート＆フィニッシュ）",
+      "address": "鹿児島県",
+      "mapQuery": "鹿児島県 第26回 ツール・ド・おおすみサイクリング大会"
+    },
+    "source": {
+      "portalName": "スポエンCYCLE",
+      "portalUrl": "https://cycle.spoen.jp/"
+    },
+    "added_at": "2026-11-20",
+    "date_verified_at": "2026-11-20",
+    "archived_at": "2026-11-22"
   }
 ]
