@@ -802,18 +802,18 @@ export const App: React.FC = () => {
 
   return (
     <div className="relative min-h-screen flex flex-col bg-slate-100 dark:bg-[#0b0f19] text-slate-900 dark:text-slate-100 transition-colors duration-150 w-full">
-      {/* 季節感・自然を感じる日替わり背景（視認性を損なわないよううっすら溶け込むグラデーション） */}
+      {/* 季節感・開催地の自然を感じる日替わり背景（視認性を損なわない範囲ではっきりと美しく表示） */}
       <div
         aria-hidden="true"
-        className="pointer-events-none fixed inset-x-0 top-0 h-[540px] sm:h-[680px] z-0 overflow-hidden select-none"
+        className="pointer-events-none fixed inset-x-0 top-0 h-[560px] sm:h-[700px] z-0 overflow-hidden select-none"
       >
         <img
           src={dailyBg.url}
           alt=""
           loading="eager"
-          className="w-full h-full object-cover object-center opacity-[0.15] dark:opacity-[0.18] saturate-90"
+          className="w-full h-full object-cover object-center opacity-[0.42] dark:opacity-[0.38] saturate-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-100/15 via-slate-100/55 to-slate-100 dark:from-[#0b0f19]/20 dark:via-[#0b0f19]/65 dark:to-[#0b0f19]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-100/20 to-slate-100 dark:from-transparent dark:via-[#0b0f19]/30 dark:to-[#0b0f19]" />
       </div>
       {/* 1. 常時固定統合ヘッダー：添付画像の2段ヘッダー（楽天特価カルーセル ＆ アップデート情報バー）を常時最上部に完全固定 */}
       <header className="sticky top-0 z-50 shadow-xl w-full bg-slate-950 border-b border-slate-800 select-none">
@@ -876,7 +876,7 @@ export const App: React.FC = () => {
             : `全${meta.events_count || events.length}大会・${meta.gears_count || gears.length}ギアのリンク＆価格を生存確認済み（異常なし）`;
 
           return (
-            <div className="flex flex-wrap items-center justify-between gap-2 px-3 py-2 rounded-xl bg-white dark:bg-slate-900 border border-emerald-200 dark:border-emerald-900/60 text-xs shadow-2xs">
+            <div className="flex flex-wrap items-center justify-between gap-2 px-3 py-2 rounded-xl bg-white/95 dark:bg-slate-900/95 border border-emerald-200 dark:border-emerald-900/60 text-xs shadow-2xs">
               <div className="flex flex-wrap items-center gap-2 min-w-0 flex-1">
                 <span className="px-2 py-0.5 rounded-full bg-emerald-600 text-white font-bold text-[10px] shrink-0">
                   {updatedTimeLabel}
@@ -884,6 +884,16 @@ export const App: React.FC = () => {
                 <span className="text-slate-700 dark:text-slate-200 font-semibold">
                   {summaryText}
                 </span>
+                {dailyBg.eventId && (
+                  <button
+                    type="button"
+                    onClick={() => handleOpenEventById(dailyBg.eventId!)}
+                    className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-teal-50 dark:bg-teal-950/60 text-teal-800 dark:text-teal-300 border border-teal-200 dark:border-teal-800 text-[11px] font-bold hover:bg-teal-100 transition-colors cursor-pointer"
+                    title={dailyBg.eventTitle || dailyBg.label}
+                  >
+                    <span>🏔️ 本日の背景: {dailyBg.label}</span>
+                  </button>
+                )}
                 {latestNews && (
                   <button
                     type="button"

@@ -115,6 +115,12 @@ jobs:
         if: ${{ steps.events.outcome == 'failure' }}
         run: git checkout -- src/data/events.json src/data/events_archive.json src/data/changelog.json
 
+      - name: "Step 2.8: 本日のピックアップ大会・開催地風景背景を更新"
+        continue-on-error: true
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: node scripts/update_daily_hero.mjs
+
       - name: "Step 3: Googleスプレッドシート＆マスターCSV同期（失敗してもサイト更新は継続）"
         id: sheets
         continue-on-error: true
@@ -142,7 +148,7 @@ jobs:
         run: |
           git config user.name "outdoor-race-hub-bot"
           git config user.email "bot@outdoor-race-hub.local"
-          DATA_FILES="src/data/events.json src/data/events_archive.json src/data/deals.json src/data/gears.json src/data/meta.json src/data/changelog.json"
+          DATA_FILES="src/data/events.json src/data/events_archive.json src/data/deals.json src/data/gears.json src/data/meta.json src/data/changelog.json public/hero-bg/daily-featured.jpg"
           TMP_DIR=$(mktemp -d)
           HAS_CHANGES=0
           for f in $DATA_FILES; do

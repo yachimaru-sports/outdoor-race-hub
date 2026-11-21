@@ -17,5 +17,14 @@
     "events_archived": 3,
     "links_fixed": 0,
     "links_removed": 0
+  },
+  "daily_hero": {
+    "date": "2026-11-22",
+    "event_id": "spoen-cycle-106144",
+    "event_title": "白神山地一周シライチ一周キャンペーン2026",
+    "event_date": "2026-11-20",
+    "place_label": "青森県・白神山地",
+    "image": "hero-bg/daily-featured.jpg",
+    "updated_at": "2026-11-21T23:57:52.557Z"
   }
 }

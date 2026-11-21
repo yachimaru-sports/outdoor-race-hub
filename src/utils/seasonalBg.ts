@@ -1,7 +1,8 @@
 /**
  * src/utils/seasonalBg.ts
- * 季節感・スポーツ・自然を感じる背景画像を、日付シードで日々変化させながら選択するヘルパー
+ * 近日開催大会の開催地風景（meta.json の daily_hero）または季節感・スポーツ・自然を感じる背景画像を返すヘルパー
  */
+import metaData from '../data/meta.json';
 
 export interface SeasonalBgItem {
   file: string;
@@ -35,24 +36,45 @@ function getSeasonByMonth(month: number): SeasonalBgItem['season'] {
 }
 
 /**
- * 現在の季節画像を軸にしつつ、日々異なる画像が選ばれる背景URLを返す
+ * 近日開催大会の開催地風景（daily_hero）があれば最優先し、なければ季節別の風景を日替わりで返す
  */
-export function getDailySeasonalBackground(): { url: string; label: string } {
+export function getDailySeasonalBackground(): {
+  url: string;
+  label: string;
+  eventId?: string;
+  eventTitle?: string;
+} {
+  const base = import.meta.env.BASE_URL || '/';
+  const meta = metaData as {
+    daily_hero?: {
+      image?: string;
+      place_label?: string;
+      event_id?: string;
+      event_title?: string;
+    };
+  };
+
+  if (meta.daily_hero?.image) {
+    return {
+      url: `${base}${meta.daily_hero.image.replace(/^\/+/, '')}`,
+      label: meta.daily_hero.place_label || '本日のピックアップ開催地',
+      eventId: meta.daily_hero.event_id,
+      eventTitle: meta.daily_hero.event_title,
+    };
+  }
+
   const { month, dayOfYear } = getJstParts();
   const season = getSeasonByMonth(month);
   const seasonalPool = ALL_BACKGROUNDS.filter((b) => b.season === season);
 
-  // 該当季節の画像を基本としつつ、偶数日/奇数日や複数枚のローテーションで毎日風景が変化するように選出
   let chosen: SeasonalBgItem;
   if (seasonalPool.length >= 2) {
     chosen = seasonalPool[dayOfYear % seasonalPool.length];
   } else {
-    // 1枚のみの季節は、メインの季節画像と通年使える絶景（雲海・湖畔）を日替わりでローテーション
     const altPool = [seasonalPool[0], ALL_BACKGROUNDS[2], ALL_BACKGROUNDS[4]].filter(Boolean);
     chosen = altPool[dayOfYear % altPool.length];
   }
 
-  const base = import.meta.env.BASE_URL || '/';
   return {
     url: `${base}hero-bg/${chosen.file}`,
     label: chosen.label,
