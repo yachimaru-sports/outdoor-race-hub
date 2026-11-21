@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Eye, Users } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { Activity, Eye } from 'lucide-react';
 
 interface AccessCounterProps {
   variant?: 'compact' | 'footer';
@@ -41,6 +41,62 @@ function fetchSharedCount(): Promise<number | null> {
   return sharedFetchPromise;
 }
 
+const REEL_DIGITS = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+
+/** 1桁ずつくるくる回転するドラムロール式デジタルリール */
+const DigitReel: React.FC<{
+  digit: string;
+  index: number;
+  spinning: boolean;
+  size: 'compact' | 'footer';
+}> = ({ digit, index, spinning, size }) => {
+  const num = Number(digit);
+  // 回転開始時は0番目、確定時は2周目(10 + num)へ滑らかに回転させる
+  const targetIndex = spinning ? 10 + num : 0;
+  const rowHeight = size === 'footer' ? 32 : 20;
+  const isCompact = size === 'compact';
+
+  return (
+    <span
+      className={
+        isCompact
+          ? 'relative inline-flex justify-center overflow-hidden w-[13px] h-[20px] rounded-[4px] bg-slate-950/90 border border-teal-500/40 shadow-inner'
+          : 'relative inline-flex justify-center overflow-hidden w-[24px] h-[32px] rounded-md bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 border border-slate-700/80 shadow-[inset_0_2px_4px_rgba(0,0,0,0.8)]'
+      }
+    >
+      {/* 機械式メーター風の中央ライン */}
+      {!isCompact && (
+        <span
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 top-1/2 h-px bg-black/50 z-10"
+        />
+      )}
+      <span
+        className="flex flex-col items-center will-change-transform"
+        style={{
+          transform: `translateY(-${targetIndex * rowHeight}px)`,
+          transition: `transform ${950 + index * 140}ms cubic-bezier(0.16, 1, 0.3, 1)`,
+          transitionDelay: `${index * 60}ms`,
+        }}
+      >
+        {REEL_DIGITS.map((d, i) => (
+          <span
+            key={i}
+            style={{ height: `${rowHeight}px`, lineHeight: `${rowHeight}px` }}
+            className={
+              isCompact
+                ? 'block text-center font-mono text-[12px] font-black text-teal-300 select-none'
+                : 'block text-center font-mono text-[17px] font-black text-emerald-300 drop-shadow-[0_0_6px_rgba(52,211,153,0.45)] select-none'
+            }
+          >
+            {d}
+          </span>
+        ))}
+      </span>
+    </span>
+  );
+};
+
 export const AccessCounter: React.FC<AccessCounterProps> = ({ variant = 'compact' }) => {
   const [count, setCount] = useState<number>(() => {
     if (typeof window === 'undefined') return BASE_ACCESS_COUNT;
@@ -52,6 +108,9 @@ export const AccessCounter: React.FC<AccessCounterProps> = ({ variant = 'compact
       return BASE_ACCESS_COUNT;
     }
   });
+
+  const [ready, setReady] = useState(false);
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     let mounted = true;
@@ -69,37 +128,96 @@ export const AccessCounter: React.FC<AccessCounterProps> = ({ variant = 'compact
     };
   }, []);
 
+  // compact はマウント直後、footer は画面に表示された瞬間にくるくる回転開始
+  useEffect(() => {
+    if (variant === 'compact') {
+      const id = requestAnimationFrame(() => setReady(true));
+      return () => cancelAnimationFrame(id);
+    }
+
+    const el = containerRef.current;
+    if (!el || typeof IntersectionObserver === 'undefined') {
+      const id = requestAnimationFrame(() => setReady(true));
+      return () => cancelAnimationFrame(id);
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setReady(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [variant]);
+
+  // 表示用の文字配列（例: "1,234" → ['1', ',', '2', '3', '4']、最小4桁ゼロ埋めなし）
+  const formattedChars = count.toLocaleString().split('');
+
   // ヘッダー用（画面右上）表示
   if (variant === 'compact') {
     return (
       <div
-        className="inline-flex items-center gap-1 sm:gap-1.5 px-1.5 sm:px-2.5 py-1 rounded-xl bg-slate-900 border border-slate-700/90 text-xs font-black text-slate-100 leading-none shadow-sm select-none hover:border-teal-500 transition-colors shrink-0"
+        ref={containerRef}
+        className="inline-flex items-center gap-1.5 px-2 sm:px-2.5 py-1 rounded-full bg-slate-900/95 border border-slate-700/90 text-xs font-black text-slate-100 leading-none shadow-sm select-none hover:border-teal-400/80 transition-colors shrink-0"
         title="サイト累計アクセス数（PC・スマホ全端末合算）"
       >
-        <Eye className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-teal-400 shrink-0" />
-        <span className="text-[10px] sm:text-[11px] font-bold text-slate-300 hidden sm:inline">累計アクセス</span>
-        <span className="px-1.5 sm:px-2 py-0.5 rounded bg-teal-600 text-white font-mono text-[11px] sm:text-xs font-black shadow-inner tracking-wide">
-          {count.toLocaleString()}
+        <Eye className="w-3.5 h-3.5 text-teal-400 shrink-0" />
+        <span className="text-[10px] font-bold text-slate-300 hidden sm:inline tracking-wide">
+          ACCESS
         </span>
+        <div className="inline-flex items-center gap-[2px]" aria-label={`累計アクセス ${count}`}>
+          {formattedChars.map((ch, idx) =>
+            ch === ',' ? (
+              <span key={`c-${idx}`} className="text-teal-400 font-mono text-[11px] font-black leading-none pb-0.5">
+                ,
+              </span>
+            ) : (
+              <DigitReel key={`d-${idx}`} digit={ch} index={idx} spinning={ready} size="compact" />
+            )
+          )}
+        </div>
       </div>
     );
   }
 
-  // フッター用（サイト最下部）
+  // フッター用（サイト最下部：レース計時器風メカニカル・オドメーター）
   return (
-    <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-xl bg-slate-100 dark:bg-slate-850 border border-slate-300 dark:border-slate-800 text-sm font-bold shadow-2xs">
-      <div className="flex items-center gap-1.5 text-teal-700 dark:text-teal-400">
-        <Users className="w-4.5 h-4.5 shrink-0" />
-        <span>公式累計アクセス数:</span>
-      </div>
-      <div className="inline-flex items-center rounded overflow-hidden shadow-2xs font-mono font-black text-xs">
-        <span className="bg-slate-800 text-slate-200 px-2.5 py-1">累計アクセス</span>
-        <span className="bg-teal-600 text-white px-2.5 py-1 text-sm tracking-wide">
-          {count.toLocaleString()}
+    <div
+      ref={containerRef}
+      className="inline-flex flex-wrap items-center justify-center gap-3 px-4 py-2.5 rounded-2xl bg-gradient-to-r from-slate-900 via-slate-900 to-slate-800 border border-slate-700/80 shadow-lg shadow-slate-950/15 dark:shadow-black/40"
+    >
+      <div className="flex items-center gap-2">
+        <span className="relative flex h-2.5 w-2.5">
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+          <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
+        </span>
+        <Activity className="w-4 h-4 text-teal-400 shrink-0" />
+        <span className="text-xs font-extrabold tracking-wider text-slate-200 uppercase">
+          Total Visits
         </span>
       </div>
-      <span className="text-xs text-emerald-600 dark:text-emerald-400 font-extrabold bg-emerald-100 dark:bg-emerald-950/60 px-2 py-0.5 rounded-full border border-emerald-300 dark:border-emerald-700">
-        公式集計
+
+      <div
+        className="inline-flex items-center gap-1 px-2 py-1 rounded-xl bg-black/50 border border-slate-700/70"
+        aria-label={`公式累計アクセス数 ${count}`}
+      >
+        {formattedChars.map((ch, idx) =>
+          ch === ',' ? (
+            <span key={`fc-${idx}`} className="text-emerald-400 font-mono text-base font-black self-end pb-1">
+              ,
+            </span>
+          ) : (
+            <DigitReel key={`fd-${idx}`} digit={ch} index={idx} spinning={ready} size="footer" />
+          )
+        )}
+      </div>
+
+      <span className="text-[11px] font-bold text-teal-300/90 tracking-wide">
+        累計アクセス
       </span>
     </div>
   );
