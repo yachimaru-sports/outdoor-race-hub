@@ -6,6 +6,7 @@ import metaData from './data/meta.json';
 import { RaceEvent, DealItem, GearItem, FilterState, ViewMode } from './types';
 import { INITIAL_FILTERS } from './utils/presets';
 import { isEventClosingSoon } from './utils/helpers';
+import { getDailySeasonalBackground } from './utils/seasonalBg';
 import { DealsTicker } from './components/DealsTicker';
 import { ToretoreBanner } from './components/ToretoreBanner';
 import { FilterSection } from './components/FilterSection';
@@ -797,8 +798,23 @@ export const App: React.FC = () => {
     );
   }
 
+  const dailyBg = useMemo(() => getDailySeasonalBackground(), []);
+
   return (
-    <div className="min-h-screen flex flex-col bg-slate-100 dark:bg-[#0b0f19] text-slate-900 dark:text-slate-100 transition-colors duration-150 w-full">
+    <div className="relative min-h-screen flex flex-col bg-slate-100 dark:bg-[#0b0f19] text-slate-900 dark:text-slate-100 transition-colors duration-150 w-full">
+      {/* 季節感・自然を感じる日替わり背景（視認性を損なわないよううっすら溶け込むグラデーション） */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none fixed inset-x-0 top-0 h-[540px] sm:h-[680px] z-0 overflow-hidden select-none"
+      >
+        <img
+          src={dailyBg.url}
+          alt=""
+          loading="eager"
+          className="w-full h-full object-cover object-center opacity-[0.15] dark:opacity-[0.18] saturate-90"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-100/15 via-slate-100/55 to-slate-100 dark:from-[#0b0f19]/20 dark:via-[#0b0f19]/65 dark:to-[#0b0f19]" />
+      </div>
       {/* 1. 常時固定統合ヘッダー：添付画像の2段ヘッダー（楽天特価カルーセル ＆ アップデート情報バー）を常時最上部に完全固定 */}
       <header className="sticky top-0 z-50 shadow-xl w-full bg-slate-950 border-b border-slate-800 select-none">
         <div id="deals-carousel" className="w-full">
@@ -819,7 +835,7 @@ export const App: React.FC = () => {
       </header>
 
       {/* メインコンテンツ（ご要望順：注目の競技カテゴリー → すべての大会 → 条件にマッチする → 大会一覧） */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-2.5 sm:px-4 py-4 sm:py-8 space-y-4 sm:space-y-8 overflow-x-hidden">
+      <main className="relative z-10 flex-1 max-w-7xl w-full mx-auto px-2.5 sm:px-4 py-4 sm:py-8 space-y-4 sm:space-y-8 overflow-x-hidden">
         {(() => {
           const meta = metaData as {
             last_updated_at?: string;
