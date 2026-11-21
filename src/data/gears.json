@@ -1392,31 +1392,60 @@
   {
     "id": "gear-cycle-helmet-road-light",
     "sports": [
-      "cycling"
+      "cycling",
+      "adventure"
     ],
     "gearType": "サイクル用品",
     "matchKeywords": [
+      "OGK KABUTO",
+      "MTBヘルメット",
       "ヘルメット",
-      "自転車ヘルメット",
-      "ロードバイク",
-      "通気性",
-      "軽量"
+      "サイクル用品"
     ],
-    "title": "ロードバイク 自転車ヘルメット (高通気・一体成型 / 56〜63cm)",
-    "brand": "AIR-HELMET",
-    "standardTitle": "風抜けの良いエアロベンチレーション構造と超軽量設計。ダイヤル式アジャスターで頭部にジャストフィット。",
-    "standardUrl": "https://item.rakuten.co.jp/lifeideakan/m23",
-    "dealKeyword": "ロードバイク ヘルメット",
-    "price": 3580,
-    "originalPrice": 6280,
-    "discountRate": 43,
+    "title": "OGK KABUTO（オージーケーカブト）FM-X エフエム・エックス MTB・トレイルライド ヘルメット",
+    "brand": "OGK KABUTO",
+    "standardTitle": "バイザー装備でMTBやオフロード・アドベンチャーレースにも対応するJCF推奨マルチパーパスヘルメット。",
+    "standardUrl": "https://item.rakuten.co.jp/phalconcycle/ogkk-006580",
+    "dealKeyword": "OGK カブト FM-X ヘルメット MTB",
+    "price": 9448,
+    "originalPrice": 9448,
+    "discountRate": 0,
     "pointRate": 10,
-    "dealUrl": "https://item.rakuten.co.jp/lifeideakan/m23",
-    "imageUrl": "https://shop.r10s.jp/lifeideakan/cabinet/m23/1.jpg",
-    "badge": "43%OFF 特価",
-    "priceVerifiedAt": "2026-11-20T10:10:03.935Z",
+    "dealUrl": "https://item.rakuten.co.jp/phalconcycle/ogkk-006580",
+    "imageUrl": "https://shop.r10s.jp/phalconcycle/cabinet/item_03/4966094607364-1.jpg",
+    "badge": "MTB・オフロード対応",
+    "priceVerifiedAt": "2026-11-21T23:31:57.637Z",
     "isBestDeal": false,
-    "lowest30d": 3580
+    "lowest30d": 9448
+  },
+  {
+    "id": "gear-adventure-helmet-bd-halfdome",
+    "sports": [
+      "adventure",
+      "trail"
+    ],
+    "gearType": "サイクル用品",
+    "matchKeywords": [
+      "Black Diamond",
+      "登山ヘルメット",
+      "ヘルメット",
+      "アドベンチャー"
+    ],
+    "title": "ブラックダイヤモンド ハーフドーム Black Diamond Half Dome 登山・クライミング用ヘルメット",
+    "brand": "Black Diamond",
+    "standardTitle": "【最新セール発掘】定価より30%OFF（¥2,772引き）。登山・クライミング・アドベンチャーレースの定番保護ヘルメット。",
+    "standardUrl": "https://item.rakuten.co.jp/canpanera/b17690",
+    "dealKeyword": "ブラックダイヤモンド ヘルメット 登山 セール",
+    "price": 6468,
+    "originalPrice": 9240,
+    "discountRate": 30,
+    "pointRate": 10,
+    "dealUrl": "https://item.rakuten.co.jp/canpanera/b17690",
+    "imageUrl": "https://shop.r10s.jp/canpanera/cabinet/item245/item_b17690_0.jpg",
+    "badge": "🔥 30%OFF 最安特価",
+    "isBestDeal": false,
+    "priceVerifiedAt": "2026-11-21T23:31:57.637Z",
+    "lowest30d": 6468
   },
   {
     "id": "gear-deal-mwez824f-gqb1",
@@ -1460,20 +1489,21 @@
       "特価",
       "目玉"
     ],
-    "title": "パンツ バイクパンツ バイク 自転車 サイクルウェア春 秋 冬 バイク 自転車 サイクルウェア ３シーズン 防風 防寒 バイク用品 バイク ウェア",
+    "title": "PEARL iZUMi 994-3DR ブライトスパッツ 自転車 サイクルウエア 保温性 防風 透湿性 パンツ タイツ",
     "brand": "PEARL iZUMi",
-    "standardTitle": "【カテゴリ最安64%OFF】【最新セール発掘】定価より64%OFF（¥8,278引き）。楽天市場の本日更新目玉特価品。",
-    "standardUrl": "https://item.rakuten.co.jp/dreamgo1111/drea-dreqq10029",
+    "standardTitle": "【最新セール発掘】定価より25%OFF（¥3,490引き）。保温性・防風透湿性に優れたパールイズミの正規サイクルタイツ。",
+    "standardUrl": "https://item.rakuten.co.jp/bc-moriwaki/2023fw-9943dr",
     "dealKeyword": "パールイズミ サイクルウェア セール",
-    "price": 4647,
-    "originalPrice": 12925,
-    "discountRate": 64,
+    "price": 10590,
+    "originalPrice": 14080,
+    "discountRate": 25,
     "pointRate": 10,
-    "dealUrl": "https://item.rakuten.co.jp/dreamgo1111/drea-dreqq10029",
-    "imageUrl": "https://shop.r10s.jp/dreamgo1111/cabinet/dreqq10/dreqq10029.jpg",
-    "badge": "🔥 64%OFF 最安特価",
+    "dealUrl": "https://item.rakuten.co.jp/bc-moriwaki/2023fw-9943dr",
+    "imageUrl": "https://shop.r10s.jp/bc-moriwaki/cabinet/04147615/10163270/10163271/9943dr1.jpg",
+    "badge": "🔥 25%OFF 最安特価",
     "isBestDeal": true,
-    "priceVerifiedAt": "2026-11-20T10:12:53.999Z"
+    "priceVerifiedAt": "2026-11-21T23:31:57.637Z",
+    "lowest30d": 10590
   },
   {
     "id": "gear-deal-mwknsccn-u4px",

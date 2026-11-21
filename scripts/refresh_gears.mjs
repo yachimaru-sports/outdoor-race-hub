@@ -613,7 +613,8 @@ const DISCOVERY_TARGETS = [
   { keyword: 'ノースフェイス レインジャケット セール', category: 'レインウェア', sports: ['trail', 'adventure'], brand: 'THE NORTH FACE' },
   { keyword: 'パールイズミ サイクルウェア セール', category: 'サイクル用品', sports: ['cycling'], brand: 'PEARL iZUMi' },
   { keyword: 'キャットアイ VOLT400 AMPP500 充電式 ライト セール', category: 'サイクル用品', sports: ['cycling'], brand: 'CATEYE' },
-  { keyword: 'OGK カブト ヘルメット セール', category: 'サイクル用品', sports: ['cycling'], brand: 'OGK KABUTO' },
+  { keyword: 'OGK カブト FM-X ヘルメット MTB セール', category: 'サイクル用品', sports: ['cycling'], brand: 'OGK KABUTO' },
+  { keyword: 'ブラックダイヤモンド ヘルメット 登山 セール', category: 'サイクル用品', sports: ['adventure', 'trail'], brand: 'Black Diamond' },
   { keyword: 'マグオン ジェル セール', category: '補給食・エナジージェル', sports: ['trail', 'marathon', 'cycling'], brand: 'Mag-on' },
 ];
 
@@ -626,16 +627,37 @@ const CATEGORY_RULES = {
   'レインウェア': { must: /レイン|ジャケット|シェル|防水|ゴアテックス|ティフォン|タンペート/i, ban: /パンツ|ズボン|シューズ|ザック|グローブ|ジュニア|キッズ/i },
   'ランニングシューズ': { must: /シューズ|靴|ランニング|マラソン|ゲル|ノヴァ|クリフトン|ボンダイ/i, ban: /靴下|ソックス|インソール|ポール|ザック|ジュニア|キッズ|子供|子ども|junior|kids/i },
   'ランニングウェア': { must: /シャツ|tシャツ|フーディ|ジャケット|ベスト|ショーツ|パンツ|ウェア/i, ban: /シューズ|靴|ザック|ライト|ソックス|ジュニア|キッズ|子供|子ども|junior|kids/i },
-  'サイクル用品': { must: /サイクル|ジャージ|ジャケット|ウィンドブレーカー|ビブ|タイツ|ヘルメット|ライト|ボトル|ツール/i, ban: /タイヤチューブのみ|パッチのみ|バイク用品|バイクウェア|オートバイ|原付/i },
+  'サイクル用品': { must: /サイクル|ジャージ|ジャケット|ウィンドブレーカー|ビブ|タイツ|スパッツ|ヘルメット|ライト|ボトル|ツール/i, ban: /タイヤチューブのみ|パッチのみ|バイク用品|バイク\s*ウェア|バイク\s*用|バイクパンツ|オートバイ|原付|二輪|プロテクター|ライディング|ツーリングパンツ|デニム|ジーンズ|街乗り|通勤|通学|一般用|バイザーのみ|パッドセット|インナーパッド|air-helmet/i },
   '補給食・エナジージェル': { must: /ジェル|補給|マグオン|アミノ|メダリスト|エナジー/i, ban: /ボトル|ポーチ|ザック/i },
   '防水スタッフバッグ': { must: /ドライバッグ|ドライサック|スタッフバッグ|防水バッグ/i, ban: /サコッシュ|ビーチ|海水浴|プール|スマホ|ショルダー|肩掛け/i },
 };
 
-function isCategoryMatch(category, title) {
+const BRAND_ALIASES = {
+  'PEARL iZUMi': /pearl\s*izumi|パールイズミ/i,
+  'OGK KABUTO': /ogk|kabuto|カブト|オージーケー/i,
+  'Black Diamond': /black\s*diamond|ブラックダイヤモンド/i,
+  'CATEYE': /cateye|cat\s*eye|キャットアイ/i,
+  'SALOMON': /salomon|サロモン/i,
+  'HOKA': /hoka|ホカ/i,
+  'ASICS': /asics|アシックス/i,
+  'NATHAN': /nathan|ネイサン/i,
+  'PETZL': /petzl|ペツル/i,
+  'LEDLENSER': /ledlenser|レッドレンザー/i,
+  'C3fit': /c3fit|シースリーフィット|goldwin/i,
+  'CW-X': /cw-x|ワコール/i,
+  'THE NORTH FACE': /north\s*face|ノースフェイス/i,
+  'Patagonia': /patagonia|パタゴニア/i,
+  'LEKI': /leki|レキ/i,
+  'MILLET': /millet|ミレー/i,
+  'Mag-on': /mag-on|マグオン/i,
+};
+
+function isCategoryMatch(category, title, brand = '') {
   const rule = CATEGORY_RULES[category];
   if (!rule) return true;
   if (rule.ban && rule.ban.test(title)) return false;
   if (rule.must && !rule.must.test(title)) return false;
+  if (brand && BRAND_ALIASES[brand] && !BRAND_ALIASES[brand].test(title)) return false;
   return true;
 }
 
@@ -746,7 +768,7 @@ async function discoverAndRotateDeals(currentGears) {
           }
         }
         if (!s.price || !meetsQualityPrice(target.category, s.price)) continue;
-        if (!isCategoryMatch(target.category, s.title)) continue;
+        if (!isCategoryMatch(target.category, s.title, target.brand)) continue;
         const nKey = normGearKey(s.title);
         if (nKey.length >= 6 && existingKeys.has(nKey)) continue;
 
