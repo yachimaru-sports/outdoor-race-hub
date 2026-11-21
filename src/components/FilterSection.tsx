@@ -1,6 +1,6 @@
 import React from 'react';
 import { FilterState, ViewMode, SortOption, RaceEvent } from '../types';
-import { REGIONS, PREFECTURES } from '../utils/helpers';
+import { REGIONS, PREFECTURES, isEventClosingSoon } from '../utils/helpers';
 import { ALL_GENRES } from '../utils/presets';
 import {
   Search,
@@ -24,6 +24,7 @@ import {
   Footprints,
   Map,
   Ban,
+  Flame,
   Check,
 } from 'lucide-react';
 
@@ -50,6 +51,12 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
 }) => {
   // スマホ表示用の詳細フィルター開閉トグル
   const [isMobileFiltersOpen, setIsMobileFiltersOpen] = React.useState(false);
+
+  // 締切まじか件数
+  const closingSoonCount = React.useMemo(
+    () => events.filter((ev) => isEventClosingSoon(ev)).length,
+    [events]
+  );
 
   const isOnlyOpen = filters.entryStatus === 'open_or_closing';
 
@@ -307,6 +314,15 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
     });
   }
 
+  // 締切まじか
+  if (filters.onlyClosingSoon) {
+    activeChips.push({
+      id: 'closing-soon',
+      label: '🔥 締切まじか',
+      onRemove: () => onFilterChange({ ...filters, onlyClosingSoon: false }),
+    });
+  }
+
   // 検索キーワード
   if (filters.searchKeyword.trim()) {
     activeChips.push({
@@ -401,6 +417,36 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
               }`}
             >
               {favoriteIds.length}
+            </span>
+          </button>
+
+          {/* 🔥 締切まじか */}
+          <button
+            type="button"
+            onClick={() =>
+              onFilterChange({
+                ...filters,
+                onlyClosingSoon: !filters.onlyClosingSoon,
+                onlyFavorites: false,
+              })
+            }
+            className={`inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-black border-2 transition-all cursor-pointer select-none ${
+              filters.onlyClosingSoon
+                ? 'bg-orange-600 text-white border-orange-600 shadow-xs'
+                : 'bg-orange-50 dark:bg-orange-950/40 text-orange-950 dark:text-orange-200 border-orange-300 dark:border-orange-700 hover:bg-orange-100'
+            }`}
+            title="エントリー締切が2週間以内（締切まじか）の大会を抽出"
+          >
+            <Flame className={`w-4 h-4 ${filters.onlyClosingSoon ? 'text-white' : 'text-orange-600 dark:text-orange-400'}`} />
+            <span>締切まじか</span>
+            <span
+              className={`text-xs px-1.5 py-0.2 rounded-full font-mono font-black ${
+                filters.onlyClosingSoon
+                  ? 'bg-white text-orange-700'
+                  : 'bg-orange-200 dark:bg-orange-900 text-orange-950 dark:text-orange-100'
+              }`}
+            >
+              {closingSoonCount}
             </span>
           </button>
         </div>

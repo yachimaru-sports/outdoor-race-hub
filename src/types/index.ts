@@ -129,6 +129,7 @@ export interface FilterState {
   featureTag?: string;     // クイック抽出タグ（'arws' | '100mile' | 'toretore' など）
   featureMode?: 'include' | 'exclude'; // 特徴タグの抽出/除外モード（include:これのみ, exclude:これ以外）
   onlyFavorites?: boolean; // お気に入り・参戦予定のみ
+  onlyClosingSoon?: boolean; // 締切まじかのみ
 }
 
 export interface Preset {

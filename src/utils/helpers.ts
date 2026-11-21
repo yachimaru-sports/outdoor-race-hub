@@ -484,6 +484,25 @@ export function getGoogleMapsUrl(event: {
   return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query.trim())}`;
 }
 
+/** 大会が「締切まじか（今日〜14日以内にエントリー締切、または closing_soon ステータス）」か判定 */
+export function isEventClosingSoon(
+  event: { date: string; end_date?: string; entry_status?: string; entry_deadline?: string },
+  todayStr?: string
+): boolean {
+  const today = todayStr || new Date(Date.now() + 9 * 3600 * 1000).toISOString().slice(0, 10);
+  if (event.entry_status === 'closed') return false;
+  const endStr = event.end_date || (event.date.includes('~') ? event.date.split('~')[1].trim() : event.date);
+  if (endStr < today && event.date < today) return false;
+
+  const dl = event.entry_deadline;
+  if (dl && /^\d{4}-\d{2}-\d{2}$/.test(dl)) {
+    if (dl < today) return false;
+    const limitDate = new Date(Date.now() + 9 * 3600 * 1000 + 14 * 86400 * 1000).toISOString().slice(0, 10);
+    return dl <= limitDate || event.entry_status === 'closing_soon';
+  }
+  return event.entry_status === 'closing_soon';
+}
+
 /** 大会の「NEW」（7日以内追加）または「情報更新」（3日以内更新）バッジ判定 */
 export function getEventFreshnessBadge(event: { added_at?: string; updated_at?: string }): 'NEW' | '情報更新' | null {
   const now = Date.now();

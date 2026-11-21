@@ -15,6 +15,7 @@ export const INITIAL_FILTERS: FilterState = {
   monthFilter: 'all',
   featureTag: 'all',
   onlyFavorites: false,
+  onlyClosingSoon: false,
 };
 
 export const DEFAULT_PRESETS: Preset[] = [

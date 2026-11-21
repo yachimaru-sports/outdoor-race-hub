@@ -5,6 +5,7 @@ import gearsData from './data/gears.json';
 import metaData from './data/meta.json';
 import { RaceEvent, DealItem, GearItem, FilterState, ViewMode } from './types';
 import { INITIAL_FILTERS } from './utils/presets';
+import { isEventClosingSoon } from './utils/helpers';
 import { DealsTicker } from './components/DealsTicker';
 import { ToretoreBanner } from './components/ToretoreBanner';
 import { FilterSection } from './components/FilterSection';
@@ -523,6 +524,11 @@ export const App: React.FC = () => {
         if (filters.onlyFavorites) {
           if (!isFavorite) return false;
           return true;
+        }
+
+        // 締切まじかのみ表示モード
+        if (filters.onlyClosingSoon && !isEventClosingSoon(event, todayStr)) {
+          return false;
         }
 
         // 自分が保存（マイ参戦予定）している大会で、開催日前のものは、
