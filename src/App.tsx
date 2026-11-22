@@ -783,6 +783,8 @@ export const App: React.FC = () => {
     }
   };
 
+  const dailyBg = useMemo(() => getDailySeasonalBackground(), []);
+
   if (currentRoute === 'gears') {
     return (
       <>
@@ -797,8 +799,6 @@ export const App: React.FC = () => {
       </>
     );
   }
-
-  const dailyBg = useMemo(() => getDailySeasonalBackground(), []);
 
   return (
     <div className="relative min-h-screen flex flex-col bg-slate-100 dark:bg-[#0b0f19] text-slate-900 dark:text-slate-100 transition-colors duration-150 w-full">

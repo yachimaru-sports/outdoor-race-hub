@@ -259,7 +259,7 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
 
                     {/* 2. 開催日 / 締切（長期間大会は2行で折り返し表示して見切れ・重なりを防止） */}
                     <td className="py-2.5 px-3 align-middle overflow-hidden">
-                      <div className="relative group/daterange flex items-start gap-1 font-mono cursor-help" title={fullDateTooltip}>
+                      <div className="flex items-start gap-1 font-mono">
                         <Calendar className="w-3.5 h-3.5 text-teal-700 dark:text-teal-400 shrink-0 mt-0.5" />
                         {(() => {
                           const slashDate = formatEventDateSlash(event.date, event.end_date);
@@ -279,11 +279,6 @@ export const EventTableView: React.FC<EventTableViewProps> = ({
                             </span>
                           );
                         })()}
-                        {/* ホバー時詳細日程ポップアップ */}
-                        <div className="absolute left-0 bottom-full mb-1.5 hidden group-hover/daterange:block z-50 bg-slate-950/95 text-white text-[11px] font-extrabold px-2.5 py-1.5 rounded-lg shadow-xl border border-teal-500/40 pointer-events-none whitespace-nowrap backdrop-blur-xs">
-                          <span className="text-teal-300 mr-1">開催日程:</span>
-                          {fullDateTooltip}
-                        </div>
                       </div>
 
                       {/* 申込期間表示（開催日同様に 〇/〇~〇/〇 形式でスッキリ表示） */}
