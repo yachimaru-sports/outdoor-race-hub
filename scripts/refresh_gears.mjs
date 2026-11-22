@@ -335,34 +335,44 @@ export async function searchRakutenApi(gear) {
 }
 
 /** 代替商品が元の商品カテゴリ・ブランド/キーワードと一致しているか検証（別商品への誤置換を防止） */
-const BRAND_ALIASES = {
-  altra: ['altra', 'アルトラ'],
-  hoka: ['hoka', 'ホカ'],
-  salomon: ['salomon', 'サロモン'],
-  petzl: ['petzl', 'ペツル'],
-  leki: ['leki', 'レキ'],
-  millet: ['millet', 'ミレー'],
-  asics: ['asics', 'アシックス'],
-  nike: ['nike', 'ナイキ'],
-  adidas: ['adidas', 'アディダス'],
-  'the north face': ['north face', 'ノースフェイス'],
-  'black diamond': ['black diamond', 'ブラックダイヤモンド'],
-  'cw-x': ['cw-x', 'cwx'],
-  c3fit: ['c3fit'],
-  montbell: ['montbell', 'モンベル'],
-  finetrack: ['finetrack', 'ファイントラック'],
+const BRAND_PATTERNS = {
+  altra: /altra|アルトラ/i,
+  hoka: /hoka|ホカ/i,
+  salomon: /salomon|サロモン/i,
+  petzl: /petzl|ペツル/i,
+  leki: /leki|レキ/i,
+  millet: /millet|ミレー/i,
+  asics: /asics|アシックス/i,
+  nike: /nike|ナイキ/i,
+  adidas: /adidas|アディダス/i,
+  'the north face': /north\s*face|ノースフェイス/i,
+  'black diamond': /black\s*diamond|ブラックダイヤモンド/i,
+  'cw-x': /cw-x|cwx|ワコール/i,
+  c3fit: /c3fit|シースリーフィット|goldwin/i,
+  montbell: /montbell|モンベル/i,
+  finetrack: /finetrack|ファイントラック/i,
+  'pearl izumi': /pearl\s*izumi|パールイズミ/i,
+  'ogk kabuto': /ogk|kabuto|カブト|オージーケー/i,
+  cateye: /cateye|cat\s*eye|キャットアイ/i,
+  nathan: /nathan|ネイサン/i,
+  ledlenser: /ledlenser|レッドレンザー/i,
+  patagonia: /patagonia|パタゴニア/i,
+  'mag-on': /mag-on|マグオン/i,
 };
+
+function normalizeBrandKey(brand) {
+  return (brand || '').normalize('NFKC').toLowerCase().trim();
+}
 
 function isReplacementRelevant(gear, candTitle) {
   if (!candTitle) return false;
   if (!isCategoryMatch(gear.gearType, candTitle)) return false;
   const t = candTitle.normalize('NFKC').toLowerCase();
-  const brand = (gear.brand || '').normalize('NFKC').toLowerCase().trim();
+  const brand = normalizeBrandKey(gear.brand);
   if (brand && brand.length >= 2) {
-    const aliases = BRAND_ALIASES[brand] || [brand];
-    if (aliases.some((a) => t.includes(a))) return true;
-    // ブランド指定があるのに全く違うブランドなら不採用
-    return false;
+    const pattern = BRAND_PATTERNS[brand];
+    if (pattern) return pattern.test(candTitle.normalize('NFKC'));
+    return t.includes(brand);
   }
   const kws = (gear.matchKeywords || []).map((k) => String(k).normalize('NFKC').toLowerCase()).filter((k) => k.length >= 2);
   if (kws.some((k) => t.includes(k))) return true;
@@ -632,32 +642,13 @@ const CATEGORY_RULES = {
   '防水スタッフバッグ': { must: /ドライバッグ|ドライサック|スタッフバッグ|防水バッグ/i, ban: /サコッシュ|ビーチ|海水浴|プール|スマホ|ショルダー|肩掛け/i },
 };
 
-const BRAND_ALIASES = {
-  'PEARL iZUMi': /pearl\s*izumi|パールイズミ/i,
-  'OGK KABUTO': /ogk|kabuto|カブト|オージーケー/i,
-  'Black Diamond': /black\s*diamond|ブラックダイヤモンド/i,
-  'CATEYE': /cateye|cat\s*eye|キャットアイ/i,
-  'SALOMON': /salomon|サロモン/i,
-  'HOKA': /hoka|ホカ/i,
-  'ASICS': /asics|アシックス/i,
-  'NATHAN': /nathan|ネイサン/i,
-  'PETZL': /petzl|ペツル/i,
-  'LEDLENSER': /ledlenser|レッドレンザー/i,
-  'C3fit': /c3fit|シースリーフィット|goldwin/i,
-  'CW-X': /cw-x|ワコール/i,
-  'THE NORTH FACE': /north\s*face|ノースフェイス/i,
-  'Patagonia': /patagonia|パタゴニア/i,
-  'LEKI': /leki|レキ/i,
-  'MILLET': /millet|ミレー/i,
-  'Mag-on': /mag-on|マグオン/i,
-};
-
 function isCategoryMatch(category, title, brand = '') {
   const rule = CATEGORY_RULES[category];
   if (!rule) return true;
   if (rule.ban && rule.ban.test(title)) return false;
   if (rule.must && !rule.must.test(title)) return false;
-  if (brand && BRAND_ALIASES[brand] && !BRAND_ALIASES[brand].test(title)) return false;
+  const brandKey = normalizeBrandKey(brand);
+  if (brandKey && BRAND_PATTERNS[brandKey] && !BRAND_PATTERNS[brandKey].test(title.normalize('NFKC'))) return false;
   return true;
 }
 

@@ -11,6 +11,7 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
+import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { isDuplicateRace } from './audit-duplicates.mjs';
 
@@ -44,6 +45,29 @@ async function runPreflightGate() {
   console.log('================================================================');
 
   let hasError = false;
+
+  // -------------------------------------------------------------
+  // 0. [スクリプト] 全自動化スクリプトの構文チェック（SyntaxError 事前防止）
+  // -------------------------------------------------------------
+  console.log('\n[検査 0/4] 自動化スクリプト（scripts/*.mjs）の構文チェック...');
+  const scriptFiles = fs.readdirSync(__dirname).filter((f) => f.endsWith('.mjs')).sort();
+  let syntaxErrors = 0;
+  for (const file of scriptFiles) {
+    const fullPath = path.join(__dirname, file);
+    try {
+      execFileSync(process.execPath, ['--check', fullPath], { stdio: 'pipe' });
+    } catch (err) {
+      const stderr = err.stderr ? err.stderr.toString('utf8').trim() : err.message;
+      console.error(`❌ [構文エラー] scripts/${file}:\n${stderr}`);
+      syntaxErrors++;
+    }
+  }
+  if (syntaxErrors > 0) {
+    console.error(`💥 スクリプト構文エラー: ${syntaxErrors} ファイルに構文エラーがあります！`);
+    hasError = true;
+  } else {
+    console.log(`✅ 合格: 自動化スクリプト全 ${scriptFiles.length} ファイルの構文は正常です。`);
+  }
 
   // -------------------------------------------------------------
   // 1. [大会] 重複ゼロ監査
