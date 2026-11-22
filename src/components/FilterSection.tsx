@@ -361,18 +361,18 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
   }
 
   return (
-    <div className="bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 rounded-2xl p-3 sm:p-5 shadow-sm space-y-4 w-full overflow-hidden">
+    <div className="bg-white/90 dark:bg-slate-900/90 backdrop-blur-[2px] border border-slate-300 dark:border-slate-800 rounded-2xl p-2.5 sm:p-5 shadow-sm space-y-2.5 sm:space-y-4 w-full overflow-hidden">
       {/* 0. 最上部ヘッダー：件数 ＆ 受付中トグル ＆ マイ参戦予定 ＆ 表示切替 */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-200 dark:border-slate-800 pb-3.5">
-        <div className="flex flex-wrap items-center gap-2.5 sm:gap-3">
-          <div className="flex items-baseline gap-1.5">
-            <span className="text-sm font-extrabold text-slate-800 dark:text-slate-200">
-              ＼ 条件にマッチする大会
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-3 border-b border-slate-200 dark:border-slate-800 pb-2.5 sm:pb-3.5">
+        <div className="flex flex-wrap items-center gap-1.5 sm:gap-3">
+          <div className="flex items-baseline gap-1">
+            <span className="text-xs sm:text-sm font-extrabold text-slate-800 dark:text-slate-200">
+              ＼ 条件一致
             </span>
-            <span className="text-3xl sm:text-4xl font-black font-mono text-teal-700 dark:text-teal-400 tracking-tight">
+            <span className="text-2xl sm:text-4xl font-black font-mono text-teal-700 dark:text-teal-400 tracking-tight">
               {totalFilteredCount}
             </span>
-            <span className="text-sm font-extrabold text-slate-800 dark:text-slate-200">
+            <span className="text-xs sm:text-sm font-extrabold text-slate-800 dark:text-slate-200">
               件 ／
             </span>
           </div>
@@ -381,36 +381,37 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
           <button
             type="button"
             onClick={toggleOnlyOpen}
-            className={`inline-flex items-center gap-1.5 px-2.5 sm:px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-black border-2 transition-all cursor-pointer select-none ${
+            className={`inline-flex items-center gap-1 sm:gap-1.5 px-2 sm:px-3.5 py-1 sm:py-1.5 rounded-lg sm:rounded-xl text-[11px] sm:text-sm font-black border-2 transition-all cursor-pointer select-none ${
               isOnlyOpen
                 ? 'bg-emerald-700 text-white border-emerald-700 shadow-xs'
                 : 'bg-emerald-50 dark:bg-emerald-950/40 text-emerald-950 dark:text-emerald-200 border-emerald-400 dark:border-emerald-700 hover:bg-emerald-100'
             }`}
           >
             {isOnlyOpen ? (
-              <CheckSquare className="w-4 h-4 fill-white text-emerald-700 shrink-0" />
+              <CheckSquare className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-white text-emerald-700 shrink-0" />
             ) : (
-              <Square className="w-4 h-4 text-emerald-700 dark:text-emerald-400 shrink-0" />
+              <Square className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-700 dark:text-emerald-400 shrink-0" />
             )}
             <span className="hidden sm:inline">エントリー受付中・申込可能のみ表示</span>
-            <span className="sm:hidden">受付中のみ</span>
+            <span className="sm:hidden">受付中</span>
           </button>
 
           {/* マイ参戦予定 */}
           <button
             type="button"
             onClick={() => onFilterChange({ ...filters, onlyFavorites: !filters.onlyFavorites })}
-            className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-black border-2 transition-all cursor-pointer select-none ${
+            className={`inline-flex items-center gap-1 sm:gap-1.5 px-2 sm:px-3.5 py-1 sm:py-1.5 rounded-lg sm:rounded-xl text-[11px] sm:text-sm font-black border-2 transition-all cursor-pointer select-none ${
               filters.onlyFavorites
                 ? 'bg-rose-600 text-white border-rose-600 shadow-xs'
                 : 'bg-rose-50 dark:bg-rose-950/40 text-rose-950 dark:text-rose-200 border-rose-300 dark:border-rose-700 hover:bg-rose-100'
             }`}
             title="保存した参戦予定大会のみを表示"
           >
-            <BookmarkCheck className="w-4 h-4" />
-            <span>マイ参戦予定</span>
+            <BookmarkCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+            <span className="hidden sm:inline">マイ参戦予定</span>
+            <span className="sm:hidden">予定</span>
             <span
-              className={`text-xs px-1.5 py-0.2 rounded-full font-mono font-black ${
+              className={`text-[10px] sm:text-xs px-1.5 py-0.2 rounded-full font-mono font-black ${
                 filters.onlyFavorites
                   ? 'bg-white text-rose-700'
                   : 'bg-rose-200 dark:bg-rose-900 text-rose-950 dark:text-rose-100'
@@ -430,17 +431,17 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
                 onlyFavorites: false,
               })
             }
-            className={`inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-black border-2 transition-all cursor-pointer select-none ${
+            className={`inline-flex items-center gap-1 sm:gap-1.5 px-2 sm:px-3.5 py-1 sm:py-1.5 rounded-lg sm:rounded-xl text-[11px] sm:text-sm font-black border-2 transition-all cursor-pointer select-none ${
               filters.onlyClosingSoon
                 ? 'bg-orange-600 text-white border-orange-600 shadow-xs'
                 : 'bg-orange-50 dark:bg-orange-950/40 text-orange-950 dark:text-orange-200 border-orange-300 dark:border-orange-700 hover:bg-orange-100'
             }`}
             title="エントリー締切が2週間以内（締切まじか）の大会を抽出"
           >
-            <Flame className={`w-4 h-4 ${filters.onlyClosingSoon ? 'text-white' : 'text-orange-600 dark:text-orange-400'}`} />
+            <Flame className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${filters.onlyClosingSoon ? 'text-white' : 'text-orange-600 dark:text-orange-400'}`} />
             <span>締切まじか</span>
             <span
-              className={`text-xs px-1.5 py-0.2 rounded-full font-mono font-black ${
+              className={`text-[10px] sm:text-xs px-1.5 py-0.2 rounded-full font-mono font-black ${
                 filters.onlyClosingSoon
                   ? 'bg-white text-orange-700'
                   : 'bg-orange-200 dark:bg-orange-900 text-orange-950 dark:text-orange-100'
@@ -533,8 +534,8 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
           </div>
         </div>
 
-        {/* スマホ専用：縦型表示（3ステート対応：①抽出 ➔ ②除外 ➔ ③元通り） */}
-        <div className="flex flex-col md:hidden gap-2 w-full">
+        {/* スマホ専用：2列×2段コンパクト表示（3ステート対応：①抽出 ➔ ②除外 ➔ ③元通り） */}
+        <div className="grid grid-cols-2 md:hidden gap-1.5 w-full">
           {genreDefinitions.map((genre) => {
             const state = getGenreState(genre.id);
             const isInclude = state === 'include';
@@ -545,66 +546,29 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
                 key={genre.id}
                 type="button"
                 onClick={() => handleToggleGenre(genre.id)}
-                className={`w-full min-h-[48px] px-3.5 py-2.5 rounded-xl border-2 flex items-center justify-between transition-all cursor-pointer select-none ${
+                className={`w-full min-h-[40px] px-2 py-1.5 rounded-xl border-2 flex items-center justify-between transition-all cursor-pointer select-none ${
                   isInclude
-                    ? `${genre.activeColor} shadow-md ring-2 ring-teal-400/50 font-black`
+                    ? `${genre.activeColor} shadow-sm ring-1 ring-teal-400/50 font-black`
                     : isExclude
-                    ? 'border-rose-500 bg-rose-50 dark:bg-rose-950/60 text-rose-900 dark:text-rose-200 shadow-md ring-2 ring-rose-400/50 font-black'
+                    ? 'border-rose-500 bg-rose-50 dark:bg-rose-950/60 text-rose-900 dark:text-rose-200 shadow-sm font-black'
                     : 'border-slate-300 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 hover:bg-slate-50 font-bold'
                 }`}
               >
-                <div className="flex items-center gap-2.5 min-w-0">
-                  {/* ステートバッジ */}
-                  <div className="shrink-0">
-                    {isInclude ? (
-                      <div className="flex items-center gap-1 bg-teal-600 text-white px-2 py-0.5 rounded text-[11px] font-black shadow-2xs">
-                        <Check className="w-3.5 h-3.5 stroke-[3]" />
-                        <span>① 抽出中</span>
-                      </div>
-                    ) : isExclude ? (
-                      <div className="flex items-center gap-1 bg-rose-600 text-white px-2 py-0.5 rounded text-[11px] font-black shadow-2xs">
-                        <Ban className="w-3.5 h-3.5 stroke-[3]" />
-                        <span>② 除外中</span>
-                      </div>
-                    ) : (
-                      <div className="flex items-center gap-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 px-2 py-0.5 rounded text-[11px] font-black border border-slate-300 dark:border-slate-700">
-                        <span>通常</span>
-                      </div>
-                    )}
-                  </div>
-
+                <div className="flex items-center gap-1.5 min-w-0">
                   <div
-                    className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 ${
+                    className={`w-5 h-5 rounded flex items-center justify-center shrink-0 ${
                       isInclude ? genre.activeIconBg : isExclude ? 'bg-rose-600 text-white' : genre.iconBg
                     }`}
                   >
-                    <Icon className="w-4 h-4 stroke-[2.2]" />
+                    <Icon className="w-3 h-3 stroke-[2.2]" />
                   </div>
-
-                  <div className="text-left min-w-0">
-                    <div className={`text-xs sm:text-sm font-black truncate ${isExclude ? 'line-through text-rose-800 dark:text-rose-300 opacity-80' : 'text-slate-950 dark:text-white'}`}>
-                      {genre.label}
-                    </div>
-                  </div>
-                </div>
-
-                {/* 件数バッジ ＆ 次のアクション案内 */}
-                <div className="shrink-0 ml-2 flex items-center gap-1.5">
-                  <span
-                    className={`text-xs font-mono font-black px-2 py-1 rounded-full flex items-center gap-1 ${
-                      isInclude
-                        ? 'bg-slate-950 text-white dark:bg-white dark:text-slate-950'
-                        : isExclude
-                        ? 'bg-rose-600 text-white'
-                        : 'bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300'
-                    }`}
-                  >
-                    <span>{genre.count}件</span>
-                  </span>
-                  <span className="text-[10px] font-bold text-slate-500 dark:text-slate-400">
-                    {isInclude ? '➔除外' : isExclude ? '➔元通り' : '➔抽出'}
+                  <span className={`text-[11px] font-black truncate ${isExclude ? 'line-through text-rose-800 dark:text-rose-300 opacity-80' : ''}`}>
+                    {genre.label}
                   </span>
                 </div>
+                <span className="text-[10px] font-mono font-black shrink-0 ml-1 opacity-80">
+                  {isInclude ? '✓' : isExclude ? '✕' : `${genre.count}`}
+                </span>
               </button>
             );
           })}

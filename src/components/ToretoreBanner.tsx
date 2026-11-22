@@ -40,12 +40,12 @@ export const ToretoreBanner: React.FC<ToretoreBannerProps> = ({
     filters?.featureTag === 'arws' && filters?.featureMode === 'exclude';
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-2 sm:space-y-4">
       {/* セクション見出し */}
-      <div className="flex flex-wrap items-center justify-between gap-2">
-        <div className="flex items-center gap-2.5">
-          <span className="w-2 h-6 rounded-full bg-teal-700 dark:bg-teal-400" />
-          <h2 className="text-lg sm:text-xl font-black tracking-tight text-slate-950 dark:text-white">
+      <div className="flex flex-wrap items-center justify-between gap-1.5 sm:gap-2">
+        <div className="flex items-center gap-2">
+          <span className="w-1.5 sm:w-2 h-5 sm:h-6 rounded-full bg-teal-700 dark:bg-teal-400" />
+          <h2 className="text-sm sm:text-xl font-black tracking-tight text-slate-950 dark:text-white">
             注目の競技カテゴリー・主要大会クイック抽出
           </h2>
           <span className="text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-300 hidden sm:inline">
@@ -53,9 +53,9 @@ export const ToretoreBanner: React.FC<ToretoreBannerProps> = ({
           </span>
         </div>
 
-        <div className="flex flex-wrap items-center gap-1.5 py-0.5">
-          <span className="text-xs font-black text-slate-500 dark:text-slate-400 shrink-0 mr-0.5">
-            情報元・ポータル:
+        <div className="flex flex-nowrap sm:flex-wrap items-center gap-1.5 py-0.5 overflow-x-auto w-full sm:w-auto no-scrollbar">
+          <span className="text-[11px] sm:text-xs font-black text-slate-500 dark:text-slate-400 shrink-0 mr-0.5">
+            情報元:
           </span>
 
           <a
@@ -180,151 +180,106 @@ export const ToretoreBanner: React.FC<ToretoreBannerProps> = ({
         </div>
       </div>
 
-      {/* スマホ専用：4つのボタン（縦並び・3ステート対応） */}
-      <div className="flex flex-col gap-2.5 lg:hidden w-full">
+      {/* スマホ専用：5つのコンパクトボタン（2列グリッドで縦幅を大幅圧縮・3ステート対応） */}
+      <div className="grid grid-cols-2 gap-1.5 lg:hidden w-full">
         {/* 黄色: とれとれバイク・読図・AR */}
         <button
           type="button"
           onClick={onFilterAdventure}
-          className={`w-full min-h-[48px] px-3.5 py-2.5 rounded-xl border-2 flex items-center justify-between text-left transition-all cursor-pointer select-none ${
+          className={`min-h-[38px] px-2.5 py-1.5 rounded-xl border-2 flex items-center justify-between text-left transition-all cursor-pointer select-none ${
             isAdventureInclude
-              ? 'bg-amber-400 text-slate-950 border-amber-500 shadow-md ring-2 ring-amber-400/50 font-black'
+              ? 'bg-amber-400 text-slate-950 border-amber-500 shadow-sm font-black'
               : isAdventureExclude
-              ? 'bg-rose-100 dark:bg-rose-950/60 text-rose-900 dark:text-rose-200 border-rose-500 shadow-md ring-2 ring-rose-400/50 font-black'
-              : 'bg-amber-50 dark:bg-amber-950/30 text-amber-900 dark:text-amber-200 border-amber-300 dark:border-amber-800 hover:bg-amber-100 font-bold'
+              ? 'bg-rose-100 dark:bg-rose-950/60 text-rose-900 dark:text-rose-200 border-rose-500 font-black'
+              : 'bg-amber-50/95 dark:bg-amber-950/40 text-amber-900 dark:text-amber-200 border-amber-300 dark:border-amber-800 hover:bg-amber-100 font-bold'
           }`}
         >
-          <div className="flex items-center gap-2">
-            <span className={`w-2.5 h-2.5 rounded-full shrink-0 ${isAdventureExclude ? 'bg-rose-500' : 'bg-amber-500'}`} />
-            <div className="leading-snug">
-              <span className={`font-black text-xs sm:text-sm ${isAdventureExclude ? 'line-through opacity-85' : ''}`}>
-                とれとれバイク・読図・AR
-              </span>
-              <span className="text-[11px] opacity-80 ml-2">（2.5万図必携・アドベンチャー）</span>
-            </div>
-          </div>
-          {isAdventureInclude ? (
-            <span className="text-[10px] font-black bg-slate-950 text-amber-300 px-2 py-0.5 rounded-full shrink-0 flex items-center gap-1">
-              <Check className="w-3 h-3 stroke-[3]" />
-              <span>抽出中（次:除外）</span>
-            </span>
-          ) : isAdventureExclude ? (
-            <span className="text-[10px] font-black bg-rose-600 text-white px-2 py-0.5 rounded-full shrink-0 flex items-center gap-1">
-              <Ban className="w-3 h-3 stroke-[3]" />
-              <span>除外中（次:解除）</span>
-            </span>
-          ) : (
-            <span className="text-xs font-mono font-black opacity-70 shrink-0">抽出 ➔</span>
-          )}
+          <span className={`font-black text-[11px] truncate ${isAdventureExclude ? 'line-through opacity-85' : ''}`}>
+            🧭 とれとれ・AR
+          </span>
+          <span className="text-[10px] font-black shrink-0 ml-1">
+            {isAdventureInclude ? '✓' : isAdventureExclude ? '✕' : '→'}
+          </span>
         </button>
 
         {/* 赤色: 国内100マイル */}
         <button
           type="button"
           onClick={() => onFilterFeature && onFilterFeature('all', '100mile')}
-          className={`w-full min-h-[48px] px-3.5 py-2.5 rounded-xl border-2 flex items-center justify-between text-left transition-all cursor-pointer select-none ${
+          className={`min-h-[38px] px-2.5 py-1.5 rounded-xl border-2 flex items-center justify-between text-left transition-all cursor-pointer select-none ${
             is100MileInclude
-              ? 'bg-rose-600 text-white border-rose-700 shadow-md ring-2 ring-rose-400/50 font-black'
+              ? 'bg-rose-600 text-white border-rose-700 shadow-sm font-black'
               : is100MileExclude
-              ? 'bg-rose-100 dark:bg-rose-950/60 text-rose-900 dark:text-rose-200 border-rose-500 shadow-md ring-2 ring-rose-400/50 font-black'
-              : 'bg-rose-50 dark:bg-rose-950/30 text-rose-900 dark:text-rose-200 border-rose-300 dark:border-rose-800 hover:bg-rose-100 font-bold'
+              ? 'bg-rose-100 dark:bg-rose-950/60 text-rose-900 dark:text-rose-200 border-rose-500 font-black'
+              : 'bg-rose-50/95 dark:bg-rose-950/40 text-rose-900 dark:text-rose-200 border-rose-300 dark:border-rose-800 hover:bg-rose-100 font-bold'
           }`}
         >
-          <div className="flex items-center gap-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-rose-500 shrink-0" />
-            <div className="leading-snug">
-              <span className={`font-black text-xs sm:text-sm ${is100MileExclude ? 'line-through opacity-85' : ''}`}>
-                👑 国内100マイル一覧
-              </span>
-              <span className="text-[11px] opacity-80 ml-2">（Mt.FUJI・信越・KOUMIほか）</span>
-            </div>
-          </div>
-          {is100MileInclude ? (
-            <span className="text-[10px] font-black bg-white text-rose-800 px-2 py-0.5 rounded-full shrink-0 flex items-center gap-1">
-              <Check className="w-3 h-3 stroke-[3]" />
-              <span>抽出中（次:除外）</span>
-            </span>
-          ) : is100MileExclude ? (
-            <span className="text-[10px] font-black bg-rose-600 text-white px-2 py-0.5 rounded-full shrink-0 flex items-center gap-1">
-              <Ban className="w-3 h-3 stroke-[3]" />
-              <span>除外中（次:解除）</span>
-            </span>
-          ) : (
-            <span className="text-xs font-mono font-black opacity-70 shrink-0">抽出 ➔</span>
-          )}
+          <span className={`font-black text-[11px] truncate ${is100MileExclude ? 'line-through opacity-85' : ''}`}>
+            👑 国内100マイル
+          </span>
+          <span className="text-[10px] font-black shrink-0 ml-1">
+            {is100MileInclude ? '✓' : is100MileExclude ? '✕' : '→'}
+          </span>
         </button>
 
-        {/* 緑色: 中国・四国 地域別 */}
-        <div className="w-full grid grid-cols-2 gap-2">
-          <button
-            type="button"
-            onClick={() => onFilterFeature && onFilterFeature('all', 'all', '中国')}
-            className={`min-h-[46px] px-2.5 py-2 rounded-xl border-2 flex items-center justify-between text-left transition-all cursor-pointer select-none ${
-              isChugokuInclude
-                ? 'bg-emerald-600 text-white border-emerald-700 shadow-md font-black'
-                : isChugokuExclude
-                ? 'bg-rose-100 dark:bg-rose-950/60 text-rose-900 dark:text-rose-200 border-rose-500 font-black'
-                : 'bg-emerald-50 dark:bg-emerald-950/30 text-emerald-900 dark:text-emerald-200 border-emerald-300 dark:border-emerald-800 hover:bg-emerald-100 font-bold'
-            }`}
-          >
-            <span className={`text-xs font-black ${isChugokuExclude ? 'line-through' : ''}`}>⛰️ 中国5県</span>
-            <span className="text-[10px] font-bold">
-              {isChugokuInclude ? '✅ 抽出中' : isChugokuExclude ? '🚫 除外中' : '➔'}
-            </span>
-          </button>
+        {/* 緑色: 中国5県 */}
+        <button
+          type="button"
+          onClick={() => onFilterFeature && onFilterFeature('all', 'all', '中国')}
+          className={`min-h-[38px] px-2.5 py-1.5 rounded-xl border-2 flex items-center justify-between text-left transition-all cursor-pointer select-none ${
+            isChugokuInclude
+              ? 'bg-emerald-600 text-white border-emerald-700 shadow-sm font-black'
+              : isChugokuExclude
+              ? 'bg-rose-100 dark:bg-rose-950/60 text-rose-900 dark:text-rose-200 border-rose-500 font-black'
+              : 'bg-emerald-50/95 dark:bg-emerald-950/40 text-emerald-900 dark:text-emerald-200 border-emerald-300 dark:border-emerald-800 hover:bg-emerald-100 font-bold'
+          }`}
+        >
+          <span className={`text-[11px] font-black truncate ${isChugokuExclude ? 'line-through' : ''}`}>
+            ⛰️ 中国5県
+          </span>
+          <span className="text-[10px] font-black shrink-0 ml-1">
+            {isChugokuInclude ? '✓' : isChugokuExclude ? '✕' : '→'}
+          </span>
+        </button>
 
-          <button
-            type="button"
-            onClick={() => onFilterFeature && onFilterFeature('all', 'all', '四国')}
-            className={`min-h-[46px] px-2.5 py-2 rounded-xl border-2 flex items-center justify-between text-left transition-all cursor-pointer select-none ${
-              isShikokuInclude
-                ? 'bg-sky-600 text-white border-sky-700 shadow-md font-black'
-                : isShikokuExclude
-                ? 'bg-rose-100 dark:bg-rose-950/60 text-rose-900 dark:text-rose-200 border-rose-500 font-black'
-                : 'bg-sky-50 dark:bg-sky-950/30 text-sky-900 dark:text-sky-200 border-sky-300 dark:border-sky-800 hover:bg-sky-100 font-bold'
-            }`}
-          >
-            <span className={`text-xs font-black ${isShikokuExclude ? 'line-through' : ''}`}>⛰️ 四国4県</span>
-            <span className="text-[10px] font-bold">
-              {isShikokuInclude ? '✅ 抽出中' : isShikokuExclude ? '🚫 除外中' : '➔'}
-            </span>
-          </button>
-        </div>
+        {/* 青色: 四国4県 */}
+        <button
+          type="button"
+          onClick={() => onFilterFeature && onFilterFeature('all', 'all', '四国')}
+          className={`min-h-[38px] px-2.5 py-1.5 rounded-xl border-2 flex items-center justify-between text-left transition-all cursor-pointer select-none ${
+            isShikokuInclude
+              ? 'bg-sky-600 text-white border-sky-700 shadow-sm font-black'
+              : isShikokuExclude
+              ? 'bg-rose-100 dark:bg-rose-950/60 text-rose-900 dark:text-rose-200 border-rose-500 font-black'
+              : 'bg-sky-50/95 dark:bg-sky-950/40 text-sky-900 dark:text-sky-200 border-sky-300 dark:border-sky-800 hover:bg-sky-100 font-bold'
+          }`}
+        >
+          <span className={`text-[11px] font-black truncate ${isShikokuExclude ? 'line-through' : ''}`}>
+            ⛰️ 四国4県
+          </span>
+          <span className="text-[10px] font-black shrink-0 ml-1">
+            {isShikokuInclude ? '✓' : isShikokuExclude ? '✕' : '→'}
+          </span>
+        </button>
 
-        {/* 藍色: ARWS & ARWC 世界のアドベンチャーレース（4日以上） */}
+        {/* 藍色: ARWS & ARWC 世界最高峰 */}
         <button
           type="button"
           onClick={() => onFilterFeature && onFilterFeature('adventure', 'arws')}
-          className={`w-full min-h-[48px] px-3.5 py-2.5 rounded-xl border-2 flex items-center justify-between text-left transition-all cursor-pointer select-none ${
+          className={`col-span-2 min-h-[38px] px-3 py-1.5 rounded-xl border-2 flex items-center justify-between text-left transition-all cursor-pointer select-none ${
             isArwsInclude
-              ? 'bg-indigo-600 text-white border-indigo-700 shadow-md ring-2 ring-indigo-400/50 font-black'
+              ? 'bg-indigo-600 text-white border-indigo-700 shadow-sm font-black'
               : isArwsExclude
-              ? 'bg-rose-100 dark:bg-rose-950/60 text-rose-900 dark:text-rose-200 border-rose-500 shadow-md ring-2 ring-rose-400/50 font-black'
-              : 'bg-indigo-50 dark:bg-indigo-950/30 text-indigo-900 dark:text-indigo-200 border-indigo-300 dark:border-indigo-800 hover:bg-indigo-100 font-bold'
+              ? 'bg-rose-100 dark:bg-rose-950/60 text-rose-900 dark:text-rose-200 border-rose-500 font-black'
+              : 'bg-indigo-50/95 dark:bg-indigo-950/40 text-indigo-900 dark:text-indigo-200 border-indigo-300 dark:border-indigo-800 hover:bg-indigo-100 font-bold'
           }`}
         >
-          <div className="flex items-center gap-2">
-            <span className={`w-2.5 h-2.5 rounded-full shrink-0 ${isArwsExclude ? 'bg-rose-500' : 'bg-indigo-500'}`} />
-            <div className="leading-snug">
-              <span className={`font-black text-xs sm:text-sm ${isArwsExclude ? 'line-through opacity-85' : ''}`}>
-                🌍 ARWS・ARWC 世界最高峰
-              </span>
-              <span className="text-[11px] opacity-80 ml-2">（4日以上・遠征型）</span>
-            </div>
-          </div>
-          {isArwsInclude ? (
-            <span className="text-[10px] font-black bg-white text-indigo-800 px-2 py-0.5 rounded-full shrink-0 flex items-center gap-1">
-              <Check className="w-3 h-3 stroke-[3]" />
-              <span>抽出中（次:除外）</span>
-            </span>
-          ) : isArwsExclude ? (
-            <span className="text-[10px] font-black bg-rose-600 text-white px-2 py-0.5 rounded-full shrink-0 flex items-center gap-1">
-              <Ban className="w-3 h-3 stroke-[3]" />
-              <span>除外中（次:解除）</span>
-            </span>
-          ) : (
-            <span className="text-xs font-mono font-black opacity-70 shrink-0">抽出 ➔</span>
-          )}
+          <span className={`font-black text-[11px] truncate ${isArwsExclude ? 'line-through opacity-85' : ''}`}>
+            🌍 ARWS・ARWC 世界最高峰（4日以上・遠征型）
+          </span>
+          <span className="text-[10px] font-black shrink-0 ml-2">
+            {isArwsInclude ? '✓ 抽出中' : isArwsExclude ? '✕ 除外中' : '抽出 →'}
+          </span>
         </button>
       </div>
 

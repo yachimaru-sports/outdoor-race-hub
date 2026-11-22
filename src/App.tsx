@@ -811,9 +811,9 @@ export const App: React.FC = () => {
           src={dailyBg.url}
           alt=""
           loading="eager"
-          className="w-full h-full object-cover object-center opacity-[0.42] dark:opacity-[0.38] saturate-105"
+          className="w-full h-full object-cover object-center opacity-[0.58] dark:opacity-[0.46] saturate-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-100/20 to-slate-100 dark:from-transparent dark:via-[#0b0f19]/30 dark:to-[#0b0f19]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-slate-100 dark:to-[#0b0f19]" />
       </div>
       {/* 1. 常時固定統合ヘッダー：添付画像の2段ヘッダー（楽天特価カルーセル ＆ アップデート情報バー）を常時最上部に完全固定 */}
       <header className="sticky top-0 z-50 shadow-xl w-full bg-slate-950 border-b border-slate-800 select-none">
@@ -920,18 +920,18 @@ export const App: React.FC = () => {
             </div>
           );
         })()}
-        {/* ★ おすすめ商品専用カタログへのクイックジャンプバナー */}
+        {/* ★ おすすめ商品専用カタログへのクイックジャンプバナー（スマホは1〜2行で超コンパクト） */}
         <div
           onClick={() => navigateTo('gears')}
-          className="group relative overflow-hidden rounded-2xl bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 dark:from-amber-600 dark:via-orange-600 dark:to-amber-700 p-3.5 sm:p-4.5 text-slate-950 shadow-md hover:shadow-xl hover:scale-[1.008] transition-all cursor-pointer border border-amber-300 dark:border-amber-500 select-none"
+          className="group relative overflow-hidden rounded-xl sm:rounded-2xl bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 dark:from-amber-600 dark:via-orange-600 dark:to-amber-700 px-3 py-2 sm:p-4.5 text-slate-950 shadow-md hover:shadow-xl hover:scale-[1.008] transition-all cursor-pointer border border-amber-300 dark:border-amber-500 select-none"
         >
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-slate-950 text-amber-400 flex items-center justify-center shadow-md shrink-0 group-hover:scale-110 transition-transform">
-                <ShoppingBag className="w-5 h-5 sm:w-6 sm:h-6" />
+          <div className="flex flex-row items-center justify-between gap-2 sm:gap-3">
+            <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+              <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-slate-950 text-amber-400 flex items-center justify-center shadow-md shrink-0 group-hover:scale-110 transition-transform">
+                <ShoppingBag className="w-4 h-4 sm:w-6 sm:h-6" />
               </div>
-              <div>
-                <div className="flex items-center gap-1.5 flex-wrap">
+              <div className="min-w-0">
+                <div className="hidden sm:flex items-center gap-1.5 flex-wrap">
                   <span className="px-2 py-0.5 rounded bg-slate-950 text-white text-[10px] font-black tracking-wider uppercase">
                     専用ページOPEN
                   </span>
@@ -939,8 +939,9 @@ export const App: React.FC = () => {
                     最大25%OFF セール連動
                   </span>
                 </div>
-                <h2 className="text-sm sm:text-base font-black tracking-tight text-slate-950 mt-0.5">
-                  大会必携品・おすすめギア攻略カタログ専用ページはこちら
+                <h2 className="text-xs sm:text-base font-black tracking-tight text-slate-950 sm:mt-0.5 truncate sm:whitespace-normal">
+                  <span className="sm:hidden">必携品・おすすめギア特集（最大25%OFF）</span>
+                  <span className="hidden sm:inline">大会必携品・おすすめギア攻略カタログ専用ページはこちら</span>
                 </h2>
                 <p className="text-[11px] text-slate-900 font-bold hidden sm:block">
                   トレイルラン・サイクル・アドベンチャー・ウルトラマラソンの必須装備28選を競技区分・種別ごとに徹底比較！
@@ -948,9 +949,10 @@ export const App: React.FC = () => {
               </div>
             </div>
 
-            <div className="flex items-center gap-1.5 self-end sm:self-auto px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl bg-slate-950 text-white font-black text-xs sm:text-sm shadow-md group-hover:bg-slate-900 transition-colors whitespace-nowrap">
-              <span>専用カタログを開く</span>
-              <ChevronRight className="w-4 h-4 text-amber-400 group-hover:translate-x-1 transition-transform" />
+            <div className="flex items-center gap-1 px-2.5 py-1 sm:px-4 sm:py-2 rounded-lg sm:rounded-xl bg-slate-950 text-white font-black text-[11px] sm:text-sm shadow-md group-hover:bg-slate-900 transition-colors whitespace-nowrap shrink-0">
+              <span className="sm:hidden">開く</span>
+              <span className="hidden sm:inline">専用カタログを開く</span>
+              <ChevronRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-400 group-hover:translate-x-1 transition-transform" />
             </div>
           </div>
         </div>
