@@ -85,7 +85,7 @@
     "imageUrl": "https://shop.r10s.jp/beacle/cabinet/image0056/523-1162710-cgrs-000.jpg",
     "badge": "30%OFF 特価",
     "isBestDeal": false,
-    "priceVerifiedAt": "2026-11-21T21:24:47.118Z",
+    "priceVerifiedAt": "2026-11-22T22:23:09.000Z",
     "lowest30d": 19250
   },
   {
@@ -1413,7 +1413,7 @@
     "pointRate": 10,
     "dealUrl": "https://item.rakuten.co.jp/phalconcycle/ogkk-006580",
     "imageUrl": "https://shop.r10s.jp/phalconcycle/cabinet/item_03/4966094607364-1.jpg",
-    "badge": "MTB・オフロード対応",
+    "badge": "定番おすすめ",
     "priceVerifiedAt": "2026-11-21T23:31:57.637Z",
     "isBestDeal": false,
     "lowest30d": 9448
@@ -1433,7 +1433,7 @@
     ],
     "title": "ブラックダイヤモンド ハーフドーム Black Diamond Half Dome 登山・クライミング用ヘルメット",
     "brand": "Black Diamond",
-    "standardTitle": "【最新セール発掘】定価より30%OFF（¥2,772引き）。登山・クライミング・アドベンチャーレースの定番保護ヘルメット。",
+    "standardTitle": "【カテゴリ最安30%OFF】【最新セール発掘】定価より30%OFF（¥2,772引き）。登山・クライミング・アドベンチャーレースの定番保護ヘルメット。",
     "standardUrl": "https://item.rakuten.co.jp/canpanera/b17690",
     "dealKeyword": "ブラックダイヤモンド ヘルメット 登山 セール",
     "price": 6468,
@@ -1443,7 +1443,7 @@
     "dealUrl": "https://item.rakuten.co.jp/canpanera/b17690",
     "imageUrl": "https://shop.r10s.jp/canpanera/cabinet/item245/item_b17690_0.jpg",
     "badge": "🔥 30%OFF 最安特価",
-    "isBestDeal": false,
+    "isBestDeal": true,
     "priceVerifiedAt": "2026-11-21T23:31:57.637Z",
     "lowest30d": 6468
   },
@@ -1500,8 +1500,8 @@
     "pointRate": 10,
     "dealUrl": "https://item.rakuten.co.jp/bc-moriwaki/2023fw-9943dr",
     "imageUrl": "https://shop.r10s.jp/bc-moriwaki/cabinet/04147615/10163270/10163271/9943dr1.jpg",
-    "badge": "🔥 25%OFF 最安特価",
-    "isBestDeal": true,
+    "badge": "25%OFF 特価",
+    "isBestDeal": false,
     "priceVerifiedAt": "2026-11-21T23:31:57.637Z",
     "lowest30d": 10590
   },
@@ -1649,7 +1649,7 @@
     "imageUrl": "https://shop.r10s.jp/heimat-berg/cabinet/innerfact2/inf239002_1.jpg",
     "badge": "🔥 30%OFF 最安特価",
     "isBestDeal": true,
-    "priceVerifiedAt": "2026-11-21T21:24:55.625Z"
+    "priceVerifiedAt": "2026-11-22T22:23:16.538Z"
   },
   {
     "id": "gear-innerfact-5fingers-socks",
@@ -1685,7 +1685,7 @@
     "imageUrl": "https://shop.r10s.jp/sportsfield/cabinet/takenaga/5f-s-1.jpg",
     "badge": "23%OFF 特価",
     "isBestDeal": false,
-    "priceVerifiedAt": "2026-11-21T21:24:55.647Z"
+    "priceVerifiedAt": "2026-11-22T22:23:16.812Z"
   },
   {
     "id": "gear-innerfact-tabi-socks",
@@ -1720,7 +1720,7 @@
     "imageUrl": "https://shop.r10s.jp/racketfield/cabinet/takenaga/t-m-2.jpg",
     "badge": "23%OFF 特価",
     "isBestDeal": false,
-    "priceVerifiedAt": "2026-11-21T21:24:55.655Z"
+    "priceVerifiedAt": "2026-11-22T22:23:16.692Z"
   },
   {
     "id": "gear-runplus-tetonbros-windriver",
@@ -1753,7 +1753,7 @@
     "imageUrl": "https://baseec-img-mng.akamaized.net/images/item/origin/d5b062779eb5a1adcdfccd0d9eb70338.jpg?imformat=generic&q=90&im=Resize,width=1200,type=normal",
     "badge": "定番おすすめ",
     "isBestDeal": false,
-    "priceVerifiedAt": "2026-11-21T21:24:55.692Z"
+    "priceVerifiedAt": "2026-11-22T22:23:18.115Z"
   },
   {
     "id": "gear-runplus-omm-sonic-vest",
@@ -1787,7 +1787,7 @@
     "imageUrl": "https://baseec-img-mng.akamaized.net/images/item/origin/be69029107cfb41e7ea18d0bdbe827e1.jpg?imformat=generic&q=90&im=Resize,width=1200,type=normal",
     "badge": "定番おすすめ",
     "isBestDeal": false,
-    "priceVerifiedAt": "2026-11-21T21:24:56.884Z"
+    "priceVerifiedAt": "2026-11-22T22:23:17.064Z"
   },
   {
     "id": "gear-deal-mwfn9nzk-gvxg",

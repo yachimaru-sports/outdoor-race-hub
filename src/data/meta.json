@@ -1,30 +1,30 @@
 {
-  "last_updated_at": "2026-11-21T21:25:41.594Z",
-  "events_count": 220,
+  "last_updated_at": "2026-11-22T22:24:05.276Z",
+  "events_count": 210,
   "deals_count": 35,
-  "gears_count": 65,
+  "gears_count": 66,
   "sync_source": "Google Sheets & Rakuten API Automated Sync",
   "gear_sync_source": "refresh_gears.mjs (自己修復・商品ページ実測・Gemini探索・画像HTTP200検証済)",
   "gear_removed": [],
   "run_summary": {
-    "updated_date": "2026-11-22",
-    "updated_time": "06:24",
+    "updated_date": "2026-11-23",
+    "updated_time": "07:23",
     "deals_added": 0,
-    "price_drops": 1,
+    "price_drops": 0,
     "events_added": 0,
-    "events_updated": 4,
+    "events_updated": 6,
     "events_date_fixed": 0,
-    "events_archived": 3,
+    "events_archived": 10,
     "links_fixed": 0,
     "links_removed": 0
   },
   "daily_hero": {
-    "date": "2026-11-22",
-    "event_id": "spoen-cycle-106144",
-    "event_title": "白神山地一周シライチ一周キャンペーン2026",
-    "event_date": "2026-11-20",
-    "place_label": "青森県・白神山地",
+    "date": "2026-11-23",
+    "event_id": "spoen-cycle-107315",
+    "event_title": "2027BRM（AJ神奈川）",
+    "event_date": "2026-11-21",
+    "place_label": "神奈川県・AJ神奈川",
     "image": "hero-bg/daily-featured.jpg",
-    "updated_at": "2026-11-21T23:57:52.557Z"
+    "updated_at": "2026-11-22T22:24:05.962Z"
   }
 }

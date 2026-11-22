@@ -5708,5 +5708,576 @@
     "added_at": "2026-11-20",
     "date_verified_at": "2026-11-20",
     "archived_at": "2026-11-22"
+  },
+  {
+    "id": "trjp-kusenbu-quest-50-2026",
+    "category": "trail",
+    "subCategory": "ロングトレイル（42km以上）",
+    "elements": [
+      "トレック"
+    ],
+    "title": "KUSENBU QUEST 50 2026（福岡県）",
+    "date": "2026-11-22",
+    "month": 11,
+    "region": "九州",
+    "prefecture": "福岡県",
+    "distance_km": 50,
+    "elevation_m": 2800,
+    "entry_fee": "公式サイト参照",
+    "entry_status": "closed",
+    "entry_start_date": "2026-08-30",
+    "entry_deadline": "2026-10-31",
+    "links": {
+      "official": "https://7trails.fun/kusenbu-quest-50/",
+      "entry": "https://moshicom.com/151284",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-22"
+    },
+    "mandatory_gear": [
+      {
+        "name": "トレイルランニングシューズ・ザック",
+        "category": "ギア"
+      },
+      {
+        "name": "レインジャケット（防風・防水シェル）",
+        "category": "ウェア"
+      },
+      {
+        "name": "水分・行動食・マイカップ",
+        "category": "補給"
+      },
+      {
+        "name": "ファーストエイドキット・携帯電話・保険証",
+        "category": "エイド"
+      }
+    ],
+    "venue": {
+      "name": "五ケ山水源公園キャンプ場下広場",
+      "mapQuery": "福岡県 五ケ山水源公園キャンプ場下広場"
+    },
+    "source": {
+      "portalName": "トレイルランナー.JP",
+      "portalUrl": "https://trailrunner.jp/race-detail-kusenbu-quest-50.html"
+    },
+    "added_at": "2026-11-16",
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-22",
+    "archived_at": "2026-11-23"
+  },
+  {
+    "id": "trjp-the-first-step-jyoyama-trail-2026",
+    "category": "trail",
+    "subCategory": "トレイルランニング",
+    "elements": [
+      "トレック"
+    ],
+    "title": "THE FIRST STEP JYOYAMA TRAIL 2026（福井県）",
+    "date": "2026-11-22",
+    "month": 11,
+    "region": "甲信越・北陸",
+    "prefecture": "福井県",
+    "distance_km": 12,
+    "elevation_m": 500,
+    "entry_fee": "公式サイト参照",
+    "entry_status": "closed",
+    "entry_start_date": "2026-09-15",
+    "entry_deadline": "2026-11-14",
+    "links": {
+      "official": "https://www.satoyamaworks.com/",
+      "entry": "https://moshicom.com/153720",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-22"
+    },
+    "mandatory_gear": [
+      {
+        "name": "トレイルランニングシューズ・ザック",
+        "category": "ギア"
+      },
+      {
+        "name": "レインジャケット（防風・防水シェル）",
+        "category": "ウェア"
+      },
+      {
+        "name": "水分・行動食・マイカップ",
+        "category": "補給"
+      },
+      {
+        "name": "ファーストエイドキット・携帯電話・保険証",
+        "category": "エイド"
+      }
+    ],
+    "venue": {
+      "name": "南居地区コミュニティセンターSAZAN",
+      "mapQuery": "福井県 南居地区コミュニティセンターSAZAN"
+    },
+    "source": {
+      "portalName": "トレイルランナー.JP",
+      "portalUrl": "https://trailrunner.jp/race-detail-the-first-step-jyoyama-trail.html"
+    },
+    "added_at": "2026-11-16",
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-22",
+    "archived_at": "2026-11-23"
+  },
+  {
+    "id": "trjp-kinko-denshiro-trail-2026",
+    "category": "trail",
+    "subCategory": "トレイルランニング",
+    "elements": [
+      "トレック"
+    ],
+    "title": "錦江町でんしろうトレイル 2026（鹿児島県）",
+    "date": "2026-11-22",
+    "month": 11,
+    "region": "九州",
+    "prefecture": "鹿児島県",
+    "distance_km": 39,
+    "elevation_m": 2700,
+    "entry_fee": "公式サイト参照",
+    "entry_status": "closed",
+    "entry_start_date": "2026-06-22",
+    "entry_deadline": "2026-10-24",
+    "links": {
+      "official": "https://universal-field.com/event/kinko-trail/",
+      "entry": null,
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-22"
+    },
+    "mandatory_gear": [
+      {
+        "name": "トレイルランニングシューズ・ザック",
+        "category": "ギア"
+      },
+      {
+        "name": "レインジャケット（防風・防水シェル）",
+        "category": "ウェア"
+      },
+      {
+        "name": "水分・行動食・マイカップ",
+        "category": "補給"
+      },
+      {
+        "name": "ファーストエイドキット・携帯電話・保険証",
+        "category": "エイド"
+      }
+    ],
+    "venue": {
+      "name": "花瀬でんしろう館・花瀬川石畳",
+      "mapQuery": "鹿児島県 花瀬でんしろう館・花瀬川石畳"
+    },
+    "source": {
+      "portalName": "トレイルランナー.JP",
+      "portalUrl": "https://trailrunner.jp/race-detail-kinko-denshiro-trail.html"
+    },
+    "added_at": "2026-11-16",
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-17",
+    "archived_at": "2026-11-23"
+  },
+  {
+    "id": "trjp-rokko-24-peaks-hunt-2026",
+    "category": "trail",
+    "subCategory": "ロングトレイル（42km以上）",
+    "elements": [
+      "トレック"
+    ],
+    "title": "六甲全山縦走24ピークスハント 2026（兵庫県）",
+    "date": "2026-11-22",
+    "month": 11,
+    "region": "関西",
+    "prefecture": "兵庫県",
+    "distance_km": 47,
+    "elevation_m": 3800,
+    "entry_fee": "公式サイト参照",
+    "entry_status": "closed",
+    "entry_start_date": "2026-06-30",
+    "entry_deadline": "2026-11-12",
+    "links": {
+      "official": "https://www.soratrail-r24.com/",
+      "entry": "https://moshicom.com/148801",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-22"
+    },
+    "mandatory_gear": [
+      {
+        "name": "トレイルランニングシューズ・ザック",
+        "category": "ギア"
+      },
+      {
+        "name": "レインジャケット（防風・防水シェル）",
+        "category": "ウェア"
+      },
+      {
+        "name": "水分・行動食・マイカップ",
+        "category": "補給"
+      },
+      {
+        "name": "ファーストエイドキット・携帯電話・保険証",
+        "category": "エイド"
+      }
+    ],
+    "venue": {
+      "name": "須磨浦公園〜宝塚塩尾寺休憩所",
+      "mapQuery": "兵庫県 須磨浦公園〜宝塚塩尾寺休憩所"
+    },
+    "source": {
+      "portalName": "トレイルランナー.JP",
+      "portalUrl": "https://trailrunner.jp/race-detail-rokko-24-peaks-hunt.html"
+    },
+    "added_at": "2026-11-16",
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-22",
+    "archived_at": "2026-11-23"
+  },
+  {
+    "id": "trjp-sagami-kazekko-trail-running-2026",
+    "category": "trail",
+    "subCategory": "トレイルランニング",
+    "elements": [
+      "トレック"
+    ],
+    "title": "さがみ風っ子トレイルランニング 2026（神奈川県）",
+    "date": "2026-11-22",
+    "month": 11,
+    "region": "関東",
+    "prefecture": "神奈川県",
+    "distance_km": 22,
+    "elevation_m": 0,
+    "entry_fee": "公式サイト参照",
+    "entry_status": "closed",
+    "entry_start_date": "2026-08-01",
+    "entry_deadline": "2026-10-26",
+    "links": {
+      "official": "https://www.kazekko.com/",
+      "entry": null,
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-22",
+      "official_stale": true
+    },
+    "mandatory_gear": [
+      {
+        "name": "トレイルランニングシューズ・ザック",
+        "category": "ギア"
+      },
+      {
+        "name": "レインジャケット（防風・防水シェル）",
+        "category": "ウェア"
+      },
+      {
+        "name": "水分・行動食・マイカップ",
+        "category": "補給"
+      },
+      {
+        "name": "ファーストエイドキット・携帯電話・保険証",
+        "category": "エイド"
+      }
+    ],
+    "venue": {
+      "name": "城山湖コミュニティ広場",
+      "mapQuery": "神奈川県 城山湖コミュニティ広場"
+    },
+    "source": {
+      "portalName": "トレイルランナー.JP",
+      "portalUrl": "https://trailrunner.jp/race-detail-sagami-kazekko-trail-running.html"
+    },
+    "added_at": "2026-11-16",
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-20",
+    "archived_at": "2026-11-23"
+  },
+  {
+    "id": "spoen-cycle-107440",
+    "category": "cycling",
+    "subCategory": "ロングライド (50km以上)",
+    "elements": [
+      "ロングライド"
+    ],
+    "title": "伊豆半島 絶景シーサイドライド！",
+    "date": "2026-11-22",
+    "month": 11,
+    "region": "東海",
+    "prefecture": "静岡県",
+    "distance_km": 80,
+    "elevation_m": 0,
+    "entry_status": "closed",
+    "entry_start_date": "2026-10-23",
+    "entry_deadline": "2026-11-15",
+    "entry_fee": "詳細はエントリーページを確認",
+    "links": {
+      "official": "https://www.sportsentry.ne.jp/event/t/107440",
+      "entry": "https://www.sportsentry.ne.jp/event/t/107440",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-22"
+    },
+    "mandatory_gear": [
+      {
+        "name": "JCF公認ヘルメット＆グローブ",
+        "category": "ギア"
+      },
+      {
+        "name": "前後ライト（フロント・テール）・リフレクター",
+        "category": "ライト"
+      },
+      {
+        "name": "携帯工具・パンク修理キット・ボトル",
+        "category": "ギア"
+      },
+      {
+        "name": "防寒ウインドブレーカー・レインウェア",
+        "category": "ウェア"
+      }
+    ],
+    "venue": {
+      "name": "静岡県 宇佐美留田浜辺公園駐車場（受付・ゴール地点）",
+      "address": "静岡県",
+      "mapQuery": "静岡県 伊豆半島 絶景シーサイドライド！"
+    },
+    "source": {
+      "portalName": "スポエンCYCLE",
+      "portalUrl": "https://cycle.spoen.jp/"
+    },
+    "added_at": "2026-11-20",
+    "date_verified_at": "2026-11-20",
+    "archived_at": "2026-11-23"
+  },
+  {
+    "id": "spoen-cycle-107363",
+    "category": "cycling",
+    "subCategory": "ロングライド (50km以上)",
+    "elements": [
+      "ロングライド"
+    ],
+    "title": "ふく福Ride2026～しおまち海道サイクルロゲイニング",
+    "date": "2026-11-22",
+    "month": 11,
+    "region": "中国",
+    "prefecture": "広島県",
+    "distance_km": 80,
+    "elevation_m": 0,
+    "entry_status": "closed",
+    "entry_start_date": "2026-10-06",
+    "entry_deadline": "2026-11-15",
+    "entry_fee": "詳細はエントリーページを確認",
+    "links": {
+      "official": "https://www.sportsentry.ne.jp/event/t/107363",
+      "entry": "https://www.sportsentry.ne.jp/event/t/107363",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-22"
+    },
+    "mandatory_gear": [
+      {
+        "name": "JCF公認ヘルメット＆グローブ",
+        "category": "ギア"
+      },
+      {
+        "name": "前後ライト（フロント・テール）・リフレクター",
+        "category": "ライト"
+      },
+      {
+        "name": "携帯工具・パンク修理キット・ボトル",
+        "category": "ギア"
+      },
+      {
+        "name": "防寒ウインドブレーカー・レインウェア",
+        "category": "ウェア"
+      }
+    ],
+    "venue": {
+      "name": "広島県 itiSETOUCHI（スタート・ゴール地点",
+      "address": "広島県",
+      "mapQuery": "広島県 ふく福Ride2026～しおまち海道サイクルロゲイニング"
+    },
+    "source": {
+      "portalName": "スポエンCYCLE",
+      "portalUrl": "https://cycle.spoen.jp/"
+    },
+    "added_at": "2026-11-20",
+    "date_verified_at": "2026-11-20",
+    "archived_at": "2026-11-23"
+  },
+  {
+    "id": "spoen-cycle-106629",
+    "category": "cycling",
+    "subCategory": "ロングライド (50km以上)",
+    "elements": [
+      "ロングライド"
+    ],
+    "title": "遠野ぐるっとサイクリング2026",
+    "date": "2026-11-22",
+    "month": 11,
+    "region": "東北",
+    "prefecture": "福島県",
+    "distance_km": 80,
+    "elevation_m": 0,
+    "entry_status": "closed",
+    "entry_start_date": "2026-08-01",
+    "entry_deadline": "2026-11-15",
+    "entry_fee": "詳細はエントリーページを確認",
+    "links": {
+      "official": "https://www.sportsentry.ne.jp/event/t/106629",
+      "entry": "https://www.sportsentry.ne.jp/event/t/106629",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-22"
+    },
+    "mandatory_gear": [
+      {
+        "name": "JCF公認ヘルメット＆グローブ",
+        "category": "ギア"
+      },
+      {
+        "name": "前後ライト（フロント・テール）・リフレクター",
+        "category": "ライト"
+      },
+      {
+        "name": "携帯工具・パンク修理キット・ボトル",
+        "category": "ギア"
+      },
+      {
+        "name": "防寒ウインドブレーカー・レインウェア",
+        "category": "ウェア"
+      }
+    ],
+    "venue": {
+      "name": "福島県 遠野市民運動場",
+      "address": "福島県",
+      "mapQuery": "福島県 遠野ぐるっとサイクリング2026"
+    },
+    "source": {
+      "portalName": "スポエンCYCLE",
+      "portalUrl": "https://cycle.spoen.jp/"
+    },
+    "added_at": "2026-11-20",
+    "date_verified_at": "2026-11-20",
+    "archived_at": "2026-11-23"
+  },
+  {
+    "id": "spoen-cycle-106125",
+    "category": "cycling",
+    "subCategory": "ロングライド (50km以上)",
+    "elements": [
+      "ロングライド"
+    ],
+    "title": "和歌山紀中サイクルフェスタHUB26 With 株式会社キナン",
+    "date": "2026-11-22",
+    "month": 11,
+    "region": "関西",
+    "prefecture": "和歌山県",
+    "distance_km": 80,
+    "elevation_m": 0,
+    "entry_status": "closed",
+    "entry_start_date": "2026-07-05",
+    "entry_deadline": "2026-11-02",
+    "entry_fee": "詳細はエントリーページを確認",
+    "links": {
+      "official": "https://www.sportsentry.ne.jp/event/t/106125",
+      "entry": "https://www.sportsentry.ne.jp/event/t/106125",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-22"
+    },
+    "mandatory_gear": [
+      {
+        "name": "JCF公認ヘルメット＆グローブ",
+        "category": "ギア"
+      },
+      {
+        "name": "前後ライト（フロント・テール）・リフレクター",
+        "category": "ライト"
+      },
+      {
+        "name": "携帯工具・パンク修理キット・ボトル",
+        "category": "ギア"
+      },
+      {
+        "name": "防寒ウインドブレーカー・レインウェア",
+        "category": "ウェア"
+      }
+    ],
+    "venue": {
+      "name": "和歌山県 日高郡日高町産湯717-1 日高町産湯海水浴場 特設会場（メイン会場 ※スタート＆ゴール）",
+      "address": "和歌山県",
+      "mapQuery": "和歌山県 和歌山紀中サイクルフェスタHUB26 With 株式会社キナン"
+    },
+    "source": {
+      "portalName": "スポエンCYCLE",
+      "portalUrl": "https://cycle.spoen.jp/"
+    },
+    "added_at": "2026-11-20",
+    "date_verified_at": "2026-11-20",
+    "archived_at": "2026-11-23"
+  },
+  {
+    "id": "spoen-cycle-105512",
+    "category": "cycling",
+    "subCategory": "ロングライド (50km以上)",
+    "elements": [
+      "ロングライド"
+    ],
+    "title": "伊賀いちグルメライド2026",
+    "date": "2026-11-22",
+    "month": 11,
+    "region": "東海",
+    "prefecture": "三重県",
+    "distance_km": 91,
+    "elevation_m": 0,
+    "entry_status": "closed",
+    "entry_start_date": "2026-06-04",
+    "entry_deadline": "2026-11-08",
+    "entry_fee": "詳細はエントリーページを確認",
+    "links": {
+      "official": "https://www.sportsentry.ne.jp/event/t/105512",
+      "entry": "https://www.sportsentry.ne.jp/event/t/105512",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-22"
+    },
+    "mandatory_gear": [
+      {
+        "name": "JCF公認ヘルメット＆グローブ",
+        "category": "ギア"
+      },
+      {
+        "name": "前後ライト（フロント・テール）・リフレクター",
+        "category": "ライト"
+      },
+      {
+        "name": "携帯工具・パンク修理キット・ボトル",
+        "category": "ギア"
+      },
+      {
+        "name": "防寒ウインドブレーカー・レインウェア",
+        "category": "ウェア"
+      }
+    ],
+    "venue": {
+      "name": "三重県 旧長田小学校 グラウンド特設会場 〒518-0031 三重県伊賀市長田2316（受付）",
+      "address": "三重県",
+      "mapQuery": "三重県 伊賀いちグルメライド2026"
+    },
+    "source": {
+      "portalName": "スポエンCYCLE",
+      "portalUrl": "https://cycle.spoen.jp/"
+    },
+    "added_at": "2026-11-20",
+    "date_verified_at": "2026-11-20",
+    "archived_at": "2026-11-23"
   }
 ]
