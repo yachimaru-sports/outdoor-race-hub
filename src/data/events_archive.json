@@ -6279,5 +6279,238 @@
     "added_at": "2026-11-20",
     "date_verified_at": "2026-11-20",
     "archived_at": "2026-11-23"
+  },
+  {
+    "id": "trjp-bambi-100-2026",
+    "category": "trail",
+    "subCategory": "100km / 100マイルウルトラトレイル",
+    "elements": [
+      "トレック",
+      "100マイル"
+    ],
+    "title": "BAMBI 100 2026（奈良県）",
+    "date": "2026-11-21",
+    "end_date": "2026-11-23",
+    "month": 11,
+    "region": "関西",
+    "prefecture": "奈良県",
+    "distance_km": 160,
+    "elevation_m": 6000,
+    "entry_fee": "公式サイト参照",
+    "entry_status": "closed",
+    "entry_start_date": "2026-02-22",
+    "entry_deadline": "2026-03-01",
+    "links": {
+      "official": "https://bambi100mile.com/event-outline/",
+      "entry": "https://bambi100mile.com/event-outline/",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-23"
+    },
+    "mandatory_gear": [
+      {
+        "name": "トレイルランニングシューズ・ザック",
+        "category": "ギア"
+      },
+      {
+        "name": "レインジャケット（防風・防水シェル）",
+        "category": "ウェア"
+      },
+      {
+        "name": "水分・行動食・マイカップ",
+        "category": "補給"
+      },
+      {
+        "name": "ファーストエイドキット・携帯電話・保険証",
+        "category": "エイド"
+      }
+    ],
+    "venue": {
+      "name": "生駒山・矢田丘陵",
+      "mapQuery": "奈良県 生駒山・矢田丘陵"
+    },
+    "source": {
+      "portalName": "トレイルランナー.JP",
+      "portalUrl": "https://trailrunner.jp/race-detail-bambi-100.html"
+    },
+    "added_at": "2026-11-16",
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-23",
+    "archived_at": "2026-11-24"
+  },
+  {
+    "id": "arws-patagonia-esquel-2026",
+    "category": "adventure",
+    "subCategory": "ARWS世界選手権予選 (Qualifier)",
+    "elements": [
+      "ARWS",
+      "世界選手権予選",
+      "アドベンチャー",
+      "読図",
+      "MTB",
+      "パドル",
+      "トレック",
+      "4日以上"
+    ],
+    "title": "XK Race PATAGONIA ESQUEL 2026（アルゼンチン・パタゴニア ARWS 500km・5日間）",
+    "date": "2026-11-23",
+    "month": 11,
+    "region": "海外",
+    "prefecture": "アルゼンチン",
+    "distance_km": 500,
+    "elevation_m": 11000,
+    "entry_status": "closed",
+    "entry_start_date": "2026-02-01",
+    "entry_deadline": "2026-11-01",
+    "entry_fee": "620,000円",
+    "links": {
+      "official": "https://arworldseries.com/races/xk-race-patagonia-esquel-2026-argentina",
+      "entry": "https://arworldseries.com/races/xk-race-patagonia-esquel-2026-argentina",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-23"
+    },
+    "mandatory_gear": [
+      {
+        "name": "カヤック・パドル・PFD",
+        "category": "ギア"
+      },
+      {
+        "name": "パタゴニア強風対応防風防水ウェア",
+        "category": "ウェア"
+      },
+      {
+        "name": "MTB・ヘッドライト・予備バッテリー",
+        "category": "ライト"
+      },
+      {
+        "name": "ナビゲーションマップ＆コンパス",
+        "category": "ナビゲーション"
+      }
+    ],
+    "venue": {
+      "name": "Esquel, Chubut, Patagonia",
+      "mapQuery": "Esquel Argentina"
+    },
+    "source": {
+      "portalName": "ARWS公式"
+    },
+    "date_verified_at": "2026-11-23",
+    "archived_at": "2026-11-24"
+  },
+  {
+    "id": "jinriki-zensouyama-2026",
+    "category": "trail",
+    "subCategory": "6時間耐久トレイル＆坐禅",
+    "elements": [
+      "トレック",
+      "耐久"
+    ],
+    "title": "禅僧山 TRAIL RUNNING & MEDITATION 2026（徳島・海陽町 城満寺）",
+    "date": "2026-11-23",
+    "month": 11,
+    "region": "四国",
+    "prefecture": "徳島県",
+    "distance_km": 30,
+    "elevation_m": 1200,
+    "entry_fee": "5,000円",
+    "entry_status": "closed",
+    "entry_start_date": "2026-09-01",
+    "entry_deadline": "2026-11-18",
+    "links": {
+      "official": "https://www.outdoor-sports.info/zensouyama",
+      "entry": "https://www.outdoor-sports.info/zensouyama",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-23"
+    },
+    "mandatory_gear": [
+      {
+        "name": "トレイルランニングシューズ・ザック",
+        "category": "ギア"
+      },
+      {
+        "name": "レインジャケット（防風・防水シェル）",
+        "category": "ウェア"
+      },
+      {
+        "name": "水分・行動食・マイカップ",
+        "category": "補給"
+      },
+      {
+        "name": "ファーストエイドキット・携帯電話・保険証",
+        "category": "エイド"
+      }
+    ],
+    "venue": {
+      "name": "曹洞宗 城満寺（徳島県海部郡海陽町吉田）",
+      "mapQuery": "徳島県海部郡海陽町 城満寺"
+    },
+    "source": {
+      "portalName": "人力企画",
+      "portalUrl": "https://www.outdoor-sports.info/races-events"
+    },
+    "added_at": "2026-11-16",
+    "updated_at": "2026-11-23",
+    "date_verified_at": "2026-11-23",
+    "archived_at": "2026-11-24"
+  },
+  {
+    "id": "spoen-cycle-107405",
+    "category": "cycling",
+    "subCategory": "ロングライド (50km以上)",
+    "elements": [
+      "ロングライド"
+    ],
+    "title": "箱根椿ライン大観山ヒルクライムと芦ノ湖ポタリング110km",
+    "date": "2026-11-23",
+    "month": 11,
+    "region": "関東",
+    "prefecture": "神奈川県",
+    "distance_km": 110,
+    "elevation_m": 0,
+    "entry_status": "closed",
+    "entry_fee": "詳細はエントリーページを確認",
+    "links": {
+      "official": "https://www.sportsentry.ne.jp/event/t/107405",
+      "entry": "https://www.sportsentry.ne.jp/event/t/107405",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-23"
+    },
+    "mandatory_gear": [
+      {
+        "name": "JCF公認ヘルメット＆グローブ",
+        "category": "ギア"
+      },
+      {
+        "name": "前後ライト（フロント・テール）・リフレクター",
+        "category": "ライト"
+      },
+      {
+        "name": "携帯工具・パンク修理キット・ボトル",
+        "category": "ギア"
+      },
+      {
+        "name": "防寒ウインドブレーカー・レインウェア",
+        "category": "ウェア"
+      }
+    ],
+    "venue": {
+      "name": "神奈川県 神奈川県茅ヶ崎市柳島1300",
+      "address": "神奈川県",
+      "mapQuery": "神奈川県 箱根椿ライン大観山ヒルクライムと芦ノ湖ポタリング110km"
+    },
+    "source": {
+      "portalName": "スポエンCYCLE",
+      "portalUrl": "https://cycle.spoen.jp/"
+    },
+    "added_at": "2026-11-20",
+    "date_verified_at": "2026-11-20",
+    "archived_at": "2026-11-24"
   }
 ]

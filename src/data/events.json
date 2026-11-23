@@ -22,7 +22,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -77,7 +77,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -132,7 +132,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -187,7 +187,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -245,7 +245,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -303,7 +303,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -361,7 +361,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -394,64 +394,6 @@
     "date_verified_at": "2026-11-20"
   },
   {
-    "id": "trjp-bambi-100-2026",
-    "category": "trail",
-    "subCategory": "100km / 100マイルウルトラトレイル",
-    "elements": [
-      "トレック",
-      "100マイル"
-    ],
-    "title": "BAMBI 100 2026（奈良県）",
-    "date": "2026-11-21",
-    "end_date": "2026-11-23",
-    "month": 11,
-    "region": "関西",
-    "prefecture": "奈良県",
-    "distance_km": 160,
-    "elevation_m": 6000,
-    "entry_fee": "公式サイト参照",
-    "entry_status": "closed",
-    "entry_start_date": "2026-02-22",
-    "entry_deadline": "2026-03-01",
-    "links": {
-      "official": "https://bambi100mile.com/event-outline/",
-      "entry": "https://bambi100mile.com/event-outline/",
-      "review": null,
-      "sns": null,
-      "verified": true,
-      "verified_at": "2026-11-23"
-    },
-    "mandatory_gear": [
-      {
-        "name": "トレイルランニングシューズ・ザック",
-        "category": "ギア"
-      },
-      {
-        "name": "レインジャケット（防風・防水シェル）",
-        "category": "ウェア"
-      },
-      {
-        "name": "水分・行動食・マイカップ",
-        "category": "補給"
-      },
-      {
-        "name": "ファーストエイドキット・携帯電話・保険証",
-        "category": "エイド"
-      }
-    ],
-    "venue": {
-      "name": "生駒山・矢田丘陵",
-      "mapQuery": "奈良県 生駒山・矢田丘陵"
-    },
-    "source": {
-      "portalName": "トレイルランナー.JP",
-      "portalUrl": "https://trailrunner.jp/race-detail-bambi-100.html"
-    },
-    "added_at": "2026-11-16",
-    "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
-  },
-  {
     "id": "spoen-cycle-107315",
     "category": "cycling",
     "subCategory": "ブルベ (BRM/AJ)",
@@ -477,7 +419,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -501,177 +443,6 @@
       "name": "神奈川県",
       "address": "神奈川県",
       "mapQuery": "神奈川県 2027BRM（AJ神奈川）"
-    },
-    "source": {
-      "portalName": "スポエンCYCLE",
-      "portalUrl": "https://cycle.spoen.jp/"
-    },
-    "added_at": "2026-11-20",
-    "date_verified_at": "2026-11-20"
-  },
-  {
-    "id": "arws-patagonia-esquel-2026",
-    "category": "adventure",
-    "subCategory": "ARWS世界選手権予選 (Qualifier)",
-    "elements": [
-      "ARWS",
-      "世界選手権予選",
-      "アドベンチャー",
-      "読図",
-      "MTB",
-      "パドル",
-      "トレック",
-      "4日以上"
-    ],
-    "title": "XK Race PATAGONIA ESQUEL 2026（アルゼンチン・パタゴニア ARWS 500km・5日間）",
-    "date": "2026-11-23",
-    "month": 11,
-    "region": "海外",
-    "prefecture": "アルゼンチン",
-    "distance_km": 500,
-    "elevation_m": 11000,
-    "entry_status": "closed",
-    "entry_start_date": "2026-02-01",
-    "entry_deadline": "2026-11-01",
-    "entry_fee": "620,000円",
-    "links": {
-      "official": "https://arworldseries.com/races/xk-race-patagonia-esquel-2026-argentina",
-      "entry": "https://arworldseries.com/races/xk-race-patagonia-esquel-2026-argentina",
-      "review": null,
-      "sns": null,
-      "verified": true,
-      "verified_at": "2026-11-23"
-    },
-    "mandatory_gear": [
-      {
-        "name": "カヤック・パドル・PFD",
-        "category": "ギア"
-      },
-      {
-        "name": "パタゴニア強風対応防風防水ウェア",
-        "category": "ウェア"
-      },
-      {
-        "name": "MTB・ヘッドライト・予備バッテリー",
-        "category": "ライト"
-      },
-      {
-        "name": "ナビゲーションマップ＆コンパス",
-        "category": "ナビゲーション"
-      }
-    ],
-    "venue": {
-      "name": "Esquel, Chubut, Patagonia",
-      "mapQuery": "Esquel Argentina"
-    },
-    "source": {
-      "portalName": "ARWS公式"
-    },
-    "date_verified_at": "2026-11-23"
-  },
-  {
-    "id": "jinriki-zensouyama-2026",
-    "category": "trail",
-    "subCategory": "6時間耐久トレイル＆坐禅",
-    "elements": [
-      "トレック",
-      "耐久"
-    ],
-    "title": "禅僧山 TRAIL RUNNING & MEDITATION 2026（徳島・海陽町 城満寺）",
-    "date": "2026-11-23",
-    "month": 11,
-    "region": "四国",
-    "prefecture": "徳島県",
-    "distance_km": 30,
-    "elevation_m": 1200,
-    "entry_fee": "5,000円",
-    "entry_status": "closed",
-    "entry_start_date": "2026-09-01",
-    "entry_deadline": "2026-11-18",
-    "links": {
-      "official": "https://www.outdoor-sports.info/zensouyama",
-      "entry": "https://www.outdoor-sports.info/zensouyama",
-      "review": null,
-      "sns": null,
-      "verified": true,
-      "verified_at": "2026-11-23"
-    },
-    "mandatory_gear": [
-      {
-        "name": "トレイルランニングシューズ・ザック",
-        "category": "ギア"
-      },
-      {
-        "name": "レインジャケット（防風・防水シェル）",
-        "category": "ウェア"
-      },
-      {
-        "name": "水分・行動食・マイカップ",
-        "category": "補給"
-      },
-      {
-        "name": "ファーストエイドキット・携帯電話・保険証",
-        "category": "エイド"
-      }
-    ],
-    "venue": {
-      "name": "曹洞宗 城満寺（徳島県海部郡海陽町吉田）",
-      "mapQuery": "徳島県海部郡海陽町 城満寺"
-    },
-    "source": {
-      "portalName": "人力企画",
-      "portalUrl": "https://www.outdoor-sports.info/races-events"
-    },
-    "added_at": "2026-11-16",
-    "updated_at": "2026-11-23",
-    "date_verified_at": "2026-11-23"
-  },
-  {
-    "id": "spoen-cycle-107405",
-    "category": "cycling",
-    "subCategory": "ロングライド (50km以上)",
-    "elements": [
-      "ロングライド"
-    ],
-    "title": "箱根椿ライン大観山ヒルクライムと芦ノ湖ポタリング110km",
-    "date": "2026-11-23",
-    "month": 11,
-    "region": "関東",
-    "prefecture": "神奈川県",
-    "distance_km": 110,
-    "elevation_m": 0,
-    "entry_status": "open",
-    "entry_fee": "詳細はエントリーページを確認",
-    "links": {
-      "official": "https://www.sportsentry.ne.jp/event/t/107405",
-      "entry": "https://www.sportsentry.ne.jp/event/t/107405",
-      "review": null,
-      "sns": null,
-      "verified": true,
-      "verified_at": "2026-11-23"
-    },
-    "mandatory_gear": [
-      {
-        "name": "JCF公認ヘルメット＆グローブ",
-        "category": "ギア"
-      },
-      {
-        "name": "前後ライト（フロント・テール）・リフレクター",
-        "category": "ライト"
-      },
-      {
-        "name": "携帯工具・パンク修理キット・ボトル",
-        "category": "ギア"
-      },
-      {
-        "name": "防寒ウインドブレーカー・レインウェア",
-        "category": "ウェア"
-      }
-    ],
-    "venue": {
-      "name": "神奈川県 神奈川県茅ヶ崎市柳島1300",
-      "address": "神奈川県",
-      "mapQuery": "神奈川県 箱根椿ライン大観山ヒルクライムと芦ノ湖ポタリング110km"
     },
     "source": {
       "portalName": "スポエンCYCLE",
@@ -705,7 +476,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -761,7 +532,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -791,7 +562,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-sanda-moushi-trail-2026",
@@ -817,7 +588,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -847,7 +618,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-jinbagatayama-eco-trail-2026",
@@ -873,7 +644,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -903,7 +674,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-country-race-2026",
@@ -928,7 +699,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -958,7 +729,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-kawada-trail-2026",
@@ -984,7 +755,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -1014,7 +785,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-sotochichi-45k-2026",
@@ -1040,7 +811,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -1070,7 +841,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "spoen-cycle-106733",
@@ -1096,7 +867,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -1152,7 +923,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -1208,7 +979,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -1267,7 +1038,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -1306,7 +1077,7 @@
     "source": {
       "portalName": "とれとれバイク"
     },
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-yoro-mountains-trail-2026",
@@ -1332,7 +1103,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -1362,7 +1133,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-mashiko-trail-2026",
@@ -1388,7 +1159,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -1434,7 +1205,7 @@
     "prefecture": "茨城県",
     "distance_km": 80,
     "elevation_m": 0,
-    "entry_status": "closing_soon",
+    "entry_status": "closed",
     "entry_start_date": "2026-09-28",
     "entry_deadline": "2026-11-23",
     "entry_fee": "詳細はエントリーページを確認",
@@ -1444,7 +1215,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -1475,7 +1246,7 @@
     },
     "added_at": "2026-11-20",
     "date_verified_at": "2026-11-20",
-    "updated_at": "2026-11-21"
+    "updated_at": "2026-11-24"
   },
   {
     "id": "kumano-kodo-trail-2026",
@@ -1502,7 +1273,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -1564,7 +1335,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -1596,7 +1367,7 @@
       "portalName": "ARWS公式"
     },
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "matsue-kokuhou-marathon-2026",
@@ -1622,7 +1393,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -1645,7 +1416,7 @@
     "source": {
       "portalName": "モシコム"
     },
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-shugyoso-monks-run-2026",
@@ -1671,7 +1442,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -1701,7 +1472,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-hitachi-alps-ocean-trail-2026",
@@ -1727,7 +1498,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -1757,7 +1528,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-watari-trail-run-2026",
@@ -1783,7 +1554,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -1813,7 +1584,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-23",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-sanage-trail-2026",
@@ -1838,7 +1609,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -1868,7 +1639,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "spoen-cycle-107527",
@@ -1894,7 +1665,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -1951,7 +1722,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -2007,7 +1778,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -2062,7 +1833,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -2120,7 +1891,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23",
+      "verified_at": "2026-11-24",
       "official_stale": true
     },
     "mandatory_gear": [
@@ -2151,7 +1922,7 @@
     },
     "added_at": "2026-11-19",
     "updated_at": "2026-11-19",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "spoen-cycle-106237",
@@ -2177,7 +1948,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -2234,7 +2005,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -2291,7 +2062,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -2321,7 +2092,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-mitake-mountain-race-2026",
@@ -2348,7 +2119,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -2378,7 +2149,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-ushimatsuyama-skyrace-winter-2026",
@@ -2404,7 +2175,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -2434,7 +2205,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "spoen-cycle-107268",
@@ -2450,7 +2221,7 @@
     "prefecture": "茨城県",
     "distance_km": 80,
     "elevation_m": 0,
-    "entry_status": "closing_soon",
+    "entry_status": "closed",
     "entry_start_date": "2026-09-29",
     "entry_deadline": "2026-11-23",
     "entry_fee": "詳細はエントリーページを確認",
@@ -2460,7 +2231,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -2491,7 +2262,7 @@
     },
     "added_at": "2026-11-20",
     "date_verified_at": "2026-11-20",
-    "updated_at": "2026-11-21"
+    "updated_at": "2026-11-24"
   },
   {
     "id": "spoen-cycle-107420",
@@ -2515,7 +2286,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -2569,7 +2340,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -2625,7 +2396,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -2680,7 +2451,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -2735,7 +2506,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -2790,7 +2561,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -2847,7 +2618,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -2877,7 +2648,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-nokogiriyama-trail-run-dec-2026",
@@ -2903,7 +2674,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -2933,7 +2704,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-19",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-hachioji-jinba-trail-2026",
@@ -2959,7 +2730,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -2989,7 +2760,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-funtrails-idaten-hanno-2026",
@@ -3015,7 +2786,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -3045,7 +2816,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-nagatoro-alps-trail-race-2026",
@@ -3071,7 +2842,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -3101,7 +2872,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-tengu100-2026",
@@ -3128,7 +2899,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -3158,7 +2929,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-kyoto-great-round-2026",
@@ -3186,7 +2957,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -3216,7 +2987,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-rising-of-the-dead-2026",
@@ -3242,7 +3013,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -3272,7 +3043,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "spoen-cycle-107718",
@@ -3300,7 +3071,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -3358,7 +3129,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -3388,7 +3159,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "spoen-cycle-106518",
@@ -3414,7 +3185,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -3471,7 +3242,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -3501,7 +3272,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-17",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-hanayome-kaido-karasubayama-trail-2027",
@@ -3527,7 +3298,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -3557,7 +3328,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-tochigi-training-trail-mikamoyama-2027",
@@ -3582,7 +3353,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -3612,7 +3383,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-jungle-guruguru-zero-2027",
@@ -3638,7 +3409,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -3693,7 +3464,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -3723,7 +3494,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-shodai-adventure-mountain-2027",
@@ -3749,7 +3520,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23",
+      "verified_at": "2026-11-24",
       "official_stale": true
     },
     "mandatory_gear": [
@@ -3780,7 +3551,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "spoen-cycle-107712",
@@ -3806,7 +3577,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -3862,7 +3633,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -3917,7 +3688,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -3947,7 +3718,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "bitchu-totomichi-trail-2027",
@@ -3976,7 +3747,7 @@
       "review": "",
       "sns": "",
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -4065,7 +3836,7 @@
       "portalName": "RUNNET",
       "portalUrl": "https://runnet.jp/"
     },
-    "date_verified_at": "2026-11-23",
+    "date_verified_at": "2026-11-24",
     "updated_at": "2026-11-22"
   },
   {
@@ -4092,7 +3863,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -4120,8 +3891,8 @@
       "portalName": "人力企画",
       "portalUrl": "https://www.outdoor-sports.info/races-events"
     },
-    "updated_at": "2026-11-23",
-    "date_verified_at": "2026-11-23"
+    "updated_at": "2026-11-24",
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-hakuba-snow-harp-snowshoeing-race-2027",
@@ -4147,7 +3918,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -4177,7 +3948,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-nara-ishibutai-100-trail-2027",
@@ -4204,7 +3975,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -4234,7 +4005,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-kamigoto-trail-2027",
@@ -4259,7 +4030,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -4289,7 +4060,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "spoen-cycle-107645",
@@ -4315,7 +4086,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -4373,7 +4144,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -4432,7 +4203,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       "くだまつ笠戸島アイランドトレイル2027へのエントリー必須",
@@ -4448,7 +4219,7 @@
     "source": "https://kasadojima-islandtrail.com/vertical-race",
     "added_at": "2026-11-14",
     "updated_at": "2026-11-15",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-ikoma-winter-trail-2027",
@@ -4473,7 +4244,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -4503,7 +4274,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-ogawa-trail-festival-2027",
@@ -4530,7 +4301,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -4560,7 +4331,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "ise-toba-shima-cycle-2027",
@@ -4587,7 +4358,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -4612,7 +4383,7 @@
       "portalName": "スポーツエントリー",
       "portalUrl": "https://www.sportsentry.ne.jp/"
     },
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "kasadojima-island-trail-2027",
@@ -4641,7 +4412,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -4675,7 +4446,7 @@
       "portalUrl": "https://runnet.jp/"
     },
     "updated_at": "2026-11-14",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "kagawa-marugame-half-2027",
@@ -4701,7 +4472,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -4725,7 +4496,7 @@
       "portalName": "大会公式"
     },
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "ehime-marathon-2027",
@@ -4751,7 +4522,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -4774,7 +4545,7 @@
     "source": {
       "portalName": "大会公式"
     },
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-iouzan-snowshoe-race-2027",
@@ -4800,7 +4571,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -4830,7 +4601,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-kanmuridake-trail-2027",
@@ -4856,7 +4627,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23",
+      "verified_at": "2026-11-24",
       "official_stale": true
     },
     "mandatory_gear": [
@@ -4916,7 +4687,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -4947,7 +4718,7 @@
     "source": {
       "portalName": "モシコム"
     },
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-onjuku-ocean-trail-2027",
@@ -4973,7 +4744,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -5030,7 +4801,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -5061,7 +4832,7 @@
     "source": {
       "portalName": "RUNNET"
     },
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "jinriki-tsunomine-vertical-2027",
@@ -5088,7 +4859,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -5117,8 +4888,8 @@
       "portalUrl": "https://www.outdoor-sports.info/races-events"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-23",
-    "date_verified_at": "2026-11-23"
+    "updated_at": "2026-11-24",
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-nagasaki-round-trail-2027",
@@ -5143,7 +4914,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -5173,7 +4944,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-betsukai-ice-marathon-2027",
@@ -5199,7 +4970,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -5229,7 +5000,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-gokayama-taira-snowshoeing-race-2027",
@@ -5255,7 +5026,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -5285,7 +5056,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-aya-kunitomi-twin-peaks-2027",
@@ -5310,7 +5081,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23",
+      "verified_at": "2026-11-24",
       "official_stale": true
     },
     "mandatory_gear": [
@@ -5368,7 +5139,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -5431,7 +5202,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -5488,7 +5259,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -5518,7 +5289,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "kochi-ryoma-marathon-2027",
@@ -5544,7 +5315,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -5567,7 +5338,7 @@
     "source": {
       "portalName": "大会公式"
     },
-    "date_verified_at": "2026-11-23",
+    "date_verified_at": "2026-11-24",
     "updated_at": "2026-11-22"
   },
   {
@@ -5597,7 +5368,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -5636,7 +5407,7 @@
     "source": {
       "portalName": "モシコム"
     },
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-boso-nokogiriyama-trail-run-2027",
@@ -5661,7 +5432,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -5716,7 +5487,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -5746,7 +5517,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-inuyama-momotaro-trail-2027",
@@ -5771,7 +5542,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -5801,7 +5572,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-awagatake-trail-race-2027",
@@ -5826,7 +5597,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -5856,7 +5627,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "spoen-cycle-107264",
@@ -5882,7 +5653,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -5938,7 +5709,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -5961,7 +5732,7 @@
     "source": {
       "portalName": "モシコム"
     },
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-damonde-way-to-go-2027",
@@ -5987,7 +5758,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -6017,7 +5788,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-gokayama-sefuri-cross-trail-2027",
@@ -6043,7 +5814,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23",
+      "verified_at": "2026-11-24",
       "official_stale": true
     },
     "mandatory_gear": [
@@ -6099,7 +5870,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -6154,7 +5925,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -6210,7 +5981,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23",
+      "verified_at": "2026-11-24",
       "official_stale": true
     },
     "mandatory_gear": [
@@ -6265,7 +6036,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23",
+      "verified_at": "2026-11-24",
       "official_stale": true
     },
     "mandatory_gear": [
@@ -6289,7 +6060,7 @@
     "source": {
       "portalName": "大会公式"
     },
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-yukiguni-uonuma-kakenoue-snowshoeing-race-2027",
@@ -6315,7 +6086,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -6345,7 +6116,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-minonokuni-yamajiro-firstheld-2027",
@@ -6372,7 +6143,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -6430,7 +6201,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23",
+      "verified_at": "2026-11-24",
       "official_stale": true
     },
     "mandatory_gear": [
@@ -6485,7 +6256,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -6515,7 +6286,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "arws-tierra-indomita-vulcania-2027",
@@ -6548,7 +6319,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -6575,7 +6346,7 @@
     "source": {
       "portalName": "ARWS公式"
     },
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "jinriki-takabagamori-skyrace-2027",
@@ -6602,7 +6373,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -6631,8 +6402,8 @@
       "portalUrl": "https://www.outdoor-sports.info/races-events"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-23",
-    "date_verified_at": "2026-11-23"
+    "updated_at": "2026-11-24",
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-soja-takatakiyama-trail-2027",
@@ -6657,7 +6428,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -6687,7 +6458,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-kohechi-trail-journey-totsukawa-2027",
@@ -6713,7 +6484,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -6743,7 +6514,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "spoen-cycle-107863",
@@ -6767,7 +6538,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -6830,7 +6601,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -6857,7 +6628,7 @@
     "source": {
       "portalName": "ARWS公式"
     },
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "hiei-international-trail-2027",
@@ -6887,7 +6658,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -6922,7 +6693,7 @@
     "source": {
       "portalName": "大会公式"
     },
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-takachiho-peaks-2027",
@@ -6948,7 +6719,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23",
+      "verified_at": "2026-11-24",
       "official_stale": true
     },
     "mandatory_gear": [
@@ -6979,7 +6750,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "ibaraki-100k-ultra-2027",
@@ -6997,7 +6768,7 @@
     "prefecture": "茨城県",
     "distance_km": 100,
     "elevation_m": 250,
-    "entry_status": "open",
+    "entry_status": "closing_soon",
     "entry_start_date": "2026-10-01",
     "entry_deadline": "2026-12-15",
     "entry_fee": "20,000円",
@@ -7007,7 +6778,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23",
+      "verified_at": "2026-11-24",
       "official_stale": true
     },
     "mandatory_gear": [
@@ -7032,7 +6803,8 @@
     "source": {
       "portalName": "RUNNET",
       "portalUrl": "https://runnet.jp/"
-    }
+    },
+    "updated_at": "2026-11-24"
   },
   {
     "id": "tottori-marathon-2027",
@@ -7060,7 +6832,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -7083,7 +6855,7 @@
     "source": {
       "portalName": "大会公式"
     },
-    "date_verified_at": "2026-11-23",
+    "date_verified_at": "2026-11-24",
     "updated_at": "2026-11-20"
   },
   {
@@ -7111,7 +6883,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -7132,8 +6904,8 @@
       "portalUrl": "https://www.outdoor-sports.info/races-events"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-23",
-    "date_verified_at": "2026-11-23"
+    "updated_at": "2026-11-24",
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-coast-to-coast-boso-2027",
@@ -7159,7 +6931,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -7189,7 +6961,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "tokushima-marathon-2027",
@@ -7215,7 +6987,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -7238,7 +7010,7 @@
     "source": {
       "portalName": "大会公式"
     },
-    "date_verified_at": "2026-11-23",
+    "date_verified_at": "2026-11-24",
     "updated_at": "2026-11-22"
   },
   {
@@ -7267,7 +7039,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -7322,7 +7094,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -7352,7 +7124,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-trail-running-fes-okazaki-2027",
@@ -7377,7 +7149,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -7407,7 +7179,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-atgtrail-2027",
@@ -7432,7 +7204,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -7462,7 +7234,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "wake-alps-trail-2027",
@@ -7492,7 +7264,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -7543,7 +7315,7 @@
     "source": {
       "portalName": "RUNNET"
     },
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "osj-shinshiro-trail-2027",
@@ -7571,7 +7343,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -7634,7 +7406,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -7664,7 +7436,7 @@
       "portalUrl": "https://moshicom.com/157713"
     },
     "added_at": "2026-11-20",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "kakamigahara-alps-panorama-trail-2027",
@@ -7691,7 +7463,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -7720,7 +7492,7 @@
       "portalName": "スポーツエントリー",
       "portalUrl": "https://www.sportsentry.ne.jp/"
     },
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-ayabe-suigen-no-sato-trail-run-2027",
@@ -7745,7 +7517,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -7775,7 +7547,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-haru-ninja-trail-run-2027",
@@ -7800,7 +7572,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -7830,7 +7602,62 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
+  },
+  {
+    "id": "trjp-nakayama-hokusetsu-trainic-stage-2027",
+    "category": "trail",
+    "subCategory": "トレイルランニング",
+    "elements": [
+      "トレック"
+    ],
+    "title": "中山連山･北摂大峰山 TRAINIC STAGE 2027（兵庫県）",
+    "date": "2027-04-04",
+    "month": 4,
+    "region": "関西",
+    "prefecture": "兵庫県",
+    "distance_km": 10.7,
+    "elevation_m": 0,
+    "entry_fee": "公式サイト参照",
+    "entry_status": "open",
+    "entry_deadline": "2027-04-04",
+    "links": {
+      "official": "https://www.jls-association.com/%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB%E3%83%A9%E3%83%B3%E3%83%8B%E3%83%B3%E3%82%B0/%E4%B8%AD%E5%B1%B1%E9%80%A3%E5%B1%B1-%E5%8C%97%E6%91%82%E5%A4%A7%E5%B3%B0%E5%B1%B1-trainic-stage/",
+      "entry": "https://moshicom.com/158683",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-24"
+    },
+    "mandatory_gear": [
+      {
+        "name": "トレイルランニングシューズ・ザック",
+        "category": "ギア"
+      },
+      {
+        "name": "レインジャケット（防風・防水シェル）",
+        "category": "ウェア"
+      },
+      {
+        "name": "水分・行動食・マイカップ",
+        "category": "補給"
+      },
+      {
+        "name": "ファーストエイドキット・携帯電話・保険証",
+        "category": "エイド"
+      }
+    ],
+    "venue": {
+      "name": "受付：阪急山本駅北口ロータリー右手公園広場／スタート：中山登山道入口／ゴール：JR武田尾駅側廃線出入り口",
+      "mapQuery": "兵庫県 受付：阪急山本駅北口ロータリー右手公園広場／スタート：中山登山道入口／ゴール：JR武田尾駅側廃線出入り口"
+    },
+    "source": {
+      "portalName": "トレイルランナー.JP",
+      "portalUrl": "https://trailrunner.jp/race-detail-nakayama-hokusetsu-trainic-stage.html"
+    },
+    "added_at": "2026-11-24",
+    "updated_at": "2026-11-24",
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "hiroshima-utmb-2027",
@@ -7861,7 +7688,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -7944,7 +7771,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -7974,7 +7801,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "okumikawa-power-trail-2027",
@@ -8001,7 +7828,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23",
+      "verified_at": "2026-11-24",
       "official_stale": true
     },
     "mandatory_gear": [
@@ -8053,7 +7880,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -8107,7 +7934,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -8137,7 +7964,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-otaki-sengoku-extremes-2027",
@@ -8162,7 +7989,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -8192,7 +8019,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "spoen-cycle-107732",
@@ -8218,7 +8045,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -8273,7 +8100,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -8303,7 +8130,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-aso-trail-jogakuin-2027",
@@ -8328,7 +8155,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23",
+      "verified_at": "2026-11-24",
       "official_stale": true
     },
     "mandatory_gear": [
@@ -8385,7 +8212,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -8428,7 +8255,7 @@
     "source": {
       "portalName": "大会公式"
     },
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "2027-b8mw9c-2027",
@@ -8456,7 +8283,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -8485,7 +8312,7 @@
     },
     "added_at": "2026-11-13",
     "updated_at": "2026-11-13",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-trailrunners-cup-echigo-2027",
@@ -8511,7 +8338,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -8541,7 +8368,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-yogoko-isshu-trail-2027",
@@ -8567,7 +8394,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -8597,7 +8424,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-okumusashi-moroyama-trail-run-2027",
@@ -8622,7 +8449,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -8652,7 +8479,62 @@
     },
     "added_at": "2026-11-20",
     "updated_at": "2026-11-20",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
+  },
+  {
+    "id": "trjp-sakura-orochi-trail-running-race-2027",
+    "category": "trail",
+    "subCategory": "トレイルランニング",
+    "elements": [
+      "トレック"
+    ],
+    "title": "さくらおろち湖トレイルランニングレース 2027（島根県）",
+    "date": "2027-04-18",
+    "month": 4,
+    "region": "中国",
+    "prefecture": "島根県",
+    "distance_km": 30,
+    "elevation_m": 0,
+    "entry_fee": "公式サイト参照",
+    "entry_status": "open",
+    "entry_deadline": "2027-04-18",
+    "links": {
+      "official": "https://sakuraorochitrail.jimdofree.com/",
+      "entry": "https://sakuraorochitrail.jimdofree.com/",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-24"
+    },
+    "mandatory_gear": [
+      {
+        "name": "トレイルランニングシューズ・ザック",
+        "category": "ギア"
+      },
+      {
+        "name": "レインジャケット（防風・防水シェル）",
+        "category": "ウェア"
+      },
+      {
+        "name": "水分・行動食・マイカップ",
+        "category": "補給"
+      },
+      {
+        "name": "ファーストエイドキット・携帯電話・保険証",
+        "category": "エイド"
+      }
+    ],
+    "venue": {
+      "name": "島根県さくらおろち湖ローイング競技施設（雲南市木次町平田779-1、スタート・ゴール）",
+      "mapQuery": "島根県 島根県さくらおろち湖ローイング競技施設（雲南市木次町平田779-1、スタート・ゴール）"
+    },
+    "source": {
+      "portalName": "トレイルランナー.JP",
+      "portalUrl": "https://trailrunner.jp/race-detail-sakura-orochi-trail-running-race.html"
+    },
+    "added_at": "2026-11-24",
+    "updated_at": "2026-11-24",
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "mt-fuji-100-2027",
@@ -8680,7 +8562,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -8772,7 +8654,7 @@
       "review": null,
       "sns": "https://www.facebook.com/arjs.adventurerace",
       "verified": true,
-      "verified_at": "2026-11-23",
+      "verified_at": "2026-11-24",
       "official_stale": true
     },
     "mandatory_gear": [
@@ -8821,7 +8703,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -8848,7 +8730,7 @@
     "source": {
       "portalName": "ARWS公式"
     },
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-stage-race-sanriku-srs200-100-2027",
@@ -8875,7 +8757,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -8905,7 +8787,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-sankei-michi-triangle-225-2027",
@@ -8932,7 +8814,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -8962,7 +8844,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-yarikan-2027",
@@ -8989,7 +8871,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23",
+      "verified_at": "2026-11-24",
       "official_stale": true
     },
     "mandatory_gear": [
@@ -9020,7 +8902,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-ueda-vertical-race-2027",
@@ -9047,7 +8929,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -9104,7 +8986,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -9129,8 +9011,8 @@
       "portalUrl": "https://www.outdoor-sports.info/races-events"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-23",
-    "date_verified_at": "2026-11-23"
+    "updated_at": "2026-11-24",
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-aso-volcano-trail-2027",
@@ -9157,7 +9039,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -9187,7 +9069,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-iwate-coastal-trail-100km-2027",
@@ -9215,7 +9097,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -9245,7 +9127,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-takaoka-futagamiyama-trail-2027",
@@ -9270,7 +9152,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -9300,7 +9182,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-nose-myokenzan-power-trail-run-2027",
@@ -9325,7 +9207,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -9355,7 +9237,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-sainokuni-100mile-2027",
@@ -9383,7 +9265,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -9413,7 +9295,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "yatsugatake-nobeyama-ultra-2027",
@@ -9441,7 +9323,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -9470,7 +9352,7 @@
       "portalName": "RUNNET",
       "portalUrl": "https://runnet.jp/"
     },
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-saba-kaido-ultra-marathon-2027",
@@ -9495,7 +9377,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -9525,7 +9407,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-trailrunners-cup-ishikawa-okuradake-2027",
@@ -9550,7 +9432,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -9580,7 +9462,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "arws-raid-gallaecia-2027",
@@ -9613,7 +9495,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -9640,7 +9522,7 @@
     "source": {
       "portalName": "ARWS公式"
     },
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-tokyo-grand-trail-2027",
@@ -9668,7 +9550,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23",
+      "verified_at": "2026-11-24",
       "official_stale": true
     },
     "mandatory_gear": [
@@ -9699,7 +9581,7 @@
     },
     "added_at": "2026-11-19",
     "updated_at": "2026-11-19",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-world-geopark-trail-run-2027",
@@ -9724,7 +9606,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -9754,7 +9636,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-komono-four-peaks-trail-2027",
@@ -9780,7 +9662,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -9810,7 +9692,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-amagi-attack-35-2027",
@@ -9835,7 +9717,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23",
+      "verified_at": "2026-11-24",
       "official_stale": true
     },
     "mandatory_gear": [
@@ -9866,7 +9748,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "chase-the-sun-japan-2027",
@@ -9894,7 +9776,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -9923,7 +9805,7 @@
       "portalName": "スポーツエントリー",
       "portalUrl": "https://www.sportsentry.ne.jp/"
     },
-    "date_verified_at": "2026-11-23",
+    "date_verified_at": "2026-11-24",
     "updated_at": "2026-11-22"
   },
   {
@@ -9950,7 +9832,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -9980,7 +9862,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "the-peaks-r20-myoko2-2027",
@@ -10007,7 +9889,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23",
+      "verified_at": "2026-11-24",
       "official_stale": true
     },
     "mandatory_gear": [
@@ -10064,7 +9946,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -10094,7 +9976,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-tamba100-adventure-trail-2027",
@@ -10121,7 +10003,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -10177,7 +10059,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23",
+      "verified_at": "2026-11-24",
       "official_stale": true
     },
     "mandatory_gear": [
@@ -10233,7 +10115,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -10263,7 +10145,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "kuman100-2027",
@@ -10291,7 +10173,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -10334,7 +10216,7 @@
     "source": {
       "portalName": "モシコム"
     },
-    "date_verified_at": "2026-11-23",
+    "date_verified_at": "2026-11-24",
     "updated_at": "2026-11-22"
   },
   {
@@ -10366,7 +10248,7 @@
       "review": null,
       "sns": "https://www.facebook.com/arjs.adventurerace",
       "verified": true,
-      "verified_at": "2026-11-23",
+      "verified_at": "2026-11-24",
       "official_stale": true
     },
     "mandatory_gear": [
@@ -10407,7 +10289,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -10437,7 +10319,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-grand-diamond-trail-2027",
@@ -10462,7 +10344,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -10492,7 +10374,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-kaga-spa-trail-endurance-100-by-utmb-2027",
@@ -10518,7 +10400,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -10550,6 +10432,61 @@
     "updated_at": "2026-11-16"
   },
   {
+    "id": "trjp-sapporo-teine-trail-2027",
+    "category": "trail",
+    "subCategory": "ロングトレイル（42km以上）",
+    "elements": [
+      "トレック"
+    ],
+    "title": "マムートCUP サッポロ・テイネトレイル 2027（北海道）",
+    "date": "2027-06-20",
+    "month": 6,
+    "region": "北海道",
+    "prefecture": "北海道",
+    "distance_km": 50,
+    "elevation_m": 0,
+    "entry_fee": "公式サイト参照",
+    "entry_status": "open",
+    "entry_deadline": "2027-06-20",
+    "links": {
+      "official": "https://fields-co.jp/teine/2027/",
+      "entry": "https://fields-co.jp/teine/2027/",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-24"
+    },
+    "mandatory_gear": [
+      {
+        "name": "トレイルランニングシューズ・ザック",
+        "category": "ギア"
+      },
+      {
+        "name": "レインジャケット（防風・防水シェル）",
+        "category": "ウェア"
+      },
+      {
+        "name": "水分・行動食・マイカップ",
+        "category": "補給"
+      },
+      {
+        "name": "ファーストエイドキット・携帯電話・保険証",
+        "category": "エイド"
+      }
+    ],
+    "venue": {
+      "name": "テイネオリンピア・スキーセンター前（※前回実績）",
+      "mapQuery": "北海道 テイネオリンピア・スキーセンター前（※前回実績）"
+    },
+    "source": {
+      "portalName": "トレイルランナー.JP",
+      "portalUrl": "https://trailrunner.jp/race-detail-sapporo-teine-trail.html"
+    },
+    "added_at": "2026-11-24",
+    "updated_at": "2026-11-24",
+    "date_verified_at": "2026-11-24"
+  },
+  {
     "id": "arws-expedition-wild-west-2027",
     "category": "adventure",
     "subCategory": "ARWSエクスピディション",
@@ -10579,7 +10516,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -10606,7 +10543,7 @@
     "source": {
       "portalName": "ARWS公式"
     },
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-deep-japan-ultra-100-niigata-2027",
@@ -10634,7 +10571,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -10664,7 +10601,7 @@
     },
     "added_at": "2026-11-20",
     "updated_at": "2026-11-20",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-hachimoriyama-otakane-trail-festa-2027",
@@ -10690,7 +10627,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -10720,7 +10657,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "arws-sud-raid-2027",
@@ -10753,7 +10690,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -10781,7 +10718,7 @@
       "portalName": "ARWS公式"
     },
     "updated_at": "2026-11-15",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-kaizukiyama-hakuryu-trail-run-2027",
@@ -10806,7 +10743,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -10836,7 +10773,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-tsurugi-sanroku-trail-du-kamiichi-2027",
@@ -10861,7 +10798,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -10917,7 +10854,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23",
+      "verified_at": "2026-11-24",
       "official_stale": true
     },
     "mandatory_gear": [
@@ -10972,7 +10909,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -11002,7 +10939,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-osj-ontake100-2027",
@@ -11030,7 +10967,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -11085,7 +11022,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -11115,7 +11052,7 @@
     },
     "added_at": "2026-11-19",
     "updated_at": "2026-11-19",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "arws-endurance-quest-saimaa-2027",
@@ -11148,7 +11085,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -11175,7 +11112,7 @@
     "source": {
       "portalName": "ARWS公式"
     },
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-okuhida-trail-run-2027",
@@ -11200,7 +11137,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -11230,7 +11167,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-mt-rokko-trail-run-summer-picnic-2027",
@@ -11255,7 +11192,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -11285,7 +11222,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-kyoto-grand-traverse-2027",
@@ -11311,7 +11248,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -11341,7 +11278,7 @@
     },
     "added_at": "2026-11-19",
     "updated_at": "2026-11-19",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "arwc-croatia-2027",
@@ -11374,7 +11311,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -11437,7 +11374,7 @@
       "review": null,
       "sns": "https://www.facebook.com/arjs.adventurerace",
       "verified": true,
-      "verified_at": "2026-11-23",
+      "verified_at": "2026-11-24",
       "official_stale": true
     },
     "mandatory_gear": [
@@ -11478,7 +11415,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -11508,7 +11445,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-furano-trail-run-2027",
@@ -11533,7 +11470,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -11563,7 +11500,7 @@
     },
     "added_at": "2026-11-20",
     "updated_at": "2026-11-20",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-trainic-world-ogose-tokigawa-2027",
@@ -11589,7 +11526,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23",
+      "verified_at": "2026-11-24",
       "official_stale": true
     },
     "mandatory_gear": [
@@ -11620,7 +11557,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "spoen-cycle-107140",
@@ -11646,7 +11583,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -11703,7 +11640,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -11757,7 +11694,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -11787,7 +11724,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-matsudaira-tenka-trailrun-2027",
@@ -11812,7 +11749,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -11842,7 +11779,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "arjs-2027-r4-myoko",
@@ -11873,7 +11810,7 @@
       "review": null,
       "sns": "https://www.facebook.com/arjs.adventurerace",
       "verified": true,
-      "verified_at": "2026-11-23",
+      "verified_at": "2026-11-24",
       "official_stale": true
     },
     "mandatory_gear": [
@@ -11914,7 +11851,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-23"
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -11944,6 +11881,6 @@
     },
     "added_at": "2026-11-20",
     "updated_at": "2026-11-20",
-    "date_verified_at": "2026-11-23"
+    "date_verified_at": "2026-11-24"
   }
 ]

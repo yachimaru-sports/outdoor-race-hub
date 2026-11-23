@@ -1,5 +1,22 @@
 [
   {
+    "id": "ev-sync-2026-11-24",
+    "date": "2026-11-24",
+    "time": "06:37",
+    "type": "event_updated",
+    "title": "大会データ定期検証完了（掲載 209 件）",
+    "detail": "開催日修正 0 件 / 終了大会アーカイブ 4 件 / リンク修正 0 件 / ステータス更新 4 件"
+  },
+  {
+    "id": "price-drop-gear-deal-mw92kizw-0ap8-2026-11-24",
+    "date": "2026-11-24",
+    "time": "06:37",
+    "type": "price_drop",
+    "title": "値下げ検知: ホカ スピードゴート2 ユニセックス HOKA SPEEDGOAT 2 メンズ ",
+    "detail": "¥19,800 → ¥16,500",
+    "gearId": "gear-deal-mw92kizw-0ap8"
+  },
+  {
     "id": "ev-sync-2026-11-23",
     "date": "2026-11-23",
     "time": "07:23",

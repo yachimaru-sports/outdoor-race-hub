@@ -1,30 +1,30 @@
 {
-  "last_updated_at": "2026-11-22T22:24:05.276Z",
-  "events_count": 210,
+  "last_updated_at": "2026-11-23T21:37:55.633Z",
+  "events_count": 209,
   "deals_count": 35,
   "gears_count": 66,
   "sync_source": "Google Sheets & Rakuten API Automated Sync",
   "gear_sync_source": "refresh_gears.mjs (自己修復・商品ページ実測・Gemini探索・画像HTTP200検証済)",
   "gear_removed": [],
   "run_summary": {
-    "updated_date": "2026-11-23",
-    "updated_time": "07:23",
+    "updated_date": "2026-11-24",
+    "updated_time": "06:37",
     "deals_added": 0,
-    "price_drops": 0,
+    "price_drops": 1,
     "events_added": 0,
-    "events_updated": 6,
+    "events_updated": 4,
     "events_date_fixed": 0,
-    "events_archived": 10,
+    "events_archived": 4,
     "links_fixed": 0,
     "links_removed": 0
   },
   "daily_hero": {
-    "date": "2026-11-23",
-    "event_id": "spoen-cycle-107315",
-    "event_title": "2027BRM（AJ神奈川）",
-    "event_date": "2026-11-21",
-    "place_label": "神奈川県・AJ神奈川",
+    "date": "2026-11-24",
+    "event_id": "trjp-sanage-trail-2026",
+    "event_title": "TOYOTA CITY 猿投山トレイルランニングレース 2026（愛知県）",
+    "event_date": "2026-12-06",
+    "place_label": "愛知県・猿投山",
     "image": "hero-bg/daily-featured.jpg",
-    "updated_at": "2026-11-22T22:24:05.962Z"
+    "updated_at": "2026-11-23T21:37:59.349Z"
   }
 }
