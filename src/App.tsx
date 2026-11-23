@@ -1044,8 +1044,10 @@ export const App: React.FC = () => {
               <MobileEventCardList
                 events={filteredEvents}
                 deals={deals}
+                gears={gears}
                 favoriteIds={favoriteIds}
                 onToggleFavorite={handleToggleFavorite}
+                onSelectEvent={setSelectedEvent}
               />
             </div>
           )}

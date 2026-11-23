@@ -87,28 +87,28 @@ export const MyRaceCountdownBanner: React.FC<MyRaceCountdownBannerProps> = ({
           onSelectEvent(event);
         }
       }}
-      className="group relative overflow-hidden rounded-2xl bg-white dark:bg-slate-900 border border-emerald-200 dark:border-emerald-800/70 p-3.5 sm:p-4 shadow-sm hover:shadow-md hover:border-emerald-400 dark:hover:border-emerald-600 transition-all cursor-pointer select-none"
+      className="group relative overflow-hidden rounded-2xl bg-white dark:bg-slate-900 border border-emerald-200 dark:border-emerald-800/70 p-2.5 sm:p-4 shadow-sm hover:shadow-md hover:border-emerald-400 dark:hover:border-emerald-600 transition-all cursor-pointer select-none"
     >
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-3">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 sm:gap-3">
         {/* 左側: カウントダウン＆大会名 */}
-        <div className="flex items-start sm:items-center gap-3 min-w-0">
+        <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
           <div
-            className={`shrink-0 flex flex-col items-center justify-center px-3 py-1.5 rounded-xl font-black border ${
+            className={`shrink-0 flex flex-col items-center justify-center px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-xl font-black border ${
               isUrgent
                 ? 'bg-amber-50 dark:bg-amber-950/50 border-amber-300 dark:border-amber-700 text-amber-700 dark:text-amber-300'
                 : 'bg-emerald-50 dark:bg-emerald-950/50 border-emerald-300 dark:border-emerald-700 text-emerald-700 dark:text-emerald-300'
             }`}
           >
-            <span className="text-[10px] leading-none opacity-80">開催まで</span>
-            <span className="text-base sm:text-lg leading-tight mt-0.5 whitespace-nowrap">
+            <span className="text-[9px] sm:text-[10px] leading-none opacity-80">開催まで</span>
+            <span className="text-sm sm:text-lg leading-tight mt-0.5 whitespace-nowrap">
               {diffDays === 0 ? '本日!' : `あと${diffDays}日`}
             </span>
           </div>
 
-          <div className="min-w-0">
+          <div className="min-w-0 flex-1">
             <div className="flex items-center gap-1.5 flex-wrap">
-              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-600 text-white text-[10px] font-bold">
-                <Flag className="w-3 h-3" />
+              <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-emerald-600 text-white text-[10px] font-bold">
+                <Flag className="w-2.5 h-2.5" />
                 マイ参戦予定
               </span>
               <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-slate-500 dark:text-slate-400">
@@ -116,25 +116,25 @@ export const MyRaceCountdownBanner: React.FC<MyRaceCountdownBannerProps> = ({
                 {event.date}（{event.prefecture}）
               </span>
               {otherCount > 0 && (
-                <span className="text-[10px] font-bold text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded-full">
-                  他 {otherCount}件予定
+                <span className="text-[10px] font-bold text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded-full">
+                  他{otherCount}件
                 </span>
               )}
             </div>
-            <h3 className="text-sm sm:text-base font-extrabold text-slate-900 dark:text-slate-100 truncate mt-1 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+            <h3 className="text-xs sm:text-base font-extrabold text-slate-900 dark:text-slate-100 truncate mt-0.5 sm:mt-1 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
               {event.title}
             </h3>
           </div>
         </div>
 
         {/* 右側: 必携装備の準備率プログレスバー＆詳細導線 */}
-        <div className="flex items-center justify-between md:justify-end gap-3 shrink-0 pt-2 md:pt-0 border-t md:border-t-0 border-slate-100 dark:border-slate-800">
+        <div className="flex items-center justify-between md:justify-end gap-2.5 sm:gap-3 shrink-0 pt-1.5 md:pt-0 border-t md:border-t-0 border-slate-100 dark:border-slate-800">
           {gearProgress.total > 0 ? (
-            <div className="w-44 sm:w-52">
+            <div className="flex-1 md:flex-initial md:w-52">
               <div className="flex items-center justify-between text-[11px] font-bold mb-1">
                 <span className="inline-flex items-center gap-1 text-slate-600 dark:text-slate-300">
                   <Backpack className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
-                  必携装備の準備率
+                  必携装備
                 </span>
                 <span
                   className={
@@ -143,10 +143,10 @@ export const MyRaceCountdownBanner: React.FC<MyRaceCountdownBannerProps> = ({
                       : 'text-slate-700 dark:text-slate-200'
                   }
                 >
-                  {gearProgress.completed}/{gearProgress.total}個 ({gearProgress.percent}%)
+                  {gearProgress.completed}/{gearProgress.total} ({gearProgress.percent}%)
                 </span>
               </div>
-              <div className="w-full h-2 rounded-full bg-slate-100 dark:bg-slate-800 overflow-hidden">
+              <div className="w-full h-1.5 sm:h-2 rounded-full bg-slate-100 dark:bg-slate-800 overflow-hidden">
                 <div
                   className={`h-full rounded-full transition-all duration-300 ${
                     gearProgress.percent === 100
@@ -159,14 +159,14 @@ export const MyRaceCountdownBanner: React.FC<MyRaceCountdownBannerProps> = ({
             </div>
           ) : (
             <div className="inline-flex items-center gap-1 text-xs font-bold text-slate-500 dark:text-slate-400">
-              <CheckCircle2 className="w-4 h-4 text-emerald-500" />
-              <span>必携品・詳細を確認</span>
+              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500" />
+              <span>詳細を確認</span>
             </div>
           )}
 
-          <div className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 group-hover:bg-emerald-600 group-hover:text-white text-slate-700 dark:text-slate-200 text-xs font-bold transition-colors whitespace-nowrap">
-            <span className="hidden sm:inline">装備チェック</span>
-            <ChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+          <div className="inline-flex items-center gap-1 px-2 py-1 sm:px-2.5 sm:py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 group-hover:bg-emerald-600 group-hover:text-white text-slate-700 dark:text-slate-200 text-[11px] sm:text-xs font-bold transition-colors whitespace-nowrap shrink-0">
+            <span>装備チェック</span>
+            <ChevronRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-0.5 transition-transform" />
           </div>
         </div>
       </div>
