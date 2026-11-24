@@ -1,399 +1,5 @@
 [
   {
-    "id": "spoen-cycle-107040",
-    "category": "cycling",
-    "subCategory": "ロングライド (50km以上)",
-    "elements": [
-      "ロングライド"
-    ],
-    "title": "ツール・ド府中 ～TOKYO2020ロードレースの聖地を巡る～",
-    "date": "2026-11-20",
-    "end_date": "2026-11-29",
-    "month": 11,
-    "region": "関東",
-    "prefecture": "東京都",
-    "distance_km": 80,
-    "elevation_m": 0,
-    "entry_status": "open",
-    "entry_fee": "詳細はエントリーページを確認",
-    "links": {
-      "official": "https://www.sportsentry.ne.jp/event/t/107040",
-      "entry": "https://www.sportsentry.ne.jp/event/t/107040",
-      "review": null,
-      "sns": null,
-      "verified": true,
-      "verified_at": "2026-11-24"
-    },
-    "mandatory_gear": [
-      {
-        "name": "JCF公認ヘルメット＆グローブ",
-        "category": "ギア"
-      },
-      {
-        "name": "前後ライト（フロント・テール）・リフレクター",
-        "category": "ライト"
-      },
-      {
-        "name": "携帯工具・パンク修理キット・ボトル",
-        "category": "ギア"
-      },
-      {
-        "name": "防寒ウインドブレーカー・レインウェア",
-        "category": "ウェア"
-      }
-    ],
-    "venue": {
-      "name": "東京都 府中市郷土の森観光物産館",
-      "address": "東京都",
-      "mapQuery": "東京都 ツール・ド府中 ～TOKYO2020ロードレースの聖地を巡る～"
-    },
-    "source": {
-      "portalName": "スポエンCYCLE",
-      "portalUrl": "https://cycle.spoen.jp/"
-    },
-    "added_at": "2026-11-20",
-    "date_verified_at": "2026-11-20"
-  },
-  {
-    "id": "spoen-cycle-106144",
-    "category": "cycling",
-    "subCategory": "ロングライド (50km以上)",
-    "elements": [
-      "ロングライド"
-    ],
-    "title": "白神山地一周シライチ一周キャンペーン2026",
-    "date": "2026-11-20",
-    "end_date": "2026-11-30",
-    "month": 11,
-    "region": "東北",
-    "prefecture": "青森県",
-    "distance_km": 300,
-    "elevation_m": 0,
-    "entry_status": "open",
-    "entry_fee": "詳細はエントリーページを確認",
-    "links": {
-      "official": "https://www.sportsentry.ne.jp/event/t/106144",
-      "entry": "https://www.sportsentry.ne.jp/event/t/106144",
-      "review": null,
-      "sns": null,
-      "verified": true,
-      "verified_at": "2026-11-24"
-    },
-    "mandatory_gear": [
-      {
-        "name": "JCF公認ヘルメット＆グローブ",
-        "category": "ギア"
-      },
-      {
-        "name": "前後ライト（フロント・テール）・リフレクター",
-        "category": "ライト"
-      },
-      {
-        "name": "携帯工具・パンク修理キット・ボトル",
-        "category": "ギア"
-      },
-      {
-        "name": "防寒ウインドブレーカー・レインウェア",
-        "category": "ウェア"
-      }
-    ],
-    "venue": {
-      "name": "青森県 【青森県・秋田県】白神山地",
-      "address": "青森県",
-      "mapQuery": "青森県 白神山地一周シライチ一周キャンペーン2026"
-    },
-    "source": {
-      "portalName": "スポエンCYCLE",
-      "portalUrl": "https://cycle.spoen.jp/"
-    },
-    "added_at": "2026-11-20",
-    "date_verified_at": "2026-11-20"
-  },
-  {
-    "id": "spoen-cycle-105660",
-    "category": "cycling",
-    "subCategory": "ロングライド (50km以上)",
-    "elements": [
-      "ロングライド"
-    ],
-    "title": "サイクルボール Season7 -グランボール制覇の旅-",
-    "date": "2026-11-20",
-    "end_date": "2027-01-31",
-    "month": 11,
-    "region": "関東",
-    "prefecture": "東京都",
-    "distance_km": 80,
-    "elevation_m": 0,
-    "entry_status": "open",
-    "entry_fee": "詳細はエントリーページを確認",
-    "links": {
-      "official": "https://www.sportsentry.ne.jp/event/t/105660",
-      "entry": "https://www.sportsentry.ne.jp/event/t/105660",
-      "review": null,
-      "sns": null,
-      "verified": true,
-      "verified_at": "2026-11-24"
-    },
-    "mandatory_gear": [
-      {
-        "name": "JCF公認ヘルメット＆グローブ",
-        "category": "ギア"
-      },
-      {
-        "name": "前後ライト（フロント・テール）・リフレクター",
-        "category": "ライト"
-      },
-      {
-        "name": "携帯工具・パンク修理キット・ボトル",
-        "category": "ギア"
-      },
-      {
-        "name": "防寒ウインドブレーカー・レインウェア",
-        "category": "ウェア"
-      }
-    ],
-    "venue": {
-      "name": "の1周コース",
-      "address": "東京都",
-      "mapQuery": "東京都 サイクルボール Season7 -グランボール制覇の旅-"
-    },
-    "source": {
-      "portalName": "スポエンCYCLE",
-      "portalUrl": "https://cycle.spoen.jp/"
-    },
-    "added_at": "2026-11-20",
-    "date_verified_at": "2026-11-20"
-  },
-  {
-    "id": "spoen-cycle-105549",
-    "category": "cycling",
-    "subCategory": "ロングライド (50km以上)",
-    "elements": [
-      "ロングライド"
-    ],
-    "title": "WAKAYAMA800モバイルスタンプラリー 9th season",
-    "date": "2026-11-20",
-    "end_date": "2027-03-14",
-    "month": 11,
-    "region": "関西",
-    "prefecture": "京都府",
-    "distance_km": 800,
-    "elevation_m": 0,
-    "entry_status": "open",
-    "entry_fee": "詳細はエントリーページを確認",
-    "links": {
-      "official": "https://www.sportsentry.ne.jp/event/t/105549",
-      "entry": "https://www.sportsentry.ne.jp/event/t/105549",
-      "review": null,
-      "sns": null,
-      "verified": true,
-      "verified_at": "2026-11-24"
-    },
-    "mandatory_gear": [
-      {
-        "name": "JCF公認ヘルメット＆グローブ",
-        "category": "ギア"
-      },
-      {
-        "name": "前後ライト（フロント・テール）・リフレクター",
-        "category": "ライト"
-      },
-      {
-        "name": "携帯工具・パンク修理キット・ボトル",
-        "category": "ギア"
-      },
-      {
-        "name": "防寒ウインドブレーカー・レインウェア",
-        "category": "ウェア"
-      }
-    ],
-    "venue": {
-      "name": "和歌山県 和歌山県内（78スポット）、大阪府・京都府・奈良県内（各5スポット）",
-      "address": "京都府",
-      "mapQuery": "京都府 WAKAYAMA800モバイルスタンプラリー 9th season"
-    },
-    "source": {
-      "portalName": "スポエンCYCLE",
-      "portalUrl": "https://cycle.spoen.jp/"
-    },
-    "added_at": "2026-11-20",
-    "date_verified_at": "2026-11-20"
-  },
-  {
-    "id": "spoen-cycle-107132",
-    "category": "cycling",
-    "subCategory": "ブルベ (BRM/AJ)",
-    "elements": [
-      "ブルベ",
-      "ロングライド"
-    ],
-    "title": "2027BRM（オダックスランドヌール日本橋）",
-    "date": "2026-11-20",
-    "end_date": "2027-11-30",
-    "month": 11,
-    "region": "関東",
-    "prefecture": "東京都",
-    "distance_km": 200,
-    "elevation_m": 0,
-    "entry_status": "open",
-    "entry_start_date": "2026-10-01",
-    "entry_deadline": "2027-10-25",
-    "entry_fee": "詳細はエントリーページを確認",
-    "links": {
-      "official": "https://www.sportsentry.ne.jp/event/t/107132",
-      "entry": "https://www.sportsentry.ne.jp/event/t/107132",
-      "review": null,
-      "sns": null,
-      "verified": true,
-      "verified_at": "2026-11-24"
-    },
-    "mandatory_gear": [
-      {
-        "name": "JCF公認ヘルメット＆グローブ",
-        "category": "ギア"
-      },
-      {
-        "name": "前後ライト（フロント・テール）・リフレクター",
-        "category": "ライト"
-      },
-      {
-        "name": "携帯工具・パンク修理キット・ボトル",
-        "category": "ギア"
-      },
-      {
-        "name": "防寒ウインドブレーカー・レインウェア",
-        "category": "ウェア"
-      }
-    ],
-    "venue": {
-      "name": "東京都",
-      "address": "東京都",
-      "mapQuery": "東京都 2027BRM（オダックスランドヌール日本橋）"
-    },
-    "source": {
-      "portalName": "スポエンCYCLE",
-      "portalUrl": "https://cycle.spoen.jp/"
-    },
-    "added_at": "2026-11-20",
-    "date_verified_at": "2026-11-20"
-  },
-  {
-    "id": "spoen-cycle-107432",
-    "category": "cycling",
-    "subCategory": "ブルベ (BRM/AJ)",
-    "elements": [
-      "ブルベ",
-      "ロングライド"
-    ],
-    "title": "2027AJパーマネント（AJ広島）",
-    "date": "2026-11-20",
-    "end_date": "2027-10-31",
-    "month": 11,
-    "region": "中国",
-    "prefecture": "島根県",
-    "distance_km": 200,
-    "elevation_m": 0,
-    "entry_status": "open",
-    "entry_start_date": "2026-10-16",
-    "entry_deadline": "2027-10-17",
-    "entry_fee": "詳細はエントリーページを確認",
-    "links": {
-      "official": "https://www.sportsentry.ne.jp/event/t/107432",
-      "entry": "https://www.sportsentry.ne.jp/event/t/107432",
-      "review": null,
-      "sns": null,
-      "verified": true,
-      "verified_at": "2026-11-24"
-    },
-    "mandatory_gear": [
-      {
-        "name": "JCF公認ヘルメット＆グローブ",
-        "category": "ギア"
-      },
-      {
-        "name": "前後ライト（フロント・テール）・リフレクター",
-        "category": "ライト"
-      },
-      {
-        "name": "携帯工具・パンク修理キット・ボトル",
-        "category": "ギア"
-      },
-      {
-        "name": "防寒ウインドブレーカー・レインウェア",
-        "category": "ウェア"
-      }
-    ],
-    "venue": {
-      "name": "広島県 山口県 愛媛県 島根県 大分県 熊本県",
-      "address": "島根県",
-      "mapQuery": "島根県 2027AJパーマネント（AJ広島）"
-    },
-    "source": {
-      "portalName": "スポエンCYCLE",
-      "portalUrl": "https://cycle.spoen.jp/"
-    },
-    "added_at": "2026-11-20",
-    "date_verified_at": "2026-11-20"
-  },
-  {
-    "id": "spoen-cycle-107228",
-    "category": "cycling",
-    "subCategory": "ブルベ (BRM/AJ)",
-    "elements": [
-      "ブルベ",
-      "ロングライド"
-    ],
-    "title": "RさくらBRM2027",
-    "date": "2026-11-20",
-    "end_date": "2027-10-31",
-    "month": 11,
-    "region": "関東",
-    "prefecture": "千葉県",
-    "distance_km": 200,
-    "elevation_m": 0,
-    "entry_status": "open",
-    "entry_start_date": "2026-10-01",
-    "entry_deadline": "2027-10-09",
-    "entry_fee": "詳細はエントリーページを確認",
-    "links": {
-      "official": "https://www.sportsentry.ne.jp/event/t/107228",
-      "entry": "https://www.sportsentry.ne.jp/event/t/107228",
-      "review": null,
-      "sns": null,
-      "verified": true,
-      "verified_at": "2026-11-24"
-    },
-    "mandatory_gear": [
-      {
-        "name": "JCF公認ヘルメット＆グローブ",
-        "category": "ギア"
-      },
-      {
-        "name": "前後ライト（フロント・テール）・リフレクター",
-        "category": "ライト"
-      },
-      {
-        "name": "携帯工具・パンク修理キット・ボトル",
-        "category": "ギア"
-      },
-      {
-        "name": "防寒ウインドブレーカー・レインウェア",
-        "category": "ウェア"
-      }
-    ],
-    "venue": {
-      "name": "千葉県",
-      "address": "千葉県",
-      "mapQuery": "千葉県 RさくらBRM2027"
-    },
-    "source": {
-      "portalName": "スポエンCYCLE",
-      "portalUrl": "https://cycle.spoen.jp/"
-    },
-    "added_at": "2026-11-20",
-    "date_verified_at": "2026-11-20"
-  },
-  {
     "id": "spoen-cycle-107315",
     "category": "cycling",
     "subCategory": "ブルベ (BRM/AJ)",
@@ -449,7 +55,401 @@
       "portalUrl": "https://cycle.spoen.jp/"
     },
     "added_at": "2026-11-20",
-    "date_verified_at": "2026-11-20"
+    "date_verified_at": "2026-11-24"
+  },
+  {
+    "id": "spoen-cycle-107040",
+    "category": "cycling",
+    "subCategory": "ロングライド (50km以上)",
+    "elements": [
+      "ロングライド"
+    ],
+    "title": "ツール・ド府中 ～TOKYO2020ロードレースの聖地を巡る～",
+    "date": "2026-11-24",
+    "end_date": "2026-11-29",
+    "month": 11,
+    "region": "関東",
+    "prefecture": "東京都",
+    "distance_km": 80,
+    "elevation_m": 0,
+    "entry_status": "open",
+    "entry_fee": "詳細はエントリーページを確認",
+    "links": {
+      "official": "https://www.sportsentry.ne.jp/event/t/107040",
+      "entry": "https://www.sportsentry.ne.jp/event/t/107040",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-24"
+    },
+    "mandatory_gear": [
+      {
+        "name": "JCF公認ヘルメット＆グローブ",
+        "category": "ギア"
+      },
+      {
+        "name": "前後ライト（フロント・テール）・リフレクター",
+        "category": "ライト"
+      },
+      {
+        "name": "携帯工具・パンク修理キット・ボトル",
+        "category": "ギア"
+      },
+      {
+        "name": "防寒ウインドブレーカー・レインウェア",
+        "category": "ウェア"
+      }
+    ],
+    "venue": {
+      "name": "東京都 府中市郷土の森観光物産館",
+      "address": "東京都",
+      "mapQuery": "東京都 ツール・ド府中 ～TOKYO2020ロードレースの聖地を巡る～"
+    },
+    "source": {
+      "portalName": "スポエンCYCLE",
+      "portalUrl": "https://cycle.spoen.jp/"
+    },
+    "added_at": "2026-11-20",
+    "date_verified_at": "2026-11-24"
+  },
+  {
+    "id": "spoen-cycle-106144",
+    "category": "cycling",
+    "subCategory": "ロングライド (50km以上)",
+    "elements": [
+      "ロングライド"
+    ],
+    "title": "白神山地一周シライチ一周キャンペーン2026",
+    "date": "2026-11-24",
+    "end_date": "2026-11-30",
+    "month": 11,
+    "region": "東北",
+    "prefecture": "青森県",
+    "distance_km": 300,
+    "elevation_m": 0,
+    "entry_status": "open",
+    "entry_fee": "詳細はエントリーページを確認",
+    "links": {
+      "official": "https://www.sportsentry.ne.jp/event/t/106144",
+      "entry": "https://www.sportsentry.ne.jp/event/t/106144",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-24"
+    },
+    "mandatory_gear": [
+      {
+        "name": "JCF公認ヘルメット＆グローブ",
+        "category": "ギア"
+      },
+      {
+        "name": "前後ライト（フロント・テール）・リフレクター",
+        "category": "ライト"
+      },
+      {
+        "name": "携帯工具・パンク修理キット・ボトル",
+        "category": "ギア"
+      },
+      {
+        "name": "防寒ウインドブレーカー・レインウェア",
+        "category": "ウェア"
+      }
+    ],
+    "venue": {
+      "name": "青森県 【青森県・秋田県】白神山地",
+      "address": "青森県",
+      "mapQuery": "青森県 白神山地一周シライチ一周キャンペーン2026"
+    },
+    "source": {
+      "portalName": "スポエンCYCLE",
+      "portalUrl": "https://cycle.spoen.jp/"
+    },
+    "added_at": "2026-11-20",
+    "date_verified_at": "2026-11-24"
+  },
+  {
+    "id": "spoen-cycle-105660",
+    "category": "cycling",
+    "subCategory": "ロングライド (50km以上)",
+    "elements": [
+      "ロングライド"
+    ],
+    "title": "サイクルボール Season7 -グランボール制覇の旅-",
+    "date": "2026-11-24",
+    "end_date": "2027-01-31",
+    "month": 11,
+    "region": "関東",
+    "prefecture": "東京都",
+    "distance_km": 80,
+    "elevation_m": 0,
+    "entry_status": "open",
+    "entry_fee": "詳細はエントリーページを確認",
+    "links": {
+      "official": "https://www.sportsentry.ne.jp/event/t/105660",
+      "entry": "https://www.sportsentry.ne.jp/event/t/105660",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-24"
+    },
+    "mandatory_gear": [
+      {
+        "name": "JCF公認ヘルメット＆グローブ",
+        "category": "ギア"
+      },
+      {
+        "name": "前後ライト（フロント・テール）・リフレクター",
+        "category": "ライト"
+      },
+      {
+        "name": "携帯工具・パンク修理キット・ボトル",
+        "category": "ギア"
+      },
+      {
+        "name": "防寒ウインドブレーカー・レインウェア",
+        "category": "ウェア"
+      }
+    ],
+    "venue": {
+      "name": "の1周コース",
+      "address": "東京都",
+      "mapQuery": "東京都 サイクルボール Season7 -グランボール制覇の旅-"
+    },
+    "source": {
+      "portalName": "スポエンCYCLE",
+      "portalUrl": "https://cycle.spoen.jp/"
+    },
+    "added_at": "2026-11-20",
+    "date_verified_at": "2026-11-24"
+  },
+  {
+    "id": "spoen-cycle-105549",
+    "category": "cycling",
+    "subCategory": "ロングライド (50km以上)",
+    "elements": [
+      "ロングライド"
+    ],
+    "title": "WAKAYAMA800モバイルスタンプラリー 9th season",
+    "date": "2026-11-24",
+    "end_date": "2027-03-14",
+    "month": 11,
+    "region": "関西",
+    "prefecture": "京都府",
+    "distance_km": 800,
+    "elevation_m": 0,
+    "entry_status": "open",
+    "entry_fee": "詳細はエントリーページを確認",
+    "links": {
+      "official": "https://www.sportsentry.ne.jp/event/t/105549",
+      "entry": "https://www.sportsentry.ne.jp/event/t/105549",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-24"
+    },
+    "mandatory_gear": [
+      {
+        "name": "JCF公認ヘルメット＆グローブ",
+        "category": "ギア"
+      },
+      {
+        "name": "前後ライト（フロント・テール）・リフレクター",
+        "category": "ライト"
+      },
+      {
+        "name": "携帯工具・パンク修理キット・ボトル",
+        "category": "ギア"
+      },
+      {
+        "name": "防寒ウインドブレーカー・レインウェア",
+        "category": "ウェア"
+      }
+    ],
+    "venue": {
+      "name": "和歌山県 和歌山県内（78スポット）、大阪府・京都府・奈良県内（各5スポット）",
+      "address": "京都府",
+      "mapQuery": "京都府 WAKAYAMA800モバイルスタンプラリー 9th season"
+    },
+    "source": {
+      "portalName": "スポエンCYCLE",
+      "portalUrl": "https://cycle.spoen.jp/"
+    },
+    "added_at": "2026-11-20",
+    "date_verified_at": "2026-11-24"
+  },
+  {
+    "id": "spoen-cycle-107132",
+    "category": "cycling",
+    "subCategory": "ブルベ (BRM/AJ)",
+    "elements": [
+      "ブルベ",
+      "ロングライド"
+    ],
+    "title": "2027BRM（オダックスランドヌール日本橋）",
+    "date": "2026-11-24",
+    "end_date": "2027-11-30",
+    "month": 11,
+    "region": "関東",
+    "prefecture": "東京都",
+    "distance_km": 200,
+    "elevation_m": 0,
+    "entry_status": "open",
+    "entry_start_date": "2026-10-01",
+    "entry_deadline": "2027-10-25",
+    "entry_fee": "詳細はエントリーページを確認",
+    "links": {
+      "official": "https://www.sportsentry.ne.jp/event/t/107132",
+      "entry": "https://www.sportsentry.ne.jp/event/t/107132",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-24"
+    },
+    "mandatory_gear": [
+      {
+        "name": "JCF公認ヘルメット＆グローブ",
+        "category": "ギア"
+      },
+      {
+        "name": "前後ライト（フロント・テール）・リフレクター",
+        "category": "ライト"
+      },
+      {
+        "name": "携帯工具・パンク修理キット・ボトル",
+        "category": "ギア"
+      },
+      {
+        "name": "防寒ウインドブレーカー・レインウェア",
+        "category": "ウェア"
+      }
+    ],
+    "venue": {
+      "name": "東京都",
+      "address": "東京都",
+      "mapQuery": "東京都 2027BRM（オダックスランドヌール日本橋）"
+    },
+    "source": {
+      "portalName": "スポエンCYCLE",
+      "portalUrl": "https://cycle.spoen.jp/"
+    },
+    "added_at": "2026-11-20",
+    "date_verified_at": "2026-11-24"
+  },
+  {
+    "id": "spoen-cycle-107432",
+    "category": "cycling",
+    "subCategory": "ブルベ (BRM/AJ)",
+    "elements": [
+      "ブルベ",
+      "ロングライド"
+    ],
+    "title": "2027AJパーマネント（AJ広島）",
+    "date": "2026-11-24",
+    "end_date": "2027-10-31",
+    "month": 11,
+    "region": "中国",
+    "prefecture": "島根県",
+    "distance_km": 200,
+    "elevation_m": 0,
+    "entry_status": "open",
+    "entry_start_date": "2026-10-16",
+    "entry_deadline": "2027-10-17",
+    "entry_fee": "詳細はエントリーページを確認",
+    "links": {
+      "official": "https://www.sportsentry.ne.jp/event/t/107432",
+      "entry": "https://www.sportsentry.ne.jp/event/t/107432",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-24"
+    },
+    "mandatory_gear": [
+      {
+        "name": "JCF公認ヘルメット＆グローブ",
+        "category": "ギア"
+      },
+      {
+        "name": "前後ライト（フロント・テール）・リフレクター",
+        "category": "ライト"
+      },
+      {
+        "name": "携帯工具・パンク修理キット・ボトル",
+        "category": "ギア"
+      },
+      {
+        "name": "防寒ウインドブレーカー・レインウェア",
+        "category": "ウェア"
+      }
+    ],
+    "venue": {
+      "name": "広島県 山口県 愛媛県 島根県 大分県 熊本県",
+      "address": "島根県",
+      "mapQuery": "島根県 2027AJパーマネント（AJ広島）"
+    },
+    "source": {
+      "portalName": "スポエンCYCLE",
+      "portalUrl": "https://cycle.spoen.jp/"
+    },
+    "added_at": "2026-11-20",
+    "date_verified_at": "2026-11-24"
+  },
+  {
+    "id": "spoen-cycle-107228",
+    "category": "cycling",
+    "subCategory": "ブルベ (BRM/AJ)",
+    "elements": [
+      "ブルベ",
+      "ロングライド"
+    ],
+    "title": "RさくらBRM2027",
+    "date": "2026-11-24",
+    "end_date": "2027-10-31",
+    "month": 11,
+    "region": "関東",
+    "prefecture": "千葉県",
+    "distance_km": 200,
+    "elevation_m": 0,
+    "entry_status": "open",
+    "entry_start_date": "2026-10-01",
+    "entry_deadline": "2027-10-09",
+    "entry_fee": "詳細はエントリーページを確認",
+    "links": {
+      "official": "https://www.sportsentry.ne.jp/event/t/107228",
+      "entry": "https://www.sportsentry.ne.jp/event/t/107228",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-24"
+    },
+    "mandatory_gear": [
+      {
+        "name": "JCF公認ヘルメット＆グローブ",
+        "category": "ギア"
+      },
+      {
+        "name": "前後ライト（フロント・テール）・リフレクター",
+        "category": "ライト"
+      },
+      {
+        "name": "携帯工具・パンク修理キット・ボトル",
+        "category": "ギア"
+      },
+      {
+        "name": "防寒ウインドブレーカー・レインウェア",
+        "category": "ウェア"
+      }
+    ],
+    "venue": {
+      "name": "千葉県",
+      "address": "千葉県",
+      "mapQuery": "千葉県 RさくらBRM2027"
+    },
+    "source": {
+      "portalName": "スポエンCYCLE",
+      "portalUrl": "https://cycle.spoen.jp/"
+    },
+    "added_at": "2026-11-20",
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-awaji-island-trail-2026",
@@ -506,7 +506,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-20"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-hikosan-mineirido-trail-2026",
@@ -897,7 +897,7 @@
       "portalUrl": "https://cycle.spoen.jp/"
     },
     "added_at": "2026-11-20",
-    "date_verified_at": "2026-11-20"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "spoen-cycle-105706",
@@ -953,7 +953,7 @@
       "portalUrl": "https://cycle.spoen.jp/"
     },
     "added_at": "2026-11-20",
-    "date_verified_at": "2026-11-20"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "spoen-cycle-105600",
@@ -1009,7 +1009,61 @@
       "portalUrl": "https://cycle.spoen.jp/"
     },
     "added_at": "2026-11-20",
-    "date_verified_at": "2026-11-20"
+    "date_verified_at": "2026-11-24"
+  },
+  {
+    "id": "spoen-cycle-107410",
+    "category": "cycling",
+    "subCategory": "ロングライド (50km以上)",
+    "elements": [
+      "ロングライド"
+    ],
+    "title": "箱根椿ライン大観山ヒルクライムと芦ノ湖ポタリング110km",
+    "date": "2026-12-02",
+    "month": 12,
+    "region": "関東",
+    "prefecture": "神奈川県",
+    "distance_km": 110,
+    "elevation_m": 0,
+    "entry_status": "open",
+    "entry_fee": "詳細はエントリーページを確認",
+    "links": {
+      "official": "https://www.sportsentry.ne.jp/event/t/107410",
+      "entry": "https://www.sportsentry.ne.jp/event/t/107410",
+      "review": null,
+      "sns": null,
+      "verified": true,
+      "verified_at": "2026-11-24"
+    },
+    "mandatory_gear": [
+      {
+        "name": "JCF公認ヘルメット＆グローブ",
+        "category": "ギア"
+      },
+      {
+        "name": "前後ライト（フロント・テール）・リフレクター",
+        "category": "ライト"
+      },
+      {
+        "name": "携帯工具・パンク修理キット・ボトル",
+        "category": "ギア"
+      },
+      {
+        "name": "防寒ウインドブレーカー・レインウェア",
+        "category": "ウェア"
+      }
+    ],
+    "venue": {
+      "name": "神奈川県 神奈川県茅ヶ崎市柳島1300",
+      "address": "神奈川県",
+      "mapQuery": "神奈川県 箱根椿ライン大観山ヒルクライムと芦ノ湖ポタリング110km"
+    },
+    "source": {
+      "portalName": "スポエンCYCLE",
+      "portalUrl": "https://cycle.spoen.jp/"
+    },
+    "added_at": "2026-11-24",
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "toretore-tomisu-2026",
@@ -1205,9 +1259,9 @@
     "prefecture": "茨城県",
     "distance_km": 80,
     "elevation_m": 0,
-    "entry_status": "closed",
+    "entry_status": "closing_soon",
     "entry_start_date": "2026-09-28",
-    "entry_deadline": "2026-11-23",
+    "entry_deadline": "2026-11-30",
     "entry_fee": "詳細はエントリーページを確認",
     "links": {
       "official": "https://www.sportsentry.ne.jp/event/t/107290",
@@ -1245,7 +1299,7 @@
       "portalUrl": "https://cycle.spoen.jp/"
     },
     "added_at": "2026-11-20",
-    "date_verified_at": "2026-11-20",
+    "date_verified_at": "2026-11-24",
     "updated_at": "2026-11-24"
   },
   {
@@ -1695,7 +1749,7 @@
       "portalUrl": "https://cycle.spoen.jp/"
     },
     "added_at": "2026-11-20",
-    "date_verified_at": "2026-11-20",
+    "date_verified_at": "2026-11-24",
     "updated_at": "2026-11-23"
   },
   {
@@ -1752,7 +1806,7 @@
       "portalUrl": "https://cycle.spoen.jp/"
     },
     "added_at": "2026-11-20",
-    "date_verified_at": "2026-11-20"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "spoen-cycle-103703",
@@ -1808,8 +1862,8 @@
       "portalUrl": "https://cycle.spoen.jp/"
     },
     "added_at": "2026-11-20",
-    "date_verified_at": "2026-11-20",
-    "updated_at": "2026-11-21"
+    "date_verified_at": "2026-11-24",
+    "updated_at": "2026-11-24"
   },
   {
     "id": "spoen-cycle-107415",
@@ -1863,7 +1917,7 @@
       "portalUrl": "https://cycle.spoen.jp/"
     },
     "added_at": "2026-11-20",
-    "date_verified_at": "2026-11-20"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-murakuni-100-2026",
@@ -1978,7 +2032,7 @@
       "portalUrl": "https://cycle.spoen.jp/"
     },
     "added_at": "2026-11-20",
-    "date_verified_at": "2026-11-20"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "izu-trail-journey-2026",
@@ -2261,7 +2315,7 @@
       "portalUrl": "https://cycle.spoen.jp/"
     },
     "added_at": "2026-11-20",
-    "date_verified_at": "2026-11-20",
+    "date_verified_at": "2026-11-24",
     "updated_at": "2026-11-24"
   },
   {
@@ -2316,7 +2370,7 @@
       "portalUrl": "https://cycle.spoen.jp/"
     },
     "added_at": "2026-11-20",
-    "date_verified_at": "2026-11-20"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "spoen-cycle-107421",
@@ -2370,7 +2424,7 @@
       "portalUrl": "https://cycle.spoen.jp/"
     },
     "added_at": "2026-11-20",
-    "date_verified_at": "2026-11-20"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-christmas-trail-run-2026",
@@ -2591,8 +2645,8 @@
       "portalUrl": "https://cycle.spoen.jp/"
     },
     "added_at": "2026-11-20",
-    "date_verified_at": "2026-11-20",
-    "updated_at": "2026-11-23"
+    "date_verified_at": "2026-11-24",
+    "updated_at": "2026-11-24"
   },
   {
     "id": "trjp-hitachinokuni-yakiimo-trail-2026",
@@ -3101,7 +3155,7 @@
       "portalUrl": "https://cycle.spoen.jp/"
     },
     "added_at": "2026-11-20",
-    "date_verified_at": "2026-11-20"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-boroishiyama-100-2027",
@@ -3215,8 +3269,8 @@
       "portalUrl": "https://cycle.spoen.jp/"
     },
     "added_at": "2026-11-20",
-    "date_verified_at": "2026-11-20",
-    "updated_at": "2026-11-21"
+    "date_verified_at": "2026-11-24",
+    "updated_at": "2026-11-24"
   },
   {
     "id": "trjp-mitake-kodo-hatsumode-race-2027",
@@ -3607,7 +3661,7 @@
       "portalUrl": "https://cycle.spoen.jp/"
     },
     "added_at": "2026-11-20",
-    "date_verified_at": "2026-11-20"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-gamagori-bayside-trail-2027",
@@ -4116,7 +4170,7 @@
       "portalUrl": "https://cycle.spoen.jp/"
     },
     "added_at": "2026-11-20",
-    "date_verified_at": "2026-11-20"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "spoen-cycle-107678",
@@ -4174,7 +4228,7 @@
       "portalUrl": "https://cycle.spoen.jp/"
     },
     "added_at": "2026-11-20",
-    "date_verified_at": "2026-11-20"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "sky1-vertical-race-2027",
@@ -5683,7 +5737,7 @@
       "portalUrl": "https://cycle.spoen.jp/"
     },
     "added_at": "2026-11-20",
-    "date_verified_at": "2026-11-20"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "zentsuji-gogaku-2027",
@@ -5900,61 +5954,7 @@
       "portalUrl": "https://cycle.spoen.jp/"
     },
     "added_at": "2026-11-20",
-    "date_verified_at": "2026-11-20"
-  },
-  {
-    "id": "trjp-arataki-samurai-trail-2027",
-    "category": "trail",
-    "subCategory": "トレイルランニング",
-    "elements": [
-      "トレック"
-    ],
-    "title": "荒滝SAMURAIトレイル 2027（山口県）",
-    "date": "2027-02-27",
-    "month": 2,
-    "region": "中国",
-    "prefecture": "山口県",
-    "distance_km": 22,
-    "elevation_m": 1400,
-    "entry_fee": "公式サイト参照",
-    "entry_status": "open",
-    "entry_deadline": "2027-02-27",
-    "links": {
-      "official": "https://www.instagram.com/arataki.samurai.trail/",
-      "entry": "https://www.instagram.com/arataki.samurai.trail/",
-      "review": null,
-      "sns": null,
-      "verified": true,
-      "verified_at": "2026-11-24"
-    },
-    "mandatory_gear": [
-      {
-        "name": "トレイルランニングシューズ・ザック",
-        "category": "ギア"
-      },
-      {
-        "name": "レインジャケット（防風・防水シェル）",
-        "category": "ウェア"
-      },
-      {
-        "name": "水分・行動食・マイカップ",
-        "category": "補給"
-      },
-      {
-        "name": "ファーストエイドキット・携帯電話・保険証",
-        "category": "エイド"
-      }
-    ],
-    "venue": {
-      "name": "2027年は未発表（2026年実績：旧吉部小学校、宇部市東吉部3397）",
-      "mapQuery": "山口県 2027年は未発表（2026年実績：旧吉部小学校、宇部市東吉部3397）"
-    },
-    "source": {
-      "portalName": "トレイルランナー.JP",
-      "portalUrl": "https://trailrunner.jp/race-detail-arataki-samurai-trail.html"
-    },
-    "added_at": "2026-11-21",
-    "updated_at": "2026-11-21"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "matsusaka-kahadakyo-trail-2027",
@@ -6173,7 +6173,7 @@
     },
     "added_at": "2026-11-16",
     "updated_at": "2026-11-16",
-    "date_verified_at": "2026-11-20"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-onagawa-100-trails-2027",
@@ -6201,8 +6201,7 @@
       "review": null,
       "sns": null,
       "verified": true,
-      "verified_at": "2026-11-24",
-      "official_stale": true
+      "verified_at": "2026-11-24"
     },
     "mandatory_gear": [
       {
@@ -6231,7 +6230,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-onagawa-100-trails.html"
     },
     "added_at": "2026-11-16",
-    "updated_at": "2026-11-16"
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-rokko-traverse-trail-run-2027",
@@ -6568,7 +6568,7 @@
       "portalUrl": "https://cycle.spoen.jp/"
     },
     "added_at": "2026-11-20",
-    "date_verified_at": "2026-11-20"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "arws-la-ruta-madre-2027",
@@ -7066,7 +7066,7 @@
     "source": {
       "portalName": "スポエンCYCLE"
     },
-    "date_verified_at": "2026-11-22",
+    "date_verified_at": "2026-11-24",
     "updated_at": "2026-11-22"
   },
   {
@@ -8075,7 +8075,7 @@
       "portalUrl": "https://cycle.spoen.jp/"
     },
     "added_at": "2026-11-20",
-    "date_verified_at": "2026-11-20"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-kyoto-trail-run-higashiyama-2027",
@@ -9919,7 +9919,7 @@
       "portalName": "スポエンCYCLE",
       "portalUrl": "https://cycle.spoen.jp/"
     },
-    "date_verified_at": "2026-11-20",
+    "date_verified_at": "2026-11-24",
     "updated_at": "2026-11-22"
   },
   {
@@ -10996,7 +10996,8 @@
       "portalUrl": "https://trailrunner.jp/race-detail-osj-ontake100.html"
     },
     "added_at": "2026-11-20",
-    "updated_at": "2026-11-23"
+    "updated_at": "2026-11-23",
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-ikoma-summer-trail-2027",
@@ -11613,7 +11614,7 @@
       "portalUrl": "https://cycle.spoen.jp/"
     },
     "added_at": "2026-11-20",
-    "date_verified_at": "2026-11-20"
+    "date_verified_at": "2026-11-24"
   },
   {
     "id": "trjp-lake-biwa-100-2027",

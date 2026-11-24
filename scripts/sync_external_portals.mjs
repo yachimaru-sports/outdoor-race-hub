@@ -9,11 +9,13 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { normalizeRaceTitle, isSameOrOverlappingDate } from './audit-duplicates.mjs';
+import { appendChangelog, nowJstParts } from './lib/changelog.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const ROOT_DIR = path.resolve(__dirname, '..');
 const EVENTS_PATH = path.join(ROOT_DIR, 'src', 'data', 'events.json');
+const META_PATH = path.join(ROOT_DIR, 'src', 'data', 'meta.json');
 
 const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36';
 
@@ -788,6 +790,7 @@ async function main() {
   }
   let added = 0;
   let updated = 0;
+  const addedEvents = [];
 
   // 1. 人力企画
   console.log('\n[1/2] 人力企画（outdoor-sports.info）のレースを同期中...');
@@ -806,6 +809,7 @@ async function main() {
     } else {
       events.push(r);
       added++;
+      addedEvents.push(r);
       console.log(`  ★ 追加: ${r.title}`);
     }
   }
@@ -847,6 +851,7 @@ async function main() {
     if (findDuplicateIndex(events, ev) >= 0) continue;
     events.push(ev);
     added++;
+    addedEvents.push(ev);
   }
 
   // 3. スポエンCYCLE（ロングライド50km以上 ＆ ブルベ）
@@ -866,6 +871,7 @@ async function main() {
     events.push(ev);
     added++;
     spoenAdded++;
+    addedEvents.push(ev);
   }
   console.log(`  スポエンCYCLE 検出 ${spoenList.length} 件 → 新規追加 ${spoenAdded} 件 / 更新 ${spoenUpdated} 件`);
 
@@ -873,6 +879,39 @@ async function main() {
   events.sort((a, b) => a.date.localeCompare(b.date));
 
   fs.writeFileSync(EVENTS_PATH, JSON.stringify(events, null, 2) + '\n', 'utf8');
+
+  // 新着大会を changelog.json と meta.json に記録（UI上で「何が増えたか」を明確に表示するため）
+  const { date, time } = nowJstParts();
+  if (addedEvents.length > 0) {
+    const cLogs = addedEvents.slice(0, 6).map((ev) => ({
+      id: `portal-add-${ev.id}-${date}`,
+      date,
+      time,
+      type: 'event_added',
+      title: `新着大会追加: ${ev.title}`,
+      detail: `${ev.prefecture || '全国'} / ${ev.date}（${ev.source?.portalName || 'ポータル同期'}）`,
+      eventId: ev.id,
+    }));
+    appendChangelog(cLogs);
+  }
+  try {
+    let meta = {};
+    try { meta = JSON.parse(fs.readFileSync(META_PATH, 'utf-8')); } catch { meta = {}; }
+    const prevSummary = (meta.run_summary && meta.run_summary.updated_date === date) ? meta.run_summary : {};
+    const prevEventChanges = Array.isArray(prevSummary.event_changes) ? prevSummary.event_changes : [];
+    const newEventChanges = addedEvents.slice(0, 8).map((ev) => `新着: ${ev.title} (${ev.date})`);
+    meta.events_count = events.length;
+    meta.run_summary = {
+      ...prevSummary,
+      updated_date: date,
+      updated_time: time,
+      events_added: (Number(prevSummary.events_added) || 0) + added,
+      events_updated: (Number(prevSummary.events_updated) || 0) + updated + spoenUpdated,
+      event_changes: [...newEventChanges, ...prevEventChanges].slice(0, 10),
+    };
+    fs.writeFileSync(META_PATH, JSON.stringify(meta, null, 2) + '\n');
+  } catch { /* ignore */ }
+
   console.log(`\n✅ 同期完了: 新規追加 ${added} 件 / 更新 ${updated} 件 (合計 ${events.length} 件)`);
 }
 

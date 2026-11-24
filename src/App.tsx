@@ -842,7 +842,18 @@ export const App: React.FC = () => {
             events_count?: number;
             gears_count?: number;
             deals_count?: number;
-            run_summary?: Record<string, number | string>;
+            run_summary?: {
+              updated_date?: string;
+              events_added?: number;
+              events_date_fixed?: number;
+              events_updated?: number;
+              events_archived?: number;
+              links_fixed?: number;
+              deals_added?: number;
+              price_drops?: number;
+              gear_changes?: string[];
+              event_changes?: string[];
+            };
           };
           const rs = meta.run_summary || {};
           const updatedAt = meta.last_updated_at ? new Date(meta.last_updated_at) : null;
@@ -874,49 +885,75 @@ export const App: React.FC = () => {
           const summaryText = items.length
             ? items.join(' ／ ')
             : `全${meta.events_count || events.length}大会・${meta.gears_count || gears.length}ギアのリンク＆価格を生存確認済み（異常なし）`;
+          const detailChanges = isFreshSummary
+            ? [
+                ...(Array.isArray(rs.gear_changes) ? rs.gear_changes : []),
+                ...(Array.isArray(rs.event_changes) ? rs.event_changes : []),
+              ].slice(0, 6)
+            : [];
 
           return (
-            <div className="flex flex-wrap items-center justify-between gap-2 px-3 py-2 rounded-xl bg-white/95 dark:bg-slate-900/95 border border-emerald-200 dark:border-emerald-900/60 text-xs shadow-2xs">
-              <div className="flex flex-wrap items-center gap-2 min-w-0 flex-1">
-                <span className="px-2 py-0.5 rounded-full bg-emerald-600 text-white font-bold text-[10px] shrink-0">
-                  {updatedTimeLabel}
-                </span>
-                <span className="text-slate-700 dark:text-slate-200 font-semibold">
-                  {summaryText}
-                </span>
-                {dailyBg.eventId && (
-                  <button
-                    type="button"
-                    onClick={() => handleOpenEventById(dailyBg.eventId!)}
-                    className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-teal-50 dark:bg-teal-950/60 text-teal-800 dark:text-teal-300 border border-teal-200 dark:border-teal-800 text-[11px] font-bold hover:bg-teal-100 transition-colors cursor-pointer"
-                    title={dailyBg.eventTitle || dailyBg.label}
-                  >
-                    <span>🏔️ 本日の背景: {dailyBg.label}</span>
-                  </button>
-                )}
-                {latestNews && (
-                  <button
-                    type="button"
-                    onClick={() => {
-                      if (latestNews.eventId) handleOpenEventById(latestNews.eventId);
-                      else if (latestNews.targetId === 'gears-catalog') navigateTo('gears');
-                      else handleJumpToSection(latestNews.targetId);
-                    }}
-                    className="hidden md:inline-flex items-center gap-1 text-[11px] text-emerald-700 dark:text-emerald-300 hover:underline truncate max-w-md cursor-pointer"
-                    title={`${latestNews.date} ${latestNews.title}`}
-                  >
-                    <span className="text-slate-400">|</span>
-                    <span className="truncate">最新: {latestNews.title}</span>
-                  </button>
-                )}
+            <div className="px-3 py-2 rounded-xl bg-white/95 dark:bg-slate-900/95 border border-emerald-200 dark:border-emerald-900/60 text-xs shadow-2xs space-y-1.5">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <div className="flex flex-wrap items-center gap-2 min-w-0 flex-1">
+                  <span className="px-2 py-0.5 rounded-full bg-emerald-600 text-white font-bold text-[10px] shrink-0">
+                    {updatedTimeLabel}
+                  </span>
+                  <span className="text-slate-700 dark:text-slate-200 font-semibold">
+                    {summaryText}
+                  </span>
+                  {dailyBg.eventId && (
+                    <button
+                      type="button"
+                      onClick={() => handleOpenEventById(dailyBg.eventId!)}
+                      className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-teal-50 dark:bg-teal-950/60 text-teal-800 dark:text-teal-300 border border-teal-200 dark:border-teal-800 text-[11px] font-bold hover:bg-teal-100 transition-colors cursor-pointer"
+                      title={dailyBg.eventTitle || dailyBg.label}
+                    >
+                      <span>🏔️ 本日の背景: {dailyBg.label}</span>
+                    </button>
+                  )}
+                  {latestNews && (
+                    <button
+                      type="button"
+                      onClick={() => {
+                        if (latestNews.eventId) handleOpenEventById(latestNews.eventId);
+                        else if (latestNews.targetId === 'gears-catalog') navigateTo('gears');
+                        else handleJumpToSection(latestNews.targetId);
+                      }}
+                      className="hidden md:inline-flex items-center gap-1 text-[11px] text-emerald-700 dark:text-emerald-300 hover:underline truncate max-w-md cursor-pointer"
+                      title={`${latestNews.date} ${latestNews.title}`}
+                    >
+                      <span className="text-slate-400">|</span>
+                      <span className="truncate">最新: {latestNews.title}</span>
+                    </button>
+                  )}
+                </div>
+                <button
+                  type="button"
+                  onClick={() => window.dispatchEvent(new CustomEvent('open-update-history'))}
+                  className="px-2.5 py-1 rounded-lg bg-emerald-50 hover:bg-emerald-100 dark:bg-emerald-950/60 dark:hover:bg-emerald-900/70 text-emerald-800 dark:text-emerald-200 font-bold text-[11px] border border-emerald-200 dark:border-emerald-800 transition-colors shrink-0 cursor-pointer"
+                >
+                  詳細履歴を見る
+                </button>
               </div>
-              <button
-                type="button"
-                onClick={() => window.dispatchEvent(new CustomEvent('open-update-history'))}
-                className="px-2.5 py-1 rounded-lg bg-emerald-50 hover:bg-emerald-100 dark:bg-emerald-950/60 dark:hover:bg-emerald-900/70 text-emerald-800 dark:text-emerald-200 font-bold text-[11px] border border-emerald-200 dark:border-emerald-800 transition-colors shrink-0 cursor-pointer"
-              >
-                詳細履歴を見る
-              </button>
+              {detailChanges.length > 0 && (
+                <div className="flex flex-wrap items-center gap-1.5 pt-1 border-t border-emerald-100 dark:border-emerald-900/50">
+                  <span className="text-[10px] font-bold text-emerald-700 dark:text-emerald-400 shrink-0">
+                    本日の変更点:
+                  </span>
+                  {detailChanges.map((ch, idx) => (
+                    <button
+                      key={idx}
+                      type="button"
+                      onClick={() => window.dispatchEvent(new CustomEvent('open-update-history'))}
+                      className="inline-flex items-center px-2 py-0.5 rounded-md bg-slate-50 dark:bg-slate-800/80 hover:bg-emerald-50 dark:hover:bg-emerald-900/40 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 text-[10px] font-medium truncate max-w-[260px] sm:max-w-[320px] cursor-pointer transition-colors"
+                      title={ch}
+                    >
+                      {ch}
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
           );
         })()}

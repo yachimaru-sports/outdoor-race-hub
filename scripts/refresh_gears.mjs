@@ -89,6 +89,35 @@ function decodeHtml(buffer, contentType = '') {
 }
 
 /** 商品ページから 価格・定価・画像候補 を抽出 */
+async function scrapeShopifyProduct(url) {
+  const clean = url.split('?')[0].replace(/\/+$/, '');
+  const jsonUrl = clean.endsWith('.json') ? clean : `${clean}.json`;
+  const res = await fetchRetry(jsonUrl, { headers: { Accept: 'application/json' } });
+  if (!res || res.status !== 200) return { ok: false, blocked: res ? (res.status === 403 || res.status === 429 || res.status >= 500) : true, reason: res ? `HTTP ${res.status}` : 'network' };
+  try {
+    const data = await res.json();
+    const p = data?.product;
+    const v = p?.variants?.[0];
+    if (!p || !v) return { ok: false, blocked: false, reason: 'invalid shopify json' };
+    // Shopify日本ストアは税抜価格がvariantsに入るケースがあるため1.1倍（端数丸め）で税込換算
+    const rawPrice = Number(v.price) || 0;
+    const rawCompare = Number(v.compare_at_price) || 0;
+    const price = Math.round(rawPrice * 1.1);
+    const listPrice = rawCompare > rawPrice ? Math.round(rawCompare * 1.1) : price;
+    const images = (p.images || []).map((im) => cleanImage(im.src)).filter(Boolean);
+    return {
+      ok: price > 0,
+      title: String(p.title || '').trim(),
+      price,
+      listPrice,
+      images,
+      available: p.variants.some((vr) => vr.available !== false),
+    };
+  } catch {
+    return { ok: false, blocked: false, reason: 'json parse error' };
+  }
+}
+
 export async function scrapeItem(url) {
   const res = await fetchRetry(url);
   if (!res) return { ok: false, blocked: true, reason: 'network' };
@@ -426,6 +455,38 @@ async function pool(items, size, fn) {
 }
 
 async function refreshOne(g) {
+  // 公式ストアセール品（Shopify JSON対応：Ledlenser公式等）は毎回リアルタイムでセール価格・終了を検証
+  if (g.officialSaleSource === 'shopify' || g.dealUrl?.includes('ledlenser.co.jp/products/')) {
+    const s = await scrapeShopifyProduct(g.dealUrl);
+    if (s.ok && s.price > 0) {
+      let image = '';
+      for (const im of s.images) { if (await imageIsAlive(im)) { image = im; break; } }
+      if (!image && g.imageUrl && await imageIsAlive(g.imageUrl)) image = g.imageUrl;
+      if (image) {
+        const originalPrice = s.listPrice > s.price ? s.listPrice : s.price;
+        const discountRate = originalPrice > s.price ? Math.round((1 - s.price / originalPrice) * 100) : 0;
+        const dropped = Boolean(g.price && s.price < g.price);
+        const prevPrice = g.price && g.price !== s.price ? g.price : g.prevPrice;
+        return {
+          gear: {
+            ...g,
+            imageUrl: image,
+            price: s.price,
+            originalPrice,
+            discountRate,
+            ...(prevPrice ? { prevPrice } : {}),
+            lowest30d: Math.min(g.lowest30d || s.price, s.price),
+            priceVerifiedAt: new Date().toISOString(),
+          },
+          status: 'ok',
+          dropped,
+          oldPrice: g.price,
+          log: [`公式ストア実測(¥${s.price.toLocaleString()} / ${discountRate}%OFF)`],
+        };
+      }
+    }
+  }
+
   // 提携ショップ・公式固定枠（RUNPLUS、INNER FACT等）は画像疎通を確認しつつ保護
   if (g.officialUrl || g.shopName || !g.dealUrl?.includes('item.rakuten.co.jp')) {
     const imgOk = await imageIsAlive(g.imageUrl);
@@ -656,6 +717,88 @@ function normGearKey(title) {
   return (title || '').normalize('NFKC').toLowerCase().replace(/[^a-z0-9ぁ-んァ-ヶ一-龥]/g, '').slice(0, 16);
 }
 
+/** メーカー公式Webshop（Ledlenser等 Shopifyセール特集）の自動探索＆登録 */
+async function discoverOfficialStoreSales(gears, existingUrls, existingKeys) {
+  let added = 0;
+  const normUrl = (u) => (u || '').split('?')[0].replace(/\/+$/, '');
+  try {
+    const topRes = await fetchRetry('https://ledlenser.co.jp/');
+    if (!topRes || !topRes.ok) return 0;
+    const topHtml = await topRes.text();
+    const specialPaths = [...new Set([...topHtml.matchAll(/href=["'](\/blogs\/special\/[a-zA-Z0-9_-]+)["']/g)].map((m) => m[1]))];
+    const prodHandles = new Set([...topHtml.matchAll(/href=["'](\/products\/(?:hf|h8r|mh|seo|neo)[a-zA-Z0-9_-]+)["']/gi)].map((m) => m[1]));
+
+    for (const sp of specialPaths.slice(0, 3)) {
+      const spRes = await fetchRetry(`https://ledlenser.co.jp${sp}`);
+      if (!spRes || !spRes.ok) continue;
+      const spHtml = await spRes.text();
+      for (const m of spHtml.matchAll(/(\/products\/[a-zA-Z0-9_-]+)/g)) {
+        prodHandles.add(m[1]);
+      }
+    }
+
+    // HF Signature等のヘッドランプ系を優先チェック
+    const sortedHandles = [...prodHandles].sort((a, b) => {
+      const score = (x) => (/hf\d+r-signature/i.test(x) ? 0 : /h8r|hf/i.test(x) ? 1 : 2);
+      return score(a) - score(b);
+    });
+
+    for (const path of sortedHandles.slice(0, 12)) {
+      const fullUrl = normUrl(`https://ledlenser.co.jp${path}`);
+      if (existingUrls.has(fullUrl)) continue;
+      const s = await scrapeShopifyProduct(fullUrl);
+      if (!s.ok || !s.available || s.price < MIN_GEAR_PRICE) continue;
+      const discountRate = s.listPrice > s.price ? Math.round((1 - s.price / s.listPrice) * 100) : 0;
+      if (discountRate < DEAL_THRESHOLD) continue;
+      // ヘッドランプ系のみ採用（タクティカルライト・懐中電灯・ランタン等は除外）
+      if (!/hf|h8r|mh|neo|ヘッド|ヘッドランプ/i.test(s.title) || /タクティカル|ハンドライト|懐中電灯/i.test(s.title)) continue;
+
+      let validImg = '';
+      for (const im of s.images) {
+        if (await imageIsAlive(im)) { validImg = im; break; }
+      }
+      if (!validImg) continue;
+
+      const nKey = normGearKey(s.title);
+      if (nKey.length >= 6 && existingKeys.has(nKey)) continue;
+
+      const slug = path.replace('/products/', '').replace(/[^a-zA-Z0-9_-]/g, '');
+      const savedAmount = s.listPrice - s.price;
+      const newGear = {
+        id: `gear-ledlenser-${slug}`,
+        sports: ['trail', 'adventure'],
+        gearType: 'ヘッドライト',
+        matchKeywords: ['LEDLENSER', 'レッドレンザー', 'ヘッドライト', 'セール', 'Black Friday'],
+        title: `LEDLENSER ${s.title}`,
+        brand: 'LEDLENSER',
+        standardTitle: `【公式Webshopセール】定価より${discountRate}%OFF（¥${savedAmount.toLocaleString()}引き）。レッドレンザー公式限定特価モデル。`,
+        standardUrl: fullUrl,
+        officialUrl: fullUrl,
+        shopName: 'LEDLENSER 公式Webshop',
+        officialSaleSource: 'shopify',
+        dealKeyword: 'レッドレンザー ヘッドライト セール',
+        price: s.price,
+        originalPrice: s.listPrice,
+        discountRate,
+        pointRate: 0,
+        dealUrl: fullUrl,
+        imageUrl: validImg,
+        badge: `🔥 ${discountRate}%OFF 公式セール`,
+        isBestDeal: false,
+        priceVerifiedAt: new Date().toISOString(),
+        isNewDiscovery: true,
+      };
+      console.log(` ➕ 公式セール発掘: [ヘッドライト] ${newGear.title.slice(0, 35)} (${discountRate}%OFF ¥${s.price.toLocaleString()})`);
+      gears.push(newGear);
+      existingUrls.add(fullUrl);
+      existingKeys.add(nKey);
+      added++;
+      if (added >= 4) break;
+    }
+  } catch { /* ignore */ }
+  return added;
+}
+
 /** 毎朝の新規特価品自動探索 ＆ ローテーション入れ替えエンジン */
 async function discoverAndRotateDeals(currentGears) {
   console.log('\n🔍 [毎朝自動実行] 新たな目玉特価品の探索＆入れ替えを開始します（Gemini AI & 楽天検索）...');
@@ -667,6 +810,9 @@ async function discoverAndRotateDeals(currentGears) {
   let replacedCount = 0;
   let consecutiveBlocked = 0;
   let geminiCalls = 0;
+
+  // 0. メーカー公式Webshop（Ledlenser Black Friday 等）のセール自動探索
+  addedCount += await discoverOfficialStoreSales(gears, existingUrls, existingKeys);
 
   // 日替わりで探索ターゲットの順番をローテーション（毎日違うジャンルのお得品を発見）
   const daySeed = Math.floor(Date.now() / 86400000) % DISCOVERY_TARGETS.length;
@@ -918,9 +1064,13 @@ async function main() {
   let meta = {};
   try { meta = JSON.parse(fs.readFileSync(META_PATH, 'utf-8')); } catch { /* new */ }
   const prevSummary = (meta.run_summary && meta.run_summary.updated_date === date) ? meta.run_summary : {};
+  const gearChanges = [
+    ...disc.discoveredTitles.slice(0, 6).map((d) => `追加/入替: ${d.title.slice(0, 32)} (${d.discountRate}%OFF)`),
+    ...priceDrops.slice(0, 4).map((p) => `値下げ: ${p.gear.title.slice(0, 28)} (¥${(p.oldPrice || 0).toLocaleString()}→¥${p.gear.price.toLocaleString()})`),
+  ];
   Object.assign(meta, {
     last_updated_at: now, deals_count: deals.length, gears_count: alive.length,
-    gear_sync_source: 'refresh_gears.mjs (自己修復・商品ページ実測・Gemini探索・画像HTTP200検証済)',
+    gear_sync_source: 'refresh_gears.mjs (自己修復・商品ページ実測・公式セール＆Gemini探索・画像HTTP200検証済)',
     gear_removed: removed,
     run_summary: {
       ...prevSummary,
@@ -928,6 +1078,7 @@ async function main() {
       updated_time: time,
       deals_added: disc.addedCount + disc.replacedCount,
       price_drops: priceDrops.length,
+      gear_changes: gearChanges,
     },
   });
   fs.writeFileSync(META_PATH, JSON.stringify(meta, null, 2) + '\n');

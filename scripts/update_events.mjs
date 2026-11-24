@@ -556,13 +556,24 @@ async function main() {
   let meta = {};
   try { meta = JSON.parse(fs.readFileSync(META_PATH, 'utf-8')); } catch { meta = {}; }
   const prevSummary = (meta.run_summary && meta.run_summary.updated_date === today) ? meta.run_summary : {};
+  const prevEventChanges = Array.isArray(prevSummary.event_changes) ? prevSummary.event_changes : [];
+  const newEventChanges = logs
+    .filter((l) => l.type === 'event_added' || l.title?.includes('修正') || l.title?.includes('アーカイブ'))
+    .slice(0, 6)
+    .map((l) => l.title);
   meta.events_count = finalActive.length;
   meta.last_updated_at = new Date().toISOString();
   meta.run_summary = {
     ...prevSummary,
     updated_date: today,
     updated_time: time,
-    ...stats,
+    events_added: (Number(prevSummary.events_added) || 0) + stats.events_added,
+    events_updated: (Number(prevSummary.events_updated) || 0) + stats.events_updated,
+    events_date_fixed: (Number(prevSummary.events_date_fixed) || 0) + stats.events_date_fixed,
+    events_archived: (Number(prevSummary.events_archived) || 0) + stats.events_archived,
+    links_fixed: (Number(prevSummary.links_fixed) || 0) + stats.links_fixed,
+    links_removed: (Number(prevSummary.links_removed) || 0) + stats.links_removed,
+    event_changes: [...newEventChanges, ...prevEventChanges].slice(0, 10),
   };
   fs.writeFileSync(META_PATH, JSON.stringify(meta, null, 2) + '\n');
 
