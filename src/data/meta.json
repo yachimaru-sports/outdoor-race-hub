@@ -28,11 +28,17 @@
   },
   "daily_hero": {
     "date": "2026-11-25",
-    "event_id": "spoen-cycle-107290",
-    "event_title": "イナシキライド・フォトサイクリングvol.3",
-    "event_date": "2026-12-05",
-    "place_label": "茨城県・和田公園",
+    "event_id": "trjp-nagatoro-alps-trail-race-2026",
+    "event_title": "長瀞アルプストレイルレース 2026（埼玉県）",
+    "event_date": "2026-12-20",
+    "place_label": "埼玉県・長瀞",
     "image": "hero-bg/daily-featured.jpg",
-    "updated_at": "2026-11-24T21:42:36.513Z"
+    "source_type": "wikimedia_commons",
+    "license": "CC BY 3.0",
+    "author": "Σ64 ( talk )",
+    "source_url": "https://commons.wikimedia.org/wiki/File:View_from_Mt.Kimpu_04.jpg",
+    "ai_verified": true,
+    "ai_reason": "美しい尾根道と紅葉がトレラン大会の雰囲気に最適",
+    "updated_at": "2026-11-24T22:43:02.287Z"
   }
 }

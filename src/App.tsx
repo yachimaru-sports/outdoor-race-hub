@@ -907,7 +907,7 @@ export const App: React.FC = () => {
                       type="button"
                       onClick={() => handleOpenEventById(dailyBg.eventId!)}
                       className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-teal-50 dark:bg-teal-950/60 text-teal-800 dark:text-teal-300 border border-teal-200 dark:border-teal-800 text-[11px] font-bold hover:bg-teal-100 transition-colors cursor-pointer"
-                      title={dailyBg.eventTitle || dailyBg.label}
+                      title={`${dailyBg.eventTitle || dailyBg.label}${dailyBg.sourceUrl ? `（Photo: ${dailyBg.credit || 'Wikimedia Commons'} / ${dailyBg.license || 'CC'}）` : ''}`}
                     >
                       <span>🏔️ 本日の背景: {dailyBg.label}</span>
                     </button>
@@ -1113,6 +1113,16 @@ export const App: React.FC = () => {
       <Footer
         onOpenCatalog={() => navigateTo('gears')}
         onOpenGuide={() => handleOpenGuide('footer')}
+        dailyBgCredit={
+          dailyBg.sourceUrl
+            ? {
+                label: dailyBg.label,
+                credit: dailyBg.credit || 'Wikimedia Commons',
+                license: dailyBg.license || 'CC',
+                sourceUrl: dailyBg.sourceUrl,
+              }
+            : undefined
+        }
       />
 
       {/* 右下常駐：一番上へ戻るボタン（PC・スマホ共通） */}

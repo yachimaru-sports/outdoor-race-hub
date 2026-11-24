@@ -43,23 +43,37 @@ export function getDailySeasonalBackground(): {
   label: string;
   eventId?: string;
   eventTitle?: string;
+  credit?: string;
+  license?: string;
+  sourceUrl?: string;
 } {
   const base = import.meta.env.BASE_URL || '/';
   const meta = metaData as {
     daily_hero?: {
+      date?: string;
+      updated_at?: string;
       image?: string;
       place_label?: string;
       event_id?: string;
       event_title?: string;
+      author?: string;
+      license?: string;
+      source_url?: string;
     };
   };
 
   if (meta.daily_hero?.image) {
+    const cleanPath = meta.daily_hero.image.replace(/^\/+/, '');
+    const ver = meta.daily_hero.updated_at || meta.daily_hero.date || '';
+    const versionSuffix = ver ? `?v=${encodeURIComponent(ver)}` : '';
     return {
-      url: `${base}${meta.daily_hero.image.replace(/^\/+/, '')}`,
+      url: `${base}${cleanPath}${versionSuffix}`,
       label: meta.daily_hero.place_label || '本日のピックアップ開催地',
       eventId: meta.daily_hero.event_id,
       eventTitle: meta.daily_hero.event_title,
+      credit: meta.daily_hero.author,
+      license: meta.daily_hero.license,
+      sourceUrl: meta.daily_hero.source_url,
     };
   }
 

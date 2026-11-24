@@ -13,7 +13,8 @@ $DataFiles = @(
     'src/data/deals.json',
     'src/data/gears.json',
     'src/data/meta.json',
-    'src/data/changelog.json'
+    'src/data/changelog.json',
+    'public/hero-bg/daily-featured.jpg'
 )
 $Failed = @()
 
@@ -101,6 +102,14 @@ if ($LASTEXITCODE -ne 0) {
     git checkout -- src/data/events.json src/data/events_archive.json src/data/changelog.json
     $Failed += 'Step 2 大会データ更新'
 } else { Write-Ok '大会データ更新完了' }
+Write-Host ''
+
+Write-Step '[Step 2.8/6] 本日のピックアップ大会・開催地風景背景を更新（権利・AI目視審査付き）...'
+node scripts/update_daily_hero.mjs
+if ($LASTEXITCODE -ne 0) {
+    Write-Warn '背景更新に失敗しました（既存背景を維持して継続します）。'
+    $Failed += 'Step 2.8 背景更新'
+} else { Write-Ok '背景更新完了' }
 Write-Host ''
 
 Write-Step '[Step 3/6] Googleスプレッドシート＆マスターCSV同期（失敗してもサイト更新は継続）...'

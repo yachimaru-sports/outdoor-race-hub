@@ -1,13 +1,21 @@
 import React from 'react';
 import { Mountain, ShieldCheck, Compass, ExternalLink, ShoppingBag, ChevronRight, HelpCircle } from 'lucide-react';
 
+interface DailyBgCredit {
+  label: string;
+  credit: string;
+  license: string;
+  sourceUrl: string;
+}
+
 interface FooterProps {
   onOpenCatalog?: () => void;
   onOpenGuide?: () => void;
+  dailyBgCredit?: DailyBgCredit;
 }
 import { AccessCounter } from './AccessCounter';
 
-export const Footer: React.FC<FooterProps> = ({ onOpenCatalog, onOpenGuide }) => {
+export const Footer: React.FC<FooterProps> = ({ onOpenCatalog, onOpenGuide, dailyBgCredit }) => {
   return (
     <footer className="mt-20 border-t border-slate-300 dark:border-slate-800 bg-white dark:bg-[#090d16] text-slate-600 dark:text-slate-400 text-xs py-12 transition-colors">
       <div className="max-w-7xl mx-auto px-4 space-y-6">
@@ -77,6 +85,20 @@ export const Footer: React.FC<FooterProps> = ({ onOpenCatalog, onOpenGuide }) =>
             【免責事項・アフィリエイトについて】
             当サイトに掲載されている大会日程、エントリー期間、必携装備等の情報は変更される場合があります。必ず各大会の公式サイトおよびRUNNET・スポーツエントリー・e-moshicom等の公式受付ページにて最新情報をご確認ください。また、当サイトは楽天アフィリエイトプログラム等のアフィリエイト広告を利用しておすすめのギアを紹介しています。
           </p>
+          {dailyBgCredit && (
+            <p className="text-[11px] text-slate-500 dark:text-slate-400">
+              本日の背景写真: {dailyBgCredit.label}（
+              <a
+                href={dailyBgCredit.sourceUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:text-teal-700 dark:hover:text-teal-300"
+              >
+                Photo: {dailyBgCredit.credit} / {dailyBgCredit.license} via Wikimedia Commons
+              </a>
+              ）
+            </p>
+          )}
           {/* リアルタイム累計アクセスカウンター（中央配置） */}
           <div className="py-2 flex justify-center">
             <AccessCounter variant="footer" />

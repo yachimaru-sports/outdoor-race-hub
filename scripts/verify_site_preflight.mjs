@@ -49,7 +49,7 @@ async function runPreflightGate() {
   // -------------------------------------------------------------
   // 0. [スクリプト] 全自動化スクリプトの構文チェック（SyntaxError 事前防止）
   // -------------------------------------------------------------
-  console.log('\n[検査 0/4] 自動化スクリプト（scripts/*.mjs）の構文チェック...');
+  console.log('\n[検査 0/5] 自動化スクリプト（scripts/*.mjs）の構文チェック...');
   const scriptFiles = fs.readdirSync(__dirname).filter((f) => f.endsWith('.mjs')).sort();
   let syntaxErrors = 0;
   for (const file of scriptFiles) {
@@ -72,7 +72,7 @@ async function runPreflightGate() {
   // -------------------------------------------------------------
   // 1. [大会] 重複ゼロ監査
   // -------------------------------------------------------------
-  console.log('\n[検査 1/4] 大会データの重複ゼロ監査スキャン...');
+  console.log('\n[検査 1/5] 大会データの重複ゼロ監査スキャン...');
   const eventsPath = path.join(ROOT_DIR, 'src', 'data', 'events.json');
   const events = JSON.parse(fs.readFileSync(eventsPath, 'utf8'));
 
@@ -109,7 +109,7 @@ async function runPreflightGate() {
   // -------------------------------------------------------------
   // 2. [大会] スキーマ・必須項目完全性検証
   // -------------------------------------------------------------
-  console.log('\n[検査 2/4] 大会スキーマ・必須フィールド完全性検証...');
+  console.log('\n[検査 2/5] 大会スキーマ・必須フィールド完全性検証...');
   let schemaErrors = 0;
 
   for (const ev of events) {
@@ -145,7 +145,7 @@ async function runPreflightGate() {
   // -------------------------------------------------------------
   // 3. [大会] 直近追加大会のリンク疎通実機検証
   // -------------------------------------------------------------
-  console.log('\n[検査 3/4] 新規追加・直近大会のリンク実通検証...');
+  console.log('\n[検査 3/5] 新規追加・直近大会のリンク実通検証...');
   if (isCI) {
     // CI環境では海外IPによるブロッキングを防ぐため、URLフォーマット検証
     let invalidUrlCount = 0;
@@ -177,7 +177,7 @@ async function runPreflightGate() {
   // -------------------------------------------------------------
   // 4. [装備] 装備・特価品データの整合性検証
   // -------------------------------------------------------------
-  console.log('\n[検査 4/4] 装備品および特価品のデータ完全性検証...');
+  console.log('\n[検査 4/5] 装備品および特価品のデータ完全性検証...');
   const gearsPath = path.join(ROOT_DIR, 'src', 'data', 'gears.json');
   const gears = JSON.parse(fs.readFileSync(gearsPath, 'utf8'));
   const dealsPath = path.join(ROOT_DIR, 'src', 'data', 'deals.json');
@@ -201,6 +201,44 @@ async function runPreflightGate() {
   }
 
   console.log(`✅ 合格: 装備品 ${gears.length}品 / 特価品 ${deals.length}品の完全性を確認しました。`);
+
+  // -------------------------------------------------------------
+  // 5. [背景画像] 本日のヒーロー背景の安全審査・権利・実在検証
+  // -------------------------------------------------------------
+  console.log('\n[検査 5/5] 本日のヒーロー背景画像の権利・安全審査検証...');
+  const metaPath = path.join(ROOT_DIR, 'src', 'data', 'meta.json');
+  const meta = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
+  const hero = meta.daily_hero;
+  const ALLOWED_HERO_LICENSE_RE = /^(CC0(\s+1\.0)?|Public domain|PD[\w-]*|CC[\s-]BY(\s+\d\.\d)?|CC[\s-]BY-SA(\s+\d\.\d)?)$/i;
+
+  if (!hero || !hero.image) {
+    console.error('❌ [背景不備] meta.json に daily_hero.image が設定されていません！');
+    hasError = true;
+  } else {
+    const relImg = hero.image.replace(/^\/+/, '');
+    const absImgPath = path.join(ROOT_DIR, 'public', relImg);
+    if (!fs.existsSync(absImgPath) || fs.statSync(absImgPath).size === 0) {
+      console.error(`❌ [背景不備] 背景画像ファイルが存在しません: public/${relImg}`);
+      hasError = true;
+    }
+    if (hero.ai_verified !== true) {
+      console.error('❌ [背景不備] 未審査の背景画像（ai_verified !== true）は公開できません！');
+      hasError = true;
+    }
+    if (hero.source_type === 'wikimedia_commons') {
+      if (!hero.license || !ALLOWED_HERO_LICENSE_RE.test(hero.license)) {
+        console.error(`❌ [背景不備] 許可されていないライセンスです: ${hero.license || '未設定'}`);
+        hasError = true;
+      }
+      if (!hero.source_url || !hero.source_url.startsWith('https://')) {
+        console.error(`❌ [背景不備] Wikimedia Commons の出典URLが不正です: ${hero.source_url || '未設定'}`);
+        hasError = true;
+      }
+    }
+    if (!hasError) {
+      console.log(`✅ 合格: 本日の背景「${hero.place_label}」(${relImg}) は権利・AI安全審査済みです。`);
+    }
+  }
 
   // -------------------------------------------------------------
   // 総合判定
