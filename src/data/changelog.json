@@ -1,5 +1,49 @@
 [
   {
+    "id": "ev-sync-2026-11-25",
+    "date": "2026-11-25",
+    "time": "06:41",
+    "type": "event_updated",
+    "title": "大会データ定期検証完了（掲載 209 件）",
+    "detail": "開催日修正 0 件 / 終了大会アーカイブ 0 件 / リンク修正 0 件 / ステータス更新 2 件"
+  },
+  {
+    "id": "portal-add-trjp-arataki-samurai-trail-2027-2026-11-25",
+    "date": "2026-11-25",
+    "time": "06:41",
+    "type": "event_added",
+    "title": "新着大会追加: 荒滝SAMURAIトレイル 2027（山口県）",
+    "detail": "山口県 / 2027-02-27（トレイルランナー.JP）",
+    "eventId": "trjp-arataki-samurai-trail-2027"
+  },
+  {
+    "id": "price-drop-gear-deal-mw92kizw-0ap8-2026-11-25",
+    "date": "2026-11-25",
+    "time": "06:41",
+    "type": "price_drop",
+    "title": "値下げ検知: ホカ スピードゴート2 ユニセックス HOKA SPEEDGOAT 2 メンズ ",
+    "detail": "¥27,500 → ¥16,500",
+    "gearId": "gear-deal-mw92kizw-0ap8"
+  },
+  {
+    "id": "price-drop-gear-ar-drybag-exped-2026-11-25",
+    "date": "2026-11-25",
+    "time": "06:41",
+    "type": "price_drop",
+    "title": "値下げ検知: EXPED クラウドバースト9 (完全防水ロールトップ・小型超軽量ザック)",
+    "detail": "¥8,850 → ¥7,590",
+    "gearId": "gear-ar-drybag-exped"
+  },
+  {
+    "id": "price-drop-gear-deal-mw92miiy-j7ad-2026-11-25",
+    "date": "2026-11-25",
+    "time": "06:41",
+    "type": "price_drop",
+    "title": "値下げ検知: ブラックダイヤモンド ディスタンス15 Black Diamond DISTAN",
+    "detail": "¥21,483 → ¥13,602",
+    "gearId": "gear-deal-mw92miiy-j7ad"
+  },
+  {
     "id": "ev-sync-2026-11-24",
     "date": "2026-11-24",
     "time": "18:52",

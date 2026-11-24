@@ -13,7 +13,7 @@
     "badge": "🔥 70%OFF 最安特価",
     "description": "【カテゴリ最安70%OFF】【最新セール発掘】定価より70%OFF（¥17,710引き）。楽天市場の本日更新目玉特価品。",
     "isBestDeal": true,
-    "updated_at": "2026-11-24T09:52:30.813Z",
+    "updated_at": "2026-11-24T21:41:47.370Z",
     "registered_at": "2026-11-17T12:18:46.954Z"
   },
   {
@@ -30,8 +30,25 @@
     "badge": "59%OFF 特価",
     "description": "【最新セール発掘】定価より56%OFF（¥26,488引き）。楽天市場の本日更新目玉特価品。",
     "isBestDeal": false,
-    "updated_at": "2026-11-24T09:52:30.813Z",
+    "updated_at": "2026-11-24T21:41:47.370Z",
     "registered_at": "2026-11-13T12:52:16.560Z"
+  },
+  {
+    "id": "deal-gear-deal-mw92miiy-j7ad",
+    "gear_id": "gear-deal-mw92miiy-j7ad",
+    "title": "ブラックダイヤモンド ディスタンス15 Black Diamond DISTANCE 15 BD56614 メンズ バッグ バックパック リュック トレランザック ランニング ファストハイク トレイルランニング 登山 通勤ラン トラベル おしゃれ キャンプ アウトドア",
+    "category": "トレランザック",
+    "price": 13602,
+    "original_price": 30690,
+    "discount_rate": 56,
+    "point_rate": 10,
+    "image_url": "https://shop.r10s.jp/canpanera/cabinet/item215/item_b17263_0.jpg",
+    "affiliate_url": "https://item.rakuten.co.jp/canpanera/b17263-1/",
+    "badge": "🔥 56%OFF 最安特価",
+    "description": "【カテゴリ最安56%OFF】【最新セール発掘】定価より40%OFF（¥14,322引き）。楽天市場の本日更新目玉特価品。",
+    "isBestDeal": true,
+    "updated_at": "2026-11-24T21:41:47.370Z",
+    "registered_at": "2026-11-09T09:41:08.778Z"
   },
   {
     "id": "deal-gear-deal-mwotm2ji-h5aa",
@@ -47,7 +64,7 @@
     "badge": "50%OFF 特価",
     "description": "【最新セール発掘】定価より50%OFF（¥17,600引き）。楽天市場の本日更新目玉特価品。",
     "isBestDeal": false,
-    "updated_at": "2026-11-24T09:52:30.813Z",
+    "updated_at": "2026-11-24T21:41:47.370Z",
     "registered_at": "2026-11-20T10:12:54.001Z"
   },
   {
@@ -64,7 +81,7 @@
     "badge": "🔥 50%OFF 最安特価",
     "description": "【カテゴリ最安50%OFF】股関節の屈曲を妨げない立体裁断。急な豪雨でも靴を履いたまま着脱しやすい裾ファスナー仕様。",
     "isBestDeal": true,
-    "updated_at": "2026-11-24T09:52:30.813Z",
+    "updated_at": "2026-11-24T21:41:47.370Z",
     "registered_at": "2026-11-06T06:03:31.340Z"
   },
   {
@@ -81,7 +98,7 @@
     "badge": "50%OFF 特価",
     "description": "小雨や霧雨を弾き飛ばす高耐久撥水加工。タイツの上から履いてもゴワつかないスリムシルエット。",
     "isBestDeal": false,
-    "updated_at": "2026-11-24T09:52:30.813Z",
+    "updated_at": "2026-11-24T21:41:47.370Z",
     "registered_at": "2026-11-06T06:03:31.340Z"
   },
   {
@@ -98,7 +115,7 @@
     "badge": "🔥 50%OFF 最安特価",
     "description": "【カテゴリ最安50%OFF】【最新セール発掘】定価より50%OFF（¥12,100引き）。楽天市場の本日更新目玉特価品。",
     "isBestDeal": true,
-    "updated_at": "2026-11-24T09:52:30.813Z",
+    "updated_at": "2026-11-24T21:41:47.370Z",
     "registered_at": "2026-11-20T10:12:54.001Z"
   },
   {
@@ -117,7 +134,7 @@
     "official_url": "https://ledlenser.co.jp/products/hf4r-signature",
     "shop_name": "LEDLENSER 公式Webshop",
     "isBestDeal": true,
-    "updated_at": "2026-11-24T09:52:30.813Z",
+    "updated_at": "2026-11-24T21:41:47.370Z",
     "registered_at": "2026-11-24T09:52:30.813Z"
   },
   {
@@ -136,7 +153,7 @@
     "official_url": "https://ledlenser.co.jp/products/hf8r-signature",
     "shop_name": "LEDLENSER 公式Webshop",
     "isBestDeal": false,
-    "updated_at": "2026-11-24T09:52:30.813Z",
+    "updated_at": "2026-11-24T21:41:47.370Z",
     "registered_at": "2026-11-24T09:52:30.813Z"
   },
   {
@@ -147,33 +164,33 @@
     "price": 6050,
     "original_price": 12100,
     "discount_rate": 50,
-    "point_rate": 0,
-    "image_url": "https://cdn.shopify.com/s/files/1/0527/0434/6269/files/HF6R_SIGNATURE_black_502799_standard_laying_700.jpg",
+    "point_rate": 10,
+    "image_url": "https://cdn.shopify.com/s/files/1/0527/0434/6269/files/HF6R_SIGNATURE_black_502799_standard_laying_700.jpg?v=1771291615",
     "affiliate_url": "https://ledlenser.co.jp/products/hf6r-signature",
-    "badge": "🔥 50%OFF 公式セール",
+    "badge": "50%OFF 特価",
     "description": "【公式Webshopセール】定価より50%OFF（¥6,050引き）。レッドレンザー公式限定特価モデル。",
     "official_url": "https://ledlenser.co.jp/products/hf6r-signature",
     "shop_name": "LEDLENSER 公式Webshop",
     "isBestDeal": false,
-    "updated_at": "2026-11-24T09:57:18.493960Z",
+    "updated_at": "2026-11-24T21:41:47.370Z",
     "registered_at": "2026-11-24T09:57:18.493960Z"
   },
   {
-    "id": "deal-gear-trail-poles-bd-distance-z",
-    "gear_id": "gear-trail-poles-bd-distance-z",
-    "title": "Black Diamond ディスタンスZ ピューター (高剛性アルミ折畳みポール)",
-    "category": "トレッキングポール",
-    "price": 14322,
-    "original_price": 23870,
+    "id": "deal-gear-deal-mw92kizw-0ap8",
+    "gear_id": "gear-deal-mw92kizw-0ap8",
+    "title": "ホカ スピードゴート2 ユニセックス HOKA SPEEDGOAT 2 メンズ レディース 1162710 靴 スニーカー シューズ ランニング トレイル トレラン ロード フェス 黒 おしゃれ キャンプ アウトドア ホカオネオネ HOKA ONE ONE",
+    "category": "トレランシューズ",
+    "price": 16500,
+    "original_price": 27500,
     "discount_rate": 40,
     "point_rate": 10,
-    "image_url": "https://shop.r10s.jp/canpanera/cabinet/item257/item_b17227-1_0.jpg",
-    "affiliate_url": "https://item.rakuten.co.jp/canpanera/b17227-1",
+    "image_url": "https://shop.r10s.jp/canpanera/cabinet/item239/item_h20098_0.jpg",
+    "affiliate_url": "https://item.rakuten.co.jp/canpanera/h20098/",
     "badge": "🔥 40%OFF 最安特価",
-    "description": "【カテゴリ最安40%OFF】岩場での突き刺しに強い高強度アルミ製3セクションZポール。耐久性重視の山岳アドベンチャーに最適。",
+    "description": "【カテゴリ最安40%OFF】【最新セール発掘】定価より50%OFF（¥27,500引き）。楽天市場の本日更新目玉特価品。",
     "isBestDeal": true,
-    "updated_at": "2026-11-24T09:52:30.813Z",
-    "registered_at": "2026-11-20T10:12:54.001Z"
+    "updated_at": "2026-11-24T21:41:47.370Z",
+    "registered_at": "2026-11-24T21:41:47.370Z"
   },
   {
     "id": "deal-gear-marathon-socks-5toe-grip",
@@ -189,7 +206,7 @@
     "badge": "🔥 40%OFF 最安特価",
     "description": "【カテゴリ最安40%OFF】足指が自由に動いて地面を強くグリップ。シリコン滑り止めでシューズ内のズレを解消。",
     "isBestDeal": true,
-    "updated_at": "2026-11-24T09:52:30.813Z",
+    "updated_at": "2026-11-24T21:41:47.370Z",
     "registered_at": "2026-11-20T10:12:54.001Z"
   },
   {
@@ -206,7 +223,7 @@
     "badge": "🔥 40%OFF 最安特価",
     "description": "【カテゴリ最安40%OFF】【透湿エマージェンシー定番】内部の湿気を逃がし結露を防ぐ高機能アルミヴィヴィ。",
     "isBestDeal": true,
-    "updated_at": "2026-11-24T09:52:30.813Z",
+    "updated_at": "2026-11-24T21:41:47.370Z",
     "registered_at": "2026-11-13T12:52:16.560Z"
   },
   {
@@ -220,10 +237,10 @@
     "point_rate": 10,
     "image_url": "https://shop.r10s.jp/esports/cabinet/6000-221/6000000144358.jpg",
     "affiliate_url": "https://item.rakuten.co.jp/esports/6000000144358",
-    "badge": "34%OFF 特価",
-    "description": "定価より34%OFFのランニングウェア。",
-    "isBestDeal": false,
-    "updated_at": "2026-11-24T09:57:59.130Z",
+    "badge": "🔥 34%OFF 最安特価",
+    "description": "【カテゴリ最安34%OFF】定価より34%OFFのランニングウェア。",
+    "isBestDeal": true,
+    "updated_at": "2026-11-24T21:41:47.370Z",
     "registered_at": "2026-11-24T09:57:59.130Z"
   },
   {
@@ -237,10 +254,10 @@
     "point_rate": 10,
     "image_url": "https://shop.r10s.jp/sakaiya/cabinet/05449151/07483255/56f99910002.jpg",
     "affiliate_url": "https://item.rakuten.co.jp/sakaiya/10132293",
-    "badge": "🔥 30%OFF 最安特価",
-    "description": "【カテゴリ最安30%OFF】過酷な泥・岩稜帯で圧倒的なグリップ力を発揮するスパイラルタング採用の名作山岳トレランシューズ。",
-    "isBestDeal": true,
-    "updated_at": "2026-11-24T09:52:30.813Z",
+    "badge": "30%OFF 特価",
+    "description": "過酷な泥・岩稜帯で圧倒的なグリップ力を発揮するスパイラルタング採用の名作山岳トレランシューズ。",
+    "isBestDeal": false,
+    "updated_at": "2026-11-24T21:41:47.370Z",
     "registered_at": "2026-11-06T06:03:31.340Z"
   },
   {
@@ -257,7 +274,7 @@
     "badge": "30%OFF 特価",
     "description": "HOKAの代名詞・メガグリップ採用。100マイルやロングトレイルの疲労を大幅に軽減するクッションモデル。",
     "isBestDeal": false,
-    "updated_at": "2026-11-24T09:52:30.813Z",
+    "updated_at": "2026-11-24T21:41:47.370Z",
     "registered_at": "2026-11-06T06:03:31.340Z"
   },
   {
@@ -274,42 +291,8 @@
     "badge": "30%OFF 特価",
     "description": "【最新セール発掘】定価より30%OFF（¥8,250引き）。楽天市場の本日更新目玉特価品。",
     "isBestDeal": false,
-    "updated_at": "2026-11-24T09:52:30.813Z",
+    "updated_at": "2026-11-24T21:41:47.370Z",
     "registered_at": "2026-11-20T10:12:54.001Z"
-  },
-  {
-    "id": "deal-gear-ar-drybag-exped",
-    "gear_id": "gear-ar-drybag-exped",
-    "title": "EXPED クラウドバースト9 (完全防水ロールトップ・小型超軽量ザック)",
-    "category": "トレランザック",
-    "price": 8850,
-    "original_price": 12650,
-    "discount_rate": 30,
-    "point_rate": 10,
-    "image_url": "https://shop.r10s.jp/sundaymountain/cabinet/item220/item_e05371_0.jpg",
-    "affiliate_url": "https://item.rakuten.co.jp/sundaymountain/e05371-1",
-    "badge": "🔥 30%OFF 最安特価",
-    "description": "【カテゴリ最安30%OFF】耐水圧10,000mm。突然の豪雨や渡渉があるアドベンチャーレースでも荷物をドライに保つ防水アタックパック。",
-    "isBestDeal": true,
-    "updated_at": "2026-11-24T09:52:30.813Z",
-    "registered_at": "2026-11-06T06:03:31.340Z"
-  },
-  {
-    "id": "deal-gear-deal-mw92miiy-j7ad",
-    "gear_id": "gear-deal-mw92miiy-j7ad",
-    "title": "ブラックダイヤモンド ディスタンス15 Black Diamond DISTANCE 15 BD56614 メンズ バッグ バックパック リュック トレランザック ランニング ファストハイク トレイルランニング 登山 通勤ラン トラベル おしゃれ キャンプ アウトドア",
-    "category": "トレランザック",
-    "price": 21483,
-    "original_price": 30690,
-    "discount_rate": 30,
-    "point_rate": 10,
-    "image_url": "https://shop.r10s.jp/canpanera/cabinet/item215/item_b17263_0.jpg",
-    "affiliate_url": "https://item.rakuten.co.jp/canpanera/b17263-1/",
-    "badge": "30%OFF 特価",
-    "description": "【最新セール発掘】定価より40%OFF（¥14,322引き）。楽天市場の本日更新目玉特価品。",
-    "isBestDeal": false,
-    "updated_at": "2026-11-24T09:52:30.813Z",
-    "registered_at": "2026-11-09T09:41:08.778Z"
   },
   {
     "id": "deal-gear-deal-mwuili0n-2ety",
@@ -325,7 +308,7 @@
     "badge": "30%OFF 特価",
     "description": "【最新セール発掘】定価より30%OFF（¥7,920引き）。楽天市場の本日更新目玉特価品。",
     "isBestDeal": false,
-    "updated_at": "2026-11-24T09:52:30.813Z",
+    "updated_at": "2026-11-24T21:41:47.370Z",
     "registered_at": "2026-11-24T09:52:30.813Z"
   },
   {
@@ -342,7 +325,7 @@
     "badge": "30%OFF 特価",
     "description": "疎水性ファイバー採用で汗を肌面から瞬時に外側へ放出。肌を常にサラサラに保ち汗冷えを徹底ブロック。",
     "isBestDeal": false,
-    "updated_at": "2026-11-24T09:52:30.813Z",
+    "updated_at": "2026-11-24T21:41:47.370Z",
     "registered_at": "2026-11-06T06:03:31.340Z"
   },
   {
@@ -359,7 +342,7 @@
     "badge": "🔥 30%OFF 最安特価",
     "description": "【カテゴリ最安30%OFF】【最新セール発掘】定価より30%OFF（¥2,772引き）。登山・クライミング・アドベンチャーレースの定番保護ヘルメット。",
     "isBestDeal": true,
-    "updated_at": "2026-11-24T09:52:30.813Z",
+    "updated_at": "2026-11-24T21:41:47.370Z",
     "registered_at": "2026-11-22T22:23:18.116Z"
   },
   {
@@ -378,7 +361,7 @@
     "official_url": "https://inner-fact.co.jp/",
     "shop_name": "INNER FACT 公式ストア / 楽天市場",
     "isBestDeal": true,
-    "updated_at": "2026-11-24T09:52:30.813Z",
+    "updated_at": "2026-11-24T21:41:47.370Z",
     "registered_at": "2026-11-09T09:28:09.186Z"
   },
   {
@@ -395,7 +378,7 @@
     "badge": "30%OFF 特価",
     "description": "【最新セール発掘】定価より30%OFF（¥6,600引き）。楽天市場の本日更新目玉特価品。",
     "isBestDeal": false,
-    "updated_at": "2026-11-24T09:52:30.813Z",
+    "updated_at": "2026-11-24T21:41:47.370Z",
     "registered_at": "2026-11-24T09:52:30.813Z"
   },
   {
@@ -412,8 +395,25 @@
     "badge": "30%OFF 特価",
     "description": "【最新セール発掘】定価より30%OFF（¥15,180引き）。楽天市場の本日更新目玉特価品。",
     "isBestDeal": false,
-    "updated_at": "2026-11-24T09:52:30.813Z",
+    "updated_at": "2026-11-24T21:41:47.370Z",
     "registered_at": "2026-11-17T12:18:46.954Z"
+  },
+  {
+    "id": "deal-gear-trail-poles-bd-distance-z",
+    "gear_id": "gear-trail-poles-bd-distance-z",
+    "title": "Black Diamond ディスタンスZ ピューター (高剛性アルミ折畳みポール)",
+    "category": "トレッキングポール",
+    "price": 17050,
+    "original_price": 23870,
+    "discount_rate": 29,
+    "point_rate": 10,
+    "image_url": "https://shop.r10s.jp/canpanera/cabinet/item257/item_b17227-1_0.jpg",
+    "affiliate_url": "https://item.rakuten.co.jp/canpanera/b17227-1",
+    "badge": "🔥 29%OFF 最安特価",
+    "description": "【カテゴリ最安29%OFF】岩場での突き刺しに強い高強度アルミ製3セクションZポール。耐久性重視の山岳アドベンチャーに最適。",
+    "isBestDeal": true,
+    "updated_at": "2026-11-24T21:41:47.370Z",
+    "registered_at": "2026-11-20T10:12:54.001Z"
   },
   {
     "id": "deal-gear-trail-wear-mil-drynamic",
@@ -429,7 +429,7 @@
     "badge": "27%OFF 特価",
     "description": "【汗冷え根絶アンダー】網シャツ構造で汗を素早く吸い上げ肌を常にドライに維持。",
     "isBestDeal": false,
-    "updated_at": "2026-11-24T09:52:30.813Z",
+    "updated_at": "2026-11-24T21:41:47.370Z",
     "registered_at": "2026-11-11T09:38:33.462Z"
   },
   {
@@ -446,7 +446,7 @@
     "badge": "🔥 26%OFF 最安特価",
     "description": "【カテゴリ最安26%OFF】【最新セール発掘】定価より26%OFF（¥4,900引き）。楽天市場の本日更新目玉特価品。",
     "isBestDeal": true,
-    "updated_at": "2026-11-24T09:52:30.813Z",
+    "updated_at": "2026-11-24T21:41:47.370Z",
     "registered_at": "2026-11-17T12:18:46.954Z"
   },
   {
@@ -463,7 +463,7 @@
     "badge": "26%OFF 特価",
     "description": "【最新セール発掘】定価より26%OFF（¥3,110引き）。楽天市場の本日更新目玉特価品。",
     "isBestDeal": false,
-    "updated_at": "2026-11-24T09:52:30.813Z",
+    "updated_at": "2026-11-24T21:41:47.370Z",
     "registered_at": "2026-11-17T12:18:46.954Z"
   },
   {
@@ -480,7 +480,7 @@
     "badge": "25%OFF 特価",
     "description": "【最新セール発掘】定価より20%OFF（¥3,308引き）。楽天市場の本日更新目玉特価品。",
     "isBestDeal": false,
-    "updated_at": "2026-11-24T09:52:30.813Z",
+    "updated_at": "2026-11-24T21:41:47.370Z",
     "registered_at": "2026-11-11T09:38:33.462Z"
   },
   {
@@ -497,7 +497,7 @@
     "badge": "25%OFF 特価",
     "description": "【最新セール発掘】定価より20%OFF（¥3,308引き）。楽天市場の本日更新目玉特価品。",
     "isBestDeal": false,
-    "updated_at": "2026-11-24T09:52:30.813Z",
+    "updated_at": "2026-11-24T21:41:47.370Z",
     "registered_at": "2026-11-13T12:52:16.560Z"
   },
   {
@@ -514,7 +514,7 @@
     "badge": "25%OFF 特価",
     "description": "【最新セール発掘】定価より25%OFF（¥5,225引き）。楽天市場の本日更新目玉特価品。",
     "isBestDeal": false,
-    "updated_at": "2026-11-24T09:52:30.813Z",
+    "updated_at": "2026-11-24T21:41:47.370Z",
     "registered_at": "2026-11-11T09:40:27.213Z"
   },
   {
@@ -531,7 +531,7 @@
     "badge": "25%OFF 特価",
     "description": "【最新セール発掘】定価より25%OFF（¥3,490引き）。保温性・防風透湿性に優れたパールイズミの正規サイクルタイツ。",
     "isBestDeal": false,
-    "updated_at": "2026-11-24T09:52:30.813Z",
+    "updated_at": "2026-11-24T21:41:47.370Z",
     "registered_at": "2026-11-20T10:12:54.001Z"
   },
   {
@@ -548,7 +548,7 @@
     "badge": "25%OFF 特価",
     "description": "【最新セール発掘】定価より25%OFF（¥4,950引き）。楽天市場の本日更新目玉特価品。",
     "isBestDeal": false,
-    "updated_at": "2026-11-24T09:52:30.813Z",
+    "updated_at": "2026-11-24T21:41:47.370Z",
     "registered_at": "2026-11-24T09:52:30.813Z"
   },
   {
@@ -567,8 +567,25 @@
     "official_url": "https://ledlenser.co.jp/products/h8r_se",
     "shop_name": "LEDLENSER 公式Webshop",
     "isBestDeal": false,
-    "updated_at": "2026-11-24T09:52:30.813Z",
+    "updated_at": "2026-11-24T21:41:47.370Z",
     "registered_at": "2026-11-24T09:52:30.813Z"
+  },
+  {
+    "id": "deal-gear-ar-drybag-exped",
+    "gear_id": "gear-ar-drybag-exped",
+    "title": "EXPED クラウドバースト9 (完全防水ロールトップ・小型超軽量ザック)",
+    "category": "トレランザック",
+    "price": 7590,
+    "original_price": 9900,
+    "discount_rate": 23,
+    "point_rate": 10,
+    "image_url": "https://shop.r10s.jp/sundaymountain/cabinet/item220/item_e05371_0.jpg",
+    "affiliate_url": "https://item.rakuten.co.jp/sundaymountain/e05371-1",
+    "badge": "23%OFF 特価",
+    "description": "耐水圧10,000mm。突然の豪雨や渡渉があるアドベンチャーレースでも荷物をドライに保つ防水アタックパック。",
+    "isBestDeal": false,
+    "updated_at": "2026-11-24T21:41:47.370Z",
+    "registered_at": "2026-11-06T06:03:31.340Z"
   },
   {
     "id": "deal-gear-innerfact-5fingers-socks",
@@ -586,7 +603,7 @@
     "official_url": "https://inner-fact.co.jp/",
     "shop_name": "INNER FACT 公式ストア / 楽天市場",
     "isBestDeal": false,
-    "updated_at": "2026-11-24T09:52:30.813Z",
+    "updated_at": "2026-11-24T21:41:47.370Z",
     "registered_at": "2026-11-09T09:28:09.186Z"
   },
   {
@@ -605,7 +622,7 @@
     "official_url": "https://inner-fact.co.jp/",
     "shop_name": "INNER FACT 公式ストア / 楽天市場",
     "isBestDeal": false,
-    "updated_at": "2026-11-24T09:52:30.813Z",
+    "updated_at": "2026-11-24T21:41:47.370Z",
     "registered_at": "2026-11-09T09:28:09.186Z"
   },
   {
@@ -619,28 +636,11 @@
     "point_rate": 10,
     "image_url": "https://shop.r10s.jp/esports/cabinet/6000-226/6000000148998.jpg",
     "affiliate_url": "https://item.rakuten.co.jp/esports/6000000148998",
-    "badge": "🔥 22%OFF 最安特価",
-    "description": "【カテゴリ最安22%OFF】【最新セール発掘】定価より22%OFF（¥6,292引き）。楽天市場の本日更新目玉特価品。",
-    "isBestDeal": true,
-    "updated_at": "2026-11-24T09:52:30.813Z",
-    "registered_at": "2026-11-24T09:52:30.813Z"
-  },
-  {
-    "id": "deal-gear-deal-mwbxea18-14eg",
-    "gear_id": "gear-deal-mwbxea18-14eg",
-    "title": "アシックス スニーカー メンズ ブランド asics ゴアテックス GT 1000 15 トレイルランニング アウトドアシューズ トレラン ランニング 登山 山登り シューズ 黒 防水 雨の日 レイン 1011C233 あす楽 新作 大きいサイズ 有 スポーツ おしゃれ カジュアル",
-    "category": "トレランシューズ",
-    "price": 12990,
-    "original_price": 16500,
-    "discount_rate": 21,
-    "point_rate": 10,
-    "image_url": "https://shop.r10s.jp/takespood/cabinet/as/1011c233.jpg",
-    "affiliate_url": "https://item.rakuten.co.jp/takespood/1011c233/",
-    "badge": "21%OFF 特価",
-    "description": "【最新セール発掘】定価より21%OFF（¥3,510引き）。楽天市場の本日更新目玉特価品。",
+    "badge": "22%OFF 特価",
+    "description": "【最新セール発掘】定価より22%OFF（¥6,292引き）。楽天市場の本日更新目玉特価品。",
     "isBestDeal": false,
-    "updated_at": "2026-11-24T09:52:30.813Z",
-    "registered_at": "2026-11-21T21:24:56.886Z"
+    "updated_at": "2026-11-24T21:41:47.370Z",
+    "registered_at": "2026-11-24T09:52:30.813Z"
   },
   {
     "id": "deal-gear-deal-mwko1fm6-7jst",
@@ -656,7 +656,7 @@
     "badge": "20%OFF 特価",
     "description": "【最新セール発掘】定価より20%OFF（¥3,300引き）。楽天市場の本日更新目玉特価品。",
     "isBestDeal": false,
-    "updated_at": "2026-11-24T09:52:30.813Z",
+    "updated_at": "2026-11-24T21:41:47.370Z",
     "registered_at": "2026-11-17T12:26:08.172Z"
   },
   {
@@ -673,7 +673,7 @@
     "badge": "20%OFF 特価",
     "description": "【最新セール発掘】定価より20%OFF（¥1,980引き）。楽天市場の本日更新目玉特価品。",
     "isBestDeal": false,
-    "updated_at": "2026-11-24T09:52:30.813Z",
+    "updated_at": "2026-11-24T21:41:47.370Z",
     "registered_at": "2026-11-24T09:52:30.813Z"
   },
   {
@@ -690,7 +690,7 @@
     "badge": "20%OFF 特価",
     "description": "【最新セール発掘】定価より20%OFF（¥3,080引き）。楽天市場の本日更新目玉特価品。",
     "isBestDeal": false,
-    "updated_at": "2026-11-24T09:52:30.813Z",
+    "updated_at": "2026-11-24T21:41:47.370Z",
     "registered_at": "2026-11-13T12:52:16.560Z"
   },
   {
@@ -707,7 +707,7 @@
     "badge": "20%OFF 特価",
     "description": "トップモデルと同じLightstrike Proフォームを前足部に搭載。反発力と安定感を高いレベルで調和。",
     "isBestDeal": false,
-    "updated_at": "2026-11-24T09:52:30.813Z",
+    "updated_at": "2026-11-24T21:41:47.370Z",
     "registered_at": "2026-11-11T09:38:33.462Z"
   },
   {
@@ -724,7 +724,7 @@
     "badge": "20%OFF 特価",
     "description": "【最新セール発掘】定価より20%OFF（¥2,861引き）。楽天市場の本日更新目玉特価品。",
     "isBestDeal": false,
-    "updated_at": "2026-11-24T09:52:30.813Z",
+    "updated_at": "2026-11-24T21:41:47.370Z",
     "registered_at": "2026-11-17T12:26:08.172Z"
   },
   {
@@ -741,7 +741,7 @@
     "badge": "20%OFF 特価",
     "description": "【最新セール発掘】定価より20%OFF（¥2,000引き）。楽天市場の本日更新目玉特価品。",
     "isBestDeal": false,
-    "updated_at": "2026-11-24T09:52:30.813Z",
+    "updated_at": "2026-11-24T21:41:47.370Z",
     "registered_at": "2026-11-24T09:52:30.813Z"
   }
 ]
