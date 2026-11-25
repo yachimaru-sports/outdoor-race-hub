@@ -56,13 +56,76 @@ const CALLOUT_LAYOUT: Record<
   okinawa: { leftPct: 84.5, topPct: 90.5, pointer: 'up-left' },
 };
 
-// 種目別ミニドットカラー
+// 種目別マーカーカラー（色相を大きく離した高コントラスト4色）
 const EVENT_DOT_COLOR: Record<EventCategory, string> = {
-  trail: '#0f766e',
-  cycling: '#0284c7',
-  marathon: '#4f46e5',
-  adventure: '#d97706',
+  trail: '#16a34a',     // 鮮やかな純緑
+  cycling: '#2563eb',   // くっきり純青
+  marathon: '#e11d48',  // 鮮やかな赤ピンク
+  adventure: '#f59e0b', // 輝くゴールド
 };
+
+const LEGEND_ITEMS: { id: EventCategory; label: string; color: string }[] = [
+  { id: 'trail', label: 'トレイル（●緑）', color: '#16a34a' },
+  { id: 'cycling', label: 'サイクル（◆青）', color: '#2563eb' },
+  { id: 'marathon', label: 'マラソン（■赤）', color: '#e11d48' },
+  { id: 'adventure', label: 'AR・ロゲ（★黄）', color: '#f59e0b' },
+];
+
+/** 4種目を「色＋形」のダブルコーディングでSVG描画（緑● / 青◆ / 赤■ / 黄★） */
+function renderCategoryShape(
+  category: EventCategory,
+  cx: number,
+  cy: number,
+  size: number,
+  strokeWidth: number,
+  key?: string
+): React.ReactNode {
+  const color = EVENT_DOT_COLOR[category] || '#16a34a';
+  const commonProps = {
+    fill: color,
+    fillOpacity: 0.96,
+    stroke: '#ffffff',
+    strokeWidth,
+    vectorEffect: 'non-scaling-stroke' as const,
+    className: 'pointer-events-none',
+  };
+
+  if (category === 'cycling') {
+    const r = size * 1.18;
+    const pts = `${cx},${cy - r} ${cx + r},${cy} ${cx},${cy + r} ${cx - r},${cy}`;
+    return <polygon key={key} points={pts} strokeLinejoin="round" {...commonProps} />;
+  }
+
+  if (category === 'marathon') {
+    const half = size * 0.94;
+    return (
+      <rect
+        key={key}
+        x={cx - half}
+        y={cy - half}
+        width={half * 2}
+        height={half * 2}
+        rx={half * 0.25}
+        strokeLinejoin="round"
+        {...commonProps}
+      />
+    );
+  }
+
+  if (category === 'adventure') {
+    const outerR = size * 1.34;
+    const innerR = size * 0.56;
+    const pts: string[] = [];
+    for (let i = 0; i < 10; i++) {
+      const r = i % 2 === 0 ? outerR : innerR;
+      const angle = (Math.PI / 5) * i - Math.PI / 2;
+      pts.push(`${(cx + r * Math.cos(angle)).toFixed(2)},${(cy + r * Math.sin(angle)).toFixed(2)}`);
+    }
+    return <polygon key={key} points={pts.join(' ')} strokeLinejoin="round" {...commonProps} />;
+  }
+
+  return <circle key={key} cx={cx} cy={cy} r={size} {...commonProps} />;
+}
 
 type ZoomingTarget =
   | { kind: 'pref'; prefName: string; box: RegionViewBox }
@@ -324,10 +387,16 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
     return { regionStats: rStats, prefStats: pStats, overseasStats: oStats };
   }, [events]);
 
-  // 大会開催地ドット（本土46都道府県用 ＆ 沖縄インセット用）
+  // 大会開催地マーカー（本土46都道府県用 ＆ 沖縄インセット用）
   const { mainlandDots, okinawaDots } = useMemo(() => {
-    const mainAll: { id: string; regionId: MapRegionId; x: number; y: number; color: string }[] = [];
-    const okiAll: { id: string; x: number; y: number; color: string }[] = [];
+    const mainAll: {
+      id: string;
+      regionId: MapRegionId;
+      category: EventCategory;
+      x: number;
+      y: number;
+    }[] = [];
+    const okiAll: { id: string; category: EventCategory; x: number; y: number }[] = [];
 
     const sourceEvents = selectedRegionId
       ? events.filter((ev) => getMapRegionIdByPrefecture(ev.prefecture) === selectedRegionId)
@@ -356,15 +425,14 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
         let y = base.y;
         if (list.length > 1 && selectedRegionId) {
           const angle = (2 * Math.PI * idx) / list.length;
-          const radius = regionUnit * (8.5 + Math.floor(idx / 6) * 6.0);
+          const radius = regionUnit * (14.0 + Math.floor(idx / 6) * 10.0);
           x += Math.cos(angle) * radius;
           y += Math.sin(angle) * radius;
         }
-        const color = EVENT_DOT_COLOR[ev.category] || '#0f766e';
         if (rId === 'okinawa') {
-          okiAll.push({ id: ev.id, x, y, color });
+          okiAll.push({ id: ev.id, category: ev.category, x, y });
         } else {
-          mainAll.push({ id: ev.id, regionId: rId, x, y, color });
+          mainAll.push({ id: ev.id, regionId: rId, category: ev.category, x, y });
         }
       });
     }
@@ -483,6 +551,21 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
 
       {/* 統合インタラクティブ地図キャンバス（全国・地方で同一サイズの連続カメラズーム） */}
       <div className="relative w-full rounded-2xl bg-gradient-to-b from-sky-50/55 via-slate-50/75 to-slate-100/85 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 border border-slate-200 dark:border-slate-800 p-1 sm:p-2 overflow-hidden shadow-inner">
+        {/* 地方ズーム時：地図ウィンドウ内左上に大きく目立つ「ひとつ前へ戻る」フローティングボタンを常設 */}
+        {selectedRegionId && !zoomingTarget && (
+          <button
+            type="button"
+            onClick={() => {
+              setZoomingTarget(null);
+              onResetToNational();
+            }}
+            className="absolute top-3 left-3 sm:top-4 sm:left-4 z-30 inline-flex items-center gap-2 px-4 py-2.5 sm:px-5 sm:py-3 rounded-2xl bg-slate-900 hover:bg-teal-700 text-white dark:bg-white dark:hover:bg-teal-400 dark:text-slate-950 font-black text-sm sm:text-base lg:text-lg border-2 border-white/90 dark:border-slate-800 shadow-xl hover:scale-[1.03] active:scale-95 transition-all cursor-pointer"
+          >
+            <ArrowLeft className="w-5 h-5 stroke-[2.8] shrink-0" />
+            <span>全国マップへ戻る</span>
+          </button>
+        )}
+
         {/* 左上：海外・ARWS世界戦カード（全国ビュー時のみ表示・ズーム時はスッと消える） */}
         <button
           type="button"
@@ -519,7 +602,7 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
         {/* 右上：地方ビュー用 ホバー中都道府県詳細バッジ */}
         <div
           aria-hidden={!selectedRegionId || !hoveredPrefMeta}
-          className={`absolute top-3 right-3 z-20 px-4 py-2 rounded-xl bg-slate-950/90 dark:bg-white/95 text-white dark:text-slate-950 text-sm sm:text-base font-black shadow-lg pointer-events-none flex items-center gap-2 transition-opacity duration-100 ${
+          className={`absolute top-3 right-3 sm:top-4 sm:right-4 z-20 px-4 py-2 rounded-xl bg-slate-950/90 dark:bg-white/95 text-white dark:text-slate-950 text-sm sm:text-base font-black shadow-lg pointer-events-none flex items-center gap-2 transition-opacity duration-100 ${
             selectedRegionId && hoveredPrefMeta ? 'opacity-100 visible' : 'opacity-0 invisible'
           }`}
         >
@@ -533,31 +616,6 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
               受付{hoveredPrefStat?.open}
             </span>
           )}
-        </div>
-
-        {/* 左下：地方ビュー用 開催地種目凡例 */}
-        <div
-          className={`absolute bottom-3 left-3 z-20 hidden sm:flex items-center gap-3 px-3 py-1.5 rounded-xl bg-white/92 dark:bg-slate-900/92 border border-slate-200 dark:border-slate-700 text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-300 shadow-xs pointer-events-none transition-opacity duration-200 ${
-            showRegionLabels ? 'opacity-100' : 'opacity-0'
-          }`}
-        >
-          <span className="text-slate-500 dark:text-slate-400">開催地:</span>
-          <span className="inline-flex items-center gap-1.5">
-            <span className="w-2.5 h-2.5 rounded-full bg-teal-700" />
-            トレイル
-          </span>
-          <span className="inline-flex items-center gap-1.5">
-            <span className="w-2.5 h-2.5 rounded-full bg-sky-600" />
-            サイクル
-          </span>
-          <span className="inline-flex items-center gap-1.5">
-            <span className="w-2.5 h-2.5 rounded-full bg-indigo-600" />
-            マラソン
-          </span>
-          <span className="inline-flex items-center gap-1.5">
-            <span className="w-2.5 h-2.5 rounded-full bg-amber-600" />
-            AR
-          </span>
         </div>
 
         {/* 単一統合SVGキャンバス（県ズーム時はふわっとクロスフェードしつつ拡大） */}
@@ -679,21 +737,17 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
             );
           })}
 
-          {/* 本土の開催地ミニドット */}
-          {mainlandDots.map((pt) => (
-            <circle
-              key={`dot-${pt.id}`}
-              cx={pt.x}
-              cy={pt.y}
-              r={selectedRegionId ? regionUnit * 6.0 : 3.2}
-              fill={pt.color}
-              fillOpacity={selectedRegionId ? 0.96 : 0.82}
-              stroke="#ffffff"
-              strokeWidth={selectedRegionId ? 1.8 : 0.9}
-              vectorEffect="non-scaling-stroke"
-              className="pointer-events-none"
-            />
-          ))}
+          {/* 本土の開催地マーカー（高コントラスト4色＋4形状） */}
+          {mainlandDots.map((pt) =>
+            renderCategoryShape(
+              pt.category,
+              pt.x,
+              pt.y,
+              selectedRegionId ? regionUnit * 9.5 : 5.2,
+              selectedRegionId ? 2.4 : 1.5,
+              `dot-${pt.id}`
+            )
+          )}
 
           {/* 沖縄県インセット（全国ビュー＆沖縄ズーム遷移時） */}
           {showOkinawaInset && okinawaPref && okinawaPath && (
@@ -715,19 +769,9 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
                 vectorEffect="non-scaling-stroke"
                 className="stroke-white dark:stroke-slate-900 transition-all duration-150"
               />
-              {okinawaDots.map((pt) => (
-                <circle
-                  key={`oki-${pt.id}`}
-                  cx={pt.x}
-                  cy={pt.y}
-                  r={4.0}
-                  fill={pt.color}
-                  stroke="#ffffff"
-                  strokeWidth={1.0}
-                  vectorEffect="non-scaling-stroke"
-                  className="pointer-events-none"
-                />
-              ))}
+              {okinawaDots.map((pt) =>
+                renderCategoryShape(pt.category, pt.x, pt.y, 6.0, 1.5, `oki-${pt.id}`)
+              )}
             </g>
           )}
 
@@ -895,6 +939,26 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
         </svg>
       </div>
 
+      {/* 全国・地方共通：大きく見やすい開催地マーカー種別凡例バー（地図を一切隠さない専用配置） */}
+      <div className="flex flex-wrap items-center justify-center sm:justify-between gap-3 px-4 py-2.5 rounded-2xl bg-white dark:bg-slate-900 border-2 border-slate-200 dark:border-slate-700 shadow-xs">
+        <span className="text-xs sm:text-sm md:text-base font-black text-slate-800 dark:text-slate-100 shrink-0">
+          📍 地図上の開催地マーカー（色＋形で区別）:
+        </span>
+        <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-5">
+          {LEGEND_ITEMS.map((item) => (
+            <div
+              key={item.id}
+              className="inline-flex items-center gap-2 text-xs sm:text-sm md:text-base font-black text-slate-900 dark:text-white"
+            >
+              <svg viewBox="-12 -12 24 24" className="w-5 h-5 sm:w-6 sm:h-6 shrink-0 drop-shadow-xs">
+                {renderCategoryShape(item.id, 0, 0, 8.2, 2.0)}
+              </svg>
+              <span>{item.label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* 下部カードエリア：全国時は9地方＋海外、地方時は都道府県カード一覧 */}
       {selectedRegionId ? (
         <div
@@ -955,25 +1019,25 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
                   <div className="flex items-center gap-2 mt-2 text-xs font-bold text-slate-600 dark:text-slate-300 flex-wrap">
                     {(pStat.categories.trail || 0) > 0 && (
                       <span className="inline-flex items-center gap-1">
-                        <span className="w-2.5 h-2.5 rounded-full bg-teal-600" />
+                        <span className="w-3 h-3 rounded-full bg-green-600" />
                         <span>トレ {pStat.categories.trail}</span>
                       </span>
                     )}
                     {(pStat.categories.cycling || 0) > 0 && (
                       <span className="inline-flex items-center gap-1">
-                        <span className="w-2.5 h-2.5 rounded-full bg-sky-600" />
+                        <span className="w-3 h-3 rotate-45 bg-blue-600" />
                         <span>車 {pStat.categories.cycling}</span>
                       </span>
                     )}
                     {(pStat.categories.marathon || 0) > 0 && (
                       <span className="inline-flex items-center gap-1">
-                        <span className="w-2.5 h-2.5 rounded-full bg-indigo-600" />
+                        <span className="w-3 h-3 rounded-[2px] bg-rose-600" />
                         <span>走 {pStat.categories.marathon}</span>
                       </span>
                     )}
                     {(pStat.categories.adventure || 0) > 0 && (
                       <span className="inline-flex items-center gap-1">
-                        <span className="w-2.5 h-2.5 rounded-full bg-amber-500" />
+                        <span className="w-3 h-3 rounded-full bg-amber-500" />
                         <span>AR {pStat.categories.adventure}</span>
                       </span>
                     )}

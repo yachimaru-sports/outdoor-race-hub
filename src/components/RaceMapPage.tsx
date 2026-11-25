@@ -333,6 +333,13 @@ export const RaceMapPage: React.FC<RaceMapPageProps> = ({
       setPinOnlyFilter(false);
       return;
     }
+    handleBackToParentStage();
+  };
+
+  // 地図ウィンドウ内の戻るボタン用：ピン選択中でも確実に1つ前の画面へ戻る
+  const handleBackToParentStage = () => {
+    setSelectedPinEventId(null);
+    setPinOnlyFilter(false);
     if (selectedPrefecture) {
       setZoomOutFromPrefecture(selectedPrefecture);
       if (selectedRegionId === 'hokkaido' || selectedRegionId === 'okinawa') {
@@ -718,6 +725,15 @@ export const RaceMapPage: React.FC<RaceMapPageProps> = ({
                   selectedEventId={selectedPinEventId}
                   onSelectPin={handleSelectPin}
                   onOpenEventDetail={onSelectEvent}
+                  onBackStep={handleBackToParentStage}
+                  backLabel={
+                    !isOverseas &&
+                    activeRegionConfig &&
+                    activeRegionConfig.id !== 'hokkaido' &&
+                    activeRegionConfig.id !== 'okinawa'
+                      ? `${activeRegionConfig.fullName}へ戻る`
+                      : '全国マップへ戻る'
+                  }
                 />
               </div>
 
