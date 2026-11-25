@@ -15,6 +15,9 @@ import {
   Check,
   Clock,
   ShieldCheck,
+  Map as MapIcon,
+  Play,
+  BookOpen,
 } from 'lucide-react';
 
 interface HowToUseModalProps {
@@ -70,17 +73,17 @@ export const HowToUseModal: React.FC<HowToUseModalProps> = ({ isOpen, onClose })
         <div className="flex items-center justify-between gap-3 px-4 sm:px-6 py-3.5 sm:py-4 bg-gradient-to-r from-teal-700 via-teal-800 to-slate-900 text-white shrink-0">
           <div className="flex items-center gap-2.5 min-w-0">
             <div className="w-9 h-9 rounded-xl bg-white/15 border border-white/25 flex items-center justify-center shrink-0">
-              <HelpCircle className="w-5 h-5 text-teal-200" />
+              <BookOpen className="w-5 h-5 text-teal-200" />
             </div>
             <div className="min-w-0">
               <h2
                 id="how-to-use-modal-title"
                 className="text-base sm:text-lg font-black tracking-tight truncate"
               >
-                かんたん使い方ガイド
+                かんたん使い方マニュアル
               </h2>
               <p className="text-[11px] sm:text-xs text-teal-100 font-medium truncate">
-                1分で「大会探し → 会場マップ確認 → カレンダー登録」まで完結！
+                「日本地図から探す → 条件絞り込み → 会場確認 → カレンダー登録」まで1分で完結！
               </p>
             </div>
           </div>
@@ -90,7 +93,7 @@ export const HowToUseModal: React.FC<HowToUseModalProps> = ({ isOpen, onClose })
               type="button"
               onClick={handleCopyGuideUrl}
               className="hidden sm:inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-white/15 hover:bg-white/25 text-white text-xs font-bold transition-colors cursor-pointer"
-              title="このガイドを直接開くURLをコピー"
+              title="このマニュアルを直接開くURLをコピー"
             >
               {copiedUrl ? (
                 <>
@@ -100,7 +103,7 @@ export const HowToUseModal: React.FC<HowToUseModalProps> = ({ isOpen, onClose })
               ) : (
                 <>
                   <Share2 className="w-3.5 h-3.5" />
-                  <span>ガイドURLを共有</span>
+                  <span>マニュアルURLを共有</span>
                 </>
               )}
             </button>
@@ -108,7 +111,7 @@ export const HowToUseModal: React.FC<HowToUseModalProps> = ({ isOpen, onClose })
               type="button"
               onClick={onClose}
               className="p-2 rounded-xl bg-white/10 hover:bg-white/25 text-white transition-colors cursor-pointer"
-              aria-label="使い方ガイドを閉じる"
+              aria-label="使い方マニュアルを閉じる"
               title="閉じる (Esc)"
             >
               <X className="w-5 h-5" />
@@ -136,11 +139,11 @@ export const HowToUseModal: React.FC<HowToUseModalProps> = ({ isOpen, onClose })
                     1
                   </span>
                   <span className="text-xs font-black text-slate-900 dark:text-white">
-                    条件で絞り込む
+                    地図＆条件で探す
                   </span>
                 </div>
                 <p className="text-[11px] text-slate-600 dark:text-slate-300 leading-relaxed">
-                  競技ジャンル・エリア・距離・受付中などで狙いの大会を一瞬で抽出します。
+                  <strong>「全国マップ」</strong>から日本地図で選ぶか、競技ジャンル・エリア・距離で狙いの大会を一瞬で抽出します。
                 </p>
               </div>
 
@@ -183,6 +186,65 @@ export const HowToUseModal: React.FC<HowToUseModalProps> = ({ isOpen, onClose })
                 </div>
                 <p className="text-[11px] text-slate-600 dark:text-slate-300 leading-relaxed">
                   <strong>カレンダーボタン</strong>から、開催日やエントリー締切を自分の予定表へ即追加！
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* 新設特集セクション：日本地図から探す（全国レースマップ）の使い方 */}
+          <section className="rounded-2xl bg-gradient-to-br from-teal-50 via-emerald-50/70 to-sky-50 dark:from-teal-950/50 dark:via-emerald-950/40 dark:to-slate-900 border-2 border-teal-300 dark:border-teal-700 p-4 space-y-3 shadow-2xs">
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <h3 className="text-sm sm:text-base font-black text-teal-950 dark:text-teal-100 flex items-center gap-2">
+                <span className="p-1.5 rounded-lg bg-teal-600 text-white shrink-0">
+                  <MapIcon className="w-4 h-4" />
+                </span>
+                <span>日本地図から探す（全国レースマップ）の使い方</span>
+              </h3>
+              <span className="px-2 py-0.5 rounded-full bg-teal-700 text-white text-[10px] font-black tracking-wide">
+                3段階ズーム対応
+              </span>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-[11px] sm:text-xs text-slate-700 dark:text-slate-200">
+              <div className="p-3 rounded-xl bg-white/85 dark:bg-slate-900/75 border border-teal-200/80 dark:border-teal-800/70">
+                <p className="font-black text-slate-950 dark:text-white mb-1">
+                  ① 全国 → 地方 → 県内ピンの3段階ズーム
+                </p>
+                <p className="leading-relaxed">
+                  上部の<strong>「全国マップ」</strong>ボタンから地図を開き、気になる<strong>地方 → 都道府県</strong>をタップすると滑らかにズームします。地図左上の大きな<strong>「← 戻る」</strong>ボタンで1つ前の画面へ戻れます。
+                </p>
+              </div>
+
+              <div className="p-3 rounded-xl bg-white/85 dark:bg-slate-900/75 border border-teal-200/80 dark:border-teal-800/70">
+                <p className="font-black text-slate-950 dark:text-white mb-1">
+                  ② 4色×4形状マーカーで競技が一目瞭然
+                </p>
+                <p className="leading-relaxed mb-1.5">
+                  地図上の開催地ドットは種目ごとに色と形が分かれています。
+                </p>
+                <div className="flex flex-wrap items-center gap-1.5 text-[10px] font-black">
+                  <span className="px-1.5 py-0.5 rounded bg-emerald-600 text-white">● トレイル</span>
+                  <span className="px-1.5 py-0.5 rounded bg-sky-600 text-white">◆ サイクル</span>
+                  <span className="px-1.5 py-0.5 rounded bg-rose-600 text-white">■ マラソン</span>
+                  <span className="px-1.5 py-0.5 rounded bg-amber-500 text-slate-950">★ AR</span>
+                </div>
+              </div>
+
+              <div className="p-3 rounded-xl bg-white/85 dark:bg-slate-900/75 border border-teal-200/80 dark:border-teal-800/70">
+                <p className="font-black text-slate-950 dark:text-white mb-1">
+                  ③ 県内ピンから詳細確認 ＆ 一覧へ引き継ぎ
+                </p>
+                <p className="leading-relaxed">
+                  県内マップのピンを押すと大会名・開催日・受付状況が表示され、詳細画面の確認や<strong>「このエリアで大会一覧を絞り込む」</strong>からトップ一覧へ条件を引き継げます。
+                </p>
+              </div>
+
+              <div className="p-3 rounded-xl bg-white/85 dark:bg-slate-900/75 border border-teal-200/80 dark:border-teal-800/70">
+                <p className="font-black text-slate-950 dark:text-white mb-1">
+                  ④ 地図上でのリアルタイム絞り込み
+                </p>
+                <p className="leading-relaxed">
+                  地図ページ上部のフィルターで<strong>種目・受付中のみ・開催時期</strong>を切り替えると、地図上の開催地ドットや都道府県別の件数もリアルタイムに連動します。
                 </p>
               </div>
             </div>
@@ -285,6 +347,21 @@ export const HowToUseModal: React.FC<HowToUseModalProps> = ({ isOpen, onClose })
                   </p>
                 </div>
               </div>
+
+              {/* 毎日変わる開催地の風景 ＆ 今日の景色ボタン */}
+              <div className="md:col-span-2 flex items-start gap-3 p-3.5 rounded-xl bg-cyan-50/70 dark:bg-cyan-950/30 border border-cyan-200 dark:border-cyan-800/60">
+                <div className="p-2 rounded-lg bg-cyan-100 dark:bg-cyan-900/60 text-cyan-700 dark:text-cyan-300 border border-cyan-300 dark:border-cyan-700 shrink-0">
+                  <Play className="w-4 h-4 fill-current" />
+                </div>
+                <div className="min-w-0">
+                  <h4 className="text-xs sm:text-sm font-black text-slate-950 dark:text-white">
+                    毎日変わる開催地の風景 ＆「今日の景色」ボタン
+                  </h4>
+                  <p className="text-[11px] sm:text-xs text-slate-600 dark:text-slate-300 mt-0.5 leading-relaxed">
+                    1日1回目のアクセス時に、近日開催大会の風景を使ったオープニング演出が流れます。ページ最上部の<strong>「▶ 今日の景色」</strong>ボタンからいつでも見返せるほか、<strong>「本日の背景」</strong>バッジからその開催地の大会詳細も確認できます。
+                  </p>
+                </div>
+              </div>
             </div>
           </section>
 
@@ -326,7 +403,7 @@ export const HowToUseModal: React.FC<HowToUseModalProps> = ({ isOpen, onClose })
         {/* フッター */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-2.5 px-4 sm:px-6 py-3 bg-slate-50 dark:bg-slate-950/70 border-t border-slate-200 dark:border-slate-800 shrink-0">
           <p className="text-[11px] text-slate-500 dark:text-slate-400 font-medium text-center sm:text-left">
-            見返したいときは、画面右上の <strong className="text-slate-700 dark:text-slate-200">「? 使い方」</strong> からいつでも開けます。
+            見返したいときは、画面上部の <strong className="text-sky-700 dark:text-sky-300">「? マニュアル / 使い方マニュアル」</strong> ボタンからいつでも開けます。
           </p>
           <button
             type="button"

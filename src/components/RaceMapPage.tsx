@@ -477,11 +477,11 @@ export const RaceMapPage: React.FC<RaceMapPageProps> = ({
             <button
               type="button"
               onClick={onOpenGuide}
-              className="p-1.5 sm:px-2.5 sm:py-1.5 rounded-xl border border-slate-700 bg-slate-900 hover:bg-slate-800 text-teal-300 text-xs font-bold inline-flex items-center gap-1 cursor-pointer"
-              title="使い方ガイド"
+              className="px-2 sm:px-2.5 py-1.5 rounded-xl border border-sky-400/80 bg-sky-500/25 hover:bg-sky-500/40 text-sky-100 text-[11px] sm:text-xs font-black inline-flex items-center gap-1 cursor-pointer whitespace-nowrap shadow-xs"
+              title="使い方マニュアルを開く"
             >
-              <HelpCircle className="w-3.5 h-3.5" />
-              <span className="hidden md:inline">使い方</span>
+              <HelpCircle className="w-3.5 h-3.5 shrink-0" />
+              <span>マニュアル</span>
             </button>
 
             <button

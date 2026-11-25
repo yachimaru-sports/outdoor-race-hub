@@ -1010,11 +1010,21 @@ export const App: React.FC = () => {
                 <div className="flex items-center gap-1.5 shrink-0">
                   <button
                     type="button"
+                    onClick={() => handleOpenGuide('header')}
+                    className="inline-flex items-center gap-1 px-2 sm:px-2.5 py-1 rounded-lg bg-sky-600 hover:bg-sky-700 text-white font-bold text-[10px] sm:text-[11px] transition-colors shrink-0 cursor-pointer whitespace-nowrap shadow-2xs"
+                    title="使い方マニュアルを開く（地図検索・絞り込み・カレンダー登録など）"
+                  >
+                    <HelpCircle className="w-3 h-3 shrink-0" />
+                    <span className="sm:hidden">マニュアル</span>
+                    <span className="hidden sm:inline">使い方マニュアル</span>
+                  </button>
+                  <button
+                    type="button"
                     onClick={() => {
                       window.scrollTo({ top: 0 });
                       handleReplayIntro();
                     }}
-                    className="inline-flex items-center gap-1 px-2 py-1 rounded-lg bg-teal-50 hover:bg-teal-100 dark:bg-teal-950/70 dark:hover:bg-teal-900/80 text-teal-800 dark:text-teal-200 border border-teal-200 dark:border-teal-800 font-bold text-[11px] transition-colors shrink-0 cursor-pointer whitespace-nowrap"
+                    className="inline-flex items-center gap-1 px-2 py-1 rounded-lg bg-teal-50 hover:bg-teal-100 dark:bg-teal-950/70 dark:hover:bg-teal-900/80 text-teal-800 dark:text-teal-200 border border-teal-200 dark:border-teal-800 font-bold text-[10px] sm:text-[11px] transition-colors shrink-0 cursor-pointer whitespace-nowrap"
                     title={`今日の開催地オープニング演出を再生（${dailyBg.label}）`}
                   >
                     <Play className="w-3 h-3 fill-current shrink-0" />
@@ -1024,7 +1034,7 @@ export const App: React.FC = () => {
                   <button
                     type="button"
                     onClick={() => window.dispatchEvent(new CustomEvent('open-update-history'))}
-                    className="px-2.5 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[11px] transition-colors shrink-0 cursor-pointer whitespace-nowrap shadow-2xs"
+                    className="px-2 sm:px-2.5 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[10px] sm:text-[11px] transition-colors shrink-0 cursor-pointer whitespace-nowrap shadow-2xs"
                   >
                     <span className="sm:hidden">詳細</span>
                     <span className="hidden sm:inline">詳細履歴</span>
@@ -1131,7 +1141,7 @@ export const App: React.FC = () => {
               <HelpCircle className="w-4 h-4 text-teal-600 dark:text-teal-400 shrink-0" />
               <p className="text-slate-700 dark:text-slate-200 font-medium truncate sm:whitespace-normal">
                 <strong className="font-black text-teal-800 dark:text-teal-300">はじめての方へ：</strong>
-                検索・Googleマップ直行・お気に入り・カレンダー一発登録が1分で完結します
+                日本地図検索・条件絞り込み・お気に入り・カレンダー登録が1分で完結します
               </p>
             </div>
             <div className="flex items-center gap-1.5 shrink-0">
@@ -1140,7 +1150,7 @@ export const App: React.FC = () => {
                 onClick={() => handleOpenGuide('banner')}
                 className="px-2.5 py-1 rounded-lg bg-teal-600 hover:bg-teal-500 text-white font-black text-[11px] transition-colors cursor-pointer whitespace-nowrap shadow-2xs"
               >
-                使い方を見る
+                マニュアルを見る
               </button>
               <button
                 type="button"

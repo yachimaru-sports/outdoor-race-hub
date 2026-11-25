@@ -249,12 +249,12 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({
               {onOpenGuide && (
                 <button
                   onClick={onOpenGuide}
-                  className="inline-flex items-center gap-0.5 px-1.5 py-1 rounded-lg border border-slate-700 bg-slate-900 hover:bg-slate-800 text-teal-300 text-[10px] font-bold transition-colors cursor-pointer whitespace-nowrap"
-                  aria-label="使い方ガイドを開く"
-                  title="使い方ガイドを開く"
+                  className="inline-flex items-center gap-0.5 px-2 py-1 rounded-lg border border-sky-400/80 bg-sky-500/25 hover:bg-sky-500/40 text-sky-100 text-[10px] font-black transition-colors cursor-pointer whitespace-nowrap shadow-xs"
+                  aria-label="使い方マニュアルを開く"
+                  title="使い方マニュアルを開く"
                 >
                   <HelpCircle className="w-3.5 h-3.5 shrink-0" />
-                  <span>使い方</span>
+                  <span>マニュアル</span>
                 </button>
               )}
               {onToggleTheme && (
@@ -463,16 +463,16 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({
                 </button>
               )}
 
-              {/* 使い方ガイドボタン（控えめ常設） */}
+              {/* 使い方マニュアルボタン（明るく視認性を高めた常設配置） */}
               {onOpenGuide && (
                 <button
                   onClick={onOpenGuide}
-                  className="inline-flex items-center gap-1 px-1.5 py-1 rounded border border-slate-700 bg-slate-900 hover:bg-slate-800 hover:border-teal-500/60 text-teal-300 text-[10px] font-bold transition-colors shadow-2xs cursor-pointer whitespace-nowrap"
-                  aria-label="使い方ガイドを開く"
-                  title="検索・地図確認・カレンダー登録などの使い方ガイド"
+                  className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg border border-sky-400/75 bg-sky-500/20 hover:bg-sky-500/35 text-sky-100 text-[11px] font-black transition-colors shadow-xs cursor-pointer whitespace-nowrap"
+                  aria-label="使い方マニュアルを開く"
+                  title="地図検索・条件絞り込み・カレンダー登録などの使い方マニュアル"
                 >
-                  <HelpCircle className="w-3 h-3 shrink-0" />
-                  <span>使い方</span>
+                  <HelpCircle className="w-3.5 h-3.5 shrink-0" />
+                  <span>使い方マニュアル</span>
                 </button>
               )}
 
