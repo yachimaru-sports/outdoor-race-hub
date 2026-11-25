@@ -33,17 +33,17 @@ interface JapanDotMapProps {
 // 沖縄インセットを全国SVG（NATIONAL_VIEWBOX）右下海上へ拡大配置するための変換設定
 const OKI_SCALE = 0.84;
 const OKI_TARGET_CENTER_X = 685;
-const OKI_TARGET_CENTER_Y = 665;
+const OKI_TARGET_CENTER_Y = 646;
 const OKI_ORIG_CENTER_X = OKINAWA_BBOX.x + OKINAWA_BBOX.w / 2;
 const OKI_ORIG_CENTER_Y = OKINAWA_BBOX.y + OKINAWA_BBOX.h / 2;
 const OKI_TX = OKI_TARGET_CENTER_X - OKI_ORIG_CENTER_X * OKI_SCALE;
 const OKI_TY = OKI_TARGET_CENTER_Y - OKI_ORIG_CENTER_Y * OKI_SCALE;
-const OKI_INSET_VIEWBOX: RegionViewBox = { x: 520, y: 585, w: 325, h: 160 };
+const OKI_INSET_VIEWBOX: RegionViewBox = { x: 520, y: 568, w: 325, h: 160 };
 
-// スマホ幅専用のタイト全国viewBox（左右の空白を詰めて日本列島を大きく表示）
-const MOBILE_NATIONAL_VIEWBOX: RegionViewBox = { x: 18, y: -8, w: 845, h: 808 };
+// スマホ幅専用のタイト全国viewBox（九州・中国左側にも十分な余白を確保）
+const MOBILE_NATIONAL_VIEWBOX: RegionViewBox = { x: -105, y: -8, w: 970, h: 816 };
 
-// 9地方の吹き出し位置（PC版 NATIONAL_VIEWBOX 用）
+// 9地方の吹き出し位置（PC版 NATIONAL_VIEWBOX 用・本土ポリゴンとも重なりゼロ）
 const PC_CALLOUT_LAYOUT: Record<
   MapRegionId,
   { leftPct: number; topPct: number; pointer: 'down-left' | 'down-right' | 'up-left' | 'up-right' }
@@ -54,25 +54,25 @@ const PC_CALLOUT_LAYOUT: Record<
   kinki: { leftPct: 28.0, topPct: 47.0, pointer: 'down-right' },
   kanto: { leftPct: 78.5, topPct: 60.0, pointer: 'down-left' },
   chugoku: { leftPct: 11.5, topPct: 60.5, pointer: 'down-right' },
-  kyushu: { leftPct: 10.5, topPct: 87.5, pointer: 'up-right' },
-  shikoku: { leftPct: 38.5, topPct: 91.5, pointer: 'up-left' },
-  okinawa: { leftPct: 85.0, topPct: 91.5, pointer: 'up-left' },
+  kyushu: { leftPct: 7.6, topPct: 88.5, pointer: 'up-right' },
+  shikoku: { leftPct: 38.5, topPct: 92.2, pointer: 'up-left' },
+  okinawa: { leftPct: 84.5, topPct: 92.8, pointer: 'up-left' },
 };
 
-// 9地方の吹き出し位置（スマホ版 MOBILE_NATIONAL_VIEWBOX 用・海外カードと重なりゼロ）
+// 9地方の吹き出し位置（スマホ版 MOBILE_NATIONAL_VIEWBOX 用・列島とも海外カードとも重なりゼロ）
 const MOBILE_CALLOUT_LAYOUT: Record<
   MapRegionId,
   { leftPct: number; topPct: number; pointer: 'down-left' | 'down-right' | 'up-left' | 'up-right' }
 > = {
-  hokkaido: { leftPct: 50.0, topPct: 11.5, pointer: 'down-right' },
-  chubu: { leftPct: 28.5, topPct: 31.5, pointer: 'down-right' },
-  tohoku: { leftPct: 83.5, topPct: 38.0, pointer: 'down-left' },
-  kinki: { leftPct: 24.5, topPct: 48.0, pointer: 'down-right' },
-  kanto: { leftPct: 82.0, topPct: 59.5, pointer: 'down-left' },
-  chugoku: { leftPct: 13.0, topPct: 62.5, pointer: 'down-right' },
-  kyushu: { leftPct: 13.0, topPct: 88.5, pointer: 'up-right' },
-  shikoku: { leftPct: 43.0, topPct: 91.5, pointer: 'up-left' },
-  okinawa: { leftPct: 83.0, topPct: 92.0, pointer: 'up-left' },
+  hokkaido: { leftPct: 50.0, topPct: 12.0, pointer: 'down-right' },
+  chubu: { leftPct: 36.5, topPct: 32.0, pointer: 'down-right' },
+  tohoku: { leftPct: 82.0, topPct: 38.0, pointer: 'down-left' },
+  kinki: { leftPct: 27.5, topPct: 47.5, pointer: 'down-right' },
+  kanto: { leftPct: 80.5, topPct: 60.0, pointer: 'down-left' },
+  chugoku: { leftPct: 11.0, topPct: 61.5, pointer: 'down-right' },
+  kyushu: { leftPct: 8.8, topPct: 88.5, pointer: 'up-right' },
+  shikoku: { leftPct: 40.0, topPct: 92.2, pointer: 'up-left' },
+  okinawa: { leftPct: 84.0, topPct: 92.8, pointer: 'up-left' },
 };
 
 // 種目別マーカーカラー（色相を大きく離した高コントラスト4色）
@@ -722,7 +722,7 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
           {/* 沖縄インセット区切り線（全国ビュー＆沖縄ズーム関連時） */}
           {showOkinawaInset && (
             <path
-              d="M 475 745 L 525 578 L 860 578"
+              d="M 475 735 L 525 568 L 860 568"
               fill="none"
               stroke="currentColor"
               className="text-slate-300 dark:text-slate-700 transition-opacity duration-300"
@@ -926,14 +926,14 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
               const cx = baseNationalBox.x + baseNationalBox.w * (layout.leftPct / 100);
               const cy = baseNationalBox.y + baseNationalBox.h * (layout.topPct / 100);
 
-              const bw = isCompact ? 186 : 152;
-              const bh = isCompact ? 90 : 74;
-              const headH = isCompact ? 32 : 26;
+              const bw = isCompact ? 166 : 152;
+              const bh = isCompact ? 86 : 74;
+              const headH = isCompact ? 30 : 26;
               const halfW = bw / 2;
               const halfH = bh / 2;
-              const arrowSpan = isCompact ? 20 : 16;
-              const arrowDepth = isCompact ? 16 : 14;
-              const arrowOffset = isCompact ? 32 : 26;
+              const arrowSpan = isCompact ? 18 : 16;
+              const arrowDepth = isCompact ? 15 : 14;
+              const arrowOffset = isCompact ? 28 : 26;
 
               let arrowPoints = '';
               if (layout.pointer === 'down-right') {
@@ -981,9 +981,9 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
                   />
                   <text
                     x={0}
-                    y={-halfH + (isCompact ? 23 : 18.5)}
+                    y={-halfH + (isCompact ? 21.5 : 18.5)}
                     textAnchor="middle"
-                    fontSize={isCompact ? 22 : 16}
+                    fontSize={isCompact ? 20 : 16}
                     fontWeight="900"
                     fill="#ffffff"
                   >
@@ -996,24 +996,24 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
                         x={stat.open > 0 ? -18 : 0}
                         y={halfH - 16}
                         textAnchor="middle"
-                        fontSize="36"
+                        fontSize="33"
                         fontWeight="900"
                         fill="#0f172a"
                         style={{ fontVariantNumeric: 'tabular-nums' }}
                       >
                         {stat.total}
-                        <tspan fontSize="18" fontWeight="800" fill="#334155" dx="2">
+                        <tspan fontSize="16" fontWeight="800" fill="#334155" dx="2">
                           件
                         </tspan>
                       </text>
                       {stat.open > 0 && (
-                        <g transform={`translate(${halfW - 30}, ${halfH - 27})`}>
-                          <rect x={-23} y={-12} width={46} height={24} rx={7} fill="#d1fae5" />
+                        <g transform={`translate(${halfW - 27}, ${halfH - 25})`}>
+                          <rect x={-21} y={-11} width={42} height={22} rx={6} fill="#d1fae5" />
                           <text
                             x={0}
-                            y={5.5}
+                            y={5}
                             textAnchor="middle"
-                            fontSize="14.5"
+                            fontSize="13.5"
                             fontWeight="900"
                             fill="#065f46"
                           >
