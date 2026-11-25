@@ -21,6 +21,7 @@ import { RaceMapPage } from './components/RaceMapPage';
 import { ScrollToTopButton } from './components/ScrollToTopButton';
 import { MyRaceCountdownBanner } from './components/MyRaceCountdownBanner';
 import { HowToUseModal } from './components/HowToUseModal';
+import { DailyIntroSplash } from './components/DailyIntroSplash';
 import { trackEvent, trackPageView } from './utils/analytics';
 import { ShoppingBag, ChevronRight, HelpCircle, X, Map as MapIcon } from 'lucide-react';
 
@@ -815,51 +816,56 @@ export const App: React.FC = () => {
     [dailyBg]
   );
 
-  if (currentRoute === 'map') {
-    return (
-      <>
-        <RaceMapPage
-          events={events}
-          deals={deals}
-          gears={gears}
-          favoriteIds={favoriteIds}
-          theme={theme}
-          isPcView={isPcView}
-          showDisplayModeToggle={isNarrowScreen || displayMode !== 'auto'}
-          onToggleTheme={toggleTheme}
-          onToggleDisplayMode={toggleDisplayMode}
-          onToggleFavorite={handleToggleFavorite}
-          onSelectEvent={setSelectedEvent}
-          onBackToEvents={() => navigateTo('events')}
-          onOpenCatalog={() => navigateTo('gears')}
-          onOpenGuide={() => handleOpenGuide('header')}
-          onApplyAreaToEventsPage={handleApplyAreaFromMap}
-          dailyBgUrl={dailyBg.url}
-        />
-        <Footer
-          onOpenCatalog={() => navigateTo('gears')}
-          onOpenMap={() => navigateTo('map')}
-          onOpenGuide={() => handleOpenGuide('footer')}
-          dailyBgCredit={dailyBgCredit}
-        />
-        {selectedEvent && (
-          <EventDetailModal
-            event={selectedEvent}
+  const [introReplayKey, setIntroReplayKey] = useState(0);
+  const handleReplayIntro = () => setIntroReplayKey((prev) => prev + 1);
+
+  const renderRouteContent = () => {
+    if (currentRoute === 'map') {
+      return (
+        <>
+          <RaceMapPage
+            events={events}
             deals={deals}
             gears={gears}
-            isFavorite={favoriteIds.includes(selectedEvent.id)}
-            onClose={() => setSelectedEvent(null)}
-            onOpenCatalog={() => {
-              setSelectedEvent(null);
-              navigateTo('gears');
-            }}
+            favoriteIds={favoriteIds}
+            theme={theme}
+            isPcView={isPcView}
+            showDisplayModeToggle={isNarrowScreen || displayMode !== 'auto'}
+            onToggleTheme={toggleTheme}
+            onToggleDisplayMode={toggleDisplayMode}
+            onToggleFavorite={handleToggleFavorite}
+            onSelectEvent={setSelectedEvent}
+            onBackToEvents={() => navigateTo('events')}
+            onOpenCatalog={() => navigateTo('gears')}
+            onOpenGuide={() => handleOpenGuide('header')}
+            onApplyAreaToEventsPage={handleApplyAreaFromMap}
+            dailyBgUrl={dailyBg.url}
           />
-        )}
-        <HowToUseModal isOpen={isGuideOpen} onClose={handleCloseGuide} />
-        <ScrollToTopButton />
-      </>
-    );
-  }
+          <Footer
+            onOpenCatalog={() => navigateTo('gears')}
+            onOpenMap={() => navigateTo('map')}
+            onOpenGuide={() => handleOpenGuide('footer')}
+            dailyBgCredit={dailyBgCredit}
+            onReplayIntro={handleReplayIntro}
+          />
+          {selectedEvent && (
+            <EventDetailModal
+              event={selectedEvent}
+              deals={deals}
+              gears={gears}
+              isFavorite={favoriteIds.includes(selectedEvent.id)}
+              onClose={() => setSelectedEvent(null)}
+              onOpenCatalog={() => {
+                setSelectedEvent(null);
+                navigateTo('gears');
+              }}
+            />
+          )}
+          <HowToUseModal isOpen={isGuideOpen} onClose={handleCloseGuide} />
+          <ScrollToTopButton />
+        </>
+      );
+    }
 
   if (currentRoute === 'gears') {
     return (
@@ -1210,11 +1216,25 @@ export const App: React.FC = () => {
         onOpenMap={() => navigateTo('map')}
         onOpenGuide={() => handleOpenGuide('footer')}
         dailyBgCredit={dailyBgCredit}
+        onReplayIntro={handleReplayIntro}
       />
 
       {/* 右下常駐：一番上へ戻るボタン（PC・スマホ共通） */}
       <ScrollToTopButton />
     </div>
+    );
+  };
+
+  return (
+    <>
+      {renderRouteContent()}
+      <DailyIntroSplash
+        bgUrl={dailyBg.url}
+        placeLabel={dailyBg.label}
+        eventTitle={dailyBg.eventTitle}
+        replayKey={introReplayKey}
+      />
+    </>
   );
 };
 

@@ -13,10 +13,17 @@ interface FooterProps {
   onOpenMap?: () => void;
   onOpenGuide?: () => void;
   dailyBgCredit?: DailyBgCredit;
+  onReplayIntro?: () => void;
 }
 import { AccessCounter } from './AccessCounter';
 
-export const Footer: React.FC<FooterProps> = ({ onOpenCatalog, onOpenMap, onOpenGuide, dailyBgCredit }) => {
+export const Footer: React.FC<FooterProps> = ({
+  onOpenCatalog,
+  onOpenMap,
+  onOpenGuide,
+  dailyBgCredit,
+  onReplayIntro,
+}) => {
   return (
     <footer className="relative z-10 mt-20 border-t border-slate-300 dark:border-slate-800 bg-white dark:bg-[#090d16] text-slate-600 dark:text-slate-400 text-xs py-12 transition-colors">
       <div className="max-w-7xl mx-auto px-4 space-y-6">
@@ -96,19 +103,35 @@ export const Footer: React.FC<FooterProps> = ({ onOpenCatalog, onOpenMap, onOpen
             【免責事項・アフィリエイトについて】
             当サイトに掲載されている大会日程、エントリー期間、必携装備等の情報は変更される場合があります。必ず各大会の公式サイトおよびRUNNET・スポーツエントリー・e-moshicom等の公式受付ページにて最新情報をご確認ください。また、当サイトは楽天アフィリエイトプログラム等のアフィリエイト広告を利用しておすすめのギアを紹介しています。
           </p>
-          {dailyBgCredit && (
-            <p className="text-[11px] text-slate-500 dark:text-slate-400">
-              本日の背景写真: {dailyBgCredit.label}（
-              <a
-                href={dailyBgCredit.sourceUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline hover:text-teal-700 dark:hover:text-teal-300"
-              >
-                Photo: {dailyBgCredit.credit} / {dailyBgCredit.license} via Wikimedia Commons
-              </a>
-              ）
-            </p>
+          {(dailyBgCredit || onReplayIntro) && (
+            <div className="flex flex-wrap items-center gap-2 text-[11px] text-slate-500 dark:text-slate-400">
+              {dailyBgCredit && (
+                <span>
+                  本日の背景写真: {dailyBgCredit.label}（
+                  <a
+                    href={dailyBgCredit.sourceUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline hover:text-teal-700 dark:hover:text-teal-300"
+                  >
+                    Photo: {dailyBgCredit.credit} / {dailyBgCredit.license} via Wikimedia Commons
+                  </a>
+                  ）
+                </span>
+              )}
+              {onReplayIntro && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    window.scrollTo({ top: 0 });
+                    onReplayIntro();
+                  }}
+                  className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-teal-50 hover:bg-teal-100 dark:bg-teal-950/60 dark:hover:bg-teal-900/70 text-teal-800 dark:text-teal-300 border border-teal-200 dark:border-teal-800 text-[10px] font-bold transition-colors cursor-pointer"
+                >
+                  <span>✨ 今日のオープニングを再生</span>
+                </button>
+              )}
+            </div>
           )}
           {/* リアルタイム累計アクセスカウンター（中央配置） */}
           <div className="py-2 flex justify-center">

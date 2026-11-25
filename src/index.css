@@ -248,6 +248,105 @@
   animation: map-fade-up 0.32s ease-out both;
 }
 
+/* ========================================================
+   1日1回限定 シネマティック・オープニング演出（合計 約2.05秒）
+   ======================================================== */
+@keyframes intro-backdrop-fade {
+  0%, 62% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes intro-logo-fly {
+  0% {
+    opacity: 0;
+    transform: scale(1.36);
+    filter: blur(8px);
+  }
+  24% {
+    opacity: 1;
+    transform: scale(1.04);
+    filter: blur(0px);
+  }
+  56% {
+    opacity: 1;
+    transform: scale(0.98);
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.84);
+    filter: blur(4px);
+  }
+}
+
+@keyframes intro-scenery-fly {
+  0% {
+    opacity: 0;
+    transform: scale(1.26);
+    filter: blur(6px);
+  }
+  14% {
+    opacity: 0;
+    transform: scale(1.24);
+    filter: blur(5px);
+  }
+  38% {
+    opacity: 0.96;
+    transform: scale(1.10);
+    filter: blur(0px);
+  }
+  64% {
+    opacity: 0.90;
+    transform: scale(1.03);
+    filter: blur(0px);
+  }
+  86% {
+    opacity: 0.48;
+    transform: scale(1.0);
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.0);
+    filter: blur(0px);
+  }
+}
+
+@keyframes intro-caption-fade {
+  0%, 26% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  42%, 66% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  84%, 100% {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+
+.animate-intro-backdrop {
+  animation: intro-backdrop-fade 2.05s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-intro-logo {
+  animation: intro-logo-fly 1.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-intro-scenery {
+  animation: intro-scenery-fly 2.05s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-intro-caption {
+  animation: intro-caption-fade 2.05s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-map-zoom-land,
   .animate-map-fade-up {
