@@ -140,6 +140,7 @@ export const RaceMapPage: React.FC<RaceMapPageProps> = ({
   const [keyword, setKeyword] = useState<string>('');
   const [sortBy, setSortBy] = useState<SortOption>('date-asc');
   const [viewMode, setViewMode] = useState<ViewMode>('table');
+  const [isMobileFilterOpen, setIsMobileFilterOpen] = useState<boolean>(false);
 
   // 1. 属性フィルター適用後の全大会（日本地図のカウントにも反映）
   const attributeFilteredEvents = useMemo(() => {
@@ -499,9 +500,9 @@ export const RaceMapPage: React.FC<RaceMapPageProps> = ({
         </div>
       </header>
 
-      <main className="relative z-10 flex-1 max-w-[1600px] w-full mx-auto px-2 sm:px-4 lg:px-6 py-3 sm:py-5 space-y-3 sm:space-y-4">
+      <main className="relative z-10 flex-1 max-w-[1600px] w-full mx-auto px-1.5 sm:px-4 lg:px-6 py-2.5 sm:py-5 space-y-2.5 sm:space-y-4">
         {/* 1. パンくずナビ ＆ ズーム段階インジケーター */}
-        <div className="bg-white/90 dark:bg-slate-900/90 backdrop-blur-[2px] border border-slate-300 dark:border-slate-800 rounded-2xl px-3.5 py-2.5 shadow-2xs flex flex-wrap items-center justify-between gap-2">
+        <div className="bg-white/90 dark:bg-slate-900/90 backdrop-blur-[2px] border border-slate-300 dark:border-slate-800 rounded-2xl px-3 py-2 sm:px-3.5 sm:py-2.5 shadow-2xs flex flex-wrap items-center justify-between gap-2">
           <nav aria-label="マップ階層" className="flex items-center gap-1.5 flex-wrap text-xs sm:text-sm font-black">
             <button
               type="button"
@@ -590,10 +591,11 @@ export const RaceMapPage: React.FC<RaceMapPageProps> = ({
           </div>
         </div>
 
-        {/* 2. マップ連動クイック絞り込みバー */}
-        <div className="bg-white/90 dark:bg-slate-900/90 backdrop-blur-[2px] border border-slate-300 dark:border-slate-800 rounded-2xl p-3 sm:p-4 shadow-2xs space-y-2.5">
-          <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
-            <span className="inline-flex items-center gap-1 text-xs font-black text-slate-700 dark:text-slate-300 mr-1">
+        {/* 2. マップ連動クイック絞り込みバー（スマホは1行コンパクト＋詳細折りたたみ、PCは全表示） */}
+        <div className="bg-white/90 dark:bg-slate-900/90 backdrop-blur-[2px] border border-slate-300 dark:border-slate-800 rounded-2xl p-2 sm:p-4 shadow-2xs space-y-2">
+          {/* 1段目：種目ボタン横スクロール ＋ 受付中 ＋ スマホ用詳細トグル */}
+          <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar">
+            <span className="hidden sm:inline-flex items-center gap-1 text-xs font-black text-slate-700 dark:text-slate-300 mr-1 shrink-0">
               <SlidersHorizontal className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400" />
               <span>地図を絞込:</span>
             </span>
@@ -603,7 +605,7 @@ export const RaceMapPage: React.FC<RaceMapPageProps> = ({
               { id: 'trail', label: 'トレイル', icon: Mountain },
               { id: 'cycling', label: 'サイクル', icon: Bike },
               { id: 'marathon', label: 'マラソン', icon: Footprints },
-              { id: 'adventure', label: 'AR・ロゲ', icon: Compass },
+              { id: 'adventure', label: 'AR', icon: Compass },
             ].map((item) => {
               const Icon = item.icon;
               const active = categoryFilter === item.id;
@@ -612,7 +614,7 @@ export const RaceMapPage: React.FC<RaceMapPageProps> = ({
                   key={item.id}
                   type="button"
                   onClick={() => setCategoryFilter(item.id as 'all' | EventCategory)}
-                  className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-xl text-xs font-black border transition-all cursor-pointer ${
+                  className={`inline-flex items-center gap-1 px-2.5 py-1.5 sm:py-1 rounded-xl text-xs font-black border transition-all cursor-pointer shrink-0 ${
                     active
                       ? 'bg-teal-700 text-white border-teal-700 shadow-2xs'
                       : 'bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-slate-200 border-slate-300 dark:border-slate-700 hover:bg-slate-100'
@@ -627,7 +629,7 @@ export const RaceMapPage: React.FC<RaceMapPageProps> = ({
             <button
               type="button"
               onClick={() => setOnlyOpen((v) => !v)}
-              className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-xl text-xs font-black border transition-all cursor-pointer ${
+              className={`inline-flex items-center gap-1 px-2.5 py-1.5 sm:py-1 rounded-xl text-xs font-black border transition-all cursor-pointer shrink-0 ${
                 onlyOpen
                   ? 'bg-emerald-700 text-white border-emerald-700'
                   : 'bg-emerald-50 dark:bg-emerald-950/40 text-emerald-900 dark:text-emerald-200 border-emerald-300 dark:border-emerald-700'
@@ -637,6 +639,22 @@ export const RaceMapPage: React.FC<RaceMapPageProps> = ({
               <span>受付中のみ</span>
             </button>
 
+            <button
+              type="button"
+              onClick={() => setIsMobileFilterOpen((v) => !v)}
+              className={`md:hidden inline-flex items-center gap-1 px-2.5 py-1.5 rounded-xl text-xs font-black border transition-all cursor-pointer shrink-0 ml-auto ${
+                isMobileFilterOpen || onlyClosingSoon || onlyFavorites || monthFilter !== 'all' || keyword.trim()
+                  ? 'bg-slate-900 text-white border-slate-900 dark:bg-white dark:text-slate-950'
+                  : 'bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 border-slate-300 dark:border-slate-700'
+              }`}
+            >
+              <SlidersHorizontal className="w-3.5 h-3.5" />
+              <span>詳細</span>
+            </button>
+          </div>
+
+          {/* 2段目（PCでは常時表示、スマホでは「詳細」開閉で展開） */}
+          <div className={`${isMobileFilterOpen ? 'flex' : 'hidden'} md:flex flex-wrap items-center gap-1.5 sm:gap-2`}>
             <button
               type="button"
               onClick={() => setOnlyClosingSoon((v) => !v)}
@@ -701,7 +719,7 @@ export const RaceMapPage: React.FC<RaceMapPageProps> = ({
         </div>
 
         {/* 3. インタラクティブ地図メインカード（画面いっぱいの大型ワイド表示） */}
-        <section className="bg-white/90 dark:bg-slate-900/90 backdrop-blur-[2px] border border-slate-300 dark:border-slate-800 rounded-2xl p-2 sm:p-3.5 shadow-sm">
+        <section className="bg-white/90 dark:bg-slate-900/90 backdrop-blur-[2px] border border-slate-300 dark:border-slate-800 rounded-2xl p-1.5 sm:p-3.5 shadow-sm">
           {!isPinMapStage ? (
             <JapanDotMap
               events={attributeFilteredEvents}
@@ -742,7 +760,7 @@ export const RaceMapPage: React.FC<RaceMapPageProps> = ({
                 <div className="flex items-center justify-between gap-2 pb-2 mb-2 border-b border-slate-200 dark:border-slate-800 shrink-0">
                   <div className="flex items-center gap-1.5">
                     <MapPin className="w-4 h-4 text-teal-600 dark:text-teal-400" />
-                    <span className="text-xs sm:text-sm font-black text-slate-900 dark:text-white">
+                    <span className="text-sm font-black text-slate-900 dark:text-white">
                       開催場所一覧（{areaEvents.length}件）
                     </span>
                   </div>
@@ -791,10 +809,10 @@ export const RaceMapPage: React.FC<RaceMapPageProps> = ({
                               {formatEventDateSlash(ev.date, ev.end_date)}
                             </span>
                           </div>
-                          <div className="text-xs font-black text-slate-950 dark:text-white line-clamp-2 leading-snug">
+                          <div className="text-sm font-black text-slate-950 dark:text-white line-clamp-2 leading-snug">
                             {ev.title}
                           </div>
-                          <div className="flex items-center justify-between gap-1 mt-1 text-[11px] text-slate-600 dark:text-slate-400 font-bold">
+                          <div className="flex items-center justify-between gap-1 mt-1 text-xs text-slate-600 dark:text-slate-400 font-bold">
                             <span className="truncate">
                               📍 {ev.venue?.name || ev.prefecture}
                             </span>

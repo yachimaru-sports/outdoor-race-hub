@@ -40,8 +40,11 @@ const OKI_TX = OKI_TARGET_CENTER_X - OKI_ORIG_CENTER_X * OKI_SCALE;
 const OKI_TY = OKI_TARGET_CENTER_Y - OKI_ORIG_CENTER_Y * OKI_SCALE;
 const OKI_INSET_VIEWBOX: RegionViewBox = { x: 520, y: 585, w: 325, h: 160 };
 
-// 9地方の吹き出し位置（NATIONAL_VIEWBOX 座標系パーセント・ホバー拡大時も重なりゼロ）
-const CALLOUT_LAYOUT: Record<
+// スマホ幅専用のタイト全国viewBox（左右の空白を詰めて日本列島を大きく表示）
+const MOBILE_NATIONAL_VIEWBOX: RegionViewBox = { x: 18, y: -8, w: 845, h: 808 };
+
+// 9地方の吹き出し位置（PC版 NATIONAL_VIEWBOX 用）
+const PC_CALLOUT_LAYOUT: Record<
   MapRegionId,
   { leftPct: number; topPct: number; pointer: 'down-left' | 'down-right' | 'up-left' | 'up-right' }
 > = {
@@ -54,6 +57,22 @@ const CALLOUT_LAYOUT: Record<
   kyushu: { leftPct: 10.5, topPct: 87.5, pointer: 'up-right' },
   shikoku: { leftPct: 38.5, topPct: 91.5, pointer: 'up-left' },
   okinawa: { leftPct: 85.0, topPct: 91.5, pointer: 'up-left' },
+};
+
+// 9地方の吹き出し位置（スマホ版 MOBILE_NATIONAL_VIEWBOX 用・海外カードと重なりゼロ）
+const MOBILE_CALLOUT_LAYOUT: Record<
+  MapRegionId,
+  { leftPct: number; topPct: number; pointer: 'down-left' | 'down-right' | 'up-left' | 'up-right' }
+> = {
+  hokkaido: { leftPct: 50.0, topPct: 11.5, pointer: 'down-right' },
+  chubu: { leftPct: 28.5, topPct: 31.5, pointer: 'down-right' },
+  tohoku: { leftPct: 83.5, topPct: 38.0, pointer: 'down-left' },
+  kinki: { leftPct: 24.5, topPct: 48.0, pointer: 'down-right' },
+  kanto: { leftPct: 82.0, topPct: 59.5, pointer: 'down-left' },
+  chugoku: { leftPct: 13.0, topPct: 62.5, pointer: 'down-right' },
+  kyushu: { leftPct: 13.0, topPct: 88.5, pointer: 'up-right' },
+  shikoku: { leftPct: 43.0, topPct: 91.5, pointer: 'up-left' },
+  okinawa: { leftPct: 83.0, topPct: 92.0, pointer: 'up-left' },
 };
 
 // 種目別マーカーカラー（色相を大きく離した高コントラスト4色）
@@ -171,11 +190,51 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
     () => initialZoomFromPrefecture === '沖縄県'
   );
 
+  // SVGコンテナの実測サイズ（ResizeObserverでスマホ・PC双方の物理px基準スケーリングを実現）
+  const svgWrapRef = useRef<HTMLDivElement>(null);
+  const [svgSize, setSvgSize] = useState<{ width: number; height: number }>(() => {
+    if (typeof window !== 'undefined' && window.innerWidth < 640) {
+      return { width: Math.max(300, window.innerWidth - 24), height: 420 };
+    }
+    return { width: 1200, height: 680 };
+  });
+
+  useEffect(() => {
+    const el = svgWrapRef.current;
+    if (!el) return;
+
+    const updateSize = () => {
+      const rect = el.getBoundingClientRect();
+      if (rect.width > 0 && rect.height > 0) {
+        setSvgSize((prev) =>
+          Math.abs(prev.width - rect.width) < 2 && Math.abs(prev.height - rect.height) < 2
+            ? prev
+            : { width: rect.width, height: rect.height }
+        );
+      }
+    };
+
+    updateSize();
+
+    if (typeof ResizeObserver !== 'undefined') {
+      const observer = new ResizeObserver(updateSize);
+      observer.observe(el);
+      return () => observer.disconnect();
+    }
+
+    window.addEventListener('resize', updateSize);
+    return () => window.removeEventListener('resize', updateSize);
+  }, []);
+
+  const isCompact = svgSize.width < 640;
+  const baseNationalBox = isCompact ? MOBILE_NATIONAL_VIEWBOX : NATIONAL_VIEWBOX;
+  const activeCalloutLayout = isCompact ? MOBILE_CALLOUT_LAYOUT : PC_CALLOUT_LAYOUT;
+
   // カメラ補間状態（単一SVG viewBoxを滑らかに補間）
   const initialBox = useMemo<RegionViewBox>(() => {
     const fromPref = resolveStartBoxFromPref(initialZoomFromPrefecture);
     if (fromPref) return fromPref;
-    return selectedRegionId ? REGION_VIEWBOXES[selectedRegionId] : NATIONAL_VIEWBOX;
+    return selectedRegionId ? REGION_VIEWBOXES[selectedRegionId] : baseNationalBox;
     // 初回マウント時のみ計算
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -185,7 +244,6 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
   const rafIdRef = useRef<number | null>(null);
   const animTokenRef = useRef<number>(0);
 
-  // 最新コールバック参照
   const onSelectRegionRef = useRef(onSelectRegion);
   onSelectRegionRef.current = onSelectRegion;
   const onSelectPrefectureRef = useRef(onSelectPrefecture);
@@ -193,18 +251,12 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
   const onConsumeInitialZoomRef = useRef(onConsumeInitialZoom);
   onConsumeInitialZoomRef.current = onConsumeInitialZoom;
 
-  // 親側で選択地域が変わったら一時ズームターゲットをクリア
+  // 親側で選択地域が変わったら一時ズームターゲット・ホバー状態をクリア
   useEffect(() => {
     setZoomingTarget(null);
     setHoveredRegion(null);
     setHoveredPrefCode(null);
   }, [selectedRegionId]);
-
-  // 目標 viewBox の決定
-  const targetBox: RegionViewBox = useMemo(() => {
-    if (zoomingTarget) return zoomingTarget.box;
-    return selectedRegionId ? REGION_VIEWBOXES[selectedRegionId] : NATIONAL_VIEWBOX;
-  }, [zoomingTarget, selectedRegionId]);
 
   // 親側で渡された戻りズーム元県名を初回マウント時に消費
   useEffect(() => {
@@ -213,6 +265,12 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  // 目標 viewBox の決定
+  const targetBox: RegionViewBox = useMemo(() => {
+    if (zoomingTarget) return zoomingTarget.box;
+    return selectedRegionId ? REGION_VIEWBOXES[selectedRegionId] : baseNationalBox;
+  }, [zoomingTarget, selectedRegionId, baseNationalBox]);
 
   // 目標 viewBox が変わるたびに requestAnimationFrame で滑らかにカメラズーム補間
   useEffect(() => {
@@ -303,6 +361,8 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
   // 地方・都道府県クリック時のズームイン開始ハンドラ
   const handleClickRegion = (regionId: MapRegionId | 'overseas') => {
     if (zoomingTarget) return;
+    setHoveredRegion(null);
+    setHoveredPrefCode(null);
     if (regionId === 'hokkaido') {
       setZoomingTarget({
         kind: 'region-direct',
@@ -324,6 +384,7 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
 
   const handleClickPrefecture = (prefName: string) => {
     if (zoomingTarget) return;
+    setHoveredPrefCode(null);
     const meta = PREFECTURE_BY_NAME[prefName];
     if (meta && PREF_VIEWBOXES[meta.code]) {
       setZoomingTarget({
@@ -387,6 +448,23 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
     return { regionStats: rStats, prefStats: pStats, overseasStats: oStats };
   }, [events]);
 
+  // 物理ピクセル基準のSVGスケール（スマホでもPCでも同じ物理サイズで文字・マーカーを描画）
+  const { pxToSvgRegion, pxToSvgNational } = useMemo(() => {
+    const natScale = Math.max(
+      0.1,
+      Math.min(svgSize.width / baseNationalBox.w, svgSize.height / baseNationalBox.h)
+    );
+    const regionBox = selectedRegionId ? REGION_VIEWBOXES[selectedRegionId] : baseNationalBox;
+    const regScale = Math.max(
+      0.1,
+      Math.min(svgSize.width / regionBox.w, svgSize.height / regionBox.h)
+    );
+    return {
+      pxToSvgRegion: 1 / regScale,
+      pxToSvgNational: 1 / natScale,
+    };
+  }, [svgSize, baseNationalBox, selectedRegionId]);
+
   // 大会開催地マーカー（本土46都道府県用 ＆ 沖縄インセット用）
   const { mainlandDots, okinawaDots } = useMemo(() => {
     const mainAll: {
@@ -413,8 +491,7 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
       groups.set(key, arr);
     }
 
-    const regionBox = selectedRegionId ? REGION_VIEWBOXES[selectedRegionId] : null;
-    const regionUnit = regionBox ? Math.max(regionBox.w / 1200, regionBox.h / 620) : 1;
+    const spreadBase = (isCompact ? 12 : 16) * pxToSvgRegion;
 
     for (const list of groups.values()) {
       list.forEach((ev, idx) => {
@@ -425,7 +502,7 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
         let y = base.y;
         if (list.length > 1 && selectedRegionId) {
           const angle = (2 * Math.PI * idx) / list.length;
-          const radius = regionUnit * (14.0 + Math.floor(idx / 6) * 10.0);
+          const radius = spreadBase * (1 + Math.floor(idx / 6) * 0.7);
           x += Math.cos(angle) * radius;
           y += Math.sin(angle) * radius;
         }
@@ -438,7 +515,7 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
     }
 
     return { mainlandDots: mainAll, okinawaDots: okiAll };
-  }, [events, selectedRegionId]);
+  }, [events, selectedRegionId, isCompact, pxToSvgRegion]);
 
   const zoomedRegionConfig = selectedRegionId ? MAP_REGION_BY_ID[selectedRegionId] : null;
   const zoomedPrefs = useMemo(() => {
@@ -471,13 +548,6 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
   const isOkinawaHover = hoveredRegion === 'okinawa' || hoveredPrefCode === 47;
   const okinawaCfg = MAP_REGION_BY_ID.okinawa;
 
-  // 地方ビュー用ラベルスケール（現在の地方ターゲット基準）
-  const regionUnit = useMemo(() => {
-    if (!selectedRegionId) return 1;
-    const vb = REGION_VIEWBOXES[selectedRegionId];
-    return Math.max(vb.w / 1200, vb.h / 620);
-  }, [selectedRegionId]);
-
   const showNationalCallouts = !selectedRegionId && !zoomingTarget;
   const showRegionLabels = Boolean(selectedRegionId && !zoomingTarget);
   const showOkinawaInset =
@@ -485,19 +555,28 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
     zoomingTarget?.kind === 'region-direct' ||
     showOkinawaInsetDuringExit;
 
+  // マウス以外のタッチ操作ではホバー状態を動かさず1タップ即発動にする
+  const isMouseEvent = (e: React.PointerEvent) => e.pointerType === 'mouse';
+
+  // 地図上のマーカーサイズ（物理ピクセル準拠）
+  const markerSize = selectedRegionId
+    ? (isCompact ? 7.5 : 10.5) * pxToSvgRegion
+    : (isCompact ? 4.8 : 4.6) * pxToSvgNational;
+  const okiMarkerSize = (isCompact ? 5.2 : 5.2) * pxToSvgNational;
+
   return (
-    <div className="space-y-3 sm:space-y-4">
-      {/* 上部バー：全国時（操作案内） / 地方時（戻る＆地方名）— 高さを揃えて切替時のガタつきを抑止 */}
+    <div className="space-y-2.5 sm:space-y-4">
+      {/* 上部バー：全国時（操作案内） / 地方時（戻る＆地方名） */}
       {selectedRegionId && zoomedRegionConfig ? (
         <div className="flex flex-wrap items-center justify-between gap-2 min-h-[38px] pb-2 border-b border-slate-200 dark:border-slate-800">
-          <div className="flex items-center gap-2.5 flex-wrap">
+          <div className="flex items-center gap-2 flex-wrap">
             <button
               type="button"
               onClick={() => {
                 setZoomingTarget(null);
                 onResetToNational();
               }}
-              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-100 text-xs sm:text-sm font-black border border-slate-300 dark:border-slate-700 transition-colors cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-100 text-xs sm:text-sm font-black border border-slate-300 dark:border-slate-700 transition-colors cursor-pointer"
             >
               <ArrowLeft className="w-4 h-4" />
               <span>全国へ戻る</span>
@@ -505,17 +584,17 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
 
             <div className="flex items-center gap-2">
               <span
-                className="w-4 h-4 rounded-full shadow-xs shrink-0"
+                className="w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full shadow-xs shrink-0"
                 style={{ backgroundColor: zoomedRegionConfig.color }}
               />
-              <h2 className="text-lg sm:text-2xl font-black text-slate-950 dark:text-white">
+              <h2 className="text-base sm:text-2xl font-black text-slate-950 dark:text-white">
                 {zoomedRegionConfig.fullName}
               </h2>
-              <span className="px-3 py-0.5 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-950 font-mono font-black text-xs sm:text-sm">
+              <span className="px-2.5 py-0.5 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-950 font-mono font-black text-xs sm:text-sm">
                 {regionStats[selectedRegionId].total}大会
               </span>
               {regionStats[selectedRegionId].open > 0 && (
-                <span className="px-2.5 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950/70 text-emerald-800 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-700 font-black text-xs sm:text-sm">
+                <span className="px-2 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950/70 text-emerald-800 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-700 font-black text-xs sm:text-sm">
                   受付中 {regionStats[selectedRegionId].open}
                 </span>
               )}
@@ -523,15 +602,15 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
           </div>
 
           <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-bold">
-            都道府県をタップすると、その県の開催地ピンマップへズームします
+            県をタップして開催地ピンマップへズーム
           </p>
         </div>
       ) : (
-        <div className="flex flex-nowrap items-center justify-between gap-2 min-h-[38px]">
-          <div className="flex items-center gap-2 min-w-0">
+        <div className="flex flex-nowrap items-center justify-between gap-2 min-h-[36px]">
+          <div className="flex items-center gap-1.5 sm:gap-2 min-w-0">
             <Compass className="w-4 h-4 sm:w-5 sm:h-5 text-teal-700 dark:text-teal-400 shrink-0" />
-            <span className="text-sm sm:text-base font-black text-slate-800 dark:text-slate-200 truncate">
-              地方ブロックまたは日本地図をタップして拡大表示（全{events.length}大会）
+            <span className="text-xs sm:text-base font-black text-slate-800 dark:text-slate-200 truncate">
+              地方または地図をタップしてズーム（全{events.length}大会）
             </span>
           </div>
           <div
@@ -550,7 +629,10 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
       )}
 
       {/* 統合インタラクティブ地図キャンバス（全国・地方で同一サイズの連続カメラズーム） */}
-      <div className="relative w-full rounded-2xl bg-gradient-to-b from-sky-50/55 via-slate-50/75 to-slate-100/85 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 border border-slate-200 dark:border-slate-800 p-1 sm:p-2 overflow-hidden shadow-inner">
+      <div
+        ref={svgWrapRef}
+        className="relative w-full rounded-2xl bg-gradient-to-b from-sky-50/55 via-slate-50/75 to-slate-100/85 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 border border-slate-200 dark:border-slate-800 p-0.5 sm:p-2 overflow-hidden shadow-inner"
+      >
         {/* 地方ズーム時：地図ウィンドウ内左上に大きく目立つ「ひとつ前へ戻る」フローティングボタンを常設 */}
         {selectedRegionId && !zoomingTarget && (
           <button
@@ -559,20 +641,20 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
               setZoomingTarget(null);
               onResetToNational();
             }}
-            className="absolute top-3 left-3 sm:top-4 sm:left-4 z-30 inline-flex items-center gap-2 px-4 py-2.5 sm:px-5 sm:py-3 rounded-2xl bg-slate-900 hover:bg-teal-700 text-white dark:bg-white dark:hover:bg-teal-400 dark:text-slate-950 font-black text-sm sm:text-base lg:text-lg border-2 border-white/90 dark:border-slate-800 shadow-xl hover:scale-[1.03] active:scale-95 transition-all cursor-pointer"
+            className="absolute top-2.5 left-2.5 sm:top-4 sm:left-4 z-30 min-h-[44px] inline-flex items-center gap-1.5 sm:gap-2 px-3.5 py-2 sm:px-5 sm:py-3 rounded-2xl bg-slate-900 hover:bg-teal-700 text-white dark:bg-white dark:hover:bg-teal-400 dark:text-slate-950 font-black text-sm sm:text-base lg:text-lg border-2 border-white/90 dark:border-slate-800 shadow-xl hover:scale-[1.03] active:scale-95 transition-all cursor-pointer"
           >
-            <ArrowLeft className="w-5 h-5 stroke-[2.8] shrink-0" />
+            <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5 stroke-[2.8] shrink-0" />
             <span>全国マップへ戻る</span>
           </button>
         )}
 
-        {/* 左上：海外・ARWS世界戦カード（全国ビュー時のみ表示・ズーム時はスッと消える） */}
+        {/* 左上：海外・ARWS世界戦カード（スマホでも邪魔にならず見やすいコンパクトサイズ） */}
         <button
           type="button"
           onClick={() => handleClickRegion('overseas')}
-          onMouseEnter={() => setHoveredRegion('overseas')}
-          onMouseLeave={() => setHoveredRegion(null)}
-          className={`absolute left-2.5 top-2.5 sm:left-4 sm:top-4 z-20 text-left rounded-xl border-2 transition-all duration-200 cursor-pointer shadow-md overflow-hidden bg-white/95 dark:bg-slate-900/95 ${
+          onPointerEnter={(e) => isMouseEvent(e) && setHoveredRegion('overseas')}
+          onPointerLeave={(e) => isMouseEvent(e) && setHoveredRegion(null)}
+          className={`absolute left-2 top-2 sm:left-4 sm:top-4 z-20 text-left rounded-xl border-2 transition-all duration-200 cursor-pointer shadow-md overflow-hidden bg-white/95 dark:bg-slate-900/95 ${
             showNationalCallouts
               ? hoveredRegion === 'overseas'
                 ? 'opacity-100 border-indigo-500 scale-105 shadow-xl'
@@ -580,15 +662,15 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
               : 'opacity-0 scale-95 pointer-events-none'
           }`}
         >
-          <div className="bg-indigo-600 text-white px-3 py-1 sm:px-3.5 sm:py-1 text-xs sm:text-sm font-black flex items-center gap-1.5">
-            <Globe className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+          <div className="bg-indigo-600 text-white px-2 py-0.5 sm:px-3.5 sm:py-1 text-[11px] sm:text-sm font-black flex items-center gap-1">
+            <Globe className="w-3 h-3 sm:w-4 sm:h-4" />
             <span>海外・世界戦</span>
           </div>
-          <div className="px-3 py-1.5 sm:px-3.5 sm:py-2 flex items-baseline gap-1.5">
-            <span className="text-xl sm:text-2xl md:text-3xl font-black font-mono text-slate-950 dark:text-white leading-none">
+          <div className="px-2.5 py-1 sm:px-3.5 sm:py-2 flex items-baseline gap-1">
+            <span className="text-lg sm:text-2xl md:text-3xl font-black font-mono text-slate-950 dark:text-white leading-none">
               {overseasStats.total}
             </span>
-            <span className="text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-300">
+            <span className="text-[11px] sm:text-sm font-bold text-slate-700 dark:text-slate-300">
               レース
             </span>
             {overseasStats.open > 0 && (
@@ -622,7 +704,7 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
         <svg
           viewBox={`${animatedBox.x.toFixed(2)} ${animatedBox.y.toFixed(2)} ${animatedBox.w.toFixed(2)} ${animatedBox.h.toFixed(2)}`}
           preserveAspectRatio="xMidYMid meet"
-          className={`w-full h-[440px] sm:h-[600px] lg:h-[680px] select-none block transition-opacity duration-300 ${
+          className={`w-full h-[390px] xs:h-[430px] sm:h-[600px] lg:h-[680px] select-none block touch-manipulation transition-opacity duration-300 ${
             zoomingTarget ? 'opacity-25' : 'opacity-100'
           }`}
           role="img"
@@ -631,7 +713,8 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
               ? `${zoomedRegionConfig.fullName}の都道府県境マップ`
               : '日本の地方別・県境アウトドアレースマップ'
           }
-          onMouseLeave={() => {
+          onPointerLeave={(e) => {
+            if (!isMouseEvent(e)) return;
             setHoveredRegion(null);
             setHoveredPrefCode(null);
           }}
@@ -662,7 +745,6 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
             const isRegionHover = hoveredRegion === pref.regionId;
 
             if (selectedRegionId) {
-              // 地方ズーム中：選択地方は濃淡＋白枠、他地方は淡い背景シルエットとして残す
               if (!isSelectedRegion) {
                 return (
                   <path
@@ -710,7 +792,7 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
                   strokeLinejoin="round"
                   vectorEffect="non-scaling-stroke"
                   className="stroke-white dark:stroke-slate-900 cursor-pointer transition-colors duration-150"
-                  onMouseEnter={() => setHoveredPrefCode(pref.code)}
+                  onPointerEnter={(e) => isMouseEvent(e) && setHoveredPrefCode(pref.code)}
                   onClick={() => handleClickPrefecture(pref.name)}
                 />
               );
@@ -728,7 +810,8 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
                 strokeLinejoin="round"
                 vectorEffect="non-scaling-stroke"
                 className="stroke-white dark:stroke-slate-900 cursor-pointer transition-all duration-150"
-                onMouseEnter={() => {
+                onPointerEnter={(e) => {
+                  if (!isMouseEvent(e)) return;
                   setHoveredRegion(pref.regionId);
                   setHoveredPrefCode(pref.code);
                 }}
@@ -737,14 +820,14 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
             );
           })}
 
-          {/* 本土の開催地マーカー（高コントラスト4色＋4形状） */}
+          {/* 本土の開催地マーカー（高コントラスト4色＋4形状・スマホ/PC物理サイズ統一） */}
           {mainlandDots.map((pt) =>
             renderCategoryShape(
               pt.category,
               pt.x,
               pt.y,
-              selectedRegionId ? regionUnit * 9.5 : 5.2,
-              selectedRegionId ? 2.4 : 1.5,
+              markerSize,
+              selectedRegionId ? 2.2 : 1.4,
               `dot-${pt.id}`
             )
           )}
@@ -754,7 +837,8 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
             <g
               transform={`translate(${OKI_TX.toFixed(1)}, ${OKI_TY.toFixed(1)}) scale(${OKI_SCALE})`}
               className="cursor-pointer"
-              onMouseEnter={() => {
+              onPointerEnter={(e) => {
+                if (!isMouseEvent(e)) return;
                 setHoveredRegion('okinawa');
                 setHoveredPrefCode(47);
               }}
@@ -770,12 +854,12 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
                 className="stroke-white dark:stroke-slate-900 transition-all duration-150"
               />
               {okinawaDots.map((pt) =>
-                renderCategoryShape(pt.category, pt.x, pt.y, 6.0, 1.5, `oki-${pt.id}`)
+                renderCategoryShape(pt.category, pt.x, pt.y, okiMarkerSize, 1.4, `oki-${pt.id}`)
               )}
             </g>
           )}
 
-          {/* 地方ビュー用：大型県名＋大会数ラベル */}
+          {/* 地方ビュー用：物理ピクセル基準の大型県名＋大会数ラベル（スマホでもくっきり読める） */}
           {showRegionLabels &&
             zoomedPrefs.map((pref) => {
               const pathData = PREF_SVG_PATHS[pref.code];
@@ -783,16 +867,23 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
               const count = prefStats[pref.name]?.total || 0;
               const isHovered = hoveredPrefCode === pref.code;
               const textStr = `${pref.shortName} ${count}`;
-              const boxW = Math.max(regionUnit * 78, textStr.length * regionUnit * 16.5 + regionUnit * 22);
-              const boxH = regionUnit * 34;
-              const fontSize = regionUnit * 18.5;
+              const fontPx = isCompact ? 14.5 : 19;
+              const padPx = isCompact ? 16 : 22;
+              const charPx = isCompact ? 13 : 16.5;
+              const minBoxPx = isCompact ? 56 : 78;
+              const boxH = (isCompact ? 26 : 34) * pxToSvgRegion;
+              const boxW = Math.max(
+                minBoxPx * pxToSvgRegion,
+                (textStr.length * charPx + padPx) * pxToSvgRegion
+              );
+              const fontSize = fontPx * pxToSvgRegion;
 
               return (
                 <g
                   key={`label-${pref.code}`}
                   transform={`translate(${pathData.labelX}, ${pathData.labelY})`}
                   className="cursor-pointer animate-map-fade-up"
-                  onMouseEnter={() => setHoveredPrefCode(pref.code)}
+                  onPointerEnter={(e) => isMouseEvent(e) && setHoveredPrefCode(pref.code)}
                   onClick={() => handleClickPrefecture(pref.name)}
                 >
                   <rect
@@ -800,8 +891,8 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
                     y={-boxH / 2}
                     width={boxW}
                     height={boxH}
-                    rx={regionUnit * 10}
-                    fill={isHovered ? '#0f172a' : 'rgba(255,255,255,0.94)'}
+                    rx={(isCompact ? 8 : 10) * pxToSvgRegion}
+                    fill={isHovered ? '#0f172a' : 'rgba(255,255,255,0.95)'}
                     stroke={count > 0 ? zoomedRegionConfig!.color : '#94a3b8'}
                     strokeWidth={isHovered ? 2.6 : 1.6}
                     vectorEffect="non-scaling-stroke"
@@ -820,7 +911,7 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
               );
             })}
 
-          {/* 全国ビュー用：SVGネイティブ 9地方カラー吹き出し（ズーム時はスッと消えて地図とズレない） */}
+          {/* 全国ビュー用：SVGネイティブ 9地方カラー吹き出し（スマホ/PCそれぞれの最適化サイズ＆配置） */}
           <g
             style={{
               opacity: showNationalCallouts ? 1 : 0,
@@ -829,28 +920,30 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
             className={showNationalCallouts ? '' : 'pointer-events-none'}
           >
             {MAP_REGIONS.map((region) => {
-              const layout = CALLOUT_LAYOUT[region.id];
+              const layout = activeCalloutLayout[region.id];
               const stat = regionStats[region.id];
               const isHover = hoveredRegion === region.id;
-              const cx = NATIONAL_VIEWBOX.x + NATIONAL_VIEWBOX.w * (layout.leftPct / 100);
-              const cy = NATIONAL_VIEWBOX.y + NATIONAL_VIEWBOX.h * (layout.topPct / 100);
+              const cx = baseNationalBox.x + baseNationalBox.w * (layout.leftPct / 100);
+              const cy = baseNationalBox.y + baseNationalBox.h * (layout.topPct / 100);
 
-              const bw = 152;
-              const bh = 74;
-              const headH = 26;
+              const bw = isCompact ? 186 : 152;
+              const bh = isCompact ? 90 : 74;
+              const headH = isCompact ? 32 : 26;
               const halfW = bw / 2;
               const halfH = bh / 2;
+              const arrowSpan = isCompact ? 20 : 16;
+              const arrowDepth = isCompact ? 16 : 14;
+              const arrowOffset = isCompact ? 32 : 26;
 
-              // 三角矢印の座標（吹き出し枠の4隅付近）
               let arrowPoints = '';
               if (layout.pointer === 'down-right') {
-                arrowPoints = `${halfW - 26},${halfH - 1} ${halfW - 10},${halfH - 1} ${halfW - 18},${halfH + 14}`;
+                arrowPoints = `${halfW - arrowOffset},${halfH - 1} ${halfW - arrowOffset + arrowSpan},${halfH - 1} ${halfW - arrowOffset + arrowSpan / 2},${halfH + arrowDepth}`;
               } else if (layout.pointer === 'down-left') {
-                arrowPoints = `${-halfW + 10},${halfH - 1} ${-halfW + 26},${halfH - 1} ${-halfW + 18},${halfH + 14}`;
+                arrowPoints = `${-halfW + arrowOffset - arrowSpan},${halfH - 1} ${-halfW + arrowOffset},${halfH - 1} ${-halfW + arrowOffset - arrowSpan / 2},${halfH + arrowDepth}`;
               } else if (layout.pointer === 'up-right') {
-                arrowPoints = `${halfW - 26},${-halfH + 1} ${halfW - 10},${-halfH + 1} ${halfW - 18},${-halfH - 14}`;
+                arrowPoints = `${halfW - arrowOffset},${-halfH + 1} ${halfW - arrowOffset + arrowSpan},${-halfH + 1} ${halfW - arrowOffset + arrowSpan / 2},${-halfH - arrowDepth}`;
               } else {
-                arrowPoints = `${-halfW + 10},${-halfH + 1} ${-halfW + 26},${-halfH + 1} ${-halfW + 18},${-halfH - 14}`;
+                arrowPoints = `${-halfW + arrowOffset - arrowSpan},${-halfH + 1} ${-halfW + arrowOffset},${-halfH + 1} ${-halfW + arrowOffset - arrowSpan / 2},${-halfH - arrowDepth}`;
               }
 
               return (
@@ -858,79 +951,110 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
                   key={`callout-${region.id}`}
                   transform={`translate(${cx.toFixed(1)}, ${cy.toFixed(1)}) scale(${isHover ? 1.08 : 1})`}
                   className="cursor-pointer transition-transform duration-150"
-                  onMouseEnter={() => setHoveredRegion(region.id)}
-                  onMouseLeave={() => setHoveredRegion(null)}
+                  onPointerEnter={(e) => isMouseEvent(e) && setHoveredRegion(region.id)}
+                  onPointerLeave={(e) => isMouseEvent(e) && setHoveredRegion(null)}
                   onClick={() => handleClickRegion(region.id)}
                 >
-                  {/* ソフト影 */}
                   <rect
                     x={-halfW + 2}
                     y={-halfH + 4}
                     width={bw}
                     height={bh}
-                    rx={10}
+                    rx={isCompact ? 12 : 10}
                     fill="rgba(15, 23, 42, 0.14)"
                   />
-                  {/* 三角矢印 */}
                   <polygon points={arrowPoints} fill={region.color} />
-                  {/* 本体白枠 */}
                   <rect
                     x={-halfW}
                     y={-halfH}
                     width={bw}
                     height={bh}
-                    rx={10}
+                    rx={isCompact ? 12 : 10}
                     fill="#ffffff"
                     stroke={region.color}
-                    strokeWidth={isHover ? 3.5 : 2.5}
+                    strokeWidth={isHover ? 3.5 : 2.4}
                     vectorEffect="non-scaling-stroke"
                   />
-                  {/* 上部カラーヘッダー */}
                   <path
-                    d={`M ${-halfW} ${-halfH + 10} Q ${-halfW} ${-halfH} ${-halfW + 10} ${-halfH} L ${halfW - 10} ${-halfH} Q ${halfW} ${-halfH} ${halfW} ${-halfH + 10} L ${halfW} ${-halfH + headH} L ${-halfW} ${-halfH + headH} Z`}
+                    d={`M ${-halfW} ${-halfH + (isCompact ? 12 : 10)} Q ${-halfW} ${-halfH} ${-halfW + (isCompact ? 12 : 10)} ${-halfH} L ${halfW - (isCompact ? 12 : 10)} ${-halfH} Q ${halfW} ${-halfH} ${halfW} ${-halfH + (isCompact ? 12 : 10)} L ${halfW} ${-halfH + headH} L ${-halfW} ${-halfH + headH} Z`}
                     fill={region.color}
                   />
                   <text
                     x={0}
-                    y={-halfH + 18.5}
+                    y={-halfH + (isCompact ? 23 : 18.5)}
                     textAnchor="middle"
-                    fontSize="16"
+                    fontSize={isCompact ? 22 : 16}
                     fontWeight="900"
                     fill="#ffffff"
                   >
                     {region.name}
                   </text>
 
-                  {/* 数字・単位・受付数 */}
-                  <text
-                    x={stat.open > 0 ? -18 : 0}
-                    y={halfH - 14}
-                    textAnchor="middle"
-                    fontSize="28"
-                    fontWeight="900"
-                    fill="#0f172a"
-                    style={{ fontVariantNumeric: 'tabular-nums' }}
-                  >
-                    {stat.total}
-                    <tspan fontSize="13" fontWeight="800" fill="#334155" dx="2">
-                      レース
-                    </tspan>
-                  </text>
-
-                  {stat.open > 0 && (
-                    <g transform={`translate(${halfW - 26}, ${halfH - 22})`}>
-                      <rect x={-19} y={-10} width={38} height={20} rx={6} fill="#d1fae5" />
+                  {isCompact ? (
+                    <>
                       <text
-                        x={0}
-                        y={4.5}
+                        x={stat.open > 0 ? -18 : 0}
+                        y={halfH - 16}
                         textAnchor="middle"
-                        fontSize="11.5"
+                        fontSize="36"
                         fontWeight="900"
-                        fill="#065f46"
+                        fill="#0f172a"
+                        style={{ fontVariantNumeric: 'tabular-nums' }}
                       >
-                        受{stat.open}
+                        {stat.total}
+                        <tspan fontSize="18" fontWeight="800" fill="#334155" dx="2">
+                          件
+                        </tspan>
                       </text>
-                    </g>
+                      {stat.open > 0 && (
+                        <g transform={`translate(${halfW - 30}, ${halfH - 27})`}>
+                          <rect x={-23} y={-12} width={46} height={24} rx={7} fill="#d1fae5" />
+                          <text
+                            x={0}
+                            y={5.5}
+                            textAnchor="middle"
+                            fontSize="14.5"
+                            fontWeight="900"
+                            fill="#065f46"
+                          >
+                            受{stat.open}
+                          </text>
+                        </g>
+                      )}
+                    </>
+                  ) : (
+                    <>
+                      <text
+                        x={stat.open > 0 ? -18 : 0}
+                        y={halfH - 14}
+                        textAnchor="middle"
+                        fontSize="28"
+                        fontWeight="900"
+                        fill="#0f172a"
+                        style={{ fontVariantNumeric: 'tabular-nums' }}
+                      >
+                        {stat.total}
+                        <tspan fontSize="13" fontWeight="800" fill="#334155" dx="2">
+                          レース
+                        </tspan>
+                      </text>
+
+                      {stat.open > 0 && (
+                        <g transform={`translate(${halfW - 26}, ${halfH - 22})`}>
+                          <rect x={-19} y={-10} width={38} height={20} rx={6} fill="#d1fae5" />
+                          <text
+                            x={0}
+                            y={4.5}
+                            textAnchor="middle"
+                            fontSize="11.5"
+                            fontWeight="900"
+                            fill="#065f46"
+                          >
+                            受{stat.open}
+                          </text>
+                        </g>
+                      )}
+                    </>
                   )}
                 </g>
               );
@@ -939,16 +1063,16 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
         </svg>
       </div>
 
-      {/* 全国・地方共通：大きく見やすい開催地マーカー種別凡例バー（地図を一切隠さない専用配置） */}
-      <div className="flex flex-wrap items-center justify-center sm:justify-between gap-3 px-4 py-2.5 rounded-2xl bg-white dark:bg-slate-900 border-2 border-slate-200 dark:border-slate-700 shadow-xs">
+      {/* 全国・地方共通：大きく見やすい開催地マーカー種別凡例バー（スマホは2×2で見切れゼロ） */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-3 px-3 sm:px-4 py-2.5 rounded-2xl bg-white dark:bg-slate-900 border-2 border-slate-200 dark:border-slate-700 shadow-xs">
         <span className="text-xs sm:text-sm md:text-base font-black text-slate-800 dark:text-slate-100 shrink-0">
           📍 地図上の開催地マーカー（色＋形で区別）:
         </span>
-        <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-5">
+        <div className="grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-2 sm:gap-5">
           {LEGEND_ITEMS.map((item) => (
             <div
               key={item.id}
-              className="inline-flex items-center gap-2 text-xs sm:text-sm md:text-base font-black text-slate-900 dark:text-white"
+              className="inline-flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm md:text-base font-black text-slate-900 dark:text-white"
             >
               <svg viewBox="-12 -12 24 24" className="w-5 h-5 sm:w-6 sm:h-6 shrink-0 drop-shadow-xs">
                 {renderCategoryShape(item.id, 0, 0, 8.2, 2.0)}
@@ -963,7 +1087,7 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
       {selectedRegionId ? (
         <div
           key={`pref-cards-${selectedRegionId}`}
-          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2.5 animate-map-fade-up"
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 sm:gap-2.5 animate-map-fade-up"
         >
           {zoomedPrefs.map((pref) => {
             const pStat = prefStats[pref.name] || { total: 0, open: 0, categories: {} };
@@ -974,10 +1098,10 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
               <button
                 key={pref.code}
                 type="button"
-                onMouseEnter={() => setHoveredPrefCode(pref.code)}
-                onMouseLeave={() => setHoveredPrefCode(null)}
+                onPointerEnter={(e) => isMouseEvent(e) && setHoveredPrefCode(pref.code)}
+                onPointerLeave={(e) => isMouseEvent(e) && setHoveredPrefCode(null)}
                 onClick={() => handleClickPrefecture(pref.name)}
-                className={`group text-left p-3.5 rounded-xl border-2 transition-all cursor-pointer ${
+                className={`group text-left p-3 sm:p-3.5 rounded-xl border-2 transition-all cursor-pointer ${
                   isHovered
                     ? 'border-teal-600 bg-teal-50/90 dark:bg-teal-950/50 shadow-md scale-[1.01]'
                     : hasEvents
@@ -1048,7 +1172,7 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
           })}
         </div>
       ) : (
-        <div className="grid grid-cols-2 sm:grid-cols-5 gap-2.5 animate-map-fade-up">
+        <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 sm:gap-2.5 animate-map-fade-up">
           {MAP_REGIONS.map((region) => {
             const stat = regionStats[region.id];
             const isHover = hoveredRegion === region.id;
@@ -1056,10 +1180,10 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
               <button
                 key={region.id}
                 type="button"
-                onMouseEnter={() => setHoveredRegion(region.id)}
-                onMouseLeave={() => setHoveredRegion(null)}
+                onPointerEnter={(e) => isMouseEvent(e) && setHoveredRegion(region.id)}
+                onPointerLeave={(e) => isMouseEvent(e) && setHoveredRegion(null)}
                 onClick={() => handleClickRegion(region.id)}
-                className={`flex items-center justify-between gap-2 px-3.5 py-2.5 rounded-xl border-2 transition-all cursor-pointer text-left ${
+                className={`flex items-center justify-between gap-2 px-3 py-2.5 sm:px-3.5 rounded-xl border-2 transition-all cursor-pointer text-left ${
                   isHover
                     ? 'bg-slate-900 text-white dark:bg-white dark:text-slate-950 border-slate-900 dark:border-white shadow-md scale-[1.02]'
                     : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 hover:border-slate-400 dark:hover:border-slate-600 shadow-2xs'
@@ -1086,10 +1210,10 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
 
           <button
             type="button"
-            onMouseEnter={() => setHoveredRegion('overseas')}
-            onMouseLeave={() => setHoveredRegion(null)}
+            onPointerEnter={(e) => isMouseEvent(e) && setHoveredRegion('overseas')}
+            onPointerLeave={(e) => isMouseEvent(e) && setHoveredRegion(null)}
             onClick={() => handleClickRegion('overseas')}
-            className={`flex items-center justify-between gap-2 px-3.5 py-2.5 rounded-xl border-2 transition-all cursor-pointer text-left ${
+            className={`flex items-center justify-between gap-2 px-3 py-2.5 sm:px-3.5 rounded-xl border-2 transition-all cursor-pointer text-left ${
               hoveredRegion === 'overseas'
                 ? 'bg-indigo-700 text-white border-indigo-700 shadow-md scale-[1.02]'
                 : 'bg-indigo-50/70 dark:bg-indigo-950/40 border-indigo-200 dark:border-indigo-800 hover:border-indigo-400 text-indigo-950 dark:text-indigo-200 shadow-2xs'

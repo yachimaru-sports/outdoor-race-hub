@@ -381,34 +381,34 @@ export const PrefecturePinMap: React.FC<PrefecturePinMapProps> = ({
   return (
     <div className="space-y-2.5 animate-map-zoom-land">
       {/* 地図上部：コントロール＆視認性強化凡例 */}
-      <div className="flex flex-wrap items-center justify-between gap-2.5">
-        <div className="flex items-center gap-3 flex-wrap">
-          <span className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-black text-slate-800 dark:text-slate-200">
-            <Navigation className="w-4 h-4 text-teal-600 dark:text-teal-400" />
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+        <div className="flex items-center gap-2.5 flex-wrap">
+          <span className="inline-flex items-center gap-1.5 text-sm font-black text-slate-800 dark:text-slate-200">
+            <Navigation className="w-4 h-4 text-teal-600 dark:text-teal-400 shrink-0" />
             <span>{title}の開催地ピンマップ</span>
           </span>
-          <div className="flex flex-wrap items-center gap-3 text-xs sm:text-sm font-black text-slate-800 dark:text-slate-100">
-            <span className="inline-flex items-center gap-1.5">
+          <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 text-xs sm:text-sm font-black text-slate-800 dark:text-slate-100">
+            <span className="inline-flex items-center gap-1">
               <span className="w-3.5 h-3.5 rounded-full bg-green-600 border-2 border-white shadow-2xs" />
               トレイル
             </span>
-            <span className="inline-flex items-center gap-1.5">
+            <span className="inline-flex items-center gap-1">
               <span className="w-3.5 h-3.5 rounded-full bg-blue-600 border-2 border-white shadow-2xs" />
               サイクル
             </span>
-            <span className="inline-flex items-center gap-1.5">
+            <span className="inline-flex items-center gap-1">
               <span className="w-3.5 h-3.5 rounded-full bg-rose-600 border-2 border-white shadow-2xs" />
               マラソン
             </span>
-            <span className="inline-flex items-center gap-1.5">
+            <span className="inline-flex items-center gap-1">
               <span className="w-3.5 h-3.5 rounded-full bg-amber-500 border-2 border-white shadow-2xs" />
-              AR・ロゲ
+              AR
             </span>
           </div>
         </div>
 
         {/* 地図タイル切替 */}
-        <div className="flex items-center gap-1 bg-slate-100 dark:bg-slate-800 p-0.5 rounded-xl border border-slate-300 dark:border-slate-700">
+        <div className="flex items-center gap-1 bg-slate-100 dark:bg-slate-800 p-0.5 rounded-xl border border-slate-300 dark:border-slate-700 self-start sm:self-auto">
           <Layers className="w-3.5 h-3.5 text-slate-500 ml-1.5 mr-0.5 shrink-0" />
           {(Object.keys(TILE_CONFIG) as MapTileStyle[])
             .filter((k) => (!isOverseas ? true : k === 'osm'))
@@ -417,7 +417,7 @@ export const PrefecturePinMap: React.FC<PrefecturePinMapProps> = ({
                 key={key}
                 type="button"
                 onClick={() => setTileStyle(key)}
-                className={`px-2 py-1 rounded-lg text-[10px] sm:text-xs font-black transition-all cursor-pointer ${
+                className={`px-2 py-1 rounded-lg text-[11px] sm:text-xs font-black transition-all cursor-pointer ${
                   tileStyle === key
                     ? 'bg-white dark:bg-slate-700 text-slate-950 dark:text-white shadow-2xs'
                     : 'text-slate-600 dark:text-slate-300 hover:text-slate-950'
@@ -435,15 +435,15 @@ export const PrefecturePinMap: React.FC<PrefecturePinMapProps> = ({
           <button
             type="button"
             onClick={onBackStep}
-            className="absolute top-3 left-3 sm:top-4 sm:left-4 z-[1005] inline-flex items-center gap-2 px-4 py-2.5 sm:px-5 sm:py-3 rounded-2xl bg-slate-900 hover:bg-teal-700 text-white dark:bg-white dark:hover:bg-teal-400 dark:text-slate-950 font-black text-sm sm:text-base border-2 border-white/90 dark:border-slate-800 shadow-xl hover:scale-[1.03] active:scale-95 transition-all cursor-pointer"
+            className="absolute top-2.5 left-2.5 sm:top-4 sm:left-4 z-[1005] min-h-[44px] inline-flex items-center gap-1.5 sm:gap-2 px-3.5 py-2 sm:px-5 sm:py-3 rounded-2xl bg-slate-900 hover:bg-teal-700 text-white dark:bg-white dark:hover:bg-teal-400 dark:text-slate-950 font-black text-sm sm:text-base border-2 border-white/90 dark:border-slate-800 shadow-xl hover:scale-[1.03] active:scale-95 transition-all cursor-pointer"
           >
-            <ArrowLeft className="w-5 h-5 stroke-[2.8] shrink-0" />
+            <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5 stroke-[2.8] shrink-0" />
             <span>{backLabel || 'ひとつ前へ戻る'}</span>
           </button>
         )}
         <div
           ref={containerRef}
-          className="w-full h-[380px] sm:h-[480px] lg:h-[540px]"
+          className="w-full h-[56vh] min-h-[420px] sm:h-[500px] lg:h-[560px]"
           aria-label={`${title}の開催地インタラクティブマップ`}
         />
 
