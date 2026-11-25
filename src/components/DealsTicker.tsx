@@ -31,6 +31,7 @@ interface DealsTickerProps {
   onOpenGuide?: () => void;
   isPcView?: boolean;
   onToggleDisplayMode?: () => void;
+  pausedExternally?: boolean;
 }
 
 export const DealsTicker: React.FC<DealsTickerProps> = ({
@@ -45,6 +46,7 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({
   onOpenGuide,
   isPcView,
   onToggleDisplayMode,
+  pausedExternally = false,
 }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [isPaused, setIsPaused] = useState(false);
@@ -104,7 +106,7 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({
 
   // requestAnimationFrame による時間ベース・浮動小数点累積の滑らか自動スクロール
   useEffect(() => {
-    if (isPaused || deals.length === 0) return;
+    if (isPaused || pausedExternally || deals.length === 0) return;
 
     let lastTime = performance.now();
     const SPEED_PX_PER_SEC = 42;
@@ -149,7 +151,7 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({
         animFrameId.current = null;
       }
     };
-  }, [isPaused, deals.length]);
+  }, [isPaused, pausedExternally, deals.length]);
 
   // 左右の手動スクロールボタン
   const handleManualScroll = (direction: 'left' | 'right') => {

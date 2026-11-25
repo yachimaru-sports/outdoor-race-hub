@@ -23,7 +23,7 @@ import { MyRaceCountdownBanner } from './components/MyRaceCountdownBanner';
 import { HowToUseModal } from './components/HowToUseModal';
 import { DailyIntroSplash } from './components/DailyIntroSplash';
 import { trackEvent, trackPageView } from './utils/analytics';
-import { ShoppingBag, ChevronRight, HelpCircle, X, Map as MapIcon } from 'lucide-react';
+import { ShoppingBag, ChevronRight, HelpCircle, X, Map as MapIcon, Play } from 'lucide-react';
 
 export const App: React.FC = () => {
   // 現在日付を基準に、開催日や申込締切日が過ぎている大会は自動的に「closed（終了）」へリアルタイム補正
@@ -817,6 +817,7 @@ export const App: React.FC = () => {
   );
 
   const [introReplayKey, setIntroReplayKey] = useState(0);
+  const [isIntroActive, setIsIntroActive] = useState(false);
   const handleReplayIntro = () => setIntroReplayKey((prev) => prev + 1);
 
   const renderRouteContent = () => {
@@ -846,7 +847,6 @@ export const App: React.FC = () => {
             onOpenMap={() => navigateTo('map')}
             onOpenGuide={() => handleOpenGuide('footer')}
             dailyBgCredit={dailyBgCredit}
-            onReplayIntro={handleReplayIntro}
           />
           {selectedEvent && (
             <EventDetailModal
@@ -913,6 +913,7 @@ export const App: React.FC = () => {
             onOpenGuide={() => handleOpenGuide('header')}
             isPcView={isPcView}
             onToggleDisplayMode={isNarrowScreen || displayMode !== 'auto' ? toggleDisplayMode : undefined}
+            pausedExternally={isIntroActive}
           />
         </div>
         <UpdateTicker onJumpToTarget={handleJumpToSection} onOpenEvent={handleOpenEventById} />
@@ -1006,14 +1007,29 @@ export const App: React.FC = () => {
                     </button>
                   )}
                 </div>
-                <button
-                  type="button"
-                  onClick={() => window.dispatchEvent(new CustomEvent('open-update-history'))}
-                  className="px-2.5 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[11px] transition-colors shrink-0 cursor-pointer whitespace-nowrap shadow-2xs"
-                >
-                  <span className="sm:hidden">詳細</span>
-                  <span className="hidden sm:inline">詳細履歴</span>
-                </button>
+                <div className="flex items-center gap-1.5 shrink-0">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      window.scrollTo({ top: 0 });
+                      handleReplayIntro();
+                    }}
+                    className="inline-flex items-center gap-1 px-2 py-1 rounded-lg bg-teal-50 hover:bg-teal-100 dark:bg-teal-950/70 dark:hover:bg-teal-900/80 text-teal-800 dark:text-teal-200 border border-teal-200 dark:border-teal-800 font-bold text-[11px] transition-colors shrink-0 cursor-pointer whitespace-nowrap"
+                    title={`今日の開催地オープニング演出を再生（${dailyBg.label}）`}
+                  >
+                    <Play className="w-3 h-3 fill-current shrink-0" />
+                    <span className="sm:hidden">景色</span>
+                    <span className="hidden sm:inline">今日の景色</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => window.dispatchEvent(new CustomEvent('open-update-history'))}
+                    className="px-2.5 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[11px] transition-colors shrink-0 cursor-pointer whitespace-nowrap shadow-2xs"
+                  >
+                    <span className="sm:hidden">詳細</span>
+                    <span className="hidden sm:inline">詳細履歴</span>
+                  </button>
+                </div>
               </div>
             </div>
           );
@@ -1216,7 +1232,6 @@ export const App: React.FC = () => {
         onOpenMap={() => navigateTo('map')}
         onOpenGuide={() => handleOpenGuide('footer')}
         dailyBgCredit={dailyBgCredit}
-        onReplayIntro={handleReplayIntro}
       />
 
       {/* 右下常駐：一番上へ戻るボタン（PC・スマホ共通） */}
@@ -1233,6 +1248,7 @@ export const App: React.FC = () => {
         placeLabel={dailyBg.label}
         eventTitle={dailyBg.eventTitle}
         replayKey={introReplayKey}
+        onActiveChange={setIsIntroActive}
       />
     </>
   );

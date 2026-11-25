@@ -249,10 +249,11 @@
 }
 
 /* ========================================================
-   1日1回限定 シネマティック・オープニング演出（合計 約2.05秒）
+   1日1回限定 シネマティック・オープニング演出（完全GPU合成 60fps+ / 約2.1秒）
+   ※ filter / blur / drop-shadow は一切使わず transform と opacity のみで合成
    ======================================================== */
 @keyframes intro-backdrop-fade {
-  0%, 62% {
+  0%, 60% {
     opacity: 1;
   }
   100% {
@@ -263,88 +264,115 @@
 @keyframes intro-logo-fly {
   0% {
     opacity: 0;
-    transform: scale(1.36);
-    filter: blur(8px);
+    transform: translate3d(0, 0, 0) scale(1.42);
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
   }
-  24% {
+  26% {
     opacity: 1;
-    transform: scale(1.04);
-    filter: blur(0px);
+    transform: translate3d(0, 0, 0) scale(1.04);
+    animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
   }
   56% {
     opacity: 1;
-    transform: scale(0.98);
-    filter: blur(0px);
+    transform: translate3d(0, 0, 0) scale(0.97);
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
   100% {
     opacity: 0;
-    transform: scale(0.84);
-    filter: blur(4px);
+    transform: translate3d(0, 0, 0) scale(0.74);
+  }
+}
+
+@keyframes intro-accent-line {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0) scaleX(0);
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  30% {
+    opacity: 0.9;
+    transform: translate3d(0, 0, 0) scaleX(1);
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  65% {
+    opacity: 0.85;
+    transform: translate3d(0, 0, 0) scaleX(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0) scaleX(0.2);
   }
 }
 
 @keyframes intro-scenery-fly {
   0% {
     opacity: 0;
-    transform: scale(1.26);
-    filter: blur(6px);
+    transform: translate3d(0, 0, 0) scale(1.26);
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
   }
-  14% {
-    opacity: 0;
-    transform: scale(1.24);
-    filter: blur(5px);
-  }
-  38% {
+  28% {
     opacity: 0.96;
-    transform: scale(1.10);
-    filter: blur(0px);
+    transform: translate3d(0, 0, 0) scale(1.10);
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
   }
   64% {
     opacity: 0.90;
-    transform: scale(1.03);
-    filter: blur(0px);
+    transform: translate3d(0, 0, 0) scale(1.03);
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
   }
   86% {
-    opacity: 0.48;
-    transform: scale(1.0);
-    filter: blur(0px);
+    opacity: 0.56;
+    transform: translate3d(0, 0, 0) scale(1);
+    animation-timing-function: ease-out;
   }
   100% {
     opacity: 0;
-    transform: scale(1.0);
-    filter: blur(0px);
+    transform: translate3d(0, 0, 0) scale(1);
   }
 }
 
 @keyframes intro-caption-fade {
-  0%, 26% {
+  0%, 22% {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translate3d(0, 14px, 0);
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
   }
-  42%, 66% {
+  40%, 66% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
+    animation-timing-function: ease-in;
   }
   84%, 100% {
     opacity: 0;
-    transform: translateY(-4px);
+    transform: translate3d(0, -6px, 0);
   }
 }
 
+.intro-gpu-layer {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  contain: layout style paint;
+}
+
 .animate-intro-backdrop {
-  animation: intro-backdrop-fade 2.05s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: intro-backdrop-fade 2.1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 .animate-intro-logo {
-  animation: intro-logo-fly 1.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: intro-logo-fly 1.18s both;
+}
+
+.animate-intro-accent-line {
+  animation: intro-accent-line 1.12s both;
 }
 
 .animate-intro-scenery {
-  animation: intro-scenery-fly 2.05s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: intro-scenery-fly 1.94s 0.16s both;
 }
 
 .animate-intro-caption {
-  animation: intro-caption-fade 2.05s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: intro-caption-fade 2.1s both;
 }
 
 @media (prefers-reduced-motion: reduce) {
