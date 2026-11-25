@@ -435,7 +435,7 @@ export const PrefecturePinMap: React.FC<PrefecturePinMapProps> = ({
           <button
             type="button"
             onClick={onBackStep}
-            className="absolute top-3 left-3 sm:top-4 sm:left-4 z-[450] inline-flex items-center gap-2 px-4 py-2.5 sm:px-5 sm:py-3 rounded-2xl bg-slate-900 hover:bg-teal-700 text-white dark:bg-white dark:hover:bg-teal-400 dark:text-slate-950 font-black text-sm sm:text-base border-2 border-white/90 dark:border-slate-800 shadow-xl hover:scale-[1.03] active:scale-95 transition-all cursor-pointer"
+            className="absolute top-3 left-3 sm:top-4 sm:left-4 z-[1005] inline-flex items-center gap-2 px-4 py-2.5 sm:px-5 sm:py-3 rounded-2xl bg-slate-900 hover:bg-teal-700 text-white dark:bg-white dark:hover:bg-teal-400 dark:text-slate-950 font-black text-sm sm:text-base border-2 border-white/90 dark:border-slate-800 shadow-xl hover:scale-[1.03] active:scale-95 transition-all cursor-pointer"
           >
             <ArrowLeft className="w-5 h-5 stroke-[2.8] shrink-0" />
             <span>{backLabel || 'ひとつ前へ戻る'}</span>
