@@ -802,6 +802,18 @@ export const App: React.FC = () => {
   };
 
   const dailyBg = useMemo(() => getDailySeasonalBackground(), []);
+  const dailyBgCredit = useMemo(
+    () =>
+      dailyBg.sourceUrl
+        ? {
+            label: dailyBg.label,
+            credit: dailyBg.credit || 'Wikimedia Commons',
+            license: dailyBg.license || 'CC',
+            sourceUrl: dailyBg.sourceUrl,
+          }
+        : undefined,
+    [dailyBg]
+  );
 
   if (currentRoute === 'map') {
     return (
@@ -822,11 +834,13 @@ export const App: React.FC = () => {
           onOpenCatalog={() => navigateTo('gears')}
           onOpenGuide={() => handleOpenGuide('header')}
           onApplyAreaToEventsPage={handleApplyAreaFromMap}
+          dailyBgUrl={dailyBg.url}
         />
         <Footer
           onOpenCatalog={() => navigateTo('gears')}
           onOpenMap={() => navigateTo('map')}
           onOpenGuide={() => handleOpenGuide('footer')}
+          dailyBgCredit={dailyBgCredit}
         />
         {selectedEvent && (
           <EventDetailModal
@@ -856,6 +870,7 @@ export const App: React.FC = () => {
           theme={theme}
           onToggleTheme={toggleTheme}
           onBackToEvents={() => navigateTo('events')}
+          dailyBgUrl={dailyBg.url}
         />
         <ScrollToTopButton />
       </>
@@ -1217,16 +1232,7 @@ export const App: React.FC = () => {
         onOpenCatalog={() => navigateTo('gears')}
         onOpenMap={() => navigateTo('map')}
         onOpenGuide={() => handleOpenGuide('footer')}
-        dailyBgCredit={
-          dailyBg.sourceUrl
-            ? {
-                label: dailyBg.label,
-                credit: dailyBg.credit || 'Wikimedia Commons',
-                license: dailyBg.license || 'CC',
-                sourceUrl: dailyBg.sourceUrl,
-              }
-            : undefined
-        }
+        dailyBgCredit={dailyBgCredit}
       />
 
       {/* 右下常駐：一番上へ戻るボタン（PC・スマホ共通） */}

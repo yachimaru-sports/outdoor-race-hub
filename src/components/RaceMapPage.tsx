@@ -70,6 +70,7 @@ interface RaceMapPageProps {
   onOpenCatalog: () => void;
   onOpenGuide: () => void;
   onApplyAreaToEventsPage: (region?: string, prefecture?: string) => void;
+  dailyBgUrl?: string;
 }
 
 const SEASON_OPTIONS = [
@@ -117,6 +118,7 @@ export const RaceMapPage: React.FC<RaceMapPageProps> = ({
   onOpenCatalog,
   onOpenGuide,
   onApplyAreaToEventsPage,
+  dailyBgUrl,
 }) => {
   // 3段階ズーム階層の状態
   const [selectedRegionId, setSelectedRegionId] = useState<MapRegionId | null>(null);
@@ -378,7 +380,22 @@ export const RaceMapPage: React.FC<RaceMapPageProps> = ({
   const zoomStageNumber = isPinMapStage ? 3 : selectedRegionId ? 2 : 1;
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-100 dark:bg-[#0b0f19] text-slate-900 dark:text-slate-100 transition-colors">
+    <div className="relative min-h-screen flex flex-col bg-slate-100 dark:bg-[#0b0f19] text-slate-900 dark:text-slate-100 transition-colors">
+      {/* P1と共通の日替わり開催地・季節背景 */}
+      {dailyBgUrl && (
+        <div
+          aria-hidden="true"
+          className="pointer-events-none fixed inset-x-0 top-0 h-[560px] sm:h-[700px] z-0 overflow-hidden select-none"
+        >
+          <img
+            src={dailyBgUrl}
+            alt=""
+            loading="eager"
+            className="w-full h-full object-cover object-center opacity-[0.58] dark:opacity-[0.46] saturate-110"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-slate-100 dark:to-[#0b0f19]" />
+        </div>
+      )}
       {/* 常時固定ヘッダーバー */}
       <header className="sticky top-0 z-50 bg-slate-950/95 backdrop-blur-md border-b border-teal-500/40 text-white shadow-lg">
         <div className="max-w-7xl mx-auto px-3 sm:px-4 py-2.5 flex items-center justify-between gap-2">
@@ -464,9 +481,9 @@ export const RaceMapPage: React.FC<RaceMapPageProps> = ({
         </div>
       </header>
 
-      <main className="flex-1 max-w-7xl w-full mx-auto px-2.5 sm:px-4 py-4 sm:py-6 space-y-4 sm:space-y-6">
+      <main className="relative z-10 flex-1 max-w-7xl w-full mx-auto px-2.5 sm:px-4 py-4 sm:py-6 space-y-4 sm:space-y-6">
         {/* 1. パンくずナビ ＆ ズーム段階インジケーター */}
-        <div className="bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 rounded-2xl px-3.5 py-2.5 shadow-2xs flex flex-wrap items-center justify-between gap-2">
+        <div className="bg-white/90 dark:bg-slate-900/90 backdrop-blur-[2px] border border-slate-300 dark:border-slate-800 rounded-2xl px-3.5 py-2.5 shadow-2xs flex flex-wrap items-center justify-between gap-2">
           <nav aria-label="マップ階層" className="flex items-center gap-1.5 flex-wrap text-xs sm:text-sm font-black">
             <button
               type="button"
@@ -553,7 +570,7 @@ export const RaceMapPage: React.FC<RaceMapPageProps> = ({
         </div>
 
         {/* 2. マップ連動クイック絞り込みバー */}
-        <div className="bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 rounded-2xl p-3 sm:p-4 shadow-2xs space-y-2.5">
+        <div className="bg-white/90 dark:bg-slate-900/90 backdrop-blur-[2px] border border-slate-300 dark:border-slate-800 rounded-2xl p-3 sm:p-4 shadow-2xs space-y-2.5">
           <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
             <span className="inline-flex items-center gap-1 text-xs font-black text-slate-700 dark:text-slate-300 mr-1">
               <SlidersHorizontal className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400" />
@@ -663,7 +680,7 @@ export const RaceMapPage: React.FC<RaceMapPageProps> = ({
         </div>
 
         {/* 3. インタラクティブ地図メインカード */}
-        <section className="bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 rounded-2xl p-3 sm:p-5 shadow-sm">
+        <section className="bg-white/90 dark:bg-slate-900/90 backdrop-blur-[2px] border border-slate-300 dark:border-slate-800 rounded-2xl p-3 sm:p-5 shadow-sm">
           {!isPinMapStage ? (
             <JapanDotMap
               events={attributeFilteredEvents}
@@ -766,7 +783,7 @@ export const RaceMapPage: React.FC<RaceMapPageProps> = ({
         {/* 4. 地図のすぐ下：P1と完全共通のソート・一覧セクション */}
         <section className="space-y-3">
           {/* リスト操作ヘッダー */}
-          <div className="bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 rounded-2xl p-3 sm:p-4 shadow-2xs flex flex-col md:flex-row md:items-center justify-between gap-3">
+          <div className="bg-white/90 dark:bg-slate-900/90 backdrop-blur-[2px] border border-slate-300 dark:border-slate-800 rounded-2xl p-3 sm:p-4 shadow-2xs flex flex-col md:flex-row md:items-center justify-between gap-3">
             <div className="flex flex-wrap items-center gap-2">
               <div className="flex items-center gap-1.5">
                 <MapPin className="w-4 h-4 text-teal-700 dark:text-teal-400 shrink-0" />

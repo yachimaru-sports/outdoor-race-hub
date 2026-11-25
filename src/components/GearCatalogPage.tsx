@@ -38,6 +38,7 @@ interface GearCatalogPageProps {
   theme: 'light' | 'dark';
   onToggleTheme: () => void;
   onBackToEvents: () => void;
+  dailyBgUrl?: string;
 }
 
 // 楽天アフィリエイトID（検索経由の購入も売上としてカウント）
@@ -80,6 +81,7 @@ export const GearCatalogPage: React.FC<GearCatalogPageProps> = ({
   theme,
   onToggleTheme,
   onBackToEvents,
+  dailyBgUrl,
 }) => {
   // 選択中の競技区分（sports）
   const [selectedSport, setSelectedSport] = useState<string>('all');
@@ -270,7 +272,22 @@ export const GearCatalogPage: React.FC<GearCatalogPageProps> = ({
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-100 dark:bg-[#0b0f19] text-slate-900 dark:text-slate-100 transition-colors w-full">
+    <div className="relative min-h-screen flex flex-col bg-slate-100 dark:bg-[#0b0f19] text-slate-900 dark:text-slate-100 transition-colors w-full">
+      {/* P1と共通の日替わり開催地・季節背景 */}
+      {dailyBgUrl && (
+        <div
+          aria-hidden="true"
+          className="pointer-events-none fixed inset-x-0 top-0 h-[560px] sm:h-[700px] z-0 overflow-hidden select-none"
+        >
+          <img
+            src={dailyBgUrl}
+            alt=""
+            loading="eager"
+            className="w-full h-full object-cover object-center opacity-[0.58] dark:opacity-[0.46] saturate-110"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-slate-100 dark:to-[#0b0f19]" />
+        </div>
+      )}
       {/* 1. ギアカタログ専用ヘッダーナビバー */}
       <header className="sticky top-0 z-50 bg-slate-950/95 backdrop-blur-md border-b border-amber-500/60 shadow-xl select-none">
         <div className="max-w-7xl mx-auto px-3 sm:px-4 py-2.5 sm:py-3 flex items-center justify-between gap-2 sm:gap-3">
@@ -328,7 +345,7 @@ export const GearCatalogPage: React.FC<GearCatalogPageProps> = ({
       </header>
 
       {/* メインコンテンツ */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-3 sm:px-4 py-3 sm:py-6 space-y-4 sm:space-y-6">
+      <main className="relative z-10 flex-1 max-w-7xl w-full mx-auto px-3 sm:px-4 py-3 sm:py-6 space-y-4 sm:space-y-6">
         {/* 2. 魅力的なヒーローバナーセクション（左右2カラム分割・右側ミニバナー配置・スマホ最適化） */}
         <section className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-slate-900 via-slate-850 to-indigo-950 border border-amber-500/40 p-4 sm:p-6 lg:p-7 text-white shadow-xl">
           <div className="absolute top-0 right-0 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
