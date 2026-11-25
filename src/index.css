@@ -43,3 +43,176 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* ========================================================
+   Leaflet 全国・県内マップ用カスタムピン＆ポップアップ
+   ======================================================== */
+.race-pin-wrapper {
+  background: transparent;
+  border: none;
+}
+
+.race-pin {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  border-radius: 9999px;
+  background-color: var(--pin-color, #0f766e);
+  border: 2.5px solid #ffffff;
+  box-shadow: 0 3px 10px rgba(15, 23, 42, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  cursor: pointer;
+}
+
+.race-pin:hover {
+  transform: scale(1.16);
+  box-shadow: 0 5px 14px rgba(15, 23, 42, 0.45);
+}
+
+.race-pin-selected {
+  width: 38px;
+  height: 38px;
+  border: 3px solid #facc15;
+  box-shadow: 0 0 0 4px rgba(250, 204, 21, 0.38), 0 6px 18px rgba(15, 23, 42, 0.5);
+  transform: scale(1.08);
+}
+
+.race-pin-emoji {
+  font-size: 14px;
+  line-height: 1;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.3));
+}
+
+.race-pin-selected .race-pin-emoji {
+  font-size: 17px;
+}
+
+.race-pin-open-dot {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+  background-color: #10b981;
+  border: 2px solid #ffffff;
+}
+
+.race-popup-card {
+  font-family: "Inter", "Noto Sans JP", sans-serif;
+  color: #0f172a;
+  line-height: 1.45;
+}
+
+.race-popup-badges {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 5px;
+}
+
+.race-popup-cat {
+  display: inline-block;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: 9999px;
+}
+
+.race-popup-status {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: 9999px;
+  background: #e2e8f0;
+  color: #334155;
+}
+
+.race-popup-status.is-open {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.race-popup-title {
+  font-size: 13px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 6px;
+}
+
+.race-popup-meta {
+  font-size: 11px;
+  color: #475569;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 8px;
+}
+
+.race-popup-approx {
+  font-size: 10px;
+  color: #b45309;
+  margin-top: 2px;
+}
+
+.race-popup-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.race-popup-btn-primary {
+  flex: 1;
+  background: #0f766e;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.race-popup-btn-primary:hover {
+  background: #0d9488;
+}
+
+.race-popup-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #f1f5f9;
+  color: #0f172a !important;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 6px 8px;
+  font-size: 11px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.dark .leaflet-popup-content-wrapper,
+.dark .leaflet-popup-tip {
+  background: #1e293b;
+  color: #f8fafc;
+}
+
+.dark .race-popup-card,
+.dark .race-popup-title {
+  color: #f8fafc;
+}
+
+.dark .race-popup-meta {
+  color: #cbd5e1;
+}
+
+.dark .race-popup-btn-secondary {
+  background: #0f172a;
+  color: #e2e8f0 !important;
+  border-color: #475569;
+}

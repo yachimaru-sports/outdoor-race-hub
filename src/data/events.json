@@ -48,7 +48,10 @@
     "venue": {
       "name": "神奈川県",
       "address": "神奈川県",
-      "mapQuery": "神奈川県 2027BRM（AJ神奈川）"
+      "mapQuery": "神奈川県 2027BRM（AJ神奈川）",
+      "lat": 35.47725,
+      "lng": 139.62908,
+      "coordPrecision": "city"
     },
     "source": {
       "portalName": "スポエンCYCLE",
@@ -103,7 +106,10 @@
     "venue": {
       "name": "東京都 府中市郷土の森観光物産館",
       "address": "東京都",
-      "mapQuery": "東京都 ツール・ド府中 ～TOKYO2020ロードレースの聖地を巡る～"
+      "mapQuery": "東京都 ツール・ド府中 ～TOKYO2020ロードレースの聖地を巡る～",
+      "lat": 35.6694,
+      "lng": 139.47759,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "スポエンCYCLE",
@@ -158,7 +164,10 @@
     "venue": {
       "name": "青森県 【青森県・秋田県】白神山地",
       "address": "青森県",
-      "mapQuery": "青森県 白神山地一周シライチ一周キャンペーン2026"
+      "mapQuery": "青森県 白神山地一周シライチ一周キャンペーン2026",
+      "lat": 40.517,
+      "lng": 140.15,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "スポエンCYCLE",
@@ -213,7 +222,10 @@
     "venue": {
       "name": "の1周コース",
       "address": "東京都",
-      "mapQuery": "東京都 サイクルボール Season7 -グランボール制覇の旅-"
+      "mapQuery": "東京都 サイクルボール Season7 -グランボール制覇の旅-",
+      "lat": 35.6895,
+      "lng": 139.6917,
+      "coordPrecision": "prefecture"
     },
     "source": {
       "portalName": "スポエンCYCLE",
@@ -268,7 +280,10 @@
     "venue": {
       "name": "和歌山県 和歌山県内（78スポット）、大阪府・京都府・奈良県内（各5スポット）",
       "address": "京都府",
-      "mapQuery": "京都府 WAKAYAMA800モバイルスタンプラリー 9th season"
+      "mapQuery": "京都府 WAKAYAMA800モバイルスタンプラリー 9th season",
+      "lat": 35.02124,
+      "lng": 135.75562,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "スポエンCYCLE",
@@ -326,7 +341,10 @@
     "venue": {
       "name": "東京都",
       "address": "東京都",
-      "mapQuery": "東京都 2027BRM（オダックスランドヌール日本橋）"
+      "mapQuery": "東京都 2027BRM（オダックスランドヌール日本橋）",
+      "lat": 35.6895,
+      "lng": 139.69173,
+      "coordPrecision": "city"
     },
     "source": {
       "portalName": "スポエンCYCLE",
@@ -384,7 +402,10 @@
     "venue": {
       "name": "広島県 山口県 愛媛県 島根県 大分県 熊本県",
       "address": "島根県",
-      "mapQuery": "島根県 2027AJパーマネント（AJ広島）"
+      "mapQuery": "島根県 2027AJパーマネント（AJ広島）",
+      "lat": 34.31765,
+      "lng": 133.06279,
+      "coordPrecision": "city"
     },
     "source": {
       "portalName": "スポエンCYCLE",
@@ -442,7 +463,10 @@
     "venue": {
       "name": "千葉県",
       "address": "千葉県",
-      "mapQuery": "千葉県 RさくらBRM2027"
+      "mapQuery": "千葉県 RさくらBRM2027",
+      "lat": 35.6051,
+      "lng": 140.1233,
+      "coordPrecision": "prefecture"
     },
     "source": {
       "portalName": "スポエンCYCLE",
@@ -498,7 +522,10 @@
     ],
     "venue": {
       "name": "阿万海岸海水浴場・大浜海浜公園",
-      "mapQuery": "兵庫県 阿万海岸海水浴場・大浜海浜公園"
+      "mapQuery": "兵庫県 阿万海岸海水浴場・大浜海浜公園",
+      "lat": 34.6913,
+      "lng": 135.183,
+      "coordPrecision": "prefecture"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -554,7 +581,10 @@
     ],
     "venue": {
       "name": "カホアルペ",
-      "mapQuery": "福岡県 カホアルペ"
+      "mapQuery": "福岡県 カホアルペ",
+      "lat": 33.60639,
+      "lng": 130.41797,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -610,7 +640,10 @@
     ],
     "venue": {
       "name": "三田市母子地区",
-      "mapQuery": "兵庫県 三田市母子地区"
+      "mapQuery": "兵庫県 三田市母子地区",
+      "lat": 35.02038,
+      "lng": 135.21545,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -666,7 +699,10 @@
     ],
     "venue": {
       "name": "望岳荘",
-      "mapQuery": "長野県 望岳荘"
+      "mapQuery": "長野県 望岳荘",
+      "lat": 36.65131,
+      "lng": 138.18091,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -721,7 +757,10 @@
     ],
     "venue": {
       "name": "福岡県",
-      "mapQuery": "福岡県 福岡県"
+      "mapQuery": "福岡県 福岡県",
+      "lat": 33.6064,
+      "lng": 130.4183,
+      "coordPrecision": "prefecture"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -777,7 +816,10 @@
     ],
     "venue": {
       "name": "河和田コミュニティーセンター（福井県鯖江市河和田町19-6-1）",
-      "mapQuery": "福井県 河和田コミュニティーセンター（福井県鯖江市河和田町19-6-1）"
+      "mapQuery": "福井県 河和田コミュニティーセンター（福井県鯖江市河和田町19-6-1）",
+      "lat": 35.95098,
+      "lng": 136.27373,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -833,7 +875,10 @@
     ],
     "venue": {
       "name": "スタート：寄居町役場前／ゴール：ニューサンピア埼玉おごせ",
-      "mapQuery": "埼玉県 スタート：寄居町役場前／ゴール：ニューサンピア埼玉おごせ"
+      "mapQuery": "埼玉県 スタート：寄居町役場前／ゴール：ニューサンピア埼玉おごせ",
+      "lat": 36.11833,
+      "lng": 139.19305,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -890,7 +935,10 @@
     "venue": {
       "name": "鹿児島県 薩摩川内市川内川大小路みらい公園",
       "address": "鹿児島県",
-      "mapQuery": "鹿児島県 第4回 薩摩川内市サイクルフェスタ"
+      "mapQuery": "鹿児島県 第4回 薩摩川内市サイクルフェスタ",
+      "lat": 31.76667,
+      "lng": 130.32059,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "スポエンCYCLE",
@@ -946,7 +994,10 @@
     "venue": {
       "name": "J:COMフィールド土浦（川口運動公園陸上競技場） (〒300-0033 茨城県土浦市川口2丁目12－75)",
       "address": "茨城県",
-      "mapQuery": "茨城県 いばらきK1ライド2026"
+      "mapQuery": "茨城県 いばらきK1ライド2026",
+      "lat": 36.07835,
+      "lng": 140.20419,
+      "coordPrecision": "city"
     },
     "source": {
       "portalName": "スポエンCYCLE",
@@ -1002,7 +1053,10 @@
     "venue": {
       "name": "三重県 志摩市 志摩スペイン村（スタート・ゴール）",
       "address": "三重県",
-      "mapQuery": "三重県 第13回 伊勢志摩サイクリングフェスティバル"
+      "mapQuery": "三重県 第13回 伊勢志摩サイクリングフェスティバル",
+      "lat": 34.2666,
+      "lng": 136.78514,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "スポエンCYCLE",
@@ -1056,7 +1110,10 @@
     "venue": {
       "name": "神奈川県 神奈川県茅ヶ崎市柳島1300",
       "address": "神奈川県",
-      "mapQuery": "神奈川県 箱根椿ライン大観山ヒルクライムと芦ノ湖ポタリング110km"
+      "mapQuery": "神奈川県 箱根椿ライン大観山ヒルクライムと芦ノ湖ポタリング110km",
+      "lat": 35.33387,
+      "lng": 139.40369,
+      "coordPrecision": "city"
     },
     "source": {
       "portalName": "スポエンCYCLE",
@@ -1126,7 +1183,10 @@
     ],
     "venue": {
       "name": "富栖の里（兵庫県姫路市安富町皆河50-54）",
-      "mapQuery": "兵庫県姫路市安富町 富栖の里"
+      "mapQuery": "兵庫県姫路市安富町 富栖の里",
+      "lat": 34.9964,
+      "lng": 134.5978,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "とれとれバイク"
@@ -1180,7 +1240,10 @@
     ],
     "venue": {
       "name": "養老公園",
-      "mapQuery": "岐阜県 養老公園"
+      "mapQuery": "岐阜県 養老公園",
+      "lat": 35.30842,
+      "lng": 136.56142,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -1236,7 +1299,10 @@
     ],
     "venue": {
       "name": "尾羽の里交遊館",
-      "mapQuery": "栃木県 尾羽の里交遊館"
+      "mapQuery": "栃木県 尾羽の里交遊館",
+      "lat": 36.5657,
+      "lng": 139.8836,
+      "coordPrecision": "prefecture"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -1293,7 +1359,10 @@
     "venue": {
       "name": "茨城県 和田公園芝生広場（茨城県稲敷市浮島5020-2）",
       "address": "茨城県",
-      "mapQuery": "茨城県 イナシキライド・フォトサイクリングvol.3"
+      "mapQuery": "茨城県 イナシキライド・フォトサイクリングvol.3",
+      "lat": 35.9742,
+      "lng": 140.44835,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "スポエンCYCLE",
@@ -1350,7 +1419,10 @@
     ],
     "venue": {
       "name": "熊野市鬼ヶ城センター（三重県熊野市木本町1835-7）",
-      "mapQuery": "三重県熊野市 鬼ヶ城センター"
+      "mapQuery": "三重県熊野市 鬼ヶ城センター",
+      "lat": 33.89156,
+      "lng": 136.1133,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "大会公式"
@@ -1416,7 +1488,10 @@
     ],
     "venue": {
       "name": "Fiordland, South Island",
-      "mapQuery": "Fiordland New Zealand"
+      "mapQuery": "Fiordland New Zealand",
+      "lat": -44.6961,
+      "lng": 169.1321,
+      "coordPrecision": "prefecture"
     },
     "source": {
       "portalName": "ARWS公式"
@@ -1466,7 +1541,10 @@
     ],
     "venue": {
       "name": "松江城大手前（島根県松江市殿町）",
-      "mapQuery": "島根県松江市 松江城大手前"
+      "mapQuery": "島根県松江市 松江城大手前",
+      "lat": 35.4743,
+      "lng": 133.05206,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "モシコム"
@@ -1519,7 +1597,10 @@
     ],
     "venue": {
       "name": "身延山門前町 仲町駐車場",
-      "mapQuery": "山梨県 身延山門前町 仲町駐車場"
+      "mapQuery": "山梨県 身延山門前町 仲町駐車場",
+      "lat": 35.4675,
+      "lng": 138.44251,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -1575,7 +1656,10 @@
     ],
     "venue": {
       "name": "奥日立きららの里",
-      "mapQuery": "茨城県 奥日立きららの里"
+      "mapQuery": "茨城県 奥日立きららの里",
+      "lat": 36.64516,
+      "lng": 140.59172,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -1631,7 +1715,10 @@
     ],
     "venue": {
       "name": "亘理町立亘理中学校",
-      "mapQuery": "宮城県 亘理町立亘理中学校"
+      "mapQuery": "宮城県 亘理町立亘理中学校",
+      "lat": 38.04426,
+      "lng": 140.86792,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -1686,7 +1773,10 @@
     ],
     "venue": {
       "name": "猿投棒の手ふれあい広場",
-      "mapQuery": "愛知県 猿投棒の手ふれあい広場"
+      "mapQuery": "愛知県 猿投棒の手ふれあい広場",
+      "lat": 35.17668,
+      "lng": 137.18183,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -1743,7 +1833,10 @@
     "venue": {
       "name": "静岡県 富士市 富士山こどもの国",
       "address": "静岡県",
-      "mapQuery": "静岡県 富士グラベルエクストラ"
+      "mapQuery": "静岡県 富士グラベルエクストラ",
+      "lat": 35.17821,
+      "lng": 138.73702,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "スポエンCYCLE",
@@ -1800,7 +1893,10 @@
     "venue": {
       "name": "三重県 奥伊勢フォレストピア",
       "address": "三重県",
-      "mapQuery": "三重県 第3回 大台町サイクルフェスタ スタンプラリー『ユネスコエコパークのまちを走ってみよう』"
+      "mapQuery": "三重県 第3回 大台町サイクルフェスタ スタンプラリー『ユネスコエコパークのまちを走ってみよう』",
+      "lat": 34.39341,
+      "lng": 136.40796,
+      "coordPrecision": "city"
     },
     "source": {
       "portalName": "スポエンCYCLE",
@@ -1856,7 +1952,10 @@
     "venue": {
       "name": "千葉県 上総湊海浜公園",
       "address": "千葉県",
-      "mapQuery": "千葉県 BOSOツーリング 12月 紅葉ライド"
+      "mapQuery": "千葉県 BOSOツーリング 12月 紅葉ライド",
+      "lat": 35.60456,
+      "lng": 140.12315,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "スポエンCYCLE",
@@ -1911,7 +2010,10 @@
     "venue": {
       "name": "神奈川県 藤沢市鵠沼海岸1丁目6",
       "address": "神奈川県",
-      "mapQuery": "神奈川県 湘南大磯小田原漁港と小田原城めぐり70kmポタリング"
+      "mapQuery": "神奈川県 湘南大磯小田原漁港と小田原城めぐり70kmポタリング",
+      "lat": 35.31503,
+      "lng": 139.47481,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "スポエンCYCLE",
@@ -1969,7 +2071,10 @@
     ],
     "venue": {
       "name": "トレイルランニング専門店アントルポ（越前市千福町、受付・スタート・ゴール）",
-      "mapQuery": "福井県 トレイルランニング専門店アントルポ（越前市千福町、受付・スタート・ゴール）"
+      "mapQuery": "福井県 トレイルランニング専門店アントルポ（越前市千福町、受付・スタート・ゴール）",
+      "lat": 36.06521,
+      "lng": 136.22172,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -2026,7 +2131,10 @@
     "venue": {
       "name": "熊本県 天草市、上天草市、苓北町周辺地域 あましんスタジアム（スタート・フィニッシュ）",
       "address": "熊本県",
-      "mapQuery": "熊本県 雲仙天草国立公園天草指定70周年記念イベント「天草一周！あまいちグランフォンド2026」"
+      "mapQuery": "熊本県 雲仙天草国立公園天草指定70周年記念イベント「天草一周！あまいちグランフォンド2026」",
+      "lat": 32.7898,
+      "lng": 130.74158,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "スポエンCYCLE",
@@ -2086,7 +2194,10 @@
     ],
     "venue": {
       "name": "松崎新港（静岡県賀茂郡松崎町松崎）",
-      "mapQuery": "静岡県松崎町 松崎新港"
+      "mapQuery": "静岡県松崎町 松崎新港",
+      "lat": 34.75071,
+      "lng": 138.77776,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "大会公式"
@@ -2139,7 +2250,10 @@
     ],
     "venue": {
       "name": "武田神社〜信玄の湯 湯村温泉",
-      "mapQuery": "山梨県 武田神社〜信玄の湯 湯村温泉"
+      "mapQuery": "山梨県 武田神社〜信玄の湯 湯村温泉",
+      "lat": 35.48638,
+      "lng": 138.72176,
+      "coordPrecision": "city"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -2196,7 +2310,10 @@
     ],
     "venue": {
       "name": "御岳山",
-      "mapQuery": "東京都 御岳山"
+      "mapQuery": "東京都 御岳山",
+      "lat": 35.783,
+      "lng": 139.1496,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -2252,7 +2369,10 @@
     ],
     "venue": {
       "name": "七谷川野外活動センター（京都府亀岡市千歳町千歳南山40）",
-      "mapQuery": "京都府 七谷川野外活動センター（京都府亀岡市千歳町千歳南山40）"
+      "mapQuery": "京都府 七谷川野外活動センター（京都府亀岡市千歳町千歳南山40）",
+      "lat": 35.04557,
+      "lng": 135.58655,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -2309,7 +2429,10 @@
     "venue": {
       "name": "茨城県 波崎新漁港を中心とした周辺特設コース 【本部】波崎水産加工業協同組合様前駐車場",
       "address": "茨城県",
-      "mapQuery": "茨城県 第1回 波崎タイムトライアルバイク"
+      "mapQuery": "茨城県 第1回 波崎タイムトライアルバイク",
+      "lat": 36.3418,
+      "lng": 140.4468,
+      "coordPrecision": "prefecture"
     },
     "source": {
       "portalName": "スポエンCYCLE",
@@ -2364,7 +2487,10 @@
     "venue": {
       "name": "神奈川県 藤沢市鵠沼海岸1丁目6",
       "address": "神奈川県",
-      "mapQuery": "神奈川県 湘南藤沢茅ヶ崎田園ポタリング50km 腰掛狛犬と藍苺の里"
+      "mapQuery": "神奈川県 湘南藤沢茅ヶ崎田園ポタリング50km 腰掛狛犬と藍苺の里",
+      "lat": 35.31503,
+      "lng": 139.47481,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "スポエンCYCLE",
@@ -2418,7 +2544,10 @@
     "venue": {
       "name": "神奈川県 神奈川県茅ヶ崎市柳島1300",
       "address": "神奈川県",
-      "mapQuery": "神奈川県 おだわら戦国自転車旅60km 小田原城と石垣山一夜城めぐり"
+      "mapQuery": "神奈川県 おだわら戦国自転車旅60km 小田原城と石垣山一夜城めぐり",
+      "lat": 35.33387,
+      "lng": 139.40369,
+      "coordPrecision": "city"
     },
     "source": {
       "portalName": "スポエンCYCLE",
@@ -2473,7 +2602,10 @@
     ],
     "venue": {
       "name": "マザー牧場",
-      "mapQuery": "千葉県 マザー牧場"
+      "mapQuery": "千葉県 マザー牧場",
+      "lat": 35.60456,
+      "lng": 140.12315,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -2528,7 +2660,10 @@
     ],
     "venue": {
       "name": "熊本県野外劇場アスペクタ",
-      "mapQuery": "熊本県 熊本県野外劇場アスペクタ"
+      "mapQuery": "熊本県 熊本県野外劇場アスペクタ",
+      "lat": 32.7898,
+      "lng": 130.74158,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -2583,7 +2718,10 @@
     ],
     "venue": {
       "name": "藺牟田池自然公園",
-      "mapQuery": "鹿児島県 藺牟田池自然公園"
+      "mapQuery": "鹿児島県 藺牟田池自然公園",
+      "lat": 31.56017,
+      "lng": 130.55803,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -2639,7 +2777,10 @@
     "venue": {
       "name": "東京都 元町港 または 岡田港 （当日朝の大型船の到着港へご集合ください。）",
       "address": "東京都",
-      "mapQuery": "東京都 【先着50名限定】サイクルボール おおいちスペシャルDAY"
+      "mapQuery": "東京都 【先着50名限定】サイクルボール おおいちスペシャルDAY",
+      "lat": 35.6895,
+      "lng": 139.69173,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "スポエンCYCLE",
@@ -2695,7 +2836,10 @@
     ],
     "venue": {
       "name": "朝日里山学校",
-      "mapQuery": "茨城県 朝日里山学校"
+      "mapQuery": "茨城県 朝日里山学校",
+      "lat": 36.3418,
+      "lng": 140.4468,
+      "coordPrecision": "prefecture"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -2751,7 +2895,10 @@
     ],
     "venue": {
       "name": "旧金谷小学校グラウンド",
-      "mapQuery": "千葉県 旧金谷小学校グラウンド"
+      "mapQuery": "千葉県 旧金谷小学校グラウンド",
+      "lat": 35.60456,
+      "lng": 140.12315,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -2807,7 +2954,10 @@
     ],
     "venue": {
       "name": "夕やけ小やけふれあいの里",
-      "mapQuery": "東京都 夕やけ小やけふれあいの里"
+      "mapQuery": "東京都 夕やけ小やけふれあいの里",
+      "lat": 35.6642,
+      "lng": 139.1932,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -2863,7 +3013,10 @@
     ],
     "venue": {
       "name": "長念寺 特設会場（飯能市白子）",
-      "mapQuery": "埼玉県 長念寺 特設会場（飯能市白子）"
+      "mapQuery": "埼玉県 長念寺 特設会場（飯能市白子）",
+      "lat": 35.88824,
+      "lng": 139.2749,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -2919,7 +3072,10 @@
     ],
     "venue": {
       "name": "宝登山ロープウェイ駐車場",
-      "mapQuery": "埼玉県 宝登山ロープウェイ駐車場"
+      "mapQuery": "埼玉県 宝登山ロープウェイ駐車場",
+      "lat": 35.857,
+      "lng": 139.6489,
+      "coordPrecision": "prefecture"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -2976,7 +3132,10 @@
     ],
     "venue": {
       "name": "Mt.TAKAO BASE CAMP",
-      "mapQuery": "東京都 Mt.TAKAO BASE CAMP"
+      "mapQuery": "東京都 Mt.TAKAO BASE CAMP",
+      "lat": 35.6327,
+      "lng": 139.2698,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -3034,7 +3193,10 @@
     ],
     "venue": {
       "name": "大津湖岸なぎさ公園ほか",
-      "mapQuery": "滋賀県 大津湖岸なぎさ公園ほか"
+      "mapQuery": "滋賀県 大津湖岸なぎさ公園ほか",
+      "lat": 35.01778,
+      "lng": 135.85472,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -3090,7 +3252,10 @@
     ],
     "venue": {
       "name": "津久井湖城山公園パークセンター",
-      "mapQuery": "神奈川県 津久井湖城山公園パークセンター"
+      "mapQuery": "神奈川県 津久井湖城山公園パークセンター",
+      "lat": 35.4478,
+      "lng": 139.6425,
+      "coordPrecision": "prefecture"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -3149,7 +3314,10 @@
     "venue": {
       "name": "兵庫県",
       "address": "兵庫県",
-      "mapQuery": "兵庫県 2027BRM（オダックス近畿）"
+      "mapQuery": "兵庫県 2027BRM（オダックス近畿）",
+      "lat": 34.6913,
+      "lng": 135.183,
+      "coordPrecision": "prefecture"
     },
     "source": {
       "portalName": "スポエンCYCLE",
@@ -3206,7 +3374,10 @@
     ],
     "venue": {
       "name": "丸野駐車場（双石山 特設コース）",
-      "mapQuery": "宮崎県 丸野駐車場（双石山 特設コース）"
+      "mapQuery": "宮崎県 丸野駐車場（双石山 特設コース）",
+      "lat": 31.91103,
+      "lng": 131.42389,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -3263,7 +3434,10 @@
     "venue": {
       "name": "沖縄県 北部地域（本部町、今帰仁村、名護市、大宜味村） 【会場】（受付・スタート・ゴール）本部町谷茶公園・谷茶公民館",
       "address": "沖縄県",
-      "mapQuery": "沖縄県 第7回ちゅらうみ海道サイクリング2027（沖縄県サイクリング大会）"
+      "mapQuery": "沖縄県 第7回ちゅらうみ海道サイクリング2027（沖縄県サイクリング大会）",
+      "lat": 26.65751,
+      "lng": 127.89782,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "スポエンCYCLE",
@@ -3319,7 +3493,10 @@
     ],
     "venue": {
       "name": "常説寺・金櫻神社・御嶽古道",
-      "mapQuery": "山梨県 常説寺・金櫻神社・御嶽古道"
+      "mapQuery": "山梨県 常説寺・金櫻神社・御嶽古道",
+      "lat": 35.6642,
+      "lng": 138.5684,
+      "coordPrecision": "prefecture"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -3375,7 +3552,10 @@
     ],
     "venue": {
       "name": "花の広場公園 花夢花夢",
-      "mapQuery": "千葉県 花の広場公園 花夢花夢"
+      "mapQuery": "千葉県 花の広場公園 花夢花夢",
+      "lat": 35.60456,
+      "lng": 140.12315,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -3430,7 +3610,10 @@
     ],
     "venue": {
       "name": "みかも山公園西口（受付：ハーブ園内 香楽亭前）",
-      "mapQuery": "栃木県 みかも山公園西口（受付：ハーブ園内 香楽亭前）"
+      "mapQuery": "栃木県 みかも山公園西口（受付：ハーブ園内 香楽亭前）",
+      "lat": 36.5657,
+      "lng": 139.8836,
+      "coordPrecision": "prefecture"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -3486,7 +3669,10 @@
     ],
     "venue": {
       "name": "オーパークおごせ ※前回実績",
-      "mapQuery": "埼玉県 オーパークおごせ ※前回実績"
+      "mapQuery": "埼玉県 オーパークおごせ ※前回実績",
+      "lat": 35.857,
+      "lng": 139.6489,
+      "coordPrecision": "prefecture"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -3541,7 +3727,10 @@
     ],
     "venue": {
       "name": "坂祝町行幸公園",
-      "mapQuery": "岐阜県 坂祝町行幸公園"
+      "mapQuery": "岐阜県 坂祝町行幸公園",
+      "lat": 35.42667,
+      "lng": 136.98528,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -3598,7 +3787,10 @@
     ],
     "venue": {
       "name": "蓮華院誕生寺 奥之院",
-      "mapQuery": "熊本県 蓮華院誕生寺 奥之院"
+      "mapQuery": "熊本県 蓮華院誕生寺 奥之院",
+      "lat": 32.7898,
+      "lng": 130.74158,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -3655,7 +3847,10 @@
     "venue": {
       "name": "岐阜県 〒501-6256 岐阜県羽島市福寿町千代田3丁目54岐阜羽島ガーデンモール内 メイン会場：Block47",
       "address": "岐阜県",
-      "mapQuery": "岐阜県 GIFU Gravel Party（ギフグラベルパーティー）"
+      "mapQuery": "岐阜県 GIFU Gravel Party（ギフグラベルパーティー）",
+      "lat": 35.39117,
+      "lng": 136.72366,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "スポエンCYCLE",
@@ -3710,7 +3905,10 @@
     ],
     "venue": {
       "name": "大塚海浜緑地（ロング・ショートのスタートは子安弘法大師）",
-      "mapQuery": "愛知県 大塚海浜緑地（ロング・ショートのスタートは子安弘法大師）"
+      "mapQuery": "愛知県 大塚海浜緑地（ロング・ショートのスタートは子安弘法大師）",
+      "lat": 35.3325,
+      "lng": 136.90778,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -3765,7 +3963,10 @@
     ],
     "venue": {
       "name": "船越堤公園",
-      "mapQuery": "静岡県 船越堤公園"
+      "mapQuery": "静岡県 船越堤公園",
+      "lat": 34.97694,
+      "lng": 138.38306,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -3885,7 +4086,10 @@
     "venue": {
       "name": "ゴール：旧吹屋小学校 / スタート：金浦小学校",
       "address": "岡山県高梁市成羽町吹屋",
-      "mapQuery": "旧吹屋小学校 岡山県高梁市成羽町吹屋"
+      "mapQuery": "旧吹屋小学校 岡山県高梁市成羽町吹屋",
+      "lat": 34.8617,
+      "lng": 133.4706,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "RUNNET",
@@ -3940,7 +4144,10 @@
     ],
     "venue": {
       "name": "美波町立由岐中学校体育館（徳島県海部郡美波町西由岐山際1）",
-      "mapQuery": "徳島県美波町 由岐中学校"
+      "mapQuery": "徳島県美波町 由岐中学校",
+      "lat": 33.77152,
+      "lng": 134.59007,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "人力企画",
@@ -3995,7 +4202,10 @@
     ],
     "venue": {
       "name": "白馬クロスカントリー競技場「スノーハープ」",
-      "mapQuery": "長野県 白馬クロスカントリー競技場「スノーハープ」"
+      "mapQuery": "長野県 白馬クロスカントリー競技場「スノーハープ」",
+      "lat": 36.69833,
+      "lng": 137.86223,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -4052,7 +4262,10 @@
     ],
     "venue": {
       "name": "あすか風舞台",
-      "mapQuery": "奈良県 あすか風舞台"
+      "mapQuery": "奈良県 あすか風舞台",
+      "lat": 34.68527,
+      "lng": 135.83285,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -4107,7 +4320,10 @@
     ],
     "venue": {
       "name": "未確認",
-      "mapQuery": "長崎県 未確認"
+      "mapQuery": "長崎県 未確認",
+      "lat": 32.75004,
+      "lng": 129.86725,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -4164,7 +4380,10 @@
     "venue": {
       "name": "三重県 熊野市新鹿町916-4 熊野市立新鹿小中学校（受付場所・スタート・ゴール）※前日受付あり",
       "address": "三重県",
-      "mapQuery": "三重県 第5回 グランフォンド熊野"
+      "mapQuery": "三重県 第5回 グランフォンド熊野",
+      "lat": 33.93241,
+      "lng": 136.13994,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "スポエンCYCLE",
@@ -4222,7 +4441,10 @@
     "venue": {
       "name": "愛知県",
       "address": "愛知県",
-      "mapQuery": "愛知県 2027BRM（AR中部）"
+      "mapQuery": "愛知県 2027BRM（AR中部）",
+      "lat": 35.08323,
+      "lng": 136.77204,
+      "coordPrecision": "city"
     },
     "source": {
       "portalName": "スポエンCYCLE",
@@ -4269,7 +4491,10 @@
     "venue": {
       "name": "笠戸公民館（下松市笠戸島209）→ スカイ1号頂上",
       "access": "下松市笠戸島 国民宿舎大城 駐車場（下松市笠戸島14-1）からスタート地点まで移動",
-      "parking": "国民宿舎大城（下松市笠戸島14-1）"
+      "parking": "国民宿舎大城（下松市笠戸島14-1）",
+      "lat": 33.97678,
+      "lng": 131.86673,
+      "coordPrecision": "exact"
     },
     "source": "https://kasadojima-islandtrail.com/vertical-race",
     "added_at": "2026-11-14",
@@ -4321,7 +4546,10 @@
     ],
     "venue": {
       "name": "星田妙見宮駐車場",
-      "mapQuery": "大阪府 星田妙見宮駐車場"
+      "mapQuery": "大阪府 星田妙見宮駐車場",
+      "lat": 34.68634,
+      "lng": 135.52004,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -4378,7 +4606,10 @@
     ],
     "venue": {
       "name": "小川げんきプラザ周辺",
-      "mapQuery": "埼玉県 小川げんきプラザ周辺"
+      "mapQuery": "埼玉県 小川げんきプラザ周辺",
+      "lat": 36.05667,
+      "lng": 139.26195,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -4432,7 +4663,10 @@
     "venue": {
       "name": "三重県営サンアリーナ（三重県伊勢市朝熊町）",
       "address": "三重県伊勢市朝熊町",
-      "mapQuery": "三重県伊勢市 三重県営サンアリーナ"
+      "mapQuery": "三重県伊勢市 三重県営サンアリーナ",
+      "lat": 34.47596,
+      "lng": 136.77972,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "スポーツエントリー",
@@ -4494,7 +4728,10 @@
     "venue": {
       "name": "笠戸島国民宿舎大城周辺（山口県下松市笠戸島14-1）",
       "address": "山口県下松市笠戸島",
-      "mapQuery": "山口県下松市 笠戸島国民宿舎大城"
+      "mapQuery": "山口県下松市 笠戸島国民宿舎大城",
+      "lat": 33.96002,
+      "lng": 131.85472,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "RUNNET",
@@ -4545,7 +4782,10 @@
     ],
     "venue": {
       "name": "香川県立丸亀競技場 Pikaraスタジアム（香川県丸亀市金倉町830）",
-      "mapQuery": "香川県丸亀市 Pikaraスタジアム"
+      "mapQuery": "香川県丸亀市 Pikaraスタジアム",
+      "lat": 34.26231,
+      "lng": 133.78615,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "大会公式"
@@ -4595,7 +4835,10 @@
     ],
     "venue": {
       "name": "松山中央公園 坊っちゃんスタジアム（愛媛県松山市市坪西町625-1）",
-      "mapQuery": "愛媛県松山市 坊っちゃんスタジアム"
+      "mapQuery": "愛媛県松山市 坊っちゃんスタジアム",
+      "lat": 33.80878,
+      "lng": 132.74524,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "大会公式"
@@ -4648,7 +4891,10 @@
     ],
     "venue": {
       "name": "医王山山麓・キゴ山エリア",
-      "mapQuery": "石川県 医王山山麓・キゴ山エリア"
+      "mapQuery": "石川県 医王山山麓・キゴ山エリア",
+      "lat": 36.5945,
+      "lng": 136.6256,
+      "coordPrecision": "prefecture"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -4705,7 +4951,10 @@
     ],
     "venue": {
       "name": "冠岳花川砂防公園",
-      "mapQuery": "鹿児島県 冠岳花川砂防公園"
+      "mapQuery": "鹿児島県 冠岳花川砂防公園",
+      "lat": 31.56017,
+      "lng": 130.55803,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -4768,7 +5017,10 @@
     ],
     "venue": {
       "name": "備前国総社宮（岡山県岡山市中区祇園852）",
-      "mapQuery": "岡山県岡山市中区 備前国総社宮"
+      "mapQuery": "岡山県岡山市中区 備前国総社宮",
+      "lat": 34.6873,
+      "lng": 133.9612,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "モシコム"
@@ -4821,7 +5073,10 @@
     ],
     "venue": {
       "name": "御宿ウォーターパーク",
-      "mapQuery": "千葉県 御宿ウォーターパーク"
+      "mapQuery": "千葉県 御宿ウォーターパーク",
+      "lat": 35.19167,
+      "lng": 140.34862,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -4882,7 +5137,10 @@
     ],
     "venue": {
       "name": "駿府匠宿 第二駐車場（静岡県静岡市駿河区丸子3240-1）",
-      "mapQuery": "静岡県静岡市駿河区 駿府匠宿"
+      "mapQuery": "静岡県静岡市駿河区 駿府匠宿",
+      "lat": 34.95529,
+      "lng": 138.33345,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "RUNNET"
@@ -4936,7 +5194,10 @@
     ],
     "venue": {
       "name": "津峯山・津峯神社（徳島県阿南市）",
-      "mapQuery": "徳島県阿南市 津峯神社"
+      "mapQuery": "徳島県阿南市 津峯神社",
+      "lat": 33.92181,
+      "lng": 134.65951,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "人力企画",
@@ -4991,7 +5252,10 @@
     ],
     "venue": {
       "name": "旧長崎県庁跡地 第二別館跡",
-      "mapQuery": "長崎県 旧長崎県庁跡地 第二別館跡"
+      "mapQuery": "長崎県 旧長崎県庁跡地 第二別館跡",
+      "lat": 32.75004,
+      "lng": 129.86725,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -5047,7 +5311,10 @@
     ],
     "venue": {
       "name": "尾岱沼ふれあいキャンプ場北約1.5km・野付湾氷上",
-      "mapQuery": "北海道 尾岱沼ふれあいキャンプ場北約1.5km・野付湾氷上"
+      "mapQuery": "北海道 尾岱沼ふれあいキャンプ場北約1.5km・野付湾氷上",
+      "lat": 43.0642,
+      "lng": 141.3469,
+      "coordPrecision": "prefecture"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -5103,7 +5370,10 @@
     ],
     "venue": {
       "name": "五箇山たいらXCスキー場",
-      "mapQuery": "富山県 五箇山たいらXCスキー場"
+      "mapQuery": "富山県 五箇山たいらXCスキー場",
+      "lat": 36.69527,
+      "lng": 137.2113,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -5159,7 +5429,10 @@
     ],
     "venue": {
       "name": "法華嶽公園グラススキー場（※前回実績）",
-      "mapQuery": "宮崎県 法華嶽公園グラススキー場（※前回実績）"
+      "mapQuery": "宮崎県 法華嶽公園グラススキー場（※前回実績）",
+      "lat": 31.91103,
+      "lng": 131.42389,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -5220,7 +5493,10 @@
     ],
     "venue": {
       "name": "錦向井ヶ浜遊パーク トロピカルガーデン（三重県度会郡大紀町錦17-6）",
-      "mapQuery": "三重県大紀町 錦向井ヶ浜遊パーク"
+      "mapQuery": "三重県大紀町 錦向井ヶ浜遊パーク",
+      "lat": 34.23682,
+      "lng": 136.39543,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "大会公式"
@@ -5283,7 +5559,10 @@
     ],
     "venue": {
       "name": "Fiordland, South Island",
-      "mapQuery": "Fiordland New Zealand"
+      "mapQuery": "Fiordland New Zealand",
+      "lat": -44.6961,
+      "lng": 169.1321,
+      "coordPrecision": "prefecture"
     },
     "source": {
       "portalName": "ARWS公式"
@@ -5336,7 +5615,10 @@
     ],
     "venue": {
       "name": "疏水公園",
-      "mapQuery": "京都府 疏水公園"
+      "mapQuery": "京都府 疏水公園",
+      "lat": 35.02124,
+      "lng": 135.75562,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -5388,7 +5670,10 @@
     ],
     "venue": {
       "name": "高知県庁前（高知県高知市丸ノ内1-2-20）",
-      "mapQuery": "高知県高知市 高知県庁前"
+      "mapQuery": "高知県高知市 高知県庁前",
+      "lat": 33.56137,
+      "lng": 133.52954,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "大会公式"
@@ -5457,7 +5742,10 @@
     ],
     "venue": {
       "name": "ホシアカリ山びこ（広島県呉市倉橋町才ノ木）",
-      "mapQuery": "広島県呉市倉橋町 ホシアカリ山びこ"
+      "mapQuery": "広島県呉市倉橋町 ホシアカリ山びこ",
+      "lat": 34.0956,
+      "lng": 132.5175,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "モシコム"
@@ -5509,7 +5797,10 @@
     ],
     "venue": {
       "name": "未確認",
-      "mapQuery": "千葉県 未確認"
+      "mapQuery": "千葉県 未確認",
+      "lat": 35.60456,
+      "lng": 140.12315,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -5564,7 +5855,10 @@
     ],
     "venue": {
       "name": "旧高城中学校",
-      "mapQuery": "和歌山県 旧高城中学校"
+      "mapQuery": "和歌山県 旧高城中学校",
+      "lat": 34.22611,
+      "lng": 135.1675,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -5619,7 +5913,10 @@
     ],
     "venue": {
       "name": "未確認",
-      "mapQuery": "愛知県 未確認"
+      "mapQuery": "愛知県 未確認",
+      "lat": 35.1802,
+      "lng": 136.9066,
+      "coordPrecision": "prefecture"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -5674,7 +5971,10 @@
     ],
     "venue": {
       "name": "掛川東山地域生涯学習センター（静岡県掛川市東山1265-1）：受付・スタート・ゴール",
-      "mapQuery": "静岡県 掛川東山地域生涯学習センター（静岡県掛川市東山1265-1）：受付・スタート・ゴール"
+      "mapQuery": "静岡県 掛川東山地域生涯学習センター（静岡県掛川市東山1265-1）：受付・スタート・ゴール",
+      "lat": 34.83188,
+      "lng": 138.08136,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -5731,7 +6031,10 @@
     "venue": {
       "name": "鹿児島県 屋久島町尾之間地区（ふれあいセンター）",
       "address": "鹿児島県",
-      "mapQuery": "鹿児島県 第14回 サイクリング屋久島2027"
+      "mapQuery": "鹿児島県 第14回 サイクリング屋久島2027",
+      "lat": 31.56017,
+      "lng": 130.55803,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "スポエンCYCLE",
@@ -5782,7 +6085,10 @@
     ],
     "venue": {
       "name": "善通寺五岳の里 市民集いの丘公園（香川県善通寺市吉原町918-1）",
-      "mapQuery": "香川県善通寺市 善通寺五岳の里"
+      "mapQuery": "香川県善通寺市 善通寺五岳の里",
+      "lat": 34.22477,
+      "lng": 133.7484,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "モシコム"
@@ -5835,7 +6141,10 @@
     ],
     "venue": {
       "name": "愛知県民の森「モリトピア愛知前イベント広場」",
-      "mapQuery": "愛知県 愛知県民の森「モリトピア愛知前イベント広場」"
+      "mapQuery": "愛知県 愛知県民の森「モリトピア愛知前イベント広場」",
+      "lat": 35.1802,
+      "lng": 136.9066,
+      "coordPrecision": "prefecture"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -5892,7 +6201,10 @@
     ],
     "venue": {
       "name": "福岡県",
-      "mapQuery": "福岡県 福岡県"
+      "mapQuery": "福岡県 福岡県",
+      "lat": 33.6064,
+      "lng": 130.4183,
+      "coordPrecision": "prefecture"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -5948,7 +6260,10 @@
     "venue": {
       "name": "宮崎県 児湯郡川南町運動公園（スタート・フィニッシュ） 児湯5町（高鍋町・木城町・川南町・都農町・新富町）、西都市",
       "address": "宮崎県",
-      "mapQuery": "宮崎県 DISCOVERY GOURMET RIDE IN KOYU・SAITO 2027"
+      "mapQuery": "宮崎県 DISCOVERY GOURMET RIDE IN KOYU・SAITO 2027",
+      "lat": 31.91103,
+      "lng": 131.42389,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "スポエンCYCLE",
@@ -6006,7 +6321,10 @@
     "venue": {
       "name": "リバーサイド茶倉周辺（三重県松阪市飯南町）",
       "address": "三重県松阪市飯南町",
-      "mapQuery": "三重県松阪市 リバーサイド茶倉"
+      "mapQuery": "三重県松阪市 リバーサイド茶倉",
+      "lat": 34.48854,
+      "lng": 136.38646,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "RUNNET",
@@ -6056,7 +6374,10 @@
     ],
     "venue": {
       "name": "総社市スポーツセンター（岡山県総社市三輪1300）",
-      "mapQuery": "岡山県総社市 総社市スポーツセンター"
+      "mapQuery": "岡山県総社市 総社市スポーツセンター",
+      "lat": 34.677,
+      "lng": 133.758,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "大会公式"
@@ -6109,7 +6430,10 @@
     ],
     "venue": {
       "name": "南魚沼市欠之上クロスカントリーコース",
-      "mapQuery": "新潟県 南魚沼市欠之上クロスカントリーコース"
+      "mapQuery": "新潟県 南魚沼市欠之上クロスカントリーコース",
+      "lat": 37.06556,
+      "lng": 138.87611,
+      "coordPrecision": "city"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -6166,7 +6490,10 @@
     ],
     "venue": {
       "name": "揖斐川町小島67-1周辺",
-      "mapQuery": "岐阜県 揖斐川町小島67-1周辺"
+      "mapQuery": "岐阜県 揖斐川町小島67-1周辺",
+      "lat": 35.48729,
+      "lng": 136.56867,
+      "coordPrecision": "city"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -6224,7 +6551,10 @@
     ],
     "venue": {
       "name": "未確認",
-      "mapQuery": "宮城県 未確認"
+      "mapQuery": "宮城県 未確認",
+      "lat": 38.2688,
+      "lng": 140.8721,
+      "coordPrecision": "prefecture"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -6279,7 +6609,10 @@
     ],
     "venue": {
       "name": "兵庫県",
-      "mapQuery": "兵庫県 兵庫県"
+      "mapQuery": "兵庫県 兵庫県",
+      "lat": 34.6913,
+      "lng": 135.183,
+      "coordPrecision": "prefecture"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -6342,7 +6675,10 @@
     ],
     "venue": {
       "name": "Araucania / Los Rios Region",
-      "mapQuery": "Araucania Chile"
+      "mapQuery": "Araucania Chile",
+      "lat": -39.6356,
+      "lng": -72.32556,
+      "coordPrecision": "city"
     },
     "source": {
       "portalName": "ARWS公式"
@@ -6396,7 +6732,10 @@
     ],
     "venue": {
       "name": "道の駅 土佐和紙工芸村「くらうど」（高知県吾川郡いの町鹿敷1226）",
-      "mapQuery": "高知県いの町 土佐和紙工芸村くらうど"
+      "mapQuery": "高知県いの町 土佐和紙工芸村くらうど",
+      "lat": 33.57153,
+      "lng": 133.3732,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "人力企画",
@@ -6451,7 +6790,10 @@
     ],
     "venue": {
       "name": "高滝山周辺 ※前回実績",
-      "mapQuery": "岡山県 高滝山周辺 ※前回実績"
+      "mapQuery": "岡山県 高滝山周辺 ※前回実績",
+      "lat": 34.79098,
+      "lng": 133.61682,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -6507,7 +6849,10 @@
     ],
     "venue": {
       "name": "十津川温泉 昴の郷",
-      "mapQuery": "奈良県 十津川温泉 昴の郷"
+      "mapQuery": "奈良県 十津川温泉 昴の郷",
+      "lat": 33.98861,
+      "lng": 135.7925,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -6562,7 +6907,10 @@
     "venue": {
       "name": "高知県 香南市天然色劇場",
       "address": "高知県",
-      "mapQuery": "高知県 第3回 ものべすと周遊ライド"
+      "mapQuery": "高知県 第3回 ものべすと周遊ライド",
+      "lat": 33.56436,
+      "lng": 133.70079,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "スポエンCYCLE",
@@ -6624,7 +6972,10 @@
     ],
     "venue": {
       "name": "Nuevo Leon / Coahuila",
-      "mapQuery": "Nuevo Leon Mexico"
+      "mapQuery": "Nuevo Leon Mexico",
+      "lat": 28.63683,
+      "lng": -100.54641,
+      "coordPrecision": "city"
     },
     "source": {
       "portalName": "ARWS公式"
@@ -6689,7 +7040,10 @@
     ],
     "venue": {
       "name": "比叡山延暦寺 一乗止観院前（滋賀県大津市坂本本町4220）",
-      "mapQuery": "滋賀県大津市 比叡山延暦寺"
+      "mapQuery": "滋賀県大津市 比叡山延暦寺",
+      "lat": 35.06713,
+      "lng": 135.85204,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "大会公式"
@@ -6743,7 +7097,10 @@
     ],
     "venue": {
       "name": "スタート：高千穂峡／ゴール：高千穂町武道館",
-      "mapQuery": "宮崎県 スタート：高千穂峡／ゴール：高千穂町武道館"
+      "mapQuery": "宮崎県 スタート：高千穂峡／ゴール：高千穂町武道館",
+      "lat": 32.71167,
+      "lng": 131.30778,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -6799,7 +7156,10 @@
     "venue": {
       "name": "行方市 北浦公民館（茨城県行方市山田）",
       "address": "茨城県行方市山田2175",
-      "mapQuery": "茨城県行方市 北浦公民館"
+      "mapQuery": "茨城県行方市 北浦公民館",
+      "lat": 36.08374,
+      "lng": 140.53302,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "RUNNET",
@@ -6851,7 +7211,10 @@
     ],
     "venue": {
       "name": "鳥取砂丘オアシス広場（鳥取県鳥取市福部町湯山2164-806）",
-      "mapQuery": "鳥取県鳥取市 鳥取砂丘オアシス広場"
+      "mapQuery": "鳥取県鳥取市 鳥取砂丘オアシス広場",
+      "lat": 35.54204,
+      "lng": 134.23438,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "大会公式"
@@ -6898,7 +7261,10 @@
     ],
     "venue": {
       "name": "高松シンボルタワー デックスガレリア（香川県高松市サンポート2-1）",
-      "mapQuery": "香川県高松市 高松シンボルタワー"
+      "mapQuery": "香川県高松市 高松シンボルタワー",
+      "lat": 34.3524,
+      "lng": 134.04779,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "人力企画",
@@ -6954,7 +7320,10 @@
     ],
     "venue": {
       "name": "スタート：鴨川市安房小湊・内浦海岸／フィニッシュ：富津市金谷・北港緑地広場",
-      "mapQuery": "千葉県 スタート：鴨川市安房小湊・内浦海岸／フィニッシュ：富津市金谷・北港緑地広場"
+      "mapQuery": "千葉県 スタート：鴨川市安房小湊・内浦海岸／フィニッシュ：富津市金谷・北港緑地広場",
+      "lat": 35.11407,
+      "lng": 140.09895,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -7006,7 +7375,10 @@
     ],
     "venue": {
       "name": "徳島県庁前（徳島県徳島市万代町1-1）",
-      "mapQuery": "徳島県徳島市 徳島県庁前"
+      "mapQuery": "徳島県徳島市 徳島県庁前",
+      "lat": 34.06578,
+      "lng": 134.5596,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "大会公式"
@@ -7062,7 +7434,10 @@
     ],
     "venue": {
       "name": "尾道U2横オリーブ広場（広島県尾道市西御所町5-11）",
-      "mapQuery": "広島県尾道市 尾道U2"
+      "mapQuery": "広島県尾道市 尾道U2",
+      "lat": 34.40242,
+      "lng": 133.19045,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "スポエンCYCLE"
@@ -7117,7 +7492,10 @@
     ],
     "venue": {
       "name": "吾野坂石イベント広場（スタート・ゴール・受付）",
-      "mapQuery": "埼玉県 吾野坂石イベント広場（スタート・ゴール・受付）"
+      "mapQuery": "埼玉県 吾野坂石イベント広場（スタート・ゴール・受付）",
+      "lat": 35.857,
+      "lng": 139.6489,
+      "coordPrecision": "prefecture"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -7172,7 +7550,10 @@
     ],
     "venue": {
       "name": "岡崎中央総合公園",
-      "mapQuery": "愛知県 岡崎中央総合公園"
+      "mapQuery": "愛知県 岡崎中央総合公園",
+      "lat": 34.9548,
+      "lng": 137.17307,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -7227,7 +7608,10 @@
     ],
     "venue": {
       "name": "スタート：厚木青少年広場／ゴール：厚木中央公園",
-      "mapQuery": "神奈川県 スタート：厚木青少年広場／ゴール：厚木中央公園"
+      "mapQuery": "神奈川県 スタート：厚木青少年広場／ゴール：厚木中央公園",
+      "lat": 35.44305,
+      "lng": 139.3625,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -7311,7 +7695,10 @@
     ],
     "venue": {
       "name": "和気ドーム（岡山県和気郡和気町益原681-1）",
-      "mapQuery": "岡山県和気郡和気町 和気ドーム"
+      "mapQuery": "岡山県和気郡和気町 和気ドーム",
+      "lat": 34.82634,
+      "lng": 134.1432,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "RUNNET"
@@ -7374,7 +7761,10 @@
     ],
     "venue": {
       "name": "愛知県民の森（愛知県新城市門谷字鳳来寺7-60）",
-      "mapQuery": "愛知県新城市 愛知県民の森"
+      "mapQuery": "愛知県新城市 愛知県民の森",
+      "lat": 34.98764,
+      "lng": 137.5925,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "大会公式"
@@ -7430,7 +7820,10 @@
     "venue": {
       "name": "笠岡市B&G海洋センター（岡山県笠岡市白石島2364-6）",
       "address": "〒714-0036 岡山県笠岡市白石島2364-6",
-      "mapQuery": "岡山県笠岡市白石島 笠岡市B&G海洋センター"
+      "mapQuery": "岡山県笠岡市白石島 笠岡市B&G海洋センター",
+      "lat": 34.40312,
+      "lng": 133.51512,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "e-moshicom",
@@ -7487,7 +7880,10 @@
     "venue": {
       "name": "うぬまの森公園（岐阜県各務原市鵜沼）",
       "address": "岐阜県各務原市鵜沼",
-      "mapQuery": "岐阜県各務原市 うぬまの森"
+      "mapQuery": "岐阜県各務原市 うぬまの森",
+      "lat": 35.42219,
+      "lng": 136.94308,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "スポーツエントリー",
@@ -7540,7 +7936,10 @@
     ],
     "venue": {
       "name": "未確認",
-      "mapQuery": "京都府 未確認"
+      "mapQuery": "京都府 未確認",
+      "lat": 35.02124,
+      "lng": 135.75562,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -7595,7 +7994,10 @@
     ],
     "venue": {
       "name": "赤目地区市民センター（スタート・ゴール）",
-      "mapQuery": "三重県 赤目地区市民センター（スタート・ゴール）"
+      "mapQuery": "三重県 赤目地区市民センター（スタート・ゴール）",
+      "lat": 34.61248,
+      "lng": 136.0844,
+      "coordPrecision": "city"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -7650,7 +8052,10 @@
     ],
     "venue": {
       "name": "受付：阪急山本駅北口ロータリー右手公園広場／スタート：中山登山道入口／ゴール：JR武田尾駅側廃線出入り口",
-      "mapQuery": "兵庫県 受付：阪急山本駅北口ロータリー右手公園広場／スタート：中山登山道入口／ゴール：JR武田尾駅側廃線出入り口"
+      "mapQuery": "兵庫県 受付：阪急山本駅北口ロータリー右手公園広場／スタート：中山登山道入口／ゴール：JR武田尾駅側廃線出入り口",
+      "lat": 34.6913,
+      "lng": 135.183,
+      "coordPrecision": "prefecture"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -7739,7 +8144,10 @@
     ],
     "venue": {
       "name": "ひろしまゲートパーク（広島県広島市中区基町5-25）",
-      "mapQuery": "広島県広島市中区 ひろしまゲートパーク"
+      "mapQuery": "広島県広島市中区 ひろしまゲートパーク",
+      "lat": 34.39602,
+      "lng": 132.45557,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "UTMB公式"
@@ -7794,7 +8202,10 @@
     ],
     "venue": {
       "name": "宇治公園 塔の島",
-      "mapQuery": "京都府 宇治公園 塔の島"
+      "mapQuery": "京都府 宇治公園 塔の島",
+      "lat": 34.88444,
+      "lng": 135.79973,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -7852,7 +8263,10 @@
     ],
     "venue": {
       "name": "ふれあいパークほうらい（愛知県新城市長篠字東谷下56-2）",
-      "mapQuery": "愛知県新城市 ふれあいパークほうらい"
+      "mapQuery": "愛知県新城市 ふれあいパークほうらい",
+      "lat": 34.92686,
+      "lng": 137.55545,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "モシコム"
@@ -7903,7 +8317,10 @@
     ],
     "venue": {
       "name": "未確認",
-      "mapQuery": "石川県 未確認"
+      "mapQuery": "石川県 未確認",
+      "lat": 36.5945,
+      "lng": 136.6256,
+      "coordPrecision": "prefecture"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -7957,7 +8374,10 @@
     ],
     "venue": {
       "name": "スタート：葛城市ゆうあいステーション ふれあい広場",
-      "mapQuery": "奈良県 スタート：葛城市ゆうあいステーション ふれあい広場"
+      "mapQuery": "奈良県 スタート：葛城市ゆうあいステーション ふれあい広場",
+      "lat": 34.48917,
+      "lng": 135.72667,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -8012,7 +8432,10 @@
     ],
     "venue": {
       "name": "大多喜県民の森 芝生広場",
-      "mapQuery": "千葉県 大多喜県民の森 芝生広場"
+      "mapQuery": "千葉県 大多喜県民の森 芝生広場",
+      "lat": 35.28518,
+      "lng": 140.24541,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -8069,7 +8492,10 @@
     "venue": {
       "name": "長野県 南佐久郡佐久穂町 八千穂高原（国道299号）",
       "address": "長野県",
-      "mapQuery": "長野県 第37回 ツール・ド・八ヶ岳"
+      "mapQuery": "長野県 第37回 ツール・ド・八ヶ岳",
+      "lat": 36.65131,
+      "lng": 138.18091,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "スポエンCYCLE",
@@ -8123,7 +8549,10 @@
     ],
     "venue": {
       "name": "京都府",
-      "mapQuery": "京都府 京都府"
+      "mapQuery": "京都府 京都府",
+      "lat": 35.0214,
+      "lng": 135.7556,
+      "coordPrecision": "prefecture"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -8179,7 +8608,10 @@
     ],
     "venue": {
       "name": "熊本NOK株式会社 本社工場（受付・スタート・フィニッシュ、※前回実績）",
-      "mapQuery": "熊本県 熊本NOK株式会社 本社工場（受付・スタート・フィニッシュ、※前回実績）"
+      "mapQuery": "熊本県 熊本NOK株式会社 本社工場（受付・スタート・フィニッシュ、※前回実績）",
+      "lat": 32.80333,
+      "lng": 130.70805,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -8251,7 +8683,10 @@
     ],
     "venue": {
       "name": "富士北麓公園陸上競技場（山梨県富士吉田市上吉田立石5000）",
-      "mapQuery": "山梨県富士吉田市 富士北麓公園"
+      "mapQuery": "山梨県富士吉田市 富士北麓公園",
+      "lat": 35.42639,
+      "lng": 138.75316,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "大会公式"
@@ -8306,7 +8741,10 @@
     ],
     "venue": {
       "name": "片添ヶ浜海浜公園（山口県大島郡周防大島町平野1191-54）",
-      "mapQuery": "山口県周防大島町 片添ヶ浜海浜公園"
+      "mapQuery": "山口県周防大島町 片添ヶ浜海浜公園",
+      "lat": 33.90014,
+      "lng": 132.3555,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "大会公式"
@@ -8361,7 +8799,10 @@
     ],
     "venue": {
       "name": "国営越後丘陵公園（受付：ウェルカムゲート／スタート・フィニッシュ：緑の千畳敷）",
-      "mapQuery": "新潟県 国営越後丘陵公園（受付：ウェルカムゲート／スタート・フィニッシュ：緑の千畳敷）"
+      "mapQuery": "新潟県 国営越後丘陵公園（受付：ウェルカムゲート／スタート・フィニッシュ：緑の千畳敷）",
+      "lat": 37.90245,
+      "lng": 139.02324,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -8417,7 +8858,10 @@
     ],
     "venue": {
       "name": "余呉湖ビジターセンター（受付・スタート・ゴール）",
-      "mapQuery": "滋賀県 余呉湖ビジターセンター（受付・スタート・ゴール）"
+      "mapQuery": "滋賀県 余呉湖ビジターセンター（受付・スタート・ゴール）",
+      "lat": 35.53277,
+      "lng": 136.19115,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -8472,7 +8916,10 @@
     ],
     "venue": {
       "name": "毛呂山総合公園体育館前（開会式・スタート・ゴール）※前回実績",
-      "mapQuery": "埼玉県 毛呂山総合公園体育館前（開会式・スタート・ゴール）※前回実績"
+      "mapQuery": "埼玉県 毛呂山総合公園体育館前（開会式・スタート・ゴール）※前回実績",
+      "lat": 35.9415,
+      "lng": 139.31602,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -8527,7 +8974,10 @@
     ],
     "venue": {
       "name": "島根県さくらおろち湖ローイング競技施設（雲南市木次町平田779-1、スタート・ゴール）",
-      "mapQuery": "島根県 島根県さくらおろち湖ローイング競技施設（雲南市木次町平田779-1、スタート・ゴール）"
+      "mapQuery": "島根県 島根県さくらおろち湖ローイング競技施設（雲南市木次町平田779-1、スタート・ゴール）",
+      "lat": 35.21505,
+      "lng": 132.93633,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -8617,7 +9067,10 @@
     ],
     "venue": {
       "name": "富士山パーキング（山梨県富士吉田市上吉田字剣丸尾5597-1）",
-      "mapQuery": "山梨県富士吉田市 富士山パーキング"
+      "mapQuery": "山梨県富士吉田市 富士山パーキング",
+      "lat": 35.42639,
+      "lng": 138.75316,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "大会公式"
@@ -8666,7 +9119,10 @@
     ],
     "venue": {
       "name": "岐阜県長良川周辺（詳細会場未定）",
-      "mapQuery": "岐阜県 長良川"
+      "mapQuery": "岐阜県 長良川",
+      "lat": 35.39117,
+      "lng": 136.72366,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "ARJS公式"
@@ -8726,7 +9182,10 @@
     ],
     "venue": {
       "name": "Atlas Mountains & Sahara Desert",
-      "mapQuery": "Morocco Atlas Mountains"
+      "mapQuery": "Morocco Atlas Mountains",
+      "lat": 31.6295,
+      "lng": -7.9811,
+      "coordPrecision": "prefecture"
     },
     "source": {
       "portalName": "ARWS公式"
@@ -8780,7 +9239,10 @@
     ],
     "venue": {
       "name": "浄土ヶ浜（スタート）",
-      "mapQuery": "岩手県 浄土ヶ浜（スタート）"
+      "mapQuery": "岩手県 浄土ヶ浜（スタート）",
+      "lat": 39.65245,
+      "lng": 141.97874,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -8837,7 +9299,10 @@
     ],
     "venue": {
       "name": "世界遺産参詣道周辺",
-      "mapQuery": "奈良県 世界遺産参詣道周辺"
+      "mapQuery": "奈良県 世界遺産参詣道周辺",
+      "lat": 34.68527,
+      "lng": 135.83285,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -8895,7 +9360,10 @@
     ],
     "venue": {
       "name": "仏大寺むくろじ広場／遣水観音山",
-      "mapQuery": "石川県 仏大寺むくろじ広場／遣水観音山"
+      "mapQuery": "石川県 仏大寺むくろじ広場／遣水観音山",
+      "lat": 36.5945,
+      "lng": 136.6256,
+      "coordPrecision": "prefecture"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -8952,7 +9420,10 @@
     ],
     "venue": {
       "name": "太郎山周辺 ※前回実績",
-      "mapQuery": "長野県 太郎山周辺 ※前回実績"
+      "mapQuery": "長野県 太郎山周辺 ※前回実績",
+      "lat": 36.65131,
+      "lng": 138.18091,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -9005,7 +9476,10 @@
     ],
     "venue": {
       "name": "城崎温泉 末代山 温泉寺（兵庫県豊岡市城崎町湯島985-2）",
-      "mapQuery": "兵庫県豊岡市 城崎温泉 温泉寺"
+      "mapQuery": "兵庫県豊岡市 城崎温泉 温泉寺",
+      "lat": 35.62777,
+      "lng": 134.79306,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "人力企画",
@@ -9062,7 +9536,10 @@
     ],
     "venue": {
       "name": "熊本県",
-      "mapQuery": "熊本県 熊本県"
+      "mapQuery": "熊本県 熊本県",
+      "lat": 32.7898,
+      "lng": 130.7417,
+      "coordPrecision": "prefecture"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -9120,7 +9597,10 @@
     ],
     "venue": {
       "name": "スタート：普代浜園地キラウミ／ゴール：浄土ヶ浜",
-      "mapQuery": "岩手県 スタート：普代浜園地キラウミ／ゴール：浄土ヶ浜"
+      "mapQuery": "岩手県 スタート：普代浜園地キラウミ／ゴール：浄土ヶ浜",
+      "lat": 40.00527,
+      "lng": 141.88612,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -9175,7 +9655,10 @@
     ],
     "venue": {
       "name": "高岡市営城光寺陸上競技場前 ※前回実績",
-      "mapQuery": "富山県 高岡市営城光寺陸上競技場前 ※前回実績"
+      "mapQuery": "富山県 高岡市営城光寺陸上競技場前 ※前回実績",
+      "lat": 36.75407,
+      "lng": 137.02571,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -9230,7 +9713,10 @@
     ],
     "venue": {
       "name": "大阪府",
-      "mapQuery": "大阪府 大阪府"
+      "mapQuery": "大阪府 大阪府",
+      "lat": 34.6863,
+      "lng": 135.52,
+      "coordPrecision": "prefecture"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -9288,7 +9774,10 @@
     ],
     "venue": {
       "name": "埼玉県",
-      "mapQuery": "埼玉県 埼玉県"
+      "mapQuery": "埼玉県 埼玉県",
+      "lat": 35.857,
+      "lng": 139.6489,
+      "coordPrecision": "prefecture"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -9347,7 +9836,10 @@
     "venue": {
       "name": "滝沢牧場（長野県南佐久郡南牧村野辺山23-1）",
       "address": "長野県南佐久郡南牧村野辺山",
-      "mapQuery": "長野県南牧村 滝沢牧場"
+      "mapQuery": "長野県南牧村 滝沢牧場",
+      "lat": 35.94851,
+      "lng": 138.46658,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "RUNNET",
@@ -9400,7 +9892,10 @@
     ],
     "venue": {
       "name": "スタート：Aコース 小浜市まちの駅／Bコース 梅ノ木 ゴール：賀茂大橋下公園（※前回実績）",
-      "mapQuery": "福井県 スタート：Aコース 小浜市まちの駅／Bコース 梅ノ木 ゴール：賀茂大橋下公園（※前回実績）"
+      "mapQuery": "福井県 スタート：Aコース 小浜市まちの駅／Bコース 梅ノ木 ゴール：賀茂大橋下公園（※前回実績）",
+      "lat": 36.06521,
+      "lng": 136.22172,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -9455,7 +9950,10 @@
     ],
     "venue": {
       "name": "未確認",
-      "mapQuery": "石川県 未確認"
+      "mapQuery": "石川県 未確認",
+      "lat": 36.5945,
+      "lng": 136.6256,
+      "coordPrecision": "prefecture"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -9518,7 +10016,10 @@
     ],
     "venue": {
       "name": "Galicia, Spain",
-      "mapQuery": "Galicia Spain"
+      "mapQuery": "Galicia Spain",
+      "lat": 42.6,
+      "lng": -8.55,
+      "coordPrecision": "prefecture"
     },
     "source": {
       "portalName": "ARWS公式"
@@ -9574,7 +10075,10 @@
     ],
     "venue": {
       "name": "奥多摩総合運動公園（奥多摩町氷川）。250kmは埼玉県飯能駅周辺スタート、200kmは青梅会場で受付",
-      "mapQuery": "東京都 奥多摩総合運動公園（奥多摩町氷川）。250kmは埼玉県飯能駅周辺スタート、200kmは青梅会場で受付"
+      "mapQuery": "東京都 奥多摩総合運動公園（奥多摩町氷川）。250kmは埼玉県飯能駅周辺スタート、200kmは青梅会場で受付",
+      "lat": 35.82361,
+      "lng": 139.09345,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -9629,7 +10133,10 @@
     ],
     "venue": {
       "name": "兵庫県",
-      "mapQuery": "兵庫県 兵庫県"
+      "mapQuery": "兵庫県 兵庫県",
+      "lat": 34.6913,
+      "lng": 135.183,
+      "coordPrecision": "prefecture"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -9685,7 +10192,10 @@
     ],
     "venue": {
       "name": "受付・ゴール：FREE AND EASY CAMP RESORT／スタート：三重県民の森",
-      "mapQuery": "三重県 受付・ゴール：FREE AND EASY CAMP RESORT／スタート：三重県民の森"
+      "mapQuery": "三重県 受付・ゴール：FREE AND EASY CAMP RESORT／スタート：三重県民の森",
+      "lat": 35.04475,
+      "lng": 136.48123,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -9741,7 +10251,10 @@
     ],
     "venue": {
       "name": "スタート：河津七滝／ゴール：今井浜海岸",
-      "mapQuery": "静岡県 スタート：河津七滝／ゴール：今井浜海岸"
+      "mapQuery": "静岡県 スタート：河津七滝／ゴール：今井浜海岸",
+      "lat": 34.75722,
+      "lng": 138.9875,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -9800,7 +10313,10 @@
     "venue": {
       "name": "城南島海浜公園 つばさ浜（東京都大田区）〜島郷海岸（沼津市）",
       "address": "東京都大田区城南島4-2-2",
-      "mapQuery": "東京都大田区 城南島海浜公園"
+      "mapQuery": "東京都大田区 城南島海浜公園",
+      "lat": 35.57833,
+      "lng": 139.78328,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "スポーツエントリー",
@@ -9855,7 +10371,10 @@
     ],
     "venue": {
       "name": "埼玉県",
-      "mapQuery": "埼玉県 埼玉県"
+      "mapQuery": "埼玉県 埼玉県",
+      "lat": 35.857,
+      "lng": 139.6489,
+      "coordPrecision": "prefecture"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -9914,7 +10433,10 @@
     "venue": {
       "name": "池の平温泉イベント広場（新潟県妙高市関川）",
       "address": "新潟県妙高市関川",
-      "mapQuery": "新潟県妙高市 池の平温泉"
+      "mapQuery": "新潟県妙高市 池の平温泉",
+      "lat": 36.86586,
+      "lng": 138.19002,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "スポエンCYCLE",
@@ -9969,7 +10491,10 @@
     ],
     "venue": {
       "name": "日光アストリアホテル トレイルコース（受付：ラウンジ裏芝生エリア）",
-      "mapQuery": "栃木県 日光アストリアホテル トレイルコース（受付：ラウンジ裏芝生エリア）"
+      "mapQuery": "栃木県 日光アストリアホテル トレイルコース（受付：ラウンジ裏芝生エリア）",
+      "lat": 36.5657,
+      "lng": 139.8836,
+      "coordPrecision": "prefecture"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -10026,7 +10551,10 @@
     ],
     "venue": {
       "name": "丹波の森公苑ほか",
-      "mapQuery": "兵庫県 丹波の森公苑ほか"
+      "mapQuery": "兵庫県 丹波の森公苑ほか",
+      "lat": 35.1771,
+      "lng": 135.03584,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -10083,7 +10611,10 @@
     ],
     "venue": {
       "name": "スノーリゾートロマンスの神様／旧木島平スキー場（SBCホテル前）（※前回実績）",
-      "mapQuery": "長野県 スノーリゾートロマンスの神様／旧木島平スキー場（SBCホテル前）（※前回実績）"
+      "mapQuery": "長野県 スノーリゾートロマンスの神様／旧木島平スキー場（SBCホテル前）（※前回実績）",
+      "lat": 36.65131,
+      "lng": 138.18091,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -10138,7 +10669,10 @@
     ],
     "venue": {
       "name": "忍野中学校",
-      "mapQuery": "山梨県 忍野中学校"
+      "mapQuery": "山梨県 忍野中学校",
+      "lat": 35.46005,
+      "lng": 138.84788,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -10212,7 +10746,10 @@
     ],
     "venue": {
       "name": "江田島市立切串小学校（広島県江田島市江田島町切串1-11-2）",
-      "mapQuery": "広島県江田島市 江田島市立切串小学校"
+      "mapQuery": "広島県江田島市 江田島市立切串小学校",
+      "lat": 34.28444,
+      "lng": 132.47878,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "モシコム"
@@ -10260,7 +10797,10 @@
     ],
     "venue": {
       "name": "群馬県みなかみ周辺（詳細会場未定）",
-      "mapQuery": "群馬県みなかみ町"
+      "mapQuery": "群馬県みなかみ町",
+      "lat": 36.67868,
+      "lng": 138.99907,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "ARJS公式"
@@ -10312,7 +10852,10 @@
     ],
     "venue": {
       "name": "おぐに森林公園",
-      "mapQuery": "新潟県 おぐに森林公園"
+      "mapQuery": "新潟県 おぐに森林公園",
+      "lat": 37.90245,
+      "lng": 139.02324,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -10367,7 +10910,10 @@
     ],
     "venue": {
       "name": "奈良県",
-      "mapQuery": "奈良県 奈良県"
+      "mapQuery": "奈良県 奈良県",
+      "lat": 34.6853,
+      "lng": 135.8327,
+      "coordPrecision": "prefecture"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -10423,7 +10969,10 @@
     ],
     "venue": {
       "name": "石川県",
-      "mapQuery": "石川県 石川県"
+      "mapQuery": "石川県 石川県",
+      "lat": 36.5945,
+      "lng": 136.6256,
+      "coordPrecision": "prefecture"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -10477,7 +11026,10 @@
     ],
     "venue": {
       "name": "テイネオリンピア・スキーセンター前（※前回実績）",
-      "mapQuery": "北海道 テイネオリンピア・スキーセンター前（※前回実績）"
+      "mapQuery": "北海道 テイネオリンピア・スキーセンター前（※前回実績）",
+      "lat": 43.0772,
+      "lng": 141.1981,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -10539,7 +11091,10 @@
     ],
     "venue": {
       "name": "Wyoming, USA",
-      "mapQuery": "Wyoming USA"
+      "mapQuery": "Wyoming USA",
+      "lat": 40.015,
+      "lng": -105.2705,
+      "coordPrecision": "prefecture"
     },
     "source": {
       "portalName": "ARWS公式"
@@ -10594,7 +11149,10 @@
     ],
     "venue": {
       "name": "入広瀬スポーツセンター（受付：旧湯沢小学校体育館）",
-      "mapQuery": "新潟県 入広瀬スポーツセンター（受付：旧湯沢小学校体育館）"
+      "mapQuery": "新潟県 入広瀬スポーツセンター（受付：旧湯沢小学校体育館）",
+      "lat": 37.90245,
+      "lng": 139.02324,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -10650,7 +11208,10 @@
     ],
     "venue": {
       "name": "山形県",
-      "mapQuery": "山形県 山形県"
+      "mapQuery": "山形県 山形県",
+      "lat": 38.2404,
+      "lng": 140.3633,
+      "coordPrecision": "prefecture"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -10713,7 +11274,10 @@
     ],
     "venue": {
       "name": "Hautes-Alpes, France",
-      "mapQuery": "Hautes-Alpes France"
+      "mapQuery": "Hautes-Alpes France",
+      "lat": 44.65648,
+      "lng": 6.3494,
+      "coordPrecision": "city"
     },
     "source": {
       "portalName": "ARWS公式"
@@ -10766,7 +11330,10 @@
     ],
     "venue": {
       "name": "岐阜県",
-      "mapQuery": "岐阜県 岐阜県"
+      "mapQuery": "岐阜県 岐阜県",
+      "lat": 35.3912,
+      "lng": 136.7223,
+      "coordPrecision": "prefecture"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -10821,7 +11388,10 @@
     ],
     "venue": {
       "name": "富士化学スポーツパーク丸山（フジスポ）",
-      "mapQuery": "富山県 富士化学スポーツパーク丸山（フジスポ）"
+      "mapQuery": "富山県 富士化学スポーツパーク丸山（フジスポ）",
+      "lat": 36.69527,
+      "lng": 137.2113,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -10878,7 +11448,10 @@
     ],
     "venue": {
       "name": "静岡県",
-      "mapQuery": "静岡県 静岡県"
+      "mapQuery": "静岡県 静岡県",
+      "lat": 34.9769,
+      "lng": 138.3831,
+      "coordPrecision": "prefecture"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -10932,7 +11505,10 @@
     ],
     "venue": {
       "name": "仰木太鼓会館（予定）",
-      "mapQuery": "滋賀県 仰木太鼓会館（予定）"
+      "mapQuery": "滋賀県 仰木太鼓会館（予定）",
+      "lat": 35.0045,
+      "lng": 135.8686,
+      "coordPrecision": "prefecture"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -10990,7 +11566,10 @@
     ],
     "venue": {
       "name": "松原スポーツ公園（受付・スタート・フィニッシュ）",
-      "mapQuery": "長野県 松原スポーツ公園（受付・スタート・フィニッシュ）"
+      "mapQuery": "長野県 松原スポーツ公園（受付・スタート・フィニッシュ）",
+      "lat": 36.42417,
+      "lng": 137.85445,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -11046,7 +11625,10 @@
     ],
     "venue": {
       "name": "スタート：府民の森ほしだ園地わんぱく広場（交野市星田）／ゴール：27km 近鉄西信貴ケーブル高安山駅前、20km 神津嶽ふれあい広場",
-      "mapQuery": "大阪府 スタート：府民の森ほしだ園地わんぱく広場（交野市星田）／ゴール：27km 近鉄西信貴ケーブル高安山駅前、20km"
+      "mapQuery": "大阪府 スタート：府民の森ほしだ園地わんぱく広場（交野市星田）／ゴール：27km 近鉄西信貴ケーブル高安山駅前、20km",
+      "lat": 34.76861,
+      "lng": 135.66965,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -11109,7 +11691,10 @@
     ],
     "venue": {
       "name": "Lake Saimaa, Finland",
-      "mapQuery": "Lake Saimaa Finland"
+      "mapQuery": "Lake Saimaa Finland",
+      "lat": 61.25,
+      "lng": 28.7,
+      "coordPrecision": "prefecture"
     },
     "source": {
       "portalName": "ARWS公式"
@@ -11161,7 +11746,10 @@
     ],
     "venue": {
       "name": "岐阜県",
-      "mapQuery": "岐阜県 岐阜県"
+      "mapQuery": "岐阜県 岐阜県",
+      "lat": 35.3912,
+      "lng": 136.7223,
+      "coordPrecision": "prefecture"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -11216,7 +11804,10 @@
     ],
     "venue": {
       "name": "兵庫県",
-      "mapQuery": "兵庫県 兵庫県"
+      "mapQuery": "兵庫県 兵庫県",
+      "lat": 34.6913,
+      "lng": 135.183,
+      "coordPrecision": "prefecture"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -11272,7 +11863,10 @@
     ],
     "venue": {
       "name": "スタート：嵐山公園亀山地区／ゴール：山科 毘沙門堂",
-      "mapQuery": "京都府 スタート：嵐山公園亀山地区／ゴール：山科 毘沙門堂"
+      "mapQuery": "京都府 スタート：嵐山公園亀山地区／ゴール：山科 毘沙門堂",
+      "lat": 35.02124,
+      "lng": 135.75562,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -11339,7 +11933,10 @@
     ],
     "venue": {
       "name": "Dalmatia Coast, Zadar",
-      "mapQuery": "Zadar Croatia"
+      "mapQuery": "Zadar Croatia",
+      "lat": 45.1,
+      "lng": 15.2,
+      "coordPrecision": "prefecture"
     },
     "source": {
       "portalName": "ARWS公式"
@@ -11387,7 +11984,10 @@
     ],
     "venue": {
       "name": "山口県長州エリア（詳細会場未定）",
-      "mapQuery": "山口県下関市 唐戸市場"
+      "mapQuery": "山口県下関市 唐戸市場",
+      "lat": 34.37056,
+      "lng": 131.18262,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "ARJS公式"
@@ -11439,7 +12039,10 @@
     ],
     "venue": {
       "name": "あづまね温泉保養公園 大会特設会場（※前回実績）",
-      "mapQuery": "岩手県 あづまね温泉保養公園 大会特設会場（※前回実績）"
+      "mapQuery": "岩手県 あづまね温泉保養公園 大会特設会場（※前回実績）",
+      "lat": 39.70391,
+      "lng": 141.13736,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -11494,7 +12097,10 @@
     ],
     "venue": {
       "name": "富良野スキー場 北の峰ターミナル（スタート・ゴール）",
-      "mapQuery": "北海道 富良野スキー場 北の峰ターミナル（スタート・ゴール）"
+      "mapQuery": "北海道 富良野スキー場 北の峰ターミナル（スタート・ゴール）",
+      "lat": 43.3421,
+      "lng": 142.3832,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -11551,7 +12157,10 @@
     ],
     "venue": {
       "name": "ニューサンピア埼玉おごせ",
-      "mapQuery": "埼玉県 ニューサンピア埼玉おごせ"
+      "mapQuery": "埼玉県 ニューサンピア埼玉おごせ",
+      "lat": 35.97962,
+      "lng": 139.27545,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -11608,7 +12217,10 @@
     "venue": {
       "name": "ホノルル（カピオラニ公園スタート／フィニッシュ）",
       "address": "海外",
-      "mapQuery": "海外 ホノルルセンチュリーライド2027"
+      "mapQuery": "海外 ホノルルセンチュリーライド2027",
+      "lat": 21.269,
+      "lng": -157.817,
+      "coordPrecision": "city"
     },
     "source": {
       "portalName": "スポエンCYCLE",
@@ -11664,7 +12276,10 @@
     ],
     "venue": {
       "name": "湯の山温泉 希望荘（受付・スタート）",
-      "mapQuery": "三重県 湯の山温泉 希望荘（受付・スタート）"
+      "mapQuery": "三重県 湯の山温泉 希望荘（受付・スタート）",
+      "lat": 34.7303,
+      "lng": 136.5086,
+      "coordPrecision": "prefecture"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -11718,7 +12333,10 @@
     ],
     "venue": {
       "name": "山科 毘沙門堂（受付・スタート）",
-      "mapQuery": "京都府 山科 毘沙門堂（受付・スタート）"
+      "mapQuery": "京都府 山科 毘沙門堂（受付・スタート）",
+      "lat": 35.02124,
+      "lng": 135.75562,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -11773,7 +12391,10 @@
     ],
     "venue": {
       "name": "松平郷まつり広場（スタート・フィニッシュ）",
-      "mapQuery": "愛知県 松平郷まつり広場（スタート・フィニッシュ）"
+      "mapQuery": "愛知県 松平郷まつり広場（スタート・フィニッシュ）",
+      "lat": 35.1802,
+      "lng": 136.9066,
+      "coordPrecision": "prefecture"
     },
     "source": {
       "portalName": "トレイルランナー.JP",
@@ -11823,7 +12444,10 @@
     ],
     "venue": {
       "name": "新潟県妙高エリア（詳細会場未定）",
-      "mapQuery": "新潟県妙高市"
+      "mapQuery": "新潟県妙高市",
+      "lat": 37.02527,
+      "lng": 138.25334,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "ARJS公式"
@@ -11875,7 +12499,10 @@
     ],
     "venue": {
       "name": "スタート：葛城市農林漁業実習館駐車場／ゴール：紀伊見荘下側駐車場",
-      "mapQuery": "奈良県 スタート：葛城市農林漁業実習館駐車場／ゴール：紀伊見荘下側駐車場"
+      "mapQuery": "奈良県 スタート：葛城市農林漁業実習館駐車場／ゴール：紀伊見荘下側駐車場",
+      "lat": 34.48917,
+      "lng": 135.72667,
+      "coordPrecision": "exact"
     },
     "source": {
       "portalName": "トレイルランナー.JP",

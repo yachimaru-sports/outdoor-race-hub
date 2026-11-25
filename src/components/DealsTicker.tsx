@@ -15,6 +15,7 @@ import {
   Monitor,
   Smartphone,
   HelpCircle,
+  Map as MapIcon,
 } from 'lucide-react';
 import { formatPrice } from '../utils/helpers';
 
@@ -26,6 +27,7 @@ interface DealsTickerProps {
   theme?: 'light' | 'dark';
   onToggleTheme?: () => void;
   onOpenCatalog?: () => void;
+  onOpenMap?: () => void;
   onOpenGuide?: () => void;
   isPcView?: boolean;
   onToggleDisplayMode?: () => void;
@@ -39,6 +41,7 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({
   theme = 'light',
   onToggleTheme,
   onOpenCatalog,
+  onOpenMap,
   onOpenGuide,
   isPcView,
   onToggleDisplayMode,
@@ -224,24 +227,35 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({
             </div>
           </div>
 
-          {/* スマホ2段目：最新情報日時 ＋ おすすめ商品専用ページボタン（見切れゼロ） */}
-          <div className="flex md:hidden items-center justify-between gap-2 w-full">
+          {/* スマホ2段目：最新情報日時 ＋ 全国マップ ＋ おすすめ商品専用ページボタン（見切れゼロ） */}
+          <div className="flex md:hidden items-center justify-between gap-1.5 w-full">
             <div className="flex items-center gap-1 px-1.5 py-0.5 rounded bg-emerald-950/70 border border-emerald-500/50 text-[10px] font-bold text-emerald-300 leading-none whitespace-nowrap min-w-0">
               <span className="relative flex h-1.5 w-1.5 shrink-0">
                 <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-400"></span>
               </span>
               <span className="text-white font-mono font-black truncate">{lastUpdated}</span>
             </div>
-            {onOpenCatalog && (
-              <button
-                onClick={onOpenCatalog}
-                className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-gradient-to-r from-amber-400 via-orange-400 to-amber-500 text-slate-950 font-black text-[11px] shadow-sm cursor-pointer whitespace-nowrap border border-amber-300 shrink-0"
-              >
-                <ShoppingBag className="w-3 h-3 text-slate-950 shrink-0" />
-                <span>おすすめ商品専用ページ</span>
-                <ChevronRight className="w-3 h-3 shrink-0" />
-              </button>
-            )}
+            <div className="flex items-center gap-1 shrink-0">
+              {onOpenMap && (
+                <button
+                  onClick={onOpenMap}
+                  className="inline-flex items-center gap-1 px-2 py-1 rounded-lg bg-gradient-to-r from-teal-500 to-emerald-500 text-slate-950 font-black text-[10px] shadow-sm cursor-pointer whitespace-nowrap border border-teal-300 shrink-0"
+                >
+                  <MapIcon className="w-3 h-3 text-slate-950 shrink-0" />
+                  <span>全国マップ</span>
+                </button>
+              )}
+              {onOpenCatalog && (
+                <button
+                  onClick={onOpenCatalog}
+                  className="inline-flex items-center gap-1 px-2 py-1 rounded-lg bg-gradient-to-r from-amber-400 via-orange-400 to-amber-500 text-slate-950 font-black text-[10px] shadow-sm cursor-pointer whitespace-nowrap border border-amber-300 shrink-0"
+                >
+                  <ShoppingBag className="w-3 h-3 text-slate-950 shrink-0" />
+                  <span>ギア特集</span>
+                  <ChevronRight className="w-3 h-3 shrink-0" />
+                </button>
+              )}
+            </div>
           </div>
 
           {/* 中央：無限スライド 楽天特価ギアカルーセル */}
@@ -325,8 +339,18 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({
 
           {/* 右端（PC表示のみ）：2段構成（上段：累計アクセス数 / 下段：＜ ＞ 月マーク） */}
           <div className="hidden md:flex flex-col items-end justify-center gap-1 shrink-0">
-            {/* 上段：アクセス数 */}
+            {/* 上段：全国マップ ＋ ギア特集 ＋ アクセス数 */}
             <div className="flex items-center gap-1.5">
+              {onOpenMap && (
+                <button
+                  onClick={onOpenMap}
+                  className="group inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-gradient-to-r from-teal-500 to-emerald-500 hover:from-teal-400 hover:to-emerald-400 text-slate-950 font-black text-[11px] sm:text-xs shadow-md hover:shadow-lg transition-all cursor-pointer whitespace-nowrap border border-teal-300"
+                  title="日本地図から大会を探す（全国→地方→県内ピン）"
+                >
+                  <MapIcon className="w-3 h-3 text-slate-950 shrink-0" />
+                  <span>🗺️ 全国マップ</span>
+                </button>
+              )}
               {onOpenCatalog && (
                 <button
                   onClick={onOpenCatalog}

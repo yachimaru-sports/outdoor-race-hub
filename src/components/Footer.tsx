@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mountain, ShieldCheck, Compass, ExternalLink, ShoppingBag, ChevronRight, HelpCircle } from 'lucide-react';
+import { Mountain, ShieldCheck, Compass, ExternalLink, ShoppingBag, ChevronRight, HelpCircle, Map as MapIcon } from 'lucide-react';
 
 interface DailyBgCredit {
   label: string;
@@ -10,12 +10,13 @@ interface DailyBgCredit {
 
 interface FooterProps {
   onOpenCatalog?: () => void;
+  onOpenMap?: () => void;
   onOpenGuide?: () => void;
   dailyBgCredit?: DailyBgCredit;
 }
 import { AccessCounter } from './AccessCounter';
 
-export const Footer: React.FC<FooterProps> = ({ onOpenCatalog, onOpenGuide, dailyBgCredit }) => {
+export const Footer: React.FC<FooterProps> = ({ onOpenCatalog, onOpenMap, onOpenGuide, dailyBgCredit }) => {
   return (
     <footer className="mt-20 border-t border-slate-300 dark:border-slate-800 bg-white dark:bg-[#090d16] text-slate-600 dark:text-slate-400 text-xs py-12 transition-colors">
       <div className="max-w-7xl mx-auto px-4 space-y-6">
@@ -43,6 +44,16 @@ export const Footer: React.FC<FooterProps> = ({ onOpenCatalog, onOpenGuide, dail
               >
                 <HelpCircle className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400" />
                 <span>使い方ガイド</span>
+              </button>
+            )}
+            {onOpenMap && (
+              <button
+                onClick={onOpenMap}
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-500 hover:to-emerald-500 text-white font-black text-xs shadow-md transition-all cursor-pointer whitespace-nowrap"
+              >
+                <MapIcon className="w-3.5 h-3.5 text-white" />
+                <span>全国レースマップ（日本地図から探す）</span>
+                <ChevronRight className="w-3.5 h-3.5" />
               </button>
             )}
             {onOpenCatalog && (

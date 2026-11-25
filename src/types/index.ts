@@ -25,6 +25,9 @@ export interface EventVenue {
   name: string;        // 正式な集合場所・受付会場・スタート地点（例: "道の駅ことなみ", "iti SETOUCHI"）
   address?: string;     // 集合場所の住所
   mapQuery?: string;    // Googleマップ用ピンポイント確定クエリ
+  lat?: number;         // 会場の緯度（マップピン表示用）
+  lng?: number;         // 会場の経度（マップピン表示用）
+  coordPrecision?: 'exact' | 'city' | 'prefecture'; // 座標精度（詳細会場/市区町村/都道府県代表）
 }
 
 export interface EventSource {

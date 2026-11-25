@@ -37,6 +37,7 @@ interface FilterSectionProps {
   onViewModeChange: (mode: ViewMode) => void;
   totalFilteredCount: number;
   favoriteIds?: string[];
+  onOpenMap?: () => void;
 }
 
 export const FilterSection: React.FC<FilterSectionProps> = ({
@@ -48,6 +49,7 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
   onViewModeChange,
   totalFilteredCount,
   favoriteIds = [],
+  onOpenMap,
 }) => {
   // スマホ表示用の詳細フィルター開閉トグル
   const [isMobileFiltersOpen, setIsMobileFiltersOpen] = React.useState(false);
@@ -497,6 +499,18 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
               <span>カード</span>
             </button>
           </div>
+
+          {onOpenMap && (
+            <button
+              type="button"
+              onClick={onOpenMap}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs sm:text-sm font-black border-2 border-teal-500 bg-teal-600 hover:bg-teal-500 text-white shadow-xs transition-all cursor-pointer whitespace-nowrap"
+              title="日本地図から地域・県・開催会場を選んで探す"
+            >
+              <Map className="w-3.5 h-3.5 shrink-0" />
+              <span>全国マップ</span>
+            </button>
+          )}
         </div>
       </div>
 

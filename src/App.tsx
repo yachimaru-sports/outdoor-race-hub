@@ -17,11 +17,12 @@ import { EventDetailModal } from './components/EventDetailModal';
 import { UpdateTicker, UPDATE_NEWS_DATA } from './components/UpdateTicker';
 import { Footer } from './components/Footer';
 import { GearCatalogPage } from './components/GearCatalogPage';
+import { RaceMapPage } from './components/RaceMapPage';
 import { ScrollToTopButton } from './components/ScrollToTopButton';
 import { MyRaceCountdownBanner } from './components/MyRaceCountdownBanner';
 import { HowToUseModal } from './components/HowToUseModal';
 import { trackEvent, trackPageView } from './utils/analytics';
-import { ShoppingBag, ChevronRight, HelpCircle, X } from 'lucide-react';
+import { ShoppingBag, ChevronRight, HelpCircle, X, Map as MapIcon } from 'lucide-react';
 
 export const App: React.FC = () => {
   // 現在日付を基準に、開催日や申込締切日が過ぎている大会は自動的に「closed（終了）」へリアルタイム補正
@@ -77,11 +78,12 @@ export const App: React.FC = () => {
   // 専門ギアマスター（定番おすすめ＆特価セール情報）
   const gears = useMemo(() => gearsData as GearItem[], []);
 
-  // 画面ルーティング管理 ('events': 大会一覧, 'gears': おすすめ商品専用ページ)
-  const [currentRoute, setCurrentRoute] = useState<'events' | 'gears'>(() => {
+  // 画面ルーティング管理 ('events': 大会一覧, 'gears': おすすめ商品専用ページ, 'map': 全国レースマップ)
+  const [currentRoute, setCurrentRoute] = useState<'events' | 'gears' | 'map'>(() => {
     if (typeof window !== 'undefined') {
       const hash = window.location.hash.toLowerCase();
       if (hash.includes('gear')) return 'gears';
+      if (hash.includes('map')) return 'map';
     }
     return 'events';
   });
@@ -91,6 +93,8 @@ export const App: React.FC = () => {
       const hash = window.location.hash.toLowerCase();
       if (hash.includes('gear')) {
         setCurrentRoute('gears');
+      } else if (hash.includes('map')) {
+        setCurrentRoute('map');
       } else {
         setCurrentRoute('events');
       }
@@ -99,19 +103,33 @@ export const App: React.FC = () => {
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
-  // ページ切り替え（大会一覧 / 商品一覧）をGA4で計測
+  // ページ切り替え（大会一覧 / 商品一覧 / 全国マップ）をGA4で計測
   useEffect(() => {
     trackPageView(currentRoute);
   }, [currentRoute]);
 
-  const navigateTo = (route: 'events' | 'gears') => {
+  const navigateTo = (route: 'events' | 'gears' | 'map') => {
     setCurrentRoute(route);
     if (route === 'gears') {
       window.location.hash = '#/gears';
+    } else if (route === 'map') {
+      window.location.hash = '#/map';
+      trackEvent('map_open', { source: 'navigation' });
     } else {
       window.location.hash = '#/';
     }
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  // 全国マップページから選択した地方・都道府県をP1フィルターへ引き継いで遷移
+  const handleApplyAreaFromMap = (region?: string, prefecture?: string) => {
+    setFilters((prev) => ({
+      ...prev,
+      region: region || 'all',
+      regionMode: region ? 'include' : undefined,
+      prefecture: prefecture || 'all',
+    }));
+    navigateTo('events');
   };
 
   // 使い方ガイドモーダル（?guide=1 クエリによる直リンク対応）＆ 初回限定1行バー表示管理
@@ -785,6 +803,50 @@ export const App: React.FC = () => {
 
   const dailyBg = useMemo(() => getDailySeasonalBackground(), []);
 
+  if (currentRoute === 'map') {
+    return (
+      <>
+        <RaceMapPage
+          events={events}
+          deals={deals}
+          gears={gears}
+          favoriteIds={favoriteIds}
+          theme={theme}
+          isPcView={isPcView}
+          showDisplayModeToggle={isNarrowScreen || displayMode !== 'auto'}
+          onToggleTheme={toggleTheme}
+          onToggleDisplayMode={toggleDisplayMode}
+          onToggleFavorite={handleToggleFavorite}
+          onSelectEvent={setSelectedEvent}
+          onBackToEvents={() => navigateTo('events')}
+          onOpenCatalog={() => navigateTo('gears')}
+          onOpenGuide={() => handleOpenGuide('header')}
+          onApplyAreaToEventsPage={handleApplyAreaFromMap}
+        />
+        <Footer
+          onOpenCatalog={() => navigateTo('gears')}
+          onOpenMap={() => navigateTo('map')}
+          onOpenGuide={() => handleOpenGuide('footer')}
+        />
+        {selectedEvent && (
+          <EventDetailModal
+            event={selectedEvent}
+            deals={deals}
+            gears={gears}
+            isFavorite={favoriteIds.includes(selectedEvent.id)}
+            onClose={() => setSelectedEvent(null)}
+            onOpenCatalog={() => {
+              setSelectedEvent(null);
+              navigateTo('gears');
+            }}
+          />
+        )}
+        <HowToUseModal isOpen={isGuideOpen} onClose={handleCloseGuide} />
+        <ScrollToTopButton />
+      </>
+    );
+  }
+
   if (currentRoute === 'gears') {
     return (
       <>
@@ -826,6 +888,7 @@ export const App: React.FC = () => {
             theme={theme}
             onToggleTheme={toggleTheme}
             onOpenCatalog={() => navigateTo('gears')}
+            onOpenMap={() => navigateTo('map')}
             onOpenGuide={() => handleOpenGuide('header')}
             isPcView={isPcView}
             onToggleDisplayMode={isNarrowScreen || displayMode !== 'auto' ? toggleDisplayMode : undefined}
@@ -957,39 +1020,78 @@ export const App: React.FC = () => {
             </div>
           );
         })()}
-        {/* ★ おすすめ商品専用カタログへのクイックジャンプバナー（スマホは1〜2行で超コンパクト） */}
-        <div
-          onClick={() => navigateTo('gears')}
-          className="group relative overflow-hidden rounded-xl sm:rounded-2xl bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 dark:from-amber-600 dark:via-orange-600 dark:to-amber-700 px-3 py-2 sm:p-4.5 text-slate-950 shadow-md hover:shadow-xl hover:scale-[1.008] transition-all cursor-pointer border border-amber-300 dark:border-amber-500 select-none"
-        >
-          <div className="flex flex-row items-center justify-between gap-2 sm:gap-3">
-            <div className="flex items-center gap-2 sm:gap-3 min-w-0">
-              <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-slate-950 text-amber-400 flex items-center justify-center shadow-md shrink-0 group-hover:scale-110 transition-transform">
-                <ShoppingBag className="w-4 h-4 sm:w-6 sm:h-6" />
-              </div>
-              <div className="min-w-0">
-                <div className="hidden sm:flex items-center gap-1.5 flex-wrap">
-                  <span className="px-2 py-0.5 rounded bg-slate-950 text-white text-[10px] font-black tracking-wider uppercase">
-                    専用ページOPEN
-                  </span>
-                  <span className="text-[11px] font-black text-slate-900 bg-white/80 px-2 py-0.5 rounded shadow-2xs">
-                    最大25%OFF セール連動
-                  </span>
+        {/* ★ 全国マップ ＆ おすすめ商品専用カタログへの2列並列クイックジャンプバナー */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5 sm:gap-3.5">
+          {/* 左バナー：全国レースマップ */}
+          <div
+            onClick={() => navigateTo('map')}
+            className="group relative overflow-hidden rounded-xl sm:rounded-2xl bg-gradient-to-r from-teal-700 via-emerald-600 to-teal-700 dark:from-teal-800 dark:via-emerald-800 dark:to-teal-900 px-3 py-2.5 sm:p-4 text-white shadow-md hover:shadow-xl hover:scale-[1.008] transition-all cursor-pointer border border-teal-400/70 dark:border-teal-500/60 select-none"
+          >
+            <div className="flex flex-row items-center justify-between gap-2 sm:gap-3">
+              <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+                <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-slate-950/90 text-teal-300 flex items-center justify-center shadow-md shrink-0 group-hover:scale-110 transition-transform">
+                  <MapIcon className="w-4 h-4 sm:w-6 sm:h-6" />
                 </div>
-                <h2 className="text-xs sm:text-base font-black tracking-tight text-slate-950 sm:mt-0.5 truncate sm:whitespace-normal">
-                  <span className="sm:hidden">必携品・おすすめギア特集（最大25%OFF）</span>
-                  <span className="hidden sm:inline">大会必携品・おすすめギア攻略カタログ専用ページはこちら</span>
-                </h2>
-                <p className="text-[11px] text-slate-900 font-bold hidden sm:block">
-                  トレイルラン・サイクル・アドベンチャー・ウルトラマラソンの必須装備28選を競技区分・種別ごとに徹底比較！
-                </p>
+                <div className="min-w-0">
+                  <div className="hidden sm:flex items-center gap-1.5 flex-wrap">
+                    <span className="px-2 py-0.5 rounded bg-slate-950 text-teal-300 text-[10px] font-black tracking-wider uppercase">
+                      NEW 地図検索
+                    </span>
+                    <span className="text-[11px] font-black text-slate-950 bg-white/90 px-2 py-0.5 rounded shadow-2xs">
+                      全国→地方→県内ピン 3段階ズーム
+                    </span>
+                  </div>
+                  <h2 className="text-xs sm:text-base font-black tracking-tight text-white sm:mt-0.5 truncate sm:whitespace-normal">
+                    <span className="sm:hidden">🗺️ 全国{totalEvents}大会を日本地図から探す</span>
+                    <span className="hidden sm:inline">全国{totalEvents}大会を日本地図から探す（県内開催地ピン対応）</span>
+                  </h2>
+                  <p className="text-[11px] text-teal-50/95 font-bold hidden sm:block">
+                    9地方・47都道府県＆海外の大会開催地を視覚的にズームして絞り込み！
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-1 px-2.5 py-1 sm:px-3.5 sm:py-2 rounded-lg sm:rounded-xl bg-slate-950 text-white font-black text-[11px] sm:text-xs shadow-md group-hover:bg-slate-900 transition-colors whitespace-nowrap shrink-0">
+                <span>地図を開く</span>
+                <ChevronRight className="w-3.5 h-3.5 text-teal-400 group-hover:translate-x-1 transition-transform" />
               </div>
             </div>
+          </div>
 
-            <div className="flex items-center gap-1 px-2.5 py-1 sm:px-4 sm:py-2 rounded-lg sm:rounded-xl bg-slate-950 text-white font-black text-[11px] sm:text-sm shadow-md group-hover:bg-slate-900 transition-colors whitespace-nowrap shrink-0">
-              <span className="sm:hidden">開く</span>
-              <span className="hidden sm:inline">専用カタログを開く</span>
-              <ChevronRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-400 group-hover:translate-x-1 transition-transform" />
+          {/* 右バナー：おすすめ商品専用カタログ */}
+          <div
+            onClick={() => navigateTo('gears')}
+            className="group relative overflow-hidden rounded-xl sm:rounded-2xl bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 dark:from-amber-600 dark:via-orange-600 dark:to-amber-700 px-3 py-2.5 sm:p-4 text-slate-950 shadow-md hover:shadow-xl hover:scale-[1.008] transition-all cursor-pointer border border-amber-300 dark:border-amber-500 select-none"
+          >
+            <div className="flex flex-row items-center justify-between gap-2 sm:gap-3">
+              <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+                <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-slate-950 text-amber-400 flex items-center justify-center shadow-md shrink-0 group-hover:scale-110 transition-transform">
+                  <ShoppingBag className="w-4 h-4 sm:w-6 sm:h-6" />
+                </div>
+                <div className="min-w-0">
+                  <div className="hidden sm:flex items-center gap-1.5 flex-wrap">
+                    <span className="px-2 py-0.5 rounded bg-slate-950 text-white text-[10px] font-black tracking-wider uppercase">
+                      専用ページOPEN
+                    </span>
+                    <span className="text-[11px] font-black text-slate-900 bg-white/80 px-2 py-0.5 rounded shadow-2xs">
+                      最大25%OFF セール連動
+                    </span>
+                  </div>
+                  <h2 className="text-xs sm:text-base font-black tracking-tight text-slate-950 sm:mt-0.5 truncate sm:whitespace-normal">
+                    <span className="sm:hidden">必携品・おすすめギア特集（最大25%OFF）</span>
+                    <span className="hidden sm:inline">大会必携品・おすすめギア攻略カタログ</span>
+                  </h2>
+                  <p className="text-[11px] text-slate-900 font-bold hidden sm:block">
+                    トレイル・サイクル・AR・ウルトラ必須装備を競技区分・種別ごとに徹底比較！
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-1 px-2.5 py-1 sm:px-3.5 sm:py-2 rounded-lg sm:rounded-xl bg-slate-950 text-white font-black text-[11px] sm:text-xs shadow-md group-hover:bg-slate-900 transition-colors whitespace-nowrap shrink-0">
+                <span className="sm:hidden">開く</span>
+                <span className="hidden sm:inline">カタログを開く</span>
+                <ChevronRight className="w-3.5 h-3.5 text-amber-400 group-hover:translate-x-1 transition-transform" />
+              </div>
             </div>
           </div>
         </div>
@@ -1050,6 +1152,7 @@ export const App: React.FC = () => {
             viewMode={viewMode}
             onViewModeChange={handleViewModeChange}
             totalFilteredCount={filteredEvents.length}
+            onOpenMap={() => navigateTo('map')}
           />
         </div>
 
@@ -1112,6 +1215,7 @@ export const App: React.FC = () => {
       {/* フッター */}
       <Footer
         onOpenCatalog={() => navigateTo('gears')}
+        onOpenMap={() => navigateTo('map')}
         onOpenGuide={() => handleOpenGuide('footer')}
         dailyBgCredit={
           dailyBg.sourceUrl

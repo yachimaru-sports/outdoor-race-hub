@@ -10,7 +10,7 @@ declare global {
   }
 }
 
-// カスタムイベント送信（申込ボタン・公式サイト・楽天商品・大会詳細閲覧のクリック追跡）
+// カスタムイベント送信（申込ボタン・公式サイト・楽天商品・大会詳細閲覧・マップ操作のクリック追跡）
 export const trackEvent = (
   eventName:
     | 'entry_click'
@@ -19,7 +19,11 @@ export const trackEvent = (
     | 'favorite_toggle'
     | 'calendar_add'
     | 'event_detail_view'
-    | 'guide_open',
+    | 'guide_open'
+    | 'map_open'
+    | 'map_zoom_region'
+    | 'map_zoom_prefecture'
+    | 'map_pin_click',
   params: Record<string, any> = {}
 ) => {
   if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
@@ -31,15 +35,22 @@ export const trackEvent = (
   }
 };
 
-// SPAのページ切り替え（大会一覧 / 商品一覧）をGA4のページビューとして計測
-export const trackPageView = (route: 'events' | 'gears') => {
+// SPAのページ切り替え（大会一覧 / 商品一覧 / 全国マップ）をGA4のページビューとして計測
+export const trackPageView = (route: 'events' | 'gears' | 'map') => {
   if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
     try {
-      const isGears = route === 'gears';
-      const pagePath = isGears ? '/outdoor-race-hub/#/gears' : '/outdoor-race-hub/';
-      const pageTitle = isGears
-        ? 'おすすめ商品・特価ギア | OUTDOOR RACE HUB'
-        : '大会一覧 | OUTDOOR RACE HUB';
+      const pagePath =
+        route === 'gears'
+          ? '/outdoor-race-hub/#/gears'
+          : route === 'map'
+          ? '/outdoor-race-hub/#/map'
+          : '/outdoor-race-hub/';
+      const pageTitle =
+        route === 'gears'
+          ? 'おすすめ商品・特価ギア | OUTDOOR RACE HUB'
+          : route === 'map'
+          ? '全国レースマップ | OUTDOOR RACE HUB'
+          : '大会一覧 | OUTDOOR RACE HUB';
 
       window.gtag('event', 'page_view', {
         page_path: pagePath,

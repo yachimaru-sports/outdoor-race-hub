@@ -14,9 +14,12 @@
     "fix:duplicates": "node scripts/audit-duplicates.mjs --fix",
     "check:links": "node scripts/verify-links.mjs",
     "heal:links": "node scripts/heal-links.mjs",
+    "geocode:events": "node scripts/geocode_events.mjs",
     "promo:video": "node scripts/generate_promo_video.mjs"
   },
   "dependencies": {
+    "@types/leaflet": "^1.9.23",
+    "leaflet": "^1.9.4",
     "lucide-react": "^1.16.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
