@@ -49,23 +49,32 @@ export function parseDistance(dist) {
 
 /**
  * タイトルの正規化（全角半角・年度・回数・括弧・記号を除去）
+ * 括弧を消すと短いシリーズ名のみになり別団体が区別できない場合は括弧内を残す
  */
 export function normalizeRaceTitle(title) {
   if (!title) return '';
-  return title
-    .normalize('NFKC')
-    .toLowerCase()
-    .replace(/【[^】]*】/g, '')
-    .replace(/\[[^\]]*\]/g, '')
-    .replace(/（[^）]*）/g, '')
-    .replace(/\([^)]*\)/g, '')
-    .replace(/第\s*\d+\s*回?/g, '')
-    .replace(/202[4-9]/g, '')
-    .replace(/\b\d+km\b/gi, '')
-    .replace(/\b\d+k\b/gi, '')
-    .replace(/\b100mile\b/gi, '')
-    .replace(/[\s\-_・＆&~〜/／:：!！?？]+/g, '')
-    .trim();
+  const cleanCommon = (s) =>
+    s
+      .replace(/第\s*\d+\s*回?/g, '')
+      .replace(/202[4-9]/g, '')
+      .replace(/\b\d+km\b/gi, '')
+      .replace(/\b\d+k\b/gi, '')
+      .replace(/\b100mile\b/gi, '')
+      .replace(/[\s\-_・＆&~〜/／:：!！?？]+/g, '')
+      .trim();
+
+  const base = title.normalize('NFKC').toLowerCase();
+  const stripped = cleanCommon(
+    base
+      .replace(/【[^】]*】/g, '')
+      .replace(/\[[^\]]*\]/g, '')
+      .replace(/（[^）]*）/g, '')
+      .replace(/\([^)]*\)/g, '')
+  );
+  if (stripped.length >= 5) return stripped;
+
+  // 2027BRM（AJ神奈川）のように括弧外が短い場合は括弧記号のみ除去して団体名等を保持
+  return cleanCommon(base.replace(/[【】\[\]（）()]/g, ''));
 }
 
 /**

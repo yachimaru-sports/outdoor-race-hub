@@ -115,6 +115,10 @@ jobs:
         if: ${{ steps.events.outcome == 'failure' }}
         run: git checkout -- src/data/events.json src/data/events_archive.json src/data/changelog.json
 
+      - name: "Step 2.6: 新着大会の全国マップ座標を自動付与"
+        continue-on-error: true
+        run: node scripts/geocode_events.mjs
+
       - name: "Step 2.8: 本日のピックアップ大会・開催地風景背景を更新"
         continue-on-error: true
         env:

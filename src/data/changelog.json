@@ -1,5 +1,59 @@
 [
   {
+    "id": "portal-add-trjp-arataki-samurai-trail-2027-2026-11-26",
+    "date": "2026-11-26",
+    "time": "07:45",
+    "type": "event_added",
+    "title": "新着大会追加: 荒滝SAMURAIトレイル 2027（山口県）",
+    "detail": "山口県 / 2027-02-27（トレイルランナー.JP）",
+    "eventId": "trjp-arataki-samurai-trail-2027"
+  },
+  {
+    "id": "portal-add-spoen-cycle-107674-2026-11-26",
+    "date": "2026-11-26",
+    "time": "07:45",
+    "type": "event_added",
+    "title": "新着大会追加: 2027BRM（AJ西東京）",
+    "detail": "茨城県 / 2027-02-01（スポエンCYCLE）",
+    "eventId": "spoen-cycle-107674"
+  },
+  {
+    "id": "portal-add-spoen-cycle-107430-2026-11-26",
+    "date": "2026-11-26",
+    "time": "07:45",
+    "type": "event_added",
+    "title": "新着大会追加: BRM2027（AJ広島）",
+    "detail": "岡山県 / 2026-11-26（スポエンCYCLE）",
+    "eventId": "spoen-cycle-107430"
+  },
+  {
+    "id": "portal-add-spoen-cycle-107270-2026-11-26",
+    "date": "2026-11-26",
+    "time": "07:45",
+    "type": "event_added",
+    "title": "新着大会追加: 2027BRM（オダックス埼玉）",
+    "detail": "埼玉県 / 2026-11-26（スポエンCYCLE）",
+    "eventId": "spoen-cycle-107270"
+  },
+  {
+    "id": "portal-add-spoen-cycle-107230-2026-11-26",
+    "date": "2026-11-26",
+    "time": "07:45",
+    "type": "event_added",
+    "title": "新着大会追加: 2027BRM（AJ福岡 R熊本 AJ長崎 AR鹿児島）",
+    "detail": "福岡県 / 2026-11-26（スポエンCYCLE）",
+    "eventId": "spoen-cycle-107230"
+  },
+  {
+    "id": "portal-add-spoen-cycle-102706-2026-11-26",
+    "date": "2026-11-26",
+    "time": "07:45",
+    "type": "event_added",
+    "title": "新着大会追加: 2026BRM（AJ千葉）",
+    "detail": "千葉県 / 2026-11-26（スポエンCYCLE）",
+    "eventId": "spoen-cycle-102706"
+  },
+  {
     "id": "ev-sync-2026-11-25",
     "date": "2026-11-25",
     "time": "06:41",

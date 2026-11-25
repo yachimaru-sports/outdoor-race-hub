@@ -82,6 +82,21 @@ function stripHtml(html) {
 }
 
 /**
+ * 既存大会の会場座標（lat/lng/coordPrecision）を保持しつつ新しい会場情報を反映
+ */
+function mergeVenuePreservingCoords(existingVenue, incomingVenue) {
+  const merged = { ...(existingVenue || {}), ...(incomingVenue || {}) };
+  if (existingVenue?.lat != null && existingVenue?.lng != null) {
+    merged.lat = existingVenue.lat;
+    merged.lng = existingVenue.lng;
+    if (existingVenue.coordPrecision) {
+      merged.coordPrecision = existingVenue.coordPrecision;
+    }
+  }
+  return merged;
+}
+
+/**
  * 既存リストとの重複チェック（タイトル正規化 + 日付近接）
  */
 function findDuplicateIndex(events, candidate) {
@@ -798,10 +813,11 @@ async function main() {
   for (const r of jinrikiRaces) {
     const dupIdx = findDuplicateIndex(events, r);
     if (dupIdx >= 0) {
-      // 既存更新（ただし added_at 等は保持しつつ最新化）
+      // 既存更新（ただし added_at・地図座標等は保持しつつ最新化）
       events[dupIdx] = {
         ...events[dupIdx],
         ...r,
+        venue: mergeVenuePreservingCoords(events[dupIdx].venue, r.venue),
         added_at: events[dupIdx].added_at || r.added_at,
       };
       updated++;
@@ -863,7 +879,12 @@ async function main() {
     const dupIdx = findDuplicateIndex(events, ev);
     if (dupIdx >= 0) {
       if (events[dupIdx].id === ev.id) {
-        events[dupIdx] = { ...events[dupIdx], ...ev, added_at: events[dupIdx].added_at || ev.added_at };
+        events[dupIdx] = {
+          ...events[dupIdx],
+          ...ev,
+          venue: mergeVenuePreservingCoords(events[dupIdx].venue, ev.venue),
+          added_at: events[dupIdx].added_at || ev.added_at,
+        };
         spoenUpdated++;
       }
       continue;
