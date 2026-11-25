@@ -311,15 +311,17 @@ export const PrefecturePinMap: React.FC<PrefecturePinMapProps> = ({
 
     if (latLngs.length > 1) {
       const bounds = L.latLngBounds(latLngs);
-      map.fitBounds(bounds, {
-        padding: [40, 40],
+      map.flyToBounds(bounds, {
+        padding: [44, 44],
         maxZoom: isOverseas ? 4 : 11,
-        animate: true,
+        duration: 0.65,
       });
     } else if (latLngs.length === 1) {
-      map.setView(latLngs[0], isOverseas ? 5 : Math.max(fallbackZoom, 10), { animate: true });
+      map.flyTo(latLngs[0], isOverseas ? 5 : Math.max(fallbackZoom, 10), {
+        duration: 0.6,
+      });
     } else {
-      map.setView(fallbackCenter, fallbackZoom, { animate: true });
+      map.flyTo(fallbackCenter, fallbackZoom, { duration: 0.55 });
     }
     // selectedEventId 変更だけで fitBounds し直さないように positionedEvents 等を依存にする
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -356,7 +358,9 @@ export const PrefecturePinMap: React.FC<PrefecturePinMapProps> = ({
       marker.setZIndexOffset(isSelected ? 1000 : isOpen ? 200 : 0);
 
       if (isSelected) {
-        map.panTo(marker.getLatLng(), { animate: true });
+        map.flyTo(marker.getLatLng(), Math.max(map.getZoom(), isOverseas ? 5 : 10), {
+          duration: 0.5,
+        });
         if (!marker.isPopupOpen()) {
           marker.openPopup();
         }
@@ -370,7 +374,7 @@ export const PrefecturePinMap: React.FC<PrefecturePinMapProps> = ({
   );
 
   return (
-    <div className="space-y-2.5">
+    <div className="space-y-2.5 animate-map-zoom-land">
       {/* 地図上部：コントロール＆凡例 */}
       <div className="flex flex-wrap items-center justify-between gap-2">
         <div className="flex items-center gap-2 flex-wrap">

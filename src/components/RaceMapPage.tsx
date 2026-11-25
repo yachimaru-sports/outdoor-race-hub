@@ -124,6 +124,8 @@ export const RaceMapPage: React.FC<RaceMapPageProps> = ({
   const [selectedRegionId, setSelectedRegionId] = useState<MapRegionId | null>(null);
   const [selectedPrefecture, setSelectedPrefecture] = useState<string | null>(null);
   const [isOverseas, setIsOverseas] = useState<boolean>(false);
+  // Lv.3県内地図から戻る際に、元の県から滑らかにズームアウトするための情報
+  const [zoomOutFromPrefecture, setZoomOutFromPrefecture] = useState<string | null>(null);
 
   // ピン選択と連動制御
   const [selectedPinEventId, setSelectedPinEventId] = useState<string | null>(null);
@@ -272,6 +274,11 @@ export const RaceMapPage: React.FC<RaceMapPageProps> = ({
 
   // 階層操作ハンドラ
   const handleResetToNational = () => {
+    if (selectedPrefecture) {
+      setZoomOutFromPrefecture(selectedPrefecture);
+    } else {
+      setZoomOutFromPrefecture(null);
+    }
     setSelectedRegionId(null);
     setSelectedPrefecture(null);
     setIsOverseas(false);
@@ -309,6 +316,7 @@ export const RaceMapPage: React.FC<RaceMapPageProps> = ({
 
   const handleSelectPrefecture = (prefName: string) => {
     setIsOverseas(false);
+    setZoomOutFromPrefecture(null);
     const meta = PREFECTURE_BY_NAME[prefName];
     if (meta) {
       setSelectedRegionId(meta.regionId);
@@ -326,8 +334,11 @@ export const RaceMapPage: React.FC<RaceMapPageProps> = ({
       return;
     }
     if (selectedPrefecture) {
+      setZoomOutFromPrefecture(selectedPrefecture);
       if (selectedRegionId === 'hokkaido' || selectedRegionId === 'okinawa') {
-        handleResetToNational();
+        setSelectedRegionId(null);
+        setSelectedPrefecture(null);
+        setIsOverseas(false);
       } else {
         setSelectedPrefecture(null);
       }
@@ -509,6 +520,9 @@ export const RaceMapPage: React.FC<RaceMapPageProps> = ({
                     ) {
                       return;
                     }
+                    if (selectedPrefecture) {
+                      setZoomOutFromPrefecture(selectedPrefecture);
+                    }
                     setSelectedPrefecture(null);
                     setSelectedPinEventId(null);
                     setPinOnlyFilter(false);
@@ -685,6 +699,8 @@ export const RaceMapPage: React.FC<RaceMapPageProps> = ({
             <JapanDotMap
               events={attributeFilteredEvents}
               selectedRegionId={selectedRegionId}
+              initialZoomFromPrefecture={zoomOutFromPrefecture}
+              onConsumeInitialZoom={() => setZoomOutFromPrefecture(null)}
               onSelectRegion={handleSelectRegion}
               onSelectPrefecture={handleSelectPrefecture}
               onResetToNational={handleResetToNational}

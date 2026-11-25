@@ -389,6 +389,24 @@ async function main() {
     h: Number((okinawaBox[3] - okinawaBox[1]).toFixed(1)),
   };
 
+  // 各都道府県ごとのズーム先 viewBox（余白 14%）
+  const prefViewBoxes = {};
+  for (let c = 1; c <= 47; c++) {
+    const p = prefDataMap[c];
+    if (!p) continue;
+    const box = c === 1 || c === 47 ? p.bbox : p.mainBbox;
+    const rw = box[2] - box[0];
+    const rh = box[3] - box[1];
+    const padX = Math.max(4, rw * 0.14);
+    const padY = Math.max(4, rh * 0.14);
+    prefViewBoxes[c] = {
+      x: Number((box[0] - padX).toFixed(1)),
+      y: Number((box[1] - padY).toFixed(1)),
+      w: Number((rw + padX * 2).toFixed(1)),
+      h: Number((rh + padY * 2).toFixed(1)),
+    };
+  }
+
   const prefEntries = Object.entries(prefDataMap)
     .sort((a, b) => Number(a[0]) - Number(b[0]))
     .map(([code, data]) => `  ${code}: { d: '${data.d}', labelX: ${data.labelX}, labelY: ${data.labelY} }`)
@@ -398,8 +416,13 @@ async function main() {
     .map(([id, vb]) => `  ${id}: { x: ${vb.x}, y: ${vb.y}, w: ${vb.w}, h: ${vb.h} }`)
     .join(',\n');
 
+  const prefBoxEntries = Object.entries(prefViewBoxes)
+    .sort((a, b) => Number(a[0]) - Number(b[0]))
+    .map(([code, vb]) => `  ${code}: { x: ${vb.x}, y: ${vb.y}, w: ${vb.w}, h: ${vb.h} }`)
+    .join(',\n');
+
   const tsContent = `// 自動生成ファイル（scripts/build_japan_pref_paths.mjs により生成）
-// 日本47都道府県のSVGポリゴンパス＆全国・地方別タイトviewBox＆共通投影関数
+// 日本47都道府県のSVGポリゴンパス＆全国・地方・都道府県別タイトviewBox＆共通投影関数
 
 import type { MapRegionId } from './japanMapData';
 
@@ -440,6 +463,11 @@ export const OKINAWA_BBOX: RegionViewBox = ${JSON.stringify(okinawaInfo)};
 /** 9地方ブロックごとの本土フィット最適viewBox（余白約4.5%タイト設計） */
 export const REGION_VIEWBOXES: Record<MapRegionId, RegionViewBox> = {
 ${regionEntries}
+};
+
+/** 47都道府県ごとのズーム先viewBox（余白約14%設計・JISコード 1〜47） */
+export const PREF_VIEWBOXES: Record<number, RegionViewBox> = {
+${prefBoxEntries}
 };
 
 /** 47都道府県の簡略化SVGポリゴンパス（JISコード 1〜47） */

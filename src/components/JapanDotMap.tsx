@@ -1,10 +1,12 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { RaceEvent, EventCategory } from '../types';
 import {
   PREF_SVG_PATHS,
   REGION_VIEWBOXES,
+  PREF_VIEWBOXES,
   NATIONAL_VIEWBOX,
   OKINAWA_BBOX,
+  RegionViewBox,
   projectLatLngToMapXY,
 } from '../data/japanPrefPaths';
 import {
@@ -12,6 +14,7 @@ import {
   MAP_REGION_BY_ID,
   PREFECTURES_META,
   PREFECTURE_BY_CODE,
+  PREFECTURE_BY_NAME,
   MapRegionId,
   getMapRegionIdByPrefecture,
 } from '../data/japanMapData';
@@ -20,6 +23,8 @@ import { ArrowLeft, Globe, ChevronRight, MapPin, Compass } from 'lucide-react';
 interface JapanDotMapProps {
   events: RaceEvent[];
   selectedRegionId: MapRegionId | null;
+  initialZoomFromPrefecture?: string | null;
+  onConsumeInitialZoom?: () => void;
   onSelectRegion: (regionId: MapRegionId | 'overseas') => void;
   onSelectPrefecture: (prefectureName: string) => void;
   onResetToNational: () => void;
@@ -33,8 +38,9 @@ const OKI_ORIG_CENTER_X = OKINAWA_BBOX.x + OKINAWA_BBOX.w / 2;
 const OKI_ORIG_CENTER_Y = OKINAWA_BBOX.y + OKINAWA_BBOX.h / 2;
 const OKI_TX = OKI_TARGET_CENTER_X - OKI_ORIG_CENTER_X * OKI_SCALE;
 const OKI_TY = OKI_TARGET_CENTER_Y - OKI_ORIG_CENTER_Y * OKI_SCALE;
+const OKI_INSET_VIEWBOX: RegionViewBox = { x: 520, y: 585, w: 325, h: 160 };
 
-// 9地方の吹き出し位置（NATIONAL_VIEWBOX アスペクト比に完全一致したパーセント座標）
+// 9地方の吹き出し位置（NATIONAL_VIEWBOX 座標系パーセント）
 const CALLOUT_LAYOUT: Record<
   MapRegionId,
   { leftPct: number; topPct: number; pointer: 'down-left' | 'down-right' | 'up-left' | 'up-right' }
@@ -58,15 +64,214 @@ const EVENT_DOT_COLOR: Record<EventCategory, string> = {
   adventure: '#d97706',
 };
 
+type ZoomingTarget =
+  | { kind: 'pref'; prefName: string; box: RegionViewBox }
+  | { kind: 'region-direct'; regionId: 'hokkaido' | 'okinawa'; box: RegionViewBox }
+  | null;
+
+function easeInOutCubic(t: number): number {
+  return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+}
+
+function resolveStartBoxFromPref(prefName?: string | null): RegionViewBox | null {
+  if (!prefName) return null;
+  if (prefName === '沖縄県') return OKI_INSET_VIEWBOX;
+  const meta = PREFECTURE_BY_NAME[prefName];
+  if (meta && PREF_VIEWBOXES[meta.code]) {
+    return PREF_VIEWBOXES[meta.code];
+  }
+  return null;
+}
+
+function boxesNearlyEqual(a: RegionViewBox, b: RegionViewBox): boolean {
+  return (
+    Math.abs(a.x - b.x) < 0.2 &&
+    Math.abs(a.y - b.y) < 0.2 &&
+    Math.abs(a.w - b.w) < 0.2 &&
+    Math.abs(a.h - b.h) < 0.2
+  );
+}
+
 export const JapanDotMap: React.FC<JapanDotMapProps> = ({
   events,
   selectedRegionId,
+  initialZoomFromPrefecture,
+  onConsumeInitialZoom,
   onSelectRegion,
   onSelectPrefecture,
   onResetToNational,
 }) => {
   const [hoveredRegion, setHoveredRegion] = useState<MapRegionId | 'overseas' | null>(null);
   const [hoveredPrefCode, setHoveredPrefCode] = useState<number | null>(null);
+  const [zoomingTarget, setZoomingTarget] = useState<ZoomingTarget>(null);
+  const [showOkinawaInsetDuringExit] = useState<boolean>(
+    () => initialZoomFromPrefecture === '沖縄県'
+  );
+
+  // カメラ補間状態（単一SVG viewBoxを滑らかに補間）
+  const initialBox = useMemo<RegionViewBox>(() => {
+    const fromPref = resolveStartBoxFromPref(initialZoomFromPrefecture);
+    if (fromPref) return fromPref;
+    return selectedRegionId ? REGION_VIEWBOXES[selectedRegionId] : NATIONAL_VIEWBOX;
+    // 初回マウント時のみ計算
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const [animatedBox, setAnimatedBox] = useState<RegionViewBox>(initialBox);
+  const currentBoxRef = useRef<RegionViewBox>(initialBox);
+  const rafIdRef = useRef<number | null>(null);
+  const animTokenRef = useRef<number>(0);
+
+  // 最新コールバック参照
+  const onSelectRegionRef = useRef(onSelectRegion);
+  onSelectRegionRef.current = onSelectRegion;
+  const onSelectPrefectureRef = useRef(onSelectPrefecture);
+  onSelectPrefectureRef.current = onSelectPrefecture;
+  const onConsumeInitialZoomRef = useRef(onConsumeInitialZoom);
+  onConsumeInitialZoomRef.current = onConsumeInitialZoom;
+
+  // 親側で選択地域が変わったら一時ズームターゲットをクリア
+  useEffect(() => {
+    setZoomingTarget(null);
+    setHoveredRegion(null);
+    setHoveredPrefCode(null);
+  }, [selectedRegionId]);
+
+  // 目標 viewBox の決定
+  const targetBox: RegionViewBox = useMemo(() => {
+    if (zoomingTarget) return zoomingTarget.box;
+    return selectedRegionId ? REGION_VIEWBOXES[selectedRegionId] : NATIONAL_VIEWBOX;
+  }, [zoomingTarget, selectedRegionId]);
+
+  // 親側で渡された戻りズーム元県名を初回マウント時に消費
+  useEffect(() => {
+    if (initialZoomFromPrefecture) {
+      onConsumeInitialZoomRef.current?.();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // 目標 viewBox が変わるたびに requestAnimationFrame で滑らかにカメラズーム補間
+  useEffect(() => {
+    const from = currentBoxRef.current;
+    const to = targetBox;
+
+    if (boxesNearlyEqual(from, to)) {
+      currentBoxRef.current = to;
+      setAnimatedBox(to);
+      if (zoomingTarget) {
+        if (zoomingTarget.kind === 'pref') {
+          onSelectPrefectureRef.current(zoomingTarget.prefName);
+        } else {
+          onSelectRegionRef.current(zoomingTarget.regionId);
+        }
+      }
+      return;
+    }
+
+    const prefersReduced =
+      typeof window !== 'undefined' &&
+      window.matchMedia &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (prefersReduced) {
+      currentBoxRef.current = to;
+      setAnimatedBox(to);
+      if (zoomingTarget) {
+        if (zoomingTarget.kind === 'pref') {
+          onSelectPrefectureRef.current(zoomingTarget.prefName);
+        } else {
+          onSelectRegionRef.current(zoomingTarget.regionId);
+        }
+      }
+      return;
+    }
+
+    if (rafIdRef.current !== null) {
+      cancelAnimationFrame(rafIdRef.current);
+      rafIdRef.current = null;
+    }
+
+    const token = ++animTokenRef.current;
+    const duration = zoomingTarget ? 380 : 500;
+    const startTime = performance.now();
+
+    const step = (now: number) => {
+      if (animTokenRef.current !== token) return;
+      const elapsed = now - startTime;
+      const rawT = Math.min(1, elapsed / duration);
+      const t = easeInOutCubic(rawT);
+
+      const next: RegionViewBox = {
+        x: from.x + (to.x - from.x) * t,
+        y: from.y + (to.y - from.y) * t,
+        w: from.w + (to.w - from.w) * t,
+        h: from.h + (to.h - from.h) * t,
+      };
+      currentBoxRef.current = next;
+      setAnimatedBox(next);
+
+      if (rawT < 1) {
+        rafIdRef.current = requestAnimationFrame(step);
+      } else {
+        rafIdRef.current = null;
+        currentBoxRef.current = to;
+        setAnimatedBox(to);
+        if (zoomingTarget) {
+          if (zoomingTarget.kind === 'pref') {
+            onSelectPrefectureRef.current(zoomingTarget.prefName);
+          } else {
+            onSelectRegionRef.current(zoomingTarget.regionId);
+          }
+        }
+      }
+    };
+
+    rafIdRef.current = requestAnimationFrame(step);
+
+    return () => {
+      if (rafIdRef.current !== null) {
+        cancelAnimationFrame(rafIdRef.current);
+        rafIdRef.current = null;
+      }
+    };
+  }, [targetBox, zoomingTarget]);
+
+  // 地方・都道府県クリック時のズームイン開始ハンドラ
+  const handleClickRegion = (regionId: MapRegionId | 'overseas') => {
+    if (zoomingTarget) return;
+    if (regionId === 'hokkaido') {
+      setZoomingTarget({
+        kind: 'region-direct',
+        regionId: 'hokkaido',
+        box: REGION_VIEWBOXES.hokkaido,
+      });
+      return;
+    }
+    if (regionId === 'okinawa') {
+      setZoomingTarget({
+        kind: 'region-direct',
+        regionId: 'okinawa',
+        box: OKI_INSET_VIEWBOX,
+      });
+      return;
+    }
+    onSelectRegion(regionId);
+  };
+
+  const handleClickPrefecture = (prefName: string) => {
+    if (zoomingTarget) return;
+    const meta = PREFECTURE_BY_NAME[prefName];
+    if (meta && PREF_VIEWBOXES[meta.code]) {
+      setZoomingTarget({
+        kind: 'pref',
+        prefName,
+        box: PREF_VIEWBOXES[meta.code],
+      });
+    } else {
+      onSelectPrefecture(prefName);
+    }
+  };
 
   // 現在の絞り込み条件に合致する大会を「9地方」「47都道府県」「海外」へ集計
   const { regionStats, prefStats, overseasStats } = useMemo(() => {
@@ -119,108 +324,111 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
     return { regionStats: rStats, prefStats: pStats, overseasStats: oStats };
   }, [events]);
 
-  // 全国ビュー用の全国内大会ドット座標（本土・沖縄別）
-  const { nationalMainlandDots, nationalOkinawaDots } = useMemo(() => {
-    const mainland: { id: string; x: number; y: number; color: string }[] = [];
-    const okinawa: { id: string; x: number; y: number; color: string }[] = [];
+  // 大会開催地ドット（本土46都道府県用 ＆ 沖縄インセット用）
+  const { mainlandDots, okinawaDots } = useMemo(() => {
+    const mainAll: { id: string; regionId: MapRegionId; x: number; y: number; color: string }[] = [];
+    const okiAll: { id: string; x: number; y: number; color: string }[] = [];
 
-    for (const ev of events) {
+    const sourceEvents = selectedRegionId
+      ? events.filter((ev) => getMapRegionIdByPrefecture(ev.prefecture) === selectedRegionId)
+      : events;
+
+    const groups = new Map<string, RaceEvent[]>();
+    for (const ev of sourceEvents) {
       if (typeof ev.venue?.lat !== 'number' || typeof ev.venue?.lng !== 'number') continue;
       const rId = getMapRegionIdByPrefecture(ev.prefecture);
       if (rId === 'overseas') continue;
-      const pt = projectLatLngToMapXY(ev.venue.lat, ev.venue.lng);
-      const item = {
-        id: ev.id,
-        x: pt.x,
-        y: pt.y,
-        color: EVENT_DOT_COLOR[ev.category] || '#0f766e',
-      };
-      if (rId === 'okinawa') {
-        okinawa.push(item);
-      } else {
-        mainland.push(item);
-      }
+      const key = `${rId}:${ev.venue.lat.toFixed(3)},${ev.venue.lng.toFixed(3)}`;
+      const arr = groups.get(key) || [];
+      arr.push(ev);
+      groups.set(key, arr);
     }
-    return { nationalMainlandDots: mainland, nationalOkinawaDots: okinawa };
-  }, [events]);
 
-  // 地方ズーム時の対象都道府県リスト・viewBox・開催地ピン座標算出
+    const regionBox = selectedRegionId ? REGION_VIEWBOXES[selectedRegionId] : null;
+    const regionUnit = regionBox ? Math.max(regionBox.w / 1200, regionBox.h / 620) : 1;
+
+    for (const list of groups.values()) {
+      list.forEach((ev, idx) => {
+        const rId = getMapRegionIdByPrefecture(ev.prefecture);
+        if (rId === 'overseas') return;
+        const base = projectLatLngToMapXY(ev.venue!.lat!, ev.venue!.lng!);
+        let x = base.x;
+        let y = base.y;
+        if (list.length > 1 && selectedRegionId) {
+          const angle = (2 * Math.PI * idx) / list.length;
+          const radius = regionUnit * (8.5 + Math.floor(idx / 6) * 6.0);
+          x += Math.cos(angle) * radius;
+          y += Math.sin(angle) * radius;
+        }
+        const color = EVENT_DOT_COLOR[ev.category] || '#0f766e';
+        if (rId === 'okinawa') {
+          okiAll.push({ id: ev.id, x, y, color });
+        } else {
+          mainAll.push({ id: ev.id, regionId: rId, x, y, color });
+        }
+      });
+    }
+
+    return { mainlandDots: mainAll, okinawaDots: okiAll };
+  }, [events, selectedRegionId]);
+
   const zoomedRegionConfig = selectedRegionId ? MAP_REGION_BY_ID[selectedRegionId] : null;
   const zoomedPrefs = useMemo(() => {
     if (!selectedRegionId) return [];
     return PREFECTURES_META.filter((p) => p.regionId === selectedRegionId);
   }, [selectedRegionId]);
 
-  const zoomedRegionBox = selectedRegionId ? REGION_VIEWBOXES[selectedRegionId] : null;
-
-  // 地方ズーム内の大会開催地（緯度・経度 → SVG座標）＋ 同座標重なり防止の微小展開
-  const zoomedEventDots = useMemo(() => {
-    if (!selectedRegionId || !zoomedRegionBox) return [];
-    const unit = Math.max(zoomedRegionBox.w / 1200, zoomedRegionBox.h / 620);
-    const regionEvents = events.filter(
-      (ev) =>
-        getMapRegionIdByPrefecture(ev.prefecture) === selectedRegionId &&
-        typeof ev.venue?.lat === 'number' &&
-        typeof ev.venue?.lng === 'number'
-    );
-
-    const groups = new Map<string, RaceEvent[]>();
-    for (const ev of regionEvents) {
-      const key = `${ev.venue!.lat!.toFixed(3)},${ev.venue!.lng!.toFixed(3)}`;
-      const arr = groups.get(key) || [];
-      arr.push(ev);
-      groups.set(key, arr);
-    }
-
-    const plotted: { id: string; x: number; y: number; color: string }[] = [];
-    for (const list of groups.values()) {
-      list.forEach((ev, idx) => {
-        const base = projectLatLngToMapXY(ev.venue!.lat!, ev.venue!.lng!);
-        let x = base.x;
-        let y = base.y;
-        if (list.length > 1) {
-          const angle = (2 * Math.PI * idx) / list.length;
-          const radius = unit * (8.5 + Math.floor(idx / 6) * 6.0);
-          x += Math.cos(angle) * radius;
-          y += Math.sin(angle) * radius;
-        }
-        plotted.push({
-          id: ev.id,
-          x,
-          y,
-          color: EVENT_DOT_COLOR[ev.category] || '#0f766e',
-        });
-      });
-    }
-    return plotted;
-  }, [events, selectedRegionId, zoomedRegionBox]);
-
   const hoveredPrefMeta = hoveredPrefCode ? PREFECTURE_BY_CODE[hoveredPrefCode] : null;
   const hoveredPrefStat = hoveredPrefMeta ? prefStats[hoveredPrefMeta.name] : undefined;
 
-  // ========================================================
-  // Lv.2：地方ズームビュー（くっきり県境枠つき・画面一杯ワイド大型表示）
-  // ========================================================
-  if (selectedRegionId && zoomedRegionConfig && zoomedRegionBox) {
-    const rStat = regionStats[selectedRegionId];
-    const vb = zoomedRegionBox;
-    // 表示幅・高さどちらでフィットしても画面上の文字サイズが約20px（従来の2倍超）になるスケール基準
-    const unit = Math.max(vb.w / 1200, vb.h / 620);
-    // ホバー中の県を最後（最前面）に描画して枠線が欠けないようにする
-    const orderedZoomedPrefs = [...zoomedPrefs].sort((a, b) => {
-      if (a.code === hoveredPrefCode) return 1;
-      if (b.code === hoveredPrefCode) return -1;
-      return a.code - b.code;
-    });
+  // 現在描画する本土ポリゴンの描画順（アクティブ地方・ホバー県を手前に）
+  const orderedMainlandPrefs = useMemo(() => {
+    return [...PREFECTURES_META]
+      .filter((p) => p.code !== 47)
+      .sort((a, b) => {
+        if (a.code === hoveredPrefCode) return 1;
+        if (b.code === hoveredPrefCode) return -1;
+        const aInSelected = selectedRegionId && a.regionId === selectedRegionId ? 1 : 0;
+        const bInSelected = selectedRegionId && b.regionId === selectedRegionId ? 1 : 0;
+        if (aInSelected !== bInSelected) return aInSelected - bInSelected;
+        const aRegHover = hoveredRegion === a.regionId ? 1 : 0;
+        const bRegHover = hoveredRegion === b.regionId ? 1 : 0;
+        if (aRegHover !== bRegHover) return aRegHover - bRegHover;
+        return a.code - b.code;
+      });
+  }, [hoveredPrefCode, hoveredRegion, selectedRegionId]);
 
-    return (
-      <div className="space-y-3 sm:space-y-4">
-        {/* 地方ヘッダーバー */}
-        <div className="flex flex-wrap items-center justify-between gap-2 pb-2.5 border-b border-slate-200 dark:border-slate-800">
+  const okinawaPref = PREFECTURE_BY_CODE[47];
+  const okinawaPath = PREF_SVG_PATHS[47];
+  const isOkinawaHover = hoveredRegion === 'okinawa' || hoveredPrefCode === 47;
+  const okinawaCfg = MAP_REGION_BY_ID.okinawa;
+
+  // 地方ビュー用ラベルスケール（現在の地方ターゲット基準）
+  const regionUnit = useMemo(() => {
+    if (!selectedRegionId) return 1;
+    const vb = REGION_VIEWBOXES[selectedRegionId];
+    return Math.max(vb.w / 1200, vb.h / 620);
+  }, [selectedRegionId]);
+
+  const showNationalCallouts = !selectedRegionId && !zoomingTarget;
+  const showRegionLabels = Boolean(selectedRegionId && !zoomingTarget);
+  const showOkinawaInset =
+    !selectedRegionId ||
+    zoomingTarget?.kind === 'region-direct' ||
+    showOkinawaInsetDuringExit;
+
+  return (
+    <div className="space-y-3 sm:space-y-4">
+      {/* 上部バー：全国時（操作案内） / 地方時（戻る＆地方名）— 高さを揃えて切替時のガタつきを抑止 */}
+      {selectedRegionId && zoomedRegionConfig ? (
+        <div className="flex flex-wrap items-center justify-between gap-2 min-h-[38px] pb-2 border-b border-slate-200 dark:border-slate-800">
           <div className="flex items-center gap-2.5 flex-wrap">
             <button
               type="button"
-              onClick={onResetToNational}
+              onClick={() => {
+                setZoomingTarget(null);
+                onResetToNational();
+              }}
               className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-100 text-xs sm:text-sm font-black border border-slate-300 dark:border-slate-700 transition-colors cursor-pointer"
             >
               <ArrowLeft className="w-4 h-4" />
@@ -236,11 +444,11 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
                 {zoomedRegionConfig.fullName}
               </h2>
               <span className="px-3 py-0.5 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-950 font-mono font-black text-xs sm:text-sm">
-                {rStat.total}大会
+                {regionStats[selectedRegionId].total}大会
               </span>
-              {rStat.open > 0 && (
+              {regionStats[selectedRegionId].open > 0 && (
                 <span className="px-2.5 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950/70 text-emerald-800 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-700 font-black text-xs sm:text-sm">
-                  受付中 {rStat.open}
+                  受付中 {regionStats[selectedRegionId].open}
                 </span>
               )}
             </div>
@@ -250,14 +458,18 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
             都道府県をタップすると、その県の開催地ピンマップへズームします
           </p>
         </div>
-
-        {/* 上段：全幅100% 画面一杯大型ワイド県境マップ */}
-        <div className="relative w-full rounded-2xl bg-gradient-to-br from-sky-50/70 via-slate-50 to-slate-100/90 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 border border-slate-200 dark:border-slate-800 p-1 sm:p-2 overflow-hidden">
-          {/* 右上：ホバー中の都道府県詳細バッジ（常時配置でレイアウトガタつき防止） */}
+      ) : (
+        <div className="flex flex-nowrap items-center justify-between gap-2 min-h-[38px]">
+          <div className="flex items-center gap-2 min-w-0">
+            <Compass className="w-4 h-4 sm:w-5 sm:h-5 text-teal-700 dark:text-teal-400 shrink-0" />
+            <span className="text-sm sm:text-base font-black text-slate-800 dark:text-slate-200 truncate">
+              地方ブロックまたは日本地図をタップして拡大表示（全{events.length}大会）
+            </span>
+          </div>
           <div
             aria-hidden={!hoveredPrefMeta}
-            className={`absolute top-3 right-3 z-20 px-4 py-2 rounded-xl bg-slate-950/90 dark:bg-white/95 text-white dark:text-slate-950 text-sm sm:text-base font-black shadow-lg pointer-events-none flex items-center gap-2 transition-opacity duration-100 ${
-              hoveredPrefMeta ? 'opacity-100 visible' : 'opacity-0 invisible'
+            className={`hidden sm:inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-950 text-sm font-black shadow-xs shrink-0 transition-opacity duration-100 ${
+              hoveredPrefMeta ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
             }`}
           >
             <MapPin className="w-4 h-4 text-teal-400 dark:text-teal-600 shrink-0" />
@@ -265,63 +477,164 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
             <span className="font-mono text-amber-300 dark:text-teal-700">
               {hoveredPrefStat?.total || 0}大会
             </span>
-            {(hoveredPrefStat?.open || 0) > 0 && (
-              <span className="text-xs px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 dark:text-emerald-800">
-                受付{hoveredPrefStat?.open}
+          </div>
+        </div>
+      )}
+
+      {/* 統合インタラクティブ地図キャンバス（全国・地方で同一サイズの連続カメラズーム） */}
+      <div className="relative w-full rounded-2xl bg-gradient-to-b from-sky-50/55 via-slate-50/75 to-slate-100/85 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 border border-slate-200 dark:border-slate-800 p-1 sm:p-2 overflow-hidden shadow-inner">
+        {/* 左上：海外・ARWS世界戦カード（全国ビュー時のみ表示・ズーム時はスッと消える） */}
+        <button
+          type="button"
+          onClick={() => handleClickRegion('overseas')}
+          onMouseEnter={() => setHoveredRegion('overseas')}
+          onMouseLeave={() => setHoveredRegion(null)}
+          className={`absolute left-2.5 top-2.5 sm:left-4 sm:top-4 z-20 text-left rounded-xl border-2 transition-all duration-200 cursor-pointer shadow-md overflow-hidden bg-white/95 dark:bg-slate-900/95 ${
+            showNationalCallouts
+              ? hoveredRegion === 'overseas'
+                ? 'opacity-100 border-indigo-500 scale-105 shadow-xl'
+                : 'opacity-100 border-indigo-400/80 dark:border-indigo-600 hover:scale-105'
+              : 'opacity-0 scale-95 pointer-events-none'
+          }`}
+        >
+          <div className="bg-indigo-600 text-white px-3 py-1 sm:px-3.5 sm:py-1 text-xs sm:text-sm font-black flex items-center gap-1.5">
+            <Globe className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+            <span>海外・世界戦</span>
+          </div>
+          <div className="px-3 py-1.5 sm:px-3.5 sm:py-2 flex items-baseline gap-1.5">
+            <span className="text-xl sm:text-2xl md:text-3xl font-black font-mono text-slate-950 dark:text-white leading-none">
+              {overseasStats.total}
+            </span>
+            <span className="text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-300">
+              レース
+            </span>
+            {overseasStats.open > 0 && (
+              <span className="hidden sm:inline-block ml-1 text-[11px] font-black px-1.5 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300">
+                受付{overseasStats.open}
               </span>
             )}
           </div>
+        </button>
 
-          {/* 左下：開催地ドットの種目凡例 */}
-          <div className="absolute bottom-3 left-3 z-20 hidden sm:flex items-center gap-3 px-3 py-1.5 rounded-xl bg-white/92 dark:bg-slate-900/92 border border-slate-200 dark:border-slate-700 text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-300 shadow-xs pointer-events-none">
-            <span className="text-slate-500 dark:text-slate-400">開催地:</span>
-            <span className="inline-flex items-center gap-1.5">
-              <span className="w-2.5 h-2.5 rounded-full bg-teal-700" />
-              トレイル
+        {/* 右上：地方ビュー用 ホバー中都道府県詳細バッジ */}
+        <div
+          aria-hidden={!selectedRegionId || !hoveredPrefMeta}
+          className={`absolute top-3 right-3 z-20 px-4 py-2 rounded-xl bg-slate-950/90 dark:bg-white/95 text-white dark:text-slate-950 text-sm sm:text-base font-black shadow-lg pointer-events-none flex items-center gap-2 transition-opacity duration-100 ${
+            selectedRegionId && hoveredPrefMeta ? 'opacity-100 visible' : 'opacity-0 invisible'
+          }`}
+        >
+          <MapPin className="w-4 h-4 text-teal-400 dark:text-teal-600 shrink-0" />
+          <span>{hoveredPrefMeta ? hoveredPrefMeta.name : '都道府県'}</span>
+          <span className="font-mono text-amber-300 dark:text-teal-700">
+            {hoveredPrefStat?.total || 0}大会
+          </span>
+          {(hoveredPrefStat?.open || 0) > 0 && (
+            <span className="text-xs px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 dark:text-emerald-800">
+              受付{hoveredPrefStat?.open}
             </span>
-            <span className="inline-flex items-center gap-1.5">
-              <span className="w-2.5 h-2.5 rounded-full bg-sky-600" />
-              サイクル
-            </span>
-            <span className="inline-flex items-center gap-1.5">
-              <span className="w-2.5 h-2.5 rounded-full bg-indigo-600" />
-              マラソン
-            </span>
-            <span className="inline-flex items-center gap-1.5">
-              <span className="w-2.5 h-2.5 rounded-full bg-amber-600" />
-              AR
-            </span>
-          </div>
+          )}
+        </div>
 
-          <svg
-            viewBox={`${vb.x} ${vb.y} ${vb.w} ${vb.h}`}
-            preserveAspectRatio="xMidYMid meet"
-            className="w-full h-[420px] sm:h-[580px] lg:h-[670px] select-none block"
-            role="img"
-            aria-label={`${zoomedRegionConfig.fullName}の都道府県境マップ`}
-            onMouseLeave={() => setHoveredPrefCode(null)}
-          >
-            {/* 1. 各都道府県のポリゴン形状（白の県境枠つき・ホバー県を最前面） */}
-            {orderedZoomedPrefs.map((pref) => {
-              const pathData = PREF_SVG_PATHS[pref.code];
-              if (!pathData) return null;
-              const pStat = prefStats[pref.name];
-              const count = pStat?.total || 0;
-              const isHovered = hoveredPrefCode === pref.code;
+        {/* 左下：地方ビュー用 開催地種目凡例 */}
+        <div
+          className={`absolute bottom-3 left-3 z-20 hidden sm:flex items-center gap-3 px-3 py-1.5 rounded-xl bg-white/92 dark:bg-slate-900/92 border border-slate-200 dark:border-slate-700 text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-300 shadow-xs pointer-events-none transition-opacity duration-200 ${
+            showRegionLabels ? 'opacity-100' : 'opacity-0'
+          }`}
+        >
+          <span className="text-slate-500 dark:text-slate-400">開催地:</span>
+          <span className="inline-flex items-center gap-1.5">
+            <span className="w-2.5 h-2.5 rounded-full bg-teal-700" />
+            トレイル
+          </span>
+          <span className="inline-flex items-center gap-1.5">
+            <span className="w-2.5 h-2.5 rounded-full bg-sky-600" />
+            サイクル
+          </span>
+          <span className="inline-flex items-center gap-1.5">
+            <span className="w-2.5 h-2.5 rounded-full bg-indigo-600" />
+            マラソン
+          </span>
+          <span className="inline-flex items-center gap-1.5">
+            <span className="w-2.5 h-2.5 rounded-full bg-amber-600" />
+            AR
+          </span>
+        </div>
+
+        {/* 単一統合SVGキャンバス（県ズーム時はふわっとクロスフェードしつつ拡大） */}
+        <svg
+          viewBox={`${animatedBox.x.toFixed(2)} ${animatedBox.y.toFixed(2)} ${animatedBox.w.toFixed(2)} ${animatedBox.h.toFixed(2)}`}
+          preserveAspectRatio="xMidYMid meet"
+          className={`w-full h-[440px] sm:h-[600px] lg:h-[680px] select-none block transition-opacity duration-300 ${
+            zoomingTarget ? 'opacity-25' : 'opacity-100'
+          }`}
+          role="img"
+          aria-label={
+            zoomedRegionConfig
+              ? `${zoomedRegionConfig.fullName}の都道府県境マップ`
+              : '日本の地方別・県境アウトドアレースマップ'
+          }
+          onMouseLeave={() => {
+            setHoveredRegion(null);
+            setHoveredPrefCode(null);
+          }}
+        >
+          {/* 沖縄インセット区切り線（全国ビュー＆沖縄ズーム関連時） */}
+          {showOkinawaInset && (
+            <path
+              d="M 475 745 L 525 578 L 860 578"
+              fill="none"
+              stroke="currentColor"
+              className="text-slate-300 dark:text-slate-700 transition-opacity duration-300"
+              style={{ opacity: selectedRegionId ? 0 : 1 }}
+              strokeWidth="2.5"
+              vectorEffect="non-scaling-stroke"
+              strokeLinecap="round"
+            />
+          )}
+
+          {/* 本土46都道府県のポリゴン描画 */}
+          {orderedMainlandPrefs.map((pref) => {
+            const pathData = PREF_SVG_PATHS[pref.code];
+            if (!pathData) return null;
+            const regionCfg = MAP_REGION_BY_ID[pref.regionId];
+            const isSelectedRegion = selectedRegionId === pref.regionId;
+            const pStat = prefStats[pref.name];
+            const count = pStat?.total || 0;
+            const isPrefHover = hoveredPrefCode === pref.code;
+            const isRegionHover = hoveredRegion === pref.regionId;
+
+            if (selectedRegionId) {
+              // 地方ズーム中：選択地方は濃淡＋白枠、他地方は淡い背景シルエットとして残す
+              if (!isSelectedRegion) {
+                return (
+                  <path
+                    key={pref.code}
+                    d={pathData.d}
+                    fill="#94a3b8"
+                    fillOpacity={0.14}
+                    stroke="#cbd5e1"
+                    strokeOpacity={0.45}
+                    strokeWidth={1}
+                    strokeLinejoin="round"
+                    vectorEffect="non-scaling-stroke"
+                    className="pointer-events-none"
+                  />
+                );
+              }
 
               const fillColor =
                 count === 0
                   ? '#cbd5e1'
-                  : isHovered
-                  ? zoomedRegionConfig.hoverColor
-                  : zoomedRegionConfig.dotColor;
+                  : isPrefHover
+                  ? regionCfg.hoverColor
+                  : regionCfg.dotColor;
 
               const fillOpacity =
                 count === 0
-                  ? isHovered
+                  ? isPrefHover
                     ? 0.6
                     : 0.35
-                  : isHovered
+                  : isPrefHover
                   ? 1
                   : count >= 8
                   ? 0.92
@@ -335,58 +648,117 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
                   d={pathData.d}
                   fill={fillColor}
                   fillOpacity={fillOpacity}
-                  strokeWidth={isHovered ? 3.2 : 2.0}
+                  strokeWidth={isPrefHover ? 3.2 : 2.0}
                   strokeLinejoin="round"
                   vectorEffect="non-scaling-stroke"
                   className="stroke-white dark:stroke-slate-900 cursor-pointer transition-colors duration-150"
                   onMouseEnter={() => setHoveredPrefCode(pref.code)}
-                  onClick={() => onSelectPrefecture(pref.name)}
+                  onClick={() => handleClickPrefecture(pref.name)}
                 />
               );
-            })}
+            }
 
-            {/* 2. 県枠内に大会開催地を小さな種目別ドットでプロット */}
-            {zoomedEventDots.map((pt) => (
-              <circle
-                key={pt.id}
-                cx={pt.x}
-                cy={pt.y}
-                r={unit * 6.0}
-                fill={pt.color}
-                stroke="#ffffff"
-                strokeWidth={1.8}
+            // 全国ビュー中
+            const isDimmed = hoveredRegion !== null && hoveredRegion !== pref.regionId;
+            return (
+              <path
+                key={pref.code}
+                d={pathData.d}
+                fill={isRegionHover ? regionCfg.hoverColor : regionCfg.dotColor}
+                fillOpacity={isDimmed ? 0.34 : isRegionHover ? 1 : 0.88}
+                strokeWidth={isPrefHover ? 2.4 : 1.15}
+                strokeLinejoin="round"
                 vectorEffect="non-scaling-stroke"
-                className="pointer-events-none"
+                className="stroke-white dark:stroke-slate-900 cursor-pointer transition-all duration-150"
+                onMouseEnter={() => {
+                  setHoveredRegion(pref.regionId);
+                  setHoveredPrefCode(pref.code);
+                }}
+                onClick={() => handleClickRegion(pref.regionId)}
               />
-            ))}
+            );
+          })}
 
-            {/* 3. 自動スケーリング大型県名＋大会数ラベル（従来の2倍超サイズ） */}
-            {zoomedPrefs.map((pref) => {
+          {/* 本土の開催地ミニドット */}
+          {mainlandDots.map((pt) => (
+            <circle
+              key={`dot-${pt.id}`}
+              cx={pt.x}
+              cy={pt.y}
+              r={selectedRegionId ? regionUnit * 6.0 : 3.2}
+              fill={pt.color}
+              fillOpacity={selectedRegionId ? 0.96 : 0.82}
+              stroke="#ffffff"
+              strokeWidth={selectedRegionId ? 1.8 : 0.9}
+              vectorEffect="non-scaling-stroke"
+              className="pointer-events-none"
+            />
+          ))}
+
+          {/* 沖縄県インセット（全国ビュー＆沖縄ズーム遷移時） */}
+          {showOkinawaInset && okinawaPref && okinawaPath && (
+            <g
+              transform={`translate(${OKI_TX.toFixed(1)}, ${OKI_TY.toFixed(1)}) scale(${OKI_SCALE})`}
+              className="cursor-pointer"
+              onMouseEnter={() => {
+                setHoveredRegion('okinawa');
+                setHoveredPrefCode(47);
+              }}
+              onClick={() => handleClickRegion('okinawa')}
+            >
+              <path
+                d={okinawaPath.d}
+                fill={isOkinawaHover ? okinawaCfg.hoverColor : okinawaCfg.dotColor}
+                fillOpacity={hoveredRegion !== null && hoveredRegion !== 'okinawa' ? 0.34 : 0.92}
+                strokeWidth={isOkinawaHover ? 2.4 : 1.3}
+                strokeLinejoin="round"
+                vectorEffect="non-scaling-stroke"
+                className="stroke-white dark:stroke-slate-900 transition-all duration-150"
+              />
+              {okinawaDots.map((pt) => (
+                <circle
+                  key={`oki-${pt.id}`}
+                  cx={pt.x}
+                  cy={pt.y}
+                  r={4.0}
+                  fill={pt.color}
+                  stroke="#ffffff"
+                  strokeWidth={1.0}
+                  vectorEffect="non-scaling-stroke"
+                  className="pointer-events-none"
+                />
+              ))}
+            </g>
+          )}
+
+          {/* 地方ビュー用：大型県名＋大会数ラベル */}
+          {showRegionLabels &&
+            zoomedPrefs.map((pref) => {
               const pathData = PREF_SVG_PATHS[pref.code];
               if (!pathData) return null;
               const count = prefStats[pref.name]?.total || 0;
               const isHovered = hoveredPrefCode === pref.code;
               const textStr = `${pref.shortName} ${count}`;
-              const boxW = Math.max(unit * 78, textStr.length * unit * 16.5 + unit * 22);
-              const boxH = unit * 34;
-              const fontSize = unit * 18.5;
+              const boxW = Math.max(regionUnit * 78, textStr.length * regionUnit * 16.5 + regionUnit * 22);
+              const boxH = regionUnit * 34;
+              const fontSize = regionUnit * 18.5;
 
               return (
                 <g
                   key={`label-${pref.code}`}
                   transform={`translate(${pathData.labelX}, ${pathData.labelY})`}
-                  className="cursor-pointer"
+                  className="cursor-pointer animate-map-fade-up"
                   onMouseEnter={() => setHoveredPrefCode(pref.code)}
-                  onClick={() => onSelectPrefecture(pref.name)}
+                  onClick={() => handleClickPrefecture(pref.name)}
                 >
                   <rect
                     x={-boxW / 2}
                     y={-boxH / 2}
                     width={boxW}
                     height={boxH}
-                    rx={unit * 10}
+                    rx={regionUnit * 10}
                     fill={isHovered ? '#0f172a' : 'rgba(255,255,255,0.94)'}
-                    stroke={count > 0 ? zoomedRegionConfig.color : '#94a3b8'}
+                    stroke={count > 0 ? zoomedRegionConfig!.color : '#94a3b8'}
                     strokeWidth={isHovered ? 2.6 : 1.6}
                     vectorEffect="non-scaling-stroke"
                   />
@@ -403,11 +775,132 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
                 </g>
               );
             })}
-          </svg>
-        </div>
 
-        {/* 下段：その地方の都道府県カード横並び（文字も大きく見やすく） */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2.5">
+          {/* 全国ビュー用：SVGネイティブ 9地方カラー吹き出し（ズーム時はスッと消えて地図とズレない） */}
+          <g
+            style={{
+              opacity: showNationalCallouts ? 1 : 0,
+              transition: 'opacity 180ms ease-out',
+            }}
+            className={showNationalCallouts ? '' : 'pointer-events-none'}
+          >
+            {MAP_REGIONS.map((region) => {
+              const layout = CALLOUT_LAYOUT[region.id];
+              const stat = regionStats[region.id];
+              const isHover = hoveredRegion === region.id;
+              const cx = NATIONAL_VIEWBOX.x + NATIONAL_VIEWBOX.w * (layout.leftPct / 100);
+              const cy = NATIONAL_VIEWBOX.y + NATIONAL_VIEWBOX.h * (layout.topPct / 100);
+
+              const bw = 152;
+              const bh = 74;
+              const headH = 26;
+              const halfW = bw / 2;
+              const halfH = bh / 2;
+
+              // 三角矢印の座標（吹き出し枠の4隅付近）
+              let arrowPoints = '';
+              if (layout.pointer === 'down-right') {
+                arrowPoints = `${halfW - 26},${halfH - 1} ${halfW - 10},${halfH - 1} ${halfW - 18},${halfH + 14}`;
+              } else if (layout.pointer === 'down-left') {
+                arrowPoints = `${-halfW + 10},${halfH - 1} ${-halfW + 26},${halfH - 1} ${-halfW + 18},${halfH + 14}`;
+              } else if (layout.pointer === 'up-right') {
+                arrowPoints = `${halfW - 26},${-halfH + 1} ${halfW - 10},${-halfH + 1} ${halfW - 18},${-halfH - 14}`;
+              } else {
+                arrowPoints = `${-halfW + 10},${-halfH + 1} ${-halfW + 26},${-halfH + 1} ${-halfW + 18},${-halfH - 14}`;
+              }
+
+              return (
+                <g
+                  key={`callout-${region.id}`}
+                  transform={`translate(${cx.toFixed(1)}, ${cy.toFixed(1)}) scale(${isHover ? 1.08 : 1})`}
+                  className="cursor-pointer transition-transform duration-150"
+                  onMouseEnter={() => setHoveredRegion(region.id)}
+                  onMouseLeave={() => setHoveredRegion(null)}
+                  onClick={() => handleClickRegion(region.id)}
+                >
+                  {/* ソフト影 */}
+                  <rect
+                    x={-halfW + 2}
+                    y={-halfH + 4}
+                    width={bw}
+                    height={bh}
+                    rx={10}
+                    fill="rgba(15, 23, 42, 0.14)"
+                  />
+                  {/* 三角矢印 */}
+                  <polygon points={arrowPoints} fill={region.color} />
+                  {/* 本体白枠 */}
+                  <rect
+                    x={-halfW}
+                    y={-halfH}
+                    width={bw}
+                    height={bh}
+                    rx={10}
+                    fill="#ffffff"
+                    stroke={region.color}
+                    strokeWidth={isHover ? 3.5 : 2.5}
+                    vectorEffect="non-scaling-stroke"
+                  />
+                  {/* 上部カラーヘッダー */}
+                  <path
+                    d={`M ${-halfW} ${-halfH + 10} Q ${-halfW} ${-halfH} ${-halfW + 10} ${-halfH} L ${halfW - 10} ${-halfH} Q ${halfW} ${-halfH} ${halfW} ${-halfH + 10} L ${halfW} ${-halfH + headH} L ${-halfW} ${-halfH + headH} Z`}
+                    fill={region.color}
+                  />
+                  <text
+                    x={0}
+                    y={-halfH + 18.5}
+                    textAnchor="middle"
+                    fontSize="16"
+                    fontWeight="900"
+                    fill="#ffffff"
+                  >
+                    {region.name}
+                  </text>
+
+                  {/* 数字・単位・受付数 */}
+                  <text
+                    x={stat.open > 0 ? -18 : 0}
+                    y={halfH - 14}
+                    textAnchor="middle"
+                    fontSize="28"
+                    fontWeight="900"
+                    fill="#0f172a"
+                    style={{ fontVariantNumeric: 'tabular-nums' }}
+                  >
+                    {stat.total}
+                    <tspan fontSize="13" fontWeight="800" fill="#334155" dx="2">
+                      レース
+                    </tspan>
+                  </text>
+
+                  {stat.open > 0 && (
+                    <g transform={`translate(${halfW - 26}, ${halfH - 22})`}>
+                      <rect x={-19} y={-10} width={38} height={20} rx={6} fill="#d1fae5" />
+                      <text
+                        x={0}
+                        y={4.5}
+                        textAnchor="middle"
+                        fontSize="11.5"
+                        fontWeight="900"
+                        fill="#065f46"
+                      >
+                        受{stat.open}
+                      </text>
+                    </g>
+                  )}
+                </g>
+              );
+            })}
+          </g>
+        </svg>
+      </div>
+
+      {/* 下部カードエリア：全国時は9地方＋海外、地方時は都道府県カード一覧 */}
+      {selectedRegionId ? (
+        <div
+          key={`pref-cards-${selectedRegionId}`}
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2.5 animate-map-fade-up"
+        >
           {zoomedPrefs.map((pref) => {
             const pStat = prefStats[pref.name] || { total: 0, open: 0, categories: {} };
             const isHovered = hoveredPrefCode === pref.code;
@@ -419,7 +912,7 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
                 type="button"
                 onMouseEnter={() => setHoveredPrefCode(pref.code)}
                 onMouseLeave={() => setHoveredPrefCode(null)}
-                onClick={() => onSelectPrefecture(pref.name)}
+                onClick={() => handleClickPrefecture(pref.name)}
                 className={`group text-left p-3.5 rounded-xl border-2 transition-all cursor-pointer ${
                   isHovered
                     ? 'border-teal-600 bg-teal-50/90 dark:bg-teal-950/50 shadow-md scale-[1.01]'
@@ -458,7 +951,6 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
                   )}
                 </div>
 
-                {/* 種目カラードット内訳 */}
                 {hasEvents && (
                   <div className="flex items-center gap-2 mt-2 text-xs font-bold text-slate-600 dark:text-slate-300 flex-wrap">
                     {(pStat.categories.trail || 0) > 0 && (
@@ -491,331 +983,69 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
             );
           })}
         </div>
-      </div>
-    );
-  }
+      ) : (
+        <div className="grid grid-cols-2 sm:grid-cols-5 gap-2.5 animate-map-fade-up">
+          {MAP_REGIONS.map((region) => {
+            const stat = regionStats[region.id];
+            const isHover = hoveredRegion === region.id;
+            return (
+              <button
+                key={region.id}
+                type="button"
+                onMouseEnter={() => setHoveredRegion(region.id)}
+                onMouseLeave={() => setHoveredRegion(null)}
+                onClick={() => handleClickRegion(region.id)}
+                className={`flex items-center justify-between gap-2 px-3.5 py-2.5 rounded-xl border-2 transition-all cursor-pointer text-left ${
+                  isHover
+                    ? 'bg-slate-900 text-white dark:bg-white dark:text-slate-950 border-slate-900 dark:border-white shadow-md scale-[1.02]'
+                    : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 hover:border-slate-400 dark:hover:border-slate-600 shadow-2xs'
+                }`}
+              >
+                <div className="flex items-center gap-2 min-w-0">
+                  <span
+                    className="w-3.5 h-3.5 rounded-full shrink-0"
+                    style={{ backgroundColor: region.color }}
+                  />
+                  <span className="text-sm sm:text-base font-black truncate">{region.name}</span>
+                </div>
+                <div className="flex items-baseline gap-1 shrink-0">
+                  <span className="text-lg sm:text-xl font-black font-mono">{stat.total}</span>
+                  {stat.open > 0 && (
+                    <span className="text-xs font-black text-emerald-600 dark:text-emerald-400">
+                      ({stat.open})
+                    </span>
+                  )}
+                </div>
+              </button>
+            );
+          })}
 
-  // ========================================================
-  // Lv.1：全国ビュー（地方版と統一されたくっきり県境ポリゴン日本地図＋大型表示）
-  // ========================================================
-  const mainlandPrefsOrdered = [...PREFECTURES_META]
-    .filter((p) => p.code !== 47)
-    .sort((a, b) => {
-      if (a.code === hoveredPrefCode) return 1;
-      if (b.code === hoveredPrefCode) return -1;
-      const aReg = hoveredRegion === a.regionId ? 1 : 0;
-      const bReg = hoveredRegion === b.regionId ? 1 : 0;
-      if (aReg !== bReg) return aReg - bReg;
-      return a.code - b.code;
-    });
-
-  const okinawaPref = PREFECTURE_BY_CODE[47];
-  const okinawaPath = PREF_SVG_PATHS[47];
-  const isOkinawaHover = hoveredRegion === 'okinawa' || hoveredPrefCode === 47;
-  const okinawaCfg = MAP_REGION_BY_ID.okinawa;
-
-  return (
-    <div className="space-y-3 sm:space-y-4">
-      {/* タイトル・操作説明バー（ホバーバッジ出入りによる上下ガタつき防止のため高さ固定） */}
-      <div className="flex flex-nowrap items-center justify-between gap-2 min-h-[38px]">
-        <div className="flex items-center gap-2 min-w-0">
-          <Compass className="w-4 h-4 sm:w-5 sm:h-5 text-teal-700 dark:text-teal-400 shrink-0" />
-          <span className="text-sm sm:text-base font-black text-slate-800 dark:text-slate-200 truncate">
-            地方ブロックまたは日本地図をタップして拡大表示（全{events.length}大会）
-          </span>
-        </div>
-        <div
-          aria-hidden={!hoveredPrefMeta}
-          className={`hidden sm:inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-950 text-sm font-black shadow-xs shrink-0 transition-opacity duration-100 ${
-            hoveredPrefMeta ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
-          }`}
-        >
-          <MapPin className="w-4 h-4 text-teal-400 dark:text-teal-600 shrink-0" />
-          <span>{hoveredPrefMeta ? hoveredPrefMeta.name : '都道府県'}</span>
-          <span className="font-mono text-amber-300 dark:text-teal-700">
-            {hoveredPrefStat?.total || 0}大会
-          </span>
-        </div>
-      </div>
-
-      {/* メイン日本地図キャンバス（画面一杯ワイド＋SVGアスペクト比一致ラッパーで吹き出しと完全整合） */}
-      <div className="w-full rounded-2xl bg-gradient-to-b from-sky-50/50 via-slate-50/70 to-slate-100/80 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 border border-slate-200 dark:border-slate-800 p-1 sm:p-2 overflow-hidden shadow-inner">
-        <div
-          className="relative w-full mx-auto"
-          style={{
-            aspectRatio: `${NATIONAL_VIEWBOX.w} / ${NATIONAL_VIEWBOX.h}`,
-            maxHeight: '720px',
-            maxWidth: `calc(720px * ${NATIONAL_VIEWBOX.w} / ${NATIONAL_VIEWBOX.h})`,
-          }}
-        >
-          {/* 左上：海外・ARWS世界戦カード（大型見やすいサイズ） */}
           <button
             type="button"
-            onClick={() => onSelectRegion('overseas')}
             onMouseEnter={() => setHoveredRegion('overseas')}
             onMouseLeave={() => setHoveredRegion(null)}
-            className={`absolute left-2 top-2 sm:left-3 sm:top-3 z-20 text-left rounded-xl border-2 transition-all cursor-pointer shadow-md overflow-hidden ${
+            onClick={() => handleClickRegion('overseas')}
+            className={`flex items-center justify-between gap-2 px-3.5 py-2.5 rounded-xl border-2 transition-all cursor-pointer text-left ${
               hoveredRegion === 'overseas'
-                ? 'border-indigo-500 scale-105 shadow-xl'
-                : 'border-indigo-400/80 dark:border-indigo-600 hover:scale-105'
-            } bg-white/95 dark:bg-slate-900/95`}
+                ? 'bg-indigo-700 text-white border-indigo-700 shadow-md scale-[1.02]'
+                : 'bg-indigo-50/70 dark:bg-indigo-950/40 border-indigo-200 dark:border-indigo-800 hover:border-indigo-400 text-indigo-950 dark:text-indigo-200 shadow-2xs'
+            }`}
           >
-            <div className="bg-indigo-600 text-white px-3 py-1 sm:px-3.5 sm:py-1 text-xs sm:text-sm font-black flex items-center gap-1.5">
-              <Globe className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-              <span>海外・世界戦</span>
+            <div className="flex items-center gap-1.5 min-w-0">
+              <Globe className="w-4 h-4 text-indigo-600 dark:text-indigo-400 shrink-0" />
+              <span className="text-sm sm:text-base font-black truncate">海外</span>
             </div>
-            <div className="px-3 py-1.5 sm:px-3.5 sm:py-2 flex items-baseline gap-1.5">
-              <span className="text-xl sm:text-2xl md:text-3xl font-black font-mono text-slate-950 dark:text-white leading-none">
-                {overseasStats.total}
-              </span>
-              <span className="text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-300">
-                レース
-              </span>
+            <div className="flex items-baseline gap-1 shrink-0">
+              <span className="text-lg sm:text-xl font-black font-mono">{overseasStats.total}</span>
               {overseasStats.open > 0 && (
-                <span className="hidden sm:inline-block ml-1 text-[11px] font-black px-1.5 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300">
-                  受付{overseasStats.open}
+                <span className="text-xs font-black text-emerald-600 dark:text-emerald-400">
+                  ({overseasStats.open})
                 </span>
               )}
             </div>
           </button>
-
-          {/* 県境ポリゴン全国地図 SVG */}
-          <svg
-            viewBox={`${NATIONAL_VIEWBOX.x} ${NATIONAL_VIEWBOX.y} ${NATIONAL_VIEWBOX.w} ${NATIONAL_VIEWBOX.h}`}
-            className="w-full h-full block select-none"
-            role="img"
-            aria-label="日本の地方別・県境アウトドアレースマップ"
-            onMouseLeave={() => {
-              setHoveredRegion(null);
-              setHoveredPrefCode(null);
-            }}
-          >
-            {/* 沖縄インセット区切り線 */}
-            <path
-              d="M 475 745 L 525 578 L 860 578"
-              fill="none"
-              stroke="currentColor"
-              className="text-slate-300 dark:text-slate-700"
-              strokeWidth="2.5"
-              vectorEffect="non-scaling-stroke"
-              strokeLinecap="round"
-            />
-
-            {/* 本土46都道府県のポリゴン描画 */}
-            {mainlandPrefsOrdered.map((pref) => {
-              const pathData = PREF_SVG_PATHS[pref.code];
-              if (!pathData) return null;
-              const regionCfg = MAP_REGION_BY_ID[pref.regionId];
-              const isRegionHover = hoveredRegion === pref.regionId;
-              const isPrefHover = hoveredPrefCode === pref.code;
-              const isDimmed = hoveredRegion !== null && hoveredRegion !== pref.regionId;
-
-              return (
-                <path
-                  key={pref.code}
-                  d={pathData.d}
-                  fill={isRegionHover ? regionCfg.hoverColor : regionCfg.dotColor}
-                  fillOpacity={isDimmed ? 0.34 : isRegionHover ? 1 : 0.88}
-                  strokeWidth={isPrefHover ? 2.4 : 1.15}
-                  strokeLinejoin="round"
-                  vectorEffect="non-scaling-stroke"
-                  className="stroke-white dark:stroke-slate-900 cursor-pointer transition-all duration-150"
-                  onMouseEnter={() => {
-                    setHoveredRegion(pref.regionId);
-                    setHoveredPrefCode(pref.code);
-                  }}
-                  onClick={() => onSelectRegion(pref.regionId)}
-                />
-              );
-            })}
-
-            {/* 本土全大会の開催地ミニドット（どこに大会が集中しているかを可視化） */}
-            {nationalMainlandDots.map((pt) => (
-              <circle
-                key={`nat-${pt.id}`}
-                cx={pt.x}
-                cy={pt.y}
-                r={3.2}
-                fill={pt.color}
-                fillOpacity={0.82}
-                stroke="#ffffff"
-                strokeWidth={0.9}
-                vectorEffect="non-scaling-stroke"
-                className="pointer-events-none"
-              />
-            ))}
-
-            {/* 沖縄県インセット（右下枠内に拡大表示） */}
-            {okinawaPref && okinawaPath && (
-              <g
-                transform={`translate(${OKI_TX.toFixed(1)}, ${OKI_TY.toFixed(1)}) scale(${OKI_SCALE})`}
-                className="cursor-pointer"
-                onMouseEnter={() => {
-                  setHoveredRegion('okinawa');
-                  setHoveredPrefCode(47);
-                }}
-                onClick={() => onSelectRegion('okinawa')}
-              >
-                <path
-                  d={okinawaPath.d}
-                  fill={isOkinawaHover ? okinawaCfg.hoverColor : okinawaCfg.dotColor}
-                  fillOpacity={hoveredRegion !== null && hoveredRegion !== 'okinawa' ? 0.34 : 0.92}
-                  strokeWidth={isOkinawaHover ? 2.4 : 1.3}
-                  strokeLinejoin="round"
-                  vectorEffect="non-scaling-stroke"
-                  className="stroke-white dark:stroke-slate-900 transition-all duration-150"
-                />
-                {nationalOkinawaDots.map((pt) => (
-                  <circle
-                    key={`oki-${pt.id}`}
-                    cx={pt.x}
-                    cy={pt.y}
-                    r={4.0}
-                    fill={pt.color}
-                    stroke="#ffffff"
-                    strokeWidth={1.0}
-                    vectorEffect="non-scaling-stroke"
-                    className="pointer-events-none"
-                  />
-                ))}
-              </g>
-            )}
-          </svg>
-
-          {/* 9地方カラー吹き出し（文字・カードを二回り〜三回り大きく見やすく） */}
-          <div className="hidden sm:block">
-            {MAP_REGIONS.map((region) => {
-              const layout = CALLOUT_LAYOUT[region.id];
-              const stat = regionStats[region.id];
-              const isHover = hoveredRegion === region.id;
-
-              return (
-                <button
-                  key={region.id}
-                  type="button"
-                  onMouseEnter={() => setHoveredRegion(region.id)}
-                  onMouseLeave={() => setHoveredRegion(null)}
-                  onClick={() => onSelectRegion(region.id)}
-                  style={{
-                    left: `${layout.leftPct}%`,
-                    top: `${layout.topPct}%`,
-                    borderColor: region.color,
-                  }}
-                  className={`absolute -translate-x-1/2 -translate-y-1/2 z-10 min-w-[120px] md:min-w-[148px] rounded-xl border-2 bg-white/95 dark:bg-slate-900/95 shadow-md transition-all cursor-pointer select-none ${
-                    isHover ? 'scale-110 shadow-xl z-20 ring-2 ring-white/80' : 'hover:scale-105'
-                  }`}
-                  title={`${region.fullName}（${stat.total}レース / クリックで拡大）`}
-                >
-                  {/* 地方名カラーヘッダー */}
-                  <div
-                    style={{ backgroundColor: region.color }}
-                    className="px-3 py-0.5 md:py-1 text-center text-white font-black text-xs sm:text-sm md:text-base tracking-wide drop-shadow-2xs rounded-t-[8px]"
-                  >
-                    {region.name}
-                  </div>
-
-                  {/* レース数 ＋ 受付中 */}
-                  <div className="px-3 py-1 md:py-1.5 flex items-baseline justify-center gap-1 bg-white dark:bg-slate-900 rounded-b-[8px]">
-                    <span className="text-xl sm:text-2xl md:text-3xl font-black font-mono text-slate-950 dark:text-white leading-none">
-                      {stat.total}
-                    </span>
-                    <span className="text-xs md:text-sm font-bold text-slate-700 dark:text-slate-300">
-                      レース
-                    </span>
-                    {stat.open > 0 && (
-                      <span className="ml-0.5 text-[10px] md:text-xs font-black px-1.5 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300">
-                        受{stat.open}
-                      </span>
-                    )}
-                  </div>
-
-                  {/* 吹き出しの三角矢印 */}
-                  <span
-                    style={{
-                      borderColor:
-                        layout.pointer.startsWith('down')
-                          ? `${region.color} transparent transparent transparent`
-                          : `transparent transparent ${region.color} transparent`,
-                    }}
-                    className={`absolute w-0 h-0 border-[8px] pointer-events-none ${
-                      layout.pointer === 'down-right'
-                        ? '-bottom-[16px] right-4'
-                        : layout.pointer === 'down-left'
-                        ? '-bottom-[16px] left-4'
-                        : layout.pointer === 'up-right'
-                        ? '-top-[16px] right-4'
-                        : '-top-[16px] left-4'
-                    }`}
-                  />
-                </button>
-              );
-            })}
-          </div>
         </div>
-      </div>
-
-      {/* スマホ＆PC共通：9地方＋海外クイック選択カードグリッド */}
-      <div className="grid grid-cols-2 sm:grid-cols-5 gap-2.5">
-        {MAP_REGIONS.map((region) => {
-          const stat = regionStats[region.id];
-          const isHover = hoveredRegion === region.id;
-          return (
-            <button
-              key={region.id}
-              type="button"
-              onMouseEnter={() => setHoveredRegion(region.id)}
-              onMouseLeave={() => setHoveredRegion(null)}
-              onClick={() => onSelectRegion(region.id)}
-              className={`flex items-center justify-between gap-2 px-3.5 py-2.5 rounded-xl border-2 transition-all cursor-pointer text-left ${
-                isHover
-                  ? 'bg-slate-900 text-white dark:bg-white dark:text-slate-950 border-slate-900 dark:border-white shadow-md scale-[1.02]'
-                  : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 hover:border-slate-400 dark:hover:border-slate-600 shadow-2xs'
-              }`}
-            >
-              <div className="flex items-center gap-2 min-w-0">
-                <span
-                  className="w-3.5 h-3.5 rounded-full shrink-0"
-                  style={{ backgroundColor: region.color }}
-                />
-                <span className="text-sm sm:text-base font-black truncate">{region.name}</span>
-              </div>
-              <div className="flex items-baseline gap-1 shrink-0">
-                <span className="text-lg sm:text-xl font-black font-mono">{stat.total}</span>
-                {stat.open > 0 && (
-                  <span className="text-xs font-black text-emerald-600 dark:text-emerald-400">
-                    ({stat.open})
-                  </span>
-                )}
-              </div>
-            </button>
-          );
-        })}
-
-        <button
-          type="button"
-          onMouseEnter={() => setHoveredRegion('overseas')}
-          onMouseLeave={() => setHoveredRegion(null)}
-          onClick={() => onSelectRegion('overseas')}
-          className={`flex items-center justify-between gap-2 px-3.5 py-2.5 rounded-xl border-2 transition-all cursor-pointer text-left ${
-            hoveredRegion === 'overseas'
-              ? 'bg-indigo-700 text-white border-indigo-700 shadow-md scale-[1.02]'
-              : 'bg-indigo-50/70 dark:bg-indigo-950/40 border-indigo-200 dark:border-indigo-800 hover:border-indigo-400 text-indigo-950 dark:text-indigo-200 shadow-2xs'
-          }`}
-        >
-          <div className="flex items-center gap-1.5 min-w-0">
-            <Globe className="w-4 h-4 text-indigo-600 dark:text-indigo-400 shrink-0" />
-            <span className="text-sm sm:text-base font-black truncate">海外</span>
-          </div>
-          <div className="flex items-baseline gap-1 shrink-0">
-            <span className="text-lg sm:text-xl font-black font-mono">{overseasStats.total}</span>
-            {overseasStats.open > 0 && (
-              <span className="text-xs font-black text-emerald-600 dark:text-emerald-400">
-                ({overseasStats.open})
-              </span>
-            )}
-          </div>
-        </button>
-      </div>
+      )}
     </div>
   );
 };

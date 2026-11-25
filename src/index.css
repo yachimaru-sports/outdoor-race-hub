@@ -216,3 +216,41 @@
   color: #e2e8f0 !important;
   border-color: #475569;
 }
+
+/* 地図切り替え・県内着陸時の滑らかズームアニメーション */
+@keyframes map-zoom-land {
+  0% {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes map-fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-map-zoom-land {
+  animation: map-zoom-land 0.42s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-map-fade-up {
+  animation: map-fade-up 0.32s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-map-zoom-land,
+  .animate-map-fade-up {
+    animation: none;
+  }
+}
