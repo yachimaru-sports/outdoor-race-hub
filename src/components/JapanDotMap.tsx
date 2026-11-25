@@ -237,6 +237,7 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
               className="w-full h-[270px] sm:h-[360px] select-none"
               role="img"
               aria-label={`${zoomedRegionConfig.fullName}の都道府県マップ`}
+              onMouseLeave={() => setHoveredPrefCode(null)}
             >
               {zoomedDots.map(([col, row, code], idx) => {
                 const pref = PREFECTURE_BY_CODE[code];
@@ -256,20 +257,30 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
                     : zoomedRegionConfig.dotColor;
 
                 return (
-                  <circle
+                  <g
                     key={`${col}-${row}-${idx}`}
-                    cx={x}
-                    cy={y}
-                    r={isHovered ? 4.4 : 3.8}
-                    fill={fillColor}
-                    fillOpacity={count === 0 ? (isHovered ? 0.65 : 0.35) : isHovered ? 1 : shadeOpacity}
-                    stroke={isHovered ? '#ffffff' : 'transparent'}
-                    strokeWidth={isHovered ? 0.9 : 0}
-                    className="cursor-pointer transition-all duration-150"
+                    className="cursor-pointer"
                     onMouseEnter={() => setHoveredPrefCode(code)}
-                    onMouseLeave={() => setHoveredPrefCode(null)}
                     onClick={() => onSelectPrefecture(pref.name)}
-                  />
+                  >
+                    <rect
+                      x={x - CELL_W / 2}
+                      y={y - CELL_H / 2}
+                      width={CELL_W}
+                      height={CELL_H}
+                      fill="transparent"
+                    />
+                    <circle
+                      cx={x}
+                      cy={y}
+                      r={isHovered ? 4.4 : 3.8}
+                      fill={fillColor}
+                      fillOpacity={count === 0 ? (isHovered ? 0.65 : 0.35) : isHovered ? 1 : shadeOpacity}
+                      stroke={isHovered ? '#ffffff' : 'transparent'}
+                      strokeWidth={isHovered ? 0.9 : 0}
+                      className="pointer-events-none transition-all duration-150"
+                    />
+                  </g>
                 );
               })}
 
@@ -410,23 +421,26 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
   // ========================================================
   return (
     <div className="space-y-4">
-      {/* タイトル・操作説明バー */}
-      <div className="flex flex-wrap items-center justify-between gap-2">
-        <div className="flex items-center gap-2">
-          <Compass className="w-4 h-4 text-teal-700 dark:text-teal-400" />
-          <span className="text-xs sm:text-sm font-black text-slate-800 dark:text-slate-200">
+      {/* タイトル・操作説明バー（ホバーバッジ出入りによる上下ガタつき防止のため高さ固定） */}
+      <div className="flex flex-nowrap items-center justify-between gap-2 min-h-[32px]">
+        <div className="flex items-center gap-2 min-w-0">
+          <Compass className="w-4 h-4 text-teal-700 dark:text-teal-400 shrink-0" />
+          <span className="text-xs sm:text-sm font-black text-slate-800 dark:text-slate-200 truncate">
             地方ブロックまたは日本地図をタップして拡大表示（全{events.length}大会）
           </span>
         </div>
-        {hoveredPrefMeta && (
-          <div className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-950 text-xs font-black shadow-xs">
-            <MapPin className="w-3.5 h-3.5 text-teal-400 dark:text-teal-600" />
-            <span>{hoveredPrefMeta.name}</span>
-            <span className="font-mono text-amber-300 dark:text-teal-700">
-              {hoveredPrefStat?.total || 0}大会
-            </span>
-          </div>
-        )}
+        <div
+          aria-hidden={!hoveredPrefMeta}
+          className={`hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-950 text-xs font-black shadow-xs shrink-0 transition-opacity duration-100 ${
+            hoveredPrefMeta ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
+          }`}
+        >
+          <MapPin className="w-3.5 h-3.5 text-teal-400 dark:text-teal-600 shrink-0" />
+          <span>{hoveredPrefMeta ? hoveredPrefMeta.name : '都道府県'}</span>
+          <span className="font-mono text-amber-300 dark:text-teal-700">
+            {hoveredPrefStat?.total || 0}大会
+          </span>
+        </div>
       </div>
 
       {/* メイン日本地図キャンバス（PC・タブレットでは吹き出し付き、スマホでは見やすいコンパクト表示＋下部カード） */}
@@ -468,6 +482,10 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
           className="w-full h-auto block select-none"
           role="img"
           aria-label="日本の地方別アウトドアレースマップ"
+          onMouseLeave={() => {
+            setHoveredRegion(null);
+            setHoveredPrefCode(null);
+          }}
         >
           {/* 沖縄インセット区切り線（添付画像風） */}
           <path
@@ -490,24 +508,31 @@ export const JapanDotMap: React.FC<JapanDotMapProps> = ({
             const isDimmed = hoveredRegion !== null && hoveredRegion !== pref.regionId;
 
             return (
-              <circle
+              <g
                 key={`${col}-${row}-${idx}`}
-                cx={x}
-                cy={y}
-                r={isPrefHover ? 4.7 : isRegionHover ? 4.3 : 3.7}
-                fill={isRegionHover ? regionCfg.hoverColor : regionCfg.dotColor}
-                fillOpacity={isDimmed ? 0.32 : 1}
-                className="cursor-pointer transition-all duration-150"
+                className="cursor-pointer"
                 onMouseEnter={() => {
                   setHoveredRegion(pref.regionId);
                   setHoveredPrefCode(code);
                 }}
-                onMouseLeave={() => {
-                  setHoveredRegion(null);
-                  setHoveredPrefCode(null);
-                }}
                 onClick={() => onSelectRegion(pref.regionId)}
-              />
+              >
+                <rect
+                  x={x - CELL_W / 2}
+                  y={y - CELL_H / 2}
+                  width={CELL_W}
+                  height={CELL_H}
+                  fill="transparent"
+                />
+                <circle
+                  cx={x}
+                  cy={y}
+                  r={isPrefHover ? 4.7 : isRegionHover ? 4.3 : 3.7}
+                  fill={isRegionHover ? regionCfg.hoverColor : regionCfg.dotColor}
+                  fillOpacity={isDimmed ? 0.32 : 1}
+                  className="pointer-events-none transition-all duration-150"
+                />
+              </g>
             );
           })}
         </svg>
