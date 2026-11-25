@@ -158,8 +158,12 @@ export const UpdateTicker: React.FC<UpdateTickerProps> = ({ onJumpToTarget, onOp
     <>
       <div
         className="w-full bg-slate-900/95 dark:bg-[#070b14]/95 border-b border-slate-800 text-xs text-slate-300 py-1 px-3 sm:px-4 backdrop-blur-xs select-none transition-colors"
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}
+        onPointerEnter={(e) => {
+          if (e.pointerType === 'mouse') setIsPaused(true);
+        }}
+        onPointerLeave={(e) => {
+          if (e.pointerType === 'mouse') setIsPaused(false);
+        }}
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-2">
           <div className="flex items-center gap-1.5 shrink-0">

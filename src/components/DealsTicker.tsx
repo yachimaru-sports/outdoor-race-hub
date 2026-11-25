@@ -49,9 +49,40 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({
   const scrollRef = useRef<HTMLDivElement>(null);
   const [isPaused, setIsPaused] = useState(false);
   const animFrameId = useRef<number | null>(null);
+  // スマホブラウザで scrollLeft の小数加算が切り捨てられるのを防ぐため浮動小数点位置を保持
+  const posRef = useRef<number | null>(null);
+  const resumeTimerRef = useRef<number | null>(null);
 
   // 途切れず無限にぐるぐる繋がるように3セット配置
   const tripleDeals = [...deals, ...deals, ...deals];
+
+  // タッチ操作時の一時停止と遅延再開（慣性スクロール完了後に自然再開）
+  const handleTouchPause = () => {
+    if (resumeTimerRef.current !== null) {
+      window.clearTimeout(resumeTimerRef.current);
+      resumeTimerRef.current = null;
+    }
+    setIsPaused(true);
+  };
+
+  const handleTouchResume = () => {
+    if (resumeTimerRef.current !== null) {
+      window.clearTimeout(resumeTimerRef.current);
+    }
+    resumeTimerRef.current = window.setTimeout(() => {
+      posRef.current = scrollRef.current ? scrollRef.current.scrollLeft : null;
+      setIsPaused(false);
+      resumeTimerRef.current = null;
+    }, 1200);
+  };
+
+  useEffect(() => {
+    return () => {
+      if (resumeTimerRef.current !== null) {
+        window.clearTimeout(resumeTimerRef.current);
+      }
+    };
+  }, []);
 
   // 初期スクロール位置を中央セットの開始位置に設定
   useEffect(() => {
@@ -61,35 +92,49 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({
     const timer = setTimeout(() => {
       if (el) {
         const singleWidth = el.scrollWidth / 3;
-        el.scrollLeft = singleWidth;
+        if (singleWidth > 0) {
+          el.scrollLeft = singleWidth;
+          posRef.current = singleWidth;
+        }
       }
     }, 50);
 
     return () => clearTimeout(timer);
   }, [deals.length]);
 
-  // requestAnimationFrame による超高精度・滑らか自動スクロール
+  // requestAnimationFrame による時間ベース・浮動小数点累積の滑らか自動スクロール
   useEffect(() => {
     if (isPaused || deals.length === 0) return;
 
     let lastTime = performance.now();
+    const SPEED_PX_PER_SEC = 42;
 
     const step = (now: number) => {
       const el = scrollRef.current;
       if (!el) return;
 
-      const elapsed = now - lastTime;
-      if (elapsed > 16) {
-        lastTime = now;
-        const singleWidth = el.scrollWidth / 3;
+      const dt = Math.min(Math.max(now - lastTime, 0), 100);
+      lastTime = now;
 
-        if (singleWidth > 0) {
-          el.scrollLeft += 0.8;
+      const singleWidth = el.scrollWidth / 3;
+      if (singleWidth > 0) {
+        // 初回またはユーザー操作・慣性スクロール等で大きくズレた場合は実測値へ再同期
+        if (posRef.current === null || Math.abs(el.scrollLeft - posRef.current) > 4) {
+          posRef.current = el.scrollLeft < singleWidth * 0.25 ? el.scrollLeft + singleWidth : el.scrollLeft;
+        }
 
-          // 右端（2セット分通過）に達したら、中央セットへ瞬間ワープ
-          if (el.scrollLeft >= singleWidth * 2) {
-            el.scrollLeft -= singleWidth;
-          }
+        posRef.current += (dt / 1000) * SPEED_PX_PER_SEC;
+
+        // 2セット目終端を超えたら1セット分戻してシームレスに無限ループ
+        if (posRef.current >= singleWidth * 2) {
+          posRef.current -= singleWidth;
+        } else if (posRef.current < singleWidth * 0.5) {
+          posRef.current += singleWidth;
+        }
+
+        const nextInt = Math.floor(posRef.current);
+        if (nextInt !== el.scrollLeft) {
+          el.scrollLeft = nextInt;
         }
       }
 
@@ -101,6 +146,7 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({
     return () => {
       if (animFrameId.current) {
         cancelAnimationFrame(animFrameId.current);
+        animFrameId.current = null;
       }
     };
   }, [isPaused, deals.length]);
@@ -120,6 +166,8 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({
     }
 
     el.scrollBy({ left: offset, behavior: 'smooth' });
+    // スムーズスクロール後の位置から自然に引き継ぐためリセット
+    posRef.current = null;
   };
 
   const handleScrollToTop = (e: React.MouseEvent) => {
@@ -130,10 +178,6 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({
   return (
     <div
       className="bg-slate-950 border-b border-amber-500/70 text-slate-100 select-none transition-colors"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-      onTouchStart={() => setIsPaused(true)}
-      onTouchEnd={() => setIsPaused(false)}
     >
       <div className="max-w-7xl mx-auto px-2.5 sm:px-4 py-1.5 sm:py-2">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-1.5 md:gap-2.5">
@@ -259,7 +303,18 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({
           </div>
 
           {/* 中央：無限スライド 楽天特価ギアカルーセル */}
-          <div className="relative w-full md:flex-1 min-w-0 overflow-hidden">
+          <div
+            className="relative w-full md:flex-1 min-w-0 overflow-hidden"
+            onPointerEnter={(e) => {
+              if (e.pointerType === 'mouse') setIsPaused(true);
+            }}
+            onPointerLeave={(e) => {
+              if (e.pointerType === 'mouse') setIsPaused(false);
+            }}
+            onTouchStart={handleTouchPause}
+            onTouchEnd={handleTouchResume}
+            onTouchCancel={handleTouchResume}
+          >
             <div
               ref={scrollRef}
               className="flex items-center gap-2.5 overflow-x-auto no-scrollbar py-0.5"
