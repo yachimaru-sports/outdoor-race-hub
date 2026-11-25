@@ -1,7 +1,7 @@
 /**
  * scripts/build_japan_pref_paths.mjs
  *
- * 日本47都道府県のGeoJSONから、地方ズーム（Lv.2）用の
+ * 日本47都道府県のGeoJSONから、全国ビュー（Lv.1）＆地方ズーム（Lv.2）共通の
  * くっきりした県境枠つき軽量SVGポリゴンデータ（src/data/japanPrefPaths.ts）を生成する。
  *
  * 実行方法: node scripts/build_japan_pref_paths.mjs
@@ -18,7 +18,6 @@ const OUTPUT_PATH = path.join(ROOT_DIR, 'src', 'data', 'japanPrefPaths.ts');
 
 const GEOJSON_URL = 'https://raw.githubusercontent.com/dataofjapan/land/master/japan.geojson';
 
-// 共通投影パラメータ（src/data/japanPrefPaths.ts にも同式を出力して大会座標変換に利用）
 const BASE_LNG = 128.0;
 const BASE_LAT = 46.0;
 const COS36 = Math.cos((36 * Math.PI) / 180);
@@ -31,7 +30,6 @@ function projectXY(lng, lat) {
   ];
 }
 
-// 英語表記（dataofjapan/land properties.nam）-> JIS都道府県コード
 const EN_NAME_TO_CODE = {
   hokkaido: 1, aomori: 2, iwate: 3, miyagi: 4, akita: 5, yamagata: 6, fukushima: 7,
   ibaraki: 8, tochigi: 9, gunma: 10, saitama: 11, chiba: 12, tokyo: 13, kanagawa: 14,
@@ -68,26 +66,34 @@ const REGION_PREF_CODES = {
   okinawa: [47],
 };
 
-// 隣接・湾曲県でラベルが重なりやすい箇所の微調整オフセット（投影後座標系 px）
+// 大型文字ラベルが密集県で重なりにくい微調整オフセット（投影後座標系 px）
 const LABEL_OFFSET_PX = {
-  13: [0, -3],   // 東京（少し北側へ）
-  14: [2, 6],    // 神奈川（南東側へ）
-  11: [-2, -3],  // 埼玉
-  12: [5, 3],    // 千葉
-  25: [3, -2],   // 滋賀
-  26: [-6, -6],  // 京都（北部寄りで大阪・兵庫と離す）
-  27: [0, 2],    // 大阪
-  28: [-6, 0],   // 兵庫
-  29: [2, 5],    // 奈良
+  8: [3, 0],     // 茨城
+  9: [0, -3],    // 栃木
+  10: [-3, -2],  // 群馬
+  11: [-4, -4],  // 埼玉
+  12: [8, 4],    // 千葉
+  13: [-2, -1],  // 東京
+  14: [1, 7],    // 神奈川
+  24: [2, 5],    // 三重
+  25: [5, -3],   // 滋賀
+  26: [-8, -9],  // 京都（北部寄り）
+  27: [-1, 3],   // 大阪
+  28: [-9, -1],  // 兵庫
+  29: [4, 7],    // 奈良
+  30: [-2, 6],   // 和歌山
   31: [4, -2],   // 鳥取
   32: [-6, 3],   // 島根
   33: [2, 2],    // 岡山
-  34: [-2, 0],   // 広島
-  37: [0, -3],   // 香川
-  36: [2, 2],    // 徳島
-  40: [3, -3],   // 福岡
-  41: [-4, 2],   // 佐賀
-  42: [-8, 3],   // 長崎
+  34: [-2, 1],   // 広島
+  37: [0, -4],   // 香川
+  36: [3, 3],    // 徳島
+  38: [-4, -1],  // 愛媛
+  39: [2, 3],    // 高知
+  40: [4, -5],   // 福岡
+  41: [-6, 2],   // 佐賀
+  42: [-10, 4],  // 長崎
+  44: [5, 0],    // 大分
 };
 
 function resolvePrefCode(props) {
@@ -106,7 +112,6 @@ function resolvePrefCode(props) {
   return null;
 }
 
-// 地方ズームが遠方離島で極端に縮むのを防ぐフィルタ
 function isIncludedPolygon(code, ringLngLat) {
   if (!ringLngLat || ringLngLat.length < 3) return false;
   let sumLng = 0;
@@ -118,7 +123,7 @@ function isIncludedPolygon(code, ringLngLat) {
   const avgLng = sumLng / ringLngLat.length;
   const avgLat = sumLat / ringLngLat.length;
 
-  if (code === 13 && avgLat < 34.8) return false; // 東京：伊豆諸島南部・小笠原除外
+  if (code === 13 && avgLat < 34.8) return false; // 東京：伊豆南部・小笠原除外
   if (code === 46 && avgLat < 30.2) return false; // 鹿児島：トカラ・奄美以南除外
   if (code === 47 && (avgLat < 24.0 || avgLat > 27.2)) return false; // 沖縄範囲
   if (code === 32 && avgLat > 36.4) return false; // 島根：極端な遠方除外
@@ -126,7 +131,6 @@ function isIncludedPolygon(code, ringLngLat) {
   return true;
 }
 
-// 多角形の符号付き面積・面積・重心を投影座標系で算出（Shoelace公式）
 function ringMetrics(pts) {
   let area2 = 0;
   let cxAcc = 0;
@@ -152,7 +156,20 @@ function ringMetrics(pts) {
   };
 }
 
-// 点と線分の距離（Douglas-Peucker 用）
+function calcBBox(pts) {
+  let minX = Infinity;
+  let minY = Infinity;
+  let maxX = -Infinity;
+  let maxY = -Infinity;
+  for (const [x, y] of pts) {
+    if (x < minX) minX = x;
+    if (y < minY) minY = y;
+    if (x > maxX) maxX = x;
+    if (y > maxY) maxY = y;
+  }
+  return [minX, minY, maxX, maxY];
+}
+
 function pointToSegmentDistSq(p, a, b) {
   const dx = b[0] - a[0];
   const dy = b[1] - a[1];
@@ -203,7 +220,6 @@ function simplifyDouglasPeucker(pts, epsilon) {
 
 function buildRingPath(pts) {
   const rounded = pts.map(([x, y]) => [Number(x.toFixed(1)), Number(y.toFixed(1))]);
-  // 連続重複頂点を削除
   const dedup = [];
   for (const p of rounded) {
     const prev = dedup[dedup.length - 1];
@@ -221,7 +237,7 @@ async function main() {
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   const geo = await res.json();
 
-  const EPSILON = 0.7; // 投影後px単位（約1.5km相当の滑らかな簡略化）
+  const EPSILON = 0.7;
   const MIN_ISLAND_AREA = 1.8;
 
   const prefDataMap = {};
@@ -238,7 +254,6 @@ async function main() {
         ? geom.coordinates
         : [];
 
-    // 対象ポリゴンを投影して面積を計算
     const candidates = [];
     for (const polyRings of rawPolygons) {
       const outerLngLat = polyRings[0];
@@ -250,11 +265,12 @@ async function main() {
 
     if (candidates.length === 0) continue;
 
-    // 面積順にソートし、最大ポリゴンは必ず保持 + MIN_ISLAND_AREA以上を保持
     candidates.sort((a, b) => b.metrics.area - a.metrics.area);
     const mainPoly = candidates[0];
-    const kept = candidates.filter((c, idx) => idx === 0 || c.metrics.area >= MIN_ISLAND_AREA);
+    const mainSimplified = simplifyDouglasPeucker(mainPoly.outerXY, EPSILON);
+    const mainBbox = calcBBox(mainSimplified);
 
+    const kept = candidates.filter((c, idx) => idx === 0 || c.metrics.area >= MIN_ISLAND_AREA);
     const pathSegments = [];
     let minX = Infinity;
     let maxX = -Infinity;
@@ -274,7 +290,6 @@ async function main() {
         if (py > maxY) maxY = py;
       }
 
-      // 穴リング（滋賀県琵琶湖のような内水や飛び地穴があれば反映）
       for (let h = 1; h < item.polyRings.length; h++) {
         const holeXY = item.polyRings[h].map(([lng, lat]) => projectXY(lng, lat));
         const hMetrics = ringMetrics(holeXY);
@@ -300,6 +315,7 @@ async function main() {
         Number(maxX.toFixed(1)),
         Number(maxY.toFixed(1)),
       ],
+      mainBbox: mainBbox.map((v) => Number(v.toFixed(1))),
     };
   }
 
@@ -309,25 +325,29 @@ async function main() {
     throw new Error(`都道府県が不足しています: ${coveredCount}/47`);
   }
 
-  // 9地方ごとの最適 viewBox を算出（余白 7% のタイト設計）
+  // 9地方ごとの本土フィットタイト viewBox（余白 3.5%）
   const regionViewBoxes = {};
   for (const [regionId, codes] of Object.entries(REGION_PREF_CODES)) {
     let rMinX = Infinity;
     let rMinY = Infinity;
     let rMaxX = -Infinity;
     let rMaxY = -Infinity;
+    // 沖縄は全諸島含めて表示、他地方は本土（最大ポリゴン）ベースで最大化しつつ淡路島・能登等も含まれる
+    const useFullBbox = regionId === 'okinawa' || regionId === 'hokkaido';
     for (const c of codes) {
       const p = prefDataMap[c];
       if (!p) continue;
-      if (p.bbox[0] < rMinX) rMinX = p.bbox[0];
-      if (p.bbox[1] < rMinY) rMinY = p.bbox[1];
-      if (p.bbox[2] > rMaxX) rMaxX = p.bbox[2];
-      if (p.bbox[3] > rMaxY) rMaxY = p.bbox[3];
+      const box = useFullBbox ? p.bbox : p.mainBbox;
+      if (box[0] < rMinX) rMinX = box[0];
+      if (box[1] < rMinY) rMinY = box[1];
+      if (box[2] > rMaxX) rMaxX = box[2];
+      if (box[3] > rMaxY) rMaxY = box[3];
     }
+    // 四国・中国・近畿などで瀬戸内海の小島や淡路島が途切れないよう、少しだけ下限拡張
     const rawW = rMaxX - rMinX;
     const rawH = rMaxY - rMinY;
-    const padX = Math.max(6, rawW * 0.07);
-    const padY = Math.max(6, rawH * 0.07);
+    const padX = Math.max(4, rawW * 0.045);
+    const padY = Math.max(4, rawH * 0.045);
     regionViewBoxes[regionId] = {
       x: Number((rMinX - padX).toFixed(1)),
       y: Number((rMinY - padY).toFixed(1)),
@@ -335,6 +355,39 @@ async function main() {
       h: Number((rawH + padY * 2).toFixed(1)),
     };
   }
+
+  // 全国本土（code 1..46）のバウンディングボックスを算出して全国viewBoxを決定
+  let natMinX = Infinity;
+  let natMinY = Infinity;
+  let natMaxX = -Infinity;
+  let natMaxY = -Infinity;
+  for (let c = 1; c <= 46; c++) {
+    const p = prefDataMap[c];
+    if (!p) continue;
+    const box = c === 1 ? p.bbox : p.mainBbox;
+    if (box[0] < natMinX) natMinX = box[0];
+    if (box[1] < natMinY) natMinY = box[1];
+    if (box[2] > natMaxX) natMaxX = box[2];
+    if (box[3] > natMaxY) natMaxY = box[3];
+  }
+
+  // 左右に9地方吹き出しが美しく収まりつつ日本列島が主役になるバランス余白
+  const natW = natMaxX - natMinX;
+  const natH = natMaxY - natMinY;
+  const nationalViewBox = {
+    x: Number((natMinX - 180).toFixed(1)),
+    y: Number((natMinY - 22).toFixed(1)),
+    w: Number((natW + 340).toFixed(1)),
+    h: Number((natH + 54).toFixed(1)),
+  };
+
+  const okinawaBox = prefDataMap[47].bbox;
+  const okinawaInfo = {
+    x: okinawaBox[0],
+    y: okinawaBox[1],
+    w: Number((okinawaBox[2] - okinawaBox[0]).toFixed(1)),
+    h: Number((okinawaBox[3] - okinawaBox[1]).toFixed(1)),
+  };
 
   const prefEntries = Object.entries(prefDataMap)
     .sort((a, b) => Number(a[0]) - Number(b[0]))
@@ -346,7 +399,7 @@ async function main() {
     .join(',\n');
 
   const tsContent = `// 自動生成ファイル（scripts/build_japan_pref_paths.mjs により生成）
-// 日本47都道府県のSVGポリゴンパス＆地方別タイトviewBox＆共通投影関数
+// 日本47都道府県のSVGポリゴンパス＆全国・地方別タイトviewBox＆共通投影関数
 
 import type { MapRegionId } from './japanMapData';
 
@@ -378,7 +431,13 @@ export function projectLatLngToMapXY(lat: number, lng: number): { x: number; y: 
   };
 }
 
-/** 9地方ブロックごとの最適viewBox（余白7%タイト設計） */
+/** 全国ビュー（本土46都道府県＋沖縄インセット＋吹き出し余白）の標準viewBox */
+export const NATIONAL_VIEWBOX: RegionViewBox = ${JSON.stringify(nationalViewBox)};
+
+/** 沖縄インセット配置用の元のバウンディングボックス */
+export const OKINAWA_BBOX: RegionViewBox = ${JSON.stringify(okinawaInfo)};
+
+/** 9地方ブロックごとの本土フィット最適viewBox（余白約4.5%タイト設計） */
 export const REGION_VIEWBOXES: Record<MapRegionId, RegionViewBox> = {
 ${regionEntries}
 };
@@ -392,6 +451,8 @@ ${prefEntries}
   fs.writeFileSync(OUTPUT_PATH, tsContent, 'utf8');
   const fileSizeKb = (fs.statSync(OUTPUT_PATH).size / 1024).toFixed(1);
   console.log(`書き出し完了: ${OUTPUT_PATH} (${fileSizeKb} KB)`);
+  console.log('NATIONAL_VIEWBOX:', nationalViewBox);
+  console.log('OKINAWA_BBOX:', okinawaInfo);
   console.log('地方別viewBox:', JSON.stringify(regionViewBoxes, null, 2));
 }
 

@@ -398,7 +398,7 @@ export const RaceMapPage: React.FC<RaceMapPageProps> = ({
       )}
       {/* 常時固定ヘッダーバー */}
       <header className="sticky top-0 z-50 bg-slate-950/95 backdrop-blur-md border-b border-teal-500/40 text-white shadow-lg">
-        <div className="max-w-7xl mx-auto px-3 sm:px-4 py-2.5 flex items-center justify-between gap-2">
+        <div className="max-w-[1600px] mx-auto px-3 sm:px-5 py-2.5 flex items-center justify-between gap-2">
           <div className="flex items-center gap-2 sm:gap-3 min-w-0">
             <button
               type="button"
@@ -481,7 +481,7 @@ export const RaceMapPage: React.FC<RaceMapPageProps> = ({
         </div>
       </header>
 
-      <main className="relative z-10 flex-1 max-w-7xl w-full mx-auto px-2.5 sm:px-4 py-4 sm:py-6 space-y-4 sm:space-y-6">
+      <main className="relative z-10 flex-1 max-w-[1600px] w-full mx-auto px-2 sm:px-4 lg:px-6 py-3 sm:py-5 space-y-3 sm:space-y-4">
         {/* 1. パンくずナビ ＆ ズーム段階インジケーター */}
         <div className="bg-white/90 dark:bg-slate-900/90 backdrop-blur-[2px] border border-slate-300 dark:border-slate-800 rounded-2xl px-3.5 py-2.5 shadow-2xs flex flex-wrap items-center justify-between gap-2">
           <nav aria-label="マップ階層" className="flex items-center gap-1.5 flex-wrap text-xs sm:text-sm font-black">
@@ -679,8 +679,8 @@ export const RaceMapPage: React.FC<RaceMapPageProps> = ({
           </div>
         </div>
 
-        {/* 3. インタラクティブ地図メインカード */}
-        <section className="bg-white/90 dark:bg-slate-900/90 backdrop-blur-[2px] border border-slate-300 dark:border-slate-800 rounded-2xl p-3 sm:p-5 shadow-sm">
+        {/* 3. インタラクティブ地図メインカード（画面いっぱいの大型ワイド表示） */}
+        <section className="bg-white/90 dark:bg-slate-900/90 backdrop-blur-[2px] border border-slate-300 dark:border-slate-800 rounded-2xl p-2 sm:p-3.5 shadow-sm">
           {!isPinMapStage ? (
             <JapanDotMap
               events={attributeFilteredEvents}
