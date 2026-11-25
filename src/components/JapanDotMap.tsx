@@ -40,20 +40,20 @@ const OKI_TX = OKI_TARGET_CENTER_X - OKI_ORIG_CENTER_X * OKI_SCALE;
 const OKI_TY = OKI_TARGET_CENTER_Y - OKI_ORIG_CENTER_Y * OKI_SCALE;
 const OKI_INSET_VIEWBOX: RegionViewBox = { x: 520, y: 585, w: 325, h: 160 };
 
-// 9地方の吹き出し位置（NATIONAL_VIEWBOX 座標系パーセント）
+// 9地方の吹き出し位置（NATIONAL_VIEWBOX 座標系パーセント・ホバー拡大時も重なりゼロ）
 const CALLOUT_LAYOUT: Record<
   MapRegionId,
   { leftPct: number; topPct: number; pointer: 'down-left' | 'down-right' | 'up-left' | 'up-right' }
 > = {
-  hokkaido: { leftPct: 48.0, topPct: 14.0, pointer: 'down-right' },
-  chubu: { leftPct: 35.5, topPct: 36.5, pointer: 'down-right' },
-  tohoku: { leftPct: 79.5, topPct: 38.5, pointer: 'down-left' },
-  kinki: { leftPct: 26.5, topPct: 51.0, pointer: 'down-right' },
-  kanto: { leftPct: 77.5, topPct: 60.0, pointer: 'down-left' },
-  chugoku: { leftPct: 14.0, topPct: 58.0, pointer: 'down-right' },
-  kyushu: { leftPct: 11.5, topPct: 86.5, pointer: 'up-right' },
-  shikoku: { leftPct: 38.5, topPct: 90.0, pointer: 'up-left' },
-  okinawa: { leftPct: 84.5, topPct: 90.5, pointer: 'up-left' },
+  hokkaido: { leftPct: 48.0, topPct: 13.5, pointer: 'down-right' },
+  chubu: { leftPct: 37.5, topPct: 32.5, pointer: 'down-right' },
+  tohoku: { leftPct: 80.5, topPct: 38.0, pointer: 'down-left' },
+  kinki: { leftPct: 28.0, topPct: 47.0, pointer: 'down-right' },
+  kanto: { leftPct: 78.5, topPct: 60.0, pointer: 'down-left' },
+  chugoku: { leftPct: 11.5, topPct: 60.5, pointer: 'down-right' },
+  kyushu: { leftPct: 10.5, topPct: 87.5, pointer: 'up-right' },
+  shikoku: { leftPct: 38.5, topPct: 91.5, pointer: 'up-left' },
+  okinawa: { leftPct: 85.0, topPct: 91.5, pointer: 'up-left' },
 };
 
 // 種目別マーカーカラー（色相を大きく離した高コントラスト4色）
