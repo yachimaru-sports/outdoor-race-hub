@@ -1,5 +1,22 @@
 [
   {
+    "id": "ev-sync-2026-11-26",
+    "date": "2026-11-26",
+    "time": "09:00",
+    "type": "event_updated",
+    "title": "大会データ定期検証完了（掲載 215 件）",
+    "detail": "開催日修正 0 件 / 終了大会アーカイブ 0 件 / リンク修正 0 件 / ステータス更新 6 件"
+  },
+  {
+    "id": "price-drop-gear-deal-mwbxea18-14eg-2026-11-26",
+    "date": "2026-11-26",
+    "time": "09:00",
+    "type": "price_drop",
+    "title": "値下げ検知: アシックス スニーカー メンズ ブランド asics ゴアテックス GT 100",
+    "detail": "¥14,890 → ¥12,990",
+    "gearId": "gear-deal-mwbxea18-14eg"
+  },
+  {
     "id": "portal-add-trjp-arataki-samurai-trail-2027-2026-11-26",
     "date": "2026-11-26",
     "time": "07:45",

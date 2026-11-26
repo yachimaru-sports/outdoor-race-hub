@@ -1,16 +1,16 @@
 {
-  "last_updated_at": "2026-11-24T21:42:35.920Z",
+  "last_updated_at": "2026-11-26T00:00:53.472Z",
   "events_count": 215,
-  "deals_count": 43,
+  "deals_count": 44,
   "gears_count": 74,
   "sync_source": "Google Sheets & Rakuten API Automated Sync",
   "gear_sync_source": "refresh_gears.mjs (自己修復・商品ページ実測・公式セール＆Gemini探索・画像HTTP200検証済)",
   "gear_removed": [],
   "run_summary": {
     "updated_date": "2026-11-26",
-    "updated_time": "07:45",
+    "updated_time": "09:00",
     "events_added": 6,
-    "events_updated": 37,
+    "events_updated": 85,
     "event_changes": [
       "新着: 荒滝SAMURAIトレイル 2027（山口県） (2027-02-27)",
       "新着: 2027BRM（AJ西東京） (2027-02-01)",
@@ -18,21 +18,30 @@
       "新着: 2027BRM（オダックス埼玉） (2026-11-26)",
       "新着: 2027BRM（AJ福岡 R熊本 AJ長崎 AR鹿児島） (2026-11-26)",
       "新着: 2026BRM（AJ千葉） (2026-11-26)"
-    ]
+    ],
+    "deals_added": 0,
+    "price_drops": 1,
+    "gear_changes": [
+      "値下げ: アシックス スニーカー メンズ ブランド asics ゴ (¥14,890→¥12,990)"
+    ],
+    "events_date_fixed": 0,
+    "events_archived": 0,
+    "links_fixed": 0,
+    "links_removed": 0
   },
   "daily_hero": {
-    "date": "2026-11-25",
-    "event_id": "trjp-nagatoro-alps-trail-race-2026",
-    "event_title": "長瀞アルプストレイルレース 2026（埼玉県）",
-    "event_date": "2026-12-20",
-    "place_label": "埼玉県・長瀞",
+    "date": "2026-11-26",
+    "event_id": "spoen-cycle-106733",
+    "event_title": "第4回 薩摩川内市サイクルフェスタ",
+    "event_date": "2026-11-29",
+    "place_label": "鹿児島県・甑島",
     "image": "hero-bg/daily-featured.jpg",
     "source_type": "wikimedia_commons",
-    "license": "CC BY 3.0",
-    "author": "Σ64 ( talk )",
-    "source_url": "https://commons.wikimedia.org/wiki/File:View_from_Mt.Kimpu_04.jpg",
+    "license": "CC BY-SA 4.0",
+    "author": "Sakoppi",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Namako_Pond_from_Tanojiri_ViewPoint.jpg",
     "ai_verified": true,
-    "ai_reason": "美しい尾根道と紅葉がトレラン大会の雰囲気に最適",
-    "updated_at": "2026-11-24T22:43:02.287Z"
+    "ai_reason": "甑島の美しい海岸と湖の景観で大会の背景に最適",
+    "updated_at": "2026-11-26T00:01:37.035Z"
   }
 }
