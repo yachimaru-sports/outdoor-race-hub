@@ -1,5 +1,23 @@
 [
   {
+    "id": "deal-add-gear-deal-mwy3k9r1-ohq3-2026-11-27",
+    "date": "2026-11-27",
+    "time": "07:01",
+    "type": "deal_added",
+    "title": "新着特価ギア発掘: ザ・ノース・フェイス ノースフェイス ベンチャージャケット THE NORTH ",
+    "detail": "実測 30%OFF の特価品を追加・入替しました",
+    "gearId": "gear-deal-mwy3k9r1-ohq3"
+  },
+  {
+    "id": "price-drop-gear-deal-mwxhsj5r-2y1n-2026-11-27",
+    "date": "2026-11-27",
+    "time": "07:01",
+    "type": "price_drop",
+    "title": "値下げ検知: HOKA F26 U SPEEDGOAT 2 BLACK / ASPHALTGR",
+    "detail": "¥27,500 → ¥19,250",
+    "gearId": "gear-deal-mwxhsj5r-2y1n"
+  },
+  {
     "id": "ev-sync-2026-11-27",
     "date": "2026-11-27",
     "time": "06:39",

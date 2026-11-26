@@ -1,28 +1,25 @@
 {
-  "last_updated_at": "2026-11-26T21:39:57.945Z",
+  "last_updated_at": "2026-11-26T22:01:49.073Z",
   "events_count": 215,
-  "deals_count": 36,
+  "deals_count": 38,
   "gears_count": 71,
   "sync_source": "Google Sheets & Rakuten API Automated Sync",
   "gear_sync_source": "refresh_gears.mjs (自己修復・在庫/実売価格実測・公式定価厳格照合・画像HTTP200検証済)",
-  "gear_removed": [
-    {
-      "id": "gear-deal-mwxhsiea-tq7a",
-      "status": "sold_out",
-      "reason": "Gemini検索で売り切れ検知 / 代替在庫あり商品が見つからず除外"
-    }
-  ],
+  "gear_removed": [],
   "run_summary": {
     "updated_date": "2026-11-27",
-    "updated_time": "06:39",
-    "deals_added": 0,
-    "price_drops": 0,
-    "gears_checked": 72,
-    "gears_verified_today": 7,
-    "gears_sold_out_removed": 1,
+    "updated_time": "07:01",
+    "deals_added": 1,
+    "price_drops": 1,
+    "gears_checked": 71,
+    "gears_verified_today": 68,
+    "gears_sold_out_removed": 0,
     "gears_price_updated": 2,
-    "gears_unverified_waf": 64,
-    "gear_changes": [],
+    "gears_unverified_waf": 3,
+    "gear_changes": [
+      "追加/入替: ザ・ノース・フェイス ノースフェイス ベンチャージャケット TH (30%OFF)",
+      "値下げ: HOKA F26 U SPEEDGOAT 2 BLACK (¥27,500→¥19,250)"
+    ],
     "events_added": 0,
     "events_updated": 7,
     "event_changes": [],
