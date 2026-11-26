@@ -192,10 +192,50 @@ async function runPreflightGate() {
     hasError = true;
   }
 
-  // 全品の必須項目チェック
+  // 全品の必須項目・価格・割引率・説明文整合性チェック
+  const gearMap = new Map();
   for (const g of gears) {
+    gearMap.set(g.id, g);
     if (!g.id || !g.title || !g.gearType || (!g.dealUrl && !g.officialUrl)) {
       console.error(`❌ 装備品不備: [${g.id}] ${g.title}`);
+      hasError = true;
+    }
+    if (!(g.price > 0) || !(g.originalPrice >= g.price)) {
+      console.error(`❌ 装備品価格不正: [${g.id}] price=${g.price}, original=${g.originalPrice}`);
+      hasError = true;
+    } else {
+      const expectedDisc = g.originalPrice > g.price ? Math.round((1 - g.price / g.originalPrice) * 100) : 0;
+      if (g.discountRate !== expectedDisc) {
+        console.error(`❌ 装備品割引率不整合: [${g.id}] discountRate=${g.discountRate}% != 計算値${expectedDisc}%`);
+        hasError = true;
+      }
+      const descOff = (g.standardTitle || '').match(/定価より(\d+)[%％]OFF/);
+      if (descOff && Number(descOff[1]) !== g.discountRate) {
+        console.error(`❌ 装備品説明文割引率矛盾: [${g.id}] 説明=${descOff[1]}% != 実測=${g.discountRate}%`);
+        hasError = true;
+      }
+    }
+  }
+
+  for (const d of deals) {
+    if (!(d.price > 0) || !(d.original_price > d.price) || d.discount_rate < 20) {
+      console.error(`❌ 特価品不正: [${d.id}] price=${d.price}, original=${d.original_price}, disc=${d.discount_rate}%`);
+      hasError = true;
+    } else {
+      const expectedDisc = Math.round((1 - d.price / d.original_price) * 100);
+      if (d.discount_rate !== expectedDisc) {
+        console.error(`❌ 特価品割引率不整合: [${d.id}] ${d.discount_rate}% != 計算値${expectedDisc}%`);
+        hasError = true;
+      }
+    }
+    const g = gearMap.get(d.gear_id);
+    if (!g || g.price !== d.price || g.originalPrice !== d.original_price || g.discountRate !== d.discount_rate) {
+      console.error(`❌ 特価品と装備マスター不整合: [${d.id}]`);
+      hasError = true;
+    }
+    const descOff = (d.description || '').match(/定価より(\d+)[%％]OFF/);
+    if (descOff && Number(descOff[1]) !== d.discount_rate) {
+      console.error(`❌ 特価品説明文割引率矛盾: [${d.id}] 説明=${descOff[1]}% != 実測=${d.discount_rate}%`);
       hasError = true;
     }
   }

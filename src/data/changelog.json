@@ -1,5 +1,77 @@
 [
   {
+    "id": "deal-add-gear-deal-mwxi40k0-mdic-2026-11-26",
+    "date": "2026-11-26",
+    "time": "21:00",
+    "type": "deal_added",
+    "title": "新着特価ギア発掘: ワコール CW-X スポーツタイツ メンズ ジェネレーターモデル ロング S/M",
+    "detail": "実測 20%OFF の特価品を追加・入替しました",
+    "gearId": "gear-deal-mwxi40k0-mdic"
+  },
+  {
+    "id": "deal-add-gear-deal-mwxi378l-3kkk-2026-11-26",
+    "date": "2026-11-26",
+    "time": "21:00",
+    "type": "deal_added",
+    "title": "新着特価ギア発掘: パールイズミ 3455-BL プリント ジャージ 2025年モデル 秋冬 自転車",
+    "detail": "実測 20%OFF の特価品を追加・入替しました",
+    "gearId": "gear-deal-mwxi378l-3kkk"
+  },
+  {
+    "id": "deal-add-gear-deal-mwxhsj5r-2y1n-2026-11-26",
+    "date": "2026-11-26",
+    "time": "20:52",
+    "type": "deal_added",
+    "title": "新着特価ギア発掘: HOKA F26 U SPEEDGOAT 2 BLACK / ASPHALTGR",
+    "detail": "実測 30%OFF の特価品を追加・入替しました",
+    "gearId": "gear-deal-mwxhsj5r-2y1n"
+  },
+  {
+    "id": "deal-add-gear-deal-mwxhsiea-tq7a-2026-11-26",
+    "date": "2026-11-26",
+    "time": "20:52",
+    "type": "deal_added",
+    "title": "新着特価ギア発掘: サロモン ウルトラフロー2 メンズ SALOMON ULTRA FLOW 2 靴",
+    "detail": "実測 30%OFF の特価品を追加・入替しました",
+    "gearId": "gear-deal-mwxhsiea-tq7a"
+  },
+  {
+    "id": "deal-add-gear-deal-mwxhsum7-wq2h-2026-11-26",
+    "date": "2026-11-26",
+    "time": "20:52",
+    "type": "deal_added",
+    "title": "新着特価ギア発掘: 25％OFF ワコール レディース CW-X スポーツタイツ 保温タイプ＜GEN",
+    "detail": "実測 25%OFF の特価品を追加・入替しました",
+    "gearId": "gear-deal-mwxhsum7-wq2h"
+  },
+  {
+    "id": "price-drop-gear-trail-poles-bd-distance-z-2026-11-26",
+    "date": "2026-11-26",
+    "time": "20:52",
+    "type": "price_drop",
+    "title": "値下げ検知: Black Diamond ディスタンスZ ピューター (高剛性アルミ折畳みポー",
+    "detail": "¥17,050 → ¥14,322",
+    "gearId": "gear-trail-poles-bd-distance-z"
+  },
+  {
+    "id": "price-drop-gear-trail-poles-bd-pursuit-2026-11-26",
+    "date": "2026-11-26",
+    "time": "20:52",
+    "type": "price_drop",
+    "title": "値下げ検知: Black Diamond パーシュートカーボンFLZ (長さ調節機能付カーボン",
+    "detail": "¥33,550 → ¥23,485",
+    "gearId": "gear-trail-poles-bd-pursuit"
+  },
+  {
+    "id": "price-drop-gear-deal-mwuili0n-2ety-2026-11-26",
+    "date": "2026-11-26",
+    "time": "20:52",
+    "type": "price_drop",
+    "title": "値下げ検知: セールsale 最大35％OFF ミレー MILLET タンペート ジャケット ",
+    "detail": "¥18,480 → ¥17,178",
+    "gearId": "gear-deal-mwuili0n-2ety"
+  },
+  {
     "id": "ev-sync-2026-11-26",
     "date": "2026-11-26",
     "time": "09:00",
