@@ -1,35 +1,40 @@
 {
-  "last_updated_at": "2026-11-26T22:01:49.073Z",
-  "events_count": 215,
-  "deals_count": 38,
-  "gears_count": 71,
+  "last_updated_at": "2026-11-27T21:43:11.028Z",
+  "events_count": 213,
+  "deals_count": 35,
+  "gears_count": 70,
   "sync_source": "Google Sheets & Rakuten API Automated Sync",
   "gear_sync_source": "refresh_gears.mjs (自己修復・在庫/実売価格実測・公式定価厳格照合・画像HTTP200検証済)",
-  "gear_removed": [],
+  "gear_removed": [
+    {
+      "id": "gear-ledlenser-hf4r-signature",
+      "status": "sold_out",
+      "reason": "公式ストア売り切れ(shopify sold-out)のため除外"
+    }
+  ],
   "run_summary": {
-    "updated_date": "2026-11-27",
-    "updated_time": "07:01",
-    "deals_added": 1,
+    "updated_date": "2026-11-28",
+    "updated_time": "06:42",
+    "deals_added": 0,
     "price_drops": 1,
     "gears_checked": 71,
-    "gears_verified_today": 68,
-    "gears_sold_out_removed": 0,
-    "gears_price_updated": 2,
-    "gears_unverified_waf": 3,
+    "gears_verified_today": 9,
+    "gears_sold_out_removed": 1,
+    "gears_price_updated": 4,
+    "gears_unverified_waf": 61,
     "gear_changes": [
-      "追加/入替: ザ・ノース・フェイス ノースフェイス ベンチャージャケット TH (30%OFF)",
-      "値下げ: HOKA F26 U SPEEDGOAT 2 BLACK (¥27,500→¥19,250)"
+      "値下げ: Black Diamond パーシュートカーボンFLZ  (¥23,485→¥21,820)"
     ],
     "events_added": 0,
     "events_updated": 7,
     "event_changes": [],
     "events_date_fixed": 0,
-    "events_archived": 0,
+    "events_archived": 2,
     "links_fixed": 0,
-    "links_removed": 0
+    "links_removed": 9
   },
   "daily_hero": {
-    "date": "2026-11-27",
+    "date": "2026-11-28",
     "event_id": "trjp-awaji-island-trail-2026",
     "event_title": "AWAJI ISLAND TRAIL 2026（兵庫県）",
     "event_date": "2026-11-28",
@@ -40,7 +45,7 @@
     "author": "Gohachiyasu1214",
     "source_url": "https://commons.wikimedia.org/wiki/File:Matsuhonoura%EF%BC%88Awaji,_Hyogo%EF%BC%89-01.jpg",
     "ai_verified": true,
-    "ai_reason": "淡路島の美しい海峡と鳥居の景観が大会背景に最適",
-    "updated_at": "2026-11-26T21:40:13.109Z"
+    "ai_reason": "淡路島の海と橋と鳥居の美しい風景で大会に最適",
+    "updated_at": "2026-11-27T21:43:21.763Z"
   }
 }

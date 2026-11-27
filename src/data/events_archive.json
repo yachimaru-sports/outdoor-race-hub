@@ -6512,5 +6512,134 @@
     "added_at": "2026-11-20",
     "date_verified_at": "2026-11-20",
     "archived_at": "2026-11-24"
+  },
+  {
+    "id": "trjp-nagatoro-alps-trail-race-2026",
+    "category": "trail",
+    "subCategory": "トレイルランニング",
+    "elements": [
+      "トレック"
+    ],
+    "title": "長瀞アルプストレイルレース 2026（埼玉県）",
+    "date": "2026-12-20",
+    "month": 12,
+    "region": "関東",
+    "prefecture": "埼玉県",
+    "distance_km": 16.5,
+    "elevation_m": 890,
+    "entry_fee": "公式サイト参照",
+    "entry_status": "closed",
+    "entry_start_date": "2026-09-16",
+    "entry_deadline": "2026-11-15",
+    "links": {
+      "official": null,
+      "entry": null,
+      "review": null,
+      "sns": null,
+      "verified": false,
+      "verified_at": "2026-11-28"
+    },
+    "mandatory_gear": [
+      {
+        "name": "トレイルランニングシューズ・ザック",
+        "category": "ギア"
+      },
+      {
+        "name": "レインジャケット（防風・防水シェル）",
+        "category": "ウェア"
+      },
+      {
+        "name": "水分・行動食・マイカップ",
+        "category": "補給"
+      },
+      {
+        "name": "ファーストエイドキット・携帯電話・保険証",
+        "category": "エイド"
+      }
+    ],
+    "venue": {
+      "name": "宝登山ロープウェイ駐車場",
+      "mapQuery": "埼玉県 宝登山ロープウェイ駐車場",
+      "lat": 35.857,
+      "lng": 139.6489,
+      "coordPrecision": "prefecture"
+    },
+    "source": {
+      "portalName": "トレイルランナー.JP",
+      "portalUrl": "https://trailrunner.jp/race-detail-nagatoro-alps-trail-race.html"
+    },
+    "added_at": "2026-11-16",
+    "updated_at": "2026-11-16",
+    "date_verified_at": "2026-11-27",
+    "archived_at": "2026-11-28",
+    "archive_reason": "有効リンク確認不可のため退避"
+  },
+  {
+    "id": "arwc-croatia-2027",
+    "category": "adventure",
+    "subCategory": "ARWC世界選手権",
+    "elements": [
+      "ARWS",
+      "ARWC世界選手権",
+      "アドベンチャー",
+      "読図",
+      "MTB",
+      "パドル",
+      "トレック",
+      "4日以上"
+    ],
+    "title": "Adventure Race Croatia 2027（クロアチア ARWC世界選手権 600km・6日間）",
+    "date": "2027-09-14~25",
+    "month": 9,
+    "region": "海外",
+    "prefecture": "クロアチア",
+    "distance_km": 600,
+    "elevation_m": 13500,
+    "entry_status": "open",
+    "entry_start_date": "2026-11-01",
+    "entry_deadline": "2027-06-30",
+    "entry_fee": "950,000円",
+    "links": {
+      "official": null,
+      "entry": null,
+      "review": null,
+      "sns": null,
+      "verified": false,
+      "verified_at": "2026-11-28"
+    },
+    "mandatory_gear": [
+      {
+        "name": "マウンテンバイク＆ヘルメット",
+        "category": "ギア"
+      },
+      {
+        "name": "パックラフト＆PFD",
+        "category": "ギア"
+      },
+      {
+        "name": "2.5万分の1地形図＆コンパス",
+        "category": "ナビゲーション"
+      },
+      {
+        "name": "完全防水レインウェア",
+        "category": "ウェア"
+      },
+      {
+        "name": "エマージェンシーキット",
+        "category": "ギア"
+      }
+    ],
+    "venue": {
+      "name": "Dalmatia Coast, Zadar",
+      "mapQuery": "Zadar Croatia",
+      "lat": 45.1,
+      "lng": 15.2,
+      "coordPrecision": "prefecture"
+    },
+    "source": {
+      "portalName": "ARWS公式"
+    },
+    "archived_at": "2026-11-28",
+    "archive_reason": "有効リンク確認不可のため退避"
   }
 ]

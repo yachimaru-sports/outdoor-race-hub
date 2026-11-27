@@ -1,5 +1,22 @@
 [
   {
+    "id": "ev-sync-2026-11-28",
+    "date": "2026-11-28",
+    "time": "06:42",
+    "type": "event_updated",
+    "title": "大会データ定期検証完了（掲載 213 件）",
+    "detail": "開催日修正 0 件 / 終了大会アーカイブ 2 件 / リンク修正 0 件 / ステータス更新 2 件"
+  },
+  {
+    "id": "price-drop-gear-trail-poles-bd-pursuit-2026-11-28",
+    "date": "2026-11-28",
+    "time": "06:42",
+    "type": "price_drop",
+    "title": "値下げ検知: Black Diamond パーシュートカーボンFLZ (長さ調節機能付カーボン",
+    "detail": "¥23,485 → ¥21,820",
+    "gearId": "gear-trail-poles-bd-pursuit"
+  },
+  {
     "id": "deal-add-gear-deal-mwy3k9r1-ohq3-2026-11-27",
     "date": "2026-11-27",
     "time": "07:01",
