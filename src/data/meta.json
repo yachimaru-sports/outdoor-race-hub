@@ -32,17 +32,43 @@
   },
   "daily_hero": {
     "date": "2026-11-28",
-    "event_id": "trjp-awaji-island-trail-2026",
-    "event_title": "AWAJI ISLAND TRAIL 2026（兵庫県）",
-    "event_date": "2026-11-28",
-    "place_label": "兵庫県・鳴門海峡",
+    "event_id": "trjp-jinbagatayama-eco-trail-2026",
+    "event_title": "陣馬形山エコトレイル 2026（長野県）",
+    "event_date": "2026-11-29",
+    "place_label": "長野県・陣馬形山",
     "image": "hero-bg/daily-featured.jpg",
     "source_type": "wikimedia_commons",
-    "license": "CC BY-SA 4.0",
-    "author": "Gohachiyasu1214",
-    "source_url": "https://commons.wikimedia.org/wiki/File:Matsuhonoura%EF%BC%88Awaji,_Hyogo%EF%BC%89-01.jpg",
+    "license": "CC BY 3.0",
+    "author": "Σ64",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Mt.Utsugidake_12.jpg",
     "ai_verified": true,
-    "ai_reason": "淡路島の海と橋と鳥居の美しい風景で大会に最適",
-    "updated_at": "2026-11-27T21:43:21.763Z"
+    "ai_reason": "美しい山岳風景でトレラン大会の背景に最適",
+    "updated_at": "2026-11-27T23:02:50.561Z",
+    "recent_history": [
+      {
+        "date": "2026-11-28",
+        "event_id": "trjp-jinbagatayama-eco-trail-2026",
+        "place_label": "長野県・陣馬形山",
+        "prefecture": "長野県",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Mt.Utsugidake_12.jpg",
+        "image": "hero-bg/daily-featured.jpg"
+      },
+      {
+        "date": "2026-11-28",
+        "event_id": "spoen-cycle-106733",
+        "place_label": "鹿児島県・甑島",
+        "prefecture": "鹿児島県",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Namako_Pond_from_Tanojiri_ViewPoint.jpg",
+        "image": "hero-bg/daily-featured.jpg"
+      },
+      {
+        "date": "2026-11-28",
+        "event_id": "trjp-awaji-island-trail-2026",
+        "place_label": "兵庫県・鳴門海峡",
+        "prefecture": "兵庫県",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Matsuhonoura%EF%BC%88Awaji,_Hyogo%EF%BC%89-01.jpg",
+        "image": "hero-bg/daily-featured.jpg"
+      }
+    ]
   }
 }

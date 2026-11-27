@@ -140,8 +140,60 @@ function calcEventDurationDays(ev) {
   return Math.max(1, Math.round((e - s) / 86400000) + 1);
 }
 
-/** 近日開催の国内大会から安全なローテーション順で最大5件の候補を選出 */
-function pickCandidateEvents(events, todayStr, dayOfYear) {
+function extractPrefFromPlaceLabel(label) {
+  const m = String(label || '').match(/(北海道|東京都|京都府|大阪府|[^・（(\s]{2,3}県)/);
+  return m ? m[1] : '';
+}
+
+/** meta.json の daily_hero から直近最大14日分の背景履歴を読み込む */
+function loadRecentHeroHistory() {
+  try {
+    const meta = JSON.parse(fs.readFileSync(META_PATH, 'utf-8'));
+    const dh = meta?.daily_hero;
+    if (!dh || typeof dh !== 'object') return [];
+
+    const merged = [];
+    if (dh.event_id || dh.source_url || dh.image) {
+      merged.push({
+        date: dh.date || '',
+        event_id: dh.event_id || '',
+        place_label: dh.place_label || '',
+        prefecture: extractPrefFromPlaceLabel(dh.place_label),
+        source_url: dh.source_url || '',
+        image: dh.image || '',
+      });
+    }
+    if (Array.isArray(dh.recent_history)) {
+      for (const item of dh.recent_history) {
+        if (!item || typeof item !== 'object') continue;
+        merged.push({
+          date: item.date || '',
+          event_id: item.event_id || '',
+          place_label: item.place_label || '',
+          prefecture: item.prefecture || extractPrefFromPlaceLabel(item.place_label),
+          source_url: item.source_url || '',
+          image: item.image || '',
+        });
+      }
+    }
+
+    const seen = new Set();
+    const deduped = [];
+    for (const h of merged) {
+      const key = `${h.date}|${h.event_id}|${h.source_url}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
+      deduped.push(h);
+      if (deduped.length >= 14) break;
+    }
+    return deduped;
+  } catch {
+    return [];
+  }
+}
+
+/** 近日開催の国内大会から直近履歴を避けたローテーション順で最大5件の候補を選出 */
+function pickCandidateEvents(events, todayStr, dayOfYear, recentHistory = []) {
   const future30 = new Date(new Date(`${todayStr}T00:00:00Z`).getTime() + 30 * 86400 * 1000)
     .toISOString()
     .slice(0, 10);
@@ -186,7 +238,23 @@ function pickCandidateEvents(events, todayStr, dayOfYear) {
     .map((s) => s.ev)
     .filter((e) => !rotated.some((r) => r.id === e.id));
 
-  return [...rotated, ...rest].slice(0, 5);
+  const allOrdered = [...rotated, ...rest];
+  const recentEventIds = new Set(recentHistory.map((h) => h.event_id).filter(Boolean));
+  const recent3Prefs = new Set(recentHistory.slice(0, 3).map((h) => h.prefecture).filter(Boolean));
+  const lastEventId = recentHistory[0]?.event_id || '';
+
+  const getTier = (ev) => {
+    if (!recentEventIds.has(ev.id) && !recent3Prefs.has(ev.prefecture)) return 0;
+    if (!recentEventIds.has(ev.id)) return 1;
+    if (ev.id !== lastEventId) return 2;
+    return 3;
+  };
+
+  return allOrdered
+    .map((ev, idx) => ({ ev, tier: getTier(ev), idx }))
+    .sort((a, b) => a.tier - b.tier || a.idx - b.idx)
+    .map((item) => item.ev)
+    .slice(0, 5);
 }
 
 /** 施設名や曖昧語を除いた検索安全地名をサニタイズ */
@@ -533,33 +601,64 @@ async function verifyImageWithGeminiVision(imageBuffer, mimeType, context) {
   }
 }
 
-/** 審査不可・候補全滅時に必ず使用する安全な自前自然ギャラリーを選択 */
-function pickSafeLocalFallback(target, month) {
+/** 審査不可・候補全滅時に必ず使用する安全な自前自然ギャラリーを選択（直前と同一画像を回避） */
+function pickSafeLocalFallback(target, month, lastImage = '') {
   const isCycling = target?.category === 'cycling';
-  if (month >= 3 && month <= 5) {
-    return { image: 'hero-bg/spring-trail.webp', label: '新緑の山岳トレイル（春）' };
-  }
-  if (month >= 6 && month <= 8) {
-    return isCycling
-      ? { image: 'hero-bg/summer-cycling.webp', label: '瀬戸内海沿いのロード（夏）' }
-      : { image: 'hero-bg/summer-alpine.webp', label: '雲海を望む稜線（夏）' };
-  }
-  if (month >= 9 && month <= 11) {
-    return isCycling
-      ? { image: 'hero-bg/autumn-cycling.webp', label: '朝霧の湖畔サイクルロード（秋）' }
-      : { image: 'hero-bg/autumn-trail.webp', label: '紅葉の山岳トレイル（秋）' };
-  }
-  return { image: 'hero-bg/winter-trail.webp', label: '冬の朝焼けと雪山稜線（冬）' };
+  const catalog = [
+    { image: 'hero-bg/spring-trail.webp', label: '新緑の山岳トレイル（春）', season: 'spring', cycling: false },
+    { image: 'hero-bg/summer-cycling.webp', label: '瀬戸内海沿いのロード（夏）', season: 'summer', cycling: true },
+    { image: 'hero-bg/summer-alpine.webp', label: '雲海を望む稜線（夏）', season: 'summer', cycling: false },
+    { image: 'hero-bg/autumn-cycling.webp', label: '朝霧の湖畔サイクルロード（秋）', season: 'autumn', cycling: true },
+    { image: 'hero-bg/autumn-trail.webp', label: '紅葉の山岳トレイル（秋）', season: 'autumn', cycling: false },
+    { image: 'hero-bg/winter-trail.webp', label: '冬の朝焼けと雪山稜線（冬）', season: 'winter', cycling: false },
+  ];
+
+  const season = month >= 3 && month <= 5
+    ? 'spring'
+    : month >= 6 && month <= 8
+      ? 'summer'
+      : month >= 9 && month <= 11
+        ? 'autumn'
+        : 'winter';
+
+  const ordered = [...catalog].sort((a, b) => {
+    const scoreA = (a.season === season ? 2 : 0) + (a.cycling === isCycling ? 1 : 0);
+    const scoreB = (b.season === season ? 2 : 0) + (b.cycling === isCycling ? 1 : 0);
+    return scoreB - scoreA;
+  });
+
+  const chosen = ordered.find((item) => item.image !== lastImage) || ordered[0];
+  return { image: chosen.image, label: chosen.label };
 }
 
-function saveMetaDailyHero(entry) {
+function saveMetaDailyHero(entry, recentHistory = []) {
   let meta = {};
   try {
     meta = JSON.parse(fs.readFileSync(META_PATH, 'utf-8'));
   } catch {
     meta = {};
   }
-  meta.daily_hero = entry;
+
+  const currentSummary = {
+    date: entry.date,
+    event_id: entry.event_id || '',
+    place_label: entry.place_label || '',
+    prefecture: extractPrefFromPlaceLabel(entry.place_label),
+    source_url: entry.source_url || '',
+    image: entry.image || '',
+  };
+
+  const nextHistory = [
+    currentSummary,
+    ...recentHistory.filter(
+      (h) => !(h.date === currentSummary.date && h.event_id === currentSummary.event_id)
+    ),
+  ].slice(0, 14);
+
+  meta.daily_hero = {
+    ...entry,
+    recent_history: nextHistory,
+  };
   fs.writeFileSync(META_PATH, JSON.stringify(meta, null, 2) + '\n', 'utf-8');
 }
 
@@ -568,35 +667,41 @@ async function main() {
   const idArg = process.argv.find((a) => a.startsWith('--event-id='));
   const { dateStr, month, dayOfYear } = getTodayJst();
   const events = JSON.parse(fs.readFileSync(EVENTS_PATH, 'utf-8'));
+  const recentHistory = loadRecentHeroHistory();
+  const recentSourceUrls = new Set(recentHistory.map((h) => h.source_url).filter(Boolean));
+  const lastImage = recentHistory[0]?.image || '';
 
   const candidateEvents = idArg
     ? [events.find((e) => e.id === idArg.slice('--event-id='.length))].filter(Boolean)
-    : pickCandidateEvents(events, dateStr, dayOfYear);
+    : pickCandidateEvents(events, dateStr, dayOfYear, recentHistory);
 
   if (candidateEvents.length === 0) {
     console.log('⚠️ ピックアップ対象の近日大会が見つかりませんでした。自前自然ギャラリーを適用します。');
-    const fb = pickSafeLocalFallback(null, month);
+    const fb = pickSafeLocalFallback(null, month, lastImage);
     if (!isDryRun) {
-      saveMetaDailyHero({
-        date: dateStr,
-        event_id: '',
-        event_title: '季節のアウトドア自然風景',
-        event_date: dateStr,
-        place_label: fb.label,
-        image: fb.image,
-        source_type: 'curated_local',
-        license: 'Original',
-        author: 'OUTDOOR RACE HUB',
-        source_url: '',
-        ai_verified: true,
-        ai_reason: '事前審査済みの安全な自前自然ギャラリーを使用',
-        updated_at: new Date().toISOString(),
-      });
+      saveMetaDailyHero(
+        {
+          date: dateStr,
+          event_id: '',
+          event_title: '季節のアウトドア自然風景',
+          event_date: dateStr,
+          place_label: fb.label,
+          image: fb.image,
+          source_type: 'curated_local',
+          license: 'Original',
+          author: 'OUTDOOR RACE HUB',
+          source_url: '',
+          ai_verified: true,
+          ai_reason: '事前審査済みの安全な自前自然ギャラリーを使用',
+          updated_at: new Date().toISOString(),
+        },
+        recentHistory
+      );
     }
     return;
   }
 
-  console.log(`🛡️ 本日の背景更新を開始 (${dateStr} JST / mode: ${isDryRun ? 'DRY-RUN' : '本番'})`);
+  console.log(`🛡️ 本日の背景更新を開始 (${dateStr} JST / mode: ${isDryRun ? 'DRY-RUN' : '本番'} / 履歴: ${recentHistory.length}件)`);
 
   for (const target of candidateEvents) {
     if (exhaustedModels.size >= GEMINI_MODELS.length) break;
@@ -609,6 +714,10 @@ async function main() {
 
     for (const cand of candidates.slice(0, 4)) {
       if (exhaustedModels.size >= GEMINI_MODELS.length) break;
+      if (cand.sourceUrl && recentSourceUrls.has(cand.sourceUrl)) {
+        console.log(`   ⏭️ 直近14日以内に使用済み画像のためスキップ: ${cand.title}`);
+        continue;
+      }
       try {
         const imgRes = await fetch(cand.saveUrl, { headers: { 'User-Agent': UA }, signal: AbortSignal.timeout(15000) });
         if (!imgRes.ok) {
@@ -656,7 +765,7 @@ async function main() {
         } else {
           fs.mkdirSync(path.dirname(OUT_IMG_PATH), { recursive: true });
           fs.writeFileSync(OUT_IMG_PATH, buf);
-          saveMetaDailyHero(newEntry);
+          saveMetaDailyHero(newEntry, recentHistory);
           console.log(`🎉 本日の開催地風景を更新しました: ${OUT_IMG_PATH} (${Math.round(buf.length / 1024)} KB)`);
           console.log(`   出典: ${cand.author} / ${cand.license} (${cand.sourceUrl})`);
         }
@@ -669,7 +778,7 @@ async function main() {
 
   // 全候補でAI審査通過画像を得られなかった場合は、前日画像を残さず安全な自前ギャラリーへ切り替え
   const primaryTarget = candidateEvents[0];
-  const fb = pickSafeLocalFallback(primaryTarget, month);
+  const fb = pickSafeLocalFallback(primaryTarget, month, lastImage);
   const fallbackEntry = {
     date: dateStr,
     event_id: primaryTarget.id,
@@ -689,7 +798,7 @@ async function main() {
   if (isDryRun) {
     console.log('🧪 --dry-run フォールバック結果:', JSON.stringify(fallbackEntry, null, 2));
   } else {
-    saveMetaDailyHero(fallbackEntry);
+    saveMetaDailyHero(fallbackEntry, recentHistory);
     console.log(`🛡️ 安全な自前自然ギャラリーへフォールバックしました: ${fb.image} (${fb.label})`);
   }
 }
