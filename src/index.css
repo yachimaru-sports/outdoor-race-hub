@@ -375,6 +375,14 @@
   animation: intro-caption-fade 2.1s both;
 }
 
+/* 特価ギアカルーセル：GPU合成・サブピクセル滑らかスクロール用レイヤー */
+.deals-ticker-track {
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  contain: layout style;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-map-zoom-land,
   .animate-map-fade-up {

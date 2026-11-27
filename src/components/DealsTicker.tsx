@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useMemo, useCallback } from 'react';
 import { DealItem } from '../types';
 import { AccessCounter } from './AccessCounter';
 import { handleImageError } from '../utils/imageFallback';
@@ -34,10 +34,14 @@ interface DealsTickerProps {
   pausedExternally?: boolean;
 }
 
+/** オフセット値を [0, width) の範囲にシームレスに折り返す */
+function wrapOffset(value: number, width: number): number {
+  if (width <= 0) return 0;
+  return ((value % width) + width) % width;
+}
+
 export const DealsTicker: React.FC<DealsTickerProps> = ({
   deals,
-  totalEvents = 158,
-  openCount = 29,
   lastUpdated = '2026.10.31 10:30',
   theme = 'light',
   onToggleTheme,
@@ -48,134 +52,301 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({
   onToggleDisplayMode,
   pausedExternally = false,
 }) => {
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const [isPaused, setIsPaused] = useState(false);
-  const animFrameId = useRef<number | null>(null);
-  // スマホブラウザで scrollLeft の小数加算が切り捨てられるのを防ぐため浮動小数点位置を保持
-  const posRef = useRef<number | null>(null);
-  const resumeTimerRef = useRef<number | null>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const firstSetRef = useRef<HTMLDivElement>(null);
+  const singleWidthRef = useRef(0);
+  const offsetRef = useRef(0);
 
-  // 途切れず無限にぐるぐる繋がるように3セット配置
-  const tripleDeals = [...deals, ...deals, ...deals];
-
-  // タッチ操作時の一時停止と遅延再開（慣性スクロール完了後に自然再開）
-  const handleTouchPause = () => {
-    if (resumeTimerRef.current !== null) {
-      window.clearTimeout(resumeTimerRef.current);
-      resumeTimerRef.current = null;
-    }
-    setIsPaused(true);
-  };
-
-  const handleTouchResume = () => {
-    if (resumeTimerRef.current !== null) {
-      window.clearTimeout(resumeTimerRef.current);
-    }
-    resumeTimerRef.current = window.setTimeout(() => {
-      posRef.current = scrollRef.current ? scrollRef.current.scrollLeft : null;
-      setIsPaused(false);
-      resumeTimerRef.current = null;
-    }, 1200);
-  };
+  // 再レンダリングを起こさずにアニメ制御するための参照群
+  const isHoverPausedRef = useRef(false);
+  const isInteractingRef = useRef(false);
+  const pausedExternallyRef = useRef(pausedExternally);
+  const pauseUntilRef = useRef(0);
+  const manualAnimRef = useRef<{
+    startOffset: number;
+    delta: number;
+    startTime: number;
+    duration: number;
+  } | null>(null);
+  const inertiaVelRef = useRef(0);
+  const touchStateRef = useRef<{
+    startX: number;
+    startY: number;
+    lastX: number;
+    lastTime: number;
+    velX: number;
+    mode: 'undecided' | 'horizontal' | 'vertical';
+  } | null>(null);
+  const didDragRef = useRef(false);
 
   useEffect(() => {
-    return () => {
-      if (resumeTimerRef.current !== null) {
-        window.clearTimeout(resumeTimerRef.current);
+    pausedExternallyRef.current = pausedExternally;
+  }, [pausedExternally]);
+
+  // カード表示用データを事前計算し、毎フレーム・毎レンダーの計算負荷を排除
+  const enrichedDeals = useMemo(() => {
+    const nowMs = Date.now();
+    return deals.map((deal) => ({
+      deal,
+      savedYen: deal.original_price - deal.price,
+      isNew: Boolean(
+        deal.registered_at &&
+          nowMs - new Date(deal.registered_at).getTime() <= 48 * 60 * 60 * 1000
+      ),
+    }));
+  }, [deals]);
+
+  // 1周期分の横幅を ResizeObserver でキャッシュ（アニメーション中のDOM計測ゼロ）
+  useEffect(() => {
+    const setEl = firstSetRef.current;
+    if (!setEl) return;
+
+    const measure = () => {
+      const w = setEl.offsetWidth;
+      if (w > 0) {
+        singleWidthRef.current = w;
+        offsetRef.current = wrapOffset(offsetRef.current, w);
       }
+    };
+
+    measure();
+    const ro = new ResizeObserver(measure);
+    ro.observe(setEl);
+    return () => ro.disconnect();
+  }, [enrichedDeals.length]);
+
+  // GPU合成 translate3d によるサブピクセル精度 60fps+ 常駐スライドエンジン
+  useEffect(() => {
+    if (enrichedDeals.length === 0) return;
+
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let lastTime = performance.now();
+    const SPEED_PX_PER_SEC = 44;
+    let rafId = 0;
+
+    const tick = (now: number) => {
+      const dt = Math.min(Math.max((now - lastTime) / 1000, 0), 0.05);
+      lastTime = now;
+
+      const track = trackRef.current;
+      const w = singleWidthRef.current;
+
+      if (track && w > 0) {
+        if (manualAnimRef.current) {
+          const anim = manualAnimRef.current;
+          const progress = Math.min(1, (now - anim.startTime) / anim.duration);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          offsetRef.current = wrapOffset(anim.startOffset + anim.delta * eased, w);
+          if (progress >= 1) {
+            manualAnimRef.current = null;
+          }
+        } else if (!isInteractingRef.current && Math.abs(inertiaVelRef.current) > 8) {
+          offsetRef.current = wrapOffset(offsetRef.current + inertiaVelRef.current * dt, w);
+          inertiaVelRef.current *= Math.pow(0.04, dt);
+          if (Math.abs(inertiaVelRef.current) <= 8) {
+            inertiaVelRef.current = 0;
+          }
+        } else if (
+          !mediaQuery.matches &&
+          !isHoverPausedRef.current &&
+          !isInteractingRef.current &&
+          !pausedExternallyRef.current &&
+          now >= pauseUntilRef.current
+        ) {
+          offsetRef.current = wrapOffset(offsetRef.current + SPEED_PX_PER_SEC * dt, w);
+        }
+
+        track.style.transform = `translate3d(${-offsetRef.current.toFixed(2)}px, 0, 0)`;
+      }
+
+      rafId = requestAnimationFrame(tick);
+    };
+
+    rafId = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(rafId);
+  }, [enrichedDeals.length]);
+
+  // 左右ボタンによる滑らかイージング移動（連打時は残り移動量へ自然に加算）
+  const handleManualScroll = useCallback((direction: 'left' | 'right') => {
+    const w = singleWidthRef.current;
+    if (w <= 0) return;
+
+    const step = direction === 'left' ? -320 : 320;
+    const now = performance.now();
+    let remainingDelta = 0;
+
+    if (manualAnimRef.current) {
+      const anim = manualAnimRef.current;
+      const progress = Math.min(1, (now - anim.startTime) / anim.duration);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      remainingDelta = anim.delta * (1 - eased);
+    }
+
+    inertiaVelRef.current = 0;
+    manualAnimRef.current = {
+      startOffset: offsetRef.current,
+      delta: remainingDelta + step,
+      startTime: now,
+      duration: 380,
+    };
+    pauseUntilRef.current = now + 900;
+  }, []);
+
+  // スマホ横スワイプ開始（縦スクロールを阻害しないよう方向を自動判別）
+  const handleTouchStart = useCallback((e: React.TouchEvent) => {
+    const touch = e.touches[0];
+    if (!touch) return;
+    isInteractingRef.current = true;
+    manualAnimRef.current = null;
+    inertiaVelRef.current = 0;
+    didDragRef.current = false;
+    touchStateRef.current = {
+      startX: touch.clientX,
+      startY: touch.clientY,
+      lastX: touch.clientX,
+      lastTime: performance.now(),
+      velX: 0,
+      mode: 'undecided',
     };
   }, []);
 
-  // 初期スクロール位置を中央セットの開始位置に設定
-  useEffect(() => {
-    const el = scrollRef.current;
-    if (!el || deals.length === 0) return;
+  const handleTouchMove = useCallback((e: React.TouchEvent) => {
+    const ts = touchStateRef.current;
+    const touch = e.touches[0];
+    if (!ts || !touch) return;
 
-    const timer = setTimeout(() => {
-      if (el) {
-        const singleWidth = el.scrollWidth / 3;
-        if (singleWidth > 0) {
-          el.scrollLeft = singleWidth;
-          posRef.current = singleWidth;
-        }
+    if (ts.mode === 'vertical') return;
+
+    const totalDx = Math.abs(touch.clientX - ts.startX);
+    const totalDy = Math.abs(touch.clientY - ts.startY);
+
+    if (ts.mode === 'undecided') {
+      if (totalDx < 6 && totalDy < 6) return;
+      if (totalDy > totalDx) {
+        ts.mode = 'vertical';
+        isInteractingRef.current = false;
+        return;
       }
-    }, 50);
-
-    return () => clearTimeout(timer);
-  }, [deals.length]);
-
-  // requestAnimationFrame による時間ベース・浮動小数点累積の滑らか自動スクロール
-  useEffect(() => {
-    if (isPaused || pausedExternally || deals.length === 0) return;
-
-    let lastTime = performance.now();
-    const SPEED_PX_PER_SEC = 42;
-
-    const step = (now: number) => {
-      const el = scrollRef.current;
-      if (!el) return;
-
-      const dt = Math.min(Math.max(now - lastTime, 0), 100);
-      lastTime = now;
-
-      const singleWidth = el.scrollWidth / 3;
-      if (singleWidth > 0) {
-        // 初回またはユーザー操作・慣性スクロール等で大きくズレた場合は実測値へ再同期
-        if (posRef.current === null || Math.abs(el.scrollLeft - posRef.current) > 4) {
-          posRef.current = el.scrollLeft < singleWidth * 0.25 ? el.scrollLeft + singleWidth : el.scrollLeft;
-        }
-
-        posRef.current += (dt / 1000) * SPEED_PX_PER_SEC;
-
-        // 2セット目終端を超えたら1セット分戻してシームレスに無限ループ
-        if (posRef.current >= singleWidth * 2) {
-          posRef.current -= singleWidth;
-        } else if (posRef.current < singleWidth * 0.5) {
-          posRef.current += singleWidth;
-        }
-
-        const nextInt = Math.floor(posRef.current);
-        if (nextInt !== el.scrollLeft) {
-          el.scrollLeft = nextInt;
-        }
-      }
-
-      animFrameId.current = requestAnimationFrame(step);
-    };
-
-    animFrameId.current = requestAnimationFrame(step);
-
-    return () => {
-      if (animFrameId.current) {
-        cancelAnimationFrame(animFrameId.current);
-        animFrameId.current = null;
-      }
-    };
-  }, [isPaused, pausedExternally, deals.length]);
-
-  // 左右の手動スクロールボタン
-  const handleManualScroll = (direction: 'left' | 'right') => {
-    const el = scrollRef.current;
-    if (!el) return;
-
-    const singleWidth = el.scrollWidth / 3;
-    const offset = direction === 'left' ? -340 : 340;
-
-    if (direction === 'right' && el.scrollLeft >= singleWidth * 2 - 100) {
-      el.scrollLeft -= singleWidth;
-    } else if (direction === 'left' && el.scrollLeft <= singleWidth + 100) {
-      el.scrollLeft += singleWidth;
+      ts.mode = 'horizontal';
+      didDragRef.current = true;
     }
 
-    el.scrollBy({ left: offset, behavior: 'smooth' });
-    // スムーズスクロール後の位置から自然に引き継ぐためリセット
-    posRef.current = null;
-  };
+    const now = performance.now();
+    const moveDx = ts.lastX - touch.clientX;
+    const dtSec = Math.max((now - ts.lastTime) / 1000, 0.004);
+    const instVel = moveDx / dtSec;
+
+    ts.velX = ts.velX * 0.45 + instVel * 0.55;
+    ts.lastX = touch.clientX;
+    ts.lastTime = now;
+
+    if (singleWidthRef.current > 0) {
+      offsetRef.current = wrapOffset(offsetRef.current + moveDx, singleWidthRef.current);
+    }
+  }, []);
+
+  const handleTouchEnd = useCallback(() => {
+    const ts = touchStateRef.current;
+    if (ts && ts.mode === 'horizontal') {
+      inertiaVelRef.current = Math.max(-1800, Math.min(1800, ts.velX));
+      pauseUntilRef.current = performance.now() + 1200;
+    }
+    isInteractingRef.current = false;
+    touchStateRef.current = null;
+  }, []);
+
+  // PCトラックパッド横スクロール対応
+  const handleWheel = useCallback((e: React.WheelEvent) => {
+    if (Math.abs(e.deltaX) <= Math.abs(e.deltaY) || Math.abs(e.deltaX) < 1) return;
+    if (singleWidthRef.current <= 0) return;
+
+    manualAnimRef.current = null;
+    inertiaVelRef.current = 0;
+    offsetRef.current = wrapOffset(offsetRef.current + e.deltaX, singleWidthRef.current);
+    pauseUntilRef.current = performance.now() + 1200;
+  }, []);
 
   const handleScrollToTop = (e: React.MouseEvent) => {
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  /** 1周期分のカードセットを描画（2セット配置によるシームレス連結） */
+  const renderCardSet = (isDuplicate: boolean) =>
+    enrichedDeals.map(({ deal, savedYen, isNew }, idx) => (
+      <a
+        key={`${isDuplicate ? 'dup' : 'main'}-${deal.id}-${idx}`}
+        href={deal.affiliate_url}
+        target="_blank"
+        rel="noopener noreferrer"
+        tabIndex={isDuplicate ? -1 : undefined}
+        onClick={(e) => {
+          if (didDragRef.current) {
+            e.preventDefault();
+            didDragRef.current = false;
+          }
+        }}
+        className="group relative flex items-center gap-1.5 sm:gap-2 bg-slate-900 hover:bg-slate-850 border border-slate-750 hover:border-amber-400 rounded-xl p-1 sm:p-1.5 w-[240px] sm:w-[310px] shrink-0 transition-colors shadow-xs"
+        title={`楽天市場で見る: ${deal.title}`}
+      >
+        {/* 商品画像 + 割引リボン + 新規登録マーク（非同期デコードでスライド停止を防止） */}
+        <div className="relative shrink-0">
+          <img
+            src={deal.image_url}
+            alt={isDuplicate ? '' : deal.title}
+            width={48}
+            height={48}
+            loading="eager"
+            decoding="async"
+            onError={handleImageError}
+            className="w-10 h-10 sm:w-12 sm:h-12 object-contain bg-white rounded-lg p-0.5 border border-slate-700 shadow-2xs"
+          />
+          <div className="absolute -top-1.5 -left-1.5 bg-red-600 text-white font-black text-[10px] px-1.5 py-0.2 rounded shadow border border-white/80 tracking-tight leading-none">
+            {deal.discount_rate}%OFF
+          </div>
+          {isNew && (
+            <div className="absolute -bottom-1 -left-1 bg-gradient-to-r from-emerald-500 to-teal-400 text-slate-950 font-black text-[9px] px-1 py-0.2 rounded shadow border border-white/90 leading-none">
+              新着NEW
+            </div>
+          )}
+        </div>
+
+        {/* 商品情報 */}
+        <div className="min-w-0 flex-1">
+          <div className="flex items-center gap-1 mb-0.5 whitespace-nowrap">
+            {isNew && (
+              <span className="text-[9px] font-black px-1.5 py-0.2 rounded bg-emerald-500 text-slate-950 leading-none shadow-xs">
+                🆕 新規登録
+              </span>
+            )}
+            <span className="text-[10px] font-black px-1.5 py-0.2 rounded bg-red-600 text-white leading-none">
+              🔥 ¥{savedYen.toLocaleString()}引
+            </span>
+            <span className="text-[10px] font-bold px-1 py-0.2 rounded bg-amber-400 text-slate-950 flex items-center gap-0.5 leading-none">
+              <Flame className="w-2.5 h-2.5 fill-red-600 text-red-600 shrink-0" />
+              P{deal.point_rate}倍
+            </span>
+          </div>
+
+          <p className="text-xs text-white font-bold truncate group-hover:text-amber-300 transition-colors">
+            {deal.title}
+          </p>
+
+          <div className="flex items-baseline gap-1 mt-0.5 whitespace-nowrap">
+            <span className="text-sm font-black font-mono text-amber-300 tracking-tight leading-none">
+              {formatPrice(deal.price)}
+            </span>
+            <span className="text-[10px] text-slate-400 line-through font-mono">
+              {formatPrice(deal.original_price)}
+            </span>
+            <span className="ml-auto inline-flex items-center gap-0.5 text-[10px] font-extrabold text-emerald-400 group-hover:translate-x-0.5 transition-transform">
+              <span>楽天</span>
+              <ExternalLink className="w-2.5 h-2.5" />
+            </span>
+          </div>
+        </div>
+      </a>
+    ));
 
   return (
     <div
@@ -304,93 +475,38 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({
             </div>
           </div>
 
-          {/* 中央：無限スライド 楽天特価ギアカルーセル */}
+          {/* 中央：完全GPU合成 無限スライド 楽天特価ギアカルーセル */}
           <div
             className="relative w-full md:flex-1 min-w-0 overflow-hidden"
             onPointerEnter={(e) => {
-              if (e.pointerType === 'mouse') setIsPaused(true);
+              if (e.pointerType === 'mouse') isHoverPausedRef.current = true;
             }}
             onPointerLeave={(e) => {
-              if (e.pointerType === 'mouse') setIsPaused(false);
+              if (e.pointerType === 'mouse') isHoverPausedRef.current = false;
             }}
-            onTouchStart={handleTouchPause}
-            onTouchEnd={handleTouchResume}
-            onTouchCancel={handleTouchResume}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+            onTouchCancel={handleTouchEnd}
+            onWheel={handleWheel}
           >
+            {/* 左右端の滑らかなグラデーションフェードマスク */}
             <div
-              ref={scrollRef}
-              className="flex items-center gap-2.5 overflow-x-auto no-scrollbar py-0.5"
-            >
-              {tripleDeals.map((deal, idx) => {
-                const savedYen = deal.original_price - deal.price;
-                const isNew = Boolean(
-                  deal.registered_at &&
-                    Date.now() - new Date(deal.registered_at).getTime() <= 48 * 60 * 60 * 1000
-                );
-                return (
-                  <a
-                    key={`${deal.id}-${idx}`}
-                    href={deal.affiliate_url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group relative flex items-center gap-1.5 sm:gap-2 bg-slate-900 hover:bg-slate-850 border border-slate-750 hover:border-amber-400 rounded-xl p-1 sm:p-1.5 w-[240px] sm:w-[310px] shrink-0 transition-all shadow-xs"
-                    title={`楽天市場で見る: ${deal.title}`}
-                  >
-                    {/* 商品画像 + 割引リボン + 新規登録マーク */}
-                    <div className="relative shrink-0">
-                      <img
-                        src={deal.image_url}
-                        alt={deal.title}
-                        className="w-10 h-10 sm:w-12 sm:h-12 object-contain bg-white rounded-lg p-0.5 border border-slate-700 shadow-2xs"
-                        loading="lazy"
-                      />
-                      <div className="absolute -top-1.5 -left-1.5 bg-red-600 text-white font-black text-[10px] px-1.5 py-0.2 rounded shadow border border-white/80 tracking-tight leading-none">
-                        {deal.discount_rate}%OFF
-                      </div>
-                      {isNew && (
-                        <div className="absolute -bottom-1 -left-1 bg-gradient-to-r from-emerald-500 to-teal-400 text-slate-950 font-black text-[9px] px-1 py-0.2 rounded shadow border border-white/90 leading-none">
-                          新着NEW
-                        </div>
-                      )}
-                    </div>
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-y-0 left-0 w-5 sm:w-8 z-10 bg-gradient-to-r from-slate-950 via-slate-950/70 to-transparent"
+            />
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-y-0 right-0 w-5 sm:w-8 z-10 bg-gradient-to-l from-slate-950 via-slate-950/70 to-transparent"
+            />
 
-                    {/* 商品情報 */}
-                    <div className="min-w-0 flex-1">
-                      <div className="flex items-center gap-1 mb-0.5 whitespace-nowrap">
-                        {isNew && (
-                          <span className="text-[9px] font-black px-1.5 py-0.2 rounded bg-emerald-500 text-slate-950 leading-none shadow-xs">
-                            🆕 新規登録
-                          </span>
-                        )}
-                        <span className="text-[10px] font-black px-1.5 py-0.2 rounded bg-red-600 text-white leading-none">
-                          🔥 ¥{savedYen.toLocaleString()}引
-                        </span>
-                        <span className="text-[10px] font-bold px-1 py-0.2 rounded bg-amber-400 text-slate-950 flex items-center gap-0.5 leading-none">
-                          <Flame className="w-2.5 h-2.5 fill-red-600 text-red-600 shrink-0" />
-                          P{deal.point_rate}倍
-                        </span>
-                      </div>
-
-                      <p className="text-xs text-white font-bold truncate group-hover:text-amber-300 transition-colors">
-                        {deal.title}
-                      </p>
-
-                      <div className="flex items-baseline gap-1 mt-0.5 whitespace-nowrap">
-                        <span className="text-sm font-black font-mono text-amber-300 tracking-tight leading-none">
-                          {formatPrice(deal.price)}
-                        </span>
-                        <span className="text-[10px] text-slate-400 line-through font-mono">
-                          {formatPrice(deal.original_price)}
-                        </span>
-                        <span className="ml-auto inline-flex items-center gap-0.5 text-[10px] font-extrabold text-emerald-400 group-hover:translate-x-0.5 transition-transform">
-                          <span>楽天</span>
-                          <ExternalLink className="w-2.5 h-2.5" />
-                        </span>
-                      </div>
-                    </div>
-                  </a>
-                );
-              })}
+            <div ref={trackRef} className="deals-ticker-track flex items-center w-max py-0.5">
+              <div ref={firstSetRef} className="flex items-center gap-2.5 shrink-0 pr-2.5">
+                {renderCardSet(false)}
+              </div>
+              <div aria-hidden="true" className="flex items-center gap-2.5 shrink-0 pr-2.5">
+                {renderCardSet(true)}
+              </div>
             </div>
           </div>
 
