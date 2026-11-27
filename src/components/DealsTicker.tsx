@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useMemo, useCallback } from 'react';
+import React, { useRef, useState, useEffect, useMemo, useCallback } from 'react';
 import { DealItem } from '../types';
 import { AccessCounter } from './AccessCounter';
 import { handleImageError } from '../utils/imageFallback';
@@ -34,10 +34,18 @@ interface DealsTickerProps {
   pausedExternally?: boolean;
 }
 
-/** オフセット値を [0, width) の範囲にシームレスに折り返す */
-function wrapOffset(value: number, width: number): number {
-  if (width <= 0) return 0;
-  return ((value % width) + width) % width;
+/** カルーセル用の超軽量128pxサムネイルURLへ変換（転送量・VRAM負荷を約1/64へ削減） */
+function toLightweightThumbUrl(url: string): string {
+  if (!url) return '';
+  if (url.startsWith('https://shop.r10s.jp/')) {
+    const sep = url.includes('?') ? '&' : '?';
+    return `${url.replace('https://shop.r10s.jp/', 'https://tshop.r10s.jp/')}${sep}_ex=128x128`;
+  }
+  if (url.includes('cdn.shopify.com')) {
+    const sep = url.includes('?') ? '&' : '?';
+    return `${url}${sep}width=128`;
+  }
+  return url;
 }
 
 export const DealsTicker: React.FC<DealsTickerProps> = ({
@@ -54,216 +62,167 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({
 }) => {
   const trackRef = useRef<HTMLDivElement>(null);
   const firstSetRef = useRef<HTMLDivElement>(null);
-  const singleWidthRef = useRef(0);
-  const offsetRef = useRef(0);
+  const [isTouchPaused, setIsTouchPaused] = useState(false);
 
-  // 再レンダリングを起こさずにアニメ制御するための参照群
-  const isHoverPausedRef = useRef(false);
-  const isInteractingRef = useRef(false);
   const pausedExternallyRef = useRef(pausedExternally);
-  const pauseUntilRef = useRef(0);
-  const manualAnimRef = useRef<{
-    startOffset: number;
-    delta: number;
-    startTime: number;
-    duration: number;
-  } | null>(null);
-  const inertiaVelRef = useRef(0);
-  const touchStateRef = useRef<{
+  const boostTimerRef = useRef<number | null>(null);
+  const touchResumeTimerRef = useRef<number | null>(null);
+  const didDragRef = useRef(false);
+  const touchRef = useRef<{
     startX: number;
     startY: number;
     lastX: number;
-    lastTime: number;
-    velX: number;
     mode: 'undecided' | 'horizontal' | 'vertical';
   } | null>(null);
-  const didDragRef = useRef(false);
 
   useEffect(() => {
     pausedExternallyRef.current = pausedExternally;
   }, [pausedExternally]);
 
-  // カード表示用データを事前計算し、毎フレーム・毎レンダーの計算負荷を排除
-  const enrichedDeals = useMemo(() => {
+  useEffect(() => {
+    return () => {
+      if (boostTimerRef.current !== null) window.clearTimeout(boostTimerRef.current);
+      if (touchResumeTimerRef.current !== null) window.clearTimeout(touchResumeTimerRef.current);
+    };
+  }, []);
+
+  // GPUテクスチャ上限内に確実に収めるため、新着優先＋割引率順で最大20件に絞って表示
+  const displayDeals = useMemo(() => {
     const nowMs = Date.now();
-    return deals.map((deal) => ({
-      deal,
-      savedYen: deal.original_price - deal.price,
-      isNew: Boolean(
-        deal.registered_at &&
-          nowMs - new Date(deal.registered_at).getTime() <= 48 * 60 * 60 * 1000
-      ),
-    }));
+    return deals
+      .map((deal) => {
+        const isNew = Boolean(
+          deal.registered_at &&
+            nowMs - new Date(deal.registered_at).getTime() <= 48 * 60 * 60 * 1000
+        );
+        return {
+          deal,
+          savedYen: deal.original_price - deal.price,
+          isNew,
+          thumbUrl: toLightweightThumbUrl(deal.image_url),
+        };
+      })
+      .sort((a, b) => {
+        if (a.isNew !== b.isNew) return a.isNew ? -1 : 1;
+        return (b.deal.discount_rate || 0) - (a.deal.discount_rate || 0);
+      })
+      .slice(0, 20);
   }, [deals]);
 
-  // 1周期分の横幅を ResizeObserver でキャッシュ（アニメーション中のDOM計測ゼロ）
-  useEffect(() => {
-    const setEl = firstSetRef.current;
-    if (!setEl) return;
+  // 1周あたりのアニメーション秒数（20件で約130秒）
+  const durationSec = Math.max(40, Math.round(displayDeals.length * 6.5));
 
-    const measure = () => {
-      const w = setEl.offsetWidth;
-      if (w > 0) {
-        singleWidthRef.current = w;
-        offsetRef.current = wrapOffset(offsetRef.current, w);
-      }
-    };
+  // 軽量サムネイル取得失敗時は元画像へフォールバックし、さらに失敗時のみSVG代替画像を表示
+  const handleThumbError = useCallback((e: React.SyntheticEvent<HTMLImageElement>) => {
+    const img = e.currentTarget;
+    const fallbackSrc = img.dataset.fallbackSrc;
+    if (fallbackSrc && img.src !== fallbackSrc) {
+      img.removeAttribute('data-fallback-src');
+      img.src = fallbackSrc;
+      return;
+    }
+    handleImageError(e);
+  }, []);
 
-    measure();
-    const ro = new ResizeObserver(measure);
-    ro.observe(setEl);
-    return () => ro.disconnect();
-  }, [enrichedDeals.length]);
+  // PC用 ＜ / ＞ ボタン：Compositor上で playbackRate を使って滑らかに送り・戻し
+  const handleManualScroll = useCallback(
+    (direction: 'left' | 'right') => {
+      const anim = trackRef.current?.getAnimations?.()[0];
+      if (!anim) return;
 
-  // GPU合成 translate3d によるサブピクセル精度 60fps+ 常駐スライドエンジン
-  useEffect(() => {
-    if (enrichedDeals.length === 0) return;
-
-    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-    let lastTime = performance.now();
-    const SPEED_PX_PER_SEC = 44;
-    let rafId = 0;
-
-    const tick = (now: number) => {
-      const dt = Math.min(Math.max((now - lastTime) / 1000, 0), 0.05);
-      lastTime = now;
-
-      const track = trackRef.current;
-      const w = singleWidthRef.current;
-
-      if (track && w > 0) {
-        if (manualAnimRef.current) {
-          const anim = manualAnimRef.current;
-          const progress = Math.min(1, (now - anim.startTime) / anim.duration);
-          const eased = 1 - Math.pow(1 - progress, 3);
-          offsetRef.current = wrapOffset(anim.startOffset + anim.delta * eased, w);
-          if (progress >= 1) {
-            manualAnimRef.current = null;
-          }
-        } else if (!isInteractingRef.current && Math.abs(inertiaVelRef.current) > 8) {
-          offsetRef.current = wrapOffset(offsetRef.current + inertiaVelRef.current * dt, w);
-          inertiaVelRef.current *= Math.pow(0.04, dt);
-          if (Math.abs(inertiaVelRef.current) <= 8) {
-            inertiaVelRef.current = 0;
-          }
-        } else if (
-          !mediaQuery.matches &&
-          !isHoverPausedRef.current &&
-          !isInteractingRef.current &&
-          !pausedExternallyRef.current &&
-          now >= pauseUntilRef.current
-        ) {
-          offsetRef.current = wrapOffset(offsetRef.current + SPEED_PX_PER_SEC * dt, w);
+      const durMs = durationSec * 1000;
+      if (direction === 'left') {
+        const cur = Number(anim.currentTime || 0);
+        if (cur < durMs * 2) {
+          anim.currentTime = cur + durMs * 10;
         }
-
-        track.style.transform = `translate3d(${-offsetRef.current.toFixed(2)}px, 0, 0)`;
       }
 
-      rafId = requestAnimationFrame(tick);
-    };
+      anim.playbackRate = direction === 'right' ? 10 : -10;
+      if (boostTimerRef.current !== null) {
+        window.clearTimeout(boostTimerRef.current);
+      }
+      boostTimerRef.current = window.setTimeout(() => {
+        anim.playbackRate = 1;
+        boostTimerRef.current = null;
+      }, 300);
+    },
+    [durationSec]
+  );
 
-    rafId = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(rafId);
-  }, [enrichedDeals.length]);
-
-  // 左右ボタンによる滑らかイージング移動（連打時は残り移動量へ自然に加算）
-  const handleManualScroll = useCallback((direction: 'left' | 'right') => {
-    const w = singleWidthRef.current;
-    if (w <= 0) return;
-
-    const step = direction === 'left' ? -320 : 320;
-    const now = performance.now();
-    let remainingDelta = 0;
-
-    if (manualAnimRef.current) {
-      const anim = manualAnimRef.current;
-      const progress = Math.min(1, (now - anim.startTime) / anim.duration);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      remainingDelta = anim.delta * (1 - eased);
-    }
-
-    inertiaVelRef.current = 0;
-    manualAnimRef.current = {
-      startOffset: offsetRef.current,
-      delta: remainingDelta + step,
-      startTime: now,
-      duration: 380,
-    };
-    pauseUntilRef.current = now + 900;
-  }, []);
-
-  // スマホ横スワイプ開始（縦スクロールを阻害しないよう方向を自動判別）
+  // スマホのタッチスワイプ操作（縦スクロールは邪魔せず、指を離せば確実に自動スライドへ復帰）
   const handleTouchStart = useCallback((e: React.TouchEvent) => {
-    const touch = e.touches[0];
-    if (!touch) return;
-    isInteractingRef.current = true;
-    manualAnimRef.current = null;
-    inertiaVelRef.current = 0;
+    if (touchResumeTimerRef.current !== null) {
+      window.clearTimeout(touchResumeTimerRef.current);
+      touchResumeTimerRef.current = null;
+    }
+    setIsTouchPaused(true);
     didDragRef.current = false;
-    touchStateRef.current = {
-      startX: touch.clientX,
-      startY: touch.clientY,
-      lastX: touch.clientX,
-      lastTime: performance.now(),
-      velX: 0,
-      mode: 'undecided',
-    };
-  }, []);
-
-  const handleTouchMove = useCallback((e: React.TouchEvent) => {
-    const ts = touchStateRef.current;
     const touch = e.touches[0];
-    if (!ts || !touch) return;
-
-    if (ts.mode === 'vertical') return;
-
-    const totalDx = Math.abs(touch.clientX - ts.startX);
-    const totalDy = Math.abs(touch.clientY - ts.startY);
-
-    if (ts.mode === 'undecided') {
-      if (totalDx < 6 && totalDy < 6) return;
-      if (totalDy > totalDx) {
-        ts.mode = 'vertical';
-        isInteractingRef.current = false;
-        return;
-      }
-      ts.mode = 'horizontal';
-      didDragRef.current = true;
-    }
-
-    const now = performance.now();
-    const moveDx = ts.lastX - touch.clientX;
-    const dtSec = Math.max((now - ts.lastTime) / 1000, 0.004);
-    const instVel = moveDx / dtSec;
-
-    ts.velX = ts.velX * 0.45 + instVel * 0.55;
-    ts.lastX = touch.clientX;
-    ts.lastTime = now;
-
-    if (singleWidthRef.current > 0) {
-      offsetRef.current = wrapOffset(offsetRef.current + moveDx, singleWidthRef.current);
+    if (touch) {
+      touchRef.current = {
+        startX: touch.clientX,
+        startY: touch.clientY,
+        lastX: touch.clientX,
+        mode: 'undecided',
+      };
     }
   }, []);
+
+  const handleTouchMove = useCallback(
+    (e: React.TouchEvent) => {
+      const ts = touchRef.current;
+      const touch = e.touches[0];
+      if (!ts || !touch || ts.mode === 'vertical') return;
+
+      const totalDx = Math.abs(touch.clientX - ts.startX);
+      const totalDy = Math.abs(touch.clientY - ts.startY);
+
+      if (ts.mode === 'undecided') {
+        if (totalDx < 6 && totalDy < 6) return;
+        if (totalDy > totalDx) {
+          ts.mode = 'vertical';
+          return;
+        }
+        ts.mode = 'horizontal';
+        didDragRef.current = true;
+      }
+
+      const moveDx = ts.lastX - touch.clientX;
+      ts.lastX = touch.clientX;
+
+      const anim = trackRef.current?.getAnimations?.()[0];
+      const setWidth = firstSetRef.current?.offsetWidth || 0;
+      if (anim && setWidth > 0) {
+        const durMs = durationSec * 1000;
+        const deltaMs = (moveDx / setWidth) * durMs;
+        let nextTime = Number(anim.currentTime || 0) + deltaMs;
+        if (nextTime < durMs) {
+          nextTime += durMs * 10;
+        }
+        anim.currentTime = nextTime;
+      }
+    },
+    [durationSec]
+  );
 
   const handleTouchEnd = useCallback(() => {
-    const ts = touchStateRef.current;
-    if (ts && ts.mode === 'horizontal') {
-      inertiaVelRef.current = Math.max(-1800, Math.min(1800, ts.velX));
-      pauseUntilRef.current = performance.now() + 1200;
+    touchRef.current = null;
+    if (touchResumeTimerRef.current !== null) {
+      window.clearTimeout(touchResumeTimerRef.current);
     }
-    isInteractingRef.current = false;
-    touchStateRef.current = null;
-  }, []);
-
-  // PCトラックパッド横スクロール対応
-  const handleWheel = useCallback((e: React.WheelEvent) => {
-    if (Math.abs(e.deltaX) <= Math.abs(e.deltaY) || Math.abs(e.deltaX) < 1) return;
-    if (singleWidthRef.current <= 0) return;
-
-    manualAnimRef.current = null;
-    inertiaVelRef.current = 0;
-    offsetRef.current = wrapOffset(offsetRef.current + e.deltaX, singleWidthRef.current);
-    pauseUntilRef.current = performance.now() + 1200;
+    touchResumeTimerRef.current = window.setTimeout(() => {
+      setIsTouchPaused(false);
+      const anim = trackRef.current?.getAnimations?.()[0];
+      if (anim && anim.playState === 'paused' && !pausedExternallyRef.current) {
+        try {
+          anim.play();
+        } catch {
+          // ignore
+        }
+      }
+      touchResumeTimerRef.current = null;
+    }, 400);
   }, []);
 
   const handleScrollToTop = (e: React.MouseEvent) => {
@@ -271,9 +230,9 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  /** 1周期分のカードセットを描画（2セット配置によるシームレス連結） */
+  /** 1周期分のカードセットを描画（2セット連結でシームレス無限ループ） */
   const renderCardSet = (isDuplicate: boolean) =>
-    enrichedDeals.map(({ deal, savedYen, isNew }, idx) => (
+    displayDeals.map(({ deal, savedYen, isNew, thumbUrl }, idx) => (
       <a
         key={`${isDuplicate ? 'dup' : 'main'}-${deal.id}-${idx}`}
         href={deal.affiliate_url}
@@ -289,16 +248,17 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({
         className="group relative flex items-center gap-1.5 sm:gap-2 bg-slate-900 hover:bg-slate-850 border border-slate-750 hover:border-amber-400 rounded-xl p-1 sm:p-1.5 w-[240px] sm:w-[310px] shrink-0 transition-colors shadow-xs"
         title={`楽天市場で見る: ${deal.title}`}
       >
-        {/* 商品画像 + 割引リボン + 新規登録マーク（非同期デコードでスライド停止を防止） */}
+        {/* 商品画像（128px軽量サムネ + 2段階フォールバック） */}
         <div className="relative shrink-0">
           <img
-            src={deal.image_url}
+            src={thumbUrl}
+            data-fallback-src={deal.image_url}
             alt={isDuplicate ? '' : deal.title}
             width={48}
             height={48}
             loading="eager"
             decoding="async"
-            onError={handleImageError}
+            onError={handleThumbError}
             className="w-10 h-10 sm:w-12 sm:h-12 object-contain bg-white rounded-lg p-0.5 border border-slate-700 shadow-2xs"
           />
           <div className="absolute -top-1.5 -left-1.5 bg-red-600 text-white font-black text-[10px] px-1.5 py-0.2 rounded shadow border border-white/80 tracking-tight leading-none">
@@ -349,9 +309,7 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({
     ));
 
   return (
-    <div
-      className="bg-slate-950 border-b border-amber-500/70 text-slate-100 select-none transition-colors"
-    >
+    <div className="bg-slate-950 border-b border-amber-500/70 text-slate-100 select-none transition-colors">
       <div className="max-w-7xl mx-auto px-2.5 sm:px-4 py-1.5 sm:py-2">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-1.5 md:gap-2.5">
           {/* 上段（スマホでは左右1行に収める／PCでは左ブロック） */}
@@ -475,20 +433,13 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({
             </div>
           </div>
 
-          {/* 中央：完全GPU合成 無限スライド 楽天特価ギアカルーセル */}
+          {/* 中央：ネイティブCSS @keyframes 無限スライド 楽天特価ギアカルーセル */}
           <div
-            className="relative w-full md:flex-1 min-w-0 overflow-hidden"
-            onPointerEnter={(e) => {
-              if (e.pointerType === 'mouse') isHoverPausedRef.current = true;
-            }}
-            onPointerLeave={(e) => {
-              if (e.pointerType === 'mouse') isHoverPausedRef.current = false;
-            }}
+            className="deals-marquee-viewport relative w-full md:flex-1 min-w-0 overflow-hidden"
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
             onTouchCancel={handleTouchEnd}
-            onWheel={handleWheel}
           >
             {/* 左右端の滑らかなグラデーションフェードマスク */}
             <div
@@ -500,7 +451,11 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({
               className="pointer-events-none absolute inset-y-0 right-0 w-5 sm:w-8 z-10 bg-gradient-to-l from-slate-950 via-slate-950/70 to-transparent"
             />
 
-            <div ref={trackRef} className="deals-ticker-track flex items-center w-max py-0.5">
+            <div
+              ref={trackRef}
+              className={`deals-marquee-track py-0.5${pausedExternally || isTouchPaused ? ' is-paused' : ''}`}
+              style={{ '--deals-marquee-duration': `${durationSec}s` } as React.CSSProperties}
+            >
               <div ref={firstSetRef} className="flex items-center gap-2.5 shrink-0 pr-2.5">
                 {renderCardSet(false)}
               </div>

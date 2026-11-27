@@ -375,12 +375,32 @@
   animation: intro-caption-fade 2.1s both;
 }
 
-/* 特価ギアカルーセル：GPU合成・サブピクセル滑らかスクロール用レイヤー */
-.deals-ticker-track {
-  will-change: transform;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  contain: layout style;
+/* 特価ギアカルーセル：ネイティブCSS @keyframes（コンポジタ専用スレッドで完全60fps/120fps） */
+@keyframes deals-marquee-scroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.deals-marquee-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: deals-marquee-scroll var(--deals-marquee-duration, 130s) linear infinite;
+}
+
+.deals-marquee-track.is-paused {
+  animation-play-state: paused;
+}
+
+/* マウス操作可能なPC環境のみホバーで一時停止（タッチ端末でのホバー残留停止を完全防止） */
+@media (hover: hover) and (pointer: fine) {
+  .deals-marquee-viewport:hover .deals-marquee-track {
+    animation-play-state: paused;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
