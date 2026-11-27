@@ -249,11 +249,11 @@
 }
 
 /* ========================================================
-   1日1回限定 シネマティック・オープニング演出（完全GPU合成 60fps+ / 約2.1秒）
-   ※ filter / blur / drop-shadow は一切使わず transform と opacity のみで合成
+   1日1回限定 シネマティック・オープニング演出（完全GPU合成・1本連続曲線 2層分離）
+   ※ 中間点ブレーキを排した2点連続曲線＋opacity/transformの2層分離で極上の滑らかさを実現
    ======================================================== */
-@keyframes intro-backdrop-fade {
-  0%, 60% {
+@keyframes intro-curtain-fade {
+  0%, 66% {
     opacity: 1;
   }
   100% {
@@ -261,88 +261,80 @@
   }
 }
 
-@keyframes intro-logo-fly {
+@keyframes intro-scenery-motion {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1.10);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1.00);
+  }
+}
+
+@keyframes intro-scenery-fade {
   0% {
     opacity: 0;
-    transform: translate3d(0, 0, 0) scale(1.42);
-    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
   }
-  26% {
+  22% {
     opacity: 1;
-    transform: translate3d(0, 0, 0) scale(1.04);
-    animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
   }
-  56% {
+  74% {
     opacity: 1;
-    transform: translate3d(0, 0, 0) scale(0.97);
-    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
   100% {
     opacity: 0;
-    transform: translate3d(0, 0, 0) scale(0.74);
   }
 }
 
-@keyframes intro-accent-line {
+@keyframes intro-logo-enter {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 14px, 0) scale(0.965);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes intro-logo-exit {
+  0% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0, -10px, 0);
+  }
+}
+
+@keyframes intro-accent-reveal {
   0% {
     opacity: 0;
     transform: translate3d(0, 0, 0) scaleX(0);
-    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
   }
-  30% {
+  100% {
     opacity: 0.9;
     transform: translate3d(0, 0, 0) scaleX(1);
-    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  65% {
-    opacity: 0.85;
-    transform: translate3d(0, 0, 0) scaleX(1);
-  }
-  100% {
-    opacity: 0;
-    transform: translate3d(0, 0, 0) scaleX(0.2);
   }
 }
 
-@keyframes intro-scenery-fly {
+@keyframes intro-caption-enter {
   0% {
     opacity: 0;
-    transform: translate3d(0, 0, 0) scale(1.26);
-    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  28% {
-    opacity: 0.96;
-    transform: translate3d(0, 0, 0) scale(1.10);
-    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
-  }
-  64% {
-    opacity: 0.90;
-    transform: translate3d(0, 0, 0) scale(1.03);
-    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
-  }
-  86% {
-    opacity: 0.56;
-    transform: translate3d(0, 0, 0) scale(1);
-    animation-timing-function: ease-out;
+    transform: translate3d(0, 12px, 0);
   }
   100% {
-    opacity: 0;
-    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
 }
 
-@keyframes intro-caption-fade {
-  0%, 22% {
-    opacity: 0;
-    transform: translate3d(0, 14px, 0);
-    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  40%, 66% {
+@keyframes intro-caption-exit {
+  0% {
     opacity: 1;
     transform: translate3d(0, 0, 0);
-    animation-timing-function: ease-in;
   }
-  84%, 100% {
+  100% {
     opacity: 0;
     transform: translate3d(0, -6px, 0);
   }
@@ -352,27 +344,38 @@
   will-change: transform, opacity;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  contain: layout style paint;
 }
 
-.animate-intro-backdrop {
-  animation: intro-backdrop-fade 2.1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+.animate-intro-curtain {
+  animation: intro-curtain-fade 2.75s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
-.animate-intro-logo {
-  animation: intro-logo-fly 1.18s both;
+.animate-intro-scenery-fade {
+  animation: intro-scenery-fade 2.75s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
-.animate-intro-accent-line {
-  animation: intro-accent-line 1.12s both;
+.animate-intro-scenery-motion {
+  animation: intro-scenery-motion 2.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
-.animate-intro-scenery {
-  animation: intro-scenery-fly 1.94s 0.16s both;
+.animate-intro-logo-enter {
+  animation: intro-logo-enter 0.95s 0.14s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-.animate-intro-caption {
-  animation: intro-caption-fade 2.1s both;
+.animate-intro-logo-exit {
+  animation: intro-logo-exit 0.72s 1.78s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-intro-accent-reveal {
+  animation: intro-accent-reveal 0.9s 0.28s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-intro-caption-enter {
+  animation: intro-caption-enter 0.85s 0.36s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-intro-caption-exit {
+  animation: intro-caption-exit 0.65s 1.92s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 /* 特価ギアカルーセル：ネイティブCSS @keyframes（コンポジタ専用スレッドで完全60fps/120fps） */

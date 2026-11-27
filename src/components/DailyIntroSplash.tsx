@@ -40,7 +40,7 @@ function shouldPlayOnMount(): boolean {
 }
 
 /**
- * 1日1回限定・完全GPU合成（60fps+）で日替わり開催地風景が手前から背景へ収まる約2.1秒のオープニング演出
+ * 1日1回限定・完全GPU合成（60fps+・1本連続曲線）で日替わり開催地風景がシネマティックに着地するオープニング演出
  */
 export const DailyIntroSplash: React.FC<DailyIntroSplashProps> = ({
   bgUrl,
@@ -91,7 +91,7 @@ export const DailyIntroSplash: React.FC<DailyIntroSplashProps> = ({
     }
   }, [replayKey]);
 
-  // プリロード＆デコード完了待ち：画像を完全にデコードし2フレーム同期してから再生開始
+  // プリロード＆デコード完了待ち：画像をDOMに事前マウントし、デコード完了＋2フレーム同期で0フレーム落ち再生
   useEffect(() => {
     if (phase !== 'preloading') return;
 
@@ -133,7 +133,7 @@ export const DailyIntroSplash: React.FC<DailyIntroSplashProps> = ({
       img.onerror = triggerPlay;
     }
 
-    const fallbackTimer = window.setTimeout(triggerPlay, 700);
+    const fallbackTimer = window.setTimeout(triggerPlay, 800);
     return () => {
       cancelled = true;
       window.clearTimeout(fallbackTimer);
@@ -142,14 +142,14 @@ export const DailyIntroSplash: React.FC<DailyIntroSplashProps> = ({
     };
   }, [phase, bgUrl, runId]);
 
-  // 再生開始から約2.16秒後に自動終了し、アンマウントする
+  // アニメーション総尺（2.75s）が完全に透過し切った後にアンマウントする
   useEffect(() => {
     if (phase !== 'playing') return;
 
     finishTimerRef.current = window.setTimeout(() => {
       setPhase('hidden');
       finishTimerRef.current = null;
-    }, 2160);
+    }, 2850);
 
     return () => {
       if (finishTimerRef.current !== null) {
@@ -170,7 +170,7 @@ export const DailyIntroSplash: React.FC<DailyIntroSplashProps> = ({
     skipTimerRef.current = window.setTimeout(() => {
       setPhase('hidden');
       skipTimerRef.current = null;
-    }, 200);
+    }, 220);
   };
 
   useEffect(() => {
@@ -204,34 +204,84 @@ export const DailyIntroSplash: React.FC<DailyIntroSplashProps> = ({
         isSkipping ? 'opacity-0 pointer-events-none' : 'opacity-100'
       }`}
     >
-      {/* 層1：柔らかい白（ダーク時は濃紺）ベース幕 */}
+      {/* 外側シネマティック暗幕（終了時に背景とスキップヒントごと本画面へ滑らかに溶け込む） */}
       <div
-        className={`absolute inset-0 bg-[#f8fafc] dark:bg-[#020617] ${
-          isPlaying ? 'intro-gpu-layer animate-intro-backdrop' : ''
+        className={`absolute inset-0 bg-[#060b14] ${
+          isPlaying ? 'intro-gpu-layer animate-intro-curtain' : ''
         }`}
-      />
-
-      {/* 層2：今日の開催地景色（GPU合成のみで手前から奥のHP背景へ滑らかに着地） */}
-      {isPlaying && (
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="w-full h-full intro-gpu-layer animate-intro-scenery">
+      >
+        {/* 層1：今日の開催地景色（事前マウント済み＋opacityとtransformを2層分離し1本連続曲線で縮小着地） */}
+        <div
+          className={`absolute inset-0 overflow-hidden pointer-events-none ${
+            isPlaying ? 'intro-gpu-layer animate-intro-scenery-fade' : 'opacity-0'
+          }`}
+        >
+          <div
+            className={`w-full h-full ${
+              isPlaying ? 'intro-gpu-layer animate-intro-scenery-motion' : ''
+            }`}
+          >
             <img
               src={bgUrl}
               alt=""
-              decoding="sync"
+              decoding="async"
               {...({ fetchpriority: 'high' } as React.ImgHTMLAttributes<HTMLImageElement>)}
               className="w-full h-full object-cover object-center"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-slate-100 dark:to-[#0b0f19]" />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 via-transparent to-transparent" />
+            {/* シネマティック・ソフトビネット＆上下グラデーション（ロゴと文字を高品位に引き立てる） */}
+            <div className="absolute inset-0 bg-slate-950/25" />
+            <div className="absolute inset-0 bg-gradient-to-b from-slate-950/45 via-transparent to-slate-950/75" />
           </div>
+        </div>
 
-          {/* 画面下部中央：今日のフィールド名キャプション */}
+        {/* 層2：OUTDOOR RACE HUB ロゴ（登場1本曲線 × 退場1本曲線の2層分離） */}
+        <div
+          className={`absolute inset-0 flex flex-col items-center justify-center px-4 pointer-events-none ${
+            isPlaying ? 'intro-gpu-layer animate-intro-logo-exit' : 'opacity-0'
+          }`}
+        >
           <div
-            style={{ textShadow: '0 1px 10px rgba(0, 0, 0, 0.65)' }}
-            className="absolute inset-x-0 bottom-12 sm:bottom-16 px-4 flex flex-col items-center text-center intro-gpu-layer animate-intro-caption"
+            className={`flex flex-col items-center text-center ${
+              isPlaying ? 'intro-gpu-layer animate-intro-logo-enter' : ''
+            }`}
           >
-            <span className="text-[10px] sm:text-xs font-bold tracking-[0.28em] uppercase text-teal-200">
+            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br from-teal-400 to-emerald-600 text-white flex items-center justify-center shadow-xl ring-1 ring-white/25 mb-3 sm:mb-4">
+              <Mountain className="w-6 h-6 sm:w-8 sm:h-8 stroke-[2.3]" />
+            </div>
+            <h1
+              style={{ textShadow: '0 4px 24px rgba(0, 0, 0, 0.45)' }}
+              className="text-3xl sm:text-5xl md:text-6xl font-black tracking-[0.08em] leading-none"
+            >
+              <span className="text-white">OUTDOOR </span>
+              <span className="text-teal-300">RACE HUB</span>
+            </h1>
+            <div
+              className={`w-32 sm:w-48 h-[1.5px] mt-3 sm:mt-4 bg-gradient-to-r from-transparent via-teal-300/90 to-transparent ${
+                isPlaying ? 'intro-gpu-layer animate-intro-accent-reveal' : 'opacity-0'
+              }`}
+            />
+            <p
+              style={{ textShadow: '0 2px 12px rgba(0, 0, 0, 0.5)' }}
+              className="text-[10px] sm:text-xs font-bold tracking-[0.32em] text-white/85 mt-2.5 sm:mt-3"
+            >
+              JAPAN OUTDOOR RACE PORTAL
+            </p>
+          </div>
+        </div>
+
+        {/* 層3：画面下部中央 今日のフィールド名キャプション */}
+        <div
+          className={`absolute inset-x-0 bottom-12 sm:bottom-16 px-4 pointer-events-none ${
+            isPlaying ? 'intro-gpu-layer animate-intro-caption-exit' : 'opacity-0'
+          }`}
+        >
+          <div
+            style={{ textShadow: '0 2px 16px rgba(0, 0, 0, 0.7)' }}
+            className={`flex flex-col items-center text-center ${
+              isPlaying ? 'intro-gpu-layer animate-intro-caption-enter' : ''
+            }`}
+          >
+            <span className="text-[10px] sm:text-xs font-bold tracking-[0.3em] uppercase text-teal-200">
               TODAY&apos;S FIELD
             </span>
             <p className="mt-1 text-lg sm:text-2xl font-black tracking-wide text-white">
@@ -244,35 +294,13 @@ export const DailyIntroSplash: React.FC<DailyIntroSplashProps> = ({
             )}
           </div>
         </div>
-      )}
 
-      {/* 層3：OUTDOOR RACE HUB ロゴ（手前から中央奥へスッと消える） */}
-      {isPlaying && (
-        <div className="absolute inset-0 flex flex-col items-center justify-center px-4 pointer-events-none">
-          <div className="flex flex-col items-center text-center intro-gpu-layer animate-intro-logo">
-            <div className="w-11 h-11 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br from-teal-500 to-emerald-600 text-white flex items-center justify-center shadow-xl mb-3 sm:mb-4">
-              <Mountain className="w-6 h-6 sm:w-8 sm:h-8 stroke-[2.3]" />
-            </div>
-            <h1
-              style={{ textShadow: '0 2px 14px rgba(15, 23, 42, 0.22)' }}
-              className="text-3xl sm:text-5xl md:text-6xl font-black tracking-[0.08em] leading-none"
-            >
-              <span className="text-slate-900 dark:text-white">OUTDOOR </span>
-              <span className="text-teal-600 dark:text-teal-400">RACE HUB</span>
-            </h1>
-            <div className="w-28 sm:w-44 h-[2px] mt-3 sm:mt-4 bg-gradient-to-r from-transparent via-teal-500 to-transparent intro-gpu-layer animate-intro-accent-line" />
-            <p className="text-[10px] sm:text-xs font-bold tracking-[0.3em] text-slate-600 dark:text-slate-300 mt-2 sm:mt-2.5">
-              JAPAN OUTDOOR RACE PORTAL
-            </p>
-          </div>
+        {/* 右下：タップで即スキップヒント（シネマティック幕と一緒に滑らかにフェードアウト） */}
+        <div className="fixed bottom-5 right-5 pointer-events-none">
+          <span className="inline-block px-2.5 py-1 rounded-full bg-slate-900/60 border border-white/15 text-white/90 text-[10px] font-bold">
+            タップでスキップ
+          </span>
         </div>
-      )}
-
-      {/* 右下：タップで即スキップヒント（軽量な半透明） */}
-      <div className="fixed bottom-5 right-5 pointer-events-none">
-        <span className="inline-block px-2.5 py-1 rounded-full bg-slate-900/60 text-white/90 text-[10px] font-bold">
-          タップでスキップ
-        </span>
       </div>
     </div>
   );
