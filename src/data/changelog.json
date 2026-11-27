@@ -1,5 +1,41 @@
 [
   {
+    "id": "deal-add-gear-deal-mwzj26h3-rcn3-2026-11-28",
+    "date": "2026-11-28",
+    "time": "07:03",
+    "type": "deal_added",
+    "title": "新着特価ギア発掘: ワコール CW-X スポーツタイツ レディース ジェネレーターモデル ロング S",
+    "detail": "実測 20%OFF の特価品を追加・入替しました",
+    "gearId": "gear-deal-mwzj26h3-rcn3"
+  },
+  {
+    "id": "deal-add-gear-deal-mwzizpwn-w56f-2026-11-28",
+    "date": "2026-11-28",
+    "time": "07:03",
+    "type": "deal_added",
+    "title": "新着特価ギア発掘: ザ・ノース・フェイス THE NORTH FACE NP12460 エンライド ",
+    "detail": "実測 33%OFF の特価品を追加・入替しました",
+    "gearId": "gear-deal-mwzizpwn-w56f"
+  },
+  {
+    "id": "price-drop-gear-trail-poles-bd-distance-z-2026-11-28",
+    "date": "2026-11-28",
+    "time": "07:03",
+    "type": "price_drop",
+    "title": "値下げ検知: Black Diamond ディスタンスZ ピューター (高剛性アルミ折畳みポー",
+    "detail": "¥23,870 → ¥14,322",
+    "gearId": "gear-trail-poles-bd-distance-z"
+  },
+  {
+    "id": "price-drop-gear-deal-mwuimcrs-z302-2026-11-28",
+    "date": "2026-11-28",
+    "time": "07:03",
+    "type": "price_drop",
+    "title": "値下げ検知: キャットアイ HL-EL461RC VOLT400 自転車 ライト 充電式 高輝",
+    "detail": "¥7,900 → ¥7,660",
+    "gearId": "gear-deal-mwuimcrs-z302"
+  },
+  {
     "id": "ev-sync-2026-11-28",
     "date": "2026-11-28",
     "time": "06:42",

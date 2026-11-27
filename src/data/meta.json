@@ -1,29 +1,26 @@
 {
-  "last_updated_at": "2026-11-27T21:43:11.028Z",
+  "last_updated_at": "2026-11-27T22:03:00.046Z",
   "events_count": 213,
-  "deals_count": 35,
+  "deals_count": 36,
   "gears_count": 70,
   "sync_source": "Google Sheets & Rakuten API Automated Sync",
   "gear_sync_source": "refresh_gears.mjs (自己修復・在庫/実売価格実測・公式定価厳格照合・画像HTTP200検証済)",
-  "gear_removed": [
-    {
-      "id": "gear-ledlenser-hf4r-signature",
-      "status": "sold_out",
-      "reason": "公式ストア売り切れ(shopify sold-out)のため除外"
-    }
-  ],
+  "gear_removed": [],
   "run_summary": {
     "updated_date": "2026-11-28",
-    "updated_time": "06:42",
-    "deals_added": 0,
-    "price_drops": 1,
-    "gears_checked": 71,
-    "gears_verified_today": 9,
-    "gears_sold_out_removed": 1,
-    "gears_price_updated": 4,
-    "gears_unverified_waf": 61,
+    "updated_time": "07:03",
+    "deals_added": 2,
+    "price_drops": 2,
+    "gears_checked": 70,
+    "gears_verified_today": 67,
+    "gears_sold_out_removed": 0,
+    "gears_price_updated": 5,
+    "gears_unverified_waf": 3,
     "gear_changes": [
-      "値下げ: Black Diamond パーシュートカーボンFLZ  (¥23,485→¥21,820)"
+      "追加/入替: ワコール CW-X スポーツタイツ レディース ジェネレーターモ (20%OFF)",
+      "追加/入替: ザ・ノース・フェイス THE NORTH FACE NP1246 (33%OFF)",
+      "値下げ: Black Diamond ディスタンスZ ピューター  (¥23,870→¥14,322)",
+      "値下げ: キャットアイ HL-EL461RC VOLT400 自転 (¥7,900→¥7,660)"
     ],
     "events_added": 0,
     "events_updated": 7,
