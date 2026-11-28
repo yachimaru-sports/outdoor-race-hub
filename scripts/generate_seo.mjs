@@ -483,8 +483,10 @@ function main() {
       })
       .join(' / ');
 
-    const seoFallbackHtml = `<div id="root"><main style="max-width:960px;margin:24px auto;padding:16px;font-family:sans-serif"><h1>アウトドアレースハブ（OUTDOOR RACE HUB）〜アウトドア大会一括検索〜</h1><p>複数サイトのトレイルランニング・マラソン・サイクリング・アドベンチャーレース全${events.length}件を一括検索！開催日程、エントリー状況、日本地図検索（全国レースマップ）、必携装備＆特価ギア情報を毎朝6時に自動更新しています。</p><nav aria-label="主要ページ一覧"><p><a href="${SITE_URL}/map/">全国レースマップ（日本地図から大会を探す）</a> | <a href="${SITE_URL}/gears/">おすすめ必携品・特価ギア一覧</a></p><p>競技別: <a href="${SITE_URL}/events/trail/">トレラン大会</a> / <a href="${SITE_URL}/events/marathon/">マラソン大会</a> / <a href="${SITE_URL}/events/cycling/">サイクル大会</a> / <a href="${SITE_URL}/events/adventure/">アドベンチャーレース</a></p><p>地方別: ${areaLinksHtml}</p></nav></main></div>`;
-    idxHtml = idxHtml.replace('<div id="root"></div>', seoFallbackHtml);
+    const seoFallbackHtml = `<div id="root"></div>\n<noscript><main style="max-width:960px;margin:24px auto;padding:16px;font-family:sans-serif"><h1>アウトドアレースハブ（OUTDOOR RACE HUB）〜アウトドア大会一括検索〜</h1><p>複数サイトのトレイルランニング・マラソン・サイクリング・アドベンチャーレース全${events.length}件を一括検索！開催日程、エントリー状況、日本地図検索（全国レースマップ）、必携装備＆特価ギア情報を毎朝6時に自動更新しています。</p><nav aria-label="主要ページ一覧"><p><a href="${SITE_URL}/map/">全国レースマップ（日本地図から大会を探す）</a> | <a href="${SITE_URL}/gears/">おすすめ必携品・特価ギア一覧</a></p><p>競技別: <a href="${SITE_URL}/events/trail/">トレラン大会</a> / <a href="${SITE_URL}/events/marathon/">マラソン大会</a> / <a href="${SITE_URL}/events/cycling/">サイクル大会</a> / <a href="${SITE_URL}/events/adventure/">アドベンチャーレース</a></p><p>地方別: ${areaLinksHtml}</p></nav></main></noscript>`;
+    if (!idxHtml.includes('<noscript>')) {
+      idxHtml = idxHtml.replace('<div id="root"></div>', seoFallbackHtml);
+    }
     fs.writeFileSync(idxPath, idxHtml);
   }
   console.log(`🌐 SEO静的ページ生成完了: ${events.length} 大会 + 全国レースマップ + ${Object.keys(CAT_INFO).length} カテゴリ + ${regionMap.size} 地域 + 特価ギアページ + sitemap.xml (全${urls.length} URL)`);
