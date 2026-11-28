@@ -1,0 +1,9 @@
+{
+  "name": "アウトドアレースハブ（OUTDOOR RACE HUB）〜アウトドア大会一括検索〜",
+  "short_name": "アウトドアレースハブ",
+  "start_url": "/outdoor-race-hub/",
+  "scope": "/outdoor-race-hub/",
+  "display": "browser",
+  "background_color": "#0b0f19",
+  "theme_color": "#0f766e"
+}

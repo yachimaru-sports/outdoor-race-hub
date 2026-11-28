@@ -16,6 +16,7 @@ import {
   Smartphone,
   HelpCircle,
   Map as MapIcon,
+  RefreshCw,
 } from 'lucide-react';
 import { formatPrice } from '../utils/helpers';
 
@@ -225,6 +226,16 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({
     }, 400);
   }, []);
 
+  const handleForceRefresh = useCallback(() => {
+    try {
+      const url = new URL(window.location.href);
+      url.searchParams.set('_v', String(Date.now()));
+      window.location.replace(url.toString());
+    } catch {
+      window.location.reload();
+    }
+  }, []);
+
   const handleScrollToTop = (e: React.MouseEvent) => {
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -336,11 +347,13 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({
                 </div>
               </a>
 
-              {/* PC表示時：ロゴの真下に最新情報更新日時バッジ */}
+              {/* PC表示時：ロゴの真下に最新情報更新日時バッジ（ワンタップ強制更新対応） */}
               <div className="hidden md:flex items-center gap-1.5 mt-1.5">
-                <div
-                  className="flex items-center gap-1.5 px-2 py-0.5 rounded bg-emerald-950/70 border border-emerald-500/50 text-[10px] sm:text-[11px] font-bold text-emerald-300 leading-none whitespace-nowrap shadow-xs"
-                  title="全国＆中四国の大会日程・エントリー受付状況・必携装備・ギア特価を常時巡回更新中"
+                <button
+                  type="button"
+                  onClick={handleForceRefresh}
+                  className="flex items-center gap-1.5 px-2 py-0.5 rounded bg-emerald-950/70 hover:bg-emerald-900/70 border border-emerald-500/50 text-[10px] sm:text-[11px] font-bold text-emerald-300 leading-none whitespace-nowrap shadow-xs cursor-pointer transition-colors"
+                  title="タップして最新情報へ強制更新"
                 >
                   <span className="relative flex h-2 w-2 shrink-0">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -349,7 +362,8 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({
                   <Clock className="w-2.5 h-2.5 text-emerald-400 shrink-0" />
                   <span className="text-slate-300">最新情報:</span>
                   <span className="text-white font-mono font-black">{lastUpdated}</span>
-                </div>
+                  <RefreshCw className="w-2.5 h-2.5 text-emerald-300 shrink-0" />
+                </button>
               </div>
             </div>
 
@@ -402,14 +416,20 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({
             </div>
           </div>
 
-          {/* スマホ2段目：最新情報日時 ＋ 全国マップ ＋ おすすめ商品専用ページボタン（見切れゼロ） */}
+          {/* スマホ2段目：最新情報日時（ワンタップ更新） ＋ 全国マップ ＋ おすすめ商品専用ページボタン（見切れゼロ） */}
           <div className="flex md:hidden items-center justify-between gap-1.5 w-full">
-            <div className="flex items-center gap-1 px-1.5 py-0.5 rounded bg-emerald-950/70 border border-emerald-500/50 text-[10px] font-bold text-emerald-300 leading-none whitespace-nowrap min-w-0">
+            <button
+              type="button"
+              onClick={handleForceRefresh}
+              className="flex items-center gap-1 px-1.5 py-0.5 rounded bg-emerald-950/70 hover:bg-emerald-900/70 border border-emerald-500/50 text-[10px] font-bold text-emerald-300 leading-none whitespace-nowrap min-w-0 cursor-pointer transition-colors"
+              title="タップして最新情報へ強制更新"
+            >
               <span className="relative flex h-1.5 w-1.5 shrink-0">
                 <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-400"></span>
               </span>
               <span className="text-white font-mono font-black truncate">{lastUpdated}</span>
-            </div>
+              <RefreshCw className="w-2.5 h-2.5 text-emerald-300 shrink-0" />
+            </button>
             <div className="flex items-center gap-1 shrink-0">
               {onOpenMap && (
                 <button

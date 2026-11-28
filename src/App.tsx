@@ -780,6 +780,71 @@ export const App: React.FC = () => {
     return latestNews ? `${latestNews.date} ${latestNews.time}` : '2026.11.11 18:30';
   })();
 
+  // 起動時・バックグラウンド復帰時に version.json を照合し、新版があれば自動更新する
+  useEffect(() => {
+    try {
+      const url = new URL(window.location.href);
+      if (url.searchParams.has('_v')) {
+        url.searchParams.delete('_v');
+        window.history.replaceState(null, '', url.pathname + url.search + url.hash);
+      }
+    } catch {}
+
+    if (!import.meta.env.PROD) return;
+
+    const currentBuild = typeof __BUILD_TIME__ === 'string' ? __BUILD_TIME__ : '';
+    if (!currentBuild) return;
+
+    const base = import.meta.env.BASE_URL || '/outdoor-race-hub/';
+    let lastCheckedAt = 0;
+
+    const checkLatestBuild = async (force = false) => {
+      const now = Date.now();
+      if (!force && now - lastCheckedAt < 30_000) return;
+      lastCheckedAt = now;
+
+      try {
+        const res = await fetch(`${base}version.json?t=${now}`, { cache: 'no-store' });
+        if (!res.ok) return;
+        const data = (await res.json()) as { buildTime?: string };
+        const remoteBuild = data?.buildTime || '';
+        if (!remoteBuild || remoteBuild === currentBuild) return;
+
+        try {
+          if (sessionStorage.getItem('race_hub_reloaded_build') === remoteBuild) return;
+          sessionStorage.setItem('race_hub_reloaded_build', remoteBuild);
+        } catch {}
+
+        const nextUrl = new URL(window.location.href);
+        nextUrl.searchParams.set('_v', String(Date.now()));
+        window.location.replace(nextUrl.toString());
+      } catch {
+        // オフライン・通信エラー時は現在の画面を維持
+      }
+    };
+
+    void checkLatestBuild(true);
+
+    const onVisibilityChange = () => {
+      if (document.visibilityState === 'visible') {
+        void checkLatestBuild(false);
+      }
+    };
+    const onPageShow = (e: PageTransitionEvent) => {
+      if (e.persisted) {
+        void checkLatestBuild(true);
+      }
+    };
+
+    document.addEventListener('visibilitychange', onVisibilityChange);
+    window.addEventListener('pageshow', onPageShow);
+
+    return () => {
+      document.removeEventListener('visibilitychange', onVisibilityChange);
+      window.removeEventListener('pageshow', onPageShow);
+    };
+  }, []);
+
   // 固定ヘッダーの高さ分を考慮したスムーズジャンプハンドラ
   const handleJumpToSection = (targetId: string) => {
     if (targetId === 'gears-catalog' || targetId === 'gears-page') {
