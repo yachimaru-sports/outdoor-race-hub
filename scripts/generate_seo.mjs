@@ -102,7 +102,8 @@ function layoutHtml({ title, description, canonical, jsonLd, body }) {
   body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans JP",sans-serif;margin:0;background:#f8fafc;color:#0f172a;line-height:1.65}
   .wrap{max-width:860px;margin:0 auto;padding:20px 16px 48px}
   header{background:#0f172a;color:#fff;padding:12px 16px}
-  header .inner{max-width:860px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+  header .inner{max-width:860px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+  header .nav-links{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
   header a{color:#5eead4;text-decoration:none;font-weight:800;font-size:15px}
   header a.sub{color:#cbd5e1;font-size:13px;font-weight:600}
   nav{font-size:13px;color:#475569;margin-bottom:14px}
@@ -127,7 +128,7 @@ function layoutHtml({ title, description, canonical, jsonLd, body }) {
 ${jsonLd ? `<script type="application/ld+json">${JSON.stringify(jsonLd)}</script>` : ''}
 </head>
 <body>
-<header><div class="inner"><a href="${SITE_URL}/">⚡ OUTDOOR RACE HUB</a><a class="sub" href="${SITE_URL}/#/gears">おすすめ商品・特価ギア</a></div></header>
+<header><div class="inner"><a href="${SITE_URL}/">⚡ OUTDOOR RACE HUB</a><div class="nav-links"><a class="sub" href="${SITE_URL}/map/">全国レースマップ</a><a class="sub" href="${SITE_URL}/gears/">おすすめ商品・特価ギア</a></div></div></header>
 <main class="wrap">${body}</main>
 </body>
 </html>`;
@@ -187,6 +188,94 @@ function main() {
     if (!r) continue;
     if (!regionMap.has(r)) regionMap.set(r, []);
     regionMap.get(r).push(ev);
+  }
+
+  // 2.5 日本地図（全国レースマップ）専用SEOページ
+  {
+    const mapDir = path.join(DIST_DIR, 'map');
+    fs.mkdirSync(mapDir, { recursive: true });
+    const canonical = `${SITE_URL}/map/`;
+    // トップURL直後に収録して優先クロールさせる
+    urls.splice(1, 0, canonical);
+
+    const prefCountMap = new Map();
+    for (const ev of events) {
+      const p = (ev.prefecture || '').trim();
+      if (!p) continue;
+      prefCountMap.set(p, (prefCountMap.get(p) || 0) + 1);
+    }
+    const prefEntries = [...prefCountMap.entries()].sort((a, b) => b[1] - a[1]);
+    const regionEntries = [...regionMap.entries()];
+    const todayIso = new Date(Date.now() + 9 * 3600 * 1000).toISOString().slice(0, 10);
+    const upcomingEvents = events.filter((e) => (e.end_date || e.date) >= todayIso).slice(0, 20);
+
+    const html = layoutHtml({
+      title: '全国レースマップ（日本地図から探す大会一覧）｜OUTDOOR RACE HUB（アウトドアレースハブ）',
+      description: `全国${events.length}件のトレイルランニング・マラソン・サイクリング・アドベンチャーレース大会を日本地図（全国→地方→都道府県ピン）から探せる全国レースマップ。`,
+      canonical,
+      jsonLd: {
+        '@context': 'https://schema.org',
+        '@type': 'CollectionPage',
+        name: '全国レースマップ（日本地図から探す大会一覧）',
+        inLanguage: 'ja',
+        url: canonical,
+        mainEntity: {
+          '@type': 'ItemList',
+          numberOfItems: regionEntries.length,
+          itemListElement: regionEntries.map(([rName, rList], i) => {
+            const slug = REGION_SLUG[rName] || encodeURIComponent(rName);
+            return {
+              '@type': 'ListItem',
+              position: i + 1,
+              name: `${rName}の大会一覧（${rList.length}件）`,
+              url: `${SITE_URL}/areas/${slug}/`,
+            };
+          }),
+        },
+      },
+      body: `
+        <nav><a href="${SITE_URL}/">トップ</a> &gt; 全国レースマップ</nav>
+        <div class="card">
+          <h1>全国レースマップ｜日本地図から探すトレラン・マラソン・サイクル大会（${events.length}件）</h1>
+          <p>全国9地方・47都道府県＆海外のトレイルランニング、マラソン、サイクリング、アドベンチャーレースを日本地図上のピンから視覚的に探せます。</p>
+          <div class="btns">
+            <a class="btn btn-main" href="${SITE_URL}/#/map">🗺️ インタラクティブ日本地図（全国レースマップ）を開く</a>
+            <a class="btn btn-sub" href="${SITE_URL}/">大会一覧・条件検索トップへ</a>
+          </div>
+          <h2>地方別エリアから探す</h2>
+          <ul class="list">
+            ${regionEntries
+              .map(([rName, rList]) => {
+                const slug = REGION_SLUG[rName] || encodeURIComponent(rName);
+                return `<li><a href="${SITE_URL}/areas/${esc(slug)}/">${esc(rName)}のアウトドア・レース大会一覧<span>掲載 ${rList.length}件</span></a></li>`;
+              })
+              .join('\n')}
+          </ul>
+          <h2>競技カテゴリーから探す</h2>
+          <ul class="list">
+            ${Object.entries(CAT_INFO)
+              .map(([cat, info]) => {
+                const count = events.filter((e) => e.category === cat).length;
+                return `<li><a href="${SITE_URL}/events/${esc(cat)}/">${esc(info.label)}<span>掲載 ${count}件</span></a></li>`;
+              })
+              .join('\n')}
+          </ul>
+          <h2>都道府県別の開催大会数</h2>
+          <ul class="gear-tags">
+            ${prefEntries.map(([p, cnt]) => `<li>${esc(p)} (${cnt}件)</li>`).join('\n')}
+          </ul>
+          <h2>近日開催の注目大会（抜粋）</h2>
+          <ul class="list">
+            ${upcomingEvents
+              .map(
+                (e) =>
+                  `<li><a href="${SITE_URL}/events/${esc(e.id)}/">${esc(e.title)}<span>${esc(e.date)} ／ ${esc(e.prefecture)} ／ ${esc(STATUS_LABEL[e.entry_status] || e.entry_status)}</span></a></li>`
+              )
+              .join('\n')}
+          </ul>
+        </div>`,
+    });
+    fs.writeFileSync(path.join(mapDir, 'index.html'), html);
   }
 
   for (const [regionName, list] of regionMap.entries()) {
@@ -370,22 +459,35 @@ function main() {
   fs.writeFileSync(path.join(DIST_DIR, 'sitemap.xml'), sitemap);
   fs.writeFileSync(path.join(DIST_DIR, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${SITE_URL}/sitemap.xml\n`);
 
-  // 6. dist/index.html に WebSite JSON-LD を挿入
+  // 6. dist/index.html に WebSite JSON-LD（日本語補強）とクローラー向け初期HTML導線を挿入
   const idxPath = path.join(DIST_DIR, 'index.html');
   if (fs.existsSync(idxPath)) {
-    const idxHtml = fs.readFileSync(idxPath, 'utf-8');
+    let idxHtml = fs.readFileSync(idxPath, 'utf-8');
     const webSiteLd = `<script type="application/ld+json">${JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'WebSite',
       name: 'OUTDOOR RACE HUB',
+      alternateName: ['アウトドアレースハブ', 'Outdoor Race Hub'],
+      inLanguage: 'ja',
       url: `${SITE_URL}/`,
-      description: 'トレラン・マラソン・サイクル・アドベンチャーレース大会情報と必携装備特価の毎朝6時自動更新ポータル',
+      description: '全国のトレラン・マラソン・サイクル・アドベンチャーレース大会情報・日本地図検索（全国レースマップ）＆必携装備特価の毎朝6時自動更新ポータル',
     })}</script>`;
     if (!idxHtml.includes('application/ld+json')) {
-      fs.writeFileSync(idxPath, idxHtml.replace('</head>', `${webSiteLd}\n</head>`));
+      idxHtml = idxHtml.replace('</head>', `${webSiteLd}\n</head>`);
     }
+
+    const areaLinksHtml = [...regionMap.keys()]
+      .map((rName) => {
+        const slug = REGION_SLUG[rName] || encodeURIComponent(rName);
+        return `<a href="${SITE_URL}/areas/${esc(slug)}/">${esc(rName)}</a>`;
+      })
+      .join(' / ');
+
+    const seoFallbackHtml = `<div id="root"><main style="max-width:960px;margin:24px auto;padding:16px;font-family:sans-serif"><h1>OUTDOOR RACE HUB（アウトドアレースハブ）</h1><p>全国${events.length}件のトレイルランニング・マラソン・サイクリング・アドベンチャーレースの開催日程、エントリー状況、日本地図検索（全国レースマップ）、必携装備＆特価ギア情報を毎朝6時に自動更新しています。</p><nav aria-label="主要ページ一覧"><p><a href="${SITE_URL}/map/">全国レースマップ（日本地図から大会を探す）</a> | <a href="${SITE_URL}/gears/">おすすめ必携品・特価ギア一覧</a></p><p>競技別: <a href="${SITE_URL}/events/trail/">トレラン大会</a> / <a href="${SITE_URL}/events/marathon/">マラソン大会</a> / <a href="${SITE_URL}/events/cycling/">サイクル大会</a> / <a href="${SITE_URL}/events/adventure/">アドベンチャーレース</a></p><p>地方別: ${areaLinksHtml}</p></nav></main></div>`;
+    idxHtml = idxHtml.replace('<div id="root"></div>', seoFallbackHtml);
+    fs.writeFileSync(idxPath, idxHtml);
   }
-  console.log(`🌐 SEO静的ページ生成完了: ${events.length} 大会 + ${Object.keys(CAT_INFO).length} カテゴリ + ${regionMap.size} 地域 + 特価ギアページ + sitemap.xml (全${urls.length} URL)`);
+  console.log(`🌐 SEO静的ページ生成完了: ${events.length} 大会 + 全国レースマップ + ${Object.keys(CAT_INFO).length} カテゴリ + ${regionMap.size} 地域 + 特価ギアページ + sitemap.xml (全${urls.length} URL)`);
 }
 
 main();

@@ -115,6 +115,34 @@ export const Footer: React.FC<FooterProps> = ({
               ）
             </p>
           )}
+          {(() => {
+            const base = import.meta.env.BASE_URL || '/';
+            const seoLinks = [
+              { label: '全国レースマップ', path: 'map/' },
+              { label: 'トレラン大会', path: 'events/trail/' },
+              { label: 'マラソン大会', path: 'events/marathon/' },
+              { label: 'サイクル大会', path: 'events/cycling/' },
+              { label: 'アドベンチャー', path: 'events/adventure/' },
+              { label: '特価ギア一覧', path: 'gears/' },
+            ];
+            return (
+              <nav
+                aria-label="カテゴリ・マップ一覧"
+                className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] text-slate-500 dark:text-slate-400 pt-1"
+              >
+                <span className="font-semibold">ページ一覧:</span>
+                {seoLinks.map((item) => (
+                  <a
+                    key={item.path}
+                    href={`${base}${item.path}`}
+                    className="hover:text-teal-700 dark:hover:text-teal-300 underline-offset-2 hover:underline"
+                  >
+                    {item.label}
+                  </a>
+                ))}
+              </nav>
+            );
+          })()}
           {/* リアルタイム累計アクセスカウンター（中央配置） */}
           <div className="py-2 flex justify-center">
             <AccessCounter variant="footer" />
