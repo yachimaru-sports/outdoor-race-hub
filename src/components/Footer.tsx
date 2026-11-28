@@ -32,10 +32,10 @@ export const Footer: React.FC<FooterProps> = ({
             </div>
             <div>
               <span className="font-black text-sm text-slate-950 dark:text-white tracking-wider">
-                OUTDOOR RACE HUB
+                アウトドアレースハブ（OUTDOOR RACE HUB）
               </span>
               <p className="text-xs text-slate-600 dark:text-slate-400 mt-0.5 font-medium">
-                アウトドア・エンデュランス競技情報 ＆ 楽天特価ギア速報ポータル
+                〜アウトドア大会一括検索〜｜複数サイトの大会情報＆楽天特価ギア速報ポータル
               </p>
             </div>
           </div>
@@ -150,7 +150,7 @@ export const Footer: React.FC<FooterProps> = ({
 
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 pt-2 border-t border-slate-250 dark:border-slate-800">
             <div className="font-semibold">
-              © {new Date().getFullYear()} OUTDOOR RACE HUB. All rights reserved.
+              © {new Date().getFullYear()} アウトドアレースハブ（OUTDOOR RACE HUB）. All rights reserved.
             </div>
             <div className="flex items-center gap-1.5 text-slate-500 dark:text-slate-400 font-medium">
               <ShieldCheck className="w-3.5 h-3.5 text-teal-700 dark:text-teal-400" />

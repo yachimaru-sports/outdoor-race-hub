@@ -320,7 +320,7 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({
                 href="#"
                 onClick={handleScrollToTop}
                 className="flex items-center gap-1.5 sm:gap-2 group cursor-pointer"
-                title="OUTDOOR RACE HUB ページの先頭へ戻る"
+                title="アウトドアレースハブ（OUTDOOR RACE HUB）〜アウトドア大会一括検索〜 ページの先頭へ戻る"
               >
                 <div className="w-7 h-7 sm:w-9 sm:h-9 rounded-xl bg-teal-600 text-white flex items-center justify-center shadow-md shrink-0 group-hover:bg-teal-500 transition-colors">
                   <Mountain className="w-4 h-4 sm:w-5 sm:h-5 stroke-[2.4]" />
@@ -330,8 +330,8 @@ export const DealsTicker: React.FC<DealsTickerProps> = ({
                     <span>OUTDOOR</span>
                     <span className="text-teal-400">RACE HUB</span>
                   </div>
-                  <span className="text-[9px] sm:text-[10px] text-slate-400 font-bold tracking-wide mt-0.5 inline-block">
-                    2026-2027 全国＆中四国
+                  <span className="text-[9px] sm:text-[10px] text-slate-300 font-bold tracking-tight mt-0.5 inline-block whitespace-nowrap">
+                    アウトドアレースハブ<span className="hidden sm:inline"> 〜アウトドア大会一括検索〜</span>
                   </span>
                 </div>
               </a>

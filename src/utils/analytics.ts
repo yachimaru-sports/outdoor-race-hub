@@ -47,10 +47,10 @@ export const trackPageView = (route: 'events' | 'gears' | 'map') => {
           : '/outdoor-race-hub/';
       const pageTitle =
         route === 'gears'
-          ? 'おすすめ商品・特価ギア | OUTDOOR RACE HUB'
+          ? 'おすすめ商品・特価ギア | アウトドアレースハブ（OUTDOOR RACE HUB）'
           : route === 'map'
-          ? '全国レースマップ | OUTDOOR RACE HUB'
-          : '大会一覧 | OUTDOOR RACE HUB';
+          ? '全国レースマップ | アウトドアレースハブ（OUTDOOR RACE HUB）'
+          : '大会一覧 | アウトドアレースハブ（OUTDOOR RACE HUB）';
 
       window.gtag('event', 'page_view', {
         page_path: pagePath,

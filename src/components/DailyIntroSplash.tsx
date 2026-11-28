@@ -197,7 +197,7 @@ export const DailyIntroSplash: React.FC<DailyIntroSplashProps> = ({
     <div
       key={runId}
       role="dialog"
-      aria-label="OUTDOOR RACE HUB 本日のオープニング"
+      aria-label="アウトドアレースハブ（OUTDOOR RACE HUB）本日のオープニング"
       onClick={handleSkip}
       style={{ contain: 'strict' }}
       className={`fixed inset-0 z-[9999] select-none overflow-hidden cursor-pointer transition-opacity duration-200 ${
@@ -262,9 +262,9 @@ export const DailyIntroSplash: React.FC<DailyIntroSplashProps> = ({
             />
             <p
               style={{ textShadow: '0 2px 12px rgba(0, 0, 0, 0.5)' }}
-              className="text-[10px] sm:text-xs font-bold tracking-[0.32em] text-white/85 mt-2.5 sm:mt-3"
+              className="text-[11px] sm:text-sm font-bold tracking-[0.16em] text-white/90 mt-2.5 sm:mt-3"
             >
-              JAPAN OUTDOOR RACE PORTAL
+              アウトドアレースハブ 〜アウトドア大会一括検索〜
             </p>
           </div>
         </div>

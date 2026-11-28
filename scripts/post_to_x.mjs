@@ -89,7 +89,7 @@ function buildTweetPayload() {
   }
 
   const lines = [];
-  lines.push(`⚡【毎朝6時更新】OUTDOOR RACE HUB`);
+  lines.push(`⚡【毎朝6時更新】アウトドアレースハブ`);
 
   const eventsCount = meta.events_count || events.length || 0;
   const dealsCount = meta.deals_count || deals.length || 0;
@@ -173,7 +173,7 @@ function buildTikTokDraft({ today, eventsCount, dealsCount, featuredDeal, priceD
       ? `🆕 新規追加大会：${eventAdded.title.replace(/^新規大会追加:\s*/, '')}`
       : `🏔️ 全国${eventsCount}大会の日程・必携装備を一覧比較！`;
 
-  const slide4 = `👇 申込リンク・全${dealsCount}件の特価ギアはプロフィールのリンク「OUTDOOR RACE HUB」から！`;
+  const slide4 = `👇 申込リンク・全${dealsCount}件の特価ギアはプロフィールのリンク「アウトドアレースハブ（OUTDOOR RACE HUB）」から！`;
 
   const caption = [
     `⚡【毎日朝6時更新】トレラン・マラソン・サイクル大会＆特価ギア速報（${today}）`,
@@ -181,7 +181,7 @@ function buildTikTokDraft({ today, eventsCount, dealsCount, featuredDeal, priceD
     closingSoon ? `⏳締切間近：${closingSoon.title}（〜${closingSoon.entry_deadline}）` : '',
     priceDrop ? `🔥値下げ：${priceDrop.title.replace(/^値下げ検知:\s*/, '')}（${priceDrop.detail || ''}）` : '',
     `全国${eventsCount}大会のエントリー情報と必携品・特価ギア${dealsCount}件をまとめています！`,
-    '👇 詳細はプロフィールのリンク（OUTDOOR RACE HUB）からチェック！',
+    '👇 詳細はプロフィールのリンク（アウトドアレースハブ / OUTDOOR RACE HUB）からチェック！',
     '',
     '#トレラン #トレイルランニング #マラソン #ランニング #サイクリング #アウトドアギア #登山 #OUTDOORRACEHUB',
   ]
@@ -205,7 +205,7 @@ function buildMailBody(payload) {
   const tiktok = buildTikTokDraft(payload);
 
   const sections = [
-    `OUTDOOR RACE HUB の毎朝更新（${today}）が完了しました！`,
+    `アウトドアレースハブ（OUTDOOR RACE HUB）の毎朝更新（${today}）が完了しました！`,
     `そのままX（@yachimaru000）やTikTokへ投稿できるテキストをお送りします。`,
     '',
     '========================================',

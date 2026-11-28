@@ -315,7 +315,7 @@ export const GearCatalogPage: React.FC<GearCatalogPageProps> = ({
                   </span>
                 </h1>
                 <p className="text-[10px] text-slate-400 font-bold hidden sm:block">
-                  OUTDOOR RACE HUB 公式 厳選装備＆特価セール比較
+                  アウトドアレースハブ（OUTDOOR RACE HUB）公式 厳選装備＆特価セール比較
                 </p>
               </div>
             </div>
@@ -1094,7 +1094,7 @@ export const GearCatalogPage: React.FC<GearCatalogPageProps> = ({
             className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-teal-500 hover:bg-teal-400 text-slate-950 font-black text-xs sm:text-sm shadow-xl hover:shadow-2xl hover:scale-105 transition-all cursor-pointer"
           >
             <ArrowLeft className="w-4 h-4" />
-            <span>大会スケジュール一覧を見る（OUTDOOR RACE HUB）</span>
+            <span>大会スケジュール一覧を見る（アウトドアレースハブ / OUTDOOR RACE HUB）</span>
           </button>
         </section>
       </main>
@@ -1104,7 +1104,7 @@ export const GearCatalogPage: React.FC<GearCatalogPageProps> = ({
         <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
           <div className="flex items-center gap-2">
             <Mountain className="w-4 h-4 text-teal-600 dark:text-teal-400" />
-            <span className="font-black text-slate-900 dark:text-slate-100">OUTDOOR RACE HUB</span>
+            <span className="font-black text-slate-900 dark:text-slate-100">アウトドアレースハブ（OUTDOOR RACE HUB）</span>
             <span>— 必携品・おすすめギア攻略カタログ</span>
           </div>
           <p className="text-[11px]">

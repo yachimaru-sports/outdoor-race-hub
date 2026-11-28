@@ -91,7 +91,7 @@ function layoutHtml({ title, description, canonical, jsonLd, body }) {
 <meta name="description" content="${esc(description)}">
 <link rel="canonical" href="${esc(canonical)}">
 <meta property="og:type" content="article">
-<meta property="og:site_name" content="OUTDOOR RACE HUB">
+<meta property="og:site_name" content="アウトドアレースハブ（OUTDOOR RACE HUB）">
 <meta property="og:title" content="${esc(title)}">
 <meta property="og:description" content="${esc(description)}">
 <meta property="og:url" content="${esc(canonical)}">
@@ -128,7 +128,7 @@ function layoutHtml({ title, description, canonical, jsonLd, body }) {
 ${jsonLd ? `<script type="application/ld+json">${JSON.stringify(jsonLd)}</script>` : ''}
 </head>
 <body>
-<header><div class="inner"><a href="${SITE_URL}/">⚡ OUTDOOR RACE HUB</a><div class="nav-links"><a class="sub" href="${SITE_URL}/map/">全国レースマップ</a><a class="sub" href="${SITE_URL}/gears/">おすすめ商品・特価ギア</a></div></div></header>
+<header><div class="inner"><a href="${SITE_URL}/">⚡ アウトドアレースハブ（OUTDOOR RACE HUB）</a><div class="nav-links"><a class="sub" href="${SITE_URL}/map/">全国レースマップ</a><a class="sub" href="${SITE_URL}/gears/">おすすめ商品・特価ギア</a></div></div></header>
 <main class="wrap">${body}</main>
 </body>
 </html>`;
@@ -155,7 +155,7 @@ function main() {
     const canonical = `${SITE_URL}/events/${cat}/`;
     urls.push(canonical);
     const html = layoutHtml({
-      title: `${info.label}｜OUTDOOR RACE HUB`,
+      title: `${info.label}｜アウトドアレースハブ（OUTDOOR RACE HUB）`,
       description: `${info.label}（${list.length}件）。毎朝6時に公式・申込リンクと開催日程を自動検証・更新。`,
       canonical,
       jsonLd: {
@@ -210,7 +210,7 @@ function main() {
     const upcomingEvents = events.filter((e) => (e.end_date || e.date) >= todayIso).slice(0, 20);
 
     const html = layoutHtml({
-      title: '全国レースマップ（日本地図から探す大会一覧）｜OUTDOOR RACE HUB（アウトドアレースハブ）',
+      title: '全国レースマップ（日本地図から探す大会一覧）｜アウトドアレースハブ（OUTDOOR RACE HUB）',
       description: `全国${events.length}件のトレイルランニング・マラソン・サイクリング・アドベンチャーレース大会を日本地図（全国→地方→都道府県ピン）から探せる全国レースマップ。`,
       canonical,
       jsonLd: {
@@ -286,7 +286,7 @@ function main() {
     urls.push(canonical);
     const areaTitle = `${regionName}のトレラン・マラソン・サイクル大会一覧`;
     const html = layoutHtml({
-      title: `${areaTitle}｜OUTDOOR RACE HUB`,
+      title: `${areaTitle}｜アウトドアレースハブ（OUTDOOR RACE HUB）`,
       description: `${regionName}で開催されるトレイルランニング・マラソン・サイクリング・アドベンチャーレース（${list.length}件）の最新開催日程とエントリー情報。`,
       canonical,
       jsonLd: {
@@ -329,7 +329,7 @@ function main() {
       })),
     ];
     const html = layoutHtml({
-      title: `トレラン・マラソン必携装備＆特価ギア一覧｜OUTDOOR RACE HUB`,
+      title: `トレラン・マラソン必携装備＆特価ギア一覧｜アウトドアレースハブ（OUTDOOR RACE HUB）`,
       description: `大会の必携装備に使えるレインウェア・ザック・ヘッドライト・シューズなどの特価セール品(${deals.length}件)＆定番おすすめギア(${gears.length}件)を毎朝6時自動更新。`,
       canonical,
       jsonLd: {
@@ -421,7 +421,7 @@ function main() {
       : '';
 
     const html = layoutHtml({
-      title: `${ev.title}｜開催日・エントリー・必携装備｜OUTDOOR RACE HUB`,
+      title: `${ev.title}｜開催日・エントリー・必携装備｜アウトドアレースハブ（OUTDOOR RACE HUB）`,
       description: desc,
       canonical,
       jsonLd,
@@ -466,11 +466,11 @@ function main() {
     const webSiteLd = `<script type="application/ld+json">${JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'WebSite',
-      name: 'OUTDOOR RACE HUB',
-      alternateName: ['アウトドアレースハブ', 'Outdoor Race Hub'],
+      name: 'アウトドアレースハブ（OUTDOOR RACE HUB）〜アウトドア大会一括検索〜',
+      alternateName: ['アウトドアレースハブ', 'OUTDOOR RACE HUB', 'アウトドア大会一括検索'],
       inLanguage: 'ja',
       url: `${SITE_URL}/`,
-      description: '全国のトレラン・マラソン・サイクル・アドベンチャーレース大会情報・日本地図検索（全国レースマップ）＆必携装備特価の毎朝6時自動更新ポータル',
+      description: '複数サイトのトレラン・マラソン・サイクル・アドベンチャーレースを一括検索できるアウトドア大会ポータル。日本地図検索（全国レースマップ）＆必携装備特価を毎朝6時自動更新。',
     })}</script>`;
     if (!idxHtml.includes('application/ld+json')) {
       idxHtml = idxHtml.replace('</head>', `${webSiteLd}\n</head>`);
@@ -483,7 +483,7 @@ function main() {
       })
       .join(' / ');
 
-    const seoFallbackHtml = `<div id="root"><main style="max-width:960px;margin:24px auto;padding:16px;font-family:sans-serif"><h1>OUTDOOR RACE HUB（アウトドアレースハブ）</h1><p>全国${events.length}件のトレイルランニング・マラソン・サイクリング・アドベンチャーレースの開催日程、エントリー状況、日本地図検索（全国レースマップ）、必携装備＆特価ギア情報を毎朝6時に自動更新しています。</p><nav aria-label="主要ページ一覧"><p><a href="${SITE_URL}/map/">全国レースマップ（日本地図から大会を探す）</a> | <a href="${SITE_URL}/gears/">おすすめ必携品・特価ギア一覧</a></p><p>競技別: <a href="${SITE_URL}/events/trail/">トレラン大会</a> / <a href="${SITE_URL}/events/marathon/">マラソン大会</a> / <a href="${SITE_URL}/events/cycling/">サイクル大会</a> / <a href="${SITE_URL}/events/adventure/">アドベンチャーレース</a></p><p>地方別: ${areaLinksHtml}</p></nav></main></div>`;
+    const seoFallbackHtml = `<div id="root"><main style="max-width:960px;margin:24px auto;padding:16px;font-family:sans-serif"><h1>アウトドアレースハブ（OUTDOOR RACE HUB）〜アウトドア大会一括検索〜</h1><p>複数サイトのトレイルランニング・マラソン・サイクリング・アドベンチャーレース全${events.length}件を一括検索！開催日程、エントリー状況、日本地図検索（全国レースマップ）、必携装備＆特価ギア情報を毎朝6時に自動更新しています。</p><nav aria-label="主要ページ一覧"><p><a href="${SITE_URL}/map/">全国レースマップ（日本地図から大会を探す）</a> | <a href="${SITE_URL}/gears/">おすすめ必携品・特価ギア一覧</a></p><p>競技別: <a href="${SITE_URL}/events/trail/">トレラン大会</a> / <a href="${SITE_URL}/events/marathon/">マラソン大会</a> / <a href="${SITE_URL}/events/cycling/">サイクル大会</a> / <a href="${SITE_URL}/events/adventure/">アドベンチャーレース</a></p><p>地方別: ${areaLinksHtml}</p></nav></main></div>`;
     idxHtml = idxHtml.replace('<div id="root"></div>', seoFallbackHtml);
     fs.writeFileSync(idxPath, idxHtml);
   }
